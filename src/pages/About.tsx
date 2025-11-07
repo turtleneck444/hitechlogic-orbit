@@ -2,146 +2,127 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { Target, Shield, Heart, Zap } from "lucide-react";
 
-const principles = [
+const partnershipQualities = [
   {
-    icon: Shield,
-    title: "Reliability",
-    description: "We believe systems should be trustworthy. Every feature we build prioritizes stability and uptime.",
+    title: "Calm collaboration",
+    description: "We operate with executive-level composure, balancing urgency with discipline so your teams stay focused.",
   },
   {
-    icon: Target,
-    title: "Safety",
-    description: "Automation should empower, not endanger. We build with guardrails, testing, and rollback mechanisms.",
+    title: "Structured communication",
+    description: "Weekly reliability briefs, transparent scorecards, and aligned rituals keep leaders informed without noise.",
   },
   {
-    icon: Heart,
-    title: "Empathy",
-    description: "We understand the stress of production incidents. Our platform is designed to reduce that burden.",
+    title: "Shared accountability",
+    description: "We own outcomes alongside you—risk reviews, governance meetings, and roadmap decisions are joint efforts.",
   },
-  {
-    icon: Zap,
-    title: "Rigor",
-    description: "Engineering excellence in every detail. We apply the same standards to our platform that we expect from yours.",
-  },
+];
+
+const culturalNotes = [
+  "Reliability is a cultural choice. The most resilient organizations treat stability as a shared value, not a single team’s burden.",
+  "Operational clarity gives people confidence. When engineers know the plan, they can innovate without worrying about what might break.",
+  "Partnership matters. Lasting change happens when leadership, operators, and partners move in lockstep—no surprises, no heroics.",
 ];
 
 export default function About() {
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-hero">
-        <div className="container relative z-10 mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            Built by Operators,{" "}
-            <span className="gradient-text">for Operators</span>
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            HiTechLogic was founded by engineers who lived through the pain of scaling infrastructure and wanted a better way.
+      <section className="bg-white">
+        <div className="mx-auto w-full max-w-4xl px-6 pt-12 pb-24 sm:pt-16 sm:pb-28 lg:pt-20 lg:pb-32 text-center">
+          <span className="eyebrow text-electric-blue/70">Leadership & partnership</span>
+          <h1 className="mt-4 text-4xl md:text-5xl leading-tight text-foreground">Steady guidance for complex operations.</h1>
+          <p className="mt-4 text-lg text-slate-600">
+            HiTechLogic was founded by operators who believe reliability is both a technical practice and a cultural commitment.
           </p>
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Our Mission</h2>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              To make infrastructure reliability accessible to every engineering team, regardless of size or expertise. We believe that modern operations should be proactive, automated, and—most importantly—humane.
-            </p>
+      <section className="section-space">
+        <div className="mx-auto w-full max-w-5xl px-6">
+          <div className="grid gap-12 lg:grid-cols-2">
+            <Card className="p-10">
+              <h2 className="text-2xl font-semibold text-foreground">Our mission</h2>
+              <p className="mt-4 text-base text-slate-600">
+                We help organizations operate with confidence by managing the day-to-day realities of modern infrastructure—calmly,
+                transparently, and with measurable outcomes.
+              </p>
+              <p className="mt-6 text-base text-slate-600">
+                Reliable technology environments unlock strategic focus. When incident channels are quiet and governance is clear,
+                leaders can pursue growth without hesitation.
+              </p>
+            </Card>
+            <Card className="p-10">
+              <h2 className="text-2xl font-semibold text-foreground">Partnering with HiTechLogic feels like…</h2>
+              <ul className="mt-6 space-y-4 text-sm text-slate-600">
+                {partnershipQualities.map((item) => (
+                  <li key={item.title}>
+                    <p className="font-semibold text-foreground">{item.title}</p>
+                    <p>{item.description}</p>
+                  </li>
+                ))}
+              </ul>
+            </Card>
           </div>
-
-          <Card className="glass-card p-12">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Too many talented engineers spend their nights and weekends fighting production fires. Too many companies struggle to scale their operations without proportionally scaling their ops teams. We built HiTechLogic to change that reality.
-            </p>
-          </Card>
         </div>
       </section>
 
-      {/* Principles */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-card">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Our Principles</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              These values guide every decision we make
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {principles.map((principle, index) => (
-              <Card
-                key={principle.title}
-                className="glass-card p-8 text-center hover-scale"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="inline-flex items-center justify-center h-16 w-16 rounded-lg bg-gradient-primary mb-6 glow-effect">
-                  <principle.icon className="h-8 w-8 text-primary-foreground" />
-                </div>
-                <h3 className="text-xl font-bold mb-3">{principle.title}</h3>
-                <p className="text-muted-foreground">{principle.description}</p>
-              </Card>
+      <section className="section-space bg-[hsl(var(--background))]">
+        <div className="mx-auto w-full max-w-5xl px-6">
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground">Reliability is cultural, operational, and technical.</h2>
+          <div className="mt-8 space-y-6 text-base text-slate-600">
+            {culturalNotes.map((note) => (
+              <p key={note}>{note}</p>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Leadership Team</h2>
-            <p className="text-xl text-muted-foreground">
-              Experienced operators who've built and scaled infrastructure at leading tech companies
-            </p>
+      <section className="section-space">
+        <div className="mx-auto w-full max-w-6xl px-6">
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-semibold text-foreground">Leadership team</h2>
+            <p className="mt-4 text-base text-slate-600">Seasoned operators who have scaled infrastructure for global enterprises.</p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
             {[
               {
                 name: "Alex Rivera",
-                role: "Co-Founder & CEO",
-                bio: "Former VP of Engineering at CloudScale. Built ops teams from 5 to 50 engineers.",
+                role: "CEO",
+                bio: "Former VP of Engineering who led reliability transformations across cloud programs.",
               },
               {
                 name: "Jordan Chen",
-                role: "Co-Founder & CTO",
-                bio: "Ex-Google SRE. Led reliability initiatives for services handling billions of requests.",
+                role: "CTO",
+                bio: "Ex-SRE leader focused on automation, observability, and safe change management.",
               },
               {
-                name: "Sam Taylor",
-                role: "Head of Product",
-                bio: "Product leader from Datadog. Deep expertise in observability and automation.",
+                name: "Maya Ortiz",
+                role: "Head of Strategic Engagements",
+                bio: "Advisor to CIOs on operational governance, culture, and executive storytelling.",
               },
-            ].map((member, index) => (
-              <Card
-                key={member.name}
-                className="glass-card p-8 text-center hover-scale"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="h-24 w-24 rounded-full bg-gradient-primary mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                <p className="text-sm text-accent mb-4">{member.role}</p>
-                <p className="text-muted-foreground">{member.bio}</p>
+            ].map((leader) => (
+              <Card key={leader.name} className="p-8 text-center">
+                <div className="mx-auto mb-4 h-20 w-20 rounded-full bg-[hsl(var(--muted))]" />
+                <h3 className="text-xl font-semibold text-foreground">{leader.name}</h3>
+                <p className="text-sm text-electric-blue">{leader.role}</p>
+                <p className="mt-4 text-sm text-slate-600">{leader.bio}</p>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Careers CTA */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-card">
-        <div className="container mx-auto text-center max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Join Our Mission</h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            We're always looking for talented engineers and operators who share our vision for better infrastructure management.
+      <section className="section-space bg-[hsl(var(--background))]">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground">Let’s build reliability together.</h2>
+          <p className="mt-4 text-lg text-slate-600">
+            If you value calm, confidence, and strategic partnership, we’d be honored to support your journey.
           </p>
-          <Button variant="hero" size="xl" asChild>
-            <Link to="/contact">View Open Positions</Link>
-          </Button>
+          <div className="mt-8 flex justify-center">
+            <Button variant="primary" size="xl" asChild>
+              <Link to="/contact">Request Strategy Consultation</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </Layout>

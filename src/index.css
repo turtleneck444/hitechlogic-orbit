@@ -8,89 +8,52 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 15% 12%;
+    /* Brand Colors - HiTechLogic Design System */
+    --white: 0 0% 100%; /* #FFFFFF */
+    --soft-gray: 210 22% 96%; /* #F4F6F8 */
+    --deep-navy: 220 49% 8%; /* #0B1220 */
+    --accent-blue: 222 100% 59%; /* #2E6BFF */
+    --graphite: 223 18% 17%; /* #2A2D33 */
+
+    /* Semantic Color Mappings */
+    --background: 210 22% 96%;
+    --foreground: 223 18% 17%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 12%;
+    --card-foreground: 223 18% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 12%;
+    --popover-foreground: 223 18% 17%;
 
-    --primary: 220 50% 8%;
+    --primary: 222 100% 59%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 214 31% 91%;
-    --secondary-foreground: 220 50% 8%;
+    --secondary: 210 16% 92%;
+    --secondary-foreground: 223 18% 17%;
 
-    --muted: 214 31% 91%;
-    --muted-foreground: 220 15% 46%;
+    --muted: 210 16% 90%;
+    --muted-foreground: 223 12% 40%;
 
-    --accent: 217 91% 60%;
+    --accent: 222 100% 59%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 3 82% 58%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 31% 91%;
-    --input: 214 31% 91%;
-    --ring: 217 91% 60%;
+    --border: 214 15% 86%;
+    --input: 214 15% 86%;
+    --ring: 222 100% 59%;
 
+    /* Design System Variables */
     --radius: 0.75rem;
-
-    /* HiTechLogic Brand Colors */
-    --navy: 220 50% 8%;
-    --electric-blue: 217 91% 60%;
-    --signal-purple: 253 60% 60%;
-    --graphite: 220 20% 14%;
-    --silver: 220 15% 92%;
-    
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(253 60% 60%));
-    --gradient-hero: linear-gradient(180deg, hsl(220 50% 8%) 0%, hsl(220 40% 12%) 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-    
-    /* Shadows & Effects */
-    --shadow-glow: 0 0 40px hsla(217, 91%, 60%, 0.3);
-    --shadow-elevated: 0 10px 40px -10px hsla(220, 50%, 8%, 0.3);
-    
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --navy: 220 49% 8%;
+    --panel: 0 0% 100%;
+    --silver: 220 6% 50%;
+    --shadow-card: 0px 18px 40px -24px rgba(11, 18, 32, 0.25);
+    --gradient-primary: linear-gradient(120deg, #2e6bff 0%, #0b1220 120%);
+    --gradient-hero: linear-gradient(180deg, #ffffff 0%, #f4f6f8 100%);
   }
 
-  .dark {
-    --background: 220 50% 8%;
-    --foreground: 0 0% 98%;
-
-    --card: 220 40% 12%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 220 40% 12%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 220 30% 18%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 220 30% 18%;
-    --muted-foreground: 220 15% 65%;
-
-    --accent: 217 91% 60%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 220 30% 18%;
-    --input: 220 30% 18%;
-    --ring: 217 91% 60%;
-    
-    /* Enhanced dark mode gradients */
-    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
-    --shadow-glow: 0 0 60px hsla(217, 91%, 60%, 0.4);
-  }
 }
 
 @layer base {
@@ -99,38 +62,238 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-[hsl(var(--background))] text-foreground font-sans antialiased;
+    letter-spacing: -0.005em;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-tight text-foreground;
+  }
+
+  p {
+    @apply leading-relaxed text-[hsl(var(--muted-foreground))];
+  }
+
+  strong {
+    @apply font-semibold text-foreground;
   }
 }
 
 @layer utilities {
   .glass-card {
-    background: var(--gradient-glass);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
+    border-radius: 1rem;
   }
 
   .glow-effect {
-    box-shadow: var(--shadow-glow);
+    box-shadow: 0 20px 50px -24px rgba(46, 107, 255, 0.35);
   }
 
   .hover-scale {
-    transition: var(--transition-smooth);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
   }
 
   .hover-scale:hover {
-    transform: scale(1.02);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px -32px rgba(11, 18, 32, 0.35);
+  }
+
+  .eyebrow {
+    @apply text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-slate-500;
+    letter-spacing: 0.12em;
+  }
+
+  .section-space {
+    @apply py-24 sm:py-28 lg:py-32;
+  }
+
+  .grid-12 {
+    @apply grid gap-10 lg:grid-cols-12;
+  }
+
+  .executive-panel {
+    background: linear-gradient(180deg, #ffffff 0%, #f4f6f8 100%);
+    border: 1px solid hsl(var(--border));
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-card);
+  }
+
+  .divider-faint {
+    @apply border-t border-[hsl(var(--border))];
+  }
+
+  .logo-pill {
+    @apply flex items-center justify-center rounded-full border border-[hsl(var(--border))] bg-white px-4 py-2 text-xs font-medium text-slate-600;
   }
 
   .gradient-text {
-    background: var(--gradient-primary);
+    background: linear-gradient(90deg, hsl(var(--foreground)), hsl(var(--accent)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* Path Animation */
+  .animate-path-fade {
+    animation: path-fade infinite ease-in-out;
+    will-change: opacity;
+  }
+
+  @keyframes path-fade {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  /* Pulse Animations */
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .animate-pulse-slower {
+    animation: pulse-slower 4s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      transform: scale(0.98);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.02);
+      opacity: 1;
+    }
+  }
+
+  @keyframes pulse-slower {
+    0%, 100% {
+      transform: scale(0.97);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.03);
+      opacity: 0.9;
+    }
+  }
+
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-gradient {
+    animation: gradient 3s ease infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%) skewX(-12deg);
+    }
+    100% {
+      transform: translateX(200%) skewX(-12deg);
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s ease-in-out;
+  }
+
+  @keyframes animation-path {
+    0% {
+      offset-distance: 0%;
+    }
+    100% {
+      offset-distance: 100%;
+    }
+  }
+
+  @keyframes scaleUp {
+    0% {
+      transform: translateY(8px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-scaleUp {
+    animation: scaleUp 0.6s ease forwards;
+  }
+
+  /* Database Animation */
+  .database {
+    offset-anchor: 10px 0px;
+    animation: database-animation-path;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    animation-duration: 4s;
+    animation-delay: 1s;
+    will-change: offset-distance;
+  }
+
+  .db-light-1 {
+    offset-path: path("M 31 10 v 15 q 0 5 5 5 h 59 q 5 0 5 5 v 25");
+  }
+
+  .db-light-2 {
+    offset-path: path("M 77 10 v 10 q 0 5 5 5 h 13 q 5 0 5 5 v 25");
+  }
+
+  .db-light-3 {
+    offset-path: path("M 124 10 v 10 q 0 5 -5 5 h -14 q -5 0 -5 5 v 25");
+  }
+
+  .db-light-4 {
+    offset-path: path("M 170 10 v 15 q 0 5 -5 5 h -60 q -5 0 -5 5 v 25");
+  }
+
+  @keyframes database-animation-path {
+    0% {
+      offset-distance: 0%;
+    }
+    100% {
+      offset-distance: 100%;
+    }
+  }
+
+  /* Flowing Path Animation */
+  .animate-path-flow {
+    animation: path-flow 8s ease-in-out infinite;
+    will-change: opacity, stroke-dashoffset;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+
+  @keyframes path-flow {
+    0% {
+      stroke-dashoffset: 1000;
+      opacity: 0.2;
+    }
+    50% {
+      stroke-dashoffset: 0;
+      opacity: 0.6;
+    }
+    100% {
+      stroke-dashoffset: -1000;
+      opacity: 0.2;
+    }
   }
 }

@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  darkMode: ["class"],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
@@ -13,6 +12,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        heading: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "monospace"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -48,15 +52,16 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         navy: "hsl(var(--navy))",
-        "electric-blue": "hsl(var(--electric-blue))",
-        "signal-purple": "hsl(var(--signal-purple))",
-        graphite: "hsl(var(--graphite))",
+        panel: "hsl(var(--panel))",
+        "accent-blue": "hsl(var(--accent-blue))",
+        "electric-blue": "hsl(var(--accent-blue))",
         silver: "hsl(var(--silver))",
       },
       backgroundImage: {
+        "node-field":
+          "radial-gradient(circle at 1px 1px, rgba(11,18,32,0.08) 1px, transparent 0)",
         "gradient-primary": "var(--gradient-primary)",
         "gradient-hero": "var(--gradient-hero)",
-        "gradient-glass": "var(--gradient-glass)",
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -4,62 +4,59 @@ import { TrendingDown, Clock, DollarSign, CheckCircle } from "lucide-react";
 const metrics = [
   {
     icon: TrendingDown,
-    value: "80-90%",
-    label: "Reduction in Alert Noise",
-    description: "Only meaningful alerts reach your team",
+    value: "-85%",
+    label: "Alert Volume",
+    description: "Noise removed through correlation and scoring",
   },
   {
     icon: Clock,
-    value: "75%",
-    label: "Faster MTTR",
-    description: "Automated recovery cuts response time",
+    value: "4.5x",
+    label: "MTTR Improvement",
+    description: "Accelerated through playbook automation",
   },
   {
     icon: DollarSign,
-    value: "40%",
-    label: "Lower Ops Costs",
-    description: "Automation reduces manual intervention",
+    value: "32%",
+    label: "Cost Stability",
+    description: "Runbooks optimize spend across environments",
   },
   {
     icon: CheckCircle,
-    value: "99.9%",
-    label: "Uptime Achieved",
-    description: "Self-healing systems prevent outages",
+    value: "99.98%",
+    label: "Availability",
+    description: "Continuous governance and predictive response",
   },
 ];
 
 export function ProofSection() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Results That Matter
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Real impact on reliability, efficiency, and costs
-          </p>
-        </div>
+    <section className="section-space bg-white">
+      <div className="mx-auto w-full max-w-[1420px] px-4 sm:px-6 lg:px-14">
+        <div className="rounded-3xl border border-[hsl(var(--border))] bg-white p-10 shadow-[0_24px_60px_-48px_rgba(11,18,32,0.25)]">
+          <div className="flex flex-col gap-6 pb-10 md:flex-row md:items-end md:justify-between">
+            <div>
+              <span className="eyebrow text-electric-blue/70">Reliability outcomes</span>
+              <h2 className="mt-4 text-3xl md:text-4xl leading-tight text-foreground">
+                Executive Telemetry Designed for Confident Reporting
+              </h2>
+            </div>
+            <p className="max-w-xl text-sm text-slate-600">
+              Metrics refresh continuously so technology, operations, and finance leadership share one version of truth.
+            </p>
+          </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {metrics.map((metric, index) => (
-            <Card
-              key={metric.label}
-              className="glass-card p-6 text-center hover-scale"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-accent/20 mb-4">
-                <metric.icon className="h-6 w-6 text-accent" />
-              </div>
-              <div className="text-4xl font-bold gradient-text mb-2">
-                {metric.value}
-              </div>
-              <div className="font-semibold mb-2">{metric.label}</div>
-              <p className="text-sm text-muted-foreground">
-                {metric.description}
-              </p>
-            </Card>
-          ))}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {metrics.map((metric) => (
+              <Card key={metric.label} className="bg-[hsl(var(--background))] p-8">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-[hsl(var(--border))] bg-white">
+                  <metric.icon className="h-5 w-5 text-electric-blue" />
+                </div>
+                <div className="mt-6 text-4xl font-semibold text-foreground">{metric.value}</div>
+                <div className="mt-2 text-xs font-semibold uppercase tracking-wide text-slate-500">{metric.label}</div>
+                <p className="mt-3 text-sm text-slate-600">{metric.description}</p>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>

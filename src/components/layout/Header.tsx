@@ -1,25 +1,74 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight, Server, Activity, Workflow, ShieldCheck, BarChart3, Handshake, Gauge } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+const serviceMegaMenu = [
+  {
+    icon: Server,
+    title: "Infrastructure & Cloud Operations",
+    description: "24/7 oversight and capacity management",
+    href: "/services#infrastructure",
+  },
+  {
+    icon: Activity,
+    title: "System Oversight & Event Reduction",
+    description: "Intelligent monitoring and noise reduction",
+    href: "/services#oversight",
+  },
+  {
+    icon: Workflow,
+    title: "Automated Corrective Actions",
+    description: "Self-healing workflows and runbooks",
+    href: "/services#automation",
+  },
+  {
+    icon: Gauge,
+    title: "Reliability & Performance",
+    description: "Engineering excellence at scale",
+    href: "/services#reliability",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Security & Identity Assurance",
+    description: "Access governance and threat monitoring",
+    href: "/services#security",
+  },
+  {
+    icon: BarChart3,
+    title: "Cost Efficiency & Capacity",
+    description: "Financial transparency and optimization",
+    href: "/services#cost",
+  },
+  {
+    icon: Handshake,
+    title: "Strategic Partnership",
+    description: "Dedicated leadership and roadmap planning",
+    href: "/services#partnership",
+  },
+];
+
 const navigation = [
-  { name: "Platform", href: "/platform" },
-  { name: "Solutions", href: "/solutions" },
-  { name: "Stages", href: "/stages" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "Resources", href: "#", submenu: [
-    { name: "Case Studies", href: "/case-studies" },
-    { name: "Blog", href: "/blog" },
-  ]},
+  { name: "Services", href: "/services", hasMegaMenu: true },
+  { name: "Approach", href: "/approach" },
+  { name: "Principles", href: "/principles" },
   { name: "About", href: "/about" },
+  {
+    name: "Resources",
+    href: "#",
+    submenu: [
+      { name: "Case Studies", href: "/case-studies" },
+      { name: "Blog", href: "/blog" },
+    ],
+  },
 ];
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,45 +78,175 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isActivePath = (href: string) => {
+    if (href === "/") return location.pathname === "/";
+    return location.pathname.startsWith(href);
+  };
+
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "glass-card border-b border-border/50" : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        isScrolled
+          ? "bg-white shadow-lg shadow-slate-900/5"
+          : "bg-white shadow-md shadow-slate-900/5",
       )}
     >
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="h-8 w-8 rounded-lg bg-gradient-primary" />
-            <span className="text-xl font-bold">HiTechLogic</span>
-          </Link>
+      {/* Top Bar */}
+      <div className="border-b border-slate-200/60 bg-gradient-to-r from-slate-50/50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex h-12 items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5">
+                <ShieldCheck className="h-3.5 w-3.5 text-[hsl(var(--accent-blue))]" />
+              </div>
+              <span className="text-sm font-semibold text-[hsl(var(--navy))]">Enterprise Managed Services Provider</span>
+            </div>
+            <div className="hidden md:flex items-center gap-5">
+              <a
+                href="mailto:contact@hitechlogic.com"
+                className="group flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-[hsl(var(--accent-blue))] transition-colors duration-200"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span>contact@hitechlogic.com</span>
+              </a>
+              <div className="h-4 w-px bg-slate-200" />
+              <div className="flex items-center gap-2 text-sm font-medium text-slate-600">
+                <svg className="h-4 w-4 text-[hsl(var(--accent-blue))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span>+1 (555) 123-4567</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+      {/* Main Navigation */}
+      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex h-20 items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center">
+            <Link to="/" className="group flex items-center gap-3.5">
+              <div className="relative">
+                <div className="absolute inset-0 bg-[hsl(var(--accent-blue))] opacity-10 blur-lg rounded-lg transition-all duration-500 group-hover:opacity-25 group-hover:blur-xl" />
+                <div className="relative flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--navy))] to-[hsl(var(--navy))]/90 shadow-lg shadow-[hsl(var(--navy))]/20 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-[hsl(var(--accent-blue))]/30 group-hover:scale-105">
+                  <span className="text-lg font-bold text-white tracking-tight">H</span>
+                </div>
+              </div>
+              <div>
+                <span className="text-xl font-bold tracking-[-0.02em] text-[hsl(var(--navy))] transition-colors duration-200 group-hover:text-[hsl(var(--accent-blue))]">
+                  HiTechLogic
+                </span>
+                <div className="h-px bg-gradient-to-r from-[hsl(var(--accent-blue))] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              </div>
+            </Link>
+          </div>
+
+          {/* Navigation */}
+          <div className="hidden lg:flex items-center gap-2">
             {navigation.map((item) => (
               <div
                 key={item.name}
-                className="relative"
-                onMouseEnter={() => item.submenu && setActiveDropdown(item.name)}
+                className="relative group"
+                onMouseEnter={() => (item.hasMegaMenu || item.submenu) && setActiveDropdown(item.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                {item.submenu ? (
+                {item.hasMegaMenu ? (
                   <>
-                    <button className="flex items-center space-x-1 px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">
+                    <Link
+                      to={item.href}
+                      className={cn(
+                        "relative flex items-center gap-1.5 px-5 py-2.5 text-[15px] font-semibold transition-all duration-200",
+                        isActivePath(item.href)
+                          ? "text-[hsl(var(--navy))]"
+                          : "text-slate-600 hover:text-[hsl(var(--navy))]",
+                        "before:absolute before:bottom-0 before:left-5 before:right-5 before:h-0.5 before:bg-gradient-to-r before:from-[hsl(var(--accent-blue))] before:to-[hsl(var(--navy))] before:transition-all before:duration-300",
+                        isActivePath(item.href)
+                          ? "before:scale-x-100 before:opacity-100"
+                          : "before:scale-x-0 before:opacity-0 hover:before:scale-x-100 hover:before:opacity-100"
+                      )}
+                    >
                       <span>{item.name}</span>
-                      <ChevronDown className="h-4 w-4" />
+                      <ChevronDown className={cn(
+                        "h-3.5 w-3.5 transition-all duration-300",
+                        activeDropdown === item.name ? "rotate-180" : ""
+                      )} />
+                    </Link>
+                    {activeDropdown === item.name && (
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[820px] animate-fade-in">
+                        <div className="rounded-2xl border border-slate-200/80 bg-white shadow-2xl shadow-slate-900/10 overflow-hidden backdrop-blur-xl">
+                          <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 via-white to-blue-50/20 pointer-events-none" />
+                          <div className="relative p-8">
+                            <div className="mb-7 flex items-center justify-between">
+                              <div>
+                                <h3 className="text-base font-bold text-[hsl(var(--navy))] mb-1.5">Our Services</h3>
+                                <p className="text-sm text-slate-500">Comprehensive managed reliability solutions</p>
+                              </div>
+                              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5">
+                                <Server className="h-5 w-5 text-[hsl(var(--accent-blue))]" />
+                              </div>
+                            </div>
+                            <div className="grid grid-cols-2 gap-3">
+                              {serviceMegaMenu.map((service) => (
+                                <Link
+                                  key={service.title}
+                                  to={service.href}
+                                  className="group/service flex items-start gap-3.5 rounded-xl p-4 transition-all duration-200 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 border border-slate-100 hover:border-[hsl(var(--accent-blue))]/20 hover:-translate-y-0.5"
+                                >
+                                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-slate-50 to-white border border-slate-200/60 shadow-sm group-hover/service:from-[hsl(var(--accent-blue))]/5 group-hover/service:to-blue-50/50 group-hover/service:border-[hsl(var(--accent-blue))]/30 group-hover/service:shadow-md group-hover/service:shadow-[hsl(var(--accent-blue))]/10 transition-all duration-200">
+                                    <service.icon className="h-5 w-5 text-[hsl(var(--accent-blue))] transition-transform duration-200 group-hover/service:scale-110" />
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <div className="flex items-center justify-between gap-2">
+                                      <h4 className="text-sm font-semibold text-[hsl(var(--navy))] group-hover/service:text-[hsl(var(--accent-blue))] transition-colors line-clamp-1">
+                                        {service.title}
+                                      </h4>
+                                      <ArrowRight className="h-3.5 w-3.5 shrink-0 text-[hsl(var(--accent-blue))] opacity-0 -translate-x-2 group-hover/service:opacity-100 group-hover/service:translate-x-0 transition-all duration-200" />
+                                    </div>
+                                    <p className="text-xs text-slate-500 mt-1 line-clamp-1">{service.description}</p>
+                                  </div>
+                                </Link>
+                              ))}
+                            </div>
+                            <div className="mt-6 pt-6 border-t border-slate-200/60">
+                              <Link
+                                to="/contact"
+                                className="group/cta inline-flex items-center gap-2.5 rounded-lg px-5 py-2.5 text-sm font-semibold text-[hsl(var(--accent-blue))] hover:bg-[hsl(var(--accent-blue))]/5 transition-all duration-200"
+                              >
+                                <span>Schedule a consultation</span>
+                                <ArrowRight className="h-4 w-4 transition-transform group-hover/cta:translate-x-1" />
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </>
+                ) : item.submenu ? (
+                  <>
+                    <button className={cn(
+                      "relative flex items-center gap-1.5 px-5 py-2.5 text-[15px] font-semibold transition-all duration-200",
+                      "text-slate-600 hover:text-[hsl(var(--navy))]"
+                    )}>
+                      <span>{item.name}</span>
+                      <ChevronDown className={cn(
+                        "h-3.5 w-3.5 transition-all duration-300",
+                        activeDropdown === item.name ? "rotate-180" : ""
+                      )} />
                     </button>
                     {activeDropdown === item.name && (
-                      <div className="absolute top-full left-0 mt-1 w-48 glass-card rounded-lg shadow-lg py-2">
+                      <div className="absolute top-full left-0 mt-2 w-64 rounded-xl border border-slate-200 bg-white p-2 shadow-2xl shadow-slate-900/10 animate-fade-in">
                         {item.submenu.map((subitem) => (
                           <Link
                             key={subitem.name}
                             to={subitem.href}
-                            className="block px-4 py-2 text-sm text-foreground hover:bg-accent/50 transition-colors"
+                            className="group/item flex items-center justify-between rounded-lg px-4 py-3 text-[15px] font-medium text-slate-600 transition-all duration-150 hover:bg-slate-50 hover:text-[hsl(var(--navy))]"
                           >
-                            {subitem.name}
+                            <span>{subitem.name}</span>
+                            <ArrowRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 transition-all duration-200 group-hover/item:opacity-100 group-hover/item:translate-x-0" />
                           </Link>
                         ))}
                       </div>
@@ -76,7 +255,16 @@ export function Header() {
                 ) : (
                   <Link
                     to={item.href}
-                    className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors"
+                    className={cn(
+                      "relative px-5 py-2.5 text-[15px] font-semibold transition-all duration-200",
+                      isActivePath(item.href)
+                        ? "text-[hsl(var(--navy))]"
+                        : "text-slate-600 hover:text-[hsl(var(--navy))]",
+                      "before:absolute before:bottom-0 before:left-5 before:right-5 before:h-0.5 before:bg-gradient-to-r before:from-[hsl(var(--accent-blue))] before:to-[hsl(var(--navy))] before:transition-all before:duration-300",
+                      isActivePath(item.href)
+                        ? "before:scale-x-100 before:opacity-100"
+                        : "before:scale-x-0 before:opacity-0 hover:before:scale-x-100 hover:before:opacity-100"
+                    )}
                   >
                     {item.name}
                   </Link>
@@ -85,57 +273,79 @@ export function Header() {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="hero" size="default" asChild>
-              <Link to="/contact">Book a Call</Link>
-            </Button>
-          </div>
+          {/* CTA Section */}
+          <div className="flex items-center gap-3">
+            <div className="hidden lg:block">
+              <Button variant="hero" size="lg" asChild className="px-7 py-3.5 text-[15px] font-semibold shadow-[0_20px_45px_-20px_rgba(46,107,255,0.8)] hover:scale-[1.03]">
+                <Link to="/contact" className="group flex items-center gap-2">
+                  <span>Request Strategy Consultation</span>
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </div>
 
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+            <button
+              className="lg:hidden flex items-center justify-center rounded-lg border border-slate-200 bg-white p-2.5 text-slate-600 shadow-sm transition-all hover:border-slate-300 hover:bg-slate-50 hover:shadow"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle navigation"
+            >
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 space-y-2 animate-fade-in">
-            {navigation.map((item) => (
-              <div key={item.name}>
-                {item.submenu ? (
-                  <div className="space-y-2">
-                    <div className="px-3 py-2 text-sm font-medium text-muted-foreground">
-                      {item.name}
+          <div className="lg:hidden border-t border-slate-200 bg-gradient-to-b from-slate-50/50 to-white py-6 animate-fade-in shadow-lg">
+            <div className="flex flex-col gap-1 px-4">
+              {navigation.map((item) => (
+                <div key={item.name}>
+                  {item.submenu ? (
+                    <div className="mb-3">
+                      <div className="px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-500">
+                        {item.name}
+                      </div>
+                      <div className="mt-1 space-y-1">
+                        {item.submenu.map((subitem) => (
+                          <Link
+                            key={subitem.name}
+                            to={subitem.href}
+                            className="flex items-center justify-between rounded-lg px-3 py-3 text-[15px] font-medium text-slate-700 transition-all hover:bg-white hover:text-[hsl(var(--accent-blue))] hover:shadow-sm border border-transparent hover:border-slate-200"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            <span>{subitem.name}</span>
+                            <ArrowRight className="h-4 w-4 opacity-50 transition-opacity group-hover:opacity-100" />
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                    {item.submenu.map((subitem) => (
-                      <Link
-                        key={subitem.name}
-                        to={subitem.href}
-                        className="block pl-6 pr-3 py-2 text-sm text-foreground hover:bg-accent/50 rounded-md transition-colors"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {subitem.name}
-                      </Link>
-                    ))}
-                  </div>
-                ) : (
-                  <Link
-                    to={item.href}
-                    className="block px-3 py-2 text-sm font-medium text-foreground hover:bg-accent/50 rounded-md transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                )}
-              </div>
-            ))}
-            <div className="pt-4">
-              <Button variant="hero" size="lg" className="w-full" asChild>
-                <Link to="/contact">Book a Call</Link>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className={cn(
+                        "flex items-center justify-between rounded-lg px-3 py-3.5 text-[15px] font-semibold transition-all border",
+                        isActivePath(item.href)
+                          ? "bg-white text-[hsl(var(--accent-blue))] border-[hsl(var(--accent-blue))]/20 shadow-sm"
+                          : "text-[hsl(var(--navy))] border-transparent hover:bg-white hover:border-slate-200 hover:shadow-sm"
+                      )}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <span>{item.name}</span>
+                      <ArrowRight className={cn(
+                        "h-4 w-4 transition-all",
+                        isActivePath(item.href) ? "opacity-100" : "opacity-40 group-hover:opacity-100"
+                      )} />
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 px-4">
+              <Button variant="hero" size="lg" asChild className="w-full text-[15px] font-semibold">
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="group flex items-center justify-center gap-2">
+                  <span>Request Strategy Consultation</span>
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
               </Button>
             </div>
           </div>

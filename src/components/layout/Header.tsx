@@ -9,43 +9,43 @@ const serviceMegaMenu = [
     icon: Server,
     title: "Infrastructure & Cloud Operations",
     description: "24/7 oversight and capacity management",
-    href: "/services#infrastructure",
+    href: "/services/infrastructure-cloud-operations",
   },
   {
     icon: Activity,
     title: "System Oversight & Event Reduction",
     description: "Intelligent monitoring and noise reduction",
-    href: "/services#oversight",
+    href: "/services/system-oversight-event-reduction",
   },
   {
     icon: Workflow,
     title: "Automated Corrective Actions",
     description: "Self-healing workflows and runbooks",
-    href: "/services#automation",
+    href: "/services/automated-corrective-actions",
   },
   {
     icon: Gauge,
     title: "Reliability & Performance",
     description: "Engineering excellence at scale",
-    href: "/services#reliability",
+    href: "/services/reliability-performance-engineering",
   },
   {
     icon: ShieldCheck,
     title: "Security & Identity Assurance",
     description: "Access governance and threat monitoring",
-    href: "/services#security",
+    href: "/services/security-identity-assurance",
   },
   {
     icon: BarChart3,
     title: "Cost Efficiency & Capacity",
     description: "Financial transparency and optimization",
-    href: "/services#cost",
+    href: "/services/cost-efficiency-capacity-strategy",
   },
   {
     icon: Handshake,
     title: "Strategic Partnership",
     description: "Dedicated leadership and roadmap planning",
-    href: "/services#partnership",
+    href: "/services/strategic-technology-partnership",
   },
 ];
 
@@ -176,7 +176,7 @@ export function Header() {
                       )} />
                     </Link>
                     {activeDropdown === item.name && (
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[820px] animate-fade-in">
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 w-[820px] pt-2 transition-opacity duration-200 opacity-100">
                         <div className="rounded-2xl border border-slate-200/80 bg-white shadow-2xl shadow-slate-900/10 overflow-hidden backdrop-blur-xl">
                           <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 via-white to-blue-50/20 pointer-events-none" />
                           <div className="relative p-8">
@@ -238,7 +238,8 @@ export function Header() {
                       )} />
                     </button>
                     {activeDropdown === item.name && (
-                      <div className="absolute top-full left-0 mt-2 w-64 rounded-xl border border-slate-200 bg-white p-2 shadow-2xl shadow-slate-900/10 animate-fade-in">
+                      <div className="absolute top-full left-0 w-64 pt-2 transition-opacity duration-200 opacity-100">
+                        <div className="rounded-xl border border-slate-200 bg-white p-2 shadow-2xl shadow-slate-900/10">
                         {item.submenu.map((subitem) => (
                           <Link
                             key={subitem.name}
@@ -249,6 +250,7 @@ export function Header() {
                             <ArrowRight className="h-3.5 w-3.5 opacity-0 -translate-x-1 transition-all duration-200 group-hover/item:opacity-100 group-hover/item:translate-x-0" />
                           </Link>
                         ))}
+                        </div>
                       </div>
                     )}
                   </>

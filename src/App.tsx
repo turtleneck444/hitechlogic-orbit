@@ -19,6 +19,13 @@ import NotFound from "./pages/NotFound";
 import Demo from "./pages/Demo";
 import Principles from "./pages/Principles";
 import Admin from "./pages/Admin";
+import InfrastructureCloudOperations from "./pages/services/InfrastructureCloudOperations";
+import SystemOversightEventReduction from "./pages/services/SystemOversightEventReduction";
+import AutomatedCorrectiveActions from "./pages/services/AutomatedCorrectiveActions";
+import ReliabilityPerformanceEngineering from "./pages/services/ReliabilityPerformanceEngineering";
+import SecurityIdentityAssurance from "./pages/services/SecurityIdentityAssurance";
+import CostEfficiencyCapacityStrategy from "./pages/services/CostEfficiencyCapacityStrategy";
+import StrategicTechnologyPartnership from "./pages/services/StrategicTechnologyPartnership";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +51,14 @@ const App = () => (
           <Route path="/legal/privacy" element={<Privacy />} />
           <Route path="/legal/terms" element={<Terms />} />
           <Route path="/demo" element={<Demo />} />
+          {/* Service Detail Pages */}
+          <Route path="/services/infrastructure-cloud-operations" element={<InfrastructureCloudOperations />} />
+          <Route path="/services/system-oversight-event-reduction" element={<SystemOversightEventReduction />} />
+          <Route path="/services/automated-corrective-actions" element={<AutomatedCorrectiveActions />} />
+          <Route path="/services/reliability-performance-engineering" element={<ReliabilityPerformanceEngineering />} />
+          <Route path="/services/security-identity-assurance" element={<SecurityIdentityAssurance />} />
+          <Route path="/services/cost-efficiency-capacity-strategy" element={<CostEfficiencyCapacityStrategy />} />
+          <Route path="/services/strategic-technology-partnership" element={<StrategicTechnologyPartnership />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

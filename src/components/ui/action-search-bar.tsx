@@ -31,7 +31,7 @@ function useDebounce<T>(value: T, delay: number = 500): T {
   return debouncedValue;
 }
 
-export interface Action {
+interface Action {
   id: string;
   label: string;
   icon: React.ReactNode;

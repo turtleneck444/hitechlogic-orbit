@@ -278,7 +278,7 @@ export default function CostEfficiencyCapacityStrategy() {
                 </p>
               </div>
               <div className="mt-8">
-                <Button variant="default" size="lg" asChild className="bg-green-600 hover:bg-green-700">
+                <Button variant="primary" size="lg" asChild className="bg-green-600 hover:bg-green-700">
                   <Link to="/contact" className="flex items-center gap-2">
                     <span>Get Free Cost Audit</span>
                     <ArrowRight className="h-4 w-4" />
@@ -362,7 +362,7 @@ export default function CostEfficiencyCapacityStrategy() {
           </div>
 
           <div className="mt-8 text-center">
-            <Button variant="default" size="lg" asChild className="bg-green-600 hover:bg-green-700">
+            <Button variant="primary" size="lg" asChild className="bg-green-600 hover:bg-green-700">
               <Link to="/case-studies">See Savings Stories</Link>
             </Button>
           </div>
@@ -430,7 +430,7 @@ export default function CostEfficiencyCapacityStrategy() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button variant="default" size="lg" asChild className="bg-green-600 hover:bg-green-700">
+            <Button variant="primary" size="lg" asChild className="bg-green-600 hover:bg-green-700">
               <Link to="/contact" className="flex items-center gap-2">
                 <span>Start FinOps Journey</span>
                 <ArrowRight className="h-4 w-4" />
@@ -531,7 +531,7 @@ export default function CostEfficiencyCapacityStrategy() {
           </div>
 
           <div className="mt-8 text-center">
-            <Button variant="default" size="lg" asChild className="bg-green-600 hover:bg-green-700">
+            <Button variant="primary" size="lg" asChild className="bg-green-600 hover:bg-green-700">
               <Link to="/pricing">View FinOps Plans</Link>
             </Button>
           </div>
@@ -583,7 +583,7 @@ export default function CostEfficiencyCapacityStrategy() {
                 and build trust with finance partners.
               </p>
               <div className="mt-8">
-                <Button variant="default" size="lg" asChild className="bg-green-600 hover:bg-green-700">
+                <Button variant="primary" size="lg" asChild className="bg-green-600 hover:bg-green-700">
                   <Link to="/demo" className="flex items-center gap-2">
                     <span>Calculate Your ROI</span>
                     <ArrowRight className="h-4 w-4" />
@@ -637,7 +637,7 @@ export default function CostEfficiencyCapacityStrategy() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button variant="default" size="lg" asChild className="bg-green-600 hover:bg-green-700">
+            <Button variant="primary" size="lg" asChild className="bg-green-600 hover:bg-green-700">
               <Link to="/case-studies">View Savings Case Studies</Link>
             </Button>
           </div>

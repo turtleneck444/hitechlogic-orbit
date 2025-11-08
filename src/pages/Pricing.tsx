@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Check, ArrowRight } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const plans = [
   {
@@ -58,8 +59,30 @@ const plans = [
 ];
 
 export default function Pricing() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "HiTechLogic Managed Infrastructure Services",
+    "description": "Comprehensive managed infrastructure operations with monitoring, automation, and reliability engineering",
+    "offers": plans.map(plan => ({
+      "@type": "Offer",
+      "name": plan.name,
+      "description": plan.description,
+      "price": plan.price,
+      "priceCurrency": "USD"
+    }))
+  };
+
   return (
-    <Layout>
+    <>
+      <SEO 
+        title="Pricing Plans - Transparent Infrastructure Management Costs | HiTechLogic"
+        description="Simple, transparent pricing for managed infrastructure operations. Choose from Starter, Growth, or Enterprise plans with 24/7 monitoring, automation, and expert support. No hidden fees, cancel anytime."
+        keywords="infrastructure management pricing, managed services cost, DevOps pricing, SRE services pricing, cloud operations pricing, infrastructure automation cost"
+        canonical="https://hitechlogic.com/pricing"
+        schema={schema}
+      />
+      <Layout>
       {/* Hero Section */}
       <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-hero">
         <div className="container relative z-10 mx-auto max-w-4xl text-center">
@@ -188,6 +211,7 @@ export default function Pricing() {
           </Button>
         </div>
       </section>
-    </Layout>
+      </Layout>
+    </>
   );
 }

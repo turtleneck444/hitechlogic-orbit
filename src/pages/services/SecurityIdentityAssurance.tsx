@@ -278,7 +278,7 @@ export default function SecurityIdentityAssurance() {
                 </p>
               </div>
               <div className="mt-8">
-                <Button variant="default" size="lg" asChild className="bg-red-600 hover:bg-red-700">
+                <Button variant="primary" size="lg" asChild className="bg-red-600 hover:bg-red-700">
                   <Link to="/contact" className="flex items-center gap-2">
                     <span>Get Security Audit</span>
                     <ArrowRight className="h-4 w-4" />
@@ -354,7 +354,7 @@ export default function SecurityIdentityAssurance() {
           </div>
 
           <div className="mt-8 text-center">
-            <Button variant="default" size="lg" asChild className="bg-red-600 hover:bg-red-700">
+            <Button variant="primary" size="lg" asChild className="bg-red-600 hover:bg-red-700">
               <Link to="/case-studies">See Security Success Stories</Link>
             </Button>
           </div>
@@ -422,7 +422,7 @@ export default function SecurityIdentityAssurance() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button variant="default" size="lg" asChild className="bg-red-600 hover:bg-red-700">
+            <Button variant="primary" size="lg" asChild className="bg-red-600 hover:bg-red-700">
               <Link to="/contact" className="flex items-center gap-2">
                 <span>Start Security Journey</span>
                 <ArrowRight className="h-4 w-4" />
@@ -523,7 +523,7 @@ export default function SecurityIdentityAssurance() {
           </div>
 
           <div className="mt-8 text-center">
-            <Button variant="default" size="lg" asChild className="bg-red-600 hover:bg-red-700">
+            <Button variant="primary" size="lg" asChild className="bg-red-600 hover:bg-red-700">
               <Link to="/pricing">View Security Plans</Link>
             </Button>
           </div>
@@ -575,7 +575,7 @@ export default function SecurityIdentityAssurance() {
                 and protects your most valuable assets from ever-evolving threats.
               </p>
               <div className="mt-8">
-                <Button variant="default" size="lg" asChild className="bg-red-600 hover:bg-red-700">
+                <Button variant="primary" size="lg" asChild className="bg-red-600 hover:bg-red-700">
                   <Link to="/demo" className="flex items-center gap-2">
                     <span>View Security Platform</span>
                     <ArrowRight className="h-4 w-4" />
@@ -629,7 +629,7 @@ export default function SecurityIdentityAssurance() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button variant="default" size="lg" asChild className="bg-red-600 hover:bg-red-700">
+            <Button variant="primary" size="lg" asChild className="bg-red-600 hover:bg-red-700">
               <Link to="/case-studies">View Compliance Stories</Link>
             </Button>
           </div>

@@ -278,7 +278,7 @@ export default function StrategicTechnologyPartnership() {
                 </p>
               </div>
               <div className="mt-8">
-                <Button variant="default" size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700">
+                <Button variant="primary" size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700">
                   <Link to="/contact" className="flex items-center gap-2">
                     <span>Explore Partnership</span>
                     <ArrowRight className="h-4 w-4" />
@@ -354,7 +354,7 @@ export default function StrategicTechnologyPartnership() {
           </div>
 
           <div className="mt-8 text-center">
-            <Button variant="default" size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700">
+            <Button variant="primary" size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700">
               <Link to="/case-studies">View Partnership Stories</Link>
             </Button>
           </div>
@@ -422,7 +422,7 @@ export default function StrategicTechnologyPartnership() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button variant="default" size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700">
+            <Button variant="primary" size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700">
               <Link to="/contact" className="flex items-center gap-2">
                 <span>Start Partnership Journey</span>
                 <ArrowRight className="h-4 w-4" />
@@ -523,7 +523,7 @@ export default function StrategicTechnologyPartnership() {
           </div>
 
           <div className="mt-8 text-center">
-            <Button variant="default" size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700">
+            <Button variant="primary" size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700">
               <Link to="/pricing">View Partnership Options</Link>
             </Button>
           </div>
@@ -575,7 +575,7 @@ export default function StrategicTechnologyPartnership() {
                 cultural transformation, and executive alignment.
               </p>
               <div className="mt-8">
-                <Button variant="default" size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700">
+                <Button variant="primary" size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700">
                   <Link to="/demo" className="flex items-center gap-2">
                     <span>See Partnership Model</span>
                     <ArrowRight className="h-4 w-4" />
@@ -629,7 +629,7 @@ export default function StrategicTechnologyPartnership() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button variant="default" size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700">
+            <Button variant="primary" size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700">
               <Link to="/case-studies">Read Partnership Stories</Link>
             </Button>
           </div>

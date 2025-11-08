@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 
 const partnershipQualities = [
   {
@@ -25,9 +26,24 @@ const culturalNotes = [
 ];
 
 export default function About() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About HiTechLogic",
+    "description": "Learn about HiTechLogic's mission to help organizations operate with confidence through managed infrastructure reliability and operational excellence."
+  };
+
   return (
-    <Layout>
-      <section className="bg-white">
+    <>
+      <SEO 
+        title="About HiTechLogic - Leadership & Partnership in Infrastructure Reliability"
+        description="Founded by operators who believe reliability is both a technical practice and a cultural commitment. Learn how HiTechLogic helps organizations achieve operational confidence through expert managed services."
+        keywords="about HiTechLogic, infrastructure reliability, operational excellence, managed services, SRE partnership, DevOps consulting, technology leadership"
+        canonical="https://hitechlogic.com/about"
+        schema={schema}
+      />
+      <Layout>
+        <section className="bg-white">
         <div className="mx-auto w-full max-w-4xl px-6 pt-12 pb-24 sm:pt-16 sm:pb-28 lg:pt-20 lg:pb-32 text-center">
           <span className="eyebrow text-electric-blue/70">Leadership & partnership</span>
           <h1 className="mt-4 text-4xl md:text-5xl leading-tight text-foreground">Steady guidance for complex operations.</h1>
@@ -125,6 +141,7 @@ export default function About() {
           </div>
         </div>
       </section>
-    </Layout>
+      </Layout>
+    </>
   );
 }

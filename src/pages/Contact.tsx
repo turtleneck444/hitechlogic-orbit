@@ -9,6 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const challengeOptions = [
   "Reducing alert noise",
@@ -42,8 +43,23 @@ export default function Contact() {
     }, 1000);
   };
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact HiTechLogic",
+    "description": "Request a strategy consultation to discuss your infrastructure reliability needs"
+  };
+
   return (
-    <Layout>
+    <>
+      <SEO 
+        title="Contact Us - Request Strategy Consultation | HiTechLogic"
+        description="Schedule a 30-minute consultation to discuss your infrastructure reliability challenges. Our team will provide a calm, structured plan to stabilize your operations. Response within one business day."
+        keywords="contact HiTechLogic, infrastructure consultation, managed services inquiry, DevOps consulting, SRE consultation, reliability assessment"
+        canonical="https://hitechlogic.com/contact"
+        schema={schema}
+      />
+      <Layout>
       <section className="bg-white">
         <div className="mx-auto w-full max-w-4xl px-6 pt-12 pb-24 sm:pt-16 sm:pb-28 lg:pt-20 lg:pb-32 text-center">
           <span className="eyebrow text-electric-blue/70">Strategy consultation</span>
@@ -170,6 +186,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
-    </Layout>
+      </Layout>
+    </>
   );
 }

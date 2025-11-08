@@ -278,7 +278,7 @@ export default function ReliabilityPerformanceEngineering() {
                 </p>
               </div>
               <div className="mt-8">
-                <Button variant="default" size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
+                <Button variant="primary" size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
                   <Link to="/contact" className="flex items-center gap-2">
                     <span>Start Reliability Assessment</span>
                     <ArrowRight className="h-4 w-4" />
@@ -354,7 +354,7 @@ export default function ReliabilityPerformanceEngineering() {
           </div>
 
           <div className="mt-8 text-center">
-            <Button variant="default" size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
+            <Button variant="primary" size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
               <Link to="/case-studies">View Success Stories</Link>
             </Button>
           </div>
@@ -422,7 +422,7 @@ export default function ReliabilityPerformanceEngineering() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button variant="default" size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
+            <Button variant="primary" size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
               <Link to="/contact" className="flex items-center gap-2">
                 <span>Start Your Journey</span>
                 <ArrowRight className="h-4 w-4" />
@@ -523,7 +523,7 @@ export default function ReliabilityPerformanceEngineering() {
           </div>
 
           <div className="mt-8 text-center">
-            <Button variant="default" size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
+            <Button variant="primary" size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
               <Link to="/pricing">See Pricing Plans</Link>
             </Button>
           </div>
@@ -575,7 +575,7 @@ export default function ReliabilityPerformanceEngineering() {
                 gracefully and recover automatically.
               </p>
               <div className="mt-8">
-                <Button variant="default" size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
+                <Button variant="primary" size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
                   <Link to="/demo" className="flex items-center gap-2">
                     <span>See Platform Demo</span>
                     <ArrowRight className="h-4 w-4" />
@@ -629,7 +629,7 @@ export default function ReliabilityPerformanceEngineering() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button variant="default" size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
+            <Button variant="primary" size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
               <Link to="/case-studies">Read Customer Stories</Link>
             </Button>
           </div>

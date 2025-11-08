@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Server, Activity, Workflow, ShieldCheck, BarChart3, Handshake, Gauge } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const services = [
   {
@@ -50,8 +51,38 @@ const services = [
 ];
 
 export default function Services() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "provider": {
+      "@type": "Organization",
+      "name": "HiTechLogic"
+    },
+    "serviceType": "Managed Infrastructure Services",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Infrastructure Management Services",
+      "itemListElement": services.map((service, index) => ({
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": service.title,
+          "description": service.overview
+        }
+      }))
+    }
+  };
+
   return (
-    <Layout>
+    <>
+      <SEO 
+        title="Managed Services - Full-Spectrum Infrastructure Reliability | HiTechLogic"
+        description="Seven service pillars for complete infrastructure management: 24/7 operations, intelligent monitoring, automation, reliability engineering, security, cost optimization, and strategic partnership."
+        keywords="managed infrastructure services, cloud operations, monitoring services, automation services, reliability engineering, security management, cost optimization, DevOps services"
+        canonical="https://hitechlogic.com/services"
+        schema={schema}
+      />
+      <Layout>
       <section className="bg-white">
         <div className="mx-auto w-full max-w-5xl px-6 pt-12 pb-24 sm:pt-16 sm:pb-28 lg:pt-20 lg:pb-32 text-center">
           <span className="eyebrow text-electric-blue/70">Service pillars</span>
@@ -102,6 +133,7 @@ export default function Services() {
           </div>
         </div>
       </section>
-    </Layout>
+      </Layout>
+    </>
   );
 }

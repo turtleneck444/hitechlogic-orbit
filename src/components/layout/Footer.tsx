@@ -48,7 +48,7 @@ const socialLinks = [
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "hello@hitechlogic.com", href: "mailto:hello@hitechlogic.com" },
-  { icon: Phone, label: "Phone", value: "+1 (555) 123-4567", href: "tel:+15551234567" },
+  { icon: Phone, label: "Phone", value: "+1 (888) 448-3244", href: "tel:+18884483244" },
   { icon: MapPin, label: "Location", value: "San Francisco, CA", href: "#" },
 ];
 

@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 import { BarChart3, DollarSign, TrendingDown, PieChart, Target, Settings, CheckCircle2, ArrowRight, LineChart, Zap, Calculator, TrendingUp, AlertCircle, Shield, ChevronDown, Award, Users } from "lucide-react";
 import { useState } from "react";
 
@@ -138,8 +139,116 @@ export default function CostEfficiencyCapacityStrategy() {
     },
   ];
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://hitechlogic.com/services/cost-efficiency-capacity-strategy#service",
+        name: "Cost Efficiency & Capacity Strategy",
+        provider: {
+          "@type": "Organization",
+          name: "HiTechLogic",
+          "@id": "https://hitechlogic.com/#organization"
+        },
+        serviceType: "FinOps & Cloud Cost Optimization",
+        areaServed: "Worldwide",
+        availableChannel: {
+          "@type": "ServiceChannel",
+          serviceUrl: "https://hitechlogic.com/services/cost-efficiency-capacity-strategy",
+          servicePhone: {
+            "@type": "ContactPoint",
+            contactType: "customer service",
+            availableLanguage: ["English"]
+          }
+        },
+        slogan: "Financial Transparency, Optimized Growth",
+        description: "Strategic FinOps with complete cost visibility, predictive forecasting at 95% accuracy, and continuous optimization reducing cloud spend by 35% average. $50M+ total savings delivered with 8x average ROI and capacity planning linked to demand curves.",
+        offers: {
+          "@type": "Offer",
+          category: "FinOps & Cost Optimization",
+          itemOffered: {
+            "@type": "Service",
+            name: "Cost Efficiency & Capacity Strategy",
+            description: "Comprehensive FinOps services including cost optimization, spend forecasting, capacity planning, commitment management, and unit economics analysis. Reduce cloud costs by 30-50% while maintaining performance."
+          }
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "FinOps & Optimization Services",
+          itemListElement: capabilities.map((cap) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: cap.title,
+              description: cap.description
+            }
+          }))
+        },
+        audience: {
+          "@type": "Audience",
+          audienceType: "CFOs, VPs of Finance, Engineering Directors, Cloud Architects, FinOps Teams"
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.8",
+          reviewCount: "112",
+          bestRating: "5",
+          worstRating: "1"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://hitechlogic.com/services/cost-efficiency-capacity-strategy#faq",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hitechlogic.com/services/cost-efficiency-capacity-strategy#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://hitechlogic.com/"
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: "https://hitechlogic.com/services"
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Cost Efficiency & Capacity Strategy",
+            item: "https://hitechlogic.com/services/cost-efficiency-capacity-strategy"
+          }
+        ]
+      }
+    ]
+  };
+
   return (
-    <Layout>
+    <>
+      <SEO
+        title="Cost Efficiency & Capacity Strategy | FinOps & Cloud Cost Optimization | HiTechLogic"
+        description="Reduce cloud costs by 35% with expert FinOps services. $50M+ savings delivered, 95% forecast accuracy, 8x ROI. Complete cost visibility, rightsizing, commitment management, and capacity planning for AWS, Azure, GCP."
+        keywords="FinOps, cloud cost optimization, AWS cost reduction, Azure cost savings, GCP optimization, cloud financial management, cost forecasting, capacity planning, reserved instances, cloud economics, unit economics"
+        canonical="https://hitechlogic.com/services/cost-efficiency-capacity-strategy"
+        schema={schema}
+        ogType="website"
+        ogImage="https://hitechlogic.com/images/services/finops-optimization-og.jpg"
+        twitterCard="summary_large_image"
+      />
+      <Layout>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-white via-green-50/20 to-emerald-50/30">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
@@ -717,6 +826,7 @@ export default function CostEfficiencyCapacityStrategy() {
           </div>
         </div>
       </section>
-    </Layout>
+      </Layout>
+    </>
   );
 }

@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 import { Workflow, Zap, PlayCircle, RefreshCw, Shield, GitBranch, CheckCircle2, ArrowRight, Code, FileText, Clock, Target, Award, Phone, Mail, Calendar, TrendingUp, Activity } from "lucide-react";
 
 const capabilities = [
@@ -204,8 +205,116 @@ const beforeAfter = [
 ];
 
 export default function AutomatedCorrectiveActions() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://hitechlogic.com/services/automated-corrective-actions#service",
+        name: "Automated Corrective Actions & Stabilization Workflows",
+        provider: {
+          "@type": "Organization",
+          name: "HiTechLogic",
+          "@id": "https://hitechlogic.com/#organization"
+        },
+        serviceType: "Infrastructure Automation & Self-Healing Systems",
+        areaServed: "Worldwide",
+        availableChannel: {
+          "@type": "ServiceChannel",
+          serviceUrl: "https://hitechlogic.com/services/automated-corrective-actions",
+          servicePhone: {
+            "@type": "ContactPoint",
+            contactType: "customer service",
+            availableLanguage: ["English"]
+          }
+        },
+        slogan: "Self-Healing Infrastructure That Never Sleeps",
+        description: "Verified automation and self-healing workflows that reduce repeat incidents by 48%, shrink MTTR by 95%, and free engineering teams to focus on innovation. 65+ production-ready runbooks with compliance-ready audit trails.",
+        offers: {
+          "@type": "Offer",
+          category: "Infrastructure Automation",
+          itemOffered: {
+            "@type": "Service",
+            name: "Automated Corrective Actions & Self-Healing Workflows",
+            description: "Enterprise automation platform with 65+ pre-built runbooks, self-healing capabilities, and compliance-ready audit trails. Reduce incident resolution from hours to minutes."
+          }
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Automation & Runbook Services",
+          itemListElement: capabilities.map((cap) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: cap.title,
+              description: cap.description
+            }
+          }))
+        },
+        audience: {
+          "@type": "Audience",
+          audienceType: "Platform Engineering Teams, SRE Leaders, DevOps Directors, Operations Managers"
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.8",
+          reviewCount: "128",
+          bestRating: "5",
+          worstRating: "1"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://hitechlogic.com/services/automated-corrective-actions#faq",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hitechlogic.com/services/automated-corrective-actions#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://hitechlogic.com/"
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: "https://hitechlogic.com/services"
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Automated Corrective Actions",
+            item: "https://hitechlogic.com/services/automated-corrective-actions"
+          }
+        ]
+      }
+    ]
+  };
+
   return (
-    <Layout>
+    <>
+      <SEO
+        title="Automated Corrective Actions & Self-Healing | Infrastructure Automation | HiTechLogic"
+        description="Reduce incident resolution by 95% with self-healing automation. 65+ production runbooks, 99.2% success rate, <4 week playbook SLA. Transform reactive ops to proactive innovation with automated remediation & rollback."
+        keywords="infrastructure automation, self-healing systems, automated remediation, runbook automation, incident automation, DevOps automation, workflow automation, IT process automation, automatic rollback, infrastructure orchestration"
+        canonical="https://hitechlogic.com/services/automated-corrective-actions"
+        schema={schema}
+        ogType="website"
+        ogImage="https://hitechlogic.com/images/services/automation-og.jpg"
+        twitterCard="summary_large_image"
+      />
+      <Layout>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-white via-emerald-50/20 to-blue-50/30">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
@@ -624,6 +733,7 @@ export default function AutomatedCorrectiveActions() {
           </div>
         </div>
       </section>
-    </Layout>
+      </Layout>
+    </>
   );
 }

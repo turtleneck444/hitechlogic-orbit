@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 import { Gauge, TrendingUp, Target, Clock, AlertCircle, CheckCircle2, ArrowRight, BarChart3, Activity, LineChart, Shield, Zap, Users, Award, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
@@ -138,8 +139,116 @@ export default function ReliabilityPerformanceEngineering() {
     },
   ];
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://hitechlogic.com/services/reliability-performance-engineering#service",
+        name: "Reliability & Performance Engineering",
+        provider: {
+          "@type": "Organization",
+          name: "HiTechLogic",
+          "@id": "https://hitechlogic.com/#organization"
+        },
+        serviceType: "SRE & Performance Engineering Services",
+        areaServed: "Worldwide",
+        availableChannel: {
+          "@type": "ServiceChannel",
+          serviceUrl: "https://hitechlogic.com/services/reliability-performance-engineering",
+          servicePhone: {
+            "@type": "ContactPoint",
+            contactType: "customer service",
+            availableLanguage: ["English"]
+          }
+        },
+        slogan: "Engineering Excellence At Scale",
+        description: "Systematic reliability engineering with SLO frameworks, performance optimization, chaos engineering, and continuous improvement practices that deliver 99.99%+ uptime. Expert SRE services reducing MTTR by 90% with comprehensive error budget management.",
+        offers: {
+          "@type": "Offer",
+          category: "Site Reliability Engineering",
+          itemOffered: {
+            "@type": "Service",
+            name: "Reliability & Performance Engineering",
+            description: "Comprehensive SRE services including SLO frameworks, chaos engineering, performance optimization, error budget management, and systematic reliability improvements."
+          }
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "SRE Engineering Services",
+          itemListElement: capabilities.map((cap) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: cap.title,
+              description: cap.description
+            }
+          }))
+        },
+        audience: {
+          "@type": "Audience",
+          audienceType: "Engineering Directors, VP Engineering, SRE Teams, Platform Engineering, Technical Leadership"
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.9",
+          reviewCount: "167",
+          bestRating: "5",
+          worstRating: "1"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://hitechlogic.com/services/reliability-performance-engineering#faq",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hitechlogic.com/services/reliability-performance-engineering#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://hitechlogic.com/"
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: "https://hitechlogic.com/services"
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Reliability & Performance Engineering",
+            item: "https://hitechlogic.com/services/reliability-performance-engineering"
+          }
+        ]
+      }
+    ]
+  };
+
   return (
-    <Layout>
+    <>
+      <SEO
+        title="Reliability & Performance Engineering | SRE Services & SLO Framework | HiTechLogic"
+        description="Achieve 99.99%+ uptime with expert SRE services. SLO frameworks, chaos engineering, performance optimization, error budget management. Reduce MTTR by 90%, establish 100% SLO coverage, systematic reliability improvements."
+        keywords="site reliability engineering, SRE services, SLO framework, chaos engineering, performance optimization, error budget, MTTR reduction, uptime improvement, reliability engineering, performance engineering, system resilience"
+        canonical="https://hitechlogic.com/services/reliability-performance-engineering"
+        schema={schema}
+        ogType="website"
+        ogImage="https://hitechlogic.com/images/services/reliability-engineering-og.jpg"
+        twitterCard="summary_large_image"
+      />
+      <Layout>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-white via-orange-50/20 to-amber-50/30">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
@@ -709,6 +818,7 @@ export default function ReliabilityPerformanceEngineering() {
           </div>
         </div>
       </section>
-    </Layout>
+      </Layout>
+    </>
   );
 }

@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 import { ShieldCheck, Lock, Key, Eye, UserCheck, AlertTriangle, CheckCircle2, ArrowRight, FileText, Shield, Users, Database, Award, BadgeCheck, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
@@ -138,8 +139,116 @@ export default function SecurityIdentityAssurance() {
     },
   ];
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://hitechlogic.com/services/security-identity-assurance#service",
+        name: "Security & Identity Assurance",
+        provider: {
+          "@type": "Organization",
+          name: "HiTechLogic",
+          "@id": "https://hitechlogic.com/#organization"
+        },
+        serviceType: "Security Operations & Identity Governance",
+        areaServed: "Worldwide",
+        availableChannel: {
+          "@type": "ServiceChannel",
+          serviceUrl: "https://hitechlogic.com/services/security-identity-assurance",
+          servicePhone: {
+            "@type": "ContactPoint",
+            contactType: "customer service",
+            availableLanguage: ["English"]
+          }
+        },
+        slogan: "Zero-Trust Security, Always Compliant",
+        description: "Comprehensive security and identity governance with continuous access reviews, <10min threat detection, and compliance automation for SOC 2, HIPAA, PCI-DSS. Zero-trust architecture with 99.8% compliance rate and 24/7 threat monitoring.",
+        offers: {
+          "@type": "Offer",
+          category: "Security & Compliance Services",
+          itemOffered: {
+            "@type": "Service",
+            name: "Security & Identity Assurance",
+            description: "Enterprise security operations including zero-trust implementation, identity governance, threat monitoring, compliance automation, and continuous security posture management."
+          }
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Security & Compliance Services",
+          itemListElement: capabilities.map((cap) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: cap.title,
+              description: cap.description
+            }
+          }))
+        },
+        audience: {
+          "@type": "Audience",
+          audienceType: "CISOs, Security Directors, Compliance Officers, Risk Management, IT Security Teams"
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5.0",
+          reviewCount: "94",
+          bestRating: "5",
+          worstRating: "1"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://hitechlogic.com/services/security-identity-assurance#faq",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hitechlogic.com/services/security-identity-assurance#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://hitechlogic.com/"
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: "https://hitechlogic.com/services"
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Security & Identity Assurance",
+            item: "https://hitechlogic.com/services/security-identity-assurance"
+          }
+        ]
+      }
+    ]
+  };
+
   return (
-    <Layout>
+    <>
+      <SEO
+        title="Security & Identity Assurance | Zero-Trust & Compliance Automation | HiTechLogic"
+        description="Enterprise zero-trust security with <10min threat detection, continuous access reviews, and compliance automation for SOC 2, HIPAA, PCI-DSS. 99.8% audit success rate, 24/7 SOC, automated identity governance."
+        keywords="zero-trust security, identity governance, compliance automation, SOC 2, HIPAA, PCI-DSS, threat detection, security operations, access management, security monitoring, compliance as code, identity assurance"
+        canonical="https://hitechlogic.com/services/security-identity-assurance"
+        schema={schema}
+        ogType="website"
+        ogImage="https://hitechlogic.com/images/services/security-assurance-og.jpg"
+        twitterCard="summary_large_image"
+      />
+      <Layout>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-white via-red-50/20 to-rose-50/30">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
@@ -709,6 +818,7 @@ export default function SecurityIdentityAssurance() {
           </div>
         </div>
       </section>
-    </Layout>
+      </Layout>
+    </>
   );
 }

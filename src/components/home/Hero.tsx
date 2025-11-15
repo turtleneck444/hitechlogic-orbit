@@ -41,25 +41,32 @@ export function Hero() {
             {/* Badge with Animation */}
             <div className="inline-flex items-center space-x-2 px-4 py-2 rounded-full border-2 border-[hsl(var(--accent-blue))]/30 bg-gradient-to-r from-blue-50 to-indigo-50/50 mb-5 shadow-lg shadow-[hsl(var(--accent-blue))]/10 hover:shadow-xl hover:shadow-[hsl(var(--accent-blue))]/20 transition-all duration-300 group/badge">
               <div className="w-2 h-2 rounded-full bg-[hsl(var(--accent-blue))] animate-pulse" />
-              <span className="text-sm font-bold text-[hsl(var(--navy))] tracking-wide">Managed reliability, delivered calmly</span>
+              <span className="text-sm font-bold text-[hsl(var(--navy))] tracking-wide">AI-Powered Cloud Operations & FinOps</span>
               <Zap className="h-4 w-4 text-[hsl(var(--accent-blue))] group-hover/badge:rotate-12 transition-transform" />
             </div>
 
+            {/* MSP Heritage Sub-headline */}
+            <p className="text-base md:text-lg font-semibold text-[hsl(var(--accent-blue))] mb-4 tracking-wide">
+              Enterprise-Grade Managed Services Powered by Autonomous Agents
+            </p>
+            <p className="text-sm text-slate-600 mb-4 max-w-2xl">
+              24/7 MSP operations with AI-driven automation—managing your infrastructure, security, and compliance so you can focus on innovation.
+            </p>
+
             {/* Main Headline with Gradient */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-5 leading-[1.15] text-[hsl(var(--navy))]">
-              <span className="inline-block hover:scale-105 transition-transform duration-300">Where</span>{" "}
-              <span className="inline-block hover:scale-105 transition-transform duration-300">High</span>{" "}
-              <span className="inline-block hover:scale-105 transition-transform duration-300">Reliability</span>{" "}
-              <span className="inline-block hover:scale-105 transition-transform duration-300">Meets</span>{" "}
+              <span className="inline-block hover:scale-105 transition-transform duration-300">We</span>{" "}
+              <span className="inline-block hover:scale-105 transition-transform duration-300">Engineer</span>{" "}
+              <span className="inline-block hover:scale-105 transition-transform duration-300">Your</span>{" "}
               <span className="relative inline-block group/confidence hover:scale-105 transition-transform duration-300 text-[hsl(var(--accent-blue))]">
-                Innovation
+                Competitive Advantage
                 <div className="absolute -inset-1 bg-gradient-to-r from-[hsl(var(--accent-blue))]/20 to-[hsl(var(--signal-purple))]/20 blur-xl group-hover/confidence:blur-2xl transition-all duration-300 -z-10" />
               </span>
             </h1>
 
             {/* Subheadline with Better Typography */}
             <p className="text-xl md:text-2xl text-slate-700 mb-6 leading-relaxed max-w-2xl font-light">
-              Global managed services that guarantee <span className="font-semibold text-[hsl(var(--navy))]">uptime</span>, <span className="font-semibold text-[hsl(var(--navy))]">security</span>, and <span className="font-semibold text-[hsl(var(--accent-blue))]">strategic IT excellence</span> for the modern enterprise.
+              Slash cloud costs by <span className="font-bold text-[hsl(var(--accent-blue))]">50%</span>, reduce MTTR by <span className="font-bold text-[hsl(var(--accent-blue))]">75%</span>, and automate operations with AI-powered FinOps, security, and reliability engineering.
             </p>
 
             {/* Trust Indicators */}
@@ -352,12 +359,12 @@ export function Hero() {
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-transparent rounded-full blur-2xl opacity-0 group-hover/metric:opacity-100 transition-opacity" />
                   <div className="relative">
                     <div className="flex items-start justify-between mb-1.5">
-                      <div className="text-3xl lg:text-4xl font-black bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))] bg-clip-text text-transparent group-hover/metric:scale-105 transition-transform">85%</div>
+                      <div className="text-3xl lg:text-4xl font-black bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))] bg-clip-text text-transparent group-hover/metric:scale-105 transition-transform">50%</div>
                       <div className="p-1.5 rounded-lg bg-[hsl(var(--accent-blue))]/10 group-hover/metric:bg-[hsl(var(--accent-blue))]/20 transition-colors">
                         <TrendingDown className="h-4 w-4 text-[hsl(var(--accent-blue))] group-hover/metric:scale-110 group-hover/metric:-rotate-12 transition-all" />
                       </div>
                     </div>
-                    <div className="text-[10px] text-slate-600 uppercase tracking-wider font-bold group-hover/metric:text-[hsl(var(--accent-blue))] transition-colors">Alerts Filtered</div>
+                    <div className="text-[10px] text-slate-600 uppercase tracking-wider font-bold group-hover/metric:text-[hsl(var(--accent-blue))] transition-colors">Cloud Cost Savings</div>
                   </div>
                 </div>
 
@@ -366,12 +373,12 @@ export function Hero() {
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[hsl(var(--signal-purple))]/10 to-transparent rounded-full blur-2xl opacity-0 group-hover/metric:opacity-100 transition-opacity" />
                   <div className="relative">
                     <div className="flex items-start justify-between mb-1.5">
-                      <div className="text-3xl lg:text-4xl font-black bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))] bg-clip-text text-transparent group-hover/metric:scale-105 transition-transform">120+</div>
+                      <div className="text-3xl lg:text-4xl font-black bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))] bg-clip-text text-transparent group-hover/metric:scale-105 transition-transform">90%</div>
                       <div className="p-1.5 rounded-lg bg-[hsl(var(--signal-purple))]/10 group-hover/metric:bg-[hsl(var(--signal-purple))]/20 transition-colors">
                         <BarChart3 className="h-4 w-4 text-[hsl(var(--signal-purple))] group-hover/metric:scale-110 group-hover/metric:rotate-12 transition-all" />
                       </div>
                     </div>
-                    <div className="text-[10px] text-slate-600 uppercase tracking-wider font-bold group-hover/metric:text-[hsl(var(--signal-purple))] transition-colors">Tasks Automated</div>
+                    <div className="text-[10px] text-slate-600 uppercase tracking-wider font-bold group-hover/metric:text-[hsl(var(--signal-purple))] transition-colors">Alert Noise Reduced</div>
                   </div>
                 </div>
 
@@ -380,12 +387,12 @@ export function Hero() {
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-transparent rounded-full blur-2xl opacity-0 group-hover/metric:opacity-100 transition-opacity" />
                   <div className="relative">
                     <div className="flex items-start justify-between mb-1.5">
-                      <div className="text-3xl lg:text-4xl font-black bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))] bg-clip-text text-transparent group-hover/metric:scale-105 transition-transform">38</div>
+                      <div className="text-3xl lg:text-4xl font-black bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))] bg-clip-text text-transparent group-hover/metric:scale-105 transition-transform">75%</div>
                       <div className="p-1.5 rounded-lg bg-green-500/10 group-hover/metric:bg-green-500/20 transition-colors">
                         <ShieldCheck className="h-4 w-4 text-green-600 group-hover/metric:scale-110 group-hover/metric:rotate-12 transition-all" />
                       </div>
                     </div>
-                    <div className="text-[10px] text-slate-600 uppercase tracking-wider font-bold group-hover/metric:text-green-600 transition-colors">Threats Prevented</div>
+                    <div className="text-[10px] text-slate-600 uppercase tracking-wider font-bold group-hover/metric:text-green-600 transition-colors">Faster MTTR</div>
                   </div>
                 </div>
               </div>

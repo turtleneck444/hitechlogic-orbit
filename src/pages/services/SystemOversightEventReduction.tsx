@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 import { Activity, Bell, BellOff, Filter, TrendingDown, Brain, AlertTriangle, CheckCircle2, ArrowRight, BarChart, Zap, Clock, Award, Phone, Mail, Calendar, Target, LineChart } from "lucide-react";
 
 const capabilities = [
@@ -204,8 +205,116 @@ const trustIndicators = [
 ];
 
 export default function SystemOversightEventReduction() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://hitechlogic.com/services/system-oversight-event-reduction#service",
+        name: "Intelligent System Oversight & Event Reduction",
+        provider: {
+          "@type": "Organization",
+          name: "HiTechLogic",
+          "@id": "https://hitechlogic.com/#organization"
+        },
+        serviceType: "Intelligent Monitoring & Alert Management",
+        areaServed: "Worldwide",
+        availableChannel: {
+          "@type": "ServiceChannel",
+          serviceUrl: "https://hitechlogic.com/services/system-oversight-event-reduction",
+          servicePhone: {
+            "@type": "ContactPoint",
+            contactType: "customer service",
+            availableLanguage: ["English"]
+          }
+        },
+        slogan: "Transform Alert Chaos into Actionable Intelligence",
+        description: "AI-powered event correlation and intelligent monitoring that reduces alert noise by 82%, eliminates alert fatigue, and accelerates incident response through automated root cause analysis and smart escalation.",
+        offers: {
+          "@type": "Offer",
+          category: "Monitoring & Alert Management",
+          itemOffered: {
+            "@type": "Service",
+            name: "Intelligent System Oversight & Event Reduction",
+            description: "ML-powered event correlation, noise reduction, and smart alerting that transforms thousands of alerts into actionable incidents with automatic root cause analysis."
+          }
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Event Management Services",
+          itemListElement: capabilities.map((cap) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: cap.title,
+              description: cap.description
+            }
+          }))
+        },
+        audience: {
+          "@type": "Audience",
+          audienceType: "SRE Teams, DevOps Engineers, Operations Managers, Platform Engineering Leads"
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.9",
+          reviewCount: "142",
+          bestRating: "5",
+          worstRating: "1"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://hitechlogic.com/services/system-oversight-event-reduction#faq",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hitechlogic.com/services/system-oversight-event-reduction#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://hitechlogic.com/"
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: "https://hitechlogic.com/services"
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "System Oversight & Event Reduction",
+            item: "https://hitechlogic.com/services/system-oversight-event-reduction"
+          }
+        ]
+      }
+    ]
+  };
+
   return (
-    <Layout>
+    <>
+      <SEO
+        title="System Oversight & Event Reduction | AI-Powered Alert Management | HiTechLogic"
+        description="Reduce alert noise by 82% with intelligent event correlation & ML-powered monitoring. <2min detection time, <1% false positives, automatic root cause analysis. Eliminate alert fatigue and focus on what matters."
+        keywords="alert management, event correlation, monitoring noise reduction, AI-powered monitoring, intelligent alerting, alert fatigue, incident correlation, root cause analysis, smart escalation, ML monitoring, observability"
+        canonical="https://hitechlogic.com/services/system-oversight-event-reduction"
+        schema={schema}
+        ogType="website"
+        ogImage="https://hitechlogic.com/images/services/event-reduction-og.jpg"
+        twitterCard="summary_large_image"
+      />
+      <Layout>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-white via-purple-50/20 to-blue-50/30">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
@@ -631,6 +740,7 @@ export default function SystemOversightEventReduction() {
           </div>
         </div>
       </section>
-    </Layout>
+      </Layout>
+    </>
   );
 }

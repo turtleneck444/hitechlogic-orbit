@@ -84,7 +84,7 @@ export default function Contact() {
               <div className="space-y-6">
                 {[
                   { icon: Mail, label: "Email", value: "contact@hitechlogic.com" },
-                  { icon: Phone, label: "Phone", value: "+1 (555) 123-4567" },
+                  { icon: Phone, label: "Phone", value: "+1 (888) 448-3244" },
                   { icon: MapPin, label: "Offices", value: "New York • Austin • Remote" },
                 ].map((item) => (
                   <Card key={item.label} className="flex items-center gap-4 p-6">

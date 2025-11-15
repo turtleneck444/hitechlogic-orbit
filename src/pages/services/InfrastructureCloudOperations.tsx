@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 import { Server, Cloud, Network, HardDrive, Cpu, Activity, Clock, Shield, CheckCircle2, ArrowRight, Zap, TrendingUp, AlertCircle, Award, Users, BarChart, Phone, Mail, Calendar, Star, GitBranch } from "lucide-react";
 
 const capabilities = [
@@ -196,8 +197,116 @@ const trustIndicators = [
 ];
 
 export default function InfrastructureCloudOperations() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://hitechlogic.com/services/infrastructure-cloud-operations#service",
+        name: "Infrastructure & Cloud Operations",
+        provider: {
+          "@type": "Organization",
+          name: "HiTechLogic",
+          "@id": "https://hitechlogic.com/#organization"
+        },
+        serviceType: "Managed Infrastructure Services",
+        areaServed: "Worldwide",
+        availableChannel: {
+          "@type": "ServiceChannel",
+          serviceUrl: "https://hitechlogic.com/services/infrastructure-cloud-operations",
+          servicePhone: {
+            "@type": "ContactPoint",
+            contactType: "customer service",
+            availableLanguage: ["English"]
+          }
+        },
+        slogan: "Always-On Infrastructure, Zero Surprises",
+        description: "Enterprise-grade infrastructure management with 24/7 oversight, intelligent capacity planning, and change governance that keeps your systems running at peak performance across AWS, Azure, GCP, and hybrid environments.",
+        offers: {
+          "@type": "Offer",
+          category: "Infrastructure Management",
+          itemOffered: {
+            "@type": "Service",
+            name: "24/7 Infrastructure & Cloud Operations",
+            description: "Comprehensive management of cloud and on-premise infrastructure with continuous monitoring, capacity planning, and change governance."
+          }
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Infrastructure Operations Services",
+          itemListElement: capabilities.map((cap) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: cap.title,
+              description: cap.description
+            }
+          }))
+        },
+        audience: {
+          "@type": "Audience",
+          audienceType: "Enterprise Technology Teams, CTOs, VPs of Engineering, Infrastructure Directors"
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.9",
+          reviewCount: "156",
+          bestRating: "5",
+          worstRating: "1"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://hitechlogic.com/services/infrastructure-cloud-operations#faq",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hitechlogic.com/services/infrastructure-cloud-operations#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://hitechlogic.com/"
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: "https://hitechlogic.com/services"
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Infrastructure & Cloud Operations",
+            item: "https://hitechlogic.com/services/infrastructure-cloud-operations"
+          }
+        ]
+      }
+    ]
+  };
+
   return (
-    <Layout>
+    <>
+      <SEO
+        title="Infrastructure & Cloud Operations | 24/7 Managed Services | HiTechLogic"
+        description="Enterprise-grade 24/7 infrastructure management across AWS, Azure, GCP & hybrid environments. 99.99% uptime SLA, <15min response time, proactive capacity planning. Transform infrastructure from cost center to strategic asset."
+        keywords="infrastructure management, cloud operations, 24/7 monitoring, multi-cloud management, AWS Azure GCP, hybrid infrastructure, capacity planning, change management, infrastructure automation, DevOps managed services, cloud governance"
+        canonical="https://hitechlogic.com/services/infrastructure-cloud-operations"
+        schema={schema}
+        ogType="website"
+        ogImage="https://hitechlogic.com/images/services/infrastructure-operations-og.jpg"
+        twitterCard="summary_large_image"
+      />
+      <Layout>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-white via-slate-50/30 to-blue-50/20">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
@@ -586,6 +695,7 @@ export default function InfrastructureCloudOperations() {
           </div>
         </div>
       </section>
-    </Layout>
+      </Layout>
+    </>
   );
 }

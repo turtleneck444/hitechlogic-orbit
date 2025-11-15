@@ -1,12 +1,17 @@
 import { Layout } from "@/components/layout/Layout";
 import { Hero } from "@/components/home/Hero";
+import { TrustBar } from "@/components/home/TrustBar";
 import { ValuePillars } from "@/components/home/ValuePillars";
 import { HowItWorks } from "@/components/home/HowItWorks";
-import { HeadlineSection } from "@/components/home/HeadlineSection";
 import { ServiceExplorer } from "@/components/home/ServiceExplorer";
 import { ProofSection } from "@/components/home/ProofSection";
-import { ReliabilityBaselineCTA } from "@/components/home/ReliabilityBaselineCTA";
 import { CTASection } from "@/components/home/CTASection";
+import { AssessmentTool } from "@/components/home/AssessmentTool";
+import { CaseStudies } from "@/components/home/CaseStudies";
+import { AIAutomationFlow } from "@/components/home/AIAutomationFlow";
+import { ROICalculator } from "@/components/home/ROICalculator";
+import { RapidPrototyping } from "@/components/home/RapidPrototyping";
+import { TestimonialCarousel } from "@/components/home/TestimonialCarousel";
 import { SEO } from "@/components/SEO";
 
 const Index = () => {
@@ -23,7 +28,7 @@ const Index = () => {
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-555-123-4567",
+      "telephone": "+1-888-448-3244",
       "contactType": "Sales",
       "email": "contact@hitechlogic.com"
     },
@@ -37,18 +42,24 @@ const Index = () => {
 
   return (
     <>
-      <SEO 
-        title="HiTechLogic - AI-Powered Infrastructure Reliability & Managed Operations"
-        description="Transform your infrastructure with AI-powered reliability engineering. Reduce alert noise by 80-90%, accelerate MTTR, and automate operations with intelligent monitoring and self-healing workflows."
-        keywords="infrastructure reliability, managed operations, AI automation, alert noise reduction, MTTR improvement, cloud operations, DevOps automation, intelligent monitoring, self-healing infrastructure, SRE services"
+      <SEO
+        title="HiTechLogic - Slash Cloud Costs 50%, Secure Against Threats & Automate with AI"
+        description="AI-powered cloud operations, FinOps, and security solutions. Reduce cloud costs by 50%, cut MTTR by 75%, and eliminate 90% of alert noise with intelligent automation and 24/7 managed services."
+        keywords="cloud cost optimization, finops, cloud security, AI automation, MTTR reduction, alert noise reduction, devops automation, kubernetes, zero-trust security, soc 2 compliance, cloud migration, site reliability engineering"
         schema={schema}
       />
       <Layout>
         <Hero />
+        <TrustBar />
         <ValuePillars />
-        <HowItWorks />
-        <HeadlineSection />
         <ServiceExplorer />
+        <RapidPrototyping />
+        <AIAutomationFlow />
+        <HowItWorks />
+        <ROICalculator />
+        <AssessmentTool />
+        <CaseStudies />
+        <TestimonialCarousel />
         <ProofSection />
         <CTASection />
       </Layout>

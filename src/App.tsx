@@ -7,6 +7,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Platform from "./pages/Platform";
 import Services from "./pages/Services";
+import Resources from "./pages/Resources";
 import Approach from "./pages/Approach";
 import Pricing from "./pages/Pricing";
 import CaseStudies from "./pages/CaseStudies";
@@ -19,6 +20,7 @@ import NotFound from "./pages/NotFound";
 import Demo from "./pages/Demo";
 import Principles from "./pages/Principles";
 import Admin from "./pages/Admin";
+import { AdminProvider } from "./contexts/AdminContext";
 import InfrastructureCloudOperations from "./pages/services/InfrastructureCloudOperations";
 import SystemOversightEventReduction from "./pages/services/SystemOversightEventReduction";
 import AutomatedCorrectiveActions from "./pages/services/AutomatedCorrectiveActions";
@@ -26,6 +28,7 @@ import ReliabilityPerformanceEngineering from "./pages/services/ReliabilityPerfo
 import SecurityIdentityAssurance from "./pages/services/SecurityIdentityAssurance";
 import CostEfficiencyCapacityStrategy from "./pages/services/CostEfficiencyCapacityStrategy";
 import StrategicTechnologyPartnership from "./pages/services/StrategicTechnologyPartnership";
+import RapidPrototyping from "./pages/services/RapidPrototyping";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +43,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/platform" element={<Platform />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/resources" element={<Resources />} />
           <Route path="/approach" element={<Approach />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/case-studies" element={<CaseStudies />} />
@@ -47,7 +51,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/principles" element={<Principles />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin" element={<AdminProvider><Admin /></AdminProvider>} />
           <Route path="/legal/privacy" element={<Privacy />} />
           <Route path="/legal/terms" element={<Terms />} />
           <Route path="/demo" element={<Demo />} />
@@ -59,6 +63,7 @@ const App = () => (
           <Route path="/services/security-identity-assurance" element={<SecurityIdentityAssurance />} />
           <Route path="/services/cost-efficiency-capacity-strategy" element={<CostEfficiencyCapacityStrategy />} />
           <Route path="/services/strategic-technology-partnership" element={<StrategicTechnologyPartnership />} />
+          <Route path="/services/rapid-prototyping" element={<RapidPrototyping />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

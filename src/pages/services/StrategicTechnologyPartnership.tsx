@@ -2,6 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 import { Handshake, Users, Target, TrendingUp, Calendar, MessageSquare, CheckCircle2, ArrowRight, BookOpen, Lightbulb, Award, Compass, AlertCircle, Shield, ChevronDown, Building, Clock } from "lucide-react";
 import { useState } from "react";
 
@@ -138,8 +139,116 @@ export default function StrategicTechnologyPartnership() {
     },
   ];
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://hitechlogic.com/services/strategic-technology-partnership#service",
+        name: "Strategic Technology Partnership",
+        provider: {
+          "@type": "Organization",
+          name: "HiTechLogic",
+          "@id": "https://hitechlogic.com/#organization"
+        },
+        serviceType: "Strategic Technology Advisory & Partnership",
+        areaServed: "Worldwide",
+        availableChannel: {
+          "@type": "ServiceChannel",
+          serviceUrl: "https://hitechlogic.com/services/strategic-technology-partnership",
+          servicePhone: {
+            "@type": "ContactPoint",
+            contactType: "customer service",
+            availableLanguage: ["English"]
+          }
+        },
+        slogan: "Your Trusted Technology Partner",
+        description: "Executive-level technology partnership with strategic guidance, embedded coaching, and capability building. 92 NPS, 100% C-suite satisfaction, 3.5 year average engagement length, 85% multi-year renewals. Build sustainable engineering excellence with expert mentorship.",
+        offers: {
+          "@type": "Offer",
+          category: "Strategic Technology Advisory",
+          itemOffered: {
+            "@type": "Service",
+            name: "Strategic Technology Partnership",
+            description: "Comprehensive technology partnership including executive advisory, embedded coaching, roadmap planning, capability building, and culture transformation. Long-term partnership focused on sustainable excellence."
+          }
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Strategic Advisory Services",
+          itemListElement: capabilities.map((cap) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: cap.title,
+              description: cap.description
+            }
+          }))
+        },
+        audience: {
+          "@type": "Audience",
+          audienceType: "CTOs, VPs of Engineering, Engineering Directors, Technical Executives, C-Suite Leadership"
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.9",
+          reviewCount: "88",
+          bestRating: "5",
+          worstRating: "1"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://hitechlogic.com/services/strategic-technology-partnership#faq",
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hitechlogic.com/services/strategic-technology-partnership#breadcrumb",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://hitechlogic.com/"
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: "https://hitechlogic.com/services"
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Strategic Technology Partnership",
+            item: "https://hitechlogic.com/services/strategic-technology-partnership"
+          }
+        ]
+      }
+    ]
+  };
+
   return (
-    <Layout>
+    <>
+      <SEO
+        title="Strategic Technology Partnership | Executive CTO Advisory & Coaching | HiTechLogic"
+        description="Transform engineering culture with executive-level technology partnership. 92 NPS, 3.5yr avg engagement, embedded coaching, roadmap planning. Build sustainable excellence with strategic guidance from experienced technology leaders."
+        keywords="technology partnership, CTO advisory, engineering coaching, technical leadership, technology strategy, engineering transformation, executive coaching, capability building, engineering excellence, strategic planning"
+        canonical="https://hitechlogic.com/services/strategic-technology-partnership"
+        schema={schema}
+        ogType="website"
+        ogImage="https://hitechlogic.com/images/services/strategic-partnership-og.jpg"
+        twitterCard="summary_large_image"
+      />
+      <Layout>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-white via-indigo-50/20 to-purple-50/30">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
@@ -736,6 +845,7 @@ export default function StrategicTechnologyPartnership() {
           </div>
         </div>
       </section>
-    </Layout>
+      </Layout>
+    </>
   );
 }

@@ -9,7 +9,7 @@ export function CTASection() {
         <div className="relative overflow-hidden rounded-[28px] border border-[hsl(var(--border))] bg-white px-6 sm:px-8 py-10 shadow-[0_24px_60px_-48px_rgba(11,18,32,0.35)]">
           <div className="absolute inset-0 bg-node-field [background-size:22px_22px] opacity-5" />
           <div className="relative grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
-            <div className="space-y-5">
+            <div className="space-y-5 order-2 lg:order-1">
               <div className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--accent-blue))]/30 bg-[hsl(var(--accent-blue))]/10 px-3.5 py-1 text-[0.6rem] font-semibold uppercase tracking-[0.35em] text-[hsl(var(--accent-blue))]">
                 Reliability Baseline
               </div>
@@ -74,7 +74,7 @@ export function CTASection() {
               </div>
             </div>
 
-            <div className="rounded-[22px] border border-slate-200 bg-slate-50/80 p-4 sm:p-5 shadow-inner shadow-white/30">
+            <div className="rounded-[22px] border border-slate-200 bg-slate-50/80 p-4 sm:p-5 shadow-inner shadow-white/30 order-1 lg:order-2">
               <h4 className="text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">
                 Quick Request
               </h4>

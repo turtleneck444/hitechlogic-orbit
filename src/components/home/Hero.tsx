@@ -66,7 +66,7 @@ export function Hero() {
 
             {/* Subheadline with Better Typography */}
             <p className="text-xl md:text-2xl text-slate-700 mb-6 leading-relaxed max-w-2xl font-light">
-              Slash cloud costs by <span className="font-bold text-[hsl(var(--accent-blue))]">50%</span>, reduce MTTR by <span className="font-bold text-[hsl(var(--accent-blue))]">75%</span>, and automate operations with AI-powered FinOps, security, and reliability engineering.
+              Transform infrastructure into a strategic asset. Our AI-powered managed services deliver <span className="font-bold text-[hsl(var(--accent-blue))]">50% cost savings</span>, <span className="font-bold text-[hsl(var(--accent-blue))]">75% faster incident resolution</span>, and complete operational autonomy through intelligent automation.
             </p>
 
             {/* Trust Indicators */}

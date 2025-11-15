@@ -6,9 +6,7 @@ import { ServiceExplorer } from "@/components/home/ServiceExplorer";
 import { ProofSection } from "@/components/home/ProofSection";
 import { CTASection } from "@/components/home/CTASection";
 import { AssessmentTool } from "@/components/home/AssessmentTool";
-import { CaseStudies } from "@/components/home/CaseStudies";
 import { AIAutomationFlow } from "@/components/home/AIAutomationFlow";
-import { ROICalculator } from "@/components/home/ROICalculator";
 import { RapidPrototyping } from "@/components/home/RapidPrototyping";
 import { TestimonialCarousel } from "@/components/home/TestimonialCarousel";
 import { SEO } from "@/components/SEO";
@@ -54,9 +52,7 @@ const Index = () => {
         <RapidPrototyping />
         <AIAutomationFlow />
         <HowItWorks />
-        <ROICalculator />
         <AssessmentTool />
-        <CaseStudies />
         <TestimonialCarousel />
         <ProofSection />
         <CTASection />

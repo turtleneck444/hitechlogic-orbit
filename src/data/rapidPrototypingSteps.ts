@@ -1,5 +1,4 @@
-import { IconType } from "lucide-react";
-import { Lightbulb, Code2, Rocket, Shield } from "lucide-react";
+import { Lightbulb, Code2, Rocket, Shield, LucideIcon } from "lucide-react";
 
 export type RapidPrototypingStep = {
   step: string;
@@ -11,7 +10,7 @@ export type RapidPrototypingStep = {
   focus: string;
   deliverables: string[];
   outcomes: string[];
-  icon: IconType;
+  icon: LucideIcon;
   color: string;
   bgGlow: string;
   heroTagline: string;

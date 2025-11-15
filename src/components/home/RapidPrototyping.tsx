@@ -10,22 +10,14 @@ export function RapidPrototyping() {
   const processSteps = [
     {
       step: "01",
-      title: "Discovery",
-      description: "Define vision, goals, and success criteria through collaborative workshops",
+      title: "Mobilize Rapid Discovery & Design",
+      description: "Align vision, user journeys, and validated prototypes through collaborative workshops",
       icon: Lightbulb,
       color: "from-purple-500 to-pink-500",
       bgGlow: "bg-purple-500/20",
     },
     {
       step: "02",
-      title: "Design",
-      description: "Create user flows, wireframes, and interactive prototypes for validation",
-      icon: Sparkles,
-      color: "from-blue-500 to-cyan-500",
-      bgGlow: "bg-blue-500/20",
-    },
-    {
-      step: "03",
       title: "Build",
       description: "Sprint-based development with AI-assisted coding and weekly demos",
       icon: Code2,
@@ -33,7 +25,7 @@ export function RapidPrototyping() {
       bgGlow: "bg-indigo-500/20",
     },
     {
-      step: "04",
+      step: "03",
       title: "Launch",
       description: "Deploy to production with monitoring, security hardening, and hand-off to MSP team",
       icon: Rocket,
@@ -41,7 +33,7 @@ export function RapidPrototyping() {
       bgGlow: "bg-emerald-500/20",
     },
     {
-      step: "05",
+      step: "04",
       title: "Operate",
       description: "Enable 24/7 operations, FinOps oversight, and reliability tracking as the product scales",
       icon: Shield,
@@ -227,16 +219,26 @@ export function RapidPrototyping() {
 
           <div className="relative">
             {/* Animated connecting line */}
-            <div className="absolute top-0 left-10 bottom-0 w-px bg-gradient-to-b from-purple-500 via-blue-500 to-emerald-500 opacity-40 hidden lg:block" />
+            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 -translate-y-1/2 z-0">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-blue-500 via-indigo-500 to-emerald-500 opacity-30 rounded-full blur-sm" />
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-blue-500 via-indigo-500 to-emerald-500 rounded-full animate-pulse" />
+            </div>
 
             {/* Process Cards */}
-            <div className="relative flex flex-col gap-6 z-10">
+            <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 z-10">
               {processSteps.map((process, index) => {
                 const Icon = process.icon;
                 const isActive = activeStep === index;
 
                 return (
                   <div key={index} className="relative">
+                    {/* Connector Arrow */}
+                    {index < processSteps.length - 1 && (
+                      <div className="hidden lg:flex absolute top-1/2 -right-3 z-20 -translate-y-1/2">
+                        <ArrowRight className={`h-6 w-6 text-white/40 ${isActive ? "animate-pulse text-[hsl(var(--accent-blue))]" : ""}`} />
+                      </div>
+                    )}
+
                     {/* Card with stunning hover effects */}
                     <div
                       className="relative group"

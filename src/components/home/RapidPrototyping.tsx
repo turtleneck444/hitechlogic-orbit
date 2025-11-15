@@ -40,6 +40,14 @@ export function RapidPrototyping() {
       color: "from-emerald-500 to-teal-500",
       bgGlow: "bg-emerald-500/20",
     },
+    {
+      step: "05",
+      title: "Operate",
+      description: "Enable 24/7 operations, FinOps oversight, and reliability tracking as the product scales",
+      icon: Shield,
+      color: "from-sky-500 to-blue-500",
+      bgGlow: "bg-sky-500/20",
+    },
   ];
 
   return (

@@ -50,7 +50,7 @@ export function Hero() {
               Enterprise-Grade Managed Services Powered by Autonomous Agents
             </p>
             <p className="text-sm text-slate-600 mb-4 max-w-2xl">
-              24/7 MSP operations with AI-driven automation—managing your infrastructure, security, and compliance so you can focus on innovation.
+              24/7 AI-managed infrastructure, security, and governance so your teams can build the competitive advantage promised in this headline.
             </p>
 
             {/* Main Headline with Gradient */}

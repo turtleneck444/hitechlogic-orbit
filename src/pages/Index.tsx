@@ -3,12 +3,10 @@ import { Hero } from "@/components/home/Hero";
 import { ValuePillars } from "@/components/home/ValuePillars";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { ServiceExplorer } from "@/components/home/ServiceExplorer";
-import { ProofSection } from "@/components/home/ProofSection";
 import { CTASection } from "@/components/home/CTASection";
 import { AssessmentTool } from "@/components/home/AssessmentTool";
 import { AIAutomationFlow } from "@/components/home/AIAutomationFlow";
 import { RapidPrototyping } from "@/components/home/RapidPrototyping";
-import { TestimonialCarousel } from "@/components/home/TestimonialCarousel";
 import { SEO } from "@/components/SEO";
 
 const Index = () => {
@@ -53,8 +51,6 @@ const Index = () => {
         <AIAutomationFlow />
         <HowItWorks />
         <AssessmentTool />
-        <TestimonialCarousel />
-        <ProofSection />
         <CTASection />
       </Layout>
     </>

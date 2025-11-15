@@ -74,41 +74,48 @@ export function CTASection() {
               </div>
             </div>
 
-            <div className="rounded-[22px] border border-slate-200 bg-slate-50/80 p-4 sm:p-6 shadow-inner shadow-white/30 flex flex-col">
-              <h4 className="text-sm font-semibold uppercase tracking-[0.35em] text-slate-500">
-                Reserve a Session
+            <div className="rounded-[22px] border border-slate-200 bg-slate-50/80 p-4 sm:p-5 shadow-inner shadow-white/30">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">
+                Quick Request
               </h4>
-              <p className="mt-2 text-sm text-slate-600">
-                Tell us where reliability feels constrained—we’ll follow up with a tailored agenda.
+              <p className="text-xs text-slate-500 mb-3">
+                Share your details for a tailored strategy session
               </p>
-              <form className="mt-3 space-y-2.5 flex-1">
+              <form className="space-y-2">
+                <div className="grid grid-cols-2 gap-2">
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Work Email"
+                    className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
+                  />
+                </div>
                 <input
                   type="text"
-                  placeholder="Full Name"
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm focus:border-[hsl(var(--accent-blue))] focus:ring-2 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
-                />
-                <input
-                  type="email"
-                  placeholder="Work Email"
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm focus:border-[hsl(var(--accent-blue))] focus:ring-2 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
-                />
-                <input
-                  type="text"
-                  placeholder="Company / Team Size"
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm focus:border-[hsl(var(--accent-blue))] focus:ring-2 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
+                  placeholder="Company Name"
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
                 />
                 <textarea
-                  placeholder="Key reliability, automation, or cost concerns"
-                  rows={3}
-                  className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm focus:border-[hsl(var(--accent-blue))] focus:ring-2 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
+                  placeholder="Brief description of your priority (optional)"
+                  rows={2}
+                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition resize-none"
                 />
-                <Button type="submit" className="w-full rounded-full text-base">
-                  Request Reliability Baseline
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <div className="grid grid-cols-2 gap-2 pt-1">
+                  <Button type="submit" variant="primary" size="sm" className="rounded-full text-xs h-8">
+                    Request Session
+                    <ArrowRight className="ml-1 h-3 w-3" />
+                  </Button>
+                  <Button type="button" variant="outline" size="sm" className="rounded-full text-xs h-8">
+                    Request Callback
+                  </Button>
+                </div>
               </form>
-              <p className="mt-3 text-xs text-slate-500 text-center">
-                We’ll respond within one business day with scheduling options.
+              <p className="mt-2 text-[10px] text-slate-400 text-center">
+                Response within 1 business day
               </p>
             </div>
           </div>

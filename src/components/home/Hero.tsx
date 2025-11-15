@@ -163,6 +163,30 @@ export function Hero() {
                 </p>
               </div>
 
+              {/* Key Metrics - From Executive Telemetry */}
+              <div className="relative grid grid-cols-2 gap-2 mb-4">
+                <div className="rounded-lg bg-gradient-to-br from-slate-50 to-blue-50/30 border border-[hsl(var(--accent-blue))]/20 p-3">
+                  <div className="text-2xl font-black text-[hsl(var(--accent-blue))] mb-1">-85%</div>
+                  <div className="text-xs font-semibold text-slate-700 mb-0.5">Alert Volume</div>
+                  <p className="text-[10px] text-slate-500 leading-tight">Noise removed through correlation</p>
+                </div>
+                <div className="rounded-lg bg-gradient-to-br from-slate-50 to-blue-50/30 border border-[hsl(var(--accent-blue))]/20 p-3">
+                  <div className="text-2xl font-black text-[hsl(var(--accent-blue))] mb-1">4.5x</div>
+                  <div className="text-xs font-semibold text-slate-700 mb-0.5">MTTR Improvement</div>
+                  <p className="text-[10px] text-slate-500 leading-tight">Accelerated through automation</p>
+                </div>
+                <div className="rounded-lg bg-gradient-to-br from-slate-50 to-blue-50/30 border border-[hsl(var(--accent-blue))]/20 p-3">
+                  <div className="text-2xl font-black text-[hsl(var(--accent-blue))] mb-1">32%</div>
+                  <div className="text-xs font-semibold text-slate-700 mb-0.5">Cost Stability</div>
+                  <p className="text-[10px] text-slate-500 leading-tight">Runbooks optimize spend</p>
+                </div>
+                <div className="rounded-lg bg-gradient-to-br from-slate-50 to-blue-50/30 border border-[hsl(var(--accent-blue))]/20 p-3">
+                  <div className="text-2xl font-black text-[hsl(var(--accent-blue))] mb-1">99.98%</div>
+                  <div className="text-xs font-semibold text-slate-700 mb-0.5">Availability</div>
+                  <p className="text-[10px] text-slate-500 leading-tight">Continuous governance</p>
+                </div>
+              </div>
+
               {/* Interactive Feature Cards */}
               <div className="relative space-y-2.5 mb-4">
                 {/* Risk Reduction */}

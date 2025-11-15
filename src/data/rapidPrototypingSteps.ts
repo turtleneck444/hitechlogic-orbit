@@ -67,7 +67,7 @@ export const rapidPrototypingSteps: RapidPrototypingStep[] = [
     heroTagline: "Ship something tangible while you still own the idea",
   },
   {
-    step: "04",
+    step: "03",
     slug: "operate",
     title: "Operate & Elevate",
     description: "Transition to 24/7 reliability, FinOps oversight, and continuous improvements.",

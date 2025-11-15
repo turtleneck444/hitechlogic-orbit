@@ -52,12 +52,18 @@ const serviceMegaMenu = [
 const navigation = [
   {
     name: "Solutions",
+    href: "/services",
+    hasMegaMenu: true,
+  },
+  { name: "Approach", href: "/approach" },
+  { name: "Principles", href: "/principles" },
+  {
+    name: "Resources",
     href: "#",
     submenu: [
-      { name: "All Services", href: "/services", description: "Complete service portfolio" },
-      { name: "Our Approach", href: "/approach", description: "How we deliver value" },
       { name: "Resource Library", href: "/resources", description: "Guides, whitepapers & tools" },
       { name: "Case Studies", href: "/case-studies", description: "Client success stories" },
+      { name: "Blog", href: "/blog", description: "Operational intelligence & viewpoints" },
     ],
   },
   { name: "About", href: "/about" },
@@ -335,25 +341,13 @@ export function Header() {
                     )} />
                   </Link>
 
-                  <Link
-                    to="/approach"
-                    className={cn(
-                      "group flex items-center justify-between px-6 py-4 rounded-2xl transition-all duration-300",
-                      isActivePath("/approach")
-                        ? "bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white shadow-lg shadow-[hsl(var(--accent-blue))]/25"
-                        : "hover:bg-slate-50/80 text-slate-700 active:scale-[0.98]"
-                    )}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <span className="text-base font-semibold tracking-tight">Our Approach</span>
-                    <ArrowRight className={cn(
-                      "h-5 w-5 transition-all duration-300",
-                      isActivePath("/approach")
-                        ? "text-white translate-x-0"
-                        : "text-slate-400 -translate-x-1 group-hover:translate-x-0 group-hover:text-[hsl(var(--accent-blue))]"
-                    )} />
-                  </Link>
+                </div>
 
+                {/* Resources Section */}
+                <div className="space-y-1 pt-4">
+                  <div className="px-6 py-3 text-xs font-bold text-slate-400 uppercase tracking-wider">
+                    Resources
+                  </div>
                   <Link
                     to="/resources"
                     className={cn(
@@ -391,6 +385,25 @@ export function Header() {
                         : "text-slate-400 -translate-x-1 group-hover:translate-x-0 group-hover:text-[hsl(var(--accent-blue))]"
                     )} />
                   </Link>
+
+                  <Link
+                    to="/blog"
+                    className={cn(
+                      "group flex items-center justify-between px-6 py-4 rounded-2xl transition-all duration-300",
+                      isActivePath("/blog")
+                        ? "bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white shadow-lg shadow-[hsl(var(--accent-blue))]/25"
+                        : "hover:bg-slate-50/80 text-slate-700 active:scale-[0.98]"
+                    )}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span className="text-base font-semibold tracking-tight">Blog</span>
+                    <ArrowRight className={cn(
+                      "h-5 w-5 transition-all duration-300",
+                      isActivePath("/blog")
+                        ? "text-white translate-x-0"
+                        : "text-slate-400 -translate-x-1 group-hover:translate-x-0 group-hover:text-[hsl(var(--accent-blue))]"
+                    )} />
+                  </Link>
                 </div>
 
                 {/* Company Section */}
@@ -398,6 +411,43 @@ export function Header() {
                   <div className="px-6 py-3 text-xs font-bold text-slate-400 uppercase tracking-wider">
                     Company
                   </div>
+                  <Link
+                    to="/approach"
+                    className={cn(
+                      "group flex items-center justify-between px-6 py-4 rounded-2xl transition-all duration-300",
+                      isActivePath("/approach")
+                        ? "bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white shadow-lg shadow-[hsl(var(--accent-blue))]/25"
+                        : "hover:bg-slate-50/80 text-slate-700 active:scale-[0.98]"
+                    )}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span className="text-base font-semibold tracking-tight">Our Approach</span>
+                    <ArrowRight className={cn(
+                      "h-5 w-5 transition-all duration-300",
+                      isActivePath("/approach")
+                        ? "text-white translate-x-0"
+                        : "text-slate-400 -translate-x-1 group-hover:translate-x-0 group-hover:text-[hsl(var(--accent-blue))]"
+                    )} />
+                  </Link>
+
+                  <Link
+                    to="/principles"
+                    className={cn(
+                      "group flex items-center justify-between px-6 py-4 rounded-2xl transition-all duration-300",
+                      isActivePath("/principles")
+                        ? "bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white shadow-lg shadow-[hsl(var(--accent-blue))]/25"
+                        : "hover:bg-slate-50/80 text-slate-700 active:scale-[0.98]"
+                    )}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span className="text-base font-semibold tracking-tight">Principles</span>
+                    <ArrowRight className={cn(
+                      "h-5 w-5 transition-all duration-300",
+                      isActivePath("/principles")
+                        ? "text-white translate-x-0"
+                        : "text-slate-400 -translate-x-1 group-hover:translate-x-0 group-hover:text-[hsl(var(--accent-blue))]"
+                    )} />
+                  </Link>
                   <Link
                     to="/about"
                     className={cn(

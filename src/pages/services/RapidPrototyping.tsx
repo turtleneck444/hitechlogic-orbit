@@ -24,6 +24,7 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
+import { rapidPrototypingSteps } from "@/data/rapidPrototypingSteps";
 
 const capabilities = [
   {
@@ -222,6 +223,9 @@ export default function RapidPrototyping() {
                 From whiteboard to working product in weeks, not months. Our Rapid Prototyping Studio combines human-centred design,
                 AI-assisted development, and infrastructure automation to deliver production-ready MVPs that scale.
               </p>
+              <p className="text-base text-slate-600 max-w-3xl mx-auto mb-8">
+                People usually die on ideation; we evaluate your concepts, map the situation, and mobilize your team in days so prototypes stay on the roadmap.
+              </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
                 <Button
@@ -302,6 +306,57 @@ export default function RapidPrototyping() {
                   </Card>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* Process Specialties */}
+        <section className="py-16 bg-slate-50">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <p className="text-xs uppercase tracking-widest text-slate-500 mb-2">
+                Rapid Prototyping Specialties
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--navy))] mb-4">
+                Evaluating concepts before we code
+              </h2>
+              <p className="text-lg text-slate-600">
+                The people who evaluate, engineer, launch, and operate each step are specialized so nothing ever stalls on ideation.
+              </p>
+            </div>
+            <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+              {rapidPrototypingSteps.map((step) => (
+                <Card key={step.slug} className="flex flex-col h-full border border-slate-200 shadow-sm bg-white">
+                  <div className="p-6 flex-1">
+                    <div className="text-xs uppercase tracking-widest text-slate-500 mb-2">
+                      {step.specialty}
+                    </div>
+                    <h3 className="text-xl font-semibold text-[hsl(var(--navy))] mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="text-sm text-slate-600 mb-4">
+                      {step.overview}
+                    </p>
+                    <div className="space-y-2">
+                      {step.deliverables.slice(0, 3).map((item) => (
+                        <div key={item} className="flex items-start gap-2 text-sm text-slate-600">
+                          <span className="mt-0.5 h-1 w-1 rounded-full bg-[hsl(var(--accent-blue))]" />
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="px-6 pb-6 pt-4">
+                    <Link
+                      to={`/services/rapid-prototyping/${step.slug}`}
+                      className="inline-flex items-center gap-1 text-sm font-semibold text-[hsl(var(--accent-blue))] hover:text-[hsl(var(--navy))]"
+                    >
+                      Go to the specialty page
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </Card>
+              ))}
             </div>
           </div>
         </section>

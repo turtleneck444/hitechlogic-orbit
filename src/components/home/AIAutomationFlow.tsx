@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Activity, Zap, CheckCircle2, Brain, Filter, ArrowRight, Bell, Shield, TrendingDown } from "lucide-react";
+import { rapidPrototypingSteps } from "@/data/rapidPrototypingSteps";
 
 type Step = {
   id: string;
@@ -62,6 +63,7 @@ const automationSteps: Step[] = [
 
 export function AIAutomationFlow() {
   const [activeStep, setActiveStep] = useState<string | null>(null);
+  const highlightSteps = rapidPrototypingSteps.slice(0, 3);
 
   return (
     <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50/30">
@@ -73,14 +75,21 @@ export function AIAutomationFlow() {
             <span className="text-sm font-bold text-[hsl(var(--navy))]">Autonomous Agent Swarm</span>
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[hsl(var(--navy))] mb-6">
-            How Our AI Agents Orchestrate Operations
+            How Our AI Agent Library Powers Operate
           </h2>
           <p className="text-lg text-slate-600 mb-4">
-            From detection to resolution – autonomous agents monitor, triage, and remediate 24/7
+            The agent library that keeps the Rapid Design & Prototyping, Build & Launch, and Operate phases connected.
           </p>
           <p className="text-base text-slate-500">
-            Our platform employs a swarm of specialized AI agents that work in concert to monitor infrastructure, orchestrate runbooks, optimize cloud spend, and ensure reliability – without human intervention.
+            Here is where we extend the third phase: our operate agents inherit validated concepts, hardened releases, and bring 24/7 reliability with intelligent detection, triage, and remediation.
           </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3 text-xs uppercase tracking-widest text-slate-500">
+            {highlightSteps.map((step) => (
+              <span key={step.slug} className="px-3 py-1 rounded-full border border-slate-200 bg-white/60 shadow-sm">
+                {step.title}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Workflow Diagram */}

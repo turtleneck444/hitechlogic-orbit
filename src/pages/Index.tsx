@@ -1,6 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
 import { Hero } from "@/components/home/Hero";
-import { TrustBar } from "@/components/home/TrustBar";
 import { ValuePillars } from "@/components/home/ValuePillars";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { ServiceExplorer } from "@/components/home/ServiceExplorer";
@@ -50,7 +49,6 @@ const Index = () => {
       />
       <Layout>
         <Hero />
-        <TrustBar />
         <ValuePillars />
         <ServiceExplorer />
         <RapidPrototyping />

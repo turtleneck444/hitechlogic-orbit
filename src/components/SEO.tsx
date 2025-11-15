@@ -1,12 +1,13 @@
 import { Helmet } from "react-helmet-async";
 
-interface SEOProps {
+export interface SEOProps {
   title: string;
   description: string;
   keywords?: string;
   canonical?: string;
   ogType?: string;
   ogImage?: string;
+  twitterCard?: string;
   schema?: object;
 }
 
@@ -17,6 +18,7 @@ export function SEO({
   canonical,
   ogType = "website",
   ogImage = "https://hitechlogic.com/og-image.jpg",
+  twitterCard = "summary_large_image",
   schema
 }: SEOProps) {
   const fullTitle = title.includes("HiTechLogic") ? title : `${title} | HiTechLogic`;
@@ -43,7 +45,7 @@ export function SEO({
       <meta property="og:site_name" content="HiTechLogic" />
       
       {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:url" content={fullCanonical} />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />

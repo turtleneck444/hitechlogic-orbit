@@ -106,7 +106,7 @@ export default function Resources() {
             {/* Category Filters */}
             <div className="flex flex-wrap justify-center gap-3 mb-8">
               <Button
-                variant={selectedCategory === "all" ? "default" : "outline"}
+                variant={selectedCategory === "all" ? "primary" : "outline"}
                 onClick={() => {
                   setSelectedCategory("all");
                   setSelectedTag(null);
@@ -121,7 +121,7 @@ export default function Resources() {
                 return (
                   <Button
                     key={category}
-                    variant={selectedCategory === category ? "default" : "outline"}
+                    variant={selectedCategory === category ? "primary" : "outline"}
                     onClick={() => {
                       setSelectedCategory(category);
                       setSelectedTag(null);

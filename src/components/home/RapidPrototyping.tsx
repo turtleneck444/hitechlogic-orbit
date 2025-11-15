@@ -184,7 +184,7 @@ export function RapidPrototyping() {
               Our Rapid Prototyping Process
             </h3>
             <p className="text-slate-600">
-              A proven 4-phase approach to transform your idea into production reality
+              A proven 3-phase approach to move from concept to launch without stalling on ideation
             </p>
           </div>
 
@@ -278,9 +278,9 @@ export function RapidPrototyping() {
             <h3 className="text-3xl font-bold text-slate-900 mb-2">
               Every phase has a specialty team
             </h3>
-            <p className="text-slate-600">
-              We split the journey into focused pods—evaluation, engineering, launch, and operations—so your concept never dies on the backlog.
-            </p>
+              <p className="text-slate-600">
+                We split the journey into focused pods—evaluation, engineering-launch, and operations—so your concept never dies on the backlog.
+              </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {processSteps.map((step) => (

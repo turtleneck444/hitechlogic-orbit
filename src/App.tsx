@@ -30,8 +30,7 @@ import CostEfficiencyCapacityStrategy from "./pages/services/CostEfficiencyCapac
 import StrategicTechnologyPartnership from "./pages/services/StrategicTechnologyPartnership";
 import RapidPrototyping from "./pages/services/RapidPrototyping";
 import MobilizeRapidDiscoveryDesignPage from "./pages/services/rapid-prototyping/steps/MobilizeRapidDiscoveryDesign";
-import BuildPage from "./pages/services/rapid-prototyping/steps/Build";
-import LaunchPage from "./pages/services/rapid-prototyping/steps/Launch";
+import BuildLaunchPage from "./pages/services/rapid-prototyping/steps/BuildLaunch";
 import OperatePage from "./pages/services/rapid-prototyping/steps/Operate";
 
 const queryClient = new QueryClient();
@@ -60,8 +59,7 @@ const App = () => (
           <Route path="/legal/terms" element={<Terms />} />
           <Route path="/demo" element={<Demo />} />
           <Route path="/services/rapid-prototyping/mobilize-rapid-discovery-design" element={<MobilizeRapidDiscoveryDesignPage />} />
-          <Route path="/services/rapid-prototyping/build" element={<BuildPage />} />
-          <Route path="/services/rapid-prototyping/launch" element={<LaunchPage />} />
+          <Route path="/services/rapid-prototyping/build-launch" element={<BuildLaunchPage />} />
           <Route path="/services/rapid-prototyping/operate" element={<OperatePage />} />
           {/* Service Detail Pages */}
           <Route path="/services/infrastructure-cloud-operations" element={<InfrastructureCloudOperations />} />

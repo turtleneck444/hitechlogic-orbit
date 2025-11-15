@@ -83,28 +83,22 @@ const metrics = [
 
 const prototypingJourney = [
   {
-    phase: "Discovery",
-    description: "Define vision, goals, user personas, and success criteria",
-    duration: "Week 1",
+    phase: "Evaluate & Design",
+    description: "Align vision, validate hypotheses, and prototype experiences before engineering begins",
+    duration: "Week 0-1",
     icon: Lightbulb,
   },
   {
-    phase: "Design",
-    description: "Create wireframes, user flows, and interactive prototypes",
-    duration: "Week 1-2",
-    icon: Smartphone,
-  },
-  {
-    phase: "Build",
-    description: "Sprint-based development with AI-assisted coding",
-    duration: "Week 2-6",
+    phase: "Build & Launch",
+    description: "Sprint-based development that deploys production-ready experiences with guardrails",
+    duration: "Week 1-6",
     icon: Code2,
   },
   {
-    phase: "Launch",
-    description: "Deploy to production with monitoring and hand-off",
-    duration: "Week 7-8",
-    icon: Rocket,
+    phase: "Operate & Elevate",
+    description: "Transition to managed operations with reliability and FinOps visibility",
+    duration: "Week 6+",
+    icon: Shield,
   },
 ];
 

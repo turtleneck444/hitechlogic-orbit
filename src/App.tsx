@@ -29,7 +29,7 @@ import SecurityIdentityAssurance from "./pages/services/SecurityIdentityAssuranc
 import CostEfficiencyCapacityStrategy from "./pages/services/CostEfficiencyCapacityStrategy";
 import StrategicTechnologyPartnership from "./pages/services/StrategicTechnologyPartnership";
 import RapidPrototyping from "./pages/services/RapidPrototyping";
-import MobilizeRapidDiscoveryDesignPage from "./pages/services/rapid-prototyping/steps/MobilizeRapidDiscoveryDesign";
+import RapidDesignPrototypingPage from "./pages/services/rapid-prototyping/steps/RapidDesignPrototyping";
 import BuildLaunchPage from "./pages/services/rapid-prototyping/steps/BuildLaunch";
 import OperatePage from "./pages/services/rapid-prototyping/steps/Operate";
 
@@ -58,7 +58,7 @@ const App = () => (
           <Route path="/legal/privacy" element={<Privacy />} />
           <Route path="/legal/terms" element={<Terms />} />
           <Route path="/demo" element={<Demo />} />
-          <Route path="/services/rapid-prototyping/mobilize-rapid-discovery-design" element={<MobilizeRapidDiscoveryDesignPage />} />
+          <Route path="/services/rapid-prototyping/rapid-design-prototyping" element={<RapidDesignPrototypingPage />} />
           <Route path="/services/rapid-prototyping/build-launch" element={<BuildLaunchPage />} />
           <Route path="/services/rapid-prototyping/operate" element={<OperatePage />} />
           {/* Service Detail Pages */}

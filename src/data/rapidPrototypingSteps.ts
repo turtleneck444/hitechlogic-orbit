@@ -20,8 +20,8 @@ export type RapidPrototypingStep = {
 export const rapidPrototypingSteps: RapidPrototypingStep[] = [
   {
     step: "01",
-    slug: "mobilize-rapid-discovery-design",
-    title: "Mobilize Rapid Discovery & Design",
+    slug: "rapid-design-prototyping",
+    title: "Rapid Design & Prototyping",
     description: "Align vision, user journeys, and experience prototypes so the right idea survives ideation.",
     specialty: "Concept acceleration",
     overview:

@@ -40,270 +40,238 @@ export function Hero() {
 
   return (
     <section className="relative flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
-      {/* World-Class Advanced AI Network - Multi-Layered Spectacle */}
+      {/* Majestic AI Intelligence Orbital - World-Class 3D Graphics */}
       <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
-        {/* Layer 1: Dynamic Background Gradient */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50 animate-ai-gradient-shift"></div>
-          <div className="absolute inset-0 bg-gradient-to-tl from-indigo-100 via-pink-50 to-emerald-50 animate-ai-gradient-rotate opacity-70"></div>
-        </div>
-
-        {/* Layer 2: Advanced Neural Network Grid */}
-        <div className="absolute inset-0 opacity-20">
-          <svg className="w-full h-full" viewBox="0 0 1200 800">
+        {/* Layer 0: Subtle Background Mesh */}
+        <div className="absolute inset-0 opacity-15">
+          <svg className="w-full h-full" viewBox="0 0 1920 1080">
             <defs>
-              <pattern id="neuralGrid" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
-                <circle cx="25" cy="25" r="1.5" fill="rgba(59, 130, 246, 0.3)" className="animate-ai-node-pulse">
-                  <animate attributeName="r" values="1.5;2.5;1.5" dur="4s" repeatCount="indefinite" />
+              <pattern id="intelligenceMesh" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <path d="M0,50 L100,50 M50,0 L50,100" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="1" opacity="0.3" />
+                <circle cx="50" cy="50" r="1.5" fill="rgba(147, 51, 234, 0.4)" className="animate-ai-mesh-node">
+                  <animate attributeName="r" values="1.5;2;1.5" dur="6s" repeatCount="indefinite" />
                 </circle>
-                <line x1="25" y1="25" x2="50" y2="50" stroke="rgba(147, 51, 234, 0.2)" strokeWidth="0.5" className="animate-ai-connection-flow" />
-                <line x1="25" y1="25" x2="0" y2="50" stroke="rgba(6, 182, 212, 0.2)" strokeWidth="0.5" className="animate-ai-connection-flow" />
               </pattern>
-              <radialGradient id="neuralGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" style={{stopColor: 'rgba(59, 130, 246, 0.3)', stopOpacity: '0.8'}} />
-                <stop offset="100%" style={{stopColor: 'rgba(147, 51, 234, 0.1)', stopOpacity: '0'}} />
+              <radialGradient id="intelligenceGradient" cx="50%" cy="50%" r="60%">
+                <stop offset="0%" style={{stopColor: 'rgba(59, 130, 246, 0.1)', stopOpacity: '0.3'}} />
+                <stop offset="50%" style={{stopColor: 'rgba(147, 51, 234, 0.05)', stopOpacity: '0.2'}} />
+                <stop offset="100%" style={{stopColor: 'rgba(6, 182, 212, 0.02)', stopOpacity: '0.1'}} />
               </radialGradient>
             </defs>
-            <rect width="1200" height="800" fill="url(#neuralGrid)" />
-            <circle cx="600" cy="400" r="200" fill="url(#neuralGlow)" className="animate-ai-neural-pulse" />
+            <rect width="1920" height="1080" fill="url(#intelligenceMesh)" />
+            <circle cx="960" cy="540" r="400" fill="url(#intelligenceGradient)" className="animate-ai-mesh-glow" />
           </svg>
         </div>
 
-        {/* Layer 3: Advanced AI Agent Nodes - World Class Design */}
-        <div className="absolute top-1/4 left-1/4">
-          <div className="relative">
-            {/* Advanced Analytics AI Node */}
-            <div className="w-8 h-8 bg-gradient-to-br from-green-400 via-emerald-500 to-teal-500 rounded-full shadow-2xl animate-ai-node-morph-1 relative overflow-hidden border-2 border-green-300/50">
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/20 to-transparent rounded-full animate-ai-inner-rotate"></div>
-              <div className="absolute inset-1 bg-gradient-to-br from-green-300 to-emerald-400 rounded-full opacity-60 animate-ai-pulse-slow"></div>
-              <div className="absolute inset-2 bg-white/60 rounded-full animate-ai-bright-pulse"></div>
-              {/* Data streams */}
-              <div className="absolute -inset-1 border border-green-400/20 rounded-full animate-ai-orbit-fast"></div>
-              <div className="absolute -inset-2 border border-teal-400/10 rounded-full animate-ai-orbit-slow"></div>
-            </div>
-            {/* Enhanced Label */}
-            <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 text-center">
-              <div className="text-[11px] font-black text-green-800 bg-gradient-to-r from-white via-green-50 to-white backdrop-blur-md px-3 py-1.5 rounded-xl border-2 border-green-200/70 shadow-xl animate-ai-label-glow">
-                ANALYTICS AI
-                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-4 h-1 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full"></div>
-              </div>
-              <div className="text-[7px] text-green-700 font-bold mt-1 bg-white/80 backdrop-blur-sm px-2 py-0.5 rounded-md">Data Intelligence</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute top-1/3 right-1/4">
-          <div className="relative">
-            {/* Advanced Ops Monitor Node */}
-            <div className="w-7 h-7 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-500 rounded-full shadow-2xl animate-ai-node-morph-2 relative overflow-hidden border-2 border-yellow-300/50">
-              <div className="absolute inset-0 bg-gradient-conic from-yellow-300 via-orange-300 to-red-400 rounded-full animate-ai-spin-reverse"></div>
-              <div className="absolute inset-1 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-full opacity-70 animate-ai-pulse-slow"></div>
-              <div className="absolute inset-2 bg-white/50 rounded-full animate-ai-bright-pulse-delayed"></div>
-              {/* Monitoring indicators */}
-              <div className="absolute top-0 left-1/2 w-1 h-1 bg-red-500 rounded-full animate-ai-indicator-blink -translate-x-1/2 -translate-y-1"></div>
-              <div className="absolute bottom-0 left-1/2 w-1 h-1 bg-green-500 rounded-full animate-ai-indicator-blink-delayed -translate-x-1/2 translate-y-0.5"></div>
-            </div>
-            {/* Enhanced Label */}
-            <div className="absolute -top-11 left-1/2 transform -translate-x-1/2 text-center">
-              <div className="text-[10px] font-black text-orange-800 bg-gradient-to-r from-white via-yellow-50 to-white backdrop-blur-md px-2.5 py-1.5 rounded-xl border-2 border-yellow-200/70 shadow-xl animate-ai-label-glow">
-                OPS MONITOR
-                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-3 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
-              </div>
-              <div className="text-[6px] text-orange-700 font-bold mt-0.5 bg-white/80 backdrop-blur-sm px-1.5 py-0.5 rounded-md">System Surveillance</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-1/4 left-1/3">
-          <div className="relative">
-            {/* Advanced Security AI Node */}
-            <div className="w-9 h-9 bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600 rounded-full shadow-2xl animate-ai-node-morph-3 relative overflow-hidden border-2 border-purple-300/50">
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/20 to-transparent rounded-full animate-ai-defense-rotate"></div>
-              <div className="absolute inset-1 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full opacity-60 animate-ai-pulse-slow"></div>
-              <div className="absolute inset-2 bg-white/50 rounded-full animate-ai-bright-pulse"></div>
-              {/* Security shield effect */}
-              <div className="absolute inset-0.5 border-2 border-purple-300/30 rounded-full animate-ai-shield-pulse"></div>
-              <div className="absolute top-1 left-1/2 w-0.5 h-0.5 bg-purple-600 rounded-full animate-ai-security-scan -translate-x-1/2"></div>
-            </div>
-            {/* Enhanced Label */}
-            <div className="absolute -top-13 left-1/2 transform -translate-x-1/2 text-center">
-              <div className="text-[10px] font-black text-purple-800 bg-gradient-to-r from-white via-purple-50 to-white backdrop-blur-md px-2.5 py-1.5 rounded-xl border-2 border-purple-200/70 shadow-xl animate-ai-label-glow">
-                SECURITY AI
-                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-4 h-1 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"></div>
-              </div>
-              <div className="text-[7px] text-purple-700 font-bold mt-1 bg-white/80 backdrop-blur-sm px-2 py-0.5 rounded-md">Threat Intelligence</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-1/3 right-1/3">
-          <div className="relative">
-            {/* Advanced Auto-Response Node */}
-            <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 via-blue-500 to-cyan-500 rounded-full shadow-2xl animate-ai-node-morph-4 relative overflow-hidden border-2 border-cyan-300/50">
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/30 to-transparent rounded-full animate-ai-response-rotate"></div>
-              <div className="absolute inset-1 bg-gradient-to-br from-cyan-300 to-blue-400 rounded-full opacity-60 animate-ai-pulse-fast"></div>
-              <div className="absolute inset-2 bg-white/60 rounded-full animate-ai-bright-pulse-delayed"></div>
-              {/* Action indicators */}
-              <div className="absolute top-0 right-0 w-1.5 h-1.5 bg-cyan-600 rounded-full animate-ai-action-flash"></div>
-              <div className="absolute bottom-0 left-0 w-1 h-1 bg-blue-600 rounded-full animate-ai-action-flash-delayed"></div>
-            </div>
-            {/* Enhanced Label */}
-            <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 text-center">
-              <div className="text-[11px] font-black text-cyan-800 bg-gradient-to-r from-white via-blue-50 to-white backdrop-blur-md px-3 py-1.5 rounded-xl border-2 border-cyan-200/70 shadow-xl animate-ai-label-glow">
-                AUTO-RESPONSE
-                <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-4 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>
-              </div>
-              <div className="text-[7px] text-cyan-700 font-bold mt-1 bg-white/80 backdrop-blur-sm px-2 py-0.5 rounded-md">Instant Actions</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute top-2/3 left-1/6">
-          <div className="relative">
-            {/* Advanced Cost Optimizer Node */}
-            <div className="w-7 h-7 bg-gradient-to-br from-rose-400 via-pink-400 to-red-400 rounded-full shadow-2xl animate-ai-node-morph-5 relative overflow-hidden border-2 border-rose-300/50">
-              <div className="absolute inset-0 bg-gradient-conic from-rose-300 via-pink-300 to-red-400 rounded-full animate-ai-optimize-rotate"></div>
-              <div className="absolute inset-1 bg-gradient-to-br from-rose-300 to-pink-400 rounded-full opacity-70 animate-ai-pulse-slow"></div>
-              <div className="absolute inset-2 bg-white/50 rounded-full animate-ai-bright-pulse"></div>
-              {/* Efficiency metrics */}
-              <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-rose-400 to-pink-500 animate-ai-efficiency-bar"></div>
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-pink-400 to-red-500 animate-ai-efficiency-bar-delayed"></div>
-              </div>
-            </div>
-            {/* Enhanced Label */}
-            <div className="absolute -bottom-11 left-1/2 transform -translate-x-1/2 text-center">
-              <div className="text-[9px] font-black text-rose-800 bg-gradient-to-r from-white via-rose-50 to-white backdrop-blur-md px-2 py-1.5 rounded-xl border-2 border-rose-200/70 shadow-xl animate-ai-label-glow">
-                COST OPTIMIZER
-                <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-3 h-1 bg-gradient-to-r from-rose-400 to-pink-500 rounded-full"></div>
-              </div>
-              <div className="text-[6px] text-rose-700 font-bold mt-0.5 bg-white/80 backdrop-blur-sm px-1.5 py-0.5 rounded-md">Resource Control</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Layer 4: Central Intelligence Core - Spectacular Enhancement */}
+        {/* Layer 1: Massive Central AI Intelligence Sphere */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="relative w-12 h-12">
-            {/* Outer Energy Rings */}
-            <div className="absolute -inset-2 border-2 border-blue-400/30 rounded-full animate-ai-outer-ring-1"></div>
-            <div className="absolute -inset-4 border border-purple-400/20 rounded-full animate-ai-outer-ring-2"></div>
-            <div className="absolute -inset-6 border border-cyan-400/15 rounded-full animate-ai-outer-ring-3"></div>
-            <div className="absolute -inset-8 border border-emerald-400/10 rounded-full animate-ai-outer-ring-4"></div>
+          <div className="relative w-32 h-32">
+            {/* Massive Outer Energy Orbs */}
+            <div className="absolute -inset-4 w-40 h-40 border-4 border-gradient-to-r from-blue-400 via-purple-500 to-cyan-500 rounded-full animate-ai-mega-ring opacity-30 animate-ai-mega-pulse"></div>
+            <div className="absolute -inset-6 w-44 h-44 border-2 border-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 rounded-full animate-ai-mega-ring-reverse opacity-20"></div>
+            <div className="absolute -inset-8 w-48 h-48 border border-gradient-to-r from-purple-400 via-cyan-400 to-emerald-500 rounded-full animate-ai-mega-ring-slow opacity-15"></div>
 
-            {/* Main Core */}
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-600 to-cyan-500 rounded-full shadow-[0_0_40px_rgba(59,130,246,0.8)] animate-ai-core-pulse relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/40 to-transparent rounded-full animate-ai-core-rotate"></div>
-              <div className="absolute inset-1 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-90 animate-ai-core-inner"></div>
-              <div className="absolute inset-2 bg-white/70 rounded-full animate-ai-core-bright"></div>
-              <div className="absolute inset-3 bg-gradient-to-br from-cyan-200 to-purple-200 rounded-full animate-ai-core-glow"></div>
-              {/* Intelligence pulses */}
-              <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-blue-300 rounded-full animate-ai-intelligence-pulse -translate-x-1/2 -translate-y-1/2"></div>
-              <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-purple-300 rounded-full animate-ai-intelligence-pulse-delayed"></div>
-              <div className="absolute bottom-1/4 right-1/4 w-1.5 h-1.5 bg-cyan-300 rounded-full animate-ai-intelligence-pulse-slow"></div>
+            {/* Massive Central Intelligence Core */}
+            <div className="w-32 h-32 bg-gradient-to-br from-blue-500 via-purple-600 via-cyan-500 to-blue-600 rounded-full shadow-[0_0_100px_rgba(59,130,246,0.9)] animate-ai-mega-core-rotate relative overflow-hidden">
+              {/* Multi-layer energy flows */}
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/60 to-transparent rounded-full animate-ai-mega-core-reverse"></div>
+              <div className="absolute inset-2 bg-gradient-to-br from-blue-400 via-purple-500 to-cyan-400 rounded-full opacity-90 animate-ai-mega-core-inner"></div>
+              <div className="absolute inset-4 bg-white/80 rounded-full animate-ai-mega-bright-core"></div>
+              <div className="absolute inset-6 bg-gradient-to-br from-cyan-200 via-purple-200 to-blue-200 rounded-full animate-ai-mega-glow-core"></div>
+              <div className="absolute inset-8 bg-gradient-conic from-transparent via-white/30 to-transparent rounded-full animate-ai-mega-inner-ring"></div>
+
+              {/* Intelligence pulse waves */}
+              <div className="absolute top-1/2 left-1/2 w-3 h-3 bg-blue-300 rounded-full animate-ai-mega-pulse-wave-1 shadow-lg shadow-blue-300/70 -translate-x-1/2 -translate-y-1/2"></div>
+              <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-purple-300 rounded-full animate-ai-mega-pulse-wave-2 shadow-md shadow-purple-300/60"></div>
+              <div className="absolute bottom-1/4 right-1/4 w-2.5 h-2.5 bg-cyan-300 rounded-full animate-ai-mega-pulse-wave-3 shadow-md shadow-cyan-300/60"></div>
+              <div className="absolute top-1/4 right-1/4 w-1.5 h-1.5 bg-emerald-300 rounded-full animate-ai-mega-pulse-wave-4 shadow-sm shadow-emerald-300/50"></div>
+              <div className="absolute bottom-1/4 left-1/4 w-2 h-2 bg-pink-300 rounded-full animate-ai-mega-pulse-wave-5 shadow-md shadow-pink-300/60"></div>
             </div>
 
-            {/* Enhanced Coordinator Label */}
-            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-center">
-              <div className="text-[11px] font-black text-blue-800 bg-gradient-to-b from-white via-blue-50 to-white backdrop-blur-md px-4 py-2 rounded-2xl border-2 border-blue-200/70 shadow-2xl animate-ai-coordinator-glow">
-                INTELLIGENT ORCHESTRATOR
-                <div className="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-6 h-1.5 bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 rounded-full animate-ai-coordinator-beam"></div>
+            {/* Massive Intelligence Beam Effect */}
+            <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-8 h-16 bg-gradient-to-b from-blue-400 via-purple-500 via-cyan-400 to-transparent rounded-t-full animate-ai-mega-beam opacity-40 blur-sm"></div>
+
+            {/* Superior Central Label */}
+            <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 text-center">
+              <div className="text-[14px] font-black text-blue-900 bg-gradient-to-b from-white via-blue-50 to-white backdrop-blur-lg px-6 py-3 rounded-3xl border-2 border-blue-200/80 shadow-2xl">
+                INTELLIGENT<br />ORCHESTRATOR
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-2 bg-gradient-to-r from-blue-400 via-purple-500 via-cyan-400 to-blue-500 rounded-full blur-[1px]"></div>
               </div>
-              <div className="text-[8px] text-blue-700 font-bold mt-2 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-lg shadow-lg">Central Intelligence Hub</div>
+              <div className="text-[9px] text-blue-800 font-bold mt-3 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-xl shadow-lg border border-blue-200/60">Central AI Intelligence Hub</div>
             </div>
           </div>
         </div>
 
-        {/* Interconnected AI Network Lines */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20">
+        {/* Layer 2: Revolutionary AI Agent Satellites */}
+        <div className="absolute top-1/4 left-1/6">
+          <div className="relative">
+            {/* Analytics AI Satellite - Large Scale */}
+            <div className="w-16 h-16 bg-gradient-to-br from-green-400 via-emerald-500 via-teal-400 to-green-500 rounded-xl shadow-2xl animate-ai-agent-mega-morph-1 relative overflow-hidden border-3 border-green-300/70 transform-gpu">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/40 to-transparent rounded-xl animate-ai-agent-inner-revolve"></div>
+              <div className="absolute inset-2 bg-gradient-to-br from-green-300 via-emerald-400 to-teal-300 rounded-lg opacity-80 animate-ai-agent-data-pulse"></div>
+              <div className="absolute inset-4 bg-white/70 rounded-lg animate-ai-agent-bright-flash"></div>
+              <div className="absolute inset-6 bg-gradient-conic from-green-200 via-emerald-200 to-teal-200 rounded-lg animate-ai-agent-analytics-rotate"></div>
+
+              {/* Data visualization bars */}
+              <div className="absolute inset-2 flex items-end justify-center space-x-1">
+                <div className="w-1 bg-gradient-to-t from-green-400 to-emerald-300 rounded-full animate-ai-agent-bar-1" style={{height: '20px'}}></div>
+                <div className="w-1 bg-gradient-to-t from-green-400 to-emerald-300 rounded-full animate-ai-agent-bar-2" style={{height: '35px'}}></div>
+                <div className="w-1 bg-gradient-to-t from-green-400 to-emerald-300 rounded-full animate-ai-agent-bar-3" style={{height: '25px'}}></div>
+                <div className="w-1 bg-gradient-to-t from-green-400 to-emerald-300 rounded-full animate-ai-agent-bar-4" style={{height: '40px'}}></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute top-1/3 right-1/6">
+          <div className="relative">
+            {/* Operations Monitor Satellite - Professional Scale */}
+            <div className="w-14 h-14 bg-gradient-to-br from-orange-400 via-yellow-500 via-red-400 to-orange-500 rounded-xl shadow-2xl animate-ai-agent-mega-morph-2 relative overflow-hidden border-3 border-orange-300/70">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/35 to-transparent rounded-xl animate-ai-agent-monitor-scan"></div>
+
+              {/* Monitoring dashboard */}
+              <div className="absolute inset-2">
+                <div className="w-full h-1 bg-gradient-to-r from-orange-400 to-red-400 rounded-full opacity-60"></div>
+                <div className="absolute top-2 left-0 w-2 h-2 bg-green-400 rounded-full animate-ai-agent-status-light"></div>
+                <div className="absolute top-2 right-0 w-2 h-2 bg-red-400 rounded-full animate-ai-agent-alert-light"></div>
+                <div className="absolute bottom-1 left-1/2 w-2 h-1 bg-white/80 rounded-full animate-ai-agent-progress-bar transform -translate-x-1/2"></div>
+              </div>
+
+              {/* Holographic grid */}
+              <div className="absolute inset-0 opacity-30">
+                <div className="grid grid-cols-3 grid-rows-3 w-full h-full">
+                  {[...Array(9)].map((_, i) => (
+                    <div key={i} className={`border border-orange-300/40 ${i === 4 ? 'animate-ai-agent-center-glow' : 'animate-ai-agent-grid-pulse'}`}></div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-1/4 left-1/6">
+          <div className="relative">
+            {/* Security AI Satellite - Advanced Scale */}
+            <div className="w-18 h-18 bg-gradient-to-br from-purple-500 via-pink-500 via-violet-500 to-purple-600 rounded-xl shadow-2xl animate-ai-agent-mega-morph-3 relative overflow-hidden border-3 border-purple-300/70">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/40 to-transparent rounded-xl animate-ai-agent-security-shield"></div>
+              <div className="absolute inset-2 bg-gradient-to-br from-purple-400 via-pink-400 to-violet-400 rounded-lg opacity-85 animate-ai-agent-threat-pulse"></div>
+
+              {/* Security patterns */}
+              <div className="absolute inset-1">
+                <div className="w-6 h-6 border-2 border-purple-300/60 rounded-lg rotate-45 animate-ai-agent-security-pattern absolute top-1 right-1"></div>
+                <div className="w-4 h-4 border border-pink-300/50 rounded-full animate-ai-agent-threat-detector absolute bottom-1 left-1"></div>
+                <div className="w-1 h-1 bg-gradient-to-br from-purple-300 to-pink-300 rounded-full animate-ai-agent-vulnerability-light absolute top-2 left-2"></div>
+              </div>
+
+              {/* Protection field visualization */}
+              <div className="absolute inset-3 border-2 border-gradient-to-r from-purple-400 via-pink-400 to-violet-400 rounded-lg animate-ai-agent-protection-field opacity-60"></div>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-1/3 right-1/6">
+          <div className="relative">
+            {/* Auto-Response Satellite - Dynamic Scale */}
+            <div className="w-15 h-15 bg-gradient-to-br from-cyan-400 via-blue-500 via-teal-400 to-cyan-500 rounded-xl shadow-2xl animate-ai-agent-mega-morph-4 relative overflow-hidden border-3 border-cyan-300/70">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/45 to-transparent rounded-xl animate-ai-agent-response-flow"></div>
+              <div className="absolute inset-2 bg-gradient-to-br from-cyan-300 via-blue-400 to-teal-300 rounded-lg opacity-80 animate-ai-agent-action-pulse"></div>
+
+              {/* Action buttons/indicators */}
+              <div className="absolute inset-2">
+                <div className="w-3 h-3 bg-gradient-to-br from-cyan-200 to-blue-200 rounded-full animate-ai-agent-response-ready absolute top-0 right-0 shadow-sm"></div>
+                <div className="w-2 h-2 bg-gradient-to-br from-teal-200 to-cyan-200 rounded-full animate-ai-agent-response-executing absolute bottom-0 left-0 shadow-sm"></div>
+                <div className="w-2 h-1 bg-gradient-to-r from-blue-300 to-cyan-300 rounded-full animate-ai-agent-response-progress absolute bottom-1 left-1/2 transform -translate-x-1/2"></div>
+              </div>
+
+              {/* Response flow visualization */}
+              <div className="absolute inset-3">
+                <div className="w-0.5 h-full bg-gradient-to-b from-cyan-300 via-blue-300 to-teal-300 animate-ai-agent-response-stream absolute left-1"></div>
+                <div className="w-1 h-0.5 bg-gradient-to-r from-blue-300 via-cyan-300 to-teal-300 animate-ai-agent-response-indicator absolute top-1 right-0"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute top-2/3 right-1/4">
+          <div className="relative">
+            {/* Cost Optimizer Satellite - Efficient Scale */}
+            <div className="w-14 h-14 bg-gradient-to-br from-rose-400 via-pink-400 via-red-400 to-rose-500 rounded-xl shadow-2xl animate-ai-agent-mega-morph-5 relative overflow-hidden border-3 border-rose-300/70">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/40 to-transparent rounded-xl animate-ai-agent-cost-balance"></div>
+
+              {/* Optimization metrics */}
+              <div className="absolute inset-2">
+                <div className="w-full h-1 bg-gradient-to-r from-rose-400 via-pink-400 to-red-400 animate-ai-agent-cost-efficiency relative rounded-full overflow-hidden">
+                  <div className="w-2/3 h-full bg-gradient-to-r from-green-400 to-emerald-400 rounded-full animate-ai-agent-cost-savings"></div>
+                </div>
+                <div className="absolute top-3 w-full text-center">
+                  <div className="text-[7px] font-bold text-rose-800">$</div>
+                </div>
+                <div className="absolute bottom-1 left-1/2 w-1 h-1 bg-emerald-400 rounded-full animate-ai-agent-optimization-pulse -translate-x-1/2"></div>
+              </div>
+
+              {/* Resource allocation grid */}
+              <div className="absolute inset-1 opacity-40">
+                <div className="grid grid-cols-2 gap-1 w-full h-full p-1">
+                  {[...Array(4)].map((_, i) => (
+                    <div key={i} className={`border border-rose-300/50 rounded animate-ai-agent-resource-${i + 1}`}></div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Layer 3: Intelligent Neural Pathways */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-25">
           <defs>
-            <linearGradient id="aiLine1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style={{stopColor: 'hsl(var(--accent-blue))', stopOpacity: '0.4'}} />
-              <stop offset="100%" style={{stopColor: 'hsl(var(--signal-purple))', stopOpacity: '0.7'}} />
+            {/* Enhanced gradients for connections */}
+            <linearGradient id="megaConnection1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{stopColor: 'rgba(34, 197, 94, 0.6)', stopOpacity: '0.8'}} />
+              <stop offset="100%" style={{stopColor: 'rgba(20, 184, 166, 0.6)', stopOpacity: '0.9'}} />
             </linearGradient>
-            <linearGradient id="aiLine2" x1="100%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" style={{stopColor: 'rgb(59, 130, 246)', stopOpacity: '0.5'}} />
-              <stop offset="100%" style={{stopColor: 'rgb(99, 102, 241)', stopOpacity: '0.8'}} />
+            <linearGradient id="megaConnection2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style={{stopColor: 'rgba(249, 115, 22, 0.6)', stopOpacity: '0.8'}} />
+              <stop offset="100%" style={{stopColor: 'rgba(239, 68, 68, 0.6)', stopOpacity: '0.9'}} />
             </linearGradient>
-            <linearGradient id="aiLine3" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" style={{stopColor: 'rgb(6, 182, 212)', stopOpacity: '0.4'}} />
-              <stop offset="100%" style={{stopColor: 'rgb(147, 51, 234)', stopOpacity: '0.6'}} />
+            <linearGradient id="megaConnection3" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" style={{stopColor: 'rgba(147, 51, 234, 0.6)', stopOpacity: '0.8'}} />
+              <stop offset="100%" style={{stopColor: 'rgba(219, 39, 119, 0.6)', stopOpacity: '0.9'}} />
             </linearGradient>
-            <linearGradient id="aiLine4" x1="50%" y1="0%" x2="50%" y2="100%">
-              <stop offset="0%" style={{stopColor: 'rgb(16, 185, 129)', stopOpacity: '0.5'}} />
-              <stop offset="100%" style={{stopColor: 'rgb(248, 113, 113)', stopOpacity: '0.7'}} />
+            <linearGradient id="megaConnection4" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" style={{stopColor: 'rgba(6, 182, 212, 0.6)', stopOpacity: '0.8'}} />
+              <stop offset="100%" style={{stopColor: 'rgba(59, 130, 246, 0.6)', stopOpacity: '0.9'}} />
             </linearGradient>
-            <linearGradient id="aiLine5" x1="100%" y1="50%" x2="0%" y2="50%">
-              <stop offset="0%" style={{stopColor: 'rgb(245, 158, 11)', stopOpacity: '0.4'}} />
-              <stop offset="100%" style={{stopColor: 'rgb(236, 72, 153)', stopOpacity: '0.6'}} />
+            <linearGradient id="megaConnection5" x1="100%" y1="50%" x2="0%" y2="50%">
+              <stop offset="0%" style={{stopColor: 'rgba(236, 72, 153, 0.6)', stopOpacity: '0.8'}} />
+              <stop offset="100%" style={{stopColor: 'rgba(168, 85, 247, 0.6)', stopOpacity: '0.9'}} />
             </linearGradient>
           </defs>
 
-          {/* Direct connecting lines between agents */}
-          <line x1="280" y1="190" x2="460" y2="340" stroke="url(#aiLine1)" strokeWidth="1.5" strokeOpacity="0.7" className="animate-ai-connection-direct-1">
-            <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="6s" repeatCount="indefinite" />
-          </line>
+          {/* Major neural pathways */}
+          <path d="M 160,320 Q 480,180 960,540" stroke="url(#megaConnection1)" strokeWidth="2.5" fill="none" className="animate-ai-mega-neural-path-1">
+            <animate attributeName="stroke-dashoffset" values="2000;0" dur="15s" repeatCount="indefinite" />
+          </path>
 
-          <line x1="720" y1="250" x2="540" y2="340" stroke="url(#aiLine2)" strokeWidth="1.5" strokeOpacity="0.7" className="animate-ai-connection-direct-2">
-            <animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur="7s" repeatCount="indefinite" />
-          </line>
+          <path d="M 1440,360 Q 1200,150 960,540" stroke="url(#megaConnection2)" strokeWidth="2.5" fill="none" className="animate-ai-mega-neural-path-2">
+            <animate attributeName="stroke-dashoffset" values="1600;0" dur="12s" repeatCount="indefinite" />
+          </path>
 
-          <line x1="480" y1="560" x2="460" y2="420" stroke="url(#aiLine3)" strokeWidth="1.5" strokeOpacity="0.7" className="animate-ai-connection-direct-3">
-            <animate attributeName="stroke-opacity" values="0.2;0.7;0.2" dur="8s" repeatCount="indefinite" />
-          </line>
+          <path d="M 280,640 Q 480,400 960,540" stroke="url(#megaConnection3)" strokeWidth="2.5" fill="none" className="animate-ai-mega-neural-path-3">
+            <animate attributeName="stroke-dashoffset" values="1800;0" dur="18s" repeatCount="indefinite" />
+          </path>
 
-          <line x1="620" y1="520" x2="540" y2="420" stroke="url(#aiLine4)" strokeWidth="1.5" strokeOpacity="0.7" className="animate-ai-connection-direct-4">
-            <animate attributeName="stroke-opacity" values="0.5;0.8;0.5" dur="5s" repeatCount="indefinite" />
-          </line>
+          <path d="M 1000,100 Q 960,300 960,540" stroke="url(#megaConnection4)" strokeWidth="2.5" fill="none" className="animate-ai-mega-neural-path-4">
+            <animate attributeName="stroke-dashoffset" values="1400;0" dur="14s" repeatCount="indefinite" />
+          </path>
 
-          <line x1="240" y1="640" x2="460" y2="480" stroke="url(#aiLine5)" strokeWidth="1.5" strokeOpacity="0.7" className="animate-ai-connection-direct-5">
-            <animate attributeName="stroke-opacity" values="0.3;1.0;0.3" dur="9s" repeatCount="indefinite" />
-          </line>
-
-          {/* Cross-connecting lines between agents */}
-          <line x1="280" y1="190" x2="720" y2="250" stroke="url(#aiLine1)" strokeWidth="1" strokeOpacity="0.4" className="animate-ai-connection-cross-1">
-            <animate attributeName="stroke-opacity" values="0.1;0.5;0.1" dur="12s" repeatCount="indefinite" />
-          </line>
-
-          <line x1="480" y1="560" x2="620" y2="520" stroke="url(#aiLine2)" strokeWidth="1" strokeOpacity="0.4" className="animate-ai-connection-cross-2">
-            <animate attributeName="stroke-opacity" values="0.2;0.6;0.2" dur="10s" repeatCount="indefinite" />
-          </line>
-
-          <line x1="240" y1="640" x2="480" y2="560" stroke="url(#aiLine3)" strokeWidth="1" strokeOpacity="0.4" className="animate-ai-connection-cross-3">
-            <animate attributeName="stroke-opacity" values="0.1;0.4;0.1" dur="15s" repeatCount="indefinite" />
-          </line>
+          <path d="M 1600,400 Q 1300,500 960,540" stroke="url(#megaConnection5)" strokeWidth="2.5" fill="none" className="animate-ai-mega-neural-path-5">
+            <animate attributeName="stroke-dashoffset" values="1900;0" dur="16s" repeatCount="indefinite" />
+          </path>
         </svg>
 
-        {/* Enhanced Pulsing background orbs */}
-        <div className="absolute top-12 right-1/4 w-72 h-72 bg-gradient-radial from-blue-400/15 via-cyan-300/10 to-transparent rounded-full blur-3xl animate-ai-background-1 opacity-40"></div>
-        <div className="absolute bottom-16 left-1/5 w-96 h-96 bg-gradient-radial from-purple-400/12 via-pink-300/8 to-transparent rounded-full blur-3xl animate-ai-background-2 opacity-35"></div>
-        <div className="absolute top-1/3 right-1/6 w-60 h-60 bg-gradient-radial from-emerald-400/10 via-green-300/8 to-transparent rounded-full blur-2xl animate-ai-background-3 opacity-30"></div>
-
-        {/* Enhanced Ambient particle effect */}
-        <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className={`absolute rounded-full shadow-sm animate-ai-particle-${i + 1}`}
-              style={{
-                width: `${1.5 + Math.random() * 2.5}px`,
-                height: `${1.5 + Math.random() * 2.5}px`,
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                background: `linear-gradient(45deg, ${
-                  ['#dbeafe', '#e9d5ff', '#cffafe', '#d1fae5', '#fef3c7', '#fef2f2', '#fce7f3'][i % 7]
-                }, ${
-                  ['#bfdbfe', '#d8b4fe', '#a5f3fc', '#a7f3d0', '#fde68a', '#fecaca', '#fbcfe8'][i % 7]
-                })`,
-                opacity: 0.2 + Math.random() * 0.3,
-                boxShadow: `0 0 ${4 + Math.random() * 6}px ${['rgba(59, 130, 246, 0.3)', 'rgba(139, 92, 246, 0.3)', 'rgba(6, 182, 212, 0.3)', 'rgba(16, 185, 129, 0.3)', 'rgba(245, 158, 11, 0.3)', 'rgba(239, 68, 68, 0.3)', 'rgba(236, 72, 153, 0.3)'][i % 7]}`,
-              }}
-            ></div>
-          ))}
-        </div>
+        {/* Layer 4: Subtle Content Protection Overlay */}
+        <div className="absolute inset-0 z-[2] pointer-events-none bg-gradient-to-b from-white/5 via-transparent to-white/10"></div>
       </div>
-
-
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         <div className="grid gap-8 lg:grid-cols-[3fr_2fr] lg:gap-12 items-center">

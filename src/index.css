@@ -1075,63 +1075,927 @@ All colors MUST be HSL.
     }
   }
 
-  /* Central Intelligence Core Animations */
-  .animate-ai-outer-ring-1 {
-    animation: ai-outer-ring 20s linear infinite;
+  /* World-Class Advanced AI Animations */
+  .animate-ai-mesh-node {
+    animation: ai-mesh-node 3s ease-in-out infinite alternate;
   }
 
-  .animate-ai-outer-ring-2 {
-    animation: ai-outer-ring 25s linear infinite reverse;
+  .animate-ai-mesh-glow {
+    animation: ai-mesh-glow 8s ease-in-out infinite;
   }
 
-  .animate-ai-outer-ring-3 {
-    animation: ai-outer-ring 30s linear infinite;
+  .animate-ai-mega-ring {
+    animation: ai-mega-ring 20s linear infinite;
   }
 
-  .animate-ai-outer-ring-4 {
-    animation: ai-outer-ring 35s linear infinite reverse;
+  .animate-ai-mega-ring-reverse {
+    animation: ai-mega-ring 25s linear infinite reverse;
   }
 
-  .animate-ai-core-pulse {
-    animation: ai-core-pulse 4s ease-in-out infinite;
+  .animate-ai-mega-ring-slow {
+    animation: ai-mega-ring 30s linear infinite;
   }
 
-  .animate-ai-core-rotate {
-    animation: ai-core-rotate 8s linear infinite;
+  .animate-ai-mega-pulse {
+    animation: ai-mega-pulse 3s ease-in-out infinite;
   }
 
-  .animate-ai-core-inner {
-    animation: ai-core-inner 6s ease-in-out infinite;
+  .animate-ai-mega-core-rotate {
+    animation: ai-mega-core-rotate 12s linear infinite;
   }
 
-  .animate-ai-core-bright {
-    animation: ai-core-bright 2.5s ease-in-out infinite;
+  .animate-ai-mega-core-reverse {
+    animation: ai-mega-core-reverse 8s linear infinite reverse;
   }
 
-  .animate-ai-core-glow {
-    animation: ai-core-glow 3.5s ease-in-out infinite;
+  .animate-ai-mega-core-inner {
+    animation: ai-mega-core-inner 6s ease-in-out infinite;
   }
 
-  .animate-ai-intelligence-pulse {
-    animation: ai-intelligence-pulse 2s ease-in-out infinite;
+  .animate-ai-mega-bright-core {
+    animation: ai-mega-bright-core 2.5s ease-in-out infinite;
   }
 
-  .animate-ai-intelligence-pulse-delayed {
-    animation: ai-intelligence-pulse 2s ease-in-out infinite;
+  .animate-ai-mega-glow-core {
+    animation: ai-mega-glow-core 4s ease-in-out infinite;
+  }
+
+  .animate-ai-mega-inner-ring {
+    animation: ai-mega-inner-ring 10s linear infinite;
+  }
+
+  .animate-ai-mega-pulse-wave-1 {
+    animation: ai-mega-pulse-wave-1 2s ease-in-out infinite;
+  }
+
+  .animate-ai-mega-pulse-wave-2 {
+    animation: ai-mega-pulse-wave-2 2s ease-in-out infinite;
+    animation-delay: 0.5s;
+  }
+
+  .animate-ai-mega-pulse-wave-3 {
+    animation: ai-mega-pulse-wave-3 2s ease-in-out infinite;
     animation-delay: 1s;
   }
 
-  .animate-ai-intelligence-pulse-slow {
-    animation: ai-intelligence-pulse 2s ease-in-out infinite;
+  .animate-ai-mega-pulse-wave-4 {
+    animation: ai-mega-pulse-wave-4 2s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+
+  .animate-ai-mega-pulse-wave-5 {
+    animation: ai-mega-pulse-wave-5 2s ease-in-out infinite;
     animation-delay: 2s;
   }
 
-  .animate-ai-coordinator-glow {
-    animation: ai-coordinator-glow 5s ease-in-out infinite;
+  .animate-ai-mega-beam {
+    animation: ai-mega-beam 4s ease-in-out infinite;
   }
 
-  .animate-ai-coordinator-beam {
-    animation: ai-coordinator-beam 3s ease-in-out infinite;
+  .animate-ai-agent-mega-morph-1 {
+    animation: ai-agent-mega-morph-1 8s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-mega-morph-2 {
+    animation: ai-agent-mega-morph-2 7s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-mega-morph-3 {
+    animation: ai-agent-mega-morph-3 9s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-mega-morph-4 {
+    animation: ai-agent-mega-morph-4 6s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-mega-morph-5 {
+    animation: ai-agent-mega-morph-5 10s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-inner-revolve {
+    animation: ai-agent-inner-revolve 5s linear infinite;
+  }
+
+  .animate-ai-agent-data-pulse {
+    animation: ai-agent-data-pulse 3s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-bright-flash {
+    animation: ai-agent-bright-flash 2s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-analytics-rotate {
+    animation: ai-agent-analytics-rotate 6s linear infinite;
+  }
+
+  .animate-ai-agent-bar-1 {
+    animation: ai-agent-bar-1 4s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-bar-2 {
+    animation: ai-agent-bar-2 4s ease-in-out infinite;
+    animation-delay: 0.3s;
+  }
+
+  .animate-ai-agent-bar-3 {
+    animation: ai-agent-bar-3 4s ease-in-out infinite;
+    animation-delay: 0.6s;
+  }
+
+  .animate-ai-agent-bar-4 {
+    animation: ai-agent-bar-4 4s ease-in-out infinite;
+    animation-delay: 0.9s;
+  }
+
+  .animate-ai-agent-monitor-scan {
+    animation: ai-agent-monitor-scan 3s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-status-light {
+    animation: ai-agent-status-light 1.5s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-alert-light {
+    animation: ai-agent-alert-light 1.5s ease-in-out infinite;
+    animation-delay: 0.75s;
+  }
+
+  .animate-ai-agent-progress-bar {
+    animation: ai-agent-progress-bar 2s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-center-glow {
+    animation: ai-agent-center-glow 3s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-grid-pulse {
+    animation: ai-agent-grid-pulse 4s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-security-shield {
+    animation: ai-agent-security-shield 4s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-threat-pulse {
+    animation: ai-agent-threat-pulse 2.5s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-security-pattern {
+    animation: ai-agent-security-pattern 8s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-threat-detector {
+    animation: ai-agent-threat-detector 3s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-vulnerability-light {
+    animation: ai-agent-vulnerability-light 1.8s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-protection-field {
+    animation: ai-agent-protection-field 5s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-response-flow {
+    animation: ai-agent-response-flow 4s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-action-pulse {
+    animation: ai-agent-action-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-response-ready {
+    animation: ai-agent-response-ready 1.2s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-response-executing {
+    animation: ai-agent-response-executing 1.2s ease-in-out infinite;
+    animation-delay: 0.6s;
+  }
+
+  .animate-ai-agent-response-progress {
+    animation: ai-agent-response-progress 3s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-response-stream {
+    animation: ai-agent-response-stream 4s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-response-indicator {
+    animation: ai-agent-response-indicator 2.5s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-cost-balance {
+    animation: ai-agent-cost-balance 5s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-cost-efficiency {
+    animation: ai-agent-cost-efficiency 4s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-cost-savings {
+    animation: ai-agent-cost-savings 3s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-optimization-pulse {
+    animation: ai-agent-optimization-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-resource-1 {
+    animation: ai-agent-resource-1 3s ease-in-out infinite;
+  }
+
+  .animate-ai-agent-resource-2 {
+    animation: ai-agent-resource-2 3s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+
+  .animate-ai-agent-resource-3 {
+    animation: ai-agent-resource-3 3s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .animate-ai-agent-resource-4 {
+    animation: ai-agent-resource-4 3s ease-in-out infinite;
+    animation-delay: 3s;
+  }
+
+  .animate-ai-mega-neural-path-1 {
+    animation: ai-mega-neural-path-1 12s ease-in-out infinite;
+  }
+
+  .animate-ai-mega-neural-path-2 {
+    animation: ai-mega-neural-path-2 10s ease-in-out infinite;
+  }
+
+  .animate-ai-mega-neural-path-3 {
+    animation: ai-mega-neural-path-3 15s ease-in-out infinite;
+  }
+
+  .animate-ai-mega-neural-path-4 {
+    animation: ai-mega-neural-path-4 8s ease-in-out infinite;
+  }
+
+  .animate-ai-mega-neural-path-5 {
+    animation: ai-mega-neural-path-5 14s ease-in-out infinite;
+  }
+
+  /* Keyframes for World-Class Animations */
+  @keyframes ai-mesh-node {
+    0%, 100% {
+      r: 1.5;
+      fill-opacity: 0.4;
+    }
+    50% {
+      r: 2.2;
+      fill-opacity: 0.7;
+    }
+  }
+
+  @keyframes ai-mesh-glow {
+    0%, 100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes ai-mega-ring {
+    0% {
+      transform: rotate(0deg) scale(1);
+      opacity: 0.2;
+    }
+    50% {
+      transform: rotate(180deg) scale(1.1);
+      opacity: 0.4;
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+      opacity: 0.2;
+    }
+  }
+
+  @keyframes ai-mega-pulse {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes ai-mega-core-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes ai-mega-core-reverse {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  @keyframes ai-mega-core-inner {
+    0%, 100% {
+      transform: scale(0.9) rotate(0deg);
+      opacity: 0.9;
+    }
+    50% {
+      transform: scale(1.1) rotate(180deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes ai-mega-bright-core {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes ai-mega-glow-core {
+    0%, 100% {
+      opacity: 0.8;
+      transform: scale(0.95);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes ai-mega-inner-ring {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes ai-mega-pulse-wave-1 {
+    0%, 100% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(2);
+    }
+  }
+
+  @keyframes ai-mega-pulse-wave-2 {
+    0%, 100% {
+      opacity: 0.5;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.8);
+    }
+  }
+
+  @keyframes ai-mega-pulse-wave-3 {
+    0%, 100% {
+      opacity: 0.7;
+      transform: scale(0.9);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.5);
+    }
+  }
+
+  @keyframes ai-mega-pulse-wave-4 {
+    0%, 100% {
+      opacity: 0.4;
+      transform: scale(0.7);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes ai-mega-pulse-wave-5 {
+    0%, 100% {
+      opacity: 0.6;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.6);
+    }
+  }
+
+  @keyframes ai-mega-beam {
+    0%, 100% {
+      opacity: 0.4;
+      transform: scaleY(1) scaleX(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scaleY(1.2) scaleX(1.1);
+    }
+  }
+
+  @keyframes ai-agent-mega-morph-1 {
+    0%, 100% {
+      border-radius: 15px;
+      transform: scale(1) rotate(0deg);
+      box-shadow: 0 0 30px rgba(34, 197, 94, 0.4);
+    }
+    25% {
+      border-radius: 25px;
+      transform: scale(1.1) rotate(1deg);
+      box-shadow: 0 0 45px rgba(34, 197, 94, 0.6);
+    }
+    50% {
+      border-radius: 35px;
+      transform: scale(0.95) rotate(-1deg);
+      box-shadow: 0 0 40px rgba(34, 197, 94, 0.5);
+    }
+    75% {
+      border-radius: 20px;
+      transform: scale(1.05) rotate(0.5deg);
+      box-shadow: 0 0 50px rgba(34, 197, 94, 0.7);
+    }
+  }
+
+  @keyframes ai-agent-mega-morph-2 {
+    0%, 100% {
+      transform: scale(1) rotate(0deg);
+      box-shadow: 0 0 35px rgba(249, 115, 22, 0.4);
+    }
+    50% {
+      transform: scale(1.15) rotate(3deg);
+      box-shadow: 0 0 50px rgba(249, 115, 22, 0.8);
+    }
+  }
+
+  @keyframes ai-agent-mega-morph-3 {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 40px rgba(147, 51, 234, 0.4);
+    }
+    25% {
+      transform: scale(1.2);
+      box-shadow: 0 0 60px rgba(147, 51, 234, 0.7);
+    }
+    75% {
+      transform: scale(0.95);
+      box-shadow: 0 0 45px rgba(147, 51, 234, 0.6);
+    }
+  }
+
+  @keyframes ai-agent-mega-morph-4 {
+    0%, 100% {
+      transform: scale(1) rotate(0deg);
+      box-shadow: 0 0 35px rgba(6, 182, 212, 0.4);
+    }
+    30% {
+      transform: scale(1.1) rotate(2deg);
+      box-shadow: 0 0 50px rgba(6, 182, 212, 0.8);
+    }
+    60% {
+      transform: scale(1.05) rotate(-1deg);
+      box-shadow: 0 0 45px rgba(6, 182, 212, 0.6);
+    }
+  }
+
+  @keyframes ai-agent-mega-morph-5 {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 35px rgba(236, 72, 153, 0.4);
+    }
+    20% {
+      transform: scale(1.25);
+      box-shadow: 0 0 55px rgba(236, 72, 153, 1);
+    }
+    40% {
+      transform: scale(0.9);
+      box-shadow: 0 0 40px rgba(236, 72, 153, 0.5);
+    }
+    80% {
+      transform: scale(1.1);
+      box-shadow: 0 0 50px rgba(236, 72, 153, 0.7);
+    }
+  }
+
+  @keyframes ai-agent-inner-revolve {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes ai-agent-data-pulse {
+    0%, 100% {
+      opacity: 0.8;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes ai-agent-bright-flash {
+    0%, 100% {
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes ai-agent-analytics-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes ai-agent-bar-1 {
+    0%, 100% { height: 20px; opacity: 0.8; }
+    50% { height: 35px; opacity: 1; }
+  }
+
+  @keyframes ai-agent-bar-2 {
+    0%, 100% { height: 35px; opacity: 0.9; }
+    50% { height: 50px; opacity: 1; }
+  }
+
+  @keyframes ai-agent-bar-3 {
+    0%, 100% { height: 25px; opacity: 0.7; }
+    50% { height: 40px; opacity: 1; }
+  }
+
+  @keyframes ai-agent-bar-4 {
+    0%, 100% { height: 40px; opacity: 0.9; }
+    50% { height: 55px; opacity: 1; }
+  }
+
+  @keyframes ai-agent-monitor-scan {
+    0%, 100% {
+      opacity: 0.8;
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: rotate(2deg) scale(1.05);
+    }
+  }
+
+  @keyframes ai-agent-status-light {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.3);
+    }
+  }
+
+  @keyframes ai-agent-alert-light {
+    0%, 100% {
+      opacity: 0.2;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.4);
+    }
+  }
+
+  @keyframes ai-agent-progress-bar {
+    0%, 100% {
+      width: 60%;
+      opacity: 0.6;
+    }
+    50% {
+      width: 80%;
+      opacity: 1;
+    }
+  }
+
+  @keyframes ai-agent-center-glow {
+    0%, 100% {
+      border-color: rgba(249, 115, 22, 0.4);
+      opacity: 0.5;
+    }
+    50% {
+      border-color: rgba(249, 115, 22, 0.8);
+      opacity: 1;
+    }
+  }
+
+  @keyframes ai-agent-grid-pulse {
+    0%, 100% {
+      border-color: rgba(249, 115, 22, 0.3);
+      opacity: 0.4;
+    }
+    50% {
+      border-color: rgba(249, 115, 22, 0.6);
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes ai-agent-security-shield {
+    0%, 100% {
+      opacity: 0.8;
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: rotate(45deg) scale(1.1);
+    }
+  }
+
+  @keyframes ai-agent-threat-pulse {
+    0%, 100% {
+      opacity: 0.85;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes ai-agent-security-pattern {
+    0%, 100% {
+      opacity: 1;
+      transform: rotate(45deg) scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: rotate(45deg) scale(1.2);
+    }
+  }
+
+  @keyframes ai-agent-threat-detector {
+    0%, 100% {
+      opacity: 0.5;
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: rotate(180deg) scale(1.1);
+    }
+  }
+
+  @keyframes ai-agent-vulnerability-light {
+    0%, 100% {
+      opacity: 0.4;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.5);
+    }
+  }
+
+  @keyframes ai-agent-protection-field {
+    0%, 100% {
+      opacity: 0.6;
+      border-color: rgba(147, 51, 234, 0.4);
+    }
+    50% {
+      opacity: 1;
+      border-color: rgba(147, 51, 234, 0.8);
+    }
+  }
+
+  @keyframes ai-agent-response-flow {
+    0%, 100% {
+      opacity: 0.8;
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: rotate(5deg) scale(1.02);
+    }
+  }
+
+  @keyframes ai-agent-action-pulse {
+    0%, 100% {
+      opacity: 0.8;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes ai-agent-response-ready {
+    0%, 100% {
+      opacity: 0.4;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes ai-agent-response-executing {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.3);
+    }
+  }
+
+  @keyframes ai-agent-response-progress {
+    0%, 100% {
+      width: 40%;
+      opacity: 0.6;
+    }
+    50% {
+      width: 60%;
+      opacity: 1;
+    }
+  }
+
+  @keyframes ai-agent-response-stream {
+    0%, 100% {
+      opacity: 0.7;
+      background-position: 0% 50%;
+    }
+    50% {
+      opacity: 1;
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes ai-agent-response-indicator {
+    0%, 100% {
+      opacity: 0.5;
+      width: 3px;
+    }
+    50% {
+      opacity: 1;
+      width: 6px;
+    }
+  }
+
+  @keyframes ai-agent-cost-balance {
+    0%, 100% {
+      opacity: 0.8;
+      transform: rotate(-1deg) scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: rotate(1deg) scale(1.02);
+    }
+  }
+
+  @keyframes ai-agent-cost-efficiency {
+    0%, 100% {
+      background-size: 100% 100%;
+      opacity: 0.6;
+    }
+    50% {
+      background-size: 120% 100%;
+      opacity: 1;
+    }
+  }
+
+  @keyframes ai-agent-cost-savings {
+    0%, 100% {
+      width: 66%;
+    }
+    50% {
+      width: 85%;
+    }
+  }
+
+  @keyframes ai-agent-optimization-pulse {
+    0%, 100% {
+      opacity: 0.4;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.5);
+    }
+  }
+
+  @keyframes ai-agent-resource-1 {
+    0%, 100% {
+      border-color: rgba(236, 72, 153, 0.4);
+      opacity: 0.7;
+    }
+    50% {
+      border-color: rgba(236, 72, 153, 0.8);
+      opacity: 1;
+    }
+  }
+
+  @keyframes ai-agent-resource-2 {
+    0%, 100% {
+      border-color: rgba(236, 72, 153, 0.4);
+      opacity: 0.6;
+    }
+    50% {
+      border-color: rgba(236, 72, 153, 0.8);
+      opacity: 1;
+    }
+  }
+
+  @keyframes ai-agent-resource-3 {
+    0%, 100% {
+      border-color: rgba(236, 72, 153, 0.4);
+      opacity: 0.5;
+    }
+    50% {
+      border-color: rgba(236, 72, 153, 0.8);
+      opacity: 1;
+    }
+  }
+
+  @keyframes ai-agent-resource-4 {
+    0%, 100% {
+      border-color: rgba(236, 72, 153, 0.4);
+      opacity: 0.7;
+    }
+    50% {
+      border-color: rgba(236, 72, 153, 0.8);
+      opacity: 1;
+    }
+  }
+
+  @keyframes ai-mega-neural-path-1 {
+    0% {
+      stroke-dashoffset: 2000;
+      opacity: 0.3;
+    }
+    50% {
+      stroke-dashoffset: 1000;
+      opacity: 0.9;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes ai-mega-neural-path-2 {
+    0% {
+      stroke-dashoffset: 1600;
+      opacity: 0.4;
+    }
+    50% {
+      stroke-dashoffset: 800;
+      opacity: 1;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes ai-mega-neural-path-3 {
+    0% {
+      stroke-dashoffset: 1800;
+      opacity: 0.2;
+    }
+    50% {
+      stroke-dashoffset: 900;
+      opacity: 0.8;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 0.2;
+    }
+  }
+
+  @keyframes ai-mega-neural-path-4 {
+    0% {
+      stroke-dashoffset: 1400;
+      opacity: 0.5;
+    }
+    50% {
+      stroke-dashoffset: 700;
+      opacity: 1;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes ai-mega-neural-path-5 {
+    0% {
+      stroke-dashoffset: 1900;
+      opacity: 0.3;
+    }
+    50% {
+      stroke-dashoffset: 950;
+      opacity: 0.9;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 0.3;
+    }
   }
 
   @keyframes ai-outer-ring {

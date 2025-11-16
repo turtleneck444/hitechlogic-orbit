@@ -75,16 +75,16 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
                       setActiveImage(tab.image);
                       setActiveTabId(tab.id);
                     }}
-                    className="cursor-pointer py-5 !no-underline transition hover:no-underline text-white [&[data-state=open]>svg]:text-white data-[state=open]:text-white"
+                    className="cursor-pointer py-6 !no-underline transition hover:no-underline text-white [&[data-state=open]>svg]:text-white data-[state=open]:text-white"
                   >
                     <h6
-                      className={`text-xl font-semibold ${tab.id === activeTabId ? "text-white" : "text-white/60"}`}
+                      className={`text-2xl font-semibold text-white ${tab.id !== activeTabId ? "text-white/80" : ""}`}
                     >
                       {tab.title}
                     </h6>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <p className="mt-3 text-white/60 leading-relaxed">
+                    <p className="mt-4 text-white text-lg leading-relaxed">
                       {tab.description}
                     </p>
                     <div className="mt-4 md:hidden">
@@ -99,11 +99,11 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
               ))}
             </Accordion>
           </div>
-          <div className="relative m-auto hidden w-1/2 overflow-hidden rounded-xl bg-white/5 border border-white/10 md:block">
+          <div className="relative m-auto hidden w-1/2 overflow-hidden rounded-xl md:block">
             <img
               src={activeImage}
               alt="Feature preview"
-              className="aspect-[4/3] rounded-md object-cover pl-4"
+              className="w-full h-full object-cover rounded-xl"
             />
           </div>
         </div>

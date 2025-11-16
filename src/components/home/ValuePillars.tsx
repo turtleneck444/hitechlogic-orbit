@@ -10,11 +10,8 @@ export function ValuePillars() {
             <p className="text-xs font-semibold uppercase tracking-[0.45em] text-white/80">
               Strategic Disciplines
             </p>
-            <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl leading-tight">
-              We Engineer Your<br />
-              <span className="bg-gradient-to-r from-white via-white to-cyan-200 bg-clip-text text-transparent">
-                Competitive Advantage
-              </span>
+            <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
+              Four pillars that turn your technology operations into measurable business advantage.
             </h2>
             <p className="max-w-5xl mx-auto text-base leading-relaxed text-white/80 drop-shadow-[0_10px_35px_rgba(2,6,23,0.35)]">
               HiTechLogic pairs deep operational experience with modern tooling to keep infrastructure resilient, efficient, and aligned with enterprise priorities.

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { PillarsAccordionDemo } from "@/components/blocks/pillars-accordion-demo";
 
 export function ValuePillars() {
   return (
@@ -37,9 +38,9 @@ export function ValuePillars() {
           </div>
         </div>
 
-        {/* Placeholder for content - import undone */}
-        <div className="text-center py-16">
-          <p className="text-white/70 text-lg">Content section</p>
+        {/* Interactive Accordion Showcase */}
+        <div className="relative">
+          <PillarsAccordionDemo />
         </div>
 
         <div className="flex flex-col gap-3 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-900/50 p-6 text-sm text-slate-300 shadow-2xl sm:flex-row sm:items-center sm:justify-between">

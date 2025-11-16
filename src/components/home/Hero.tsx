@@ -52,34 +52,44 @@ export function Hero() {
               <div className="absolute inset-2 rounded-full bg-white/40"></div>
             </div>
 
-            {/* Enhanced Orbiting Worker Nodes with Details */}
-            <div className="absolute animate-ai-orbit-1 shadow-xl shadow-green-500/30" style={{marginLeft: '90px', marginTop: '25px'}}>
-              <div className="w-5 h-5 bg-gradient-to-br from-green-400 via-emerald-500 to-teal-500 rounded-full border-2 border-green-300">
-                <div className="absolute inset-0.5 rounded-full bg-white/30 animate-pulse"></div>
+            {/* Advanced AI Agent Cards with Detailed Functions */}
+            <div className="absolute animate-ai-orbit-1 shadow-2xl shadow-green-500/20" style={{marginLeft: '120px', marginTop: '40px'}}>
+              <div className="w-20 h-16 bg-gradient-to-br from-white/95 to-green-50/90 backdrop-blur-sm rounded-lg border-2 border-green-200/60 shadow-inner overflow-hidden">
+                <div className="px-1.5 py-1 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-[8px] font-black text-center truncate">ANALYTICS AI</div>
+                <div className="px-1 py-0.5 text-green-700 text-[6px] leading-tight text-center">Data Processing</div>
+                <div className="px-1 pb-0.5 text-green-600 text-[5px] leading-tight text-center">Pattern Recognition</div>
               </div>
             </div>
 
-            <div className="absolute animate-ai-orbit-2 shadow-lg shadow-yellow-500/30" style={{marginLeft: '-95px', marginTop: '15px'}}>
-              <div className="w-4 h-4 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400 rounded-full border-2 border-yellow-300">
-                <div className="absolute inset-0.5 rounded-full bg-white/40 animate-pulse"></div>
+            <div className="absolute animate-ai-orbit-2 shadow-xl shadow-yellow-500/20" style={{marginLeft: '-125px', marginTop: '20px'}}>
+              <div className="w-20 h-16 bg-gradient-to-br from-white/95 to-yellow-50/90 backdrop-blur-sm rounded-lg border-2 border-yellow-200/60 shadow-inner overflow-hidden">
+                <div className="px-1.5 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-[8px] font-black text-center truncate">OPS MONITOR</div>
+                <div className="px-1 py-0.5 text-yellow-700 text-[6px] leading-tight text-center">System Health</div>
+                <div className="px-1 pb-0.5 text-yellow-600 text-[5px] leading-tight text-center">Alert Management</div>
               </div>
             </div>
 
-            <div className="absolute animate-ai-orbit-3 shadow-xl shadow-purple-500/30" style={{marginLeft: '50px', marginTop: '-105px'}}>
-              <div className="w-6 h-6 bg-gradient-to-br from-purple-400 via-pink-400 to-purple-500 rounded-full border-2 border-purple-300">
-                <div className="absolute inset-1 rounded-full bg-white/30 animate-pulse"></div>
+            <div className="absolute animate-ai-orbit-3 shadow-2xl shadow-purple-500/20" style={{marginLeft: '80px', marginTop: '-120px'}}>
+              <div className="w-20 h-16 bg-gradient-to-br from-white/95 to-purple-50/90 backdrop-blur-sm rounded-lg border-2 border-purple-200/60 shadow-inner overflow-hidden">
+                <div className="px-1.5 py-1 bg-gradient-to-r from-purple-400 to-pink-500 text-white text-[8px] font-black text-center truncate">SECURITY AI</div>
+                <div className="px-1 py-0.5 text-purple-700 text-[6px] leading-tight text-center">Threat Detection</div>
+                <div className="px-1 pb-0.5 text-purple-600 text-[5px] leading-tight text-center">Risk Analysis</div>
               </div>
             </div>
 
-            <div className="absolute animate-ai-orbit-4 shadow-xl shadow-cyan-500/30" style={{marginLeft: '15px', marginTop: '110px'}}>
-              <div className="w-5 h-5 bg-gradient-to-br from-cyan-400 via-blue-400 to-cyan-500 rounded-full border-2 border-cyan-300">
-                <div className="absolute inset-0.5 rounded-full bg-white/30 animate-pulse"></div>
+            <div className="absolute animate-ai-orbit-4 shadow-2xl shadow-cyan-500/20" style={{marginLeft: '35px', marginTop: '125px'}}>
+              <div className="w-20 h-16 bg-gradient-to-br from-white/95 to-cyan-50/90 backdrop-blur-sm rounded-lg border-2 border-cyan-200/60 shadow-inner overflow-hidden">
+                <div className="px-1.5 py-1 bg-gradient-to-r from-cyan-400 to-blue-500 text-white text-[8px] font-black text-center truncate">AUTO-RESPONSE</div>
+                <div className="px-1 py-0.5 text-cyan-700 text-[6px] leading-tight text-center">Incident Handling</div>
+                <div className="px-1 pb-0.5 text-cyan-600 text-[5px] leading-tight text-center">Self-Healing</div>
               </div>
             </div>
 
-            <div className="absolute animate-ai-orbit-5 shadow-lg shadow-rose-500/30" style={{marginLeft: '-50px', marginTop: '-85px'}}>
-              <div className="w-4 h-4 bg-gradient-to-br from-rose-400 via-pink-400 to-rose-500 rounded-full border-2 border-rose-300">
-                <div className="absolute inset-0.5 rounded-full bg-white/40 animate-pulse"></div>
+            <div className="absolute animate-ai-orbit-5 shadow-xl shadow-rose-500/20" style={{marginLeft: '-70px', marginTop: '-95px'}}>
+              <div className="w-20 h-16 bg-gradient-to-br from-white/95 to-rose-50/90 backdrop-blur-sm rounded-lg border-2 border-rose-200/60 shadow-inner overflow-hidden">
+                <div className="px-1.5 py-1 bg-gradient-to-r from-rose-400 to-pink-500 text-white text-[8px] font-black text-center truncate">COST OPTIMIZER</div>
+                <div className="px-1 py-0.5 text-rose-700 text-[6px] leading-tight text-center">Resource Allocation</div>
+                <div className="px-1 pb-0.5 text-rose-600 text-[5px] leading-tight text-center">Efficiency Analysis</div>
               </div>
             </div>
 
@@ -214,7 +224,7 @@ export function Hero() {
             {/* Corporate Premium Headline */}
             <div className="relative mb-6">
               {/* Premium Corporate Headline */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.05] text-white tracking-tight relative">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.05] text-[hsl(var(--navy))] tracking-tight relative">
                 {/* Elegant accent line above headline */}
                 <div className="absolute -top-4 left-0 w-24 h-0.5 bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))]"></div>
 

@@ -11,28 +11,28 @@ import {
 const coreDisciplines = [
   {
     icon: Cloud,
-    title: "Continuous Infrastructure & Cloud Operations",
+    title: "Infrastructure & Cloud Operations",
     description:
       "Hybrid, multi-cloud, and on-prem estates managed with disciplined change, capacity, and lifecycle controls.",
-    detail: "4 dedicated pods",
+    detail: "4 dedicated operational pods",
     tone: "from-sky-500/60 via-slate-900/20 to-slate-950/20",
     href: "/services/infrastructure-cloud-operations",
   },
   {
     icon: Eye,
-    title: "Intelligent System Oversight & Event Reduction",
+    title: "System Oversight & Event Reduction",
     description:
       "Noise-calmed monitoring and automated correlation that keeps executive dashboards clear and actionable.",
-    detail: "−82% avg. noise",
+    detail: "82% average noise reduction",
     tone: "from-indigo-500/60 via-slate-900/20 to-slate-950/20",
     href: "/services/system-oversight-event-reduction",
   },
   {
     icon: Zap,
-    title: "Automated Corrective Actions & Stabilization",
+    title: "Automated Corrective Actions",
     description:
-      "Self-healing frameworks that remediate known failure modes before teams are paged.",
-    detail: "65+ runbooks",
+      "Self-healing frameworks that remediate known failure modes before teams are paged during incidents.",
+    detail: "65+ automated runbooks deployed",
     tone: "from-emerald-400/60 via-slate-900/10 to-slate-950/20",
     href: "/services/automated-corrective-actions",
   },
@@ -41,7 +41,7 @@ const coreDisciplines = [
     title: "Cost Efficiency & Capacity Strategy",
     description:
       "Financial observability and optimization programs that keep spend predictable and accountable.",
-    detail: "40-60% spend reduction secured through transparency",
+    detail: "40-60% cloud spend reduction",
     tone: "from-rose-500/60 via-slate-900/20 to-slate-950/20",
     href: "/services/cost-efficiency-capacity-strategy",
   },

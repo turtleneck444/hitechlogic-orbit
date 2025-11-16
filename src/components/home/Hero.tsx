@@ -65,16 +65,40 @@ export function Hero() {
 
             {/* Content with relative positioning */}
             <div className="relative">
-            {/* Main Headline with Gradient */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-[1.1] text-[hsl(var(--navy))]">
-              <span className="inline-block hover:scale-105 transition-transform duration-300">We</span>{" "}
-              <span className="inline-block hover:scale-105 transition-transform duration-300">Engineer</span>{" "}
-              <span className="inline-block hover:scale-105 transition-transform duration-300">Your</span>{" "}
-              <span className="relative inline-block group/confidence hover:scale-105 transition-transform duration-300 text-[hsl(var(--accent-blue))]">
-                Competitive Advantage
-                <div className="absolute -inset-1 bg-gradient-to-r from-[hsl(var(--accent-blue))]/20 to-[hsl(var(--signal-purple))]/20 blur-xl group-hover/confidence:blur-2xl transition-all duration-300 -z-10" />
-              </span>
-            </h1>
+            {/* Corporate Premium Headline */}
+            <div className="relative mb-6">
+              {/* Subtle divider line */}
+              <div className="w-24 h-0.5 bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))] mb-4 mx-auto" />
+
+              {/* Core Brand Headline with Premium Typography */}
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-black mb-2 leading-[0.9] text-[hsl(var(--navy))] tracking-tight">
+                <span className="inline-block transition-all duration-500 hover:text-[hsl(var(--accent-blue))] hover:font-black">HiTechLogic</span>
+              </h1>
+
+              {/* Tagline with Professional Prestige */}
+              <div className="text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.1] text-[hsl(var(--navy))]/90 space-y-1">
+                <div className="flex items-center justify-center gap-3 flex-wrap">
+                  <span className="relative inline-block">
+                    Enterprise
+                    <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))] opacity-70" />
+                  </span>
+                  <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--accent-blue))] hidden md:block"></div>
+                  <span className="relative inline-block">
+                    Infrastructure
+                    <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))] opacity-70" />
+                  </span>
+                  <div className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--accent-blue))] hidden md:block"></div>
+                  <span className="relative inline-block text-[hsl(var(--accent-blue))] font-black">
+                    Excellence
+                    <div className="absolute -inset-1 bg-gradient-to-r from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--signal-purple))]/10 blur-xl -z-10" />
+                    <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[hsl(var(--accent-blue))] via-[hsl(var(--signal-purple))] to-[hsl(var(--navy))] opacity-90" />
+                  </span>
+                </div>
+              </div>
+
+              {/* Professional Accent */}
+              <div className="absolute -inset-2 bg-gradient-to-r from-[hsl(var(--accent-blue))]/5 via-transparent to-[hsl(var(--signal-purple))]/5 rounded-full blur-2xl opacity-60 -z-10" />
+            </div>
 
             {/* Subheadline with Enhanced Value Propositions - Perfect Responsive Wrapping */}
             <p className="text-lg md:text-xl text-slate-700 mb-6 leading-relaxed max-w-2xl font-light">

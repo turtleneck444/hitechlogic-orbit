@@ -3,10 +3,10 @@ import { PillarsAccordionDemo } from "@/components/blocks/pillars-accordion-demo
 
 export function ValuePillars() {
   return (
-    <section className="relative bg-[hsl(var(--accent-blue))] py-14 text-white sm:py-16">
+    <section className="relative bg-[hsl(var(--accent-blue))] py-10 text-white sm:py-12">
       <div className="relative z-20 mx-auto flex w-full max-w-[1400px] flex-col gap-10 px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <div className="space-y-3 text-white">
+          <div className="space-y-2 text-white">
             <p className="text-xs font-semibold uppercase tracking-[0.45em] text-white/80">
               Strategic Disciplines
             </p>

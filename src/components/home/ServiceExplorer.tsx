@@ -511,8 +511,8 @@ export function ServiceExplorer() {
 
               {/* Expandable services section */}
               <div
-                className={`transition-all duration-700 ease-in-out overflow-hidden ${
-                  catalogExpanded ? 'max-h-[1200px] opacity-100' : 'max-h-0 opacity-0'
+                className={`transition-all duration-1000 ease-in-out overflow-hidden ${
+                  catalogExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
                 <div className="space-y-3">

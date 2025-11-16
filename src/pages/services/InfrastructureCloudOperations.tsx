@@ -308,51 +308,48 @@ export default function InfrastructureCloudOperations() {
       />
       <Layout>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-slate-50/30 to-blue-50/20">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--deep-navy))] via-[hsl(var(--graphite))] to-[hsl(var(--deep-navy))]">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvZz48L3N2Zz4=')] opacity-20" />
         <div className="relative mx-auto w-full max-w-6xl px-6 pt-32 pb-20 sm:pt-40 sm:pb-28">
           <div className="flex items-center gap-3 mb-6 animate-[fade-in_0.5s_ease-out]">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] shadow-lg shadow-[hsl(var(--accent-blue))]/25 transition-transform duration-300 hover:scale-110">
-              <Server className="h-7 w-7 text-white" />
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg transition-transform duration-300 hover:scale-110 hover:bg-white/15">
+              <Cloud className="h-7 w-7 text-[hsl(var(--accent-blue))]" />
             </div>
-            <span className="eyebrow text-[hsl(var(--accent-blue))]">Infrastructure & Cloud Operations</span>
+            <span className="text-sm font-medium text-white/90 tracking-wide">Core Operations Discipline</span>
           </div>
-          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-[hsl(var(--navy))] animate-[fade-in_0.6s_ease-out_0.1s_both]">
-            Always-On Infrastructure,<br />
-            <span className="text-[hsl(var(--accent-blue))]">Zero Surprises</span>
+          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white animate-[fade-in_0.6s_ease-out_0.1s_both]">
+            Infrastructure & Cloud <span className="text-[hsl(var(--accent-blue))]">Operations</span>
           </h1>
-          <p className="mt-6 text-xl text-slate-600 max-w-3xl leading-relaxed animate-[fade-in_0.7s_ease-out_0.2s_both]">
-            Enterprise-grade infrastructure management with 24/7 oversight, intelligent capacity planning,
-            and change governance that keeps your systems running at peak performance.
+          <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed animate-[fade-in_0.7s_ease-out_0.2s_both]">
+            Hybrid, multi-cloud, and on-prem estates managed with disciplined change, capacity, and lifecycle controls.
+            <span className="block mt-3 font-semibold text-white">4 dedicated operational pods ensuring 24/7 excellence</span>
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4 animate-[fade-in_0.8s_ease-out_0.3s_both]">
-            <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(46,107,255,0.8)] hover:shadow-[0_25px_50px_-12px_rgba(46,107,255,0.9)] hover:scale-105 transition-all duration-300">
+            <Button size="lg" asChild className="bg-[hsl(var(--accent-blue))] hover:bg-[hsl(var(--accent-blue))]/90 text-white shadow-[0_20px_45px_-20px_rgba(46,107,255,0.8)] hover:shadow-[0_25px_50px_-12px_rgba(46,107,255,0.9)] hover:scale-105 transition-all duration-300">
               <Link to="/contact" className="flex items-center gap-2 group">
-                <Calendar className="h-5 w-5" />
-                <span>Schedule Free Consultation</span>
+                <span>Schedule Consultation</span>
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button variant="outline" size="xl" asChild className="hover:bg-slate-50 transition-all duration-300">
-              <Link to="/contact" className="flex items-center gap-2 group">
-                <Phone className="h-5 w-5" />
-                <span>Talk to an Expert</span>
+            <Button variant="outline" size="lg" asChild className="border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300">
+              <Link to="/demo" className="flex items-center gap-2 group">
+                <span>View Case Studies</span>
               </Link>
             </Button>
           </div>
 
           {/* Metrics */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 animate-[fade-in_0.9s_ease-out_0.4s_both]">
-            {metrics.map((metric, index) => (
+            {metrics.map((metric) => (
               <div key={metric.label} className="text-center group">
                 <div className="flex justify-center mb-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 group-hover:from-[hsl(var(--accent-blue))]/20 group-hover:to-[hsl(var(--navy))]/10 transition-all duration-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 group-hover:bg-white/15 group-hover:border-white/20 transition-all duration-300">
                     <metric.icon className="h-6 w-6 text-[hsl(var(--accent-blue))]" />
                   </div>
                 </div>
                 <div className="text-3xl md:text-4xl font-bold text-[hsl(var(--accent-blue))] group-hover:scale-110 transition-transform duration-300">{metric.value}</div>
-                <div className="mt-2 text-sm font-medium text-slate-600">{metric.label}</div>
+                <div className="mt-2 text-sm font-medium text-white/80">{metric.label}</div>
               </div>
             ))}
           </div>

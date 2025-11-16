@@ -387,6 +387,295 @@ All colors MUST be HSL.
     animation: scale-in 0.4s ease-out forwards;
   }
 
+  /* Advanced AI Agent Network Animations */
+  .animate-ai-pulse {
+    animation: ai-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-ai-spin {
+    animation: ai-spin 8s linear infinite;
+  }
+
+  @keyframes ai-pulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 40px rgba(46, 107, 255, 0.5);
+    }
+    50% {
+      transform: scale(1.1);
+      box-shadow: 0 0 60px rgba(46, 107, 255, 0.8);
+    }
+  }
+
+  @keyframes ai-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Orbital animations for worker nodes */
+  .animate-ai-orbit-1 {
+    animation: ai-orbit-1 15s linear infinite;
+  }
+
+  .animate-ai-orbit-2 {
+    animation: ai-orbit-2 12s linear infinite reverse;
+  }
+
+  .animate-ai-orbit-3 {
+    animation: ai-orbit-3 20s linear infinite;
+  }
+
+  .animate-ai-orbit-4 {
+    animation: ai-orbit-4 18s linear infinite reverse;
+  }
+
+  .animate-ai-orbit-5 {
+    animation: ai-orbit-5 16s linear infinite;
+  }
+
+  @keyframes ai-orbit-1 {
+    0% { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+  }
+
+  @keyframes ai-orbit-2 {
+    0% { transform: rotate(0deg) translateX(-90px) rotate(0deg); }
+    100% { transform: rotate(-360deg) translateX(-90px) rotate(360deg); }
+  }
+
+  @keyframes ai-orbit-3 {
+    0% { transform: rotate(0deg) translateX(40px) translateY(-100px) rotate(0deg); }
+    100% { transform: rotate(-360deg) translateX(40px) translateY(-100px) rotate(360deg); }
+  }
+
+  @keyframes ai-orbit-4 {
+    0% { transform: rotate(0deg) translateX(10px) translateY(100px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(10px) translateY(100px) rotate(-360deg); }
+  }
+
+  @keyframes ai-orbit-5 {
+    0% { transform: rotate(0deg) translateX(-40px) translateY(-80px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(-40px) translateY(-80px) rotate(-360deg); }
+  }
+
+  /* Data packet animations */
+  .animate-ai-packet-1 {
+    animation: ai-packet-1 8s ease-in-out infinite;
+  }
+
+  .animate-ai-packet-2 {
+    animation: ai-packet-2 6s ease-in-out infinite;
+  }
+
+  .animate-ai-packet-3 {
+    animation: ai-packet-3 10s ease-in-out infinite;
+  }
+
+  @keyframes ai-packet-1 {
+    0%, 20%, 100% {
+      transform: translate(0, 0);
+      opacity: 0.8;
+    }
+    10% {
+      transform: translate(0, -40px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes ai-packet-2 {
+    0%, 20%, 100% {
+      transform: translate(0, 0);
+      opacity: 0.8;
+    }
+    10% {
+      transform: translate(40px, 0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes ai-packet-3 {
+    0%, 20%, 100% {
+      transform: translate(0, 0);
+      opacity: 0.8;
+    }
+    10% {
+      transform: translate(0, 40px);
+      opacity: 1;
+    }
+  }
+
+  /* Floating background nodes */
+  .animate-ai-floating-1 {
+    animation: ai-floating 25s ease-in-out infinite;
+  }
+
+  .animate-ai-floating-2 {
+    animation: ai-floating-reverse 30s ease-in-out infinite;
+  }
+
+  .animate-ai-floating-3 {
+    animation: ai-floating 35s ease-in-out infinite;
+  }
+
+  .animate-ai-floating-4 {
+    animation: ai-floating-reverse 20s ease-in-out infinite;
+  }
+
+  .animate-ai-floating-5 {
+    animation: ai-floating 28s ease-in-out infinite;
+  }
+
+  .animate-ai-floating-6 {
+    animation: ai-floating-reverse 22s ease-in-out infinite;
+  }
+
+  @keyframes ai-floating {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.6;
+    }
+    25% {
+      transform: translate(150px, -50px) scale(1.2);
+      opacity: 0.9;
+    }
+    50% {
+      transform: translate(300px, 0) scale(0.8);
+      opacity: 0.3;
+    }
+    75% {
+      transform: translate(150px, 50px) scale(1.1);
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes ai-floating-reverse {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.7;
+    }
+    25% {
+      transform: translate(-150px, 50px) scale(0.9);
+      opacity: 0.4;
+    }
+    50% {
+      transform: translate(-300px, 0) scale(1.3);
+      opacity: 0.8;
+    }
+    75% {
+      transform: translate(-150px, -50px) scale(0.95);
+      opacity: 0.6;
+    }
+  }
+
+  /* Background pulsing orbs */
+  .animate-ai-background-1 {
+    animation: ai-background-pulse 15s ease-in-out infinite;
+  }
+
+  .animate-ai-background-2 {
+    animation: ai-background-pulse 18s ease-in-out infinite reverse;
+  }
+
+  @keyframes ai-background-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.3);
+      opacity: 0.6;
+    }
+  }
+
+  /* Ambient particle effects */
+  .animate-ai-particle-1 { animation: ai-particle-1 12s ease-in-out infinite; }
+  .animate-ai-particle-2 { animation: ai-particle-2 15s ease-in-out infinite; }
+  .animate-ai-particle-3 { animation: ai-particle-3 18s ease-in-out infinite; }
+  .animate-ai-particle-4 { animation: ai-particle-4 10s ease-in-out infinite; }
+  .animate-ai-particle-5 { animation: ai-particle-5 14s ease-in-out infinite; }
+  .animate-ai-particle-6 { animation: ai-particle-6 16s ease-in-out infinite; }
+  .animate-ai-particle-7 { animation: ai-particle-7 11s ease-in-out infinite; }
+  .animate-ai-particle-8 { animation: ai-particle-8 13s ease-in-out infinite; }
+  .animate-ai-particle-9 { animation: ai-particle-9 17s ease-in-out infinite; }
+  .animate-ai-particle-10 { animation: ai-particle-10 9s ease-in-out infinite; }
+  .animate-ai-particle-11 { animation: ai-particle-11 19s ease-in-out infinite; }
+  .animate-ai-particle-12 { animation: ai-particle-12 8s ease-in-out infinite; }
+
+  @keyframes ai-particle-1 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.2; }
+    25% { transform: translate(200px, 150px) rotate(90deg); opacity: 0.6; }
+    50% { transform: translate(400px, -100px) rotate(180deg); opacity: 0.3; }
+    75% { transform: translate(200px, -200px) rotate(270deg); opacity: 0.7; }
+  }
+
+  @keyframes ai-particle-2 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.3; }
+    33% { transform: translate(-300px, 200px) rotate(120deg); opacity: 0.5; }
+    66% { transform: translate(-150px, -150px) rotate(240deg); opacity: 0.8; }
+  }
+
+  @keyframes ai-particle-3 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.1; }
+    50% { transform: translate(350px, 250px) rotate(180deg); opacity: 0.4; }
+  }
+
+  @keyframes ai-particle-4 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.25; }
+    25% { transform: translate(-250px, -100px) rotate(90deg); opacity: 0.7; }
+    75% { transform: translate(100px, 300px) rotate(270deg); opacity: 0.3; }
+  }
+
+  @keyframes ai-particle-5 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.15; }
+    20% { transform: translate(400px, 100px) rotate(72deg); opacity: 0.5; }
+    80% { transform: translate(-200px, 300px) rotate(288deg); opacity: 0.6; }
+  }
+
+  @keyframes ai-particle-6 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.2; }
+    30% { transform: translate(150px, -250px) rotate(108deg); opacity: 0.8; }
+    70% { transform: translate(-350px, -50px) rotate(252deg); opacity: 0.4; }
+  }
+
+  @keyframes ai-particle-7 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.25; }
+    40% { transform: translate(-100px, 350px) rotate(144deg); opacity: 0.6; }
+    60% { transform: translate(300px, -100px) rotate(216deg); opacity: 0.7; }
+  }
+
+  @keyframes ai-particle-8 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.1; }
+    35% { transform: translate(250px, 200px) rotate(126deg); opacity: 0.5; }
+    65% { transform: translate(-150px, 150px) rotate(234deg); opacity: 0.4; }
+  }
+
+  @keyframes ai-particle-9 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.2; }
+    45% { transform: translate(200px, -300px) rotate(162deg); opacity: 0.7; }
+    55% { transform: translate(-400px, 100px) rotate(198deg); opacity: 0.5; }
+  }
+
+  @keyframes ai-particle-10 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.15; }
+    50% { transform: translate(350px, 150px) rotate(180deg); opacity: 0.6; }
+  }
+
+  @keyframes ai-particle-11 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.25; }
+    60% { transform: translate(-300px, -200px) rotate(216deg); opacity: 0.8; }
+    40% { transform: translate(100px, 400px) rotate(144deg); opacity: 0.3; }
+  }
+
+  @keyframes ai-particle-12 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.1; }
+    25% { transform: translate(450px, -150px) rotate(90deg); opacity: 0.4; }
+    75% { transform: translate(-250px, 350px) rotate(270deg); opacity: 0.7; }
+  }
+
   /* Stagger delay utilities */
   .stagger-1 {
     animation-delay: 50ms;

@@ -39,33 +39,124 @@ export function Hero() {
   };
 
   return (
-    <section className="relative flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
-      {/* Corporate Enhanced Background Layers */}
-      <div className="absolute inset-0 z-0 opacity-40">
-        <BackgroundPaths />
+    <section className="relative flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      {/* Advanced AI Agent Network Animation */}
+      <div className="absolute inset-0 z-[1] pointer-events-none">
+        {/* Central AI Core */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="relative">
+            {/* Primary AI Node */}
+            <div className="w-8 h-8 bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))] rounded-full animate-pulse shadow-2xl shadow-[hsl(var(--accent-blue))]/50 animate-ai-pulse">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-transparent via-white/20 to-transparent animate-ai-spin"></div>
+            </div>
+
+            {/* Orbiting Worker Nodes */}
+            <div
+              className="absolute w-4 h-4 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full animate-ai-orbit-1 shadow-lg shadow-emerald-400/50"
+              style={{marginLeft: '80px', marginTop: '20px'}}
+            ></div>
+            <div
+              className="absolute w-3 h-3 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full animate-ai-orbit-2 shadow-md shadow-yellow-400/50"
+              style={{marginLeft: '-90px', marginTop: '10px'}}
+            ></div>
+            <div
+              className="absolute w-5 h-5 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full animate-ai-orbit-3 shadow-l shadow-purple-400/50"
+              style={{marginLeft: '40px', marginTop: '-100px'}}
+            ></div>
+            <div
+              className="absolute w-4 h-4 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full animate-ai-orbit-4 shadow-lg shadow-cyan-400/50"
+              style={{marginLeft: '10px', marginTop: '100px'}}
+            ></div>
+            <div
+              className="absolute w-3 h-3 bg-gradient-to-br from-rose-400 to-red-500 rounded-full animate-ai-orbit-5 shadow-md shadow-rose-400/50"
+              style={{marginLeft: '-40px', marginTop: '-80px'}}
+            ></div>
+
+            {/* Connecting Data Streams */}
+            <svg className="absolute inset-0 w-32 h-32" viewBox="0 0 128 128">
+              {/* Pulsing connecting lines */}
+              <line x1="64" y1="64" x2="90" y2="78" stroke="hsl(var(--accent-blue))" strokeWidth="2" strokeOpacity="0.6" className="animate-ai-connect-1">
+                <animate attributeName="stroke-opacity" values="0;0.8;0" dur="3s" repeatCount="indefinite" />
+              </line>
+              <line x1="64" y1="64" x2="34" y2="78" stroke="hsl(var(--signal-purple))" strokeWidth="2" strokeOpacity="0.6" className="animate-ai-connect-2">
+                <animate attributeName="stroke-opacity" values="0;0.7;0" dur="2.5s" repeatCount="indefinite" />
+              </line>
+              <line x1="64" y1="64" x2="76" y2="22" stroke="hsl(var(--accent-blue))" strokeWidth="2" strokeOpacity="0.6" className="animate-ai-connect-3">
+                <animate attributeName="stroke-opacity" values="0;0.9;0" dur="4s" repeatCount="indefinite" />
+              </line>
+              <line x1="64" y1="64" x2="78" y2="106" stroke="hsl(var(--signal-purple))" strokeWidth="2" strokeOpacity="0.6" className="animate-ai-connect-4">
+                <animate attributeName="stroke-opacity" values="0;0.5;0" dur="3.5s" repeatCount="indefinite" />
+              </line>
+              <line x1="64" y1="64" x2="38.4" y2="29.6" stroke="hsl(var(--accent-blue))" strokeWidth="2" strokeOpacity="0.6" className="animate-ai-connect-5">
+                <animate attributeName="stroke-opacity" values="0;0.6;0" dur="2.8s" repeatCount="indefinite" />
+              </line>
+            </svg>
+
+            {/* Floating Data Packets */}
+            <div className="absolute w-2 h-2 bg-white rounded-full shadow-sm animate-ai-packet-1 opacity-80" style={{marginLeft: '95px', marginTop: '25px'}}></div>
+            <div className="absolute w-2 h-2 bg-[hsl(var(--accent-blue))] rounded-full shadow-sm animate-ai-packet-2 opacity-80" style={{marginLeft: '-105px', marginTop: '15px'}}></div>
+            <div className="absolute w-2 h-2 bg-[hsl(var(--signal-purple))] rounded-full shadow-sm animate-ai-packet-3 opacity-80" style={{marginLeft: '55px', marginTop: '-115px'}}></div>
+          </div>
+        </div>
+
+        {/* Additional AI Nodes in Background */}
+        <div className="absolute top-24 left-24 w-2 h-2 bg-[hsl(var(--accent-blue))]/60 rounded-full animate-ai-floating-1 shadow-sm"></div>
+        <div className="absolute top-1/4 right-32 w-3 h-3 bg-gradient-to-br from-[hsl(var(--signal-purple))] to-purple-400 rounded-full animate-ai-floating-2 shadow-md opacity-70"></div>
+        <div className="absolute bottom-32 left-1/4 w-2 h-2 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full animate-ai-floating-3 shadow-sm"></div>
+        <div className="absolute top-1/3 left-1/3 w-2.5 h-2.5 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full animate-ai-floating-4 shadow-sm opacity-80"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-2 h-2 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full animate-ai-floating-5 shadow-sm"></div>
+        <div className="absolute top-2/3 left-1/6 w-2 h-2 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full animate-ai-floating-6 shadow-sm opacity-70"></div>
+
+        {/* Neural Network Connections */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20">
+          <defs>
+            <linearGradient id="aiGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{stopColor: 'hsl(var(--accent-blue))', stopOpacity: '0.4'}} />
+              <stop offset="100%" style={{stopColor: 'hsl(var(--signal-purple))', stopOpacity: '0.8'}} />
+            </linearGradient>
+            <linearGradient id="aiGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style={{stopColor: 'hsl(var(--signal-purple))', stopOpacity: '0.5'}} />
+              <stop offset="100%" style={{stopColor: 'hsl(var(--accent-blue))', stopOpacity: '0.7'}} />
+            </linearGradient>
+            <radialGradient id="aiGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" style={{stopColor: 'hsl(var(--accent-blue))', stopOpacity: '0.1'}} />
+              <stop offset="100%" style={{stopColor: 'transparent', stopOpacity: '0'}} />
+            </radialGradient>
+          </defs>
+
+          {/* Animated connecting paths */}
+          <path d="M100,200 Q300,100 500,150" stroke="url(#aiGradient1)" strokeWidth="1" fill="none" className="animate-ai-connection-1">
+            <animate attributeName="stroke-opacity" values="0;0.6;0" dur="8s" repeatCount="indefinite" />
+          </path>
+          <path d="M150,100 Q400,300 600,200" stroke="url(#aiGradient2)" strokeWidth="1" fill="none" className="animate-ai-connection-2">
+            <animate attributeName="stroke-opacity" values="0;0.5;0" dur="6s" repeatCount="indefinite" />
+          </path>
+          <path d="M50,400 Q250,350 450,400" stroke="url(#aiGradient1)" strokeWidth="1" fill="none" className="animate-ai-connection-3">
+            <animate attributeName="stroke-opacity" values="0;0.7;0" dur="10s" repeatCount="indefinite" />
+          </path>
+        </svg>
+
+        {/* Pulsing background orbs */}
+        <div className="absolute top-10 right-1/4 w-64 h-64 bg-gradient-radial from-[hsl(var(--accent-blue))]/8 via-transparent to-transparent rounded-full blur-3xl animate-ai-background-1 opacity-30"></div>
+        <div className="absolute bottom-20 left-1/5 w-80 h-80 bg-gradient-radial from-[hsl(var(--signal-purple))]/6 via-transparent to-transparent rounded-full blur-3xl animate-ai-background-2 opacity-25"></div>
+
+        {/* Ambient particle effect */}
+        <div className="absolute inset-0">
+          {[...Array(12)].map((_, i) => (
+            <div
+              key={i}
+              className={`absolute w-1 h-1 bg-white rounded-full opacity-20 animate-ai-particle-${i + 1}`}
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+            ></div>
+          ))}
+        </div>
       </div>
 
-      {/* Sophisticated Overlay System */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-br from-white/85 via-white/70 to-blue-50/40 backdrop-blur-[1px] pointer-events-none" />
-
-      {/* Premium Depth Gradient */}
-      <div className="absolute inset-0 z-[2] bg-gradient-to-b from-transparent via-white/20 to-slate-100/30 pointer-events-none" />
-
-      {/* Advanced Floating Elements */}
-      <div className="absolute top-16 right-24 w-80 h-80 bg-gradient-to-r from-[hsl(var(--accent-blue))]/8 via-[hsl(var(--signal-purple))]/5 to-transparent rounded-full blur-[100px] animate-pulse-slow opacity-60" />
-      <div className="absolute bottom-16 left-16 w-[600px] h-[600px] bg-gradient-to-br from-[hsl(var(--signal-purple))]/6 via-transparent to-[hsl(var(--accent-blue))]/8 rounded-full blur-[120px] animate-pulse-slow opacity-50" style={{animationDelay: '0.5s'}} />
-
-      {/* Premium Corporate Grid Pattern */}
-      <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            radial-gradient(circle at 1px 1px, rgba(46,107,255,0.4) 1px, transparent 0),
-            linear-gradient(90deg, rgba(46,107,255,0.1) 1px, transparent 1px),
-            linear-gradient(rgba(46,107,255,0.05) 1px, transparent 1px)
-          `,
-          backgroundSize: '40px 40px, 60px 60px, 120px 120px'
-        }} />
-      </div>
+      {/* Content Overlay with Darkened Background */}
+      <div className="absolute inset-0 z-[2] bg-gradient-to-br from-black/20 via-black/10 to-black/20 backdrop-blur-[0.5px] pointer-events-none" />
 
       {/* Powerful Brand Authority Statements */}
       <div className="absolute top-8 left-8 z-[3] hidden lg:flex flex-col gap-3">
@@ -134,13 +225,13 @@ export function Hero() {
             </div>
 
             {/* Subheadline with Enhanced Value Propositions - Perfect Responsive Wrapping */}
-            <p className="text-lg md:text-xl text-slate-700 mb-6 leading-relaxed max-w-2xl font-light">
+            <p className="text-lg md:text-xl text-slate-200 mb-6 leading-relaxed max-w-2xl font-light">
               Achieve operational excellence with{" "}
               <span className="font-bold text-[hsl(var(--accent-blue))]">intelligent automation</span> and{" "}
               <span className="font-bold text-[hsl(var(--accent-blue))]">AI-powered</span> managed services that deliver{" "}
-              <span className="font-bold text-[hsl(var(--accent-blue))]">50% cost savings</span>,{" "}
-              <span className="font-bold text-[hsl(var(--accent-blue))]">75% faster incident resolution</span>, and{" "}
-              <span className="font-bold text-[hsl(var(--accent-blue))]">complete operational autonomy</span>.
+              <span className="font-bold text-white">50% cost savings</span>,{" "}
+              <span className="font-bold text-white">75% faster incident resolution</span>, and{" "}
+              <span className="font-bold text-white">complete operational autonomy</span>.
             </p>
 
             {/* CTA Buttons with Enhanced Design */}

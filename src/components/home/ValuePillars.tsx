@@ -70,7 +70,7 @@ export function ValuePillars() {
             </p>
             <Button
               variant="ghost"
-              size="md"
+              size="sm"
               asChild
               className="text-xs font-semibold uppercase tracking-[0.4em] text-[hsl(var(--accent-blue))] transition hover:text-cyan-300"
             >

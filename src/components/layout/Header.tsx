@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, ArrowRight, Server, Activity, Workflow, ShieldCheck, BarChart3, Handshake, Gauge } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+import { Code, TrendingUp, Heart, ShoppingCart, Cloud } from "lucide-react";
+
 const serviceMegaMenu = [
   {
     icon: Server,
@@ -49,11 +51,49 @@ const serviceMegaMenu = [
   },
 ];
 
+const industriesMegaMenu = [
+  {
+    icon: Code,
+    title: "Technology & Software Development",
+    description: "Reliability for rapid deployment and scaling",
+    href: "/industries/technology",
+  },
+  {
+    icon: TrendingUp,
+    title: "Financial Services",
+    description: "Compliance, security, and 99.999% availability",
+    href: "/industries/financial-services",
+  },
+  {
+    icon: Heart,
+    title: "Healthcare",
+    description: "Patient safety and HIPAA compliance",
+    href: "/industries/healthcare",
+  },
+  {
+    icon: ShoppingCart,
+    title: "E-commerce & Retail",
+    description: "Zero downtime during peak sales events",
+    href: "/industries/ecommerce",
+  },
+  {
+    icon: Cloud,
+    title: "SaaS & Cloud Software",
+    description: "Enterprise-grade reliability and compliance",
+    href: "/industries/saas",
+  },
+];
+
 const navigation = [
   {
     name: "Solutions",
     href: "/services",
     hasMegaMenu: true,
+  },
+  {
+    name: "Industries",
+    href: "/industries",
+    hasIndustriesMenu: true,
   },
   { name: "Approach", href: "/approach" },
   { name: "Principles", href: "/principles" },
@@ -156,7 +196,7 @@ export function Header() {
               <div
                 key={item.name}
                 className="relative group"
-                onMouseEnter={() => (item.hasMegaMenu || item.submenu) && setActiveDropdown(item.name)}
+                onMouseEnter={() => (item.hasMegaMenu || item.hasIndustriesMenu || item.submenu) && setActiveDropdown(item.name)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 {item.hasMegaMenu ? (
@@ -222,6 +262,77 @@ export function Header() {
                                 className="group/cta inline-flex items-center gap-2.5 rounded-lg px-5 py-2.5 text-sm font-semibold text-[hsl(var(--accent-blue))] hover:bg-[hsl(var(--accent-blue))]/5 transition-all duration-200"
                               >
                                 <span>Schedule a consultation</span>
+                                <ArrowRight className="h-4 w-4 transition-transform group-hover/cta:translate-x-1" />
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </>
+                ) : item.hasIndustriesMenu ? (
+                  <>
+                    <Link
+                      to={item.href}
+                      className={cn(
+                        "relative flex items-center gap-1.5 px-5 py-2.5 text-[15px] font-semibold transition-all duration-200",
+                        isActivePath(item.href)
+                          ? "text-[hsl(var(--navy))]"
+                          : "text-slate-600 hover:text-[hsl(var(--navy))]",
+                        "before:absolute before:bottom-0 before:left-5 before:right-5 before:h-0.5 before:bg-gradient-to-r before:from-[hsl(var(--accent-blue))] before:to-[hsl(var(--navy))] before:transition-all before:duration-300",
+                        isActivePath(item.href)
+                          ? "before:scale-x-100 before:opacity-100"
+                          : "before:scale-x-0 before:opacity-0 hover:before:scale-x-100 hover:before:opacity-100"
+                      )}
+                    >
+                      <span>{item.name}</span>
+                      <ChevronDown className={cn(
+                        "h-3.5 w-3.5 transition-all duration-300",
+                        activeDropdown === item.name ? "rotate-180" : ""
+                      )} />
+                    </Link>
+                    {activeDropdown === item.name && (
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 w-[900px] pt-2 transition-opacity duration-200 opacity-100">
+                        <div className="rounded-2xl border border-slate-200/80 bg-white shadow-2xl shadow-slate-900/10 overflow-hidden backdrop-blur-xl">
+                          <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 via-white to-purple-50/20 pointer-events-none" />
+                          <div className="relative p-8">
+                            <div className="mb-7 flex items-center justify-between">
+                              <div>
+                                <h3 className="text-base font-bold text-[hsl(var(--navy))] mb-1.5">Industry Solutions</h3>
+                                <p className="text-sm text-slate-500">Specialized reliability solutions for your industry</p>
+                              </div>
+                              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500/10 to-blue-500/5">
+                                <Server className="h-5 w-5 text-purple-600" />
+                              </div>
+                            </div>
+                            <div className="grid grid-cols-1 gap-3">
+                              {industriesMegaMenu.map((industry) => (
+                                <Link
+                                  key={industry.title}
+                                  to={industry.href}
+                                  className="group/industry flex items-start gap-3.5 rounded-xl p-4 transition-all duration-200 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 border border-slate-100 hover:border-purple-300/20 hover:-translate-y-0.5"
+                                >
+                                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-slate-50 to-white border border-slate-200/60 shadow-sm group-hover/industry:from-purple-50/50 group-hover/industry:to-blue-50/50 group-hover/industry:border-purple-300/30 group-hover/industry:shadow-md group-hover/industry:shadow-purple-200/10 transition-all duration-200">
+                                    <industry.icon className="h-5 w-5 text-purple-600 transition-transform duration-200 group-hover/industry:scale-110" />
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <div className="flex items-center justify-between gap-2">
+                                      <h4 className="text-sm font-semibold text-[hsl(var(--navy))] group-hover/industry:text-purple-600 transition-colors line-clamp-1">
+                                        {industry.title}
+                                      </h4>
+                                      <ArrowRight className="h-3.5 w-3.5 shrink-0 text-purple-600 opacity-0 -translate-x-2 group-hover/industry:opacity-100 group-hover/industry:translate-x-0 transition-all duration-200" />
+                                    </div>
+                                    <p className="text-xs text-slate-500 mt-1 line-clamp-1">{industry.description}</p>
+                                  </div>
+                                </Link>
+                              ))}
+                            </div>
+                            <div className="mt-6 pt-6 border-t border-slate-200/60">
+                              <Link
+                                to="/contact"
+                                className="group/cta inline-flex items-center gap-2.5 rounded-lg px-5 py-2.5 text-sm font-semibold text-purple-600 hover:bg-purple-50 transition-all duration-200"
+                              >
+                                <span>Discuss your industry needs</span>
                                 <ArrowRight className="h-4 w-4 transition-transform group-hover/cta:translate-x-1" />
                               </Link>
                             </div>

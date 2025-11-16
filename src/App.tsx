@@ -33,6 +33,11 @@ import RapidDesignPrototypingPage from "./pages/services/rapid-prototyping/steps
 import BuildLaunchPage from "./pages/services/rapid-prototyping/steps/BuildLaunch";
 import OperatePage from "./pages/services/rapid-prototyping/steps/Operate";
 import AutonomousAgentSwarm from "./pages/services/AutonomousAgentSwarm";
+import Technology from "./pages/industries/Technology";
+import FinancialServices from "./pages/industries/FinancialServices";
+import Healthcare from "./pages/industries/Healthcare";
+import Ecommerce from "./pages/industries/Ecommerce";
+import Saas from "./pages/industries/Saas";
 
 const queryClient = new QueryClient();
 
@@ -72,6 +77,12 @@ const App = () => (
           <Route path="/services/strategic-technology-partnership" element={<StrategicTechnologyPartnership />} />
           <Route path="/services/rapid-prototyping" element={<RapidPrototyping />} />
           <Route path="/services/autonomous-agent-swarm" element={<AutonomousAgentSwarm />} />
+          {/* Industry Detail Pages */}
+          <Route path="/industries/technology" element={<Technology />} />
+          <Route path="/industries/financial-services" element={<FinancialServices />} />
+          <Route path="/industries/healthcare" element={<Healthcare />} />
+          <Route path="/industries/ecommerce" element={<Ecommerce />} />
+          <Route path="/industries/saas" element={<Saas />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

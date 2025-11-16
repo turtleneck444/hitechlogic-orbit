@@ -67,15 +67,33 @@ export function Hero() {
         }} />
       </div>
 
-      {/* Executive Trust Indicators */}
-      <div className="absolute top-8 left-8 z-[3] hidden lg:flex items-center gap-3">
-        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm shadow-lg border border-white/50">
-          <div className="w-2 h-2 bg-[hsl(var(--accent-blue))] rounded-full animate-pulse" />
-          <span className="text-xs font-semibold text-[hsl(var(--navy))]">Fortune 500 Approved</span>
+      {/* Powerful Brand Authority Statements */}
+      <div className="absolute top-8 left-8 z-[3] hidden lg:flex flex-col gap-3">
+        {/* Proven Track Record Statement */}
+        <div className="flex items-start gap-3 px-5 py-3 rounded-[1rem] bg-gradient-to-r from-white/95 via-white to-slate-50/90 backdrop-blur-xl shadow-2xl border border-white/80 ring-1 ring-slate-300/20 max-w-xs">
+          <div className="flex-shrink-0 w-4 h-4 bg-gradient-to-br from-slate-600 to-slate-800 rounded-full animate-pulse shadow-lg mt-0.5" />
+          <div className="min-w-0">
+            <p className="text-sm font-black text-[hsl(var(--navy))] leading-tight mb-1">INDUSTRY-PROVEN INFRASTRUCTURE</p>
+            <p className="text-xs text-slate-700 leading-tight">Delivering mission-critical operations for enterprise clients worldwide</p>
+          </div>
         </div>
-        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm shadow-lg border border-white/50">
-          <div className="w-2 h-2 bg-[hsl(var(--signal-purple))] rounded-full animate-pulse" style={{animationDelay: '0.3s'}} />
-          <span className="text-xs font-semibold text-[hsl(var(--navy))]">Enterprise Ready</span>
+
+        {/* Innovation Leadership Statement */}
+        <div className="flex items-start gap-3 px-5 py-3 rounded-[1rem] bg-gradient-to-r from-white/95 via-white to-slate-50/90 backdrop-blur-xl shadow-2xl border border-white/80 ring-1 ring-slate-300/20 max-w-xs">
+          <div className="flex-shrink-0 w-4 h-4 bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))] rounded-full animate-pulse shadow-lg mt-0.5" style={{animationDelay: '0.4s'}} />
+          <div className="min-w-0">
+            <p className="text-sm font-black text-[hsl(var(--navy))] leading-tight mb-1">AI-POWERED OPERATIONAL EXCELLENCE</p>
+            <p className="text-xs text-slate-700 leading-tight">Advanced automation frameworks designed for enterprise scale</p>
+          </div>
+        </div>
+
+        {/* Security & Trust Statement */}
+        <div className="flex items-start gap-3 px-5 py-3 rounded-[1rem] bg-gradient-to-r from-white/95 via-white to-slate-50/90 backdrop-blur-xl shadow-2xl border border-white/80 ring-1 ring-slate-300/20 max-w-xs">
+          <div className="flex-shrink-0 w-4 h-4 bg-gradient-to-br from-emerald-600 to-slate-700 rounded-full animate-pulse shadow-lg mt-0.5" style={{animationDelay: '0.8s'}} />
+          <div className="min-w-0">
+            <p className="text-sm font-black text-[hsl(var(--navy))] leading-tight mb-1">ENTERPRISE-GRADE SECURITY</p>
+            <p className="text-xs text-slate-700 leading-tight">Built-in compliance and risk management at every operational layer</p>
+          </div>
         </div>
       </div>
 
@@ -162,15 +180,15 @@ export function Hero() {
             <div className="absolute -inset-8 bg-gradient-to-r from-[hsl(var(--accent-blue))]/20 via-[hsl(var(--signal-purple))]/15 to-[hsl(var(--accent-blue))]/20 rounded-[2.5rem] blur-[40px] opacity-50" />
             <div className="absolute -inset-4 bg-gradient-to-br from-blue-400/8 via-slate-300/6 to-indigo-400/8 rounded-[2rem] blur-[25px] opacity-30" />
 
-            {/* Corporate Trust Seals */}
-            <div className="absolute -top-3 -right-3 z-[2] hidden lg:flex items-center gap-1">
-              <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200/50 shadow-sm backdrop-blur-sm">
-                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                <span className="text-[10px] font-bold text-emerald-700">SOC 2</span>
+            {/* Enterprise Credibility Markers */}
+            <div className="absolute -top-4 -right-4 z-[2] hidden lg:flex flex-col gap-1">
+              <div className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-gradient-to-r from-slate-50 via-white to-slate-50 border border-white/60 shadow-lg backdrop-blur-sm">
+                <div className="w-2 h-2 bg-gradient-to-r from-slate-600 to-slate-700 rounded-full animate-pulse" />
+                <span className="text-[10px] font-bold text-slate-700 tracking-wider uppercase">Advanced Security</span>
               </div>
-              <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200/50 shadow-sm backdrop-blur-sm">
-                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" style={{animationDelay: '0.2s'}} />
-                <span className="text-[10px] font-bold text-blue-700">ISO 27001</span>
+              <div className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-gradient-to-r from-slate-50 via-white to-slate-50 border border-white/60 shadow-lg backdrop-blur-sm">
+                <div className="w-2 h-2 bg-gradient-to-r from-slate-700 to-slate-800 rounded-full animate-pulse" style={{animationDelay: '0.25s'}} />
+                <span className="text-[10px] font-bold text-slate-700 tracking-wider uppercase">Enterprise Scale</span>
               </div>
             </div>
 

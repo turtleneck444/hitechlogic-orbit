@@ -39,21 +39,45 @@ export function Hero() {
   };
 
   return (
-    <section className="relative flex items-center overflow-hidden bg-white">
-      {/* Animated Background Paths from 21st.dev */}
-      <div className="absolute inset-0 z-0 opacity-100">
+    <section className="relative flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      {/* Corporate Enhanced Background Layers */}
+      <div className="absolute inset-0 z-0 opacity-40">
         <BackgroundPaths />
       </div>
 
-      {/* White Overlay to Soften Background Paths */}
-      <div className="absolute inset-0 z-[1] bg-white/60 pointer-events-none" />
+      {/* Sophisticated Overlay System */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-br from-white/85 via-white/70 to-blue-50/40 backdrop-blur-[1px] pointer-events-none" />
 
-      {/* Additional Visual Elements */}
-      <div className="absolute inset-0 z-[2] bg-gradient-to-b from-blue-50/30 via-transparent to-blue-50/20 pointer-events-none" />
+      {/* Premium Depth Gradient */}
+      <div className="absolute inset-0 z-[2] bg-gradient-to-b from-transparent via-white/20 to-slate-100/30 pointer-events-none" />
 
-      {/* Floating Orbs for Visual Interest */}
-      <div className="absolute top-20 right-20 w-72 h-72 bg-[hsl(var(--accent-blue))]/10 rounded-full blur-3xl animate-pulse-slow" />
-      <div className="absolute bottom-20 left-20 w-96 h-96 bg-[hsl(var(--signal-purple))]/10 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '1s'}} />
+      {/* Advanced Floating Elements */}
+      <div className="absolute top-16 right-24 w-80 h-80 bg-gradient-to-r from-[hsl(var(--accent-blue))]/8 via-[hsl(var(--signal-purple))]/5 to-transparent rounded-full blur-[100px] animate-pulse-slow opacity-60" />
+      <div className="absolute bottom-16 left-16 w-[600px] h-[600px] bg-gradient-to-br from-[hsl(var(--signal-purple))]/6 via-transparent to-[hsl(var(--accent-blue))]/8 rounded-full blur-[120px] animate-pulse-slow opacity-50" style={{animationDelay: '0.5s'}} />
+
+      {/* Premium Corporate Grid Pattern */}
+      <div className="absolute inset-0 z-[1] opacity-[0.03] pointer-events-none">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            radial-gradient(circle at 1px 1px, rgba(46,107,255,0.4) 1px, transparent 0),
+            linear-gradient(90deg, rgba(46,107,255,0.1) 1px, transparent 1px),
+            linear-gradient(rgba(46,107,255,0.05) 1px, transparent 1px)
+          `,
+          backgroundSize: '40px 40px, 60px 60px, 120px 120px'
+        }} />
+      </div>
+
+      {/* Executive Trust Indicators */}
+      <div className="absolute top-8 left-8 z-[3] hidden lg:flex items-center gap-3">
+        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm shadow-lg border border-white/50">
+          <div className="w-2 h-2 bg-[hsl(var(--accent-blue))] rounded-full animate-pulse" />
+          <span className="text-xs font-semibold text-[hsl(var(--navy))]">Fortune 500 Approved</span>
+        </div>
+        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm shadow-lg border border-white/50">
+          <div className="w-2 h-2 bg-[hsl(var(--signal-purple))] rounded-full animate-pulse" style={{animationDelay: '0.3s'}} />
+          <span className="text-xs font-semibold text-[hsl(var(--navy))]">Enterprise Ready</span>
+        </div>
+      </div>
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
         <div className="grid gap-8 lg:grid-cols-[3fr_2fr] lg:gap-12 items-center">
@@ -93,11 +117,12 @@ export function Hero() {
 
             {/* Subheadline with Enhanced Value Propositions - Perfect Responsive Wrapping */}
             <p className="text-lg md:text-xl text-slate-700 mb-6 leading-relaxed max-w-2xl font-light">
+              Achieve operational excellence with{" "}
+              <span className="font-bold text-[hsl(var(--accent-blue))]">intelligent automation</span> and{" "}
+              <span className="font-bold text-[hsl(var(--accent-blue))]">AI-powered</span> managed services that deliver{" "}
               <span className="font-bold text-[hsl(var(--accent-blue))]">50% cost savings</span>,{" "}
               <span className="font-bold text-[hsl(var(--accent-blue))]">75% faster incident resolution</span>, and{" "}
-              <span className="font-bold text-[hsl(var(--accent-blue))]">complete operational autonomy</span>{" "}
-              through intelligent automation and&nbsp;
-              <span className="font-bold text-[hsl(var(--accent-blue))]">AI-powered</span> managed services.
+              <span className="font-bold text-[hsl(var(--accent-blue))]">complete operational autonomy</span>.
             </p>
 
             {/* CTA Buttons with Enhanced Design */}
@@ -130,14 +155,27 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right Column - Enhanced Executive Card */}
+          {/* Right Column - Ultra-Premium Corporate Card */}
           <div className="relative lg:pl-4">
-            {/* Enhanced Dynamic Glow Effects */}
-            <div className="absolute -inset-8 bg-gradient-to-r from-[hsl(var(--accent-blue))]/20 via-[hsl(var(--signal-purple))]/20 to-[hsl(var(--accent-blue))]/20 rounded-[2.5rem] blur-3xl opacity-60 animate-pulse-slow" />
-            <div className="absolute -inset-4 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-indigo-500/10 rounded-[2rem] blur-2xl opacity-40" />
+            {/* Sophisticated Multi-Layer Glow Effects */}
+            <div className="absolute -inset-12 bg-gradient-radial from-[hsl(var(--accent-blue))]/15 via-[hsl(var(--signal-purple))]/10 to-transparent rounded-[3rem] blur-[60px] opacity-70 animate-pulse-slow" />
+            <div className="absolute -inset-8 bg-gradient-to-r from-[hsl(var(--accent-blue))]/20 via-[hsl(var(--signal-purple))]/15 to-[hsl(var(--accent-blue))]/20 rounded-[2.5rem] blur-[40px] opacity-50" />
+            <div className="absolute -inset-4 bg-gradient-to-br from-blue-400/8 via-slate-300/6 to-indigo-400/8 rounded-[2rem] blur-[25px] opacity-30" />
 
-            {/* Main Card - Premium Interactive Version */}
-            <div className="group relative bg-gradient-to-br from-white via-blue-50/50 to-white backdrop-blur-3xl rounded-[1.75rem] shadow-[0_20px_70px_-15px_rgba(46,107,255,0.25),0_8px_16px_-8px_rgba(0,0,0,0.1)] border-2 border-white/60 p-6 lg:p-7 hover:shadow-[0_30px_90px_-15px_rgba(46,107,255,0.35),0_10px_20px_-8px_rgba(0,0,0,0.15)] transition-all duration-700 hover:-translate-y-1 hover:scale-[1.02] overflow-hidden">
+            {/* Corporate Trust Seals */}
+            <div className="absolute -top-3 -right-3 z-[2] hidden lg:flex items-center gap-1">
+              <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200/50 shadow-sm backdrop-blur-sm">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                <span className="text-[10px] font-bold text-emerald-700">SOC 2</span>
+              </div>
+              <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200/50 shadow-sm backdrop-blur-sm">
+                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" style={{animationDelay: '0.2s'}} />
+                <span className="text-[10px] font-bold text-blue-700">ISO 27001</span>
+              </div>
+            </div>
+
+            {/* Main Card - Ultra-Premium Corporate Version */}
+            <div className="group relative bg-gradient-to-br from-white/95 via-white to-blue-50/60 backdrop-blur-xl rounded-[2rem] shadow-[0_32px_100px_-20px_rgba(46,107,255,0.4),0_16px_40px_-12px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.8)] border border-white/70 p-6 lg:p-7 hover:shadow-[0_40px_120px_-20px_rgba(46,107,255,0.6),0_20px_50px_-12px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-800 hover:-translate-y-2 hover:scale-[1.03] overflow-hidden">
               {/* Animated Gradient Overlays */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-transparent to-blue-50/40 rounded-[1.75rem] pointer-events-none" />
               <div className="absolute inset-0 bg-gradient-to-tl from-[hsl(var(--accent-blue))]/10 via-transparent to-[hsl(var(--signal-purple))]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-[1.75rem] pointer-events-none" />

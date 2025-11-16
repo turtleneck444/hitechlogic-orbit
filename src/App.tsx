@@ -32,6 +32,7 @@ import RapidPrototyping from "./pages/services/RapidPrototyping";
 import RapidDesignPrototypingPage from "./pages/services/rapid-prototyping/steps/RapidDesignPrototyping";
 import BuildLaunchPage from "./pages/services/rapid-prototyping/steps/BuildLaunch";
 import OperatePage from "./pages/services/rapid-prototyping/steps/Operate";
+import AutonomousAgentSwarm from "./pages/services/AutonomousAgentSwarm";
 
 const queryClient = new QueryClient();
 
@@ -70,6 +71,7 @@ const App = () => (
           <Route path="/services/cost-efficiency-capacity-strategy" element={<CostEfficiencyCapacityStrategy />} />
           <Route path="/services/strategic-technology-partnership" element={<StrategicTechnologyPartnership />} />
           <Route path="/services/rapid-prototyping" element={<RapidPrototyping />} />
+          <Route path="/services/autonomous-agent-swarm" element={<AutonomousAgentSwarm />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

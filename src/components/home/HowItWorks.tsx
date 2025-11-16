@@ -1,6 +1,4 @@
-import { useMemo } from "react";
-import { MapPin, Activity, ArrowRight, ShieldCheck, Workflow } from "lucide-react";
-import DottedMap from "dotted-map";
+import { Activity, ArrowRight, ShieldCheck, Workflow } from "lucide-react";
 import {
   ComposedChart,
   Area,
@@ -18,22 +16,18 @@ const phases = [
   {
     title: "Assess & Align",
     summary: "Executive intake, SLA scorecard, modernization priorities documented.",
-    kpi: "10-day onboarding",
   },
   {
     title: "Stabilize Operations",
     summary: "Noise suppression, on-call discipline, and service ownership defined.",
-    kpi: "-80% alert noise",
   },
   {
     title: "Automate & Govern",
     summary: "Runbooks, identity guardrails, and telemetry dashboards deployed.",
-    kpi: "120+ runbooks",
   },
   {
     title: "Evolve & Scale",
     summary: "Capacity, FinOps, and modernization roadmaps executed with leadership.",
-    kpi: "3x scale ready",
   },
 ];
 
@@ -63,39 +57,8 @@ const insights = [
   },
 ];
 
-const messages = [
-  {
-    title: "Executive Brief",
-    time: "1m ago",
-    content: "Leadership aligned on noise reduction progress.",
-    accent: "from-sky-400 to-blue-600",
-  },
-  {
-    title: "Automation Review",
-    time: "3m ago",
-    content: "12 new runbooks deployed into production.",
-    accent: "from-amber-400 to-pink-500",
-  },
-  {
-    title: "Identity Audit",
-    time: "5m ago",
-    content: "Quarterly access review completed with zero drift.",
-    accent: "from-emerald-400 to-teal-500",
-  },
-  {
-    title: "FinOps Update",
-    time: "8m ago",
-    content: "Capacity plan locked with 7% headroom.",
-    accent: "from-purple-400 to-indigo-600",
-  },
-];
 
 export function HowItWorks() {
-  const mapPoints = useMemo(() => {
-    const map = new DottedMap({ height: 60, grid: "diagonal" });
-    return map.getPoints();
-  }, []);
-
   return (
     <section className="bg-white py-12 md:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
@@ -130,7 +93,6 @@ export function HowItWorks() {
               >
                 <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wide text-slate-400">
                   <span>Step {String(index + 1).padStart(2, "0")}</span>
-                  <span className="text-electric-blue">{phase.kpi}</span>
                 </div>
                 <div className="mt-1 text-sm font-semibold text-[hsl(var(--navy))]">{phase.title}</div>
                 <p className="text-xs text-slate-500 mt-1">{phase.summary}</p>
@@ -140,40 +102,6 @@ export function HowItWorks() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          <Card className="relative overflow-hidden border-slate-200 bg-white p-6 shadow-[0_20px_60px_-40px_rgba(11,18,32,0.7)]">
-            <div className="flex items-center gap-2 text-sm text-slate-500">
-              <MapPin className="h-4 w-4 text-electric-blue" />
-              Global Reliability Network
-            </div>
-            <h3 className="mt-3 text-xl font-semibold text-[hsl(var(--navy))]">
-              Visualize service coverage across every region.
-            </h3>
-            <p className="text-sm text-slate-600">
-              Live signals show where HiTechLogic pods are active and when the last incident was resolved.
-            </p>
-            <div className="relative mt-6 h-48 rounded-2xl bg-slate-900/90 p-4">
-              <div className="absolute top-6 left-1/2 z-10 -translate-x-1/2 rounded-full bg-white/95 px-3 py-1 text-xs font-semibold text-slate-900 shadow">
-                Latest connection: Chicago, US
-              </div>
-              <MapGraphic points={mapPoints} />
-            </div>
-          </Card>
-
-          <Card className="flex flex-col justify-between border-slate-200 bg-white p-6 shadow-[0_20px_60px_-40px_rgba(11,18,32,0.7)]">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-xs uppercase tracking-[0.32em] text-slate-400">Featured engagement</p>
-                <h3 className="mt-2 text-xl font-semibold text-[hsl(var(--navy))]">Ruixen Healthcare</h3>
-                <p className="text-sm text-slate-500">Global deployment, 1M+ patients protected</p>
-              </div>
-              <div className="rounded-full bg-electric-blue/10 px-4 py-1 text-xs font-semibold text-electric-blue flex items-center gap-2">
-                <ShieldCheck className="h-4 w-4" />
-                SOC 2
-              </div>
-            </div>
-            <MessageFeed />
-          </Card>
-
           <Card className="border-slate-200 bg-white p-6 shadow-[0_20px_60px_-40px_rgba(11,18,32,0.7)]">
             <div className="flex items-center gap-2 text-sm text-slate-500">
               <Activity className="h-4 w-4 text-electric-blue" />
@@ -254,42 +182,6 @@ export function HowItWorks() {
         </div>
       </div>
     </section>
-  );
-}
-
-function MapGraphic({ points }: { points: Array<{ x: number; y: number }> }) {
-  return (
-    <svg viewBox="0 0 120 60" className="h-full w-full text-electric-blue/70">
-      {points.map((point, idx) => (
-        <circle key={idx} cx={point.x} cy={point.y} r={0.18} fill="currentColor" />
-      ))}
-    </svg>
-  );
-}
-
-function MessageFeed() {
-  return (
-    <div className="relative mt-6 h-[220px] overflow-hidden rounded-2xl border border-slate-200 bg-slate-50/60 p-3">
-      <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-slate-50 via-slate-50/50 to-transparent pointer-events-none" />
-      <div className="space-y-2">
-        {messages.map((msg, idx) => (
-          <div
-            key={msg.title}
-            className="flex items-start gap-3 rounded-xl border border-white bg-white/90 p-3 shadow-sm transition hover:shadow-md animate-scaleUp"
-            style={{ animationDelay: `${idx * 120}ms` }}
-          >
-            <div className={`h-8 w-8 rounded-lg bg-gradient-to-br ${msg.accent}`} />
-            <div className="space-y-1">
-              <div className="flex items-center gap-2 text-xs font-semibold text-slate-700">
-                {msg.title}
-                <span className="text-slate-400 before:mx-1 before:content-['•']">{msg.time}</span>
-              </div>
-              <p className="text-xs text-slate-500">{msg.content}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
   );
 }
 

@@ -91,26 +91,26 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        "w-full fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         isScrolled
-          ? "bg-white shadow-lg shadow-slate-900/5"
-          : "bg-white shadow-md shadow-slate-900/5",
+          ? "bg-white shadow-[0_20px_60px_-30px_rgba(30,64,175,0.6)]"
+          : "bg-white shadow-[0_10px_35px_-30px_rgba(30,64,175,0.4)]",
       )}
     >
-      {/* Top Bar */}
-      <div className="border-b border-slate-200/60 bg-gradient-to-r from-slate-50/50 to-white">
+      {/* Top Bar - White background with glow */}
+      <div className="w-full border-b border-slate-200 bg-white/95 text-slate-700 shadow-[0_20px_45px_-35px_rgba(37,99,235,0.5)] backdrop-blur-lg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-12 items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5">
+              <div className="flex h-6 w-6 items-center justify-center rounded-md bg-white/60 border border-[hsl(var(--accent-blue))]/20 shadow-sm">
                 <ShieldCheck className="h-3.5 w-3.5 text-[hsl(var(--accent-blue))]" />
               </div>
-              <span className="text-sm font-semibold text-[hsl(var(--navy))]">Enterprise Managed Services Provider</span>
+              <span className="text-sm font-semibold text-slate-900">Enterprise Managed Services Provider</span>
             </div>
             <div className="hidden md:flex items-center gap-5">
               <a
                 href="mailto:contact@hitechlogic.com"
-                className="group flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-[hsl(var(--accent-blue))] transition-colors duration-200"
+                className="group flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-200"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -119,7 +119,7 @@ export function Header() {
               </a>
               <div className="h-4 w-px bg-slate-200" />
               <div className="flex items-center gap-2 text-sm font-medium text-slate-600">
-                <svg className="h-4 w-4 text-[hsl(var(--accent-blue))]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-4 w-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 <span>+1 (555) 123-4567</span>
@@ -392,7 +392,7 @@ export function Header() {
                       "group flex items-center justify-between px-6 py-4 rounded-2xl transition-all duration-300",
                       isActivePath("/blog")
                         ? "bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white shadow-lg shadow-[hsl(var(--accent-blue))]/25"
-                        : "hover:bg-slate-50/80 text-slate-700 active:scale-[0.98]"
+                        : "hover:bg-slate-50/80 text-slate-700 active:scale-0.98"
                     )}
                     onClick={() => setMobileMenuOpen(false)}
                   >

@@ -3,8 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
-import { ITOperationsAnimation } from "@/components/services/ITOperationsAnimation";
-import { serviceCategories } from "@/data/services";
 import {
   Activity,
   BarChart3,
@@ -14,19 +12,13 @@ import {
   ShieldCheck,
   Workflow,
   ArrowRight,
-  CheckCircle2,
-  Zap,
-  TrendingUp,
-  Clock,
-  Award,
   Sparkles,
   Target,
-  Users,
   Globe,
-  Code,
-  Cloud,
-  Briefcase,
-  ChevronRight,
+  Phone,
+  MessageCircle,
+  Clock,
+  Zap,
 } from "lucide-react";
 
 type Service = {
@@ -203,6 +195,29 @@ const services: Service[] = [
     color: "indigo",
     gradient: "from-indigo-500 via-indigo-600 to-purple-600",
   },
+  {
+    icon: Zap,
+    title: "Autonomous Agent Swarm",
+    slug: "/services/autonomous-agent-swarm",
+    tagline: "AI-driven prototyping, build, and operate",
+    overview:
+      "A unified agent library that orchestrates Rapid Design, AI-accelerated development, and 24/7 autonomous operations across the entire delivery lifecycle.",
+    outcomes: [
+      "Seamless handoff between prototypes, MVPs, and operations",
+      "Automation-first safeguards detecting, triaging, and remediating incidents",
+      "Re-usable AI agents tuned to your stack and compliance mandates",
+      "24/7 reliability with predictive runbooks",
+      "Accelerated go-to-market 3–5× faster",
+      "Cost-effective delivery with live operations oversight",
+    ],
+    kpis: [
+      { label: "MVP Launch", value: "4-8 weeks" },
+      { label: "Cost Reduction", value: "60%" },
+      { label: "Uptime", value: "99.99%" },
+    ],
+    color: "fuchsia",
+    gradient: "from-fuchsia-500 via-pink-600 to-rose-600",
+  },
 ];
 
 export default function Services() {
@@ -333,161 +348,69 @@ export default function Services() {
           </div>
         </section>
 
-        {/* Service Categories - Axiom-Aligned Taxonomy */}
-        <section className="section-space bg-white relative">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 border border-[hsl(var(--accent-blue))]/20 mb-6">
-                <Sparkles className="h-4 w-4 text-[hsl(var(--accent-blue))]" />
-                <span className="text-sm font-bold text-[hsl(var(--navy))]">Comprehensive Service Portfolio</span>
+
+        {/* Services Showcase */}
+        <section className="py-16 bg-slate-50">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center justify-center gap-2 rounded-full border border-[hsl(var(--accent-blue))]/30 bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.4em] text-[hsl(var(--accent-blue))] shadow-sm">
+                <Sparkles className="h-4 w-4" />
+                Service Pillars
+                <Sparkles className="h-4 w-4" />
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[hsl(var(--navy))] mb-6">
-                Four Core Service Categories
+              <h2 className="mt-6 text-4xl font-black text-[hsl(var(--navy))] sm:text-5xl lg:text-6xl">
+                Strategic Services That Keep Your Infrastructure Competitive
               </h2>
-              <p className="text-lg text-slate-600">
-                From cybersecurity to cloud operations, our comprehensive service portfolio covers every aspect of modern IT infrastructure
+              <p className="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
+                Each service pillar is delivered by our seasoned technologists, aligning reliability, automation, security, and financial governance to your business outcomes.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {serviceCategories.map((category, index) => {
-                const categoryIcons: Record<string, React.ElementType> = {
-                  ShieldCheck,
-                  Code,
-                  Cloud,
-                  Briefcase,
-                };
-                const CategoryIcon = categoryIcons[category.icon] || ShieldCheck;
-
-                const gradients = [
-                  "from-red-500 to-rose-600",
-                  "from-purple-500 to-indigo-600",
-                  "from-blue-500 to-cyan-600",
-                  "from-green-500 to-emerald-600",
-                ];
-
-                return (
-                  <Card
-                    key={category.id}
-                    className="group relative p-8 hover:shadow-2xl transition-all duration-500 border-2 border-slate-100 hover:border-[hsl(var(--accent-blue))]/40 overflow-hidden"
-                  >
-                    <div className={`absolute inset-0 bg-gradient-to-br ${gradients[index]} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500`} />
-
-                    <div className="relative">
-                      {/* Category Icon and Title */}
-                      <div className="flex items-start gap-4 mb-6">
-                        <div className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${gradients[index]} shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
-                          <CategoryIcon className="h-8 w-8 text-white" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-2xl font-bold text-[hsl(var(--navy))] mb-2 group-hover:text-[hsl(var(--accent-blue))] transition-colors">
-                            {category.name}
-                          </h3>
-                          <p className="text-sm text-slate-600">
-                            {category.description}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Services List */}
-                      <div className="space-y-3 mb-6">
-                        {category.services.slice(0, 3).map((service) => (
-                          <div
-                            key={service.id}
-                            className="flex items-center gap-3 p-3 rounded-lg bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-[hsl(var(--accent-blue))]/30 transition-all duration-200 group/item"
-                          >
-                            <CheckCircle2 className="h-4 w-4 text-[hsl(var(--accent-blue))] flex-shrink-0" />
-                            <span className="text-sm font-semibold text-slate-700 group-hover/item:text-[hsl(var(--navy))]">
-                              {service.name}
-                            </span>
-                          </div>
-                        ))}
-                        {category.services.length > 3 && (
-                          <div className="flex items-center gap-2 text-sm font-semibold text-[hsl(var(--accent-blue))] pl-3">
-                            <span>+ {category.services.length - 3} more services</span>
-                          </div>
-                        )}
-                      </div>
-
-                      {/* View All Link */}
-                      <div className="flex items-center justify-between pt-6 border-t-2 border-slate-100">
-                        <span className="text-sm font-bold text-[hsl(var(--accent-blue))] uppercase tracking-wide">
-                          View All Services
-                        </span>
-                        <ChevronRight className="h-5 w-5 text-[hsl(var(--accent-blue))] group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </div>
-                  </Card>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Live IT Operations Visualization - NEW ADVANCED SECTION */}
-        <section className="section-space bg-gradient-to-br from-slate-50 via-white to-blue-50/20 relative overflow-hidden">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:60px_60px]" />
-
-          <div className="relative mx-auto max-w-7xl px-6">
-            <div className="text-center max-w-4xl mx-auto mb-16">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--accent-blue))]/10 border border-[hsl(var(--accent-blue))]/20 text-[hsl(var(--accent-blue))] font-bold text-xs uppercase tracking-wider mb-6">
-                <Activity className="h-4 w-4 animate-pulse" />
-                Live System Visualization
-              </div>
-              <h2 className="text-5xl md:text-6xl font-black text-[hsl(var(--navy))] mb-6">
-                Your Infrastructure
-                <br />
-                <span className="bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] bg-clip-text text-transparent">
-                  Always Protected, Always Optimized
-                </span>
-              </h2>
-              <p className="text-xl text-slate-600 leading-relaxed">
-                Watch our intelligent managed services platform in action—monitoring, protecting, and
-                optimizing your entire IT infrastructure 24/7/365
-              </p>
-            </div>
-
-            {/* Animated IT Operations Visualization */}
-            <div className="mb-12">
-              <ITOperationsAnimation />
-            </div>
-
-            {/* Feature Grid Below Animation */}
-            <div className="grid md:grid-cols-3 gap-6 mt-12">
-              {[
-                {
-                  icon: Zap,
-                  title: "Real-Time Automation",
-                  description: "Self-healing systems detect and resolve issues before they impact your business",
-                  stat: "95% faster resolution"
-                },
-                {
-                  icon: ShieldCheck,
-                  title: "Continuous Protection",
-                  description: "Advanced threat detection and zero-trust security monitoring every second",
-                  stat: "100% uptime SLA"
-                },
-                {
-                  icon: TrendingUp,
-                  title: "Intelligent Optimization",
-                  description: "AI-powered insights constantly improve performance and reduce costs",
-                  stat: "35% cost savings"
-                },
-              ].map((feature) => (
-                <Card key={feature.title} className="p-8 bg-white/80 backdrop-blur-sm border-2 border-white/60 hover:border-[hsl(var(--accent-blue))]/30 hover:shadow-2xl transition-all duration-300 group">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 group-hover:from-[hsl(var(--accent-blue))]/20 group-hover:to-[hsl(var(--navy))]/10 transition-all duration-300">
-                      <feature.icon className="h-6 w-6 text-[hsl(var(--accent-blue))]" />
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {services.map((service) => (
+                <Card
+                  key={service.title}
+                  className="group relative flex h-full flex-col overflow-hidden rounded-[2rem] border border-white/60 bg-white/85 p-6 shadow-[0_25px_60px_-30px_rgba(15,23,42,0.55)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_35px_80px_-25px_rgba(15,23,42,0.55)] backdrop-blur"
+                >
+                  <div className={`absolute inset-0 -z-10 bg-gradient-to-br ${service.gradient} opacity-0 transition-all duration-500 group-hover:opacity-10`} />
+                  <div className="flex items-center gap-4">
+                    <div className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${service.gradient} text-white shadow-lg`}>
+                      <service.icon className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-[hsl(var(--navy))] mb-2">{feature.title}</h3>
-                      <p className="text-slate-600 leading-relaxed mb-3">{feature.description}</p>
-                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 border border-green-200">
-                        <CheckCircle2 className="h-4 w-4 text-green-600" />
-                        <span className="text-sm font-bold text-green-700">{feature.stat}</span>
-                      </div>
+                      <h3 className="text-xl font-bold text-[hsl(var(--navy))]">{service.title}</h3>
+                      <p className="text-sm text-slate-500">{service.tagline}</p>
                     </div>
+                  </div>
+                  <p className="mt-4 text-sm text-slate-600">{service.overview}</p>
+                  <div className="mt-5 grid grid-cols-3 gap-2 text-[10px] uppercase tracking-[0.3em] text-slate-500">
+                    {service.kpis.map((kpi) => (
+                      <div key={kpi.label} className="flex flex-col">
+                        <span className="text-[0.6rem]">{kpi.label}</span>
+                        <span className="text-sm font-bold text-[hsl(var(--accent-blue))]">{kpi.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <ul className="mt-6 space-y-2 text-sm text-slate-600">
+                    {service.outcomes.slice(0, 3).map((outcome, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <span className="mt-1 h-1.5 w-6 rounded-full bg-[hsl(var(--accent-blue))]/70" />
+                        <span>{outcome}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-auto pt-6">
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      asChild
+                      className="w-full justify-between border-[hsl(var(--accent-blue))]/50 text-[hsl(var(--navy))] hover:border-[hsl(var(--accent-blue))]"
+                    >
+                      <Link to={service.slug} className="flex w-full items-center justify-between text-sm font-semibold">
+                        <span>Explore service</span>
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </Button>
                   </div>
                 </Card>
               ))}
@@ -495,302 +418,50 @@ export default function Services() {
           </div>
         </section>
 
-        {/* Service Grid - Enhanced Professional Cards */}
-        <section className="section-space bg-white relative">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="text-center max-w-3xl mx-auto mb-20">
-              <span className="inline-block px-4 py-2 rounded-full bg-[hsl(var(--accent-blue))]/10 border border-[hsl(var(--accent-blue))]/20 text-[hsl(var(--accent-blue))] font-bold text-xs uppercase tracking-wider mb-6">
-                Comprehensive Coverage
-              </span>
-              <h2 className="mt-4 text-5xl md:text-6xl font-black text-[hsl(var(--navy))] mb-6">
-                Seven Pillars of
-                <br />
-                <span className="text-[hsl(var(--accent-blue))]">Operational Excellence</span>
-              </h2>
-              <p className="text-xl text-slate-600 leading-relaxed">
-                Each service integrates seamlessly with your operations, providing measurable outcomes and executive-level visibility
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
-              {services.map((service, index) => (
-                <Link
-                  key={service.slug}
-                  to={service.slug}
-                  className="group relative"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <Card className="relative h-full p-8 transition-all duration-500 hover:shadow-[0_20px_60px_-20px_rgba(46,107,255,0.4)] hover:-translate-y-3 border-2 border-slate-100 hover:border-[hsl(var(--accent-blue))]/40 overflow-hidden bg-gradient-to-br from-white to-slate-50/30">
-                    {/* Animated Background Gradient */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500`} />
-                    <div className={`absolute top-0 right-0 w-40 h-40 bg-gradient-to-br ${service.gradient} opacity-0 blur-3xl group-hover:opacity-10 transition-opacity duration-500`} />
-
-                    {/* Icon with Enhanced Animation */}
-                    <div className="relative mb-6">
-                      <div className={`absolute -inset-2 bg-gradient-to-br ${service.gradient} opacity-0 blur-xl group-hover:opacity-20 transition-opacity duration-500`} />
-                      <div className={`relative flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br ${service.gradient} shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-6`}>
-                        <service.icon className="h-10 w-10 text-white" />
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="relative">
-                      <h3 className="text-2xl font-black text-[hsl(var(--navy))] mb-3 group-hover:text-[hsl(var(--accent-blue))] transition-colors duration-300">
-                        {service.title}
-                      </h3>
-                      <p className="text-sm font-bold text-[hsl(var(--accent-blue))] mb-4 uppercase tracking-wide">
-                        {service.tagline}
-                      </p>
-                      <p className="text-slate-600 mb-6 leading-relaxed">
-                        {service.overview}
-                      </p>
-
-                      {/* KPIs with Enhanced Styling */}
-                      <div className="space-y-3 mb-6">
-                        {service.kpis.map((kpi, kpiIndex) => (
-                          <div
-                            key={kpi.label}
-                            className="flex items-center justify-between p-4 rounded-xl bg-gradient-to-r from-slate-50 to-slate-50/50 border border-slate-100 group-hover:from-[hsl(var(--accent-blue))]/5 group-hover:to-transparent group-hover:border-[hsl(var(--accent-blue))]/20 transition-all duration-300"
-                            style={{ transitionDelay: `${kpiIndex * 50}ms` }}
-                          >
-                            <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                              {kpi.label}
-                            </span>
-                            <span className="text-xl font-black text-[hsl(var(--navy))] group-hover:text-[hsl(var(--accent-blue))] transition-colors">
-                              {kpi.value}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* CTA with Enhanced Animation */}
-                      <div className="flex items-center justify-between pt-6 border-t-2 border-slate-100 group-hover:border-[hsl(var(--accent-blue))]/20 transition-colors">
-                        <span className="text-sm font-bold text-[hsl(var(--accent-blue))] uppercase tracking-wide">
-                          Explore Service
-                        </span>
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[hsl(var(--accent-blue))]/10 group-hover:bg-[hsl(var(--accent-blue))] transition-all duration-300">
-                          <ArrowRight className="h-5 w-5 text-[hsl(var(--accent-blue))] group-hover:text-white transition-all duration-300 group-hover:translate-x-1" />
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Detailed Service Breakdown - Enhanced */}
-        <section className="section-space bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="text-center max-w-3xl mx-auto mb-20">
-              <span className="inline-block px-4 py-2 rounded-full bg-white border-2 border-[hsl(var(--accent-blue))]/20 text-[hsl(var(--accent-blue))] font-bold text-xs uppercase tracking-wider mb-6 shadow-lg">
-                Deep Dive
-              </span>
-              <h2 className="mt-4 text-5xl md:text-6xl font-black text-[hsl(var(--navy))] mb-6">
-                Detailed Service
-                <br />
-                <span className="text-[hsl(var(--accent-blue))]">Capabilities</span>
-              </h2>
-              <p className="text-xl text-slate-600 leading-relaxed">
-                Every service includes dedicated playbooks, measurable KPIs, and executive-level reporting
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {services.map((service, index) => (
-                <Card
-                  key={service.slug}
-                  className="group p-10 hover:shadow-[0_20px_60px_-20px_rgba(46,107,255,0.3)] transition-all duration-500 border-2 border-white/80 hover:border-[hsl(var(--accent-blue))]/30 bg-white/80 backdrop-blur-sm"
-                >
-                  <div className="grid lg:grid-cols-[1fr_1.2fr] gap-10 items-start">
-                    {/* Left Column */}
-                    <div>
-                      <div className="flex items-start gap-5 mb-6">
-                        <div className={`flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${service.gradient} shadow-xl group-hover:shadow-2xl group-hover:scale-105 transition-all duration-300`}>
-                          <service.icon className="h-10 w-10 text-white" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-3xl md:text-4xl font-black text-[hsl(var(--navy))] mb-2 group-hover:text-[hsl(var(--accent-blue))] transition-colors">
-                            {service.title}
-                          </h3>
-                          <p className="text-base font-bold text-[hsl(var(--accent-blue))] uppercase tracking-wide">
-                            {service.tagline}
-                          </p>
-                        </div>
-                      </div>
-                      <p className="text-lg text-slate-600 leading-relaxed mb-8">
-                        {service.overview}
-                      </p>
-                      <Button
-                        asChild
-                        size="lg"
-                        className={`rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-gradient-to-r ${service.gradient} border-0`}
-                      >
-                        <Link to={service.slug} className="flex items-center gap-3 group/btn">
-                          <span>View Full Details</span>
-                          <ArrowRight className="h-5 w-5 transition-transform group-hover/btn:translate-x-2" />
-                        </Link>
-                      </Button>
-                    </div>
-
-                    {/* Right Column */}
-                    <div className="bg-gradient-to-br from-slate-50/50 to-white/50 rounded-2xl p-8 border-2 border-slate-100">
-                      <h4 className="text-sm font-black uppercase tracking-widest text-[hsl(var(--navy))] mb-6 flex items-center gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-[hsl(var(--accent-blue))]" />
-                        Key Capabilities & Outcomes
-                      </h4>
-                      <ul className="space-y-4">
-                        {service.outcomes.map((outcome) => (
-                          <li key={outcome} className="flex items-start gap-4 group/item">
-                            <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-100 group-hover/item:bg-green-200 transition-colors mt-0.5">
-                              <CheckCircle2 className="h-4 w-4 text-green-600" />
-                            </div>
-                            <span className="text-slate-700 leading-relaxed font-medium group-hover/item:text-[hsl(var(--navy))] transition-colors">
-                              {outcome}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Why Choose HiTechLogic - Enhanced */}
-        <section className="section-space bg-white">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="text-center max-w-3xl mx-auto mb-20">
-              <span className="inline-block px-4 py-2 rounded-full bg-[hsl(var(--accent-blue))]/10 border border-[hsl(var(--accent-blue))]/20 text-[hsl(var(--accent-blue))] font-bold text-xs uppercase tracking-wider mb-6">
-                The HiTechLogic Difference
-              </span>
-              <h2 className="mt-4 text-5xl md:text-6xl font-black text-[hsl(var(--navy))] mb-6">
-                Enterprise-Grade Reliability
-                <br />
-                <span className="text-[hsl(var(--accent-blue))]">Startup-Level Agility</span>
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: Zap,
-                  title: "Rapid Onboarding",
-                  description: "Get started in 2-4 weeks with progressive coverage expansion and minimal disruption to your operations.",
-                  gradient: "from-yellow-500 to-orange-600",
-                },
-                {
-                  icon: Award,
-                  title: "Proven Track Record",
-                  description: "$2B+ infrastructure under management with 98% client retention and 15+ years of enterprise experience.",
-                  gradient: "from-purple-500 to-indigo-600",
-                },
-                {
-                  icon: TrendingUp,
-                  title: "Measurable Outcomes",
-                  description: "Executive dashboards, quarterly business reviews, and KPI-driven improvements tied to your business goals.",
-                  gradient: "from-green-500 to-emerald-600",
-                },
-              ].map((feature) => (
-                <Card
-                  key={feature.title}
-                  className="group relative p-10 text-center hover:shadow-[0_20px_60px_-20px_rgba(46,107,255,0.4)] transition-all duration-500 hover:-translate-y-3 border-2 border-slate-100 hover:border-[hsl(var(--accent-blue))]/40 overflow-hidden"
-                >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500`} />
-
-                  <div className="relative">
-                    <div className="flex justify-center mb-6">
-                      <div className={`relative flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br ${feature.gradient} shadow-xl group-hover:shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
-                        <feature.icon className="h-10 w-10 text-white" />
-                      </div>
-                    </div>
-                    <h3 className="text-2xl font-black text-[hsl(var(--navy))] mb-4 group-hover:text-[hsl(var(--accent-blue))] transition-colors">
-                      {feature.title}
-                    </h3>
-                    <p className="text-slate-600 leading-relaxed text-lg">{feature.description}</p>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA - Enhanced */}
-        <section className="section-space bg-gradient-to-br from-[hsl(var(--navy))] via-slate-900 to-[hsl(var(--navy))]/90 relative overflow-hidden">
-          {/* Animated Background */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:40px_40px]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(46,107,255,0.15),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(46,107,255,0.1),transparent_50%)]" />
-
-          <div className="relative mx-auto max-w-5xl px-6 text-center">
-            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white mb-8 shadow-2xl">
-              <Award className="h-5 w-5 text-[hsl(var(--accent-blue))]" />
-              <span className="text-sm font-bold uppercase tracking-wider">Trusted by Fortune 500 Companies</span>
-            </div>
-
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight">
-              Ready to Transform Your
-              <br />
-              <span className="bg-gradient-to-r from-[hsl(var(--accent-blue))] via-blue-400 to-white bg-clip-text text-transparent">
-                Infrastructure Operations?
-              </span>
+        {/* Contact & CTA Hub */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--accent-blue))]/95 via-slate-900 to-[hsl(var(--navy))] text-white py-16">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#ffffff10,transparent_55%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),transparent_70%)]" />
+          <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-8 px-6 text-center">
+            <p className="text-xs uppercase tracking-[0.5em] text-white/70">Always-on Support</p>
+            <h2 className="text-4xl font-black sm:text-5xl lg:text-6xl">
+              Ready When You Are
             </h2>
-
-            <p className="text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Let's discuss which service pillars align with your immediate needs and long-term strategic goals
+            <p className="max-w-3xl text-lg text-white/80">
+              Request a strategy call, schedule a callback, ring our operations center, or message us any time. HiTechLogic stays on watch 24/7 to keep your services reliable.
             </p>
-
-            <div className="flex flex-wrap justify-center gap-6 mb-16">
-              <Button
-                variant="secondary"
-                size="xl"
-                asChild
-                className="bg-white text-[hsl(var(--navy))] hover:bg-blue-50 shadow-[0_20px_60px_-15px_rgba(255,255,255,0.8)] hover:shadow-[0_30px_70px_-15px_rgba(255,255,255,1)] hover:scale-105 transition-all duration-300 border-0 font-bold"
-              >
-                <Link to="/contact" className="flex items-center gap-3 group">
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/contact" className="flex items-center gap-2">
                   <Target className="h-5 w-5" />
-                  <span>Schedule Strategy Session</span>
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
+                  Request Strategy Consultation
                 </Link>
               </Button>
-              <Button
-                variant="outline"
-                size="xl"
-                asChild
-                className="border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm transition-all duration-300 font-bold"
-              >
-                <Link to="/demo" className="flex items-center gap-2">
-                  <Globe className="h-5 w-5" />
-                  <span>View Platform Demo</span>
-                </Link>
+              <Button variant="outline" size="lg" asChild>
+                <a href="mailto:contact@hitechlogic.com?subject=Callback%20Request" className="flex items-center gap-2">
+                  <Clock className="h-5 w-5" />
+                  Request a Callback
+                </a>
+              </Button>
+              <Button variant="secondary" size="lg" asChild>
+                <a href="tel:+18884483244" className="flex items-center gap-2">
+                  <Phone className="h-5 w-5" />
+                  Call Us Anytime
+                </a>
+              </Button>
+              <Button variant="ghost" size="lg" asChild>
+                <a href="mailto:contact@hitechlogic.com?subject=Message%20HiTechLogic" className="flex items-center gap-2">
+                  <MessageCircle className="h-5 w-5" />
+                  Message Us 24/7
+                </a>
               </Button>
             </div>
-
-            {/* Guarantee Section */}
-            <div className="pt-12 border-t-2 border-white/20">
-              <p className="text-blue-200 text-lg font-bold mb-6 uppercase tracking-wider">
-                Get Started Risk-Free with Our 30-Day Satisfaction Guarantee
-              </p>
-              <div className="flex flex-wrap justify-center gap-8">
-                {[
-                  { icon: CheckCircle2, text: "No Long-Term Contracts" },
-                  { icon: CheckCircle2, text: "Cancel Anytime" },
-                  { icon: CheckCircle2, text: "Money-Back Guarantee" },
-                ].map((item) => (
-                  <div key={item.text} className="flex items-center gap-3 text-white group">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500/20 border-2 border-green-400 group-hover:bg-green-500/30 transition-all">
-                      <item.icon className="h-6 w-6 text-green-400" />
-                    </div>
-                    <span className="text-base font-bold">{item.text}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <p className="text-sm text-white/70">
+              Or reach our command center directly at <span className="font-semibold text-white">+1 (888) 448-3244</span>
+            </p>
           </div>
         </section>
+
       </Layout>
     </>
   );

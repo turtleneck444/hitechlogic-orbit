@@ -6,7 +6,6 @@ import { ServiceExplorer } from "@/components/home/ServiceExplorer";
 import { CTASection } from "@/components/home/CTASection";
 import { AssessmentTool } from "@/components/home/AssessmentTool";
 import { AIAutomationFlow } from "@/components/home/AIAutomationFlow";
-import { RapidPrototyping } from "@/components/home/RapidPrototyping";
 import { SEO } from "@/components/SEO";
 
 const Index = () => {
@@ -47,7 +46,6 @@ const Index = () => {
         <Hero />
         <ValuePillars />
         <ServiceExplorer />
-        <RapidPrototyping />
         <AIAutomationFlow />
         <HowItWorks />
         <AssessmentTool />

@@ -303,24 +303,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Compact Footer Attribution - Minimized and Strategic */}
-      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-8">
-        <div className="flex items-center justify-center gap-6 text-sm">
-          <div className="flex items-center gap-2 text-[hsl(var(--accent-blue))]/80">
-            <div className="w-1 h-1 rounded-full bg-[hsl(var(--accent-blue))] opacity-60" />
-            <span className="font-medium text-slate-600">HiTechLogic Promise</span>
-          </div>
-          <div className="w-px h-4 bg-slate-300" />
-          <p className="text-slate-500 italic leading-snug text-sm max-w-lg text-center">
-            "We turn technology into a strategic advantage with automation, stability, and operational evolution."
-          </p>
-          <div className="w-px h-4 bg-slate-300" />
-          <span className="text-xs uppercase tracking-[0.15em] text-slate-400 font-semibold">
-            Enterprise Infrastructure Excellence
-          </span>
-        </div>
-      </div>
     </section>
   );
 }

@@ -2,48 +2,48 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  ShieldCheck,
-  TrendingUp,
+  Cloud,
+  Eye,
   Zap,
-  Target,
+  TrendingUp,
 } from "lucide-react";
 
 const coreDisciplines = [
   {
-    icon: ShieldCheck,
-    title: "Reliability Engineering",
+    icon: Cloud,
+    title: "Continuous Infrastructure & Cloud Operations",
     description:
-      "Predictive monitoring, AI-assisted playbooks, and automated remediation that keep critical operations online.",
-    detail: "99.99% uptime goal across multi-cloud workloads",
+      "Hybrid, multi-cloud, and on-prem estates managed with disciplined change, capacity, and lifecycle controls.",
+    detail: "4 dedicated pods",
     tone: "from-sky-500/60 via-slate-900/20 to-slate-950/20",
-    href: "/services/reliability-performance-engineering",
+    href: "/services/infrastructure-cloud-operations",
   },
   {
-    icon: TrendingUp,
-    title: "Cost Optimization",
+    icon: Eye,
+    title: "Intelligent System Oversight & Event Reduction",
     description:
-      "FinOps telemetry, rightsizing, and reserved capacity programs that cut needless spend while boosting efficiency.",
-    detail: "40-60% spend reduction secured through transparency",
-    tone: "from-emerald-400/60 via-slate-900/10 to-slate-950/20",
-    href: "/services/cost-efficiency-capacity-strategy",
+      "Noise-calmed monitoring and automated correlation that keeps executive dashboards clear and actionable.",
+    detail: "−82% avg. noise",
+    tone: "from-indigo-500/60 via-slate-900/20 to-slate-950/20",
+    href: "/services/system-oversight-event-reduction",
   },
   {
     icon: Zap,
-    title: "Automation-First",
+    title: "Automated Corrective Actions & Stabilization",
     description:
-      "Self-healing systems and automation libraries resolve repetitive incidents so engineers can focus on innovation.",
-    detail: "85% of incidents resolved automatically",
-    tone: "from-indigo-500/60 via-slate-900/20 to-slate-950/20",
+      "Self-healing frameworks that remediate known failure modes before teams are paged.",
+    detail: "65+ runbooks",
+    tone: "from-emerald-400/60 via-slate-900/10 to-slate-950/20",
     href: "/services/automated-corrective-actions",
   },
   {
-    icon: Target,
-    title: "Executive Visibility",
+    icon: TrendingUp,
+    title: "Cost Efficiency & Capacity Strategy",
     description:
-      "Real-time dashboards that map infrastructure health to KPIs, enabling confident decision making at the C-suite level.",
-    detail: "Live dashboards aligned with boardroom metrics",
+      "Financial observability and optimization programs that keep spend predictable and accountable.",
+    detail: "40-60% spend reduction secured through transparency",
     tone: "from-rose-500/60 via-slate-900/20 to-slate-950/20",
-    href: "/services/strategic-technology-partnership",
+    href: "/services/cost-efficiency-capacity-strategy",
   },
 ];
 

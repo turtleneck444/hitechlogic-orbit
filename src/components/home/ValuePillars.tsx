@@ -83,49 +83,53 @@ export function ValuePillars() {
           </div>
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {coreDisciplines.map((discipline) => (
-            <PinContainer
-              key={discipline.title}
-              title={`Explore ${discipline.title}`}
-              href={discipline.href}
-              containerClassName="group relative overflow-hidden rounded-[28px]"
-              className="relative z-10 space-y-4"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white shadow-lg transition-all group-hover:scale-110">
-                <discipline.icon className="h-5 w-5" />
-              </div>
-              <div className="space-y-3">
-                <h3 className="text-lg font-semibold text-white">
-                  {discipline.title}
-                </h3>
-                <p className="text-sm text-white/85 leading-relaxed">
-                  {discipline.description}
-                </p>
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
-                  {discipline.detail}
-                </p>
-              </div>
-
-              {/* Interactive elements specific to each pillar */}
-              <div className="mt-4 grid grid-cols-2 gap-2 text-xs text-white/60">
-                <div className="space-y-1 text-center p-2 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
-                  <div className="font-bold text-white">24/7</div>
-                  <div>Monitoring</div>
+            <div key={discipline.title} className="h-[450px]">
+              <PinContainer
+                title={`Explore ${discipline.title}`}
+                href={discipline.href}
+                containerClassName="h-full p-6 rounded-[28px] overflow-hidden"
+                className="space-y-4 h-full flex flex-col"
+              >
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-white shadow-lg transition-all group-hover:scale-110">
+                  <discipline.icon className="h-6 w-6" />
                 </div>
-                <div className="space-y-1 text-center p-2 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
-                  <div className="font-bold text-white">AI</div>
-                  <div>Powered</div>
-                </div>
-              </div>
 
-              {/* Animated connector line */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-1">
-                <div className="w-8 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
-                <div className="w-1 h-1 bg-white/50 rounded-full animate-pulse"></div>
-                <div className="text-xs text-white/70 font-medium">→</div>
-              </div>
-            </PinContainer>
+                <div className="flex-1 space-y-4">
+                  <div className="space-y-3">
+                    <h3 className="text-lg font-semibold text-white leading-tight">
+                      {discipline.title}
+                    </h3>
+                    <p className="text-sm text-white/85 leading-relaxed">
+                      {discipline.description}
+                    </p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
+                      {discipline.detail}
+                    </p>
+                  </div>
+
+                  {/* Interactive elements specific to each pillar */}
+                  <div className="grid grid-cols-2 gap-3 text-xs text-white/60">
+                    <div className="space-y-1 text-center p-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 transition-all hover:bg-white/10 hover:border-white/20">
+                      <div className="font-bold text-white text-sm">24/7</div>
+                      <div className="text-xs">Monitoring</div>
+                    </div>
+                    <div className="space-y-1 text-center p-3 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 transition-all hover:bg-white/10 hover:border-white/20">
+                      <div className="font-bold text-white text-sm">AI</div>
+                      <div className="text-xs">Powered</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Animated connector line */}
+                <div className="flex items-center justify-center space-x-2 text-white/60">
+                  <div className="w-12 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+                  <div className="w-1.5 h-1.5 bg-white/50 rounded-full animate-pulse"></div>
+                  <div className="text-sm text-white/70 font-medium">→</div>
+                </div>
+              </PinContainer>
+            </div>
           ))}
         </div>
 

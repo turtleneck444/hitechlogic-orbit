@@ -65,14 +65,17 @@ export function Hero() {
 
             {/* Content with relative positioning */}
             <div className="relative">
-            {/* Main Headline with Gradient */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-[1.1] text-[hsl(var(--navy))]">
-              <span className="inline-block hover:scale-105 transition-transform duration-300">We</span>{" "}
-              <span className="inline-block hover:scale-105 transition-transform duration-300">Engineer</span>{" "}
-              <span className="inline-block hover:scale-105 transition-transform duration-300">Your</span>{" "}
-              <span className="relative inline-block group/confidence hover:scale-105 transition-transform duration-300 text-[hsl(var(--accent-blue))]">
-                Competitive Advantage
-                <div className="absolute -inset-1 bg-gradient-to-r from-[hsl(var(--accent-blue))]/20 to-[hsl(var(--signal-purple))]/20 blur-xl group-hover/confidence:blur-2xl transition-all duration-300 -z-10" />
+            {/* Main Headline with Gradient - Much Bigger and More Prominent */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-black mb-6 leading-[0.95] text-[hsl(var(--navy))]">
+              <span className="inline-block hover:scale-110 transition-all duration-500 hover:text-[hsl(var(--accent-blue))]">We</span>{" "}
+              <span className="inline-block hover:scale-110 transition-all duration-500 hover:text-[hsl(var(--accent-blue))]">Engineer</span>{" "}
+              <span className="inline-block hover:scale-110 transition-all duration-500 hover:text-[hsl(var(--accent-blue))]">Your<hr /></span>{" "}
+              <span className="relative inline-block group/confidence">
+                <span className="bg-gradient-to-r from-[hsl(var(--accent-blue))] via-[hsl(var(--signal-purple))] to-[hsl(var(--accent-blue))] bg-clip-text text-transparent hover:scale-110 transition-all duration-500">
+                  Competitive Advantage
+                </span>
+                <div className="absolute -inset-2 bg-gradient-to-r from-[hsl(var(--accent-blue))]/25 via-[hsl(var(--signal-purple))]/30 to-[hsl(var(--accent-blue))]/25 blur-2xl group-hover/confidence:blur-3xl group-hover/confidence:opacity-80 transition-all duration-500 -z-10 opacity-60" />
+                <div className="absolute -inset-4 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-indigo-600/10 blur-[50px] group-hover/confidence:opacity-40 transition-opacity duration-500 -z-20 opacity-0" />
               </span>
             </h1>
 

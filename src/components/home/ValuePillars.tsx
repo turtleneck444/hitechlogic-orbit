@@ -24,7 +24,7 @@ export function ValuePillars() {
           <PillarsAccordionDemo />
         </div>
 
-        <div className="text-center mt-6">
+        <div className="text-center mt-4">
           <Link
             to="/contact"
             className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-all duration-300 text-lg font-medium group"

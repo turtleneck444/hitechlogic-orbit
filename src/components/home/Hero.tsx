@@ -40,144 +40,129 @@ export function Hero() {
 
   return (
     <section className="relative flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
-      {/* Advanced AI Agent Network Animation - Light Theme */}
+      {/* Advanced AI Agent Network Animation - Professional & Stationary */}
       <div className="absolute inset-0 z-[1] pointer-events-none">
-        {/* Central AI Core */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="relative">
-            {/* Primary AI Node - Enhanced Details */}
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-blue-600 rounded-full animate-pulse shadow-2xl shadow-blue-500/40 animate-ai-pulse relative">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-transparent via-white/30 to-transparent animate-ai-spin"></div>
-              <div className="absolute inset-1 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 opacity-80"></div>
-              <div className="absolute inset-2 rounded-full bg-white/40"></div>
+        {/* Static AI Nodes in Fixed Positions */}
+        <div className="absolute top-1/4 left-1/4">
+          <div className="w-6 h-6 bg-gradient-to-br from-green-400 via-emerald-500 to-teal-500 rounded-full shadow-xl shadow-green-400/40 animate-ai-activity-1">
+            <div className="absolute inset-0.5 rounded-full bg-white/40"></div>
+            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-center">
+              <div className="text-[9px] font-bold text-green-700 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md border border-green-200 shadow-sm">ANALYTICS AI</div>
+              <div className="text-[7px] text-green-600 mt-1 leading-tight">Data Processing<br />Pattern Recognition</div>
             </div>
-
-            {/* Advanced AI Agent Cards with Detailed Functions */}
-            <div className="absolute animate-ai-orbit-1 shadow-2xl shadow-green-500/20" style={{marginLeft: '120px', marginTop: '40px'}}>
-              <div className="w-20 h-16 bg-gradient-to-br from-white/95 to-green-50/90 backdrop-blur-sm rounded-lg border-2 border-green-200/60 shadow-inner overflow-hidden">
-                <div className="px-1.5 py-1 bg-gradient-to-r from-green-400 to-emerald-500 text-white text-[8px] font-black text-center truncate">ANALYTICS AI</div>
-                <div className="px-1 py-0.5 text-green-700 text-[6px] leading-tight text-center">Data Processing</div>
-                <div className="px-1 pb-0.5 text-green-600 text-[5px] leading-tight text-center">Pattern Recognition</div>
-              </div>
-            </div>
-
-            <div className="absolute animate-ai-orbit-2 shadow-xl shadow-yellow-500/20" style={{marginLeft: '-125px', marginTop: '20px'}}>
-              <div className="w-20 h-16 bg-gradient-to-br from-white/95 to-yellow-50/90 backdrop-blur-sm rounded-lg border-2 border-yellow-200/60 shadow-inner overflow-hidden">
-                <div className="px-1.5 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-[8px] font-black text-center truncate">OPS MONITOR</div>
-                <div className="px-1 py-0.5 text-yellow-700 text-[6px] leading-tight text-center">System Health</div>
-                <div className="px-1 pb-0.5 text-yellow-600 text-[5px] leading-tight text-center">Alert Management</div>
-              </div>
-            </div>
-
-            <div className="absolute animate-ai-orbit-3 shadow-2xl shadow-purple-500/20" style={{marginLeft: '80px', marginTop: '-120px'}}>
-              <div className="w-20 h-16 bg-gradient-to-br from-white/95 to-purple-50/90 backdrop-blur-sm rounded-lg border-2 border-purple-200/60 shadow-inner overflow-hidden">
-                <div className="px-1.5 py-1 bg-gradient-to-r from-purple-400 to-pink-500 text-white text-[8px] font-black text-center truncate">SECURITY AI</div>
-                <div className="px-1 py-0.5 text-purple-700 text-[6px] leading-tight text-center">Threat Detection</div>
-                <div className="px-1 pb-0.5 text-purple-600 text-[5px] leading-tight text-center">Risk Analysis</div>
-              </div>
-            </div>
-
-            <div className="absolute animate-ai-orbit-4 shadow-2xl shadow-cyan-500/20" style={{marginLeft: '35px', marginTop: '125px'}}>
-              <div className="w-20 h-16 bg-gradient-to-br from-white/95 to-cyan-50/90 backdrop-blur-sm rounded-lg border-2 border-cyan-200/60 shadow-inner overflow-hidden">
-                <div className="px-1.5 py-1 bg-gradient-to-r from-cyan-400 to-blue-500 text-white text-[8px] font-black text-center truncate">AUTO-RESPONSE</div>
-                <div className="px-1 py-0.5 text-cyan-700 text-[6px] leading-tight text-center">Incident Handling</div>
-                <div className="px-1 pb-0.5 text-cyan-600 text-[5px] leading-tight text-center">Self-Healing</div>
-              </div>
-            </div>
-
-            <div className="absolute animate-ai-orbit-5 shadow-xl shadow-rose-500/20" style={{marginLeft: '-70px', marginTop: '-95px'}}>
-              <div className="w-20 h-16 bg-gradient-to-br from-white/95 to-rose-50/90 backdrop-blur-sm rounded-lg border-2 border-rose-200/60 shadow-inner overflow-hidden">
-                <div className="px-1.5 py-1 bg-gradient-to-r from-rose-400 to-pink-500 text-white text-[8px] font-black text-center truncate">COST OPTIMIZER</div>
-                <div className="px-1 py-0.5 text-rose-700 text-[6px] leading-tight text-center">Resource Allocation</div>
-                <div className="px-1 pb-0.5 text-rose-600 text-[5px] leading-tight text-center">Efficiency Analysis</div>
-              </div>
-            </div>
-
-            {/* Enhanced Connecting Data Streams with Details */}
-            <svg className="absolute inset-0 w-36 h-36" viewBox="0 0 144 144">
-              {/* Pulsing connecting lines with details */}
-              <line x1="72" y1="72" x2="98" y2="82" stroke="url(#aiGradient1)" strokeWidth="3" strokeOpacity="0.8" className="animate-ai-connect-1">
-                <animate attributeName="stroke-opacity" values="0.3;0.9;0.3" dur="3s" repeatCount="indefinite" />
-              </line>
-              <line x1="72" y1="72" x2="38" y2="82" stroke="url(#aiGradient2)" strokeWidth="3" strokeOpacity="0.8" className="animate-ai-connect-2">
-                <animate attributeName="stroke-opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite" />
-              </line>
-              <line x1="72" y1="72" x2="82" y2="30" stroke="url(#aiGradient3)" strokeWidth="3" strokeOpacity="0.8" className="animate-ai-connect-3">
-                <animate attributeName="stroke-opacity" values="0.2;1.0;0.2" dur="4s" repeatCount="indefinite" />
-              </line>
-              <line x1="72" y1="72" x2="82" y2="114" stroke="url(#aiGradient4)" strokeWidth="3" strokeOpacity="0.8" className="animate-ai-connect-4">
-                <animate attributeName="stroke-opacity" values="0.5;0.7;0.5" dur="3.5s" repeatCount="indefinite" />
-              </line>
-              <line x1="72" y1="72" x2="42.8" y2="35.5" stroke="url(#aiGradient5)" strokeWidth="3" strokeOpacity="0.8" className="animate-ai-connect-5">
-                <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="2.8s" repeatCount="indefinite" />
-              </line>
-            </svg>
-
-            {/* Enhanced Floating Data Packets with Details */}
-            <div className="absolute w-3 h-3 bg-gradient-to-br from-blue-100 to-blue-200 border border-blue-300 rounded-full shadow-md animate-ai-packet-1" style={{marginLeft: '100px', marginTop: '28px'}}></div>
-            <div className="absolute w-2.5 h-2.5 bg-gradient-to-br from-purple-100 to-purple-200 border border-purple-300 rounded-full shadow-md animate-ai-packet-2" style={{marginLeft: '-108px', marginTop: '18px'}}></div>
-            <div className="absolute w-3 h-3 bg-gradient-to-br from-cyan-100 to-cyan-200 border border-cyan-300 rounded-full shadow-md animate-ai-packet-3" style={{marginLeft: '58px', marginTop: '-118px'}}></div>
           </div>
         </div>
 
-        {/* Enhanced Additional AI Nodes in Background */}
-        <div className="absolute top-28 left-28 w-3 h-3 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full animate-ai-floating-1 shadow-lg shadow-blue-500/30">
-          <div className="absolute inset-0.5 rounded-full bg-white/40"></div>
-        </div>
-        <div className="absolute top-1/4 right-36 w-4 h-4 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full animate-ai-floating-2 shadow-xl shadow-purple-500/30">
-          <div className="absolute inset-1 rounded-full bg-white/30"></div>
-        </div>
-        <div className="absolute bottom-36 left-1/4 w-3 h-3 bg-gradient-to-br from-green-400 to-teal-400 rounded-full animate-ai-floating-3 shadow-lg shadow-green-500/30">
-          <div className="absolute inset-0.5 rounded-full bg-white/40"></div>
-        </div>
-        <div className="absolute top-1/3 left-1/3 w-3.5 h-3.5 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-full animate-ai-floating-4 shadow-xl shadow-yellow-500/30">
-          <div className="absolute inset-0.5 rounded-full bg-white/40"></div>
-        </div>
-        <div className="absolute bottom-1/4 right-1/4 w-3 h-3 bg-gradient-to-br from-cyan-400 to-indigo-400 rounded-full animate-ai-floating-5 shadow-lg shadow-cyan-500/30">
-          <div className="absolute inset-0.5 rounded-full bg-white/40"></div>
-        </div>
-        <div className="absolute top-2/3 left-1/6 w-3 h-3 bg-gradient-to-br from-rose-400 to-pink-400 rounded-full animate-ai-floating-6 shadow-lg shadow-rose-500/30">
-          <div className="absolute inset-0.5 rounded-full bg-white/40"></div>
+        <div className="absolute top-1/3 right-1/4">
+          <div className="w-5 h-5 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400 rounded-full shadow-lg shadow-yellow-400/40 animate-ai-activity-2">
+            <div className="absolute inset-0.5 rounded-full bg-white/50"></div>
+            <div className="absolute -top-7 left-1/2 transform -translate-x-1/2 text-center">
+              <div className="text-[8px] font-bold text-yellow-700 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md border border-yellow-200 shadow-sm">OPS MONITOR</div>
+              <div className="text-[6px] text-yellow-600 mt-0.5 leading-tight">System Health<br />Alert Mgmt</div>
+            </div>
+          </div>
         </div>
 
-        {/* Enhanced Neural Network Connections */}
-        <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-25">
+        <div className="absolute bottom-1/4 left-1/3">
+          <div className="w-7 h-7 bg-gradient-to-br from-purple-400 via-pink-400 to-purple-500 rounded-full shadow-xl shadow-purple-400/40 animate-ai-activity-3">
+            <div className="absolute inset-1 rounded-full bg-white/30"></div>
+            <div className="absolute -top-9 left-1/2 transform -translate-x-1/2 text-center">
+              <div className="text-[10px] font-bold text-purple-700 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md border border-purple-200 shadow-sm">SECURITY AI</div>
+              <div className="text-[7px] text-purple-600 mt-1 leading-tight">Threat Detection<br />Risk Analysis</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-1/3 right-1/3">
+          <div className="w-6 h-6 bg-gradient-to-br from-cyan-400 via-blue-400 to-cyan-500 rounded-full shadow-xl shadow-cyan-400/40 animate-ai-activity-4">
+            <div className="absolute inset-0.5 rounded-full bg-white/40"></div>
+            <div className="absolute -bottom-9 left-1/2 transform -translate-x-1/2 text-center">
+              <div className="text-[9px] font-bold text-cyan-700 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md border border-cyan-200 shadow-sm">AUTO-RESPONSE</div>
+              <div className="text-[7px] text-cyan-600 mt-1 leading-tight">Incident Handling<br />Self-Healing</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute top-2/3 left-1/6">
+          <div className="w-5 h-5 bg-gradient-to-br from-rose-400 via-pink-400 to-rose-500 rounded-full shadow-lg shadow-rose-400/40 animate-ai-activity-5">
+            <div className="absolute inset-0.5 rounded-full bg-white/50"></div>
+            <div className="absolute -bottom-7 left-1/2 transform -translate-x-1/2 text-center">
+              <div className="text-[8px] font-bold text-rose-700 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md border border-rose-200 shadow-sm">COST OPTIMIZER</div>
+              <div className="text-[6px] text-rose-600 mt-0.5 leading-tight">Resource Alloc.<br />Efficiency</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Central AI Coordination Node */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="w-8 h-8 bg-gradient-to-br from-blue-500 via-purple-500 to-blue-600 rounded-full shadow-2xl shadow-blue-500/50 animate-ai-coordinator">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-transparent via-white/30 to-transparent animate-ai-spin-slow"></div>
+            <div className="absolute inset-1 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 opacity-80"></div>
+            <div className="absolute inset-2 rounded-full bg-white/40"></div>
+            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-center">
+              <div className="text-[10px] font-bold text-blue-700 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-blue-200 shadow-lg">INTELLIGENT ORCHESTRATOR</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Interconnected AI Network Lines */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20">
           <defs>
-            <linearGradient id="aiGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style={{stopColor: 'hsl(var(--accent-blue))', stopOpacity: '0.6'}} />
-              <stop offset="100%" style={{stopColor: 'hsl(var(--signal-purple))', stopOpacity: '0.9'}} />
+            <linearGradient id="aiLine1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{stopColor: 'hsl(var(--accent-blue))', stopOpacity: '0.4'}} />
+              <stop offset="100%" style={{stopColor: 'hsl(var(--signal-purple))', stopOpacity: '0.7'}} />
             </linearGradient>
-            <linearGradient id="aiGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" style={{stopColor: 'hsl(var(--signal-purple))', stopOpacity: '0.7'}} />
-              <stop offset="100%" style={{stopColor: 'hsl(var(--accent-blue))', stopOpacity: '0.8'}} />
+            <linearGradient id="aiLine2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style={{stopColor: 'rgb(59, 130, 246)', stopOpacity: '0.5'}} />
+              <stop offset="100%" style={{stopColor: 'rgb(99, 102, 241)', stopOpacity: '0.8'}} />
             </linearGradient>
-            <linearGradient id="aiGradient3" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" style={{stopColor: 'rgb(99, 102, 241)', stopOpacity: '0.5'}} />
-              <stop offset="100%" style={{stopColor: 'rgb(196, 181, 253)', stopOpacity: '0.8'}} />
+            <linearGradient id="aiLine3" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" style={{stopColor: 'rgb(6, 182, 212)', stopOpacity: '0.4'}} />
+              <stop offset="100%" style={{stopColor: 'rgb(147, 51, 234)', stopOpacity: '0.6'}} />
             </linearGradient>
-            <linearGradient id="aiGradient4" x1="100%" y1="100%" x2="0%" y2="0%">
-              <stop offset="0%" style={{stopColor: 'rgb(6, 182, 212)', stopOpacity: '0.6'}} />
-              <stop offset="100%" style={{stopColor: 'rgb(147, 51, 234)', stopOpacity: '0.9'}} />
+            <linearGradient id="aiLine4" x1="50%" y1="0%" x2="50%" y2="100%">
+              <stop offset="0%" style={{stopColor: 'rgb(16, 185, 129)', stopOpacity: '0.5'}} />
+              <stop offset="100%" style={{stopColor: 'rgb(248, 113, 113)', stopOpacity: '0.7'}} />
             </linearGradient>
-            <linearGradient id="aiGradient5" x1="50%" y1="0%" x2="50%" y2="100%">
-              <stop offset="0%" style={{stopColor: 'rgb(248, 113, 113)', stopOpacity: '0.5'}} />
-              <stop offset="100%" style={{stopColor: 'rgb(236, 72, 153)', stopOpacity: '0.8'}} />
+            <linearGradient id="aiLine5" x1="100%" y1="50%" x2="0%" y2="50%">
+              <stop offset="0%" style={{stopColor: 'rgb(245, 158, 11)', stopOpacity: '0.4'}} />
+              <stop offset="100%" style={{stopColor: 'rgb(236, 72, 153)', stopOpacity: '0.6'}} />
             </linearGradient>
           </defs>
 
-          {/* Animated connecting paths */}
-          <path d="M100,200 Q300,100 500,150" stroke="url(#aiGradient1)" strokeWidth="2" fill="none" className="animate-ai-connection-1">
-            <animate attributeName="stroke-opacity" values="0.2;0.8;0.2" dur="8s" repeatCount="indefinite" />
-          </path>
-          <path d="M150,100 Q400,300 600,200" stroke="url(#aiGradient2)" strokeWidth="2" fill="none" className="animate-ai-connection-2">
-            <animate attributeName="stroke-opacity" values="0.3;0.7;0.3" dur="6s" repeatCount="indefinite" />
-          </path>
-          <path d="M50,400 Q250,350 450,400" stroke="url(#aiGradient3)" strokeWidth="2" fill="none" className="animate-ai-connection-3">
-            <animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur="10s" repeatCount="indefinite" />
-          </path>
-          <path d="M200,100 Q500,200 700,100" stroke="url(#aiGradient4)" strokeWidth="2" fill="none" className="animate-ai-connection-4">
-            <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="9s" repeatCount="indefinite" />
-          </path>
+          {/* Direct connecting lines between agents */}
+          <line x1="280" y1="190" x2="460" y2="340" stroke="url(#aiLine1)" strokeWidth="1.5" strokeOpacity="0.7" className="animate-ai-connection-direct-1">
+            <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="6s" repeatCount="indefinite" />
+          </line>
+
+          <line x1="720" y1="250" x2="540" y2="340" stroke="url(#aiLine2)" strokeWidth="1.5" strokeOpacity="0.7" className="animate-ai-connection-direct-2">
+            <animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur="7s" repeatCount="indefinite" />
+          </line>
+
+          <line x1="480" y1="560" x2="460" y2="420" stroke="url(#aiLine3)" strokeWidth="1.5" strokeOpacity="0.7" className="animate-ai-connection-direct-3">
+            <animate attributeName="stroke-opacity" values="0.2;0.7;0.2" dur="8s" repeatCount="indefinite" />
+          </line>
+
+          <line x1="620" y1="520" x2="540" y2="420" stroke="url(#aiLine4)" strokeWidth="1.5" strokeOpacity="0.7" className="animate-ai-connection-direct-4">
+            <animate attributeName="stroke-opacity" values="0.5;0.8;0.5" dur="5s" repeatCount="indefinite" />
+          </line>
+
+          <line x1="240" y1="640" x2="460" y2="480" stroke="url(#aiLine5)" strokeWidth="1.5" strokeOpacity="0.7" className="animate-ai-connection-direct-5">
+            <animate attributeName="stroke-opacity" values="0.3;1.0;0.3" dur="9s" repeatCount="indefinite" />
+          </line>
+
+          {/* Cross-connecting lines between agents */}
+          <line x1="280" y1="190" x2="720" y2="250" stroke="url(#aiLine1)" strokeWidth="1" strokeOpacity="0.4" className="animate-ai-connection-cross-1">
+            <animate attributeName="stroke-opacity" values="0.1;0.5;0.1" dur="12s" repeatCount="indefinite" />
+          </line>
+
+          <line x1="480" y1="560" x2="620" y2="520" stroke="url(#aiLine2)" strokeWidth="1" strokeOpacity="0.4" className="animate-ai-connection-cross-2">
+            <animate attributeName="stroke-opacity" values="0.2;0.6;0.2" dur="10s" repeatCount="indefinite" />
+          </line>
+
+          <line x1="240" y1="640" x2="480" y2="560" stroke="url(#aiLine3)" strokeWidth="1" strokeOpacity="0.4" className="animate-ai-connection-cross-3">
+            <animate attributeName="stroke-opacity" values="0.1;0.4;0.1" dur="15s" repeatCount="indefinite" />
+          </line>
         </svg>
 
         {/* Enhanced Pulsing background orbs */}
@@ -248,13 +233,13 @@ export function Hero() {
             </div>
 
             {/* Subheadline with Enhanced Value Propositions - Perfect Responsive Wrapping */}
-            <p className="text-lg md:text-xl text-slate-200 mb-6 leading-relaxed max-w-2xl font-light">
+            <p className="text-lg md:text-xl text-slate-700 mb-6 leading-relaxed max-w-2xl font-light">
               Achieve operational excellence with{" "}
               <span className="font-bold text-[hsl(var(--accent-blue))]">intelligent automation</span> and{" "}
               <span className="font-bold text-[hsl(var(--accent-blue))]">AI-powered</span> managed services that deliver{" "}
-              <span className="font-bold text-white">50% cost savings</span>,{" "}
-              <span className="font-bold text-white">75% faster incident resolution</span>, and{" "}
-              <span className="font-bold text-white">complete operational autonomy</span>.
+              <span className="font-bold text-slate-800">50% cost savings</span>,{" "}
+              <span className="font-bold text-slate-800">75% faster incident resolution</span>, and{" "}
+              <span className="font-bold text-slate-800">complete operational autonomy</span>.
             </p>
 
             {/* CTA Buttons with Enhanced Design */}

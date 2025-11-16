@@ -416,50 +416,70 @@ All colors MUST be HSL.
     }
   }
 
-  /* Orbital animations for worker nodes */
-  .animate-ai-orbit-1 {
-    animation: ai-orbit-1 15s linear infinite;
+  /* Stationary AI Agent Activity Animations */
+  .animate-ai-activity-1 {
+    animation: ai-activity-pulse 8s ease-in-out infinite;
   }
 
-  .animate-ai-orbit-2 {
-    animation: ai-orbit-2 12s linear infinite reverse;
+  .animate-ai-activity-2 {
+    animation: ai-activity-pulse 6s ease-in-out infinite;
+    animation-delay: -2s;
   }
 
-  .animate-ai-orbit-3 {
-    animation: ai-orbit-3 20s linear infinite;
+  .animate-ai-activity-3 {
+    animation: ai-activity-pulse 10s ease-in-out infinite;
+    animation-delay: -4s;
   }
 
-  .animate-ai-orbit-4 {
-    animation: ai-orbit-4 18s linear infinite reverse;
+  .animate-ai-activity-4 {
+    animation: ai-activity-pulse 7s ease-in-out infinite;
+    animation-delay: -1s;
   }
 
-  .animate-ai-orbit-5 {
-    animation: ai-orbit-5 16s linear infinite;
+  .animate-ai-activity-5 {
+    animation: ai-activity-pulse 9s ease-in-out infinite;
+    animation-delay: -3s;
   }
 
-  @keyframes ai-orbit-1 {
-    0% { transform: rotate(0deg) translateX(80px) rotate(0deg); }
-    100% { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+  @keyframes ai-activity-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.9;
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+    }
   }
 
-  @keyframes ai-orbit-2 {
-    0% { transform: rotate(0deg) translateX(-90px) rotate(0deg); }
-    100% { transform: rotate(-360deg) translateX(-90px) rotate(360deg); }
+  .animate-ai-coordinator {
+    animation: ai-coordinator-pulse 4s ease-in-out infinite;
   }
 
-  @keyframes ai-orbit-3 {
-    0% { transform: rotate(0deg) translateX(40px) translateY(-100px) rotate(0deg); }
-    100% { transform: rotate(-360deg) translateX(40px) translateY(-100px) rotate(360deg); }
+  .animate-ai-spin-slow {
+    animation: ai-spin-slow 12s linear infinite;
   }
 
-  @keyframes ai-orbit-4 {
-    0% { transform: rotate(0deg) translateX(10px) translateY(100px) rotate(0deg); }
-    100% { transform: rotate(360deg) translateX(10px) translateY(100px) rotate(-360deg); }
+  @keyframes ai-coordinator-pulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 30px rgba(46, 107, 255, 0.5);
+    }
+    50% {
+      transform: scale(1.15);
+      box-shadow: 0 0 50px rgba(46, 107, 255, 0.8);
+    }
   }
 
-  @keyframes ai-orbit-5 {
-    0% { transform: rotate(0deg) translateX(-40px) translateY(-80px) rotate(0deg); }
-    100% { transform: rotate(360deg) translateX(-40px) translateY(-80px) rotate(-360deg); }
+  @keyframes ai-spin-slow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 
   /* Data packet animations */
@@ -604,6 +624,39 @@ All colors MUST be HSL.
   .animate-ai-particle-10 { animation: ai-particle-10 9s ease-in-out infinite; }
   .animate-ai-particle-11 { animation: ai-particle-11 19s ease-in-out infinite; }
   .animate-ai-particle-12 { animation: ai-particle-12 8s ease-in-out infinite; }
+
+  /* AI connection line animations */
+  .animate-ai-connection-direct-1 { animation: ai-connection-direct 6s ease-in-out infinite; }
+  .animate-ai-connection-direct-2 { animation: ai-connection-direct 7s ease-in-out infinite; }
+  .animate-ai-connection-direct-3 { animation: ai-connection-direct 8s ease-in-out infinite; }
+  .animate-ai-connection-direct-4 { animation: ai-connection-direct 5s ease-in-out infinite; }
+  .animate-ai-connection-direct-5 { animation: ai-connection-direct 9s ease-in-out infinite; }
+
+  .animate-ai-connection-cross-1 { animation: ai-connection-cross 12s ease-in-out infinite; }
+  .animate-ai-connection-cross-2 { animation: ai-connection-cross 10s ease-in-out infinite; }
+  .animate-ai-connection-cross-3 { animation: ai-connection-cross 15s ease-in-out infinite; }
+
+  @keyframes ai-connection-direct {
+    0%, 100% {
+      stroke-opacity: 0.3;
+      stroke-width: 1.5px;
+    }
+    50% {
+      stroke-opacity: 0.8;
+      stroke-width: 2px;
+    }
+  }
+
+  @keyframes ai-connection-cross {
+    0%, 100% {
+      stroke-opacity: 0.1;
+      stroke-width: 1px;
+    }
+    50% {
+      stroke-opacity: 0.4;
+      stroke-width: 1.2px;
+    }
+  }
 
   @keyframes ai-particle-1 {
     0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.2; }

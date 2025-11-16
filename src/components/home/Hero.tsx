@@ -65,17 +65,14 @@ export function Hero() {
 
             {/* Content with relative positioning */}
             <div className="relative">
-            {/* Main Headline with Gradient - Large and Prominent */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[10rem] font-black mb-6 leading-[0.9] text-[hsl(var(--navy))]">
-              <span className="inline-block">We</span>{" "}
-              <span className="inline-block">Engineer</span>{" "}
-              <span className="inline-block">Your<hr className="mt-2 mb-2 opacity-50" /></span>{" "}
-              <br />
-              <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-[hsl(var(--accent-blue))] via-[hsl(var(--signal-purple))] to-[hsl(var(--accent-blue))] bg-clip-text text-transparent drop-shadow-lg">
-                  Competitive Advantage
-                </span>
-                <div className="absolute -inset-4 bg-gradient-to-r from-[hsl(var(--accent-blue))]/40 via-[hsl(var(--signal-purple))]/50 to-[hsl(var(--accent-blue))]/40 blur-3xl -z-10" />
+            {/* Main Headline with Gradient */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-[1.1] text-[hsl(var(--navy))]">
+              <span className="inline-block hover:scale-105 transition-transform duration-300">We</span>{" "}
+              <span className="inline-block hover:scale-105 transition-transform duration-300">Engineer</span>{" "}
+              <span className="inline-block hover:scale-105 transition-transform duration-300">Your</span>{" "}
+              <span className="relative inline-block group/confidence hover:scale-105 transition-transform duration-300 text-[hsl(var(--accent-blue))]">
+                Competitive Advantage
+                <div className="absolute -inset-1 bg-gradient-to-r from-[hsl(var(--accent-blue))]/20 to-[hsl(var(--signal-purple))]/20 blur-xl group-hover/confidence:blur-2xl transition-all duration-300 -z-10" />
               </span>
             </h1>
 

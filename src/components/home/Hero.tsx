@@ -65,8 +65,8 @@ export function Hero() {
 
             {/* Content with relative positioning */}
             <div className="relative">
-            {/* Main Headline with Gradient - MASSIVE and ULTRA-PROMINENT */}
-            <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-[10rem] 2xl:text-[12rem] 3xl:text-[16rem] font-black mb-8 leading-[0.85] text-[hsl(var(--navy))]">
+            {/* Main Headline with Gradient - Large and Prominent */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-[10rem] font-black mb-6 leading-[0.9] text-[hsl(var(--navy))]">
               <span className="inline-block">We</span>{" "}
               <span className="inline-block">Engineer</span>{" "}
               <span className="inline-block">Your<hr className="mt-2 mb-2 opacity-50" /></span>{" "}

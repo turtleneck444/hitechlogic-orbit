@@ -1,5 +1,7 @@
 import { ActionSearchBar } from "@/components/ui/action-search-bar";
 import { Button } from "@/components/ui/button";
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { useState } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
   Activity,
@@ -198,6 +200,9 @@ const serviceQuickLinks = serviceTracks.map((track) => ({
 }));
 
 export function ServiceExplorer() {
+  const [catalogExpanded, setCatalogExpanded] = useState(false);
+  const initialServicesToShow = 4;
+
   return (
     <section className="relative overflow-hidden bg-white py-12 lg:py-16">
       <div className="absolute top-12 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[hsl(var(--accent-blue))]/5 blur-[120px]" />
@@ -426,7 +431,8 @@ export function ServiceExplorer() {
             </div>
 
             <div className="space-y-3">
-              {serviceTracks.map((track) => (
+              {/* Initial services shown */}
+              {serviceTracks.slice(0, initialServicesToShow).map((track) => (
                 <article
                   key={track.title}
                   id={track.id}
@@ -507,6 +513,119 @@ export function ServiceExplorer() {
                   </div>
                 </article>
               ))}
+
+              {/* Expandable services section */}
+              <div
+                className={`transition-all duration-700 ease-in-out overflow-hidden ${
+                  catalogExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="space-y-3">
+                  {serviceTracks.slice(initialServicesToShow).map((track) => (
+                    <article
+                      key={track.title}
+                      id={track.id}
+                      className="group rounded-[20px] border border-slate-200/80 bg-white/90 p-4 shadow-lg shadow-slate-900/5 transition-all duration-300 hover:-translate-y-1 hover:border-[hsl(var(--accent-blue))]/40"
+                    >
+                      <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,240px)_minmax(0,280px)_minmax(0,180px)] lg:items-start lg:gap-4">
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-2.5">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[hsl(var(--accent-blue))]/10 text-[hsl(var(--accent-blue))]">
+                              <track.icon className="h-4 w-4" />
+                            </div>
+                            <div>
+                              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">
+                                {track.focus}
+                              </p>
+                              <h4 className="text-sm font-semibold text-[hsl(var(--navy))]">
+                                {track.title}
+                              </h4>
+                            </div>
+                          </div>
+                          <p className="text-xs text-slate-600">
+                            {track.description}
+                          </p>
+                        </div>
+
+                        <div className="rounded-xl border border-slate-100/80 bg-white p-3">
+                          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                            Key Outcomes
+                          </p>
+                          <ul className="mt-2 space-y-1.5 text-xs text-slate-600">
+                            {track.outcomes.map((outcome) => (
+                              <li key={outcome} className="flex items-start gap-2">
+                                <span className="mt-1 inline-flex h-1 w-1 rounded-full bg-[hsl(var(--accent-blue))]" />
+                                <span>{outcome}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div className="space-y-3 rounded-xl border border-slate-100/80 bg-slate-50/60 p-3">
+                          <div>
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                              Signature Metric
+                            </p>
+                            <p className="mt-1 text-lg font-semibold text-[hsl(var(--navy))]">
+                              {track.metric}
+                            </p>
+                          </div>
+                          <div>
+                            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                              Engagement Model
+                            </p>
+                            <p className="mt-1 text-xs font-semibold text-[hsl(var(--accent-blue))]">
+                              Executive-led partnership
+                            </p>
+                          </div>
+                          <Button
+                            asChild
+                            size="sm"
+                            className="w-full rounded-full text-xs"
+                          >
+                            <a href={track.pageHref}>View Capability</a>
+                          </Button>
+                        </div>
+                      </div>
+
+                      <div className="mt-3 flex flex-wrap gap-3 border-t border-slate-100 pt-3">
+                        <a
+                          href={track.pageHref}
+                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[hsl(var(--accent-blue))] hover:text-[hsl(var(--navy))]"
+                        >
+                          Learn more
+                          <ArrowRight className="h-3.5 w-3.5" />
+                        </a>
+                        <span className="text-xs text-slate-500">
+                          Includes readiness assessment and 90-day roadmap.
+                        </span>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+
+              {/* Expand/Collapse button */}
+              {serviceTracks.length > initialServicesToShow && (
+                <button
+                  onClick={() => setCatalogExpanded(!catalogExpanded)}
+                  className="group w-full text-left px-4 py-3 rounded-lg border border-slate-200/60 bg-[hsl(var(--accent-blue))]/5 hover:bg-[hsl(var(--accent-blue))]/10 transition-all duration-300"
+                >
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="text-sm font-semibold text-[hsl(var(--navy))] mb-1">
+                        {catalogExpanded ? 'Show Fewer Services' : `View ${serviceTracks.length - initialServicesToShow} More Services`}
+                      </h4>
+                      <p className="text-xs text-slate-600">
+                        {catalogExpanded ? 'Click to collapse the service catalog' : 'Discover additional managed service offerings'}
+                      </p>
+                    </div>
+                    <div className={`transition-transform duration-300 ${catalogExpanded ? 'rotate-180' : ''}`}>
+                      <ChevronDown className={`h-5 w-5 text-[hsl(var(--accent-blue))] group-hover:text-[hsl(var(--navy))] transition-colors duration-300`} />
+                    </div>
+                  </div>
+                </button>
+              )}
             </div>
           </div>
         </div>

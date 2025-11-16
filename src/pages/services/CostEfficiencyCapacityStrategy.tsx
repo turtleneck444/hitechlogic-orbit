@@ -250,47 +250,50 @@ export default function CostEfficiencyCapacityStrategy() {
       />
       <Layout>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-green-50/20 to-emerald-50/30">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--deep-navy))] via-[hsl(var(--graphite))] to-[hsl(var(--deep-navy))]">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvZz48L3N2Zz4=')] opacity-20" />
         <div className="relative mx-auto w-full max-w-6xl px-6 pt-32 pb-20 sm:pt-40 sm:pb-28">
           <div className="animate-[fade-in_0.5s_ease-out]">
             <div className="flex items-center gap-3 mb-6">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-green-500 to-[hsl(var(--navy))] shadow-lg shadow-green-500/25">
-                <BarChart3 className="h-7 w-7 text-white" />
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg transition-transform duration-300 hover:scale-110 hover:bg-white/15">
+                <TrendingUp className="h-7 w-7 text-[hsl(var(--accent-blue))]" />
               </div>
-              <span className="eyebrow text-green-600">Cost Efficiency & Capacity Strategy</span>
+              <span className="text-sm font-medium text-white/90 tracking-wide">Core Operations Discipline</span>
             </div>
           </div>
-          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-[hsl(var(--navy))] animate-[fade-in_0.6s_ease-out_0.1s_both]">
-            Financial Transparency,<br />
-            <span className="text-green-600">Optimized Growth</span>
+          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white animate-[fade-in_0.6s_ease-out_0.1s_both]">
+            Cost Efficiency & <span className="text-[hsl(var(--accent-blue))]">Capacity Strategy</span>
           </h1>
-          <p className="mt-6 text-xl text-slate-600 max-w-3xl leading-relaxed animate-[fade-in_0.7s_ease-out_0.2s_both]">
-            Strategic FinOps with complete cost visibility, predictive forecasting, and continuous optimization
-            that reduces cloud spend by 35% while supporting aggressive growth.
+          <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed animate-[fade-in_0.7s_ease-out_0.2s_both]">
+            Financial observability and optimization programs that keep spend predictable and accountable.
+            <span className="block mt-3 font-semibold text-white">40-60% cloud spend reduction through transparency</span>
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4 animate-[fade-in_0.8s_ease-out_0.3s_both]">
-            <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(34,197,94,0.8)] hover:scale-105 transition-transform">
-              <Link to="/contact" className="flex items-center gap-2">
-                <span>Request Cost Assessment</span>
-                <ArrowRight className="h-5 w-5" />
+            <Button size="lg" asChild className="bg-[hsl(var(--accent-blue))] hover:bg-[hsl(var(--accent-blue))]/90 text-white shadow-[0_20px_45px_-20px_rgba(46,107,255,0.8)] hover:shadow-[0_25px_50px_-12px_rgba(46,107,255,0.9)] hover:scale-105 transition-all duration-300">
+              <Link to="/contact" className="flex items-center gap-2 group">
+                <span>Request Assessment</span>
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
-            <Button variant="outline" size="xl" asChild className="hover:scale-105 transition-transform">
-              <Link to="/demo">Calculate Savings</Link>
+            <Button variant="outline" size="lg" asChild className="border-white/20 text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300">
+              <Link to="/demo" className="flex items-center gap-2 group">
+                <span>Calculate Savings</span>
+              </Link>
             </Button>
           </div>
 
           {/* Metrics */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 animate-[fade-in_0.9s_ease-out_0.4s_both]">
             {metrics.map((metric) => (
-              <div key={metric.label} className="text-center group hover:scale-105 transition-transform">
-                <div className="flex items-center justify-center mb-2">
-                  <metric.icon className="h-6 w-6 text-green-600" />
+              <div key={metric.label} className="text-center group">
+                <div className="flex justify-center mb-3">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 group-hover:bg-white/15 group-hover:border-white/20 transition-all duration-300">
+                    <metric.icon className="h-6 w-6 text-[hsl(var(--accent-blue))]" />
+                  </div>
                 </div>
-                <div className="text-3xl md:text-4xl font-bold text-green-600">{metric.value}</div>
-                <div className="mt-2 text-sm font-medium text-slate-600">{metric.label}</div>
+                <div className="text-3xl md:text-4xl font-bold text-[hsl(var(--accent-blue))] group-hover:scale-110 transition-transform duration-300">{metric.value}</div>
+                <div className="mt-2 text-sm font-medium text-white/80">{metric.label}</div>
               </div>
             ))}
           </div>

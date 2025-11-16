@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
-import { Activity, Bell, BellOff, Filter, TrendingDown, Brain, AlertTriangle, CheckCircle2, ArrowRight, BarChart, Zap, Clock, Award, Phone, Mail, Calendar, Target, LineChart } from "lucide-react";
+import { Activity, Bell, BellOff, Filter, TrendingDown, Brain, AlertTriangle, CheckCircle2, ArrowRight, BarChart, Zap, Clock, Award, Phone, Mail, Calendar, Target, LineChart, Eye } from "lucide-react";
 
 const capabilities = [
   {
@@ -316,22 +316,21 @@ export default function SystemOversightEventReduction() {
       />
       <Layout>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-purple-50/20 to-blue-50/30">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--deep-navy))] via-[hsl(var(--graphite))] to-[hsl(var(--deep-navy))]">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvZz48L3N2Zz4=')] opacity-20" />
         <div className="relative mx-auto w-full max-w-6xl px-6 pt-32 pb-20 sm:pt-40 sm:pb-28">
           <div className="flex items-center gap-3 mb-6 animate-[fade-in_0.5s_ease-out]">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-[hsl(var(--navy))] shadow-lg shadow-purple-500/25 transition-transform duration-300 hover:scale-110">
-              <Activity className="h-7 w-7 text-white" />
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg transition-transform duration-300 hover:scale-110 hover:bg-white/15">
+              <Eye className="h-7 w-7 text-[hsl(var(--accent-blue))]" />
             </div>
-            <span className="eyebrow text-purple-600">System Oversight & Event Reduction</span>
+            <span className="text-sm font-medium text-white/90 tracking-wide">Core Operations Discipline</span>
           </div>
-          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-[hsl(var(--navy))] animate-[fade-in_0.6s_ease-out_0.1s_both]">
-            Signal Over Noise,<br />
-            <span className="text-purple-600">Every Time</span>
+          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white animate-[fade-in_0.6s_ease-out_0.1s_both]">
+            System Oversight & <span className="text-[hsl(var(--accent-blue))]">Event Reduction</span>
           </h1>
-          <p className="mt-6 text-xl text-slate-600 max-w-3xl leading-relaxed animate-[fade-in_0.7s_ease-out_0.2s_both]">
-            Intelligent monitoring that reduces alert fatigue by 82%, correlates events automatically,
-            and ensures your teams focus on what truly matters.
+          <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed animate-[fade-in_0.7s_ease-out_0.2s_both]">
+            Noise-calmed monitoring and automated correlation that keeps executive dashboards clear and actionable.
+            <span className="block mt-3 font-semibold text-white">82% average noise reduction across all implementations</span>
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4 animate-[fade-in_0.8s_ease-out_0.3s_both]">

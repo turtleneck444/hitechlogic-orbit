@@ -444,14 +444,9 @@ export function ServiceExplorer() {
                         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[hsl(var(--accent-blue))]/10 text-[hsl(var(--accent-blue))]">
                           <track.icon className="h-4 w-4" />
                         </div>
-                        <div>
-                          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">
-                            {track.focus}
-                          </p>
-                          <h4 className="text-sm font-semibold text-[hsl(var(--navy))]">
-                            {track.title}
-                          </h4>
-                        </div>
+                        <h4 className="text-sm font-semibold text-[hsl(var(--navy))]">
+                          {track.title}
+                        </h4>
                       </div>
                       <p className="text-xs text-slate-600">
                         {track.description}
@@ -517,7 +512,7 @@ export function ServiceExplorer() {
               {/* Expandable services section */}
               <div
                 className={`transition-all duration-700 ease-in-out overflow-hidden ${
-                  catalogExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  catalogExpanded ? 'max-h-[1200px] opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
                 <div className="space-y-3">
@@ -533,14 +528,9 @@ export function ServiceExplorer() {
                             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[hsl(var(--accent-blue))]/10 text-[hsl(var(--accent-blue))]">
                               <track.icon className="h-4 w-4" />
                             </div>
-                            <div>
-                              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">
-                                {track.focus}
-                              </p>
-                              <h4 className="text-sm font-semibold text-[hsl(var(--navy))]">
-                                {track.title}
-                              </h4>
-                            </div>
+                            <h4 className="text-sm font-semibold text-[hsl(var(--navy))]">
+                              {track.title}
+                            </h4>
                           </div>
                           <p className="text-xs text-slate-600">
                             {track.description}

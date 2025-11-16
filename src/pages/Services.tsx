@@ -19,6 +19,8 @@ import {
   MessageCircle,
   Clock,
   Zap,
+  Users,
+  Award,
 } from "lucide-react";
 
 type Service = {

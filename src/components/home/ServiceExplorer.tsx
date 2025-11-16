@@ -201,7 +201,7 @@ const serviceQuickLinks = serviceTracks.map((track) => ({
 
 export function ServiceExplorer() {
   const [catalogExpanded, setCatalogExpanded] = useState(false);
-  const initialServicesToShow = 4;
+  const initialServicesToShow = 3;
 
   return (
     <section className="relative overflow-hidden bg-white py-12 lg:py-16">

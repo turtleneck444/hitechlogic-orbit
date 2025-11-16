@@ -127,27 +127,6 @@ export function Hero() {
               </Button>
             </div>
 
-            {/* Enhanced Executive Testimonial */}
-            <div className="relative group/quote p-5 rounded-2xl bg-white/90 border border-white/60 shadow-lg shadow-slate-900/10 transition-all duration-300 hover:shadow-[0_30px_50px_-20px_rgba(2,6,23,0.45)] backdrop-blur">
-              <div className="absolute inset-0 opacity-0 group-hover/quote:opacity-100 transition-opacity duration-300">
-                <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--accent-blue))]/20 to-[hsl(var(--signal-purple))]/20 rounded-2xl" />
-                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/60 to-white/0 mix-blend-soft-light" />
-              </div>
-              <div className="relative space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[hsl(var(--accent-blue))]/15 border border-[hsl(var(--accent-blue))]/30 shadow-inner">
-                    <BarChart3 className="h-5 w-5 text-[hsl(var(--accent-blue))]" />
-                  </div>
-                  <p className="text-sm font-semibold text-slate-800 leading-relaxed">
-                    "We turn technology into a strategic advantage with automation, stability, and operational evolution."
-                  </p>
-                </div>
-                <div className="flex items-center justify-between text-xs uppercase tracking-[0.3em] text-slate-400 font-semibold">
-                  <span>— HiTechLogic Promise</span>
-                  <span>Enterprise Infrastructure Excellence</span>
-                </div>
-              </div>
-            </div>
             </div>
           </div>
 
@@ -322,6 +301,24 @@ export function Hero() {
 
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Compact Footer Attribution - Minimized and Strategic */}
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-8">
+        <div className="flex items-center justify-center gap-6 text-sm">
+          <div className="flex items-center gap-2 text-[hsl(var(--accent-blue))]/80">
+            <div className="w-1 h-1 rounded-full bg-[hsl(var(--accent-blue))] opacity-60" />
+            <span className="font-medium text-slate-600">HiTechLogic Promise</span>
+          </div>
+          <div className="w-px h-4 bg-slate-300" />
+          <p className="text-slate-500 italic leading-snug text-sm max-w-lg text-center">
+            "We turn technology into a strategic advantage with automation, stability, and operational evolution."
+          </p>
+          <div className="w-px h-4 bg-slate-300" />
+          <span className="text-xs uppercase tracking-[0.15em] text-slate-400 font-semibold">
+            Enterprise Infrastructure Excellence
+          </span>
         </div>
       </div>
     </section>

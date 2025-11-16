@@ -25,11 +25,11 @@ export function ValuePillars() {
           <PillarsAccordionDemo />
         </div>
 
-        <div className="flex flex-col gap-3 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-900/50 p-6 text-sm text-slate-300 shadow-2xl sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-white">
+        <div className="flex flex-col gap-3 rounded-3xl border border-gray-200 bg-white p-6 text-sm text-gray-900 shadow-2xl sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-gray-800">
             Need something tailored? We weave these disciplines into a cohesive operating model with measurable KPIs and transparent governance.
           </p>
-          <Button variant="outline" size="lg" asChild className="text-xs font-semibold uppercase tracking-[0.3em] text-white/90">
+          <Button variant="outline" size="lg" asChild className="text-xs font-semibold uppercase tracking-[0.3em] text-[hsl(var(--accent-blue))]">
             <Link to="/contact">Request a tailored program</Link>
           </Button>
         </div>

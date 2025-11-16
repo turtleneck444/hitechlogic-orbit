@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { PillarsAccordionDemo } from "@/components/blocks/pillars-accordion-demo";
 
@@ -25,13 +24,14 @@ export function ValuePillars() {
           <PillarsAccordionDemo />
         </div>
 
-        <div className="flex flex-col gap-3 rounded-3xl border border-gray-200 bg-white p-6 text-sm text-gray-900 shadow-2xl sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-gray-800">
-            Need something tailored? We weave these disciplines into a cohesive operating model with measurable KPIs and transparent governance.
-          </p>
-          <Button variant="outline" size="lg" asChild className="text-xs font-semibold uppercase tracking-[0.3em] text-[hsl(var(--accent-blue))]">
-            <Link to="/contact">Request a tailored program</Link>
-          </Button>
+        <div className="text-center mt-8">
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors duration-200 text-lg font-medium"
+          >
+            Need a tailored solution?
+            <span className="font-semibold">→</span>
+          </Link>
         </div>
       </div>
     </section>

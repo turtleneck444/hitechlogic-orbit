@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { PinContainer } from "@/components/ui/3d-pin";
 import {
   ArrowRight,
   Cloud,
@@ -84,36 +85,47 @@ export function ValuePillars() {
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {coreDisciplines.map((discipline) => (
-            <article
+            <PinContainer
               key={discipline.title}
-            className="group relative overflow-hidden rounded-[28px] border border-white/30 bg-gradient-to-br from-[hsl(var(--accent-blue))]/90 via-[hsl(var(--accent-blue))]/70 to-[hsl(var(--accent-blue))]/40 p-6 shadow-[0_40px_120px_rgba(2,6,23,0.85)] transition hover:-translate-y-1 hover:border-white/40"
+              title={`Explore ${discipline.title}`}
+              href={discipline.href}
+              containerClassName="group relative overflow-hidden rounded-[28px]"
+              className="relative z-10 space-y-4"
             >
-              <Link
-                to={discipline.href}
-                className="absolute inset-0 z-20"
-                aria-label={`Learn more about ${discipline.title}`}
-              >
-                <span className="sr-only">{discipline.title}</span>
-              </Link>
-              <div className="absolute -inset-2 z-0 rounded-[30px] border border-transparent bg-gradient-to-br from-[rgba(14,165,233,0.25)] via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
-              <div className="absolute inset-0 z-10 bg-gradient-to-br from-[hsl(var(--accent-blue))]/40 via-transparent to-transparent opacity-80 mix-blend-screen rotate-2 pointer-events-none" />
-              <div className="relative z-10 space-y-4">
-                <div
-                  className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white shadow-lg transition-all ${discipline.tone}`}
-                >
-                  <discipline.icon className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-white">
-                    {discipline.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-white/85">{discipline.description}</p>
-                </div>
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white shadow-lg transition-all group-hover:scale-110">
+                <discipline.icon className="h-5 w-5" />
+              </div>
+              <div className="space-y-3">
+                <h3 className="text-lg font-semibold text-white">
+                  {discipline.title}
+                </h3>
+                <p className="text-sm text-white/85 leading-relaxed">
+                  {discipline.description}
+                </p>
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
                   {discipline.detail}
                 </p>
               </div>
-            </article>
+
+              {/* Interactive elements specific to each pillar */}
+              <div className="mt-4 grid grid-cols-2 gap-2 text-xs text-white/60">
+                <div className="space-y-1 text-center p-2 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
+                  <div className="font-bold text-white">24/7</div>
+                  <div>Monitoring</div>
+                </div>
+                <div className="space-y-1 text-center p-2 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
+                  <div className="font-bold text-white">AI</div>
+                  <div>Powered</div>
+                </div>
+              </div>
+
+              {/* Animated connector line */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-1">
+                <div className="w-8 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+                <div className="w-1 h-1 bg-white/50 rounded-full animate-pulse"></div>
+                <div className="text-xs text-white/70 font-medium">→</div>
+              </div>
+            </PinContainer>
           ))}
         </div>
 

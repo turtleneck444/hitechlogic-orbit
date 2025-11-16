@@ -40,67 +40,176 @@ export function Hero() {
 
   return (
     <section className="relative flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
-      {/* Advanced AI Agent Network Animation - Professional & Stationary */}
-      <div className="absolute inset-0 z-[1] pointer-events-none">
-        {/* Static AI Nodes in Fixed Positions */}
+      {/* World-Class Advanced AI Network - Multi-Layered Spectacle */}
+      <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+        {/* Layer 1: Dynamic Background Gradient */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-cyan-50 animate-ai-gradient-shift"></div>
+          <div className="absolute inset-0 bg-gradient-to-tl from-indigo-100 via-pink-50 to-emerald-50 animate-ai-gradient-rotate opacity-70"></div>
+        </div>
+
+        {/* Layer 2: Advanced Neural Network Grid */}
+        <div className="absolute inset-0 opacity-20">
+          <svg className="w-full h-full" viewBox="0 0 1200 800">
+            <defs>
+              <pattern id="neuralGrid" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+                <circle cx="25" cy="25" r="1.5" fill="rgba(59, 130, 246, 0.3)" className="animate-ai-node-pulse">
+                  <animate attributeName="r" values="1.5;2.5;1.5" dur="4s" repeatCount="indefinite" />
+                </circle>
+                <line x1="25" y1="25" x2="50" y2="50" stroke="rgba(147, 51, 234, 0.2)" strokeWidth="0.5" className="animate-ai-connection-flow" />
+                <line x1="25" y1="25" x2="0" y2="50" stroke="rgba(6, 182, 212, 0.2)" strokeWidth="0.5" className="animate-ai-connection-flow" />
+              </pattern>
+              <radialGradient id="neuralGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" style={{stopColor: 'rgba(59, 130, 246, 0.3)', stopOpacity: '0.8'}} />
+                <stop offset="100%" style={{stopColor: 'rgba(147, 51, 234, 0.1)', stopOpacity: '0'}} />
+              </radialGradient>
+            </defs>
+            <rect width="1200" height="800" fill="url(#neuralGrid)" />
+            <circle cx="600" cy="400" r="200" fill="url(#neuralGlow)" className="animate-ai-neural-pulse" />
+          </svg>
+        </div>
+
+        {/* Layer 3: Advanced AI Agent Nodes - World Class Design */}
         <div className="absolute top-1/4 left-1/4">
-          <div className="w-6 h-6 bg-gradient-to-br from-green-400 via-emerald-500 to-teal-500 rounded-full shadow-xl shadow-green-400/40 animate-ai-activity-1">
-            <div className="absolute inset-0.5 rounded-full bg-white/40"></div>
-            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-center">
-              <div className="text-[9px] font-bold text-green-700 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md border border-green-200 shadow-sm">ANALYTICS AI</div>
-              <div className="text-[7px] text-green-600 mt-1 leading-tight">Data Processing<br />Pattern Recognition</div>
+          <div className="relative">
+            {/* Advanced Analytics AI Node */}
+            <div className="w-8 h-8 bg-gradient-to-br from-green-400 via-emerald-500 to-teal-500 rounded-full shadow-2xl animate-ai-node-morph-1 relative overflow-hidden border-2 border-green-300/50">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/20 to-transparent rounded-full animate-ai-inner-rotate"></div>
+              <div className="absolute inset-1 bg-gradient-to-br from-green-300 to-emerald-400 rounded-full opacity-60 animate-ai-pulse-slow"></div>
+              <div className="absolute inset-2 bg-white/60 rounded-full animate-ai-bright-pulse"></div>
+              {/* Data streams */}
+              <div className="absolute -inset-1 border border-green-400/20 rounded-full animate-ai-orbit-fast"></div>
+              <div className="absolute -inset-2 border border-teal-400/10 rounded-full animate-ai-orbit-slow"></div>
+            </div>
+            {/* Enhanced Label */}
+            <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 text-center">
+              <div className="text-[11px] font-black text-green-800 bg-gradient-to-r from-white via-green-50 to-white backdrop-blur-md px-3 py-1.5 rounded-xl border-2 border-green-200/70 shadow-xl animate-ai-label-glow">
+                ANALYTICS AI
+                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-4 h-1 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full"></div>
+              </div>
+              <div className="text-[7px] text-green-700 font-bold mt-1 bg-white/80 backdrop-blur-sm px-2 py-0.5 rounded-md">Data Intelligence</div>
             </div>
           </div>
         </div>
 
         <div className="absolute top-1/3 right-1/4">
-          <div className="w-5 h-5 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400 rounded-full shadow-lg shadow-yellow-400/40 animate-ai-activity-2">
-            <div className="absolute inset-0.5 rounded-full bg-white/50"></div>
-            <div className="absolute -top-7 left-1/2 transform -translate-x-1/2 text-center">
-              <div className="text-[8px] font-bold text-yellow-700 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md border border-yellow-200 shadow-sm">OPS MONITOR</div>
-              <div className="text-[6px] text-yellow-600 mt-0.5 leading-tight">System Health<br />Alert Mgmt</div>
+          <div className="relative">
+            {/* Advanced Ops Monitor Node */}
+            <div className="w-7 h-7 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-500 rounded-full shadow-2xl animate-ai-node-morph-2 relative overflow-hidden border-2 border-yellow-300/50">
+              <div className="absolute inset-0 bg-gradient-conic from-yellow-300 via-orange-300 to-red-400 rounded-full animate-ai-spin-reverse"></div>
+              <div className="absolute inset-1 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-full opacity-70 animate-ai-pulse-slow"></div>
+              <div className="absolute inset-2 bg-white/50 rounded-full animate-ai-bright-pulse-delayed"></div>
+              {/* Monitoring indicators */}
+              <div className="absolute top-0 left-1/2 w-1 h-1 bg-red-500 rounded-full animate-ai-indicator-blink -translate-x-1/2 -translate-y-1"></div>
+              <div className="absolute bottom-0 left-1/2 w-1 h-1 bg-green-500 rounded-full animate-ai-indicator-blink-delayed -translate-x-1/2 translate-y-0.5"></div>
+            </div>
+            {/* Enhanced Label */}
+            <div className="absolute -top-11 left-1/2 transform -translate-x-1/2 text-center">
+              <div className="text-[10px] font-black text-orange-800 bg-gradient-to-r from-white via-yellow-50 to-white backdrop-blur-md px-2.5 py-1.5 rounded-xl border-2 border-yellow-200/70 shadow-xl animate-ai-label-glow">
+                OPS MONITOR
+                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-3 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
+              </div>
+              <div className="text-[6px] text-orange-700 font-bold mt-0.5 bg-white/80 backdrop-blur-sm px-1.5 py-0.5 rounded-md">System Surveillance</div>
             </div>
           </div>
         </div>
 
         <div className="absolute bottom-1/4 left-1/3">
-          <div className="w-7 h-7 bg-gradient-to-br from-purple-400 via-pink-400 to-purple-500 rounded-full shadow-xl shadow-purple-400/40 animate-ai-activity-3">
-            <div className="absolute inset-1 rounded-full bg-white/30"></div>
-            <div className="absolute -top-9 left-1/2 transform -translate-x-1/2 text-center">
-              <div className="text-[10px] font-bold text-purple-700 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md border border-purple-200 shadow-sm">SECURITY AI</div>
-              <div className="text-[7px] text-purple-600 mt-1 leading-tight">Threat Detection<br />Risk Analysis</div>
+          <div className="relative">
+            {/* Advanced Security AI Node */}
+            <div className="w-9 h-9 bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600 rounded-full shadow-2xl animate-ai-node-morph-3 relative overflow-hidden border-2 border-purple-300/50">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/20 to-transparent rounded-full animate-ai-defense-rotate"></div>
+              <div className="absolute inset-1 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full opacity-60 animate-ai-pulse-slow"></div>
+              <div className="absolute inset-2 bg-white/50 rounded-full animate-ai-bright-pulse"></div>
+              {/* Security shield effect */}
+              <div className="absolute inset-0.5 border-2 border-purple-300/30 rounded-full animate-ai-shield-pulse"></div>
+              <div className="absolute top-1 left-1/2 w-0.5 h-0.5 bg-purple-600 rounded-full animate-ai-security-scan -translate-x-1/2"></div>
+            </div>
+            {/* Enhanced Label */}
+            <div className="absolute -top-13 left-1/2 transform -translate-x-1/2 text-center">
+              <div className="text-[10px] font-black text-purple-800 bg-gradient-to-r from-white via-purple-50 to-white backdrop-blur-md px-2.5 py-1.5 rounded-xl border-2 border-purple-200/70 shadow-xl animate-ai-label-glow">
+                SECURITY AI
+                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-4 h-1 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"></div>
+              </div>
+              <div className="text-[7px] text-purple-700 font-bold mt-1 bg-white/80 backdrop-blur-sm px-2 py-0.5 rounded-md">Threat Intelligence</div>
             </div>
           </div>
         </div>
 
         <div className="absolute bottom-1/3 right-1/3">
-          <div className="w-6 h-6 bg-gradient-to-br from-cyan-400 via-blue-400 to-cyan-500 rounded-full shadow-xl shadow-cyan-400/40 animate-ai-activity-4">
-            <div className="absolute inset-0.5 rounded-full bg-white/40"></div>
-            <div className="absolute -bottom-9 left-1/2 transform -translate-x-1/2 text-center">
-              <div className="text-[9px] font-bold text-cyan-700 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md border border-cyan-200 shadow-sm">AUTO-RESPONSE</div>
-              <div className="text-[7px] text-cyan-600 mt-1 leading-tight">Incident Handling<br />Self-Healing</div>
+          <div className="relative">
+            {/* Advanced Auto-Response Node */}
+            <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 via-blue-500 to-cyan-500 rounded-full shadow-2xl animate-ai-node-morph-4 relative overflow-hidden border-2 border-cyan-300/50">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/30 to-transparent rounded-full animate-ai-response-rotate"></div>
+              <div className="absolute inset-1 bg-gradient-to-br from-cyan-300 to-blue-400 rounded-full opacity-60 animate-ai-pulse-fast"></div>
+              <div className="absolute inset-2 bg-white/60 rounded-full animate-ai-bright-pulse-delayed"></div>
+              {/* Action indicators */}
+              <div className="absolute top-0 right-0 w-1.5 h-1.5 bg-cyan-600 rounded-full animate-ai-action-flash"></div>
+              <div className="absolute bottom-0 left-0 w-1 h-1 bg-blue-600 rounded-full animate-ai-action-flash-delayed"></div>
+            </div>
+            {/* Enhanced Label */}
+            <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 text-center">
+              <div className="text-[11px] font-black text-cyan-800 bg-gradient-to-r from-white via-blue-50 to-white backdrop-blur-md px-3 py-1.5 rounded-xl border-2 border-cyan-200/70 shadow-xl animate-ai-label-glow">
+                AUTO-RESPONSE
+                <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-4 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>
+              </div>
+              <div className="text-[7px] text-cyan-700 font-bold mt-1 bg-white/80 backdrop-blur-sm px-2 py-0.5 rounded-md">Instant Actions</div>
             </div>
           </div>
         </div>
 
         <div className="absolute top-2/3 left-1/6">
-          <div className="w-5 h-5 bg-gradient-to-br from-rose-400 via-pink-400 to-rose-500 rounded-full shadow-lg shadow-rose-400/40 animate-ai-activity-5">
-            <div className="absolute inset-0.5 rounded-full bg-white/50"></div>
-            <div className="absolute -bottom-7 left-1/2 transform -translate-x-1/2 text-center">
-              <div className="text-[8px] font-bold text-rose-700 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md border border-rose-200 shadow-sm">COST OPTIMIZER</div>
-              <div className="text-[6px] text-rose-600 mt-0.5 leading-tight">Resource Alloc.<br />Efficiency</div>
+          <div className="relative">
+            {/* Advanced Cost Optimizer Node */}
+            <div className="w-7 h-7 bg-gradient-to-br from-rose-400 via-pink-400 to-red-400 rounded-full shadow-2xl animate-ai-node-morph-5 relative overflow-hidden border-2 border-rose-300/50">
+              <div className="absolute inset-0 bg-gradient-conic from-rose-300 via-pink-300 to-red-400 rounded-full animate-ai-optimize-rotate"></div>
+              <div className="absolute inset-1 bg-gradient-to-br from-rose-300 to-pink-400 rounded-full opacity-70 animate-ai-pulse-slow"></div>
+              <div className="absolute inset-2 bg-white/50 rounded-full animate-ai-bright-pulse"></div>
+              {/* Efficiency metrics */}
+              <div className="absolute inset-0 opacity-20">
+                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-rose-400 to-pink-500 animate-ai-efficiency-bar"></div>
+                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-pink-400 to-red-500 animate-ai-efficiency-bar-delayed"></div>
+              </div>
+            </div>
+            {/* Enhanced Label */}
+            <div className="absolute -bottom-11 left-1/2 transform -translate-x-1/2 text-center">
+              <div className="text-[9px] font-black text-rose-800 bg-gradient-to-r from-white via-rose-50 to-white backdrop-blur-md px-2 py-1.5 rounded-xl border-2 border-rose-200/70 shadow-xl animate-ai-label-glow">
+                COST OPTIMIZER
+                <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-3 h-1 bg-gradient-to-r from-rose-400 to-pink-500 rounded-full"></div>
+              </div>
+              <div className="text-[6px] text-rose-700 font-bold mt-0.5 bg-white/80 backdrop-blur-sm px-1.5 py-0.5 rounded-md">Resource Control</div>
             </div>
           </div>
         </div>
 
-        {/* Central AI Coordination Node */}
+        {/* Layer 4: Central Intelligence Core - Spectacular Enhancement */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="w-8 h-8 bg-gradient-to-br from-blue-500 via-purple-500 to-blue-600 rounded-full shadow-2xl shadow-blue-500/50 animate-ai-coordinator">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-transparent via-white/30 to-transparent animate-ai-spin-slow"></div>
-            <div className="absolute inset-1 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 opacity-80"></div>
-            <div className="absolute inset-2 rounded-full bg-white/40"></div>
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-center">
-              <div className="text-[10px] font-bold text-blue-700 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-blue-200 shadow-lg">INTELLIGENT ORCHESTRATOR</div>
+          <div className="relative w-12 h-12">
+            {/* Outer Energy Rings */}
+            <div className="absolute -inset-2 border-2 border-blue-400/30 rounded-full animate-ai-outer-ring-1"></div>
+            <div className="absolute -inset-4 border border-purple-400/20 rounded-full animate-ai-outer-ring-2"></div>
+            <div className="absolute -inset-6 border border-cyan-400/15 rounded-full animate-ai-outer-ring-3"></div>
+            <div className="absolute -inset-8 border border-emerald-400/10 rounded-full animate-ai-outer-ring-4"></div>
+
+            {/* Main Core */}
+            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-600 to-cyan-500 rounded-full shadow-[0_0_40px_rgba(59,130,246,0.8)] animate-ai-core-pulse relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/40 to-transparent rounded-full animate-ai-core-rotate"></div>
+              <div className="absolute inset-1 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-90 animate-ai-core-inner"></div>
+              <div className="absolute inset-2 bg-white/70 rounded-full animate-ai-core-bright"></div>
+              <div className="absolute inset-3 bg-gradient-to-br from-cyan-200 to-purple-200 rounded-full animate-ai-core-glow"></div>
+              {/* Intelligence pulses */}
+              <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-blue-300 rounded-full animate-ai-intelligence-pulse -translate-x-1/2 -translate-y-1/2"></div>
+              <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-purple-300 rounded-full animate-ai-intelligence-pulse-delayed"></div>
+              <div className="absolute bottom-1/4 right-1/4 w-1.5 h-1.5 bg-cyan-300 rounded-full animate-ai-intelligence-pulse-slow"></div>
+            </div>
+
+            {/* Enhanced Coordinator Label */}
+            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+              <div className="text-[11px] font-black text-blue-800 bg-gradient-to-b from-white via-blue-50 to-white backdrop-blur-md px-4 py-2 rounded-2xl border-2 border-blue-200/70 shadow-2xl animate-ai-coordinator-glow">
+                INTELLIGENT ORCHESTRATOR
+                <div className="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 w-6 h-1.5 bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 rounded-full animate-ai-coordinator-beam"></div>
+              </div>
+              <div className="text-[8px] text-blue-700 font-bold mt-2 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-lg shadow-lg">Central Intelligence Hub</div>
             </div>
           </div>
         </div>

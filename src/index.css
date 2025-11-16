@@ -357,6 +357,126 @@ All colors MUST be HSL.
     animation: fade-in 0.4s ease-out forwards;
   }
 
+  /* Hero Enhancement Animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) translateX(20px);
+      opacity: 0;
+    }
+  }
+
+  .animate-float {
+    animation: float linear infinite;
+  }
+
+  /* World-Class Particle System */
+  @keyframes float-fast {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px) scale(1);
+      opacity: 0.6;
+    }
+    25% {
+      transform: translateY(-120px) translateX(40px) scale(1.2);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-240px) translateX(-20px) scale(0.8);
+      opacity: 0.4;
+    }
+    75% {
+      transform: translateY(-120px) translateX(-40px) scale(1.1);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes float-slow {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+      opacity: 0.5;
+    }
+    33% {
+      transform: translateY(-80px) scale(1.5);
+      opacity: 0.8;
+    }
+    66% {
+      transform: translateY(-160px) scale(0.7);
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes float-medium {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translateY(-100px) translateX(30px);
+      opacity: 1;
+    }
+  }
+
+  .animate-float-fast {
+    animation: float-fast 8s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 15s ease-in-out infinite;
+  }
+
+  .animate-float-medium {
+    animation: float-medium 12s ease-in-out infinite;
+  }
+
+  @keyframes slow-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-slow-spin {
+    animation: slow-spin 20s linear infinite;
+  }
+
+  .animate-slow-spin-reverse {
+    animation: slow-spin 25s linear infinite reverse;
+  }
+
+
+
+  /* Hero Underline Animation */
+  @keyframes underline-draw {
+    0% {
+      width: 0%;
+      opacity: 0;
+    }
+    50% {
+      width: 100%;
+      opacity: 1;
+    }
+    100% {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+
+  .animate-underline-draw {
+    animation: underline-draw 2s ease-out forwards;
+    animation-fill-mode: forwards;
+  }
+
   @keyframes slide-in-right {
     from {
       opacity: 0;
@@ -2183,5 +2303,18 @@ All colors MUST be HSL.
 
   .stagger-5 {
     animation-delay: 250ms;
+  }
+
+  /* Hide Spline 3D logo */
+  .spline-viewer [class*="logo"],
+  .spline-viewer [href*="spline.design"],
+  .spline-viewer a[href*="spline.design"],
+  .spline-viewer canvas ~ div,
+  .spline-viewer [class*="watermark"],
+  .spline-viewer [class*="brand"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
 }

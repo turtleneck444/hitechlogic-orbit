@@ -10,7 +10,7 @@ export function ValuePillars() {
             <p className="text-xs font-semibold uppercase tracking-[0.45em] text-white/80">
               Strategic Disciplines
             </p>
-            <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-5xl font-['Inter']">
               Four pillars that turn your technology operations into measurable business advantage.
             </h2>
             <p className="max-w-5xl mx-auto text-base leading-relaxed text-white/80 drop-shadow-[0_10px_35px_rgba(2,6,23,0.35)]">

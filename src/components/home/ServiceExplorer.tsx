@@ -192,16 +192,18 @@ const catalogHighlights = [
   "Automation-first mindset makes every repetitive task programmatic",
 ];
 
-const serviceQuickLinks = serviceTracks.map((track) => ({
+const initialServicesToShow = 3;
+
+const serviceQuickLinks = serviceTracks.map((track, index) => ({
   id: track.id,
   label: track.title,
   href: `#${track.id}`,
   externalHref: track.pageHref,
+  needsExpansion: index >= initialServicesToShow,
 }));
 
 export function ServiceExplorer() {
   const [catalogExpanded, setCatalogExpanded] = useState(false);
-  const initialServicesToShow = 3;
 
   return (
     <section className="relative overflow-hidden bg-white py-12 lg:py-16">

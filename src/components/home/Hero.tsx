@@ -65,13 +65,8 @@ export function Hero() {
 
             {/* Content with relative positioning */}
             <div className="relative">
-            {/* Professional Corporate Headline */}
+            {/* Corporate Premium Headline */}
             <div className="relative mb-6">
-              {/* Enhanced Brand Attribution - Subtle and Professional */}
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 text-xs font-bold tracking-[0.4em] text-[hsl(var(--accent-blue))]/70 uppercase mb-4">
-                HiTechLogic
-              </div>
-
               {/* Premium Corporate Headline */}
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-[1.05] text-[hsl(var(--navy))] tracking-tight relative">
                 {/* Elegant accent line above headline */}
@@ -91,11 +86,6 @@ export function Hero() {
                   <div className="absolute -inset-2 bg-gradient-to-r from-[hsl(var(--accent-blue))]/15 via-[hsl(var(--signal-purple))]/15 to-[hsl(var(--navy))]/10 blur-2xl -z-10 opacity-0 group-hover:opacity-70 transition-opacity duration-500"></div>
                 </span>
               </h1>
-
-              {/* Professional Subtitle */}
-              <p className="text-lg md:text-xl text-[hsl(var(--navy))]/80 font-medium tracking-wide uppercase text-center leading-relaxed">
-                Enterprise Infrastructure Excellence
-              </p>
 
               {/* Sophisticated accent elements */}
               <div className="absolute -inset-4 bg-gradient-to-r from-transparent via-[hsl(var(--accent-blue))]/5 to-transparent rounded-full blur-3xl opacity-40 -z-10"></div>

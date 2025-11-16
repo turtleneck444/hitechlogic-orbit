@@ -64,7 +64,7 @@ const Feature197 = ({ features = defaultFeatures }: Feature197Props) => {
 
   return (
     <section className="py-16">
-      <div className="container mx-auto px-4">
+      <div className="mx-auto max-w-7xl px-4">
         <div className="mb-12 flex w-full items-start justify-between gap-12">
           <div className="w-full md:w-1/2">
             <Accordion type="single" className="w-full" defaultValue="item-1">

@@ -89,8 +89,8 @@ export function ValuePillars() {
               <PinContainer
                 title={`Explore ${discipline.title}`}
                 href={discipline.href}
-                containerClassName="h-full p-6 rounded-[28px] overflow-hidden"
-                className="space-y-4 h-full flex flex-col"
+                containerClassName="h-full rounded-[28px] overflow-hidden"
+                className="h-full flex flex-col justify-center p-6"
               >
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-white shadow-lg transition-all group-hover:scale-110">
                   <discipline.icon className="h-6 w-6" />

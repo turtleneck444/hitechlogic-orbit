@@ -49,30 +49,43 @@ export const PinContainer = ({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      {/* Card mockup - visible container */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--accent-blue))]/90 via-[hsl(var(--accent-blue))]/70 to-[hsl(var(--accent-blue))]/40 rounded-[28px] border border-white/30 p-6 shadow-[0_40px_120px_rgba(2,6,23,0.85)] transition duration-700 hover:border-white/40">
-        <div className={cn("relative z-20 space-y-4", className)}>{children}</div>
-      </div>
-
-      {/* 3D Perspective container */}
+      {/* 3D Perspective container - visible on hover */}
       <div
         style={{
           perspective: "1000px",
-          transform: "rotateX(70deg) translateZ(0deg)",
         }}
-        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/pin:opacity-100 transition-opacity duration-700"
+        className="absolute inset-0 opacity-0 group-hover/pin:opacity-100 transition-opacity duration-700"
       >
         <div
           style={{
-            transform: transform,
+            transform: "rotateX(70deg) translateZ(0deg)",
           }}
-          className="p-6 flex justify-center items-center rounded-[28px] bg-black/90 border border-white/[0.2] shadow-[0_20px_60px_rgb(0_0_0/0.8)] transition duration-700"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
         >
-          <div className={cn("text-white", className)}>{children}</div>
+          <div
+            style={{
+              transform: transform,
+            }}
+            className="p-6 flex justify-center items-center rounded-[28px] bg-black/90 border border-white/[0.2] shadow-[0_20px_60px_rgb(0_0_0/0.8)] transition duration-700"
+          >
+            <div className={cn("text-white", className)}>{children}</div>
+          </div>
         </div>
       </div>
 
-      <PinPerspective title={title} href={href} />
+      {/* Visible card - always shown */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--accent-blue))]/90 via-[hsl(var(--accent-blue))]/70 to-[hsl(var(--accent-blue))]/40 rounded-[28px] border border-white/30 shadow-[0_40px_120px_rgba(2,6,23,0.85)] transition duration-700 hover:border-white/40">
+        <div className={cn("relative z-20", className)}>{children}</div>
+      </div>
+
+      {/* Floating title */}
+      <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover/pin:opacity-100 transition-opacity duration-500 pointer-events-none">
+        <div className="bg-zinc-950 py-1 px-3 rounded-full ring-1 ring-white/10">
+          <span className="text-white text-xs font-bold">
+            {title}
+          </span>
+        </div>
+      </div>
     </div>
   );
 };

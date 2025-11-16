@@ -83,9 +83,9 @@ export function ValuePillars() {
           </div>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
           {coreDisciplines.map((discipline) => (
-            <div key={discipline.title} className="h-[450px]">
+            <div key={discipline.title} className="h-[400px] xl:h-[450px]">
               <PinContainer
                 title={`Explore ${discipline.title}`}
                 href={discipline.href}

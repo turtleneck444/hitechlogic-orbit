@@ -201,7 +201,7 @@ export function Hero() {
             {/* Corporate Premium Headline */}
             <div className="relative mb-6">
               {/* Premium Corporate Headline */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.05] text-[hsl(var(--navy))] tracking-tight relative">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.05] text-white tracking-tight relative">
                 {/* Elegant accent line above headline */}
                 <div className="absolute -top-4 left-0 w-24 h-0.5 bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))]"></div>
 

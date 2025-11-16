@@ -24,13 +24,13 @@ export function ValuePillars() {
           <PillarsAccordionDemo />
         </div>
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-6">
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors duration-200 text-lg font-medium"
+            className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-all duration-300 text-lg font-medium group"
           >
             Need a tailored solution?
-            <span className="font-semibold">→</span>
+            <span className="font-semibold transition-transform duration-300 group-hover:translate-x-1">→</span>
           </Link>
         </div>
       </div>

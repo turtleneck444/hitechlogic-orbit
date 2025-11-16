@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Features } from "@/components/blocks/features-9";
 import { ArrowRight } from "lucide-react";
 
 export function ValuePillars() {
@@ -38,9 +37,9 @@ export function ValuePillars() {
           </div>
         </div>
 
-        {/* Interactive Features Showcase */}
-        <div className="relative">
-          <Features />
+        {/* Placeholder for content - import undone */}
+        <div className="text-center py-16">
+          <p className="text-white/70 text-lg">Content section</p>
         </div>
 
         <div className="flex flex-col gap-3 rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900/80 to-slate-900/50 p-6 text-sm text-slate-300 shadow-2xl sm:flex-row sm:items-center sm:justify-between">

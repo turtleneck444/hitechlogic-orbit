@@ -294,9 +294,6 @@ export function Hero() {
                               </span>
                             )
                           )}
-                          <div className="text-[10px] text-slate-400 mt-1 italic font-normal leading-tight">
-                            *Results may vary based on client configuration and workload
-                          </div>
                         </div>
 
                         {/* Advanced Progress Visualization */}
@@ -315,12 +312,19 @@ export function Hero() {
                   ))}
                 </div>
 
-                {/* Minimal Status Footer */}
+                {/* Disclaimer Footer */}
+                <div className="mt-3 pt-2 border-t border-slate-200/60">
+                  <div className="text-[10px] text-slate-400 italic leading-tight text-center">
+                    *Results are estimates and may vary based on client configuration and workload. Actual outcomes depend on specific implementation details.
+                  </div>
+                </div>
+
+                {/* HiTechLogic Branding Footer */}
                 <div className="mt-2 pt-2 border-t border-slate-200/60">
                   <div className="flex justify-end">
                     <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse shadow-sm"></div>
-                      <span className="text-xs font-mono text-green-600 uppercase tracking-widest font-semibold">Live</span>
+                      <span className="text-xs font-semibold text-[hsl(var(--accent-blue))] tracking-widest">HiTechLogic</span>
+                      <div className="w-1.5 h-1.5 bg-[hsl(var(--signal-purple))] rounded-full opacity-80 shadow-sm"></div>
                     </div>
                   </div>
                 </div>

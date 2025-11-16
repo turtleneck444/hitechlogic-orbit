@@ -4,6 +4,7 @@ import { ArrowRight, ShieldCheck, TrendingDown, LineChart, BarChart3, Zap, Award
 import { Link } from "react-router-dom";
 import { BackgroundPaths } from "@/components/ui/background-paths";
 import { WorldMap } from "@/components/ui/map";
+import Spline from '@splinetool/react-spline';
 
 const heroRealTimeCards = [
   {
@@ -41,6 +42,17 @@ export function Hero() {
 
   return (
     <section className="relative flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      {/* Spline 3D Background - Spectacular Enterprise-Level 3D Graphics */}
+      <div className="absolute inset-0 z-[0] pointer-events-none overflow-hidden opacity-30">
+        <Spline
+          scene="https://prod.spline.design/ERcVL1nndFMFjVPf/scene.splinecode"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Content Protection Overlay - For Spline */}
+      <div className="absolute inset-0 z-[0] pointer-events-none bg-gradient-to-b from-white/10 via-transparent to-white/20"></div>
+
       {/* WorldMap Background - Subtle Global Network Visualization */}
       <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden opacity-20">
         <WorldMap

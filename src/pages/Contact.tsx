@@ -63,7 +63,7 @@ export default function Contact() {
       <section className="bg-white">
         <div className="mx-auto w-full max-w-4xl px-6 pt-12 pb-24 sm:pt-16 sm:pb-28 lg:pt-20 lg:pb-32 text-center">
           <span className="eyebrow text-electric-blue/70">Strategy consultation</span>
-          <h1 className="mt-4 text-4xl md:text-5xl leading-tight text-foreground">Share your environment. We'll steady it.</h1>
+          <h1 className="mt-4 text-4xl md:text-5xl leading-tight text-foreground font-['Inter']">Share your environment. We'll steady it.</h1>
           <p className="mt-4 text-lg text-slate-600">
             Tell us where reliability feels risky today—noise, automation, governance, or scale. We’ll respond with a calm, structured plan.
           </p>

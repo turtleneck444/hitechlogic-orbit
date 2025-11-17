@@ -46,7 +46,7 @@ export default function About() {
         <section className="bg-white">
         <div className="mx-auto w-full max-w-4xl px-6 pt-12 pb-24 sm:pt-16 sm:pb-28 lg:pt-20 lg:pb-32 text-center">
           <span className="eyebrow text-electric-blue/70">Leadership & partnership</span>
-          <h1 className="mt-4 text-4xl md:text-5xl leading-tight text-foreground">Steady guidance for complex operations.</h1>
+          <h1 className="mt-4 text-4xl md:text-5xl leading-tight text-foreground font-['Inter']">Steady guidance for complex operations.</h1>
           <p className="mt-4 text-lg text-slate-600">
             HiTechLogic was founded by operators who believe reliability is both a technical practice and a cultural commitment.
           </p>

@@ -274,7 +274,7 @@ export default function Services() {
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-[hsl(var(--navy))] mb-8 tracking-tight">
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-[hsl(var(--navy))] mb-8 tracking-tight font-['Inter']">
                 Enterprise-Grade
                 <br />
                 <span className="bg-gradient-to-r from-[hsl(var(--accent-blue))] via-blue-600 to-[hsl(var(--navy))] bg-clip-text text-transparent">

@@ -1,4 +1,5 @@
 import { ActionSearchBar } from "@/components/ui/action-search-bar";
+import { BackgroundPaths } from "@/components/ui/background-paths";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
@@ -206,12 +207,24 @@ export function ServiceExplorer() {
   const [catalogExpanded, setCatalogExpanded] = useState(false);
 
   return (
-    <section className="relative overflow-hidden bg-white py-12 lg:py-16">
+    <section className="relative overflow-hidden bg-white pb-8 lg:pb-12 texture-grid-fine gradient-premium-light">
       <div className="absolute top-12 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[hsl(var(--accent-blue))]/5 blur-[120px]" />
       <div className="absolute bottom-[-80px] right-[-60px] h-24rem w-24rem rounded-full bg-[hsl(var(--navy))]/3 blur-[160px]" />
+      <div className="absolute inset-0 bg-neural-connections opacity-30"></div>
 
-      <div className="relative z-10 mx-auto w-full max-w-[1360px] 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-12">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_420px] items-start">
+      <div className="relative z-10">
+        {/* Blended Top Transition */}
+        <div className="w-full bg-white relative">
+          {/* BackgroundPaths Animation - Light Version - Rotated 180° */}
+          <div className="absolute inset-0 z-[1] opacity-15 rotate-180">
+            <BackgroundPaths />
+          </div>
+          {/* White overlay to make background less prominent */}
+          <div className="absolute inset-0 z-[2] bg-white/20"></div>
+          {/* Subtle gradient fade to create seamless blend with blue section above */}
+          <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-slate-50/30 to-slate-50/0 z-[3]"></div>
+          <div className="mx-auto w-full max-w-[1360px] 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-12 py-8 lg:py-12 relative z-10">
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_420px] items-start">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--accent-blue))]/30 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[hsl(var(--accent-blue))]">
               Core Services
@@ -259,7 +272,7 @@ export function ServiceExplorer() {
               </div>
             </div>
 
-            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+            <div className="mt-5 hidden md:grid gap-3 sm:grid-cols-3">
               {trustIndicators.map((indicator) => (
                 <div
                   key={indicator.label}
@@ -354,11 +367,16 @@ export function ServiceExplorer() {
                   </div>
                 ))}
               </div>
+
+            </div>
+          </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 rounded-[24px] border border-slate-200/80 bg-white p-4 shadow-2xl shadow-slate-900/5 lg:p-6">
+        {/* Service Catalog Section - Matching Container Width */}
+        <div className="mx-auto w-full max-w-[1360px] 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-12 mt-8">
+          <div className="rounded-[24px] border border-slate-200/80 bg-white p-4 shadow-2xl shadow-slate-900/5 lg:p-6">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,280px)_1fr] lg:gap-8">
             <div className="space-y-3">
               <div>
@@ -619,6 +637,7 @@ export function ServiceExplorer() {
                 </button>
               )}
             </div>
+          </div>
           </div>
         </div>
 

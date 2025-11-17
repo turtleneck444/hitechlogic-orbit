@@ -30,7 +30,7 @@ export default function Principles() {
       <section className="bg-white">
         <div className="mx-auto w-full max-w-4xl px-6 pt-12 pb-24 sm:pt-16 sm:pb-28 lg:pt-20 lg:pb-32 text-center">
           <span className="eyebrow text-electric-blue/70">Operating philosophy</span>
-          <h1 className="mt-4 text-4xl md:text-5xl leading-tight text-foreground">Principles that guide every engagement.</h1>
+          <h1 className="mt-4 text-4xl md:text-5xl leading-tight text-foreground font-['Inter']">Principles that guide every engagement.</h1>
           <p className="mt-4 text-lg text-slate-600">
             HiTechLogic applies calm, structured, and transparent practices so technology leaders can rely on us as a
             steady partner.

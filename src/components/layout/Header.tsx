@@ -85,6 +85,7 @@ const industriesMegaMenu = [
 ];
 
 const navigation = [
+  { name: "Home", href: "/" },
   {
     name: "Solutions",
     href: "/services",
@@ -95,7 +96,6 @@ const navigation = [
     href: "/industries",
     hasIndustriesMenu: true,
   },
-  { name: "Approach", href: "/approach" },
   { name: "Principles", href: "/principles" },
   {
     name: "Resources",
@@ -172,21 +172,18 @@ export function Header() {
       {/* Main Navigation */}
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          {/* Logo */}
+          {/* Professional Text Logo */}
           <div className="flex items-center">
-            <Link to="/" className="group flex items-center gap-3.5">
-              <div className="relative">
-                <div className="absolute inset-0 bg-[hsl(var(--accent-blue))] opacity-10 blur-lg rounded-lg transition-all duration-500 group-hover:opacity-25 group-hover:blur-xl" />
-                <div className="relative flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--navy))] to-[hsl(var(--navy))]/90 shadow-lg shadow-[hsl(var(--navy))]/20 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-[hsl(var(--accent-blue))]/30 group-hover:scale-105">
-                  <span className="text-lg font-bold text-white tracking-tight">H</span>
-                </div>
-              </div>
-              <div>
-                <span className="text-xl font-bold tracking-[-0.02em] text-[hsl(var(--navy))] transition-colors duration-200 group-hover:text-[hsl(var(--accent-blue))]">
-                  HiTechLogic
+            <Link to="/" className="group flex items-center gap-3">
+              <div className="flex items-baseline gap-1">
+                <span className="text-2xl font-black tracking-tighter text-slate-900 transition-colors duration-300 group-hover:text-[hsl(var(--accent-blue))] leading-none">
+                  HiTech
                 </span>
-                <div className="h-px bg-gradient-to-r from-[hsl(var(--accent-blue))] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <span className="text-2xl font-black tracking-tighter text-[hsl(var(--accent-blue))] leading-none">
+                  Logic
+                </span>
               </div>
+              <div className="h-px w-12 bg-gradient-to-r from-slate-300 to-[hsl(var(--accent-blue))] transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:from-[hsl(var(--accent-blue))] group-hover:to-slate-300" />
             </Link>
           </div>
 
@@ -201,25 +198,25 @@ export function Header() {
               >
                 {item.hasMegaMenu ? (
                   <>
-                    <Link
-                      to={item.href}
-                      className={cn(
-                        "relative flex items-center gap-1.5 px-5 py-2.5 text-[15px] font-semibold transition-all duration-200",
-                        isActivePath(item.href)
-                          ? "text-[hsl(var(--navy))]"
-                          : "text-slate-600 hover:text-[hsl(var(--navy))]",
-                        "before:absolute before:bottom-0 before:left-5 before:right-5 before:h-0.5 before:bg-gradient-to-r before:from-[hsl(var(--accent-blue))] before:to-[hsl(var(--navy))] before:transition-all before:duration-300",
-                        isActivePath(item.href)
-                          ? "before:scale-x-100 before:opacity-100"
-                          : "before:scale-x-0 before:opacity-0 hover:before:scale-x-100 hover:before:opacity-100"
-                      )}
-                    >
-                      <span>{item.name}</span>
-                      <ChevronDown className={cn(
-                        "h-3.5 w-3.5 transition-all duration-300",
-                        activeDropdown === item.name ? "rotate-180" : ""
-                      )} />
-                    </Link>
+                  <Link
+                    to={item.href}
+                    className={cn(
+                      "relative flex items-center gap-1.5 px-5 py-2.5 text-[15px] font-semibold transition-all duration-200",
+                      isActivePath(item.href)
+                        ? "text-[hsl(var(--navy))]"
+                        : "text-slate-600 hover:text-[hsl(var(--navy))]",
+                      "before:absolute before:bottom-0 before:left-5 before:right-5 before:h-0.5 before:bg-gradient-to-r before:from-[hsl(var(--accent-blue))] before:to-[hsl(var(--navy))] before:transition-all before:duration-300",
+                      isActivePath(item.href)
+                        ? "before:scale-x-100 before:opacity-100 before:shadow-[0_0_12px_rgba(46,107,255,0.6)] before:drop-shadow-[0_0_8px_rgba(46,107,255,0.8)]"
+                        : "before:scale-x-0 before:opacity-0 hover:before:scale-x-100 hover:before:opacity-100"
+                    )}
+                  >
+                    <span>{item.name}</span>
+                    <ChevronDown className={cn(
+                      "h-3.5 w-3.5 transition-all duration-300",
+                      activeDropdown === item.name ? "rotate-180" : ""
+                    )} />
+                  </Link>
                     {activeDropdown === item.name && (
                       <div className="absolute top-full left-1/2 -translate-x-1/2 w-[820px] pt-2 transition-opacity duration-200 opacity-100">
                         <div className="rounded-2xl border border-slate-200/80 bg-white shadow-2xl shadow-slate-900/10 overflow-hidden backdrop-blur-xl">
@@ -391,7 +388,7 @@ export function Header() {
                         : "text-slate-600 hover:text-[hsl(var(--navy))]",
                       "before:absolute before:bottom-0 before:left-5 before:right-5 before:h-0.5 before:bg-gradient-to-r before:from-[hsl(var(--accent-blue))] before:to-[hsl(var(--navy))] before:transition-all before:duration-300",
                       isActivePath(item.href)
-                        ? "before:scale-x-100 before:opacity-100"
+                        ? "before:scale-x-100 before:opacity-100 before:shadow-[0_0_12px_rgba(46,107,255,0.6)] before:drop-shadow-[0_0_8px_rgba(46,107,255,0.8)]"
                         : "before:scale-x-0 before:opacity-0 hover:before:scale-x-100 hover:before:opacity-100"
                     )}
                   >
@@ -523,19 +520,19 @@ export function Header() {
                     Company
                   </div>
                   <Link
-                    to="/approach"
+                    to="/"
                     className={cn(
                       "group flex items-center justify-between px-6 py-4 rounded-2xl transition-all duration-300",
-                      isActivePath("/approach")
+                      isActivePath("/")
                         ? "bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white shadow-lg shadow-[hsl(var(--accent-blue))]/25"
                         : "hover:bg-slate-50/80 text-slate-700 active:scale-[0.98]"
                     )}
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    <span className="text-base font-semibold tracking-tight">Our Approach</span>
+                    <span className="text-base font-semibold tracking-tight">Home</span>
                     <ArrowRight className={cn(
                       "h-5 w-5 transition-all duration-300",
-                      isActivePath("/approach")
+                      isActivePath("/")
                         ? "text-white translate-x-0"
                         : "text-slate-400 -translate-x-1 group-hover:translate-x-0 group-hover:text-[hsl(var(--accent-blue))]"
                     )} />

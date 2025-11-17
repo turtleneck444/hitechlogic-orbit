@@ -45,6 +45,8 @@ export function Hero() {
 
   return (
     <section className="relative flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30 texture-hologram">
+      {/* Overflow containment for mobile */}
+      <div className="absolute inset-0 overflow-hidden">
       {/* BackgroundPaths Animation */}
       <div className="absolute inset-0 z-[0] rotate-180">
         <BackgroundPaths />
@@ -58,9 +60,9 @@ export function Hero() {
       <div className="absolute inset-0 z-[1] bg-gradient-radial from-cyan-50/20 via-transparent to-purple-50/20 animate-pulse" style={{animationDuration: '6s'}}></div>
       <div className="absolute inset-0 z-[1] bg-gradient-conic from-transparent via-blue-50/10 to-transparent animate-pulse" style={{animationDuration: '8s', animationDelay: '2s'}}></div>
 
-      {/* Subtle Geometric Shapes - Minimal Animation */}
-      <div className="absolute top-16 right-8 z-[1] w-20 h-20 border border-[hsl(var(--accent-blue))]/10 rounded-lg rotate-12 opacity-20"></div>
-      <div className="absolute bottom-20 left-12 z-[1] w-16 h-16 border border-[hsl(var(--signal-purple))]/8 rounded-full opacity-15"></div>
+      {/* Subtle Geometric Shapes - Responsive & Contained */}
+      <div className="absolute top-4 right-4 sm:top-16 sm:right-8 z-[1] w-12 h-12 sm:w-20 sm:h-20 border border-[hsl(var(--accent-blue))]/10 rounded-lg rotate-12 opacity-20"></div>
+      <div className="absolute bottom-4 left-4 sm:bottom-20 sm:left-12 z-[1] w-10 h-10 sm:w-16 sm:h-16 border border-[hsl(var(--signal-purple))]/8 rounded-full opacity-15"></div>
 
       {/* Advanced Premium Lighting System - Soft Lighting Only */}
       <div className="absolute top-0 left-0 w-full h-full z-[4] pointer-events-none">
@@ -83,7 +85,7 @@ export function Hero() {
       {/* 15% White Overlay - Reduced Opacity for Better Background Visibility */}
       <div className="absolute inset-0 z-[7] bg-white/15 pointer-events-none"></div>
 
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 max-w-7xl">
         <div className="grid gap-8 md:grid-cols-[2fr_1fr] lg:grid-cols-[3fr_2fr] lg:gap-12 items-center">
           {/* Left Column - Content */}
           <div className="relative">
@@ -247,6 +249,7 @@ export function Hero() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

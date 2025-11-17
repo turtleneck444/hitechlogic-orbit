@@ -10,7 +10,6 @@ import Services from "./pages/Services";
 import Resources from "./pages/Resources";
 import Approach from "./pages/Approach";
 import Pricing from "./pages/Pricing";
-import CaseStudies from "./pages/CaseStudies";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -55,7 +54,6 @@ const App = () => (
           <Route path="/resources" element={<Resources />} />
           <Route path="/approach" element={<Approach />} />
           <Route path="/pricing" element={<Pricing />} />
-          <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

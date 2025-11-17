@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, ArrowRight, Server, Activity, Workflow, ShieldCheck, BarChart3, Handshake, Gauge } from "lucide-react";
+import { Menu, X, ChevronDown, ArrowRight, Server, Activity, Workflow, ShieldCheck, BarChart3, Handshake, Gauge, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 import { Code, TrendingUp, Heart, ShoppingCart, Cloud } from "lucide-react";
@@ -10,44 +10,50 @@ const serviceMegaMenu = [
   {
     icon: Server,
     title: "Infrastructure & Cloud Operations",
-    description: "24/7 oversight and capacity management",
+    description: "Elite multi-cloud orchestration with zero-downtime deployments",
     href: "/services/infrastructure-cloud-operations",
+  },
+  {
+    icon: Activity,
+    title: "System Oversight & Event Reduction",
+    description: "AI-powered observability that transforms chaos into clarity",
+    href: "/services/system-oversight-event-reduction",
   },
   {
     icon: Workflow,
     title: "Automated Corrective Actions",
-    description: "Self-healing workflows and runbooks",
+    description: "Self-healing infrastructure that works around the clock",
     href: "/services/automated-corrective-actions",
-  },
-  {
-    icon: BarChart3,
-    title: "Cost Efficiency & Capacity",
-    description: "Financial transparency and optimization",
-    href: "/services/cost-efficiency-capacity-strategy",
   },
   {
     icon: Gauge,
     title: "Reliability & Performance Engineering",
-    description: "Engineering excellence at scale",
+    description: "Architectural tuning, load assurance, and SLO management",
     href: "/services/reliability-performance-engineering",
   },
   {
     icon: ShieldCheck,
     title: "Security & Identity Assurance",
-    description: "Access governance and threat monitoring",
+    description: "Identity governance, access fidelity, and threat monitoring",
     href: "/services/security-identity-assurance",
   },
   {
-    icon: Activity,
-    title: "System Oversight & Event Reduction",
-    description: "Intelligent monitoring and noise reduction",
-    href: "/services/system-oversight-event-reduction",
+    icon: BarChart3,
+    title: "Cost Efficiency & Capacity Strategy",
+    description: "Data-driven financial optimization that maximizes ROI",
+    href: "/services/cost-efficiency-capacity-strategy",
   },
   {
     icon: Handshake,
     title: "Strategic Technology Partnership",
-    description: "Dedicated leadership and roadmap planning",
+    description: "Executive alignment, roadmap facilitation, and leadership",
     href: "/services/strategic-technology-partnership",
+  },
+  {
+    icon: Sparkles,
+    title: "Rapid Prototyping & App Development",
+    description: "Human-centered design sprints that validate and build MVPs",
+    href: "/services/rapid-prototyping",
   },
 ];
 
@@ -102,7 +108,6 @@ const navigation = [
     href: "#",
     submenu: [
       { name: "Resource Library", href: "/resources", description: "Guides, whitepapers & tools" },
-      { name: "Case Studies", href: "/case-studies", description: "Client success stories" },
       { name: "Blog", href: "/blog", description: "Operational intelligence & viewpoints" },
     ],
   },
@@ -298,8 +303,8 @@ export function Header() {
                                 <h3 className="text-base font-bold text-[hsl(var(--navy))] mb-1.5">Industry Solutions</h3>
                                 <p className="text-sm text-slate-500">Specialized reliability solutions for your industry</p>
                               </div>
-                              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-purple-500/10 to-blue-500/5">
-                                <Server className="h-5 w-5 text-purple-600" />
+                              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5">
+                                <Server className="h-5 w-5 text-[hsl(var(--accent-blue))]" />
                               </div>
                             </div>
                             <div className="grid grid-cols-1 gap-3">
@@ -470,25 +475,6 @@ export function Header() {
                     <ArrowRight className={cn(
                       "h-5 w-5 transition-all duration-300",
                       isActivePath("/resources")
-                        ? "text-white translate-x-0"
-                        : "text-slate-400 -translate-x-1 group-hover:translate-x-0 group-hover:text-[hsl(var(--accent-blue))]"
-                    )} />
-                  </Link>
-
-                  <Link
-                    to="/case-studies"
-                    className={cn(
-                      "group flex items-center justify-between px-6 py-4 rounded-2xl transition-all duration-300",
-                      isActivePath("/case-studies")
-                        ? "bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white shadow-lg shadow-[hsl(var(--accent-blue))]/25"
-                        : "hover:bg-slate-50/80 text-slate-700 active:scale-[0.98]"
-                    )}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <span className="text-base font-semibold tracking-tight">Case Studies</span>
-                    <ArrowRight className={cn(
-                      "h-5 w-5 transition-all duration-300",
-                      isActivePath("/case-studies")
                         ? "text-white translate-x-0"
                         : "text-slate-400 -translate-x-1 group-hover:translate-x-0 group-hover:text-[hsl(var(--accent-blue))]"
                     )} />

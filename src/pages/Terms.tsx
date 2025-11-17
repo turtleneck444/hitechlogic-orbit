@@ -39,7 +39,7 @@ export default function Terms() {
             <Card className="glass-card p-8">
               <h2 className="text-2xl font-bold mb-4">4. Payment Terms</h2>
               <p className="text-muted-foreground">
-                Fees are charged based on your selected plan. Payment is due as specified in your subscription agreement. We reserve the right to change pricing with 30 days notice.
+                Fees are charged based on your selected plan. Payment is due as specified in your subscription agreement. We reserve the right to change pricing with reasonable advance notice.
               </p>
             </Card>
 

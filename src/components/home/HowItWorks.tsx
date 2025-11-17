@@ -11,6 +11,8 @@ import {
   Bar,
 } from "recharts";
 import { Card } from "@/components/ui/card";
+import { blogPosts, type BlogPost } from "@/data/blogPosts";
+import { Link } from "react-router-dom";
 
 const phases = [
   {
@@ -40,22 +42,7 @@ const analyticsData = [
   { label: "Oct", automationCoverage: 81, mttr: 32, noiseFiltered: 84 },
 ];
 
-const insights = [
-  {
-    icon: ShieldCheck,
-    title: "Managed Detection & Response",
-    description: "HiTechLogic coordinates MDR, IAM, and compliance logging in one operating view.",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80",
-    kpi: "0 unresolved audits",
-  },
-  {
-    icon: Workflow,
-    title: "Executive Reliability Readouts",
-    description: "Board-ready insights on MTTR, automation, and spend stability delivered each week.",
-    image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=900&q=80",
-    kpi: "15 min briefing",
-  },
-];
+const featuredPosts = blogPosts.slice(0, 2);
 
 
 export function HowItWorks() {
@@ -174,8 +161,8 @@ export function HowItWorks() {
 
           <Card className="border-slate-200 bg-white p-0 overflow-hidden shadow-[0_20px_60px_-40px_rgba(11,18,32,0.7)]">
             <div className="grid sm:grid-cols-2">
-              {insights.map((insight) => (
-                <FeatureCard key={insight.title} {...insight} />
+              {featuredPosts.map((post) => (
+                <BlogFeatureCard key={post.slug} post={post} />
               ))}
             </div>
           </Card>
@@ -185,37 +172,36 @@ export function HowItWorks() {
   );
 }
 
-function FeatureCard({
-  icon: Icon,
-  title,
-  description,
-  image,
-  kpi,
-}: {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  title: string;
-  description: string;
-  image: string;
-  kpi: string;
-}) {
+function BlogFeatureCard({ post }: { post: BlogPost }) {
   return (
-    <div className="relative border border-slate-200 bg-white p-5 transition hover:bg-slate-50">
-      <div className="flex items-center gap-3 text-sm font-semibold text-[hsl(var(--navy))]">
-        <Icon className="h-4 w-4 text-electric-blue" />
-        {title}
+    <Link
+      to={`/blog/${post.slug}`}
+      className="group relative flex flex-col border border-slate-200 bg-white p-5 transition hover:border-[hsl(var(--accent-blue))] hover:shadow-[0_18px_60px_-30px_rgba(2,6,23,0.5)]"
+    >
+      <div className="overflow-hidden rounded-xl">
+        <img
+          src={post.image}
+          alt={post.title}
+          className="h-32 w-full object-cover transition duration-300 group-hover:scale-105"
+        />
       </div>
-      <p className="mt-1 text-sm text-slate-500">{description}</p>
-      <div className="mt-4 overflow-hidden rounded-xl">
-        <img src={image} alt={title} className="h-32 w-full object-cover transition duration-300 hover:scale-105" />
+      <div className="mt-3 flex items-center gap-2 flex-wrap text-[0.65rem] font-semibold uppercase tracking-[0.4em] text-blue-500">
+        {post.tags.map((tag) => (
+          <span key={`${post.slug}-${tag}`} className="rounded-full border border-current px-2 py-0.5">
+            {tag}
+          </span>
+        ))}
       </div>
-      <div className="mt-3 flex items-center justify-between text-xs font-semibold text-electric-blue">
-        <span>{kpi}</span>
-        <span className="inline-flex items-center gap-1 text-[hsl(var(--navy))]">
-          Learn more
-          <ArrowRight className="h-3.5 w-3.5 text-electric-blue" />
-        </span>
+      <h3 className="mt-3 text-lg font-semibold text-[hsl(var(--navy))]">{post.title}</h3>
+      <p className="mt-2 text-sm text-slate-500 line-clamp-3">{post.excerpt}</p>
+      <div className="mt-4 text-xs font-semibold uppercase tracking-[0.35em] text-slate-400">
+        {post.date} · {post.readTime}
       </div>
-    </div>
+      <div className="mt-4 inline-flex items-center gap-2 text-[hsl(var(--accent-blue))] font-semibold">
+        Read article
+        <ArrowRight className="h-3.5 w-3.5" />
+      </div>
+    </Link>
   );
 }
 

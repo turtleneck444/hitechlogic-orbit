@@ -1,6 +1,6 @@
 # HiTechLogic Company Knowledgebase
 
-**Last Updated:** 2025-01-10
+**Last Updated:** 2025-11-17
 **Purpose:** Comprehensive knowledge document for AI agents, customer service, sales, and internal training
 
 ---
@@ -29,6 +29,109 @@ Alternative: "Enterprise-Grade IT Without the Enterprise Overhead"
 
 ### Company Type
 Enterprise Managed Services Provider (MSP) specializing in infrastructure reliability, automation, and operational excellence.
+
+### Brand Colors & Visual Identity
+- **Primary Blue (Accent Blue):** `hsl(var(--accent-blue))` - Used for headings, interactive elements, and brand identity
+- **Signal Purple:** `hsl(var(--signal-purple))` - Used for secondary accents and highlights
+- **Navy Blue:** `hsl(var(--navy))` - Used for primary text and headers
+- **Vertical Line Design:** Full opacity blue accent line next to major headline "We Engineer Your Competitive Advantage"
+
+### Technology Stack
+- **Frontend:** React, TypeScript, Tailwind CSS, Vite
+- **UI Components:** Custom component library with Radix UI primitives (Accordion, Button, Modal, etc.)
+- **Routing:** React Router
+- **Deployment:** Modern web application architecture
+- **Styling:** CSS custom properties, gradient backgrounds, backdrop blur effects
+
+### Website Architecture & User Journey
+
+#### Homepage Structure
+1. **Hero Section**
+   - Main headline: "We Engineer Your Competitive Advantage"
+   - Vertical accent line: Full opacity blue accent color
+   - Subheadline with value propositions (50% cost savings, 75% faster resolution, complete autonomy)
+   - Two CTA buttons: "Request Strategy Consultation" and "Review Services"
+   - Right column: Statistics card showing key metrics (85% fewer alerts, 4.5x faster resolution, 32% cost savings, 99.98% uptime)
+
+2. **Value Pillars Section**
+   - "Strategic Disciplines" heading
+   - Four interactive accordion cards covering the four core pillars
+   - Each card triggers based on hover/mouse movement
+   - Clickable accordion triggers that navigate to detailed service pages
+   - CTA: "Explore Our Solutions" (changed from "Schedule Strategic Consultation")
+
+3. **Core Services Section**
+   - "Find the Right Solution for Your Team" heading (previously two-column with engagement card removed)
+   - Single-column full-width layout after engagement card removal
+   - Action search bar for service discovery (8 services including rapid prototyping)
+   - Trust indicators, industry focus badges
+   - Guided discovery card with live filtering badge removed
+   - Service catalog with expandable 8 service cards
+
+4. **Other Sections**
+   - AIAutomationFlow, How It Works, Assessment Tool, CTA Section
+
+#### Service Pages Structure
+Each service pillar has its own detailed page:
+- `/services/infrastructure-cloud-operations`
+- `/services/system-oversight-event-reduction`
+- `/services/automated-corrective-actions`
+- `/services/reliability-performance-engineering`
+- `/services/security-identity-assurance`
+- `/services/cost-efficiency-capacity-strategy`
+- `/services/strategic-technology-partnership`
+- `/services/rapid-prototyping`
+
+#### Industry-Specific Pages
+- Technology, Financial Services, Healthcare, Ecommerce, SaaS pages
+- Accessible via `/industries/` routes
+
+### Design System & Visual Elements
+
+#### Color Variables
+- `--navy` - Primary text color for headings and key content
+- `--accent-blue` - Interactive elements, buttons, links, brand identity
+- `--signal-purple` - Secondary accents and highlights
+- `--border` - Border colors
+- `--muted` - Background accents
+
+#### Interactive Components
+- **Accordion05**: Hover-triggered, clickable accordion with 4 core pillars
+- **ActionSearchBar**: Live-filtering search with service navigation
+- **Hero Real-Time Cards**: Cycling metrics display
+- **Button variants**: primary, hero, secondary, outline, ghost, link styles
+- **Modal/Dialog**: AlertDialog, Dialog components for interactions
+
+#### Visual Effects
+- Neural network background patterns
+- Gradient overlays and lighting effects
+- Backdrop blur effects
+- Transform animations (scale, translate)
+- Pulse animations on background elements
+- Smooth fade transitions and hover states
+
+### Navigation & Routing
+- React Router-based routing
+- Nested routes for service pages and industry pages
+- SEO-friendly URLs with descriptive path structure
+- Responsive navigation with mobile considerations
+
+### AI Agent Integration
+The ActionSearchBar component uses client-side routing and search functionality with debouncing, allowing users to browse and navigate to services without full page reloads.
+
+---
+
+## [Updated for ongoing development context]
+
+Key recent changes to reflect in all responses and build decisions:
+- Homepage redesigned from two-column service section to single-column full-width layout
+- Engagement overview card removed from core services section
+- Live filtering badge removed from guided discovery search
+- Search bar enhanced with all 8 service pillars including rapid prototyping
+- Four pillars accordion made fully interactive with navigation to detailed service pages
+- Value pillars CTA changed from "Schedule Strategic Consultation" to "Explore Our Solutions"
+- Hero section vertical line adjusted to full opacity blue accent color
+- All interactive elements properly connected to navigation and functionality
 
 ---
 

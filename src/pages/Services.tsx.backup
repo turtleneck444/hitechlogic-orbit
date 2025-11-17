@@ -219,7 +219,7 @@ const services: Service[] = [
       "Cost-effective delivery with live operations oversight",
     ],
     kpis: [
-      { label: "MVP Launch", value: "Rapid delivery" },
+      { label: "MVP Launch", value: "4-8 weeks" },
       { label: "Cost Reduction", value: "60%" },
       { label: "Uptime", value: "99.99%" },
     ],
@@ -281,12 +281,18 @@ export default function Services() {
             <span className="block mt-3 font-semibold text-white">$50M+ client cost savings achieved</span>
           </p>
 
-          <div className="mt-10 animate-[fade-in_0.8s_ease-out_0.3s_both]">
+          <div className="mt-10 flex flex-wrap gap-4 animate-[fade-in_0.8s_ease-out_0.3s_both]">
             <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(139,92,246,0.8)] hover:shadow-[0_25px_50px_-12px_rgba(139,92,246,0.9)] hover:scale-105 transition-all duration-300">
               <Link to="/contact" className="flex items-center gap-2 group">
                 <Target className="h-5 w-5" />
                 <span>Start Your Assessment</span>
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+            <Button variant="outline" size="xl" asChild className="hover:bg-slate-50 transition-all duration-300">
+              <Link to="/contact">
+                <Phone className="h-5 w-5 mr-2" />
+                Talk to Expert
               </Link>
             </Button>
           </div>
@@ -310,7 +316,6 @@ export default function Services() {
               </div>
             ))}
           </div>
-        </div>
         </section>
 
 
@@ -545,7 +550,7 @@ export default function Services() {
                 { service: "Security & Identity Assurance", caps: ["Zero trust", "10min threat detection", "100% compliance", "Audit automation"] },
                 { service: "Cost Efficiency & Capacity Strategy", caps: ["$50M+ savings", "95% forecast", "ROI tracking", "Spend optimization"] },
                 { service: "Strategic Technology Partnership", caps: ["CXO alignment", "3.5yr retention", "92 NPS", "Innovation focus"] },
-                { service: "Rapid Prototyping & App Development", caps: ["Rapid delivery", "MVP validation", "3-5x faster", "Production scaling"] },
+                { service: "Rapid Prototyping & App Development", caps: ["4-8 week delivery", "MVP validation", "3-5x faster", "Production scaling"] },
               ].map((capability, index) => (
                 <Card key={capability.service} className="p-6 border-2 hover:border-[hsl(var(--accent-blue))]/30 hover:shadow-xl transition-all hover:-translate-y-1 duration-300 group">
                   <h3 className="text-lg font-bold text-[hsl(var(--navy))] mb-4">{capability.service}</h3>
@@ -779,6 +784,15 @@ export default function Services() {
                 </Card>
               ))}
             </div>
+
+            <div className="mt-12 text-center">
+              <Button variant="hero" size="xl" asChild>
+                <Link to="/case-studies" className="flex items-center gap-2 group">
+                  <span>Explore Industry Success Stories</span>
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </section>
 
@@ -806,7 +820,7 @@ export default function Services() {
                 },
                 {
                   question: "What's your typical engagement timeline and process?",
-                  answer: "Discovery and assessment happen rapidly, followed by a thoughtful transition period. We work toward steady-state operations as soon as your teams are ready and aligned."
+                  answer: "Discovery and assessment take 2-4 weeks, followed by a 30-day transition period. Full operational steady-state is typically achieved within 60 days of engagement start date."
                 },
                 {
                   question: "Do you provide training for our internal teams?",
@@ -864,6 +878,12 @@ export default function Services() {
                   <Calendar className="h-5 w-5" />
                   <span>Schedule Strategy Session</span>
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+              <Button variant="outline" size="xl" asChild className="border-white text-white hover:bg-white/10">
+                <Link to="/case-studies" className="flex items-center gap-2">
+                  <Award className="h-5 w-5" />
+                  <span>View Success Stories</span>
                 </Link>
               </Button>
             </div>

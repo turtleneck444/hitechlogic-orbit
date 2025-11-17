@@ -31,27 +31,32 @@ type ServiceTrack = {
 
 const trustIndicators = [
   {
-    icon: ShieldCheck,
-    label: "Proven Reliability",
-    description: "Fortune 500 environments stabilized",
+    icon: Server,
+    label: "Enterprise Scale",
+    description: "Comprehensive services for production environments",
+  },
+  {
+    icon: Activity,
+    label: "AI Intelligence",
+    description: "Smart automation transforming operational efficiency",
+  },
+  {
+    icon: Gauge,
+    label: "Proven Results",
+    description: "Significant cost savings and performance improvements",
   },
   {
     icon: Target,
-    label: "Clear Methodology",
-    description: "Structured playbooks mapped to maturity",
-  },
-  {
-    icon: Zap,
-    label: "Rapid Response",
-    description: "24/7 command desk with visibility",
+    label: "24/7 Coverage",
+    description: "Dedicated teams with executive-level partnership",
   },
 ];
 
 const highlightStats = [
-  { label: "Alert Noise Reduced", value: "−82%", detail: "within 120 days" },
-  { label: "Automation Coverage", value: "65+ playbooks", detail: "per client" },
-  { label: "Critical MTTR", value: "↓ 58%", detail: "avg. incident recovery" },
-  { label: "Cost Transparency", value: "Real-time", detail: "capacity scorecards" },
+  { label: "Alert Noise Reduced", value: "−82%", detail: "significant improvement" },
+  { label: "Automation Coverage", value: "65+ playbooks", detail: "comprehensive automation" },
+  { label: "Critical MTTR", value: "↓ 58%", detail: "faster resolution" },
+  { label: "Cost Transparency", value: "Real-time", detail: "capacity management" },
 ];
 
 const industryFocus = [
@@ -78,7 +83,7 @@ const serviceTracks: ServiceTrack[] = [
     icon: Server,
     pageHref: "/services/infrastructure-cloud-operations",
     focus: "Operations Control",
-    metric: "4 dedicated pods",
+    metric: "Dedicated operational pods",
   },
   {
     id: "service-oversight",
@@ -183,7 +188,7 @@ const serviceTracks: ServiceTrack[] = [
     icon: Sparkles,
     pageHref: "/services/rapid-prototyping",
     focus: "Rapid Innovation",
-    metric: "MVPs in 4-8 weeks",
+    metric: "Rapid MVP delivery",
   },
 ];
 
@@ -224,7 +229,7 @@ export function ServiceExplorer() {
           {/* Subtle gradient fade to create seamless blend with blue section above */}
           <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-slate-50/30 to-slate-50/0 z-[3]"></div>
           <div className="mx-auto w-full max-w-[1360px] 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-12 py-8 lg:py-12 relative z-10">
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_420px] items-start">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_420px] items-stretch">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--accent-blue))]/30 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[hsl(var(--accent-blue))]">
               Core Services
@@ -253,50 +258,17 @@ export function ServiceExplorer() {
             </div>
 
             <div className="mt-5 rounded-2xl border border-[hsl(var(--accent-blue))]/20 bg-gradient-to-br from-[hsl(var(--accent-blue))]/5 via-white to-white/90 p-4 shadow-lg shadow-[rgba(46,107,255,0.15)]">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[hsl(var(--accent-blue))]">
-                    Guided Discovery
-                  </p>
-                  <p className="mt-0.5 text-xs text-slate-600">
-                    Search by capability, outcome, or operational need.
-                  </p>
-                </div>
-                <div className="flex items-center gap-2 rounded-full border border-white/50 bg-white/80 px-3 py-1 text-xs font-semibold text-slate-600 shadow-sm">
-                  <span className="inline-flex h-1.5 w-1.5 rounded-full bg-[hsl(var(--accent-blue))] animate-pulse" />
-                  Live filtering
-                </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[hsl(var(--accent-blue))]">
+                  Guided Discovery
+                </p>
+                <p className="mt-0.5 text-xs text-slate-600">
+                  Search by capability, outcome, or operational need.
+                </p>
               </div>
               <div className="mt-3">
                 <ActionSearchBar />
               </div>
-            </div>
-
-            <div className="mt-5 hidden md:grid gap-3 sm:grid-cols-3">
-              {trustIndicators.map((indicator) => (
-                <div
-                  key={indicator.label}
-                  className="group relative overflow-hidden rounded-xl border border-[hsl(var(--accent-blue))]/15 bg-white/95 p-3.5 shadow-lg shadow-slate-900/5 transition-all duration-300 hover:-translate-y-1 hover:border-[hsl(var(--accent-blue))]/40"
-                >
-                  <div className="flex items-center gap-2.5">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-[hsl(var(--accent-blue))]/30 bg-[hsl(var(--accent-blue))]/5 text-[hsl(var(--accent-blue))]">
-                      <indicator.icon className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold text-[hsl(var(--navy))]">{indicator.label}</p>
-                      <p className="text-xs text-slate-600">{indicator.description}</p>
-                    </div>
-                  </div>
-                  <div className="mt-3 h-px w-full bg-gradient-to-r from-transparent via-[hsl(var(--accent-blue))]/20 to-transparent" />
-                  <a
-                    href="/services"
-                    className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-[hsl(var(--accent-blue))] hover:text-[hsl(var(--navy))]"
-                  >
-                    View proof
-                    <ArrowRight className="h-3 w-3" />
-                  </a>
-                </div>
-              ))}
             </div>
 
             <div className="mt-5 flex flex-wrap gap-3">
@@ -320,62 +292,59 @@ export function ServiceExplorer() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[20px] border border-[hsl(var(--accent-blue))]/20 bg-white p-4 shadow-xl shadow-slate-900/10">
+          <div className="relative overflow-hidden rounded-[20px] border border-[hsl(var(--accent-blue))]/20 bg-white p-4 shadow-xl shadow-slate-900/10 h-full">
             <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--accent-blue))]/5 via-transparent to-white opacity-90" />
             <div className="relative space-y-4">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[hsl(var(--accent-blue))]">
-                  Engagement Overview
-                </p>
-                <h3 className="mt-2 text-[1.4rem] font-semibold text-[hsl(var(--navy))]">
-                  Operational Programs Built Around Your Priorities
-                </h3>
-                <div className="mt-2 space-y-2 text-xs text-slate-600">
-                  <p>
-                    Reliability pods stand up in under 48 hours with a systems baseline delivered inside the first business week so leadership has actionable visibility immediately.
-                  </p>
-                  <div className="rounded-xl border border-slate-100 bg-white p-3 space-y-2">
-                    <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
-                      <span>Kickoff</span>
-                      <span>Week 1</span>
-                    </div>
-                    <p className="text-xs text-slate-600">
-                      Telemetry workspace + executive scorecard provisioned alongside the systems baseline.
-                    </p>
-                    <div className="h-px bg-slate-200/70" />
-                    <div className="flex items-start gap-2">
-                      <span className="mt-1 h-1 w-1 rounded-full bg-[hsl(var(--accent-blue))]" />
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
-                          Ongoing Cadence
-                        </p>
-                        <p className="text-xs">
-                          Weekly telemetry + automation briefs with a 30-day executive working session to recalibrate priorities.
-                        </p>
+              <div className="grid gap-2">
+                {trustIndicators.map((indicator) => (
+                  <div key={indicator.label} className="rounded-xl border border-slate-100 bg-white p-4">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[hsl(var(--accent-blue))]/30 bg-[hsl(var(--accent-blue))]/5 text-[hsl(var(--accent-blue))]">
+                        <indicator.icon className="h-4 w-4" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm font-semibold text-[hsl(var(--navy))]">{indicator.label}</p>
+                        <p className="text-xs text-slate-600">{indicator.description}</p>
+                        <a
+                          href="/services"
+                          className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-[hsl(var(--accent-blue))] hover:text-[hsl(var(--navy))]"
+                        >
+                          Explore Now
+                          <ArrowRight className="h-3 w-3" />
+                        </a>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <div className="grid gap-2 sm:grid-cols-2">
-                {highlightStats.map((stat) => (
-                  <div key={stat.label} className="rounded-xl border border-slate-100 bg-white p-2.5">
-                    <p className="text-[0.6rem] font-semibold uppercase tracking-[0.3em] text-slate-500">{stat.label}</p>
-                    <p className="mt-0.5 text-lg font-bold text-[hsl(var(--navy))]">{stat.value}</p>
-                    <p className="text-xs text-slate-500">{stat.detail}</p>
-                  </div>
                 ))}
               </div>
-
             </div>
           </div>
+          </div>
+          </div>
+        </div>
+
+        {/* Scroll to Service Catalog Arrow */}
+        <div className="flex justify-center mt-8 mb-4">
+          <div
+            className="group flex flex-col items-center gap-2 cursor-pointer transform transition-all duration-300 hover:scale-105 active:scale-95"
+            onClick={() => {
+              const catalogSection = document.querySelector('#service-catalog-section');
+              if (catalogSection) {
+                catalogSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
+          >
+            <span className="text-lg font-bold text-[hsl(var(--accent-blue))] group-hover:text-[hsl(var(--navy))] transition-colors duration-300">
+              Browse Service Catalog
+            </span>
+            <div className="relative">
+              <ChevronDown className="h-6 w-6 text-[hsl(var(--accent-blue))] group-hover:text-[hsl(var(--navy))] group-hover:translate-y-1 transition-all duration-300" />
             </div>
           </div>
         </div>
 
         {/* Service Catalog Section - Matching Container Width */}
-        <div className="mx-auto w-full max-w-[1360px] 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-12 mt-8">
+        <div id="service-catalog-section" className="mx-auto w-full max-w-[1360px] 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-12 mt-8">
           <div className="rounded-[24px] border border-slate-200/80 bg-white p-4 shadow-2xl shadow-slate-900/5 lg:p-6">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,280px)_1fr] lg:gap-8">
             <div className="space-y-3">
@@ -438,13 +407,6 @@ export function ServiceExplorer() {
                   className="flex items-center justify-between rounded-xl border border-slate-200/80 bg-white px-3 py-2 text-xs font-semibold text-[hsl(var(--navy))] shadow-sm transition hover:border-[hsl(var(--accent-blue))]/40"
                 >
                   Download overview
-                  <ArrowRight className="h-3.5 w-3.5 text-[hsl(var(--accent-blue))]" />
-                </a>
-                <a
-                  href="/case-studies"
-                  className="flex items-center justify-between rounded-xl border border-slate-200/80 bg-white px-3 py-2 text-xs font-semibold text-[hsl(var(--navy))] shadow-sm transition hover:border-[hsl(var(--accent-blue))]/40"
-                >
-                  View proof points
                   <ArrowRight className="h-3.5 w-3.5 text-[hsl(var(--accent-blue))]" />
                 </a>
               </div>
@@ -523,7 +485,7 @@ export function ServiceExplorer() {
                       <ArrowRight className="h-3.5 w-3.5" />
                     </a>
                     <span className="text-xs text-slate-500">
-                      Includes readiness assessment and 90-day roadmap.
+                      Comprehensive engagement assessment included.
                     </span>
                   </div>
                 </article>
@@ -607,7 +569,7 @@ export function ServiceExplorer() {
                           <ArrowRight className="h-3.5 w-3.5" />
                         </a>
                         <span className="text-xs text-slate-500">
-                          Includes readiness assessment and 90-day roadmap.
+                          Comprehensive engagement assessment included.
                         </span>
                       </div>
                     </article>

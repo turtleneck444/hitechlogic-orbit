@@ -13,7 +13,6 @@ const categoryIcons: Record<ResourceCategory, React.ElementType> = {
   blog: BookOpen,
   whitepaper: FileText,
   webinar: Video,
-  "case-study": Award,
   guide: BookMarked,
 };
 
@@ -21,7 +20,6 @@ const categoryColors: Record<ResourceCategory, string> = {
   blog: "from-blue-500 to-blue-600",
   whitepaper: "from-purple-500 to-purple-600",
   webinar: "from-red-500 to-red-600",
-  "case-study": "from-green-500 to-green-600",
   guide: "from-orange-500 to-orange-600",
 };
 
@@ -65,7 +63,7 @@ export default function Resources() {
     <>
       <SEO
         title="Resources: Cloud, DevOps, Security & FinOps Insights | HiTechLogic"
-        description="Expert insights on cloud operations, DevOps automation, security best practices, FinOps optimization, and SRE. Whitepapers, guides, case studies, and webinars from industry leaders."
+        description="Expert insights on cloud operations, DevOps automation, security best practices, FinOps optimization, and SRE. Whitepapers, guides, and webinars from industry leaders."
         keywords="cloud operations, devops best practices, finops guide, kubernetes tutorial, zero-trust security, soc 2 compliance, infrastructure as code, sre practices"
         canonical="https://hitechlogic.com/resources"
         schema={schema}
@@ -116,7 +114,7 @@ export default function Resources() {
                 <Filter className="h-4 w-4 mr-2" />
                 All Resources
               </Button>
-              {(["blog", "whitepaper", "guide", "webinar", "case-study"] as ResourceCategory[]).map((category) => {
+              {(["blog", "whitepaper", "guide", "webinar"] as ResourceCategory[]).map((category) => {
                 const Icon = categoryIcons[category];
                 return (
                   <Button
@@ -129,7 +127,7 @@ export default function Resources() {
                     className="rounded-full capitalize"
                   >
                     <Icon className="h-4 w-4 mr-2" />
-                    {category === "case-study" ? "Case Studies" : `${category}s`}
+                    {`${category}s`}
                   </Button>
                 );
               })}
@@ -168,7 +166,7 @@ export default function Resources() {
                             <Icon className="h-6 w-6 text-white" />
                           </div>
                           <Badge variant="secondary" className="capitalize">
-                            {resource.category === "case-study" ? "Case Study" : resource.category}
+                            {resource.category}
                           </Badge>
                         </div>
 
@@ -260,7 +258,7 @@ export default function Resources() {
                             <Icon className="h-5 w-5 text-white" />
                           </div>
                           <Badge variant="secondary" className="capitalize text-xs">
-                            {resource.category === "case-study" ? "Case Study" : resource.category}
+                            {resource.category}
                           </Badge>
                         </div>
 

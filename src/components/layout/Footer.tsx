@@ -26,7 +26,6 @@ const footerLinks = {
     { name: "About", href: "/about", icon: Users },
   ],
   resources: [
-    { name: "Case Studies", href: "/case-studies", icon: Briefcase },
     { name: "Blog", href: "/blog", icon: BookOpen },
     { name: "Contact", href: "/contact", icon: MessageSquare },
   ],

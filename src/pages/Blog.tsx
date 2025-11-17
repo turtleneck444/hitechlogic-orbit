@@ -2,36 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Calendar, User, ArrowRight } from "lucide-react";
-
-const posts = [
-  {
-    title: "Why Alert Noise Eats Your Roadmap",
-    excerpt: "Every false alarm costs your team focus, momentum, and trust. Learn how AI-driven filtering can restore signal clarity and reclaim engineering time.",
-    author: "Jordan Chen",
-    date: "March 15, 2024",
-    readTime: "6 min read",
-    tags: ["Operations", "Automation"],
-    slug: "alert-noise-roadmap",
-  },
-  {
-    title: "A Practical Guide to Self-Healing Runbooks",
-    excerpt: "Step-by-step approach to building automated remediation that actually works. From identifying patterns to implementing safe automation.",
-    author: "Alex Rivera",
-    date: "March 8, 2024",
-    readTime: "8 min read",
-    tags: ["Automation", "Best Practices"],
-    slug: "self-healing-runbooks",
-  },
-  {
-    title: "Reducing Ops Cost Without Slowing Delivery",
-    excerpt: "How to optimize infrastructure spending while maintaining—or even improving—reliability and velocity. Real strategies that work.",
-    author: "Sam Taylor",
-    date: "March 1, 2024",
-    readTime: "7 min read",
-    tags: ["Cost Optimization", "Strategy"],
-    slug: "reduce-ops-cost",
-  },
-];
+import { blogPosts } from "@/data/blogPosts";
 
 export default function Blog() {
   return (
@@ -52,7 +23,7 @@ export default function Blog() {
       <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post, index) => (
+            {blogPosts.map((post, index) => (
               <Link
                 key={post.slug}
                 to={`/blog/${post.slug}`}

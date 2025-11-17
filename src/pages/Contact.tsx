@@ -164,7 +164,7 @@ export default function Contact() {
                         <SelectValue placeholder="Select timeframe" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="immediate">Immediate (0–30 days)</SelectItem>
+                        <SelectItem value="immediate">Immediate response requested</SelectItem>
                         <SelectItem value="quarter">This quarter</SelectItem>
                         <SelectItem value="later">Beyond this quarter</SelectItem>
                       </SelectContent>

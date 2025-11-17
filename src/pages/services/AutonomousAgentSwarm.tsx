@@ -82,12 +82,6 @@ export default function AutonomousAgentSwarm() {
                     Talk to an Agent Architect
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
-                  <a href="mailto:contact@hitechlogic.com?subject=Autonomous%20Agent%20Swarm%20Inquiry" className="flex items-center gap-2">
-                    <MessageCircle className="h-5 w-5" />
-                    Request a Callback
-                  </a>
-                </Button>
               </div>
             </div>
             <div className="mt-12 grid gap-6 md:grid-cols-3">

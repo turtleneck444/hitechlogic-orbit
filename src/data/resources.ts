@@ -1,4 +1,4 @@
-export type ResourceCategory = "blog" | "whitepaper" | "webinar" | "case-study" | "guide";
+export type ResourceCategory = "blog" | "whitepaper" | "webinar" | "guide";
 
 export type Resource = {
   id: string;
@@ -62,18 +62,6 @@ export const resources: Resource[] = [
     tags: ["SRE", "Reliability Engineering", "DevOps", "Incident Management"],
     featured: false,
     href: "/resources/sre-maturity-model",
-  },
-  {
-    id: "ai-driven-incident-response",
-    title: "AI-Driven Incident Response: 90% Alert Noise Reduction",
-    description: "How machine learning and intelligent automation transform incident management. Real-world case study showing 90% reduction in alert noise and 75% faster MTTR through AI-powered correlation and automated response.",
-    category: "case-study",
-    author: "Automation Engineering Team",
-    date: "2024-12-28",
-    readTime: "10 min",
-    tags: ["AI", "Automation", "Incident Response", "Observability"],
-    featured: false,
-    href: "/resources/ai-driven-incident-response",
   },
   {
     id: "multi-cloud-governance",

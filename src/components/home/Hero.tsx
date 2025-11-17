@@ -98,7 +98,7 @@ export function Hero() {
             {/* Sophisticated Corporate Headline */}
             <div className="relative mb-4">
               <h1 className="text-5xl md:text-7xl lg:text-7xl font-semibold leading-none md:leading-snug text-[hsl(var(--navy))] relative font-['Inter']
-                     drop-shadow-[0_2px_8px_rgba(0,0,0,0.1)] border-l-4 border-l-[hsl(var(--accent-blue))]/40 pl-6">
+                     drop-shadow-[0_2px_8px_rgba(0,0,0,0.1)] border-l-4 border-l-[hsl(var(--accent-blue))] pl-6">
                 <span className="text-[hsl(var(--navy))] block">We Engineer</span>{" "}
                 <span className="block"><span className="whitespace-nowrap"><span className="text-[hsl(var(--accent-blue))]">Your</span> <span className="text-[hsl(var(--navy))]">Competitive</span></span></span>{" "}
                 <span className="text-[hsl(var(--accent-blue))] block">Advantage</span>

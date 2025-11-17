@@ -1,12 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 import { Accordion05 } from "@/components/ui/accordion-05";
 
 export function ValuePillars() {
   return (
     <section className="relative bg-[hsl(var(--accent-blue))] py-16 text-white">
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[hsl(var(--signal-purple))]/5 to-transparent opacity-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[hsl(var(--signal-purple))]/5 to-transparent opacity-50 pointer-events-none"></div>
       <div className="absolute inset-0 gradient-premium-dark opacity-30 pointer-events-none"></div>
       <div className="absolute inset-0 z-0 bg-tech-circuit opacity-30 pointer-events-none"></div>
 
@@ -49,13 +48,12 @@ export function ValuePillars() {
               <Button
                 variant="hero"
                 size="lg"
-                asChild
-                className="bg-white text-slate-900 hover:bg-white/95 shadow-2xl hover:shadow-white/20 transition-all duration-500 hover:scale-[1.02] px-10 py-4 text-xl font-semibold group"
+                asChild={false}
+                onClick={() => (window.location.href = '/services')}
+                className="bg-white text-slate-900 hover:bg-white/95 shadow-2xl hover:shadow-white/20 transition-all duration-500 hover:scale-[1.02] px-10 py-4 text-xl font-semibold group cursor-pointer"
               >
-                <Link to="/contact" className="flex items-center gap-3">
-                  <span>Schedule Strategic Consultation</span>
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform" />
-                </Link>
+                <span>Explore Our Solutions</span>
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform" />
               </Button>
             </div>
 

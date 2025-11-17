@@ -250,35 +250,32 @@ export default function StrategicTechnologyPartnership() {
       />
       <Layout>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-indigo-50/20 to-purple-50/30">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--deep-navy))] via-[hsl(var(--graphite))] to-[hsl(var(--deep-navy))]">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         <div className="relative mx-auto w-full max-w-6xl px-6 pt-32 pb-20 sm:pt-40 sm:pb-28">
           <div className="animate-[fade-in_0.5s_ease-out]">
             <div className="flex items-center gap-3 mb-6">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-[hsl(var(--navy))] shadow-lg shadow-indigo-500/25">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] shadow-lg shadow-[hsl(var(--accent-blue))]/25">
                 <Handshake className="h-7 w-7 text-white" />
               </div>
-              <span className="eyebrow text-indigo-600">Strategic Technology Partnership</span>
+              <span className="eyebrow text-[hsl(var(--accent-blue))]">Strategic Technology Partnership</span>
             </div>
           </div>
-          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-[hsl(var(--navy))] animate-[fade-in_0.6s_ease-out_0.1s_both]">
+          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white animate-[fade-in_0.6s_ease-out_0.1s_both]">
             Your Trusted<br />
-            <span className="text-indigo-600">Technology Partner</span>
+            <span className="text-[hsl(var(--accent-blue))]">Technology Partner</span>
           </h1>
-          <p className="mt-6 text-xl text-slate-600 max-w-3xl leading-relaxed animate-[fade-in_0.7s_ease-out_0.2s_both]">
+          <p className="mt-6 text-xl text-slate-300 max-w-3xl leading-relaxed animate-[fade-in_0.7s_ease-out_0.2s_both]">
             Executive-level partnership with strategic guidance, embedded coaching, and roadmap planning
             that builds sustainable reliability practices and engineering excellence.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4 animate-[fade-in_0.8s_ease-out_0.3s_both]">
-            <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(99,102,241,0.8)] hover:scale-105 transition-transform">
+          <div className="mt-10 animate-[fade-in_0.8s_ease-out_0.3s_both]">
+            <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_hsl(var(--accent-blue))] hover:scale-105 transition-transform">
               <Link to="/contact" className="flex items-center gap-2">
                 <span>Request Partnership Discussion</span>
                 <ArrowRight className="h-5 w-5" />
               </Link>
-            </Button>
-            <Button variant="outline" size="xl" asChild className="hover:scale-105 transition-transform">
-              <Link to="/demo">See Partnership Model</Link>
             </Button>
           </div>
 
@@ -287,10 +284,10 @@ export default function StrategicTechnologyPartnership() {
             {metrics.map((metric) => (
               <div key={metric.label} className="text-center group hover:scale-105 transition-transform">
                 <div className="flex items-center justify-center mb-2">
-                  <metric.icon className="h-6 w-6 text-indigo-600" />
+                  <metric.icon className="h-6 w-6 text-[hsl(var(--accent-blue))]" />
                 </div>
-                <div className="text-3xl md:text-4xl font-bold text-indigo-600">{metric.value}</div>
-                <div className="mt-2 text-sm font-medium text-slate-600">{metric.label}</div>
+                <div className="text-3xl md:text-4xl font-bold text-[hsl(var(--accent-blue))]">{metric.value}</div>
+                <div className="mt-2 text-sm font-medium text-slate-300">{metric.label}</div>
               </div>
             ))}
           </div>
@@ -298,23 +295,23 @@ export default function StrategicTechnologyPartnership() {
       </section>
 
       {/* Trust Indicators */}
-      <section className="bg-gradient-to-r from-[hsl(var(--navy))] to-slate-900 py-8">
+      <section className="bg-gradient-to-r from-[hsl(var(--navy))] to-[hsl(var(--graphite))] py-8">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-indigo-400">92</div>
+              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">92</div>
               <div className="mt-1 text-sm text-slate-300">Net Promoter Score</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-indigo-400">100%</div>
+              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">100%</div>
               <div className="mt-1 text-sm text-slate-300">C-Suite Satisfaction</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-indigo-400">3.5 yrs</div>
+              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">3.5 yrs</div>
               <div className="mt-1 text-sm text-slate-300">Average Engagement</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-indigo-400">85%</div>
+              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">85%</div>
               <div className="mt-1 text-sm text-slate-300">Multi-Year Renewals</div>
             </div>
           </div>
@@ -357,7 +354,7 @@ export default function StrategicTechnologyPartnership() {
               </div>
             </div>
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-100 text-indigo-700 font-semibold text-sm mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 text-[hsl(var(--accent-blue))] font-semibold text-sm mb-6">
                 <Handshake className="h-4 w-4" />
                 Our Partnership Model
               </div>
@@ -366,28 +363,28 @@ export default function StrategicTechnologyPartnership() {
               </h2>
               <div className="space-y-4 text-slate-600">
                 <p className="flex items-start gap-3">
-                  <span className="text-indigo-600 font-bold mt-1">✓</span>
+                  <span className="text-[hsl(var(--accent-blue))] font-bold mt-1">✓</span>
                   <span>Strategic roadmap aligned with business objectives and growth plans</span>
                 </p>
                 <p className="flex items-start gap-3">
-                  <span className="text-indigo-600 font-bold mt-1">✓</span>
+                  <span className="text-[hsl(var(--accent-blue))] font-bold mt-1">✓</span>
                   <span>Embedded coaches building reliability capabilities through hands-on mentorship</span>
                 </p>
                 <p className="flex items-start gap-3">
-                  <span className="text-indigo-600 font-bold mt-1">✓</span>
+                  <span className="text-[hsl(var(--accent-blue))] font-bold mt-1">✓</span>
                   <span>Continuity and knowledge preservation during leadership transitions</span>
                 </p>
                 <p className="flex items-start gap-3">
-                  <span className="text-indigo-600 font-bold mt-1">✓</span>
+                  <span className="text-[hsl(var(--accent-blue))] font-bold mt-1">✓</span>
                   <span>Proven frameworks for scaling engineering from 10 to 100+ engineers</span>
                 </p>
                 <p className="flex items-start gap-3">
-                  <span className="text-indigo-600 font-bold mt-1">✓</span>
+                  <span className="text-[hsl(var(--accent-blue))] font-bold mt-1">✓</span>
                   <span>Senior advisors with decades of experience across hundreds of companies</span>
                 </p>
               </div>
               <div className="mt-8">
-                <Button variant="primary" size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700">
+                <Button variant="primary" size="lg" asChild>
                   <Link to="/contact" className="flex items-center gap-2">
                     <span>Explore Partnership</span>
                     <ArrowRight className="h-4 w-4" />
@@ -400,10 +397,10 @@ export default function StrategicTechnologyPartnership() {
       </section>
 
       {/* Before/After Transformation */}
-      <section className="section-space bg-gradient-to-br from-slate-50 to-indigo-50/30">
+      <section className="section-space bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow text-indigo-600">Real impact</span>
+            <span className="eyebrow text-[hsl(var(--accent-blue))]">Real impact</span>
             <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
               From reactive to strategic
             </h2>
@@ -413,49 +410,49 @@ export default function StrategicTechnologyPartnership() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="p-8 border-2 border-red-200 bg-gradient-to-br from-red-50/50 to-white">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 text-red-700 font-semibold text-xs mb-4">
+            <Card className="p-8 border-2 border-slate-200 bg-gradient-to-br from-slate-50 to-white">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-semibold text-xs mb-4">
                 BEFORE PARTNERSHIP
               </div>
               <div className="space-y-6">
                 <div>
-                  <div className="text-4xl font-bold text-red-600 mb-2">Reactive</div>
+                  <div className="text-4xl font-bold text-slate-600 mb-2">Reactive</div>
                   <div className="text-sm text-slate-600">Fire-fighting mode, no strategic planning</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-red-600 mb-2">45%</div>
+                  <div className="text-4xl font-bold text-slate-600 mb-2">45%</div>
                   <div className="text-sm text-slate-600">Team Engagement Score</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-red-600 mb-2">None</div>
+                  <div className="text-4xl font-bold text-slate-600 mb-2">None</div>
                   <div className="text-sm text-slate-600">Documented Best Practices</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-red-600 mb-2">Low</div>
+                  <div className="text-4xl font-bold text-slate-600 mb-2">Low</div>
                   <div className="text-sm text-slate-600">Executive Confidence in Tech</div>
                 </div>
               </div>
             </Card>
 
-            <Card className="p-8 border-2 border-indigo-200 bg-gradient-to-br from-indigo-50/50 to-white">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 font-semibold text-xs mb-4">
+            <Card className="p-8 border-2 border-[hsl(var(--accent-blue))]/30 bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 text-[hsl(var(--accent-blue))] font-semibold text-xs mb-4">
                 AFTER PARTNERSHIP
               </div>
               <div className="space-y-6">
                 <div>
-                  <div className="text-4xl font-bold text-indigo-600 mb-2">Strategic</div>
+                  <div className="text-4xl font-bold text-[hsl(var(--accent-blue))] mb-2">Strategic</div>
                   <div className="text-sm text-slate-600">3-year roadmap, quarterly planning</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-indigo-600 mb-2">87%</div>
+                  <div className="text-4xl font-bold text-[hsl(var(--accent-blue))] mb-2">87%</div>
                   <div className="text-sm text-slate-600">Team Engagement Score</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-indigo-600 mb-2">50+</div>
+                  <div className="text-4xl font-bold text-[hsl(var(--accent-blue))] mb-2">50+</div>
                   <div className="text-sm text-slate-600">Runbooks & SOPs Created</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-indigo-600 mb-2">High</div>
+                  <div className="text-4xl font-bold text-[hsl(var(--accent-blue))] mb-2">High</div>
                   <div className="text-sm text-slate-600">Board-Level Tech Confidence</div>
                 </div>
               </div>
@@ -463,7 +460,7 @@ export default function StrategicTechnologyPartnership() {
           </div>
 
           <div className="mt-8 text-center">
-            <Button variant="primary" size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700">
+            <Button variant="primary" size="lg" asChild>
               <Link to="/case-studies">View Partnership Stories</Link>
             </Button>
           </div>
@@ -474,7 +471,7 @@ export default function StrategicTechnologyPartnership() {
       <section className="section-space bg-white">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow text-indigo-600">Partnership journey</span>
+            <span className="eyebrow text-[hsl(var(--accent-blue))]">Partnership journey</span>
             <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
               How we build long-term value
             </h2>
@@ -485,21 +482,21 @@ export default function StrategicTechnologyPartnership() {
 
           <div className="relative">
             {/* Connecting Line */}
-            <div className="hidden md:block absolute left-[50%] top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-200 via-indigo-300 to-indigo-200" />
+            <div className="hidden md:block absolute left-[50%] top-0 bottom-0 w-0.5 bg-gradient-to-b from-[hsl(var(--accent-blue))]/20 via-[hsl(var(--accent-blue))]/30 to-[hsl(var(--accent-blue))]/20" />
 
             <div className="space-y-12">
               {partnershipJourney.map((phase, index) => (
                 <div key={phase.step} className={`relative grid md:grid-cols-2 gap-8 items-center ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
                   {index % 2 === 0 ? (
                     <>
-                      <Card className="p-8 border-2 border-indigo-200 bg-gradient-to-br from-indigo-50/50 to-white hover:shadow-xl transition-all md:ml-auto">
+                      <Card className="p-8 border-2 border-[hsl(var(--accent-blue))]/30 bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white hover:shadow-xl transition-all md:ml-auto">
                         <div className="flex items-center gap-4 mb-4">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white font-bold text-xl shadow-lg">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white font-bold text-xl shadow-lg">
                             {phase.step}
                           </div>
                           <div>
                             <h3 className="text-xl font-bold text-[hsl(var(--navy))]">{phase.title}</h3>
-                            <span className="text-sm text-indigo-600 font-semibold">{phase.duration}</span>
+                            <span className="text-sm text-[hsl(var(--accent-blue))] font-semibold">{phase.duration}</span>
                           </div>
                         </div>
                         <p className="text-slate-600 leading-relaxed">{phase.description}</p>
@@ -509,14 +506,14 @@ export default function StrategicTechnologyPartnership() {
                   ) : (
                     <>
                       <div className="hidden md:block" />
-                      <Card className="p-8 border-2 border-indigo-200 bg-gradient-to-br from-indigo-50/50 to-white hover:shadow-xl transition-all">
+                      <Card className="p-8 border-2 border-[hsl(var(--accent-blue))]/30 bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white hover:shadow-xl transition-all">
                         <div className="flex items-center gap-4 mb-4">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white font-bold text-xl shadow-lg">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white font-bold text-xl shadow-lg">
                             {phase.step}
                           </div>
                           <div>
                             <h3 className="text-xl font-bold text-[hsl(var(--navy))]">{phase.title}</h3>
-                            <span className="text-sm text-indigo-600 font-semibold">{phase.duration}</span>
+                            <span className="text-sm text-[hsl(var(--accent-blue))] font-semibold">{phase.duration}</span>
                           </div>
                         </div>
                         <p className="text-slate-600 leading-relaxed">{phase.description}</p>
@@ -524,14 +521,14 @@ export default function StrategicTechnologyPartnership() {
                     </>
                   )}
                   {/* Center Circle */}
-                  <div className="hidden md:block absolute left-[50%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-indigo-500 border-4 border-white shadow-lg z-10" />
+                  <div className="hidden md:block absolute left-[50%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[hsl(var(--accent-blue))] border-4 border-white shadow-lg z-10" />
                 </div>
               ))}
             </div>
           </div>
 
           <div className="mt-12 text-center">
-            <Button variant="primary" size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700">
+            <Button variant="primary" size="lg" asChild>
               <Link to="/contact" className="flex items-center gap-2">
                 <span>Start Partnership Journey</span>
                 <ArrowRight className="h-4 w-4" />
@@ -545,7 +542,7 @@ export default function StrategicTechnologyPartnership() {
       <section className="section-space bg-[hsl(var(--background))]">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow text-indigo-600">Why choose us</span>
+            <span className="eyebrow text-[hsl(var(--accent-blue))]">Why choose us</span>
             <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
               Strategic Partnership vs. Traditional Consulting
             </h2>
@@ -564,7 +561,7 @@ export default function StrategicTechnologyPartnership() {
                 <tr className="border-b border-slate-200">
                   <td className="p-4 font-medium text-slate-900">Engagement Model</td>
                   <td className="p-4 text-center">
-                    <div className="text-indigo-600 font-bold">Long-term partnership</div>
+                    <div className="text-[hsl(var(--accent-blue))] font-bold">Long-term partnership</div>
                     <div className="text-xs text-slate-500">3+ year relationships</div>
                   </td>
                   <td className="p-4 text-center">
@@ -575,7 +572,7 @@ export default function StrategicTechnologyPartnership() {
                 <tr className="border-b border-slate-200 bg-slate-50">
                   <td className="p-4 font-medium text-slate-900">Knowledge Transfer</td>
                   <td className="p-4 text-center">
-                    <div className="text-indigo-600 font-bold">Embedded coaching</div>
+                    <div className="text-[hsl(var(--accent-blue))] font-bold">Embedded coaching</div>
                     <div className="text-xs text-slate-500">Daily collaboration</div>
                   </td>
                   <td className="p-4 text-center">
@@ -586,7 +583,7 @@ export default function StrategicTechnologyPartnership() {
                 <tr className="border-b border-slate-200">
                   <td className="p-4 font-medium text-slate-900">Success Metric</td>
                   <td className="p-4 text-center">
-                    <div className="text-indigo-600 font-bold">Your independence</div>
+                    <div className="text-[hsl(var(--accent-blue))] font-bold">Your independence</div>
                     <div className="text-xs text-slate-500">Capability building</div>
                   </td>
                   <td className="p-4 text-center">
@@ -597,7 +594,7 @@ export default function StrategicTechnologyPartnership() {
                 <tr className="border-b border-slate-200 bg-slate-50">
                   <td className="p-4 font-medium text-slate-900">Strategic Involvement</td>
                   <td className="p-4 text-center">
-                    <div className="text-indigo-600 font-bold">C-suite partnership</div>
+                    <div className="text-[hsl(var(--accent-blue))] font-bold">C-suite partnership</div>
                     <div className="text-xs text-slate-500">Quarterly planning</div>
                   </td>
                   <td className="p-4 text-center">
@@ -608,7 +605,7 @@ export default function StrategicTechnologyPartnership() {
                 <tr className="border-b border-slate-200">
                   <td className="p-4 font-medium text-slate-900">Cultural Integration</td>
                   <td className="p-4 text-center">
-                    <div className="text-indigo-600 font-bold">Part of the team</div>
+                    <div className="text-[hsl(var(--accent-blue))] font-bold">Part of the team</div>
                     <div className="text-xs text-slate-500">Embedded experts</div>
                   </td>
                   <td className="p-4 text-center">
@@ -619,7 +616,7 @@ export default function StrategicTechnologyPartnership() {
                 <tr className="bg-slate-50">
                   <td className="p-4 font-medium text-slate-900">Long-term Value</td>
                   <td className="p-4 text-center">
-                    <div className="text-indigo-600 font-bold">Compounding returns</div>
+                    <div className="text-[hsl(var(--accent-blue))] font-bold">Compounding returns</div>
                     <div className="text-xs text-slate-500">Lasting capabilities</div>
                   </td>
                   <td className="p-4 text-center">
@@ -632,7 +629,7 @@ export default function StrategicTechnologyPartnership() {
           </div>
 
           <div className="mt-8 text-center">
-            <Button variant="primary" size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700">
+            <Button variant="primary" size="lg" asChild>
               <Link to="/pricing">View Partnership Options</Link>
             </Button>
           </div>
@@ -643,7 +640,7 @@ export default function StrategicTechnologyPartnership() {
       <section className="section-space bg-white">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow text-indigo-600">Core capabilities</span>
+            <span className="eyebrow text-[hsl(var(--accent-blue))]">Core capabilities</span>
             <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
               Strategic guidance at every level
             </h2>
@@ -656,13 +653,13 @@ export default function StrategicTechnologyPartnership() {
             {capabilities.map((capability, index) => (
               <Card
                 key={capability.title}
-                className="p-8 hover:shadow-xl transition-all duration-300 border-2 hover:border-indigo-300 group hover:-translate-y-1"
+                className="p-8 hover:shadow-xl transition-all duration-300 border-2 hover:border-[hsl(var(--accent-blue))]/30 group hover:-translate-y-1"
                 style={{
                   animationDelay: `${index * 0.1}s`,
                 }}
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500/10 to-indigo-600/5 group-hover:from-indigo-500/20 group-hover:to-indigo-600/10 transition-all">
-                  <capability.icon className="h-6 w-6 text-indigo-600" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 group-hover:from-[hsl(var(--accent-blue))]/20 group-hover:to-[hsl(var(--navy))]/10 transition-all">
+                  <capability.icon className="h-6 w-6 text-[hsl(var(--accent-blue))]" />
                 </div>
                 <h3 className="mt-4 text-xl font-semibold text-[hsl(var(--navy))]">{capability.title}</h3>
                 <p className="mt-3 text-slate-600 leading-relaxed">{capability.description}</p>
@@ -677,14 +674,14 @@ export default function StrategicTechnologyPartnership() {
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="grid md:grid-cols-2 gap-16">
             <div>
-              <span className="eyebrow text-indigo-600">Business value</span>
+              <span className="eyebrow text-[hsl(var(--accent-blue))]">Business value</span>
               <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">Investment in your future</h2>
               <p className="mt-6 text-lg text-slate-600 leading-relaxed">
                 Strategic partnership delivers compounding returns through capability building,
                 cultural transformation, and executive alignment.
               </p>
               <div className="mt-8">
-                <Button variant="primary" size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700">
+                <Button variant="primary" size="lg" asChild>
                   <Link to="/demo" className="flex items-center gap-2">
                     <span>See Partnership Model</span>
                     <ArrowRight className="h-4 w-4" />
@@ -696,12 +693,12 @@ export default function StrategicTechnologyPartnership() {
               {benefits.map((benefit, index) => (
                 <div
                   key={benefit}
-                  className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-indigo-50/50 to-transparent hover:from-indigo-50 transition-all hover:scale-105"
+                  className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-[hsl(var(--accent-blue))]/10 to-transparent hover:from-[hsl(var(--accent-blue))]/20 transition-all hover:scale-105"
                   style={{
                     animationDelay: `${index * 0.1}s`,
                   }}
                 >
-                  <CheckCircle2 className="h-6 w-6 text-indigo-600 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5" />
                   <span className="text-slate-700 leading-relaxed">{benefit}</span>
                 </div>
               ))}
@@ -714,21 +711,21 @@ export default function StrategicTechnologyPartnership() {
       <section className="section-space bg-white">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow text-indigo-600">Common scenarios</span>
+            <span className="eyebrow text-[hsl(var(--accent-blue))]">Common scenarios</span>
             <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">Partnership for transformative moments</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {useCases.map((useCase) => (
-              <Card key={useCase.title} className="p-8 border-2 hover:border-indigo-300 hover:shadow-xl transition-all hover:-translate-y-1 group">
+              <Card key={useCase.title} className="p-8 border-2 hover:border-[hsl(var(--accent-blue))]/30 hover:shadow-xl transition-all hover:-translate-y-1 group">
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500/10 to-indigo-600/5 group-hover:from-indigo-500/20 group-hover:to-indigo-600/10 transition-all">
-                    <useCase.icon className="h-6 w-6 text-indigo-600" />
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 group-hover:from-[hsl(var(--accent-blue))]/20 group-hover:to-[hsl(var(--navy))]/10 transition-all">
+                    <useCase.icon className="h-6 w-6 text-[hsl(var(--accent-blue))]" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="text-xl font-bold text-[hsl(var(--navy))]">{useCase.title}</h3>
-                      <span className="text-xs font-semibold px-2 py-1 rounded-full bg-indigo-100 text-indigo-700">{useCase.stage}</span>
+                      <span className="text-xs font-semibold px-2 py-1 rounded-full bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 text-[hsl(var(--accent-blue))]">{useCase.stage}</span>
                     </div>
                     <p className="mt-2 text-slate-600 leading-relaxed">{useCase.description}</p>
                   </div>
@@ -738,7 +735,7 @@ export default function StrategicTechnologyPartnership() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button variant="primary" size="lg" asChild className="bg-indigo-600 hover:bg-indigo-700">
+            <Button variant="primary" size="lg" asChild>
               <Link to="/case-studies">Read Partnership Stories</Link>
             </Button>
           </div>
@@ -746,10 +743,10 @@ export default function StrategicTechnologyPartnership() {
       </section>
 
       {/* FAQ Section */}
-      <section className="section-space bg-gradient-to-br from-slate-50 to-indigo-50/30">
+      <section className="section-space bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5">
         <div className="mx-auto w-full max-w-4xl px-6">
           <div className="text-center mb-16">
-            <span className="eyebrow text-indigo-600">Common questions</span>
+            <span className="eyebrow text-[hsl(var(--accent-blue))]">Common questions</span>
             <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">
               Everything you need to know
             </h2>
@@ -757,18 +754,18 @@ export default function StrategicTechnologyPartnership() {
 
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <Card key={index} className="border-2 border-indigo-100 overflow-hidden">
+              <Card key={index} className="border-2 border-[hsl(var(--accent-blue))]/30 overflow-hidden">
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full p-6 text-left flex items-center justify-between hover:bg-indigo-50/50 transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between hover:bg-[hsl(var(--accent-blue))]/10 transition-colors"
                 >
                   <span className="font-semibold text-[hsl(var(--navy))] pr-8">{faq.question}</span>
                   <ChevronDown
-                    className={`h-5 w-5 text-indigo-600 shrink-0 transition-transform ${openFaq === index ? 'rotate-180' : ''}`}
+                    className={`h-5 w-5 text-[hsl(var(--accent-blue))] shrink-0 transition-transform ${openFaq === index ? 'rotate-180' : ''}`}
                   />
                 </button>
                 {openFaq === index && (
-                  <div className="px-6 pb-6 text-slate-600 leading-relaxed border-t border-indigo-100 pt-4">
+                  <div className="px-6 pb-6 text-slate-600 leading-relaxed border-t border-[hsl(var(--accent-blue))]/30 pt-4">
                     {faq.answer}
                   </div>
                 )}
@@ -778,7 +775,7 @@ export default function StrategicTechnologyPartnership() {
 
           <div className="mt-12 text-center">
             <p className="text-slate-600 mb-4">Have more partnership questions?</p>
-            <Button variant="outline" size="lg" asChild className="border-indigo-600 text-indigo-600 hover:bg-indigo-50">
+            <Button variant="outline" size="lg" asChild className="border-[hsl(var(--accent-blue))]/30 text-[hsl(var(--accent-blue))] hover:bg-[hsl(var(--accent-blue))]/10">
               <Link to="/contact">Schedule Discovery Call</Link>
             </Button>
           </div>
@@ -789,18 +786,18 @@ export default function StrategicTechnologyPartnership() {
       <section className="section-space bg-white">
         <div className="mx-auto max-w-4xl px-6">
           <div className="text-center mb-12">
-            <span className="eyebrow text-indigo-600">Client success</span>
+            <span className="eyebrow text-[hsl(var(--accent-blue))]">Client success</span>
             <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">Trusted by technology leaders</h2>
           </div>
-          <Card className="p-12 border-2 border-indigo-100 bg-gradient-to-br from-indigo-50/30 to-white">
-            <div className="text-4xl text-indigo-600 mb-6">"</div>
+          <Card className="p-12 border-2 border-[hsl(var(--accent-blue))]/30 bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white">
+            <div className="text-4xl text-[hsl(var(--accent-blue))] mb-6">"</div>
             <p className="text-xl text-slate-700 leading-relaxed mb-6">
               HiTechLogic isn't just a service provider—they're an extension of our leadership team.
               Their strategic guidance helped us navigate explosive growth while building engineering
               practices that will serve us for years to come.
             </p>
             <div className="flex items-center gap-4">
-              <div className="h-16 w-16 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-xl font-bold">
+              <div className="h-16 w-16 rounded-full bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] flex items-center justify-center text-white text-xl font-bold">
                 SM
               </div>
               <div>
@@ -813,15 +810,15 @@ export default function StrategicTechnologyPartnership() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="section-space bg-gradient-to-br from-indigo-600 to-[hsl(var(--navy))]">
+      <section className="section-space bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))]">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white">Ready to build a strategic partnership?</h2>
-          <p className="mt-6 text-xl text-indigo-100">
+          <p className="mt-6 text-xl text-slate-200">
             Let's discuss how our Strategic Technology Partnership can accelerate your engineering
             maturity, align teams with business goals, and build sustainable excellence.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Button variant="secondary" size="xl" asChild className="bg-white text-indigo-600 hover:bg-indigo-50 hover:scale-105 transition-transform">
+            <Button variant="secondary" size="xl" asChild className="bg-white text-[hsl(var(--accent-blue))] hover:bg-slate-50 hover:scale-105 transition-transform">
               <Link to="/contact" className="flex items-center gap-2">
                 <span>Schedule Partnership Discussion</span>
                 <ArrowRight className="h-5 w-5" />
@@ -833,12 +830,12 @@ export default function StrategicTechnologyPartnership() {
           </div>
 
           {/* Risk-Free Guarantee */}
-          <div className="mt-16 pt-8 border-t border-indigo-400/30">
+          <div className="mt-16 pt-8 border-t border-white/30">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <Shield className="h-6 w-6 text-indigo-200" />
-              <span className="text-indigo-100 font-semibold text-lg">Partnership Commitment</span>
+              <Shield className="h-6 w-6 text-slate-200" />
+              <span className="text-slate-100 font-semibold text-lg">Partnership Commitment</span>
             </div>
-            <p className="text-indigo-100/90 max-w-2xl mx-auto">
+            <p className="text-slate-200 max-w-2xl mx-auto">
               Not seeing the strategic value within your first 90 days? We'll refund 100% and part ways as friends.
               Our partnerships succeed when you succeed—mutual commitment, shared outcomes.
             </p>

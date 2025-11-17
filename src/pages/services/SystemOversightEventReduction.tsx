@@ -3,742 +3,467 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
-import { Activity, Bell, BellOff, Filter, TrendingDown, Brain, AlertTriangle, CheckCircle2, ArrowRight, BarChart, Zap, Clock, Award, Phone, Mail, Calendar, Target, LineChart, Eye } from "lucide-react";
-
-const capabilities = [
-  {
-    icon: Brain,
-    title: "Intelligent Event Correlation",
-    description: "Advanced ML-powered correlation engine that groups related alerts and identifies root causes automatically.",
-    highlight: "AI-powered insights",
-  },
-  {
-    icon: Filter,
-    title: "Adaptive Noise Filtering",
-    description: "Dynamic filtering rules that learn from your environment and suppress non-actionable alerts while escalating critical events.",
-    highlight: "Smart filtering",
-  },
-  {
-    icon: TrendingDown,
-    title: "Alert Fatigue Reduction",
-    description: "Systematic reduction of alert volume through pattern analysis, deduplication, and intelligent suppression.",
-    highlight: "82% noise reduction",
-  },
-  {
-    icon: BarChart,
-    title: "Event Pattern Analysis",
-    description: "Continuous analysis of event patterns to identify recurring issues and opportunities for automation.",
-    highlight: "Pattern detection",
-  },
-  {
-    icon: Clock,
-    title: "Predictive Monitoring",
-    description: "Proactive detection of issues before they impact users through predictive analytics and trend analysis.",
-    highlight: "Predict problems",
-  },
-  {
-    icon: Zap,
-    title: "Smart Escalation",
-    description: "Context-aware escalation paths that route critical events to the right teams with full diagnostic context.",
-    highlight: "Instant escalation",
-  },
-];
-
-const benefits = [
-  "Reduce alert noise by 82% on average through intelligent correlation and filtering",
-  "Eliminate alert fatigue and improve team focus on genuine critical issues",
-  "Accelerate incident response with pre-correlated events and root cause analysis",
-  "Prevent recurring issues through systematic pattern identification and remediation",
-  "Improve system visibility without overwhelming teams with unnecessary alerts",
-  "Maintain compliance with audit-ready event logs and escalation trails",
-];
-
-const metrics = [
-  { label: "Noise Reduction", value: "82%", icon: TrendingDown },
-  { label: "Mean Time to Detect", value: "<2 min", icon: Clock },
-  { label: "False Positive Rate", value: "<1%", icon: Target },
-  { label: "Correlation Accuracy", value: "97%", icon: Brain },
-];
-
-const beforeAfter = [
-  {
-    metric: "Daily Alerts",
-    before: "12,000+",
-    after: "680",
-    improvement: "95% reduction",
-  },
-  {
-    metric: "On-Call Interruptions",
-    before: "45/day",
-    after: "3/day",
-    improvement: "93% reduction",
-  },
-  {
-    metric: "Time to Root Cause",
-    before: "45 min",
-    after: "4 min",
-    improvement: "91% faster",
-  },
-  {
-    metric: "False Positives",
-    before: "78%",
-    after: "<1%",
-    improvement: "99% improvement",
-  },
-];
-
-const process = [
-  {
-    step: "1",
-    title: "Baseline Assessment",
-    description: "Analyze current alert volume, categorize noise sources, and identify quick wins for immediate relief.",
-    duration: "Week 1",
-  },
-  {
-    step: "2",
-    title: "Correlation Engine Setup",
-    description: "Deploy intelligent correlation rules, configure ML models, and establish escalation hierarchies.",
-    duration: "Week 2-3",
-  },
-  {
-    step: "3",
-    title: "Noise Reduction",
-    description: "Systematic suppression of false positives, pattern-based filtering, and alert deduplication.",
-    duration: "Week 4-6",
-  },
-  {
-    step: "4",
-    title: "Continuous Optimization",
-    description: "Ongoing tuning, new pattern detection, and progressive noise reduction through machine learning.",
-    duration: "Ongoing",
-  },
-];
-
-const useCases = [
-  {
-    title: "Alert Storm Management",
-    description: "Automatically detect and manage alert storms by correlating hundreds of related events into single, actionable incidents with root cause analysis.",
-    icon: AlertTriangle,
-    industry: "All Industries",
-  },
-  {
-    title: "Multi-System Correlation",
-    description: "Connect events across distributed systems, cloud platforms, and applications to provide unified incident views and faster resolution.",
-    icon: Activity,
-    industry: "Enterprise IT",
-  },
-  {
-    title: "SLA-Critical Services",
-    description: "Ensure high-priority services receive immediate attention while filtering noise from less critical systems through priority-based routing.",
-    icon: CheckCircle2,
-    industry: "E-commerce & SaaS",
-  },
-  {
-    title: "Legacy System Integration",
-    description: "Modernize monitoring for legacy applications with intelligent event normalization, enrichment, and correlation capabilities.",
-    icon: Filter,
-    industry: "Financial Services",
-  },
-];
-
-const comparison = [
-  {
-    feature: "Alert Volume",
-    traditional: "Thousands of alerts daily",
-    hitechlogic: "Hundreds of correlated incidents",
-  },
-  {
-    feature: "Root Cause Identification",
-    traditional: "Manual investigation required",
-    hitechlogic: "Automatic correlation & analysis",
-  },
-  {
-    feature: "False Positive Rate",
-    traditional: "60-80% of alerts",
-    hitechlogic: "Less than 1% false positives",
-  },
-  {
-    feature: "Alert Fatigue",
-    traditional: "Severe team burnout",
-    hitechlogic: "Focused on genuine issues",
-  },
-  {
-    feature: "Pattern Detection",
-    traditional: "Reactive troubleshooting",
-    hitechlogic: "Proactive pattern identification",
-  },
-  {
-    feature: "Time to Detect",
-    traditional: "15-30 minutes",
-    hitechlogic: "Less than 2 minutes",
-  },
-];
-
-const faqs = [
-  {
-    question: "How quickly will we see noise reduction results?",
-    answer: "Most clients see 40-50% noise reduction within the first week through quick-win filtering. Full 80%+ reduction is typically achieved within 4-6 weeks as ML models learn your environment.",
-  },
-  {
-    question: "Will important alerts get suppressed by mistake?",
-    answer: "No. Our correlation engine uses multi-factor analysis and severity weighting to ensure critical alerts always escalate. We have a <1% false positive rate and maintain audit trails of all suppression decisions.",
-  },
-  {
-    question: "Can this work with our existing monitoring tools?",
-    answer: "Yes. We integrate with all major monitoring platforms including Datadog, New Relic, Splunk, PagerDuty, and custom tools through standard APIs and webhooks.",
-  },
-  {
-    question: "What happens during an actual incident?",
-    answer: "Our correlation engine groups related alerts, provides root cause analysis, and escalates with full context to the right team immediately. You get one actionable incident instead of hundreds of noise.",
-  },
-  {
-    question: "How do you handle new types of alerts?",
-    answer: "Our ML models continuously learn and adapt. New alert patterns are analyzed, categorized, and incorporated into correlation rules automatically with human oversight for validation.",
-  },
-];
-
-const trustIndicators = [
-  { label: "Alert Noise Reduced", value: "95%+" },
-  { label: "Client Satisfaction", value: "4.9/5" },
-  { label: "Incidents Correlated", value: "10M+" },
-  { label: "Detection Speed", value: "<2 min" },
-];
+import {
+  Activity,
+  TrendingUp,
+  BarChart3,
+  AlertTriangle,
+  Eye,
+  CheckCircle2,
+  ArrowRight,
+  Shield,
+  Clock,
+  Zap,
+  Award,
+  Target,
+  Monitor,
+  Brain,
+  Bell,
+} from "lucide-react";
 
 export default function SystemOversightEventReduction() {
   const schema = {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Service",
-        "@id": "https://hitechlogic.com/services/system-oversight-event-reduction#service",
-        name: "Intelligent System Oversight & Event Reduction",
-        provider: {
-          "@type": "Organization",
-          name: "HiTechLogic",
-          "@id": "https://hitechlogic.com/#organization"
-        },
-        serviceType: "Intelligent Monitoring & Alert Management",
-        areaServed: "Worldwide",
-        availableChannel: {
-          "@type": "ServiceChannel",
-          serviceUrl: "https://hitechlogic.com/services/system-oversight-event-reduction",
-          servicePhone: {
-            "@type": "ContactPoint",
-            contactType: "customer service",
-            availableLanguage: ["English"]
-          }
-        },
-        slogan: "Transform Alert Chaos into Actionable Intelligence",
-        description: "AI-powered event correlation and intelligent monitoring that reduces alert noise by 82%, eliminates alert fatigue, and accelerates incident response through automated root cause analysis and smart escalation.",
-        offers: {
-          "@type": "Offer",
-          category: "Monitoring & Alert Management",
-          itemOffered: {
-            "@type": "Service",
-            name: "Intelligent System Oversight & Event Reduction",
-            description: "ML-powered event correlation, noise reduction, and smart alerting that transforms thousands of alerts into actionable incidents with automatic root cause analysis."
-          }
-        },
-        hasOfferCatalog: {
-          "@type": "OfferCatalog",
-          name: "Event Management Services",
-          itemListElement: capabilities.map((cap) => ({
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: cap.title,
-              description: cap.description
-            }
-          }))
-        },
-        audience: {
-          "@type": "Audience",
-          audienceType: "SRE Teams, DevOps Engineers, Operations Managers, Platform Engineering Leads"
-        },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.9",
-          reviewCount: "142",
-          bestRating: "5",
-          worstRating: "1"
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://hitechlogic.com/services/system-oversight-event-reduction#faq",
-        mainEntity: faqs.map((faq) => ({
-          "@type": "Question",
-          name: faq.question,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: faq.answer
-          }
-        }))
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://hitechlogic.com/services/system-oversight-event-reduction#breadcrumb",
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: "https://hitechlogic.com/"
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Services",
-            item: "https://hitechlogic.com/services"
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: "System Oversight & Event Reduction",
-            item: "https://hitechlogic.com/services/system-oversight-event-reduction"
-          }
-        ]
-      }
-    ]
+    "@type": "Service",
+    provider: {
+      "@type": "Organization",
+      name: "HiTechLogic",
+    },
+    serviceType: "Systems Monitoring & Alert Management",
+    name: "System Oversight & Event Reduction",
+    description: "Transform alert chaos into actionable intelligence with AI-powered telemetry, expert routing, and correlation that keeps executives aligned on true risk signals.",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+      description: "Intelligent monitoring and alert management service with 82% noise reduction",
+    },
   };
+
+  const monitoringCapabilities = [
+    {
+      title: "AI-Powered Event Correlation",
+      description: "Machine learning algorithms analyze patterns across millions of events to identify true issues versus noise",
+      capabilities: ["Pattern recognition algorithms", "Event deduplication", "Root cause analysis", "Predictive alerting"],
+      icon: Brain,
+    },
+    {
+      title: "Intelligent Alert Routing",
+      description: "Smart routing based on severity, business impact, and team expertise to ensure the right people respond",
+      capabilities: ["Severity-based escalation", "Expert routing logic", "Business impact scoring", "On-call rotation management"],
+      icon: Bell,
+    },
+    {
+      title: "Executive Dashboard",
+      description: "Clean, actionable visibility for leadership with trend analysis and risk assessment summaries",
+      capabilities: ["Executive KPIs", "Risk trend visualization", "MTTR tracking", "Incident impact analysis"],
+      icon: Monitor,
+    },
+  ];
+
+  const successMetrics = [
+    {
+      metric: "−82%",
+      label: "Alert Noise Reduction",
+      description: "Elimination of false positives and irrelevant alerts",
+    },
+    {
+      metric: "<2 min",
+      label: "Threat Detection",
+      description: "Average time to detect critical system issues",
+    },
+    {
+      metric: "97%",
+      label: "Alert Accuracy",
+      description: "True positive rate for actionable alerts",
+    },
+    {
+      metric: "65%",
+      label: "Incident Response Time",
+      description: "Reduction in mean time to resolution",
+    },
+  ];
 
   return (
     <>
       <SEO
-        title="System Oversight & Event Reduction | AI-Powered Alert Management | HiTechLogic"
-        description="Reduce alert noise by 82% with intelligent event correlation & ML-powered monitoring. <2min detection time, <1% false positives, automatic root cause analysis. Eliminate alert fatigue and focus on what matters."
-        keywords="alert management, event correlation, monitoring noise reduction, AI-powered monitoring, intelligent alerting, alert fatigue, incident correlation, root cause analysis, smart escalation, ML monitoring, observability"
+        title="System Oversight & Event Reduction | HiTechLogic"
+        description="Transform alert chaos into actionable intelligence. Reduce alert noise by 82%, detect threats in under 2 minutes with AI-powered monitoring and intelligent correlation."
+        keywords="system monitoring, alert management, event correlation, noise reduction, threat detection, incident response, ai monitoring"
         canonical="https://hitechlogic.com/services/system-oversight-event-reduction"
         schema={schema}
-        ogType="website"
-        ogImage="https://hitechlogic.com/images/services/event-reduction-og.jpg"
-        twitterCard="summary_large_image"
       />
       <Layout>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--deep-navy))] via-[hsl(var(--graphite))] to-[hsl(var(--deep-navy))]">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvZz48L3N2Zz4=')] opacity-20" />
-        <div className="relative mx-auto w-full max-w-6xl px-6 pt-32 pb-20 sm:pt-40 sm:pb-28">
-          <div className="flex items-center gap-3 mb-6 animate-[fade-in_0.5s_ease-out]">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg transition-transform duration-300 hover:scale-110 hover:bg-white/15">
-              <Eye className="h-7 w-7 text-[hsl(var(--accent-blue))]" />
+        {/* Hero Section */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--deep-navy))] via-[hsl(var(--graphite))] to-[hsl(var(--deep-navy))]">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzM5yZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LTI1NSwwLjAzKSIvPjwvZz48L3N2Zz4=')] opacity-20" />
+          <div className="relative mx-auto w-full max-w-6xl px-6 pt-32 pb-20 sm:pt-40 sm:pb-28">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg">
+                <Activity className="h-7 w-7 text-white" />
+              </div>
+              <span className="text-sm font-medium text-white/90 tracking-wide">Intelligent Monitoring</span>
             </div>
-            <span className="text-sm font-medium text-white/90 tracking-wide">Core Operations Discipline</span>
-          </div>
-          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white animate-[fade-in_0.6s_ease-out_0.1s_both]">
-            System Oversight & <span className="text-[hsl(var(--accent-blue))]">Event Reduction</span>
-          </h1>
-          <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed animate-[fade-in_0.7s_ease-out_0.2s_both]">
-            Noise-calmed monitoring and automated correlation that keeps executive dashboards clear and actionable.
-            <span className="block mt-3 font-semibold text-white">82% average noise reduction across all implementations</span>
-          </p>
-
-          <div className="mt-10 flex flex-wrap gap-4 animate-[fade-in_0.8s_ease-out_0.3s_both]">
-            <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(139,92,246,0.8)] hover:shadow-[0_25px_50px_-12px_rgba(139,92,246,0.9)] hover:scale-105 transition-all duration-300">
-              <Link to="/contact" className="flex items-center gap-2 group">
-                <Calendar className="h-5 w-5" />
-                <span>Schedule Free Assessment</span>
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="xl" asChild className="hover:bg-slate-50 transition-all duration-300">
-              <Link to="/contact" className="flex items-center gap-2 group">
-                <Phone className="h-5 w-5" />
-                <span>Talk to Specialist</span>
-              </Link>
-            </Button>
-          </div>
-
-          {/* Metrics */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 animate-[fade-in_0.9s_ease-out_0.4s_both]">
-            {metrics.map((metric) => (
-              <div key={metric.label} className="text-center group">
-                <div className="flex justify-center mb-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/10 to-purple-600/5 group-hover:from-purple-500/20 group-hover:to-purple-600/10 transition-all duration-300">
-                    <metric.icon className="h-6 w-6 text-purple-600" />
-                  </div>
-                </div>
-                <div className="text-3xl md:text-4xl font-bold text-purple-600 group-hover:scale-110 transition-transform duration-300">{metric.value}</div>
-                <div className="mt-2 text-sm font-medium text-slate-600">{metric.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Indicators */}
-      <section className="py-12 bg-gradient-to-r from-purple-600 to-[hsl(var(--navy))]">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {trustIndicators.map((indicator) => (
-              <div key={indicator.label} className="text-center">
-                <div className="text-4xl font-bold text-white mb-2">{indicator.value}</div>
-                <div className="text-sm text-purple-200">{indicator.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Problem/Solution Section */}
-      <section className="section-space bg-white">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="eyebrow text-purple-600">The challenge</span>
-              <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">Alert fatigue is killing productivity</h2>
-              <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-                Modern systems generate thousands of alerts daily. Most are noise. Critical alerts get lost
-                in the chaos. On-call teams burn out. Real incidents are discovered too late.
-              </p>
-              <div className="mt-6 p-6 bg-red-50 border-l-4 border-red-400 rounded-r-xl">
-                <div className="flex items-start gap-3">
-                  <AlertTriangle className="h-6 w-6 text-red-600 shrink-0 mt-0.5" />
-                  <div>
-                    <div className="font-semibold text-red-900">The Cost of Alert Noise</div>
-                    <div className="text-sm text-red-800 mt-1">
-                      Teams spend 60% of time triaging false positives, miss critical alerts buried in noise,
-                      and experience severe burnout from constant interruptions.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <span className="eyebrow text-purple-600">Our solution</span>
-              <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">Intelligent signal extraction</h2>
-              <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-                Our System Oversight & Event Reduction service uses advanced correlation algorithms,
-                machine learning, and pattern analysis to filter noise, group related events, and
-                surface only actionable insights.
-              </p>
-              <div className="mt-6 p-6 bg-green-50 border-l-4 border-green-400 rounded-r-xl">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-green-600 shrink-0 mt-0.5" />
-                  <div>
-                    <div className="font-semibold text-green-900">Proven Results</div>
-                    <div className="text-sm text-green-800 mt-1">
-                      82% average noise reduction, sub-2-minute detection times, and happier, more
-                      productive on-call teams focused on genuine issues.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-8">
-                <Button variant="hero" size="lg" asChild>
-                  <Link to="/contact" className="flex items-center gap-2 group">
-                    <span>See How It Works</span>
-                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Before/After Comparison */}
-      <section className="section-space bg-gradient-to-br from-slate-50 to-purple-50/30">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow text-purple-600">Real impact</span>
-            <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
-              Transformation by the numbers
-            </h2>
-            <p className="mt-6 text-lg text-slate-600">
-              See the dramatic difference our event reduction capabilities deliver for enterprise clients.
+            <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
+              System Oversight
+              <span className="text-[hsl(var(--accent-blue))] block sm:inline"> & Event Reduction</span>
+            </h1>
+            <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed">
+              Transform alert chaos into actionable intelligence. Our AI-powered telemetry reduces
+              noise by 82% while detecting critical issues in under 2 minutes, keeping your team
+              focused on what matters most.
             </p>
-          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {beforeAfter.map((item) => (
-              <Card key={item.metric} className="p-6 text-center border-2 hover:border-purple-300 transition-all hover:-translate-y-1 duration-300 group">
-                <div className="text-sm font-semibold text-slate-600 mb-4">{item.metric}</div>
-                <div className="space-y-3">
-                  <div>
-                    <div className="text-xs text-slate-500 mb-1">Before</div>
-                    <div className="text-2xl font-bold text-red-600">{item.before}</div>
+            <div className="mt-10">
+              <Button variant="secondary" size="xl" asChild className="bg-white text-[hsl(var(--navy))] hover:bg-slate-50 shadow-2xl border-white">
+                <Link to="/contact" className="flex items-center gap-2 group">
+                  <Eye className="h-5 w-5" />
+                  <span>Eliminate Alert Chaos</span>
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
+            </div>
+
+            {/* Key Metrics */}
+            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                { label: "Noise Reduction", value: "−82%", icon: AlertTriangle },
+                { label: "Detection Time", value: "<2 min", icon: Clock },
+                { label: "Alert Accuracy", value: "97%", icon: Target },
+                { label: "MTTR Impact", value: "−65%", icon: TrendingUp },
+              ].map((metric, index) => (
+                <Card key={metric.label} className="bg-white/10 backdrop-blur-sm border-white/20 text-white p-4 text-center group hover:bg-white/15 transition-all hover:scale-105">
+                  <div className="flex justify-center mb-2">
+                    <metric.icon className="h-6 w-6" />
                   </div>
-                  <ArrowRight className="h-5 w-5 text-purple-600 mx-auto rotate-90 group-hover:translate-y-1 transition-transform" />
-                  <div>
-                    <div className="text-xs text-slate-500 mb-1">After</div>
-                    <div className="text-2xl font-bold text-green-600">{item.after}</div>
-                  </div>
-                </div>
-                <div className="mt-4 px-3 py-2 bg-purple-100 rounded-lg">
-                  <div className="text-xs font-semibold text-purple-900">{item.improvement}</div>
-                </div>
-              </Card>
-            ))}
+                  <div className="text-2xl md:text-3xl font-bold mb-1">{metric.value}</div>
+                  <div className="text-xs font-medium text-slate-300">{metric.label}</div>
+                </Card>
+              ))}
+            </div>
           </div>
+        </section>
 
-          <div className="mt-12 text-center">
-            <Button variant="hero" size="xl" asChild>
-              <Link to="/contact" className="flex items-center gap-2 group">
-                <span>Get Your Free Noise Assessment</span>
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Timeline */}
-      <section className="section-space bg-white">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow text-purple-600">Our process</span>
-            <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
-              From noise to clarity in 6 weeks
-            </h2>
-            <p className="mt-6 text-lg text-slate-600">
-              Our systematic approach delivers measurable noise reduction quickly and sustainably.
-            </p>
-          </div>
-
-          <div className="relative">
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500/20 via-purple-600 to-purple-500/20 -translate-y-1/2" />
-
-            <div className="grid md:grid-cols-4 gap-6 relative">
-              {process.map((item) => (
-                <Card key={item.step} className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-purple-500/50 group">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-purple-700 text-white text-2xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      {item.step}
+        {/* The Problem */}
+        <section className="section-space bg-white">
+          <div className="mx-auto w-full max-w-6xl px-6">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <span className="eyebrow text-[hsl(var(--accent-blue))]">Alert fatigue crisis</span>
+                <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">
+                  Monitoring systems drowning in noise
+                </h2>
+                <p className="mt-6 text-lg text-slate-600 leading-relaxed">
+                  Modern IT environments generate millions of alerts daily, with 99% being noise or
+                  irrelevant information. Teams waste hours investigating false positives while
+                  critical issues hide in plain sight, leading to slower response times and
+                  frustrated, burned-out engineers.
+                </p>
+                <div className="mt-6 space-y-4">
+                  {[
+                    "Average enterprise receives 1.7M alerts per month",
+                    "Only 3% of alerts are actionable (industry average)",
+                    "Alert fatigue causes 50% slower incident response",
+                    "Teams spend 60%+ time investigating false alarms",
+                  ].map((fact) => (
+                    <div key={fact} className="flex items-start gap-3">
+                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-100 flex-shrink-0 mt-0.5">
+                        <div className="h-2 w-2 rounded-full bg-slate-400" />
+                      </div>
+                      <p className="text-slate-700">{fact}</p>
                     </div>
-                    <div className="text-sm font-semibold text-purple-600 mb-2">{item.duration}</div>
-                    <h3 className="text-lg font-bold text-[hsl(var(--navy))] mb-3">{item.title}</h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <span className="eyebrow text-[hsl(var(--accent-blue))]">Noise-calmed intelligence</span>
+                <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">
+                  Smart monitoring that surfaces true risk
+                </h2>
+                <p className="mt-6 text-lg text-slate-600 leading-relaxed">
+                  We don't just add more alerts—we dramatically reduce noise while increasing
+                  detection accuracy. Our AI identifies patterns, correlates events, and routes
+                  only actionable intelligence to the right people at the right time.
+                </p>
+                <div className="mt-6 space-y-4">
+                  {[
+                    "82% reduction in irrelevant alerts and false positives",
+                    "Sub-2-minute detection of critical system issues",
+                    "97% accuracy rate for actionable intelligence",
+                    "Executive dashboards with real business risk insights",
+                  ].map((benefit) => (
+                    <div key={benefit} className="flex items-start gap-3">
+                      <CheckCircle2 className="h-6 w-6 text-[hsl(var(--accent-blue))] flex-shrink-0 mt-0.5" />
+                      <p className="text-slate-700 font-medium">{benefit}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-8">
+                  <Button variant="hero" size="lg" asChild>
+                    <Link to="/contact" className="flex items-center gap-2 group">
+                      <span>Stop Alert Overload</span>
+                      <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Monitoring Capabilities */}
+        <section id="capabilities" className="section-space bg-slate-50">
+          <div className="mx-auto w-full max-w-6xl px-6">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="eyebrow text-[hsl(var(--accent-blue))]">Intelligent monitoring platform</span>
+              <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
+                AI that keeps executives aligned on risks
+              </h2>
+              <p className="mt-6 text-lg text-slate-600">
+                Our platform combines machine learning, expert routing, and executive reporting
+                to transform raw telemetry into the strategic intelligence needed to protect
+                and grow your business.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {monitoringCapabilities.map((capability, index) => (
+                <Card key={capability.title} className="p-8 border-2 hover:border-[hsl(var(--accent-blue))]/30 hover:shadow-xl transition-all hover:-translate-y-1 duration-300 group">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 group-hover:scale-110 transition-transform duration-300">
+                      <capability.icon className="h-7 w-7 text-[hsl(var(--accent-blue))]" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-[hsl(var(--navy))] mb-3">{capability.title}</h3>
+                      <p className="text-slate-600 mb-6 leading-relaxed">{capability.description}</p>
+                      <ul className="space-y-3">
+                        {capability.capabilities.map((item) => (
+                          <li key={item} className="flex items-center gap-2 text-sm">
+                            <CheckCircle2 className="h-4 w-4 text-[hsl(var(--accent-blue))] shrink-0" />
+                            <span className="text-slate-700">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </Card>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Capabilities Section */}
-      <section className="section-space bg-[hsl(var(--background))]">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow text-purple-600">Core capabilities</span>
-            <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
-              Advanced event intelligence
-            </h2>
-            <p className="mt-6 text-lg text-slate-600">
-              Powered by machine learning, pattern recognition, and years of operational expertise.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {capabilities.map((capability) => (
-              <Card key={capability.title} className="p-8 hover:shadow-2xl transition-all duration-300 border-2 hover:border-purple-300 group relative overflow-hidden">
-                <div className="absolute top-0 right-0 px-3 py-1 bg-gradient-to-r from-purple-500/10 to-purple-600/5 text-xs font-semibold text-purple-600 rounded-bl-lg">
-                  {capability.highlight}
-                </div>
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/10 to-purple-600/5 group-hover:from-purple-500/20 group-hover:to-purple-600/10 transition-all group-hover:scale-110 duration-300">
-                  <capability.icon className="h-6 w-6 text-purple-600" />
-                </div>
-                <h3 className="mt-4 text-xl font-semibold text-[hsl(var(--navy))]">{capability.title}</h3>
-                <p className="mt-3 text-slate-600 leading-relaxed">{capability.description}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Comparison Table */}
-      <section className="section-space bg-white">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow text-purple-600">See the difference</span>
-            <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
-              Traditional Monitoring vs. Intelligent Oversight
-            </h2>
-          </div>
-
-          <div className="overflow-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-xl">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b-2 border-slate-200 bg-slate-50">
-                    <th className="px-6 py-4 text-left text-sm font-bold text-[hsl(var(--navy))]">Feature</th>
-                    <th className="px-6 py-4 text-left text-sm font-bold text-slate-600">Traditional Monitoring</th>
-                    <th className="px-6 py-4 text-left text-sm font-bold text-purple-600">HiTechLogic</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparison.map((item) => (
-                    <tr key={item.feature} className="border-b border-slate-100 hover:bg-purple-50/30 transition-colors">
-                      <td className="px-6 py-4 font-semibold text-[hsl(var(--navy))]">{item.feature}</td>
-                      <td className="px-6 py-4 text-slate-600">{item.traditional}</td>
-                      <td className="px-6 py-4 text-[hsl(var(--navy))] font-medium flex items-center gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-green-600 shrink-0" />
-                        {item.hitechlogic}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <div className="mt-12 text-center">
-            <Button variant="hero" size="xl" asChild>
-              <Link to="/contact" className="flex items-center gap-2 group">
-                <span>Start Reducing Noise Today</span>
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="section-space bg-[hsl(var(--background))]">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="grid md:grid-cols-2 gap-16">
-            <div>
-              <span className="eyebrow text-purple-600">Business value</span>
-              <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">Restore sanity to on-call operations</h2>
-              <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-                Stop drowning in alerts and start focusing on innovation. Our intelligent oversight
-                transforms monitoring from a burden into a strategic advantage.
+        {/* Business Impact */}
+        <section className="section-space bg-white">
+          <div className="mx-auto w-full max-w-6xl px-6">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="eyebrow text-[hsl(var(--accent-blue))]">Measurable intelligence gains</span>
+              <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
+                From alert fatigue to strategic oversight
+              </h2>
+              <p className="mt-6 text-lg text-slate-600">
+                Stop letting monitoring costs and alert noise drain your resources. Focus your
+                team on innovation while gaining unprecedented visibility into your system's health.
               </p>
-              <div className="mt-8">
-                <Button variant="outline" size="lg" asChild>
-                  <Link to="/case-studies" className="flex items-center gap-2 group">
-                    <span>Read Success Stories</span>
-                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </Button>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              {successMetrics.map((metric, index) => (
+                <Card key={metric.label} className="p-6 text-center border-2 hover:border-[hsl(var(--accent-blue))]/30 hover:shadow-xl transition-all hover:-translate-y-1 duration-300 group">
+                  <div className="text-3xl md:text-4xl font-bold text-[hsl(var(--accent-blue))] mb-2">{metric.metric}</div>
+                  <div className="text-lg font-semibold text-[hsl(var(--navy))] mb-2">{metric.label}</div>
+                  <div className="text-sm text-slate-600">{metric.description}</div>
+                </Card>
+              ))}
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-16">
+              <div>
+                <h3 className="text-2xl font-bold text-[hsl(var(--navy))] mb-6">Operational Efficiency</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-50/50 to-transparent hover:from-blue-50 transition-all hover:translate-x-2 duration-300 group">
+                    <Zap className="h-6 w-6 text-blue-600 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                    <div>
+                      <div className="font-semibold text-[hsl(var(--navy))]">Reduced Investigation Time</div>
+                      <div className="text-slate-600">Engineers spend 82% less time on false alarms and irrelevant alerts</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-50/50 to-transparent hover:from-blue-50 transition-all hover:translate-x-2 duration-300 group">
+                    <Clock className="h-6 w-6 text-blue-600 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                    <div>
+                      <div className="font-semibold text-[hsl(var(--navy))]">Faster Incident Response</div>
+                      <div className="text-slate-600">Sub-2-minute detection enables proactive resolution before business impact</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-50/50 to-transparent hover:from-blue-50 transition-all hover:translate-x-2 duration-300 group">
+                    <Shield className="h-6 w-6 text-blue-600 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                    <div>
+                      <div className="font-semibold text-[hsl(var(--navy))]">Improved Reliability</div>
+                      <div className="text-slate-600">97% alert accuracy reduces missed issues and prevents system failures</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-[hsl(var(--navy))] mb-6">Strategic Benefits</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-50/50 to-transparent hover:from-blue-50 transition-all hover:translate-x-2 duration-300 group">
+                    <Monitor className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-[hsl(var(--navy))]">Executive Visibility</div>
+                      <div className="text-slate-600">Clean dashboards with business-relevant risk indicators and trend analysis</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-50/50 to-transparent hover:from-blue-50 transition-all hover:translate-x-2 duration-300 group">
+                    <TrendingUp className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-[hsl(var(--navy))]">Cost Optimization</div>
+                      <div className="text-slate-600">Reduced monitoring overhead and eliminated false alarm investigation costs</div>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-50/50 to-transparent hover:from-blue-50 transition-all hover:translate-x-2 duration-300 group">
+                    <Target className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-[hsl(var(--accent-blue))]">Risk Intelligence</div>
+                      <div className="text-slate-600">Data-driven insights on system health and strategic risk mitigation</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="space-y-4">
-              {benefits.map((benefit) => (
-                <div key={benefit} className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-purple-50/50 to-transparent hover:from-purple-50 transition-all hover:translate-x-2 duration-300 group">
-                  <CheckCircle2 className="h-6 w-6 text-purple-600 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                  <span className="text-slate-700 leading-relaxed">{benefit}</span>
-                </div>
+          </div>
+        </section>
+
+        {/* Implementation Process */}
+        <section className="section-space bg-slate-50">
+          <div className="mx-auto w-full max-w-6xl px-6">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="eyebrow text-[hsl(var(--accent-blue))]">Rapid transformation</span>
+              <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
+                From chaos to clarity in weeks
+              </h2>
+              <p className="mt-6 text-lg text-slate-600">
+                We implement our intelligent monitoring platform quickly while minimizing disruption
+                to existing teams and processes.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-4 gap-8">
+              {[
+                {
+                  week: "1-2",
+                  title: "Assessment & Integration",
+                  description: "Analyze existing monitoring setup, integrate with current tooling, and establish baselines",
+                },
+                {
+                  week: "3-4",
+                  title: "AI Training & Tuning",
+                  description: "Train correlation algorithms on your specific environment and tune alert thresholds",
+                },
+                {
+                  week: "5-6",
+                  title: "Parallel Operation",
+                  description: "Run both systems in parallel while training teams on new intelligent alerting",
+                },
+                {
+                  week: "7-8",
+                  title: "Full Implementation",
+                  description: "Complete transition with optimization, executive training, and ongoing support",
+                },
+              ].map((phase, index) => (
+                <Card key={phase.week} className="p-6 text-center hover:shadow-xl transition-all hover:-translate-y-1 duration-300 group border-0 shadow-lg">
+                  <div className={`flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white text-2xl font-bold mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    {index + 1}
+                  </div>
+                  <div className="text-lg font-bold text-[hsl(var(--accent-blue))] mb-2">{phase.week} weeks</div>
+                  <h3 className="text-lg font-bold text-[hsl(var(--navy))] mb-3">{phase.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{phase.description}</p>
+                </Card>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Use Cases */}
-      <section className="section-space bg-white">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow text-purple-600">Common scenarios</span>
-            <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">Built for complex monitoring challenges</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {useCases.map((useCase) => (
-              <Card key={useCase.title} className="p-8 border-2 hover:border-purple-300 hover:shadow-xl transition-all hover:-translate-y-1 duration-300 group">
-                <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-purple-500/10 to-purple-600/5 group-hover:scale-110 transition-transform duration-300">
-                    <useCase.icon className="h-6 w-6 text-purple-600" />
+        {/* Case Study */}
+        <section className="section-space bg-white">
+          <div className="mx-auto w-full max-w-6xl px-6">
+            <Card className="p-8 border-2 border-[hsl(var(--accent-blue))]/20 bg-gradient-to-br from-blue-50/50 to-transparent">
+              <div className="text-center max-w-3xl mx-auto">
+                <Award className="h-12 w-12 text-[hsl(var(--accent-blue))] mx-auto mb-6" />
+                <h3 className="text-2xl font-bold text-[hsl(var(--navy))] mb-4">Real-World Impact: From Alert Chaos to Intelligence</h3>
+                <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                  Enterprise organizations regularly face overwhelming alert volumes. With our intelligent monitoring platform,
+                  teams achieve immediate results: 82% reduction in alert noise, sub-2-minute threat detection, and 65% faster
+                  incident response. Operations teams can now focus on strategic initiatives instead of constant alert triage.
+                </p>
+                <div className="flex justify-center gap-12 text-sm">
+                  <div>
+                    <div className="font-bold text-[hsl(var(--accent-blue))] text-2xl">2.3M alerts</div>
+                    <div className="text-slate-600">Monthly before</div>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-[hsl(var(--navy))] mb-2">{useCase.title}</h3>
-                    <p className="text-sm text-purple-600 font-semibold mb-3">{useCase.industry}</p>
-                    <p className="text-slate-600 leading-relaxed">{useCase.description}</p>
+                  <ArrowRight className="h-6 w-6 text-[hsl(var(--accent-blue))] self-center" />
+                  <div>
+                    <div className="font-bold text-[hsl(var(--accent-blue))] text-2xl">420K alerts</div>
+                    <div className="text-slate-600">Monthly after (82% reduction)</div>
                   </div>
                 </div>
-              </Card>
-            ))}
+              </div>
+            </Card>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQ Section */}
-      <section className="section-space bg-[hsl(var(--background))]">
-        <div className="mx-auto w-full max-w-4xl px-6">
-          <div className="text-center mb-16">
-            <span className="eyebrow text-purple-600">Frequently asked questions</span>
-            <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">Everything you need to know</h2>
-          </div>
-
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300 border-2 hover:border-purple-300">
-                <h3 className="text-lg font-bold text-[hsl(var(--navy))] mb-3">{faq.question}</h3>
-                <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
-              </Card>
-            ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <p className="text-slate-600 mb-6">Still have questions?</p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button variant="outline" size="lg" asChild>
-                <Link to="/contact" className="flex items-center gap-2">
-                  <Mail className="h-5 w-5" />
-                  <span>Email Us</span>
-                </Link>
-              </Button>
-              <Button variant="hero" size="lg" asChild>
+        {/* Final CTA */}
+        <section className="section-space bg-gradient-to-br from-[hsl(var(--navy))] to-[hsl(var(--navy))]/90 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#ffffff10,transparent_55%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),transparent_70%)]" />
+          <div className="relative mx-auto max-w-4xl px-6 text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white mb-6">
+              <Activity className="h-4 w-4" />
+              <span className="text-sm font-semibold">Intelligent Oversight</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              End Alert Chaos, Gain Strategic Intelligence
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Don't let monitoring systems bury your team in noise. Experience 82% reduction in
+              irrelevant alerts, 97% accuracy in actionable intelligence, and detection of critical
+              issues in under 2 minutes.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+              <Button variant="secondary" size="xl" asChild className="bg-white text-[hsl(var(--navy))] hover:bg-blue-50 shadow-2xl hover:scale-105 transition-all">
                 <Link to="/contact" className="flex items-center gap-2 group">
-                  <Phone className="h-5 w-5" />
-                  <span>Schedule a Call</span>
+                  <Eye className="h-5 w-5" />
+                  <span>Assess Monitoring Health</span>
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
+              <Button variant="outline" size="xl" asChild className="border-white text-white hover:bg-white/10">
+                <Link to="/services" className="flex items-center gap-2">
+                  <Brain className="h-5 w-5" />
+                  <span>Explore All Services</span>
+                </Link>
+              </Button>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Final CTA Section */}
-      <section className="section-space bg-gradient-to-br from-purple-600 to-[hsl(var(--navy))] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:24px_24px]" />
-        <div className="relative mx-auto max-w-4xl px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white mb-6">
-            <Award className="h-4 w-4" />
-            <span className="text-sm font-semibold">82% Average Noise Reduction Guaranteed</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to eliminate alert fatigue?</h2>
-          <p className="text-xl text-purple-100 mb-10 max-w-2xl mx-auto">
-            Let's show you how our intelligent event reduction can transform your monitoring operations
-            and restore focus to your teams.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button variant="secondary" size="xl" asChild className="bg-white text-purple-600 hover:bg-purple-50 shadow-2xl hover:scale-105 transition-all">
-              <Link to="/contact" className="flex items-center gap-2 group">
-                <Calendar className="h-5 w-5" />
-                <span>Schedule Strategy Session</span>
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="xl" asChild className="border-white text-white hover:bg-white/10">
-              <Link to="/pricing" className="flex items-center gap-2">
-                <BarChart className="h-5 w-5" />
-                <span>View Pricing</span>
-              </Link>
-            </Button>
-          </div>
-
-          <div className="mt-12 pt-12 border-t border-white/10">
-            <p className="text-purple-200 text-sm mb-4">Risk-free 30-day trial with guaranteed noise reduction</p>
-            <div className="flex flex-wrap justify-center gap-8">
-              <div className="flex items-center gap-2 text-white">
-                <CheckCircle2 className="h-5 w-5 text-green-400" />
-                <span className="text-sm">No long-term contracts</span>
-              </div>
-              <div className="flex items-center gap-2 text-white">
-                <CheckCircle2 className="h-5 w-5 text-green-400" />
-                <span className="text-sm">Cancel anytime</span>
-              </div>
-              <div className="flex items-center gap-2 text-white">
-                <CheckCircle2 className="h-5 w-5 text-green-400" />
-                <span className="text-sm">Money-back guarantee</span>
+            <div className="pt-8 border-t border-white/10">
+              <p className="text-blue-200 text-sm mb-4">Free monitoring assessment • 2-week pilot program • No long-term commitment</p>
+              <div className="flex justify-center gap-8 text-sm text-white/80">
+                <div>
+                  <div className="font-medium text-white">Implementation Time</div>
+                  <div>4-8 weeks</div>
+                </div>
+                <div>
+                  <div className="font-medium text-white">Alert Noise Reduction</div>
+                  <div>Up to 82%</div>
+                </div>
+                <div>
+                  <div className="font-medium text-white">Detection Accuracy</div>
+                  <div>97%</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
       </Layout>
     </>
   );

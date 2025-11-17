@@ -250,35 +250,32 @@ export default function ReliabilityPerformanceEngineering() {
       />
       <Layout>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-orange-50/20 to-amber-50/30">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--deep-navy))] via-[hsl(var(--graphite))] to-[hsl(var(--deep-navy))]">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         <div className="relative mx-auto w-full max-w-6xl px-6 pt-32 pb-20 sm:pt-40 sm:pb-28">
           <div className="animate-[fade-in_0.5s_ease-out]">
             <div className="flex items-center gap-3 mb-6">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-[hsl(var(--navy))] shadow-lg shadow-orange-500/25">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] shadow-lg shadow-[hsl(var(--accent-blue))]/25">
                 <Gauge className="h-7 w-7 text-white" />
               </div>
-              <span className="eyebrow text-orange-600">Reliability & Performance Engineering</span>
+              <span className="eyebrow text-[hsl(var(--accent-blue))]">Reliability & Performance Engineering</span>
             </div>
           </div>
-          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-[hsl(var(--navy))] animate-[fade-in_0.6s_ease-out_0.1s_both]">
+          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white animate-[fade-in_0.6s_ease-out_0.1s_both]">
             Engineering Excellence<br />
-            <span className="text-orange-600">At Scale</span>
+            <span className="text-[hsl(var(--accent-blue))]">At Scale</span>
           </h1>
-          <p className="mt-6 text-xl text-slate-600 max-w-3xl leading-relaxed animate-[fade-in_0.7s_ease-out_0.2s_both]">
+          <p className="mt-6 text-xl text-slate-300 max-w-3xl leading-relaxed animate-[fade-in_0.7s_ease-out_0.2s_both]">
             Systematic reliability engineering with SLO frameworks, performance optimization,
             chaos engineering, and continuous improvement practices that deliver 99.99%+ uptime.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4 animate-[fade-in_0.8s_ease-out_0.3s_both]">
+          <div className="mt-10 animate-[fade-in_0.8s_ease-out_0.3s_both]">
             <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(249,115,22,0.8)] hover:scale-105 transition-transform">
               <Link to="/contact" className="flex items-center gap-2">
                 <span>Request Consultation</span>
                 <ArrowRight className="h-5 w-5" />
               </Link>
-            </Button>
-            <Button variant="outline" size="xl" asChild className="hover:scale-105 transition-transform">
-              <Link to="/demo">See Live Demo</Link>
             </Button>
           </div>
 
@@ -287,10 +284,10 @@ export default function ReliabilityPerformanceEngineering() {
             {metrics.map((metric) => (
               <div key={metric.label} className="text-center group hover:scale-105 transition-transform">
                 <div className="flex items-center justify-center mb-2">
-                  <metric.icon className="h-6 w-6 text-orange-600" />
+                  <metric.icon className="h-6 w-6 text-[hsl(var(--accent-blue))]" />
                 </div>
-                <div className="text-3xl md:text-4xl font-bold text-orange-600">{metric.value}</div>
-                <div className="mt-2 text-sm font-medium text-slate-600">{metric.label}</div>
+                <div className="text-3xl md:text-4xl font-bold text-[hsl(var(--accent-blue))]">{metric.value}</div>
+                <div className="mt-2 text-sm font-medium text-slate-300">{metric.label}</div>
               </div>
             ))}
           </div>
@@ -302,19 +299,19 @@ export default function ReliabilityPerformanceEngineering() {
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-orange-400">90%</div>
+              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">90%</div>
               <div className="mt-1 text-sm text-slate-300">MTTR Reduction</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-orange-400">10K+</div>
+              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">10K+</div>
               <div className="mt-1 text-sm text-slate-300">SLOs Defined</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-orange-400">500+</div>
+              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">500+</div>
               <div className="mt-1 text-sm text-slate-300">Chaos Tests Run</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-orange-400">$50M+</div>
+              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">$50M+</div>
               <div className="mt-1 text-sm text-slate-300">Downtime Prevented</div>
             </div>
           </div>
@@ -357,7 +354,7 @@ export default function ReliabilityPerformanceEngineering() {
               </div>
             </div>
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100 text-orange-700 font-semibold text-sm mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 text-[hsl(var(--accent-blue))] font-semibold text-sm mb-6 border border-[hsl(var(--accent-blue))]/30">
                 <CheckCircle2 className="h-4 w-4" />
                 Our Approach
               </div>
@@ -366,28 +363,28 @@ export default function ReliabilityPerformanceEngineering() {
               </h2>
               <div className="space-y-4 text-slate-600">
                 <p className="flex items-start gap-3">
-                  <span className="text-orange-600 font-bold mt-1">✓</span>
+                  <span className="text-[hsl(var(--accent-blue))] font-bold mt-1">✓</span>
                   <span>Clear SLO frameworks that align engineering with business outcomes</span>
                 </p>
                 <p className="flex items-start gap-3">
-                  <span className="text-orange-600 font-bold mt-1">✓</span>
+                  <span className="text-[hsl(var(--accent-blue))] font-bold mt-1">✓</span>
                   <span>Proactive chaos engineering to find weaknesses before users do</span>
                 </p>
                 <p className="flex items-start gap-3">
-                  <span className="text-orange-600 font-bold mt-1">✓</span>
+                  <span className="text-[hsl(var(--accent-blue))] font-bold mt-1">✓</span>
                   <span>Comprehensive baselines and continuous monitoring for early detection</span>
                 </p>
                 <p className="flex items-start gap-3">
-                  <span className="text-orange-600 font-bold mt-1">✓</span>
+                  <span className="text-[hsl(var(--accent-blue))] font-bold mt-1">✓</span>
                   <span>Resilient architecture patterns that gracefully handle failures</span>
                 </p>
                 <p className="flex items-start gap-3">
-                  <span className="text-orange-600 font-bold mt-1">✓</span>
+                  <span className="text-[hsl(var(--accent-blue))] font-bold mt-1">✓</span>
                   <span>Data-driven improvements based on actual reliability metrics</span>
                 </p>
               </div>
               <div className="mt-8">
-                <Button variant="primary" size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
+                <Button variant="primary" size="lg" asChild>
                   <Link to="/contact" className="flex items-center gap-2">
                     <span>Start Reliability Assessment</span>
                     <ArrowRight className="h-4 w-4" />
@@ -400,10 +397,10 @@ export default function ReliabilityPerformanceEngineering() {
       </section>
 
       {/* Before/After Impact Section */}
-      <section className="section-space bg-gradient-to-br from-slate-50 to-orange-50/30">
+      <section className="section-space bg-gradient-to-br from-slate-50 to-slate-100">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow text-orange-600">Real impact</span>
+            <span className="eyebrow text-[hsl(var(--accent-blue))]">Real impact</span>
             <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
               From reactive to resilient
             </h2>
@@ -413,49 +410,49 @@ export default function ReliabilityPerformanceEngineering() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="p-8 border-2 border-red-200 bg-gradient-to-br from-red-50/50 to-white">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 text-red-700 font-semibold text-xs mb-4">
+            <Card className="p-8 border-2 border-slate-300 bg-gradient-to-br from-slate-50 to-white">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-semibold text-xs mb-4 border border-slate-300">
                 BEFORE
               </div>
               <div className="space-y-6">
                 <div>
-                  <div className="text-4xl font-bold text-red-600 mb-2">94.5%</div>
+                  <div className="text-4xl font-bold text-slate-600 mb-2">94.5%</div>
                   <div className="text-sm text-slate-600">Average Uptime</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-red-600 mb-2">45 min</div>
+                  <div className="text-4xl font-bold text-slate-600 mb-2">45 min</div>
                   <div className="text-sm text-slate-600">Mean Time to Recovery</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-red-600 mb-2">0</div>
+                  <div className="text-4xl font-bold text-slate-600 mb-2">0</div>
                   <div className="text-sm text-slate-600">Defined SLOs</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-red-600 mb-2">24</div>
+                  <div className="text-4xl font-bold text-slate-600 mb-2">24</div>
                   <div className="text-sm text-slate-600">Critical Incidents/Month</div>
                 </div>
               </div>
             </Card>
 
-            <Card className="p-8 border-2 border-orange-200 bg-gradient-to-br from-orange-50/50 to-white">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-orange-700 font-semibold text-xs mb-4">
+            <Card className="p-8 border-2 border-[hsl(var(--accent-blue))]/30 bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 text-[hsl(var(--accent-blue))] font-semibold text-xs mb-4 border border-[hsl(var(--accent-blue))]/30">
                 AFTER
               </div>
               <div className="space-y-6">
                 <div>
-                  <div className="text-4xl font-bold text-orange-600 mb-2">99.95%</div>
+                  <div className="text-4xl font-bold text-[hsl(var(--accent-blue))] mb-2">99.95%</div>
                   <div className="text-sm text-slate-600">Average Uptime</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-orange-600 mb-2">4.5 min</div>
+                  <div className="text-4xl font-bold text-[hsl(var(--accent-blue))] mb-2">4.5 min</div>
                   <div className="text-sm text-slate-600">Mean Time to Recovery</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-orange-600 mb-2">47</div>
+                  <div className="text-4xl font-bold text-[hsl(var(--accent-blue))] mb-2">47</div>
                   <div className="text-sm text-slate-600">Defined SLOs</div>
                 </div>
                 <div>
-                  <div className="text-4xl font-bold text-orange-600 mb-2">2</div>
+                  <div className="text-4xl font-bold text-[hsl(var(--accent-blue))] mb-2">2</div>
                   <div className="text-sm text-slate-600">Critical Incidents/Month</div>
                 </div>
               </div>
@@ -463,7 +460,7 @@ export default function ReliabilityPerformanceEngineering() {
           </div>
 
           <div className="mt-8 text-center">
-            <Button variant="primary" size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
+            <Button variant="primary" size="lg" asChild>
               <Link to="/case-studies">View Success Stories</Link>
             </Button>
           </div>
@@ -474,7 +471,7 @@ export default function ReliabilityPerformanceEngineering() {
       <section className="section-space bg-white">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow text-orange-600">Our process</span>
+            <span className="eyebrow text-[hsl(var(--accent-blue))]">Our process</span>
             <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
               Your reliability transformation journey
             </h2>
@@ -485,21 +482,21 @@ export default function ReliabilityPerformanceEngineering() {
 
           <div className="relative">
             {/* Connecting Line */}
-            <div className="hidden md:block absolute left-[50%] top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-200 via-orange-300 to-orange-200" />
+            <div className="hidden md:block absolute left-[50%] top-0 bottom-0 w-0.5 bg-gradient-to-b from-[hsl(var(--accent-blue))]/20 via-[hsl(var(--accent-blue))]/30 to-[hsl(var(--accent-blue))]/20" />
 
             <div className="space-y-12">
               {engineeringProcess.map((phase, index) => (
                 <div key={phase.step} className={`relative grid md:grid-cols-2 gap-8 items-center ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
                   {index % 2 === 0 ? (
                     <>
-                      <Card className="p-8 border-2 border-orange-200 bg-gradient-to-br from-orange-50/50 to-white hover:shadow-xl transition-all md:ml-auto">
+                      <Card className="p-8 border-2 border-[hsl(var(--accent-blue))]/30 bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white hover:shadow-xl transition-all md:ml-auto hover:border-[hsl(var(--accent-blue))]/50">
                         <div className="flex items-center gap-4 mb-4">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 text-white font-bold text-xl shadow-lg">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white font-bold text-xl shadow-lg">
                             {phase.step}
                           </div>
                           <div>
                             <h3 className="text-xl font-bold text-[hsl(var(--navy))]">{phase.title}</h3>
-                            <span className="text-sm text-orange-600 font-semibold">{phase.duration}</span>
+                            <span className="text-sm text-[hsl(var(--accent-blue))] font-semibold">{phase.duration}</span>
                           </div>
                         </div>
                         <p className="text-slate-600 leading-relaxed">{phase.description}</p>
@@ -509,14 +506,14 @@ export default function ReliabilityPerformanceEngineering() {
                   ) : (
                     <>
                       <div className="hidden md:block" />
-                      <Card className="p-8 border-2 border-orange-200 bg-gradient-to-br from-orange-50/50 to-white hover:shadow-xl transition-all">
+                      <Card className="p-8 border-2 border-[hsl(var(--accent-blue))]/30 bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white hover:shadow-xl transition-all hover:border-[hsl(var(--accent-blue))]/50">
                         <div className="flex items-center gap-4 mb-4">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 text-white font-bold text-xl shadow-lg">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white font-bold text-xl shadow-lg">
                             {phase.step}
                           </div>
                           <div>
                             <h3 className="text-xl font-bold text-[hsl(var(--navy))]">{phase.title}</h3>
-                            <span className="text-sm text-orange-600 font-semibold">{phase.duration}</span>
+                            <span className="text-sm text-[hsl(var(--accent-blue))] font-semibold">{phase.duration}</span>
                           </div>
                         </div>
                         <p className="text-slate-600 leading-relaxed">{phase.description}</p>
@@ -524,14 +521,14 @@ export default function ReliabilityPerformanceEngineering() {
                     </>
                   )}
                   {/* Center Circle */}
-                  <div className="hidden md:block absolute left-[50%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-orange-500 border-4 border-white shadow-lg z-10" />
+                  <div className="hidden md:block absolute left-[50%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[hsl(var(--accent-blue))] border-4 border-white shadow-lg z-10" />
                 </div>
               ))}
             </div>
           </div>
 
           <div className="mt-12 text-center">
-            <Button variant="primary" size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
+            <Button variant="primary" size="lg" asChild>
               <Link to="/contact" className="flex items-center gap-2">
                 <span>Start Your Journey</span>
                 <ArrowRight className="h-4 w-4" />
@@ -545,7 +542,7 @@ export default function ReliabilityPerformanceEngineering() {
       <section className="section-space bg-[hsl(var(--background))]">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow text-orange-600">Why choose us</span>
+            <span className="eyebrow text-[hsl(var(--accent-blue))]">Why choose us</span>
             <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
               HiTechLogic vs. In-House Reliability Teams
             </h2>
@@ -564,7 +561,7 @@ export default function ReliabilityPerformanceEngineering() {
                 <tr className="border-b border-slate-200">
                   <td className="p-4 font-medium text-slate-900">Time to Value</td>
                   <td className="p-4 text-center">
-                    <div className="text-orange-600 font-bold">2-4 weeks</div>
+                    <div className="text-[hsl(var(--accent-blue))] font-bold">2-4 weeks</div>
                     <div className="text-xs text-slate-500">Immediate expertise</div>
                   </td>
                   <td className="p-4 text-center">
@@ -575,8 +572,8 @@ export default function ReliabilityPerformanceEngineering() {
                 <tr className="border-b border-slate-200 bg-slate-50">
                   <td className="p-4 font-medium text-slate-900">SRE Expertise Level</td>
                   <td className="p-4 text-center">
-                    <div className="text-orange-600 font-bold">Senior (15+ years)</div>
-                    <div className="text-xs text-slate-500">Google-trained SREs</div>
+                    <div className="text-[hsl(var(--accent-blue))] font-bold">Senior (15+ years)</div>
+                    <div className="text-xs text-slate-500">Expert SREs</div>
                   </td>
                   <td className="p-4 text-center">
                     <div className="text-slate-600">Varies widely</div>
@@ -586,7 +583,7 @@ export default function ReliabilityPerformanceEngineering() {
                 <tr className="border-b border-slate-200">
                   <td className="p-4 font-medium text-slate-900">Annual Cost</td>
                   <td className="p-4 text-center">
-                    <div className="text-orange-600 font-bold">$120K-$180K</div>
+                    <div className="text-[hsl(var(--accent-blue))] font-bold">$120K-$180K</div>
                     <div className="text-xs text-slate-500">Scalable engagement</div>
                   </td>
                   <td className="p-4 text-center">
@@ -597,7 +594,7 @@ export default function ReliabilityPerformanceEngineering() {
                 <tr className="border-b border-slate-200 bg-slate-50">
                   <td className="p-4 font-medium text-slate-900">Tools & Methodology</td>
                   <td className="p-4 text-center">
-                    <div className="text-orange-600 font-bold">Battle-tested</div>
+                    <div className="text-[hsl(var(--accent-blue))] font-bold">Battle-tested</div>
                     <div className="text-xs text-slate-500">Proven frameworks</div>
                   </td>
                   <td className="p-4 text-center">
@@ -608,7 +605,7 @@ export default function ReliabilityPerformanceEngineering() {
                 <tr className="border-b border-slate-200">
                   <td className="p-4 font-medium text-slate-900">Cross-Industry Knowledge</td>
                   <td className="p-4 text-center">
-                    <div className="text-orange-600 font-bold">100+ clients</div>
+                    <div className="text-[hsl(var(--accent-blue))] font-bold">100+ clients</div>
                     <div className="text-xs text-slate-500">Diverse patterns</div>
                   </td>
                   <td className="p-4 text-center">
@@ -619,7 +616,7 @@ export default function ReliabilityPerformanceEngineering() {
                 <tr className="bg-slate-50">
                   <td className="p-4 font-medium text-slate-900">Scalability</td>
                   <td className="p-4 text-center">
-                    <div className="text-orange-600 font-bold">Elastic</div>
+                    <div className="text-[hsl(var(--accent-blue))] font-bold">Elastic</div>
                     <div className="text-xs text-slate-500">Scale up/down instantly</div>
                   </td>
                   <td className="p-4 text-center">
@@ -632,7 +629,7 @@ export default function ReliabilityPerformanceEngineering() {
           </div>
 
           <div className="mt-8 text-center">
-            <Button variant="primary" size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
+            <Button variant="primary" size="lg" asChild>
               <Link to="/pricing">See Pricing Plans</Link>
             </Button>
           </div>
@@ -643,7 +640,7 @@ export default function ReliabilityPerformanceEngineering() {
       <section className="section-space bg-white">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow text-orange-600">Core capabilities</span>
+            <span className="eyebrow text-[hsl(var(--accent-blue))]">Core capabilities</span>
             <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
               Comprehensive reliability engineering
             </h2>
@@ -656,13 +653,13 @@ export default function ReliabilityPerformanceEngineering() {
             {capabilities.map((capability, index) => (
               <Card
                 key={capability.title}
-                className="p-8 hover:shadow-xl transition-all duration-300 border-2 hover:border-orange-300 group hover:-translate-y-1"
+                className="p-8 hover:shadow-xl transition-all duration-300 border-2 hover:border-[hsl(var(--accent-blue))]/30 group hover:-translate-y-1"
                 style={{
                   animationDelay: `${index * 0.1}s`,
                 }}
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500/10 to-orange-600/5 group-hover:from-orange-500/20 group-hover:to-orange-600/10 transition-all">
-                  <capability.icon className="h-6 w-6 text-orange-600" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 group-hover:from-[hsl(var(--accent-blue))]/20 group-hover:to-[hsl(var(--navy))]/10 transition-all">
+                  <capability.icon className="h-6 w-6 text-[hsl(var(--accent-blue))]" />
                 </div>
                 <h3 className="mt-4 text-xl font-semibold text-[hsl(var(--navy))]">{capability.title}</h3>
                 <p className="mt-3 text-slate-600 leading-relaxed">{capability.description}</p>
@@ -677,14 +674,14 @@ export default function ReliabilityPerformanceEngineering() {
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="grid md:grid-cols-2 gap-16">
             <div>
-              <span className="eyebrow text-orange-600">Business value</span>
+              <span className="eyebrow text-[hsl(var(--accent-blue))]">Business value</span>
               <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">From reactive to resilient</h2>
               <p className="mt-6 text-lg text-slate-600 leading-relaxed">
                 Stop firefighting and start engineering reliability. Build systems that withstand failures
                 gracefully and recover automatically.
               </p>
               <div className="mt-8">
-                <Button variant="primary" size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
+                <Button variant="primary" size="lg" asChild>
                   <Link to="/demo" className="flex items-center gap-2">
                     <span>See Platform Demo</span>
                     <ArrowRight className="h-4 w-4" />
@@ -696,12 +693,12 @@ export default function ReliabilityPerformanceEngineering() {
               {benefits.map((benefit, index) => (
                 <div
                   key={benefit}
-                  className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-orange-50/50 to-transparent hover:from-orange-50 transition-all hover:scale-105"
+                  className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-[hsl(var(--accent-blue))]/10 to-transparent hover:from-[hsl(var(--accent-blue))]/15 transition-all hover:scale-105"
                   style={{
                     animationDelay: `${index * 0.1}s`,
                   }}
                 >
-                  <CheckCircle2 className="h-6 w-6 text-orange-600 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5" />
                   <span className="text-slate-700 leading-relaxed">{benefit}</span>
                 </div>
               ))}
@@ -714,21 +711,21 @@ export default function ReliabilityPerformanceEngineering() {
       <section className="section-space bg-white">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow text-orange-600">Common scenarios</span>
+            <span className="eyebrow text-[hsl(var(--accent-blue))]">Common scenarios</span>
             <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">Reliability for mission-critical systems</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {useCases.map((useCase) => (
-              <Card key={useCase.title} className="p-8 border-2 hover:border-orange-300 hover:shadow-xl transition-all hover:-translate-y-1 group">
+              <Card key={useCase.title} className="p-8 border-2 hover:border-[hsl(var(--accent-blue))]/30 hover:shadow-xl transition-all hover:-translate-y-1 group">
                 <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-orange-500/10 to-orange-600/5 group-hover:from-orange-500/20 group-hover:to-orange-600/10 transition-all">
-                    <useCase.icon className="h-6 w-6 text-orange-600" />
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 group-hover:from-[hsl(var(--accent-blue))]/20 group-hover:to-[hsl(var(--navy))]/10 transition-all">
+                    <useCase.icon className="h-6 w-6 text-[hsl(var(--accent-blue))]" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
                       <h3 className="text-xl font-bold text-[hsl(var(--navy))]">{useCase.title}</h3>
-                      <span className="text-xs font-semibold px-2 py-1 rounded-full bg-orange-100 text-orange-700">{useCase.industry}</span>
+                      <span className="text-xs font-semibold px-2 py-1 rounded-full bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 text-[hsl(var(--accent-blue))] border border-[hsl(var(--accent-blue))]/30">{useCase.industry}</span>
                     </div>
                     <p className="mt-2 text-slate-600 leading-relaxed">{useCase.description}</p>
                   </div>
@@ -738,7 +735,7 @@ export default function ReliabilityPerformanceEngineering() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button variant="primary" size="lg" asChild className="bg-orange-600 hover:bg-orange-700">
+            <Button variant="primary" size="lg" asChild>
               <Link to="/case-studies">Read Customer Stories</Link>
             </Button>
           </div>
@@ -746,10 +743,10 @@ export default function ReliabilityPerformanceEngineering() {
       </section>
 
       {/* FAQ Section */}
-      <section className="section-space bg-gradient-to-br from-slate-50 to-orange-50/30">
+      <section className="section-space bg-gradient-to-br from-slate-50 to-slate-100">
         <div className="mx-auto w-full max-w-4xl px-6">
           <div className="text-center mb-16">
-            <span className="eyebrow text-orange-600">Common questions</span>
+            <span className="eyebrow text-[hsl(var(--accent-blue))]">Common questions</span>
             <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">
               Everything you need to know
             </h2>
@@ -757,18 +754,18 @@ export default function ReliabilityPerformanceEngineering() {
 
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <Card key={index} className="border-2 border-orange-100 overflow-hidden">
+              <Card key={index} className="border-2 border-[hsl(var(--accent-blue))]/20 overflow-hidden">
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full p-6 text-left flex items-center justify-between hover:bg-orange-50/50 transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between hover:bg-[hsl(var(--accent-blue))]/5 transition-colors"
                 >
                   <span className="font-semibold text-[hsl(var(--navy))] pr-8">{faq.question}</span>
                   <ChevronDown
-                    className={`h-5 w-5 text-orange-600 shrink-0 transition-transform ${openFaq === index ? 'rotate-180' : ''}`}
+                    className={`h-5 w-5 text-[hsl(var(--accent-blue))] shrink-0 transition-transform ${openFaq === index ? 'rotate-180' : ''}`}
                   />
                 </button>
                 {openFaq === index && (
-                  <div className="px-6 pb-6 text-slate-600 leading-relaxed border-t border-orange-100 pt-4">
+                  <div className="px-6 pb-6 text-slate-600 leading-relaxed border-t border-[hsl(var(--accent-blue))]/20 pt-4">
                     {faq.answer}
                   </div>
                 )}
@@ -778,7 +775,7 @@ export default function ReliabilityPerformanceEngineering() {
 
           <div className="mt-12 text-center">
             <p className="text-slate-600 mb-4">Still have questions?</p>
-            <Button variant="outline" size="lg" asChild className="border-orange-600 text-orange-600 hover:bg-orange-50">
+            <Button variant="outline" size="lg" asChild>
               <Link to="/contact">Contact Our Team</Link>
             </Button>
           </div>
@@ -786,15 +783,15 @@ export default function ReliabilityPerformanceEngineering() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="section-space bg-gradient-to-br from-orange-600 to-[hsl(var(--navy))]">
+      <section className="section-space bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))]">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white">Ready to engineer world-class reliability?</h2>
-          <p className="mt-6 text-xl text-orange-100">
+          <p className="mt-6 text-xl text-blue-100">
             Let's build SLO frameworks, establish performance baselines, and create resilient systems
             that scale with confidence.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Button variant="secondary" size="xl" asChild className="bg-white text-orange-600 hover:bg-orange-50 hover:scale-105 transition-transform">
+            <Button variant="secondary" size="xl" asChild className="bg-white text-[hsl(var(--accent-blue))] hover:bg-slate-50 hover:scale-105 transition-transform">
               <Link to="/contact" className="flex items-center gap-2">
                 <span>Schedule Strategy Session</span>
                 <ArrowRight className="h-5 w-5" />
@@ -806,12 +803,12 @@ export default function ReliabilityPerformanceEngineering() {
           </div>
 
           {/* Risk-Free Guarantee */}
-          <div className="mt-16 pt-8 border-t border-orange-400/30">
+          <div className="mt-16 pt-8 border-t border-blue-400/30">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <Shield className="h-6 w-6 text-orange-200" />
-              <span className="text-orange-100 font-semibold text-lg">Risk-Free Guarantee</span>
+              <Shield className="h-6 w-6 text-blue-200" />
+              <span className="text-blue-100 font-semibold text-lg">Risk-Free Guarantee</span>
             </div>
-            <p className="text-orange-100/90 max-w-2xl mx-auto">
+            <p className="text-blue-100/90 max-w-2xl mx-auto">
               Not satisfied with our SLO framework or engineering recommendations within the first 30 days?
               We'll refund 100% of your investment, no questions asked. Your success is our only metric.
             </p>

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
+import WhyDifferentSection from "@/components/sections/WhyDifferentSection";
 import {
   Activity,
   BarChart3,
@@ -328,153 +329,8 @@ export default function InfrastructureCloudOperations() {
           </div>
         </section>
 
-        {/* Business Impact */}
-        <section className="section-space bg-white">
-          <div className="mx-auto w-full max-w-6xl px-6">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="eyebrow text-[hsl(var(--accent-blue))]">Proven results</span>
-              <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
-                Infrastructure that drives business success
-              </h2>
-              <p className="mt-6 text-lg text-slate-600">
-                Reliable infrastructure enables business growth. Our clients see improved performance,
-                reduced costs, and the ability to focus on their core business objectives.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              {[
-                {
-                  metric: "99.99%",
-                  label: "Uptime Availability",
-                  description: "Guaranteed uptime across all managed infrastructure",
-                },
-                {
-                  metric: "<15 min",
-                  label: "Incident Response",
-                  description: "Average time to respond and resolve critical issues",
-                },
-                {
-                  metric: "40%",
-                  label: "Cost Optimization",
-                  description: "Reduction in cloud infrastructure costs through right-sizing",
-                },
-                {
-                  metric: "100%",
-                  label: "Change Success Rate",
-                  description: "Zero-downtime deployments and configuration changes",
-                },
-              ].map((result, index) => (
-                <Card key={result.label} className="p-6 text-center border-2 hover:border-[hsl(var(--accent-blue))]/30 hover:shadow-xl transition-all hover:-translate-y-1 duration-300 group">
-                  <div className="text-3xl md:text-4xl font-bold text-[hsl(var(--accent-blue))] mb-2">{result.metric}</div>
-                  <div className="text-lg font-semibold text-[hsl(var(--navy))] mb-2">{result.label}</div>
-                  <div className="text-sm text-slate-600">{result.description}</div>
-                </Card>
-              ))}
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-16">
-              <div>
-                <h3 className="text-2xl font-bold text-[hsl(var(--navy))] mb-6">Operational Benefits</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-50/50 to-transparent hover:from-blue-50 transition-all hover:translate-x-2 duration-300 group">
-                    <Shield className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-semibold text-[hsl(var(--navy))]">Production Reliability</div>
-                      <div className="text-slate-600">Infrastructure that never goes down with automated failover and recovery</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-50/50 to-transparent hover:from-blue-50 transition-all hover:translate-x-2 duration-300 group">
-                    <BarChart3 className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-semibold text-[hsl(var(--navy))]">Cost Optimization</div>
-                      <div className="text-slate-600">Right-sized resources with automated scaling and reserved instance management</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-50/50 to-transparent hover:from-blue-50 transition-all hover:translate-x-2 duration-300 group">
-                    <Clock className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-semibold text-[hsl(var(--navy))]">Fast Issue Resolution</div>
-                      <div className="text-slate-600">Rapid diagnosis and resolution of infrastructure incidents</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-[hsl(var(--navy))] mb-6">Business Impact</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-green-50/50 to-transparent hover:from-green-50 transition-all hover:translate-x-2 duration-300 group">
-                    <Target className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-semibold text-[hsl(var(--navy))]">Innovation Focus</div>
-                      <div className="text-slate-600">Development teams can focus on features instead of infrastructure maintenance</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-green-50/50 to-transparent hover:from-green-50 transition-all hover:translate-x-2 duration-300 group">
-                    <Users className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-semibold text-[hsl(var(--navy))]">Improved Customer Experience</div>
-                      <div className="text-slate-600">More reliable applications lead to better user satisfaction and retention</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-green-50/50 to-transparent hover:from-green-50 transition-all hover:translate-x-2 duration-300 group">
-                    <BarChart3 className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-semibold text-[hsl(var(--accent-blue))]">Revenue Protection</div>
-                      <div className="text-slate-600">Downtime prevention protects critical business revenue streams</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Why HiTechLogic Is Different */}
-        <section className="section-space bg-gradient-to-br from-slate-50 to-blue-50/20">
-          <div className="mx-auto w-full max-w-6xl px-6">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="eyebrow text-[hsl(var(--accent-blue))]">Why HiTechLogic Is Different</span>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold text-[hsl(var(--navy))]">
-                Enterprise-Grade Infrastructure Excellence
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="p-6 border-2 border-[hsl(var(--accent-blue))]/20 bg-white hover:border-[hsl(var(--accent-blue))]/40 hover:shadow-lg transition-all duration-300 text-center">
-                <div className="flex h-12 w-12 mx-auto mb-4 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white font-bold">
-                  AI
-                </div>
-                <h3 className="font-semibold text-[hsl(var(--navy))] mb-2">Adaptive AI Learning</h3>
-                <p className="text-sm text-slate-600">Environment-specific training for predictive issue prevention</p>
-              </Card>
-
-              <Card className="p-6 border-2 border-[hsl(var(--accent-blue))]/20 bg-white hover:border-[hsl(var(--accent-blue))]/40 hover:shadow-lg transition-all duration-300 text-center">
-                <div className="flex h-12 w-12 mx-auto mb-4 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white text-xl">
-                  📊
-                </div>
-                <h3 className="font-semibold text-[hsl(var(--navy))] mb-2">Executive Dashboards</h3>
-                <p className="text-sm text-slate-600">Board-ready reporting with real-time KPIs and analytics</p>
-              </Card>
-
-              <Card className="p-6 border-2 border-[hsl(var(--accent-blue))]/20 bg-white hover:border-[hsl(var(--accent-blue))]/40 hover:shadow-lg transition-all duration-300 text-center">
-                <div className="flex h-12 w-12 mx-auto mb-4 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white text-xl">
-                  🔗
-                </div>
-                <h3 className="font-semibold text-[hsl(var(--navy))] mb-2">Tool Integration</h3>
-                <p className="text-sm text-slate-600">Works with Datadog, Dynatrace, NewRelic, Splunk, Grafana</p>
-              </Card>
-
-              <Card className="p-6 border-2 border-[hsl(var(--accent-blue))]/20 bg-white hover:border-[hsl(var(--accent-blue))]/40 hover:shadow-lg transition-all duration-300 text-center">
-                <div className="flex h-12 w-12 mx-auto mb-4 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white text-xl">
-                  ⚡
-                </div>
-                <h3 className="font-semibold text-[hsl(var(--navy))] mb-2">Fast Implementation</h3>
-                <p className="text-sm text-slate-600">Zero-disruption deployment in under 8 weeks</p>
-              </Card>
-            </div>
-          </div>
-        </section>
+        <WhyDifferentSection />
 
         {/* Why customers replace legacy monitoring with HiTechLogic */}
         <section className="section-space bg-gradient-to-br from-slate-50 to-white">

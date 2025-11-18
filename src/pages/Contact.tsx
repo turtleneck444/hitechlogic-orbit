@@ -20,9 +20,6 @@ import {
   Clock,
   Shield,
   Users,
-  Zap,
-  Heart,
-  Target,
   ArrowRight,
   MessageSquare,
   Globe,
@@ -122,8 +119,8 @@ export default function Contact() {
               </div>
               <span className="text-sm font-medium text-white/90 tracking-wide">Contact HiTechLogic</span>
             </div>
-            <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
-              How Can We
+            <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-white">
+              How Can We{" "}
               <span className="text-[hsl(var(--accent-blue))] block sm:inline">Help You Today?</span>
             </h1>
             <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed">
@@ -339,83 +336,6 @@ export default function Contact() {
           </div>
         </section>
 
-        {/* Enterprise Commitment */}
-        <section className="section-space bg-gradient-to-br from-[hsl(var(--navy))] via-[hsl(var(--graphite))] to-[hsl(var(--navy))]">
-          <div className="container mx-auto px-6 max-w-6xl text-center">
-            <div className="max-w-4xl mx-auto">
-              <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 shadow-xl mb-12">
-                <Heart className="h-6 w-6 text-red-400" />
-                <span className="text-xl font-bold text-white">Our Commitment</span>
-              </div>
-              <h2 className="text-4xl md:text-6xl font-black text-white mb-8">
-                Enterprise Trust,
-                <span className="block bg-gradient-to-r from-red-400 via-pink-500 to-purple-500 bg-clip-text text-transparent">Human Partnership</span>
-              </h2>
-              <div className="text-xl text-white/80 space-y-6 mb-12 max-w-4xl mx-auto">
-                <p>
-                  We've built HiTechLogic on the belief that infrastructure operations should be as reliable as gravity itself.
-                  Every decision, every process, every interaction is designed to uphold that promise while treating our partners with the respect and capability they deserve.
-                </p>
-                <p>
-                  When you work with us, you're not just another client—you're a strategic partner in operational excellence.
-                  We measure our success by your outcomes, not our outputs.
-                </p>
-              </div>
-              <div className="grid md:grid-cols-4 gap-6 mb-12">
-                {[
-                  { icon: Shield, title: "Zero Compromises", desc: "Unbreakable reliability guarantees" },
-                  { icon: Users, title: "True Partnership", desc: "Shared ownership of outcomes" },
-                  { icon: Zap, title: "Rapid Response", desc: "5-15 minute incident resolution" },
-                  { icon: Target, title: "Measurable Results", desc: "Quantifiable business impact" },
-                ].map((commitment) => (
-                  <div key={commitment.title} className="text-center group">
-                    <div className="inline-flex h-16 w-16 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 mb-4 group-hover:bg-white/20 transition-colors">
-                      <commitment.icon className="h-8 w-8 text-white" />
-                    </div>
-                    <h3 className="text-lg font-bold text-white mb-2">{commitment.title}</h3>
-                    <p className="text-white/70 text-sm">{commitment.desc}</p>
-                  </div>
-                ))}
-              </div>
-              <Card className="p-8 bg-white/10 backdrop-blur-sm border border-white/20 text-center">
-                <h3 className="text-2xl font-bold text-white mb-4">Ready to Experience Different?</h3>
-                <p className="text-white/80 mb-6">
-                  Join the enterprises that have transformed their infrastructure operations.
-                  Let's discuss how we can deliver the same results for your organization.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button variant="primary" size="xl" asChild className="shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 bg-white text-slate-900 hover:bg-blue-50">
-                    <a href="#consultation" className="flex items-center gap-3 px-8 py-4 text-lg">
-                      <Calendar className="h-6 w-6" />
-                      <span>Schedule Your Consultation</span>
-                      <ArrowRight className="h-6 w-6" />
-                    </a>
-                  </Button>
-                  <Button variant="outline" size="xl" asChild className="border-white text-white hover:bg-white/10 transition-all duration-300">
-                    <a href="mailto:contact@hitechlogic.com" className="flex items-center gap-3 px-8 py-4 text-lg">
-                      <Mail className="h-6 w-6" />
-                      <span>Email Our Team</span>
-                    </a>
-                  </Button>
-                </div>
-                <div className="flex flex-wrap justify-center gap-6 mt-8 text-sm text-white/60">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-400" />
-                    <span>No obligation consultation</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-400" />
-                    <span>NDA-ready partnership discussion</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="h-4 w-4 text-green-400" />
-                    <span>Executive-level strategic guidance</span>
-                  </div>
-                </div>
-              </Card>
-            </div>
-          </div>
-        </section>
       </Layout>
     </>
   );

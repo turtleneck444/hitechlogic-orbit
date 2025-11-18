@@ -113,6 +113,12 @@ export const industries: Industry[] = [
         title: "Cost Efficiency & Capacity Strategy",
         description: "Automated FinOps with predictive capacity planning and cost optimization.",
         outcome: "35% cost reduction, 95% forecast accuracy"
+      },
+      {
+        id: "strategic-technology-partnership",
+        title: "Strategic Technology Partnership",
+        description: "Executive alignment that ties your infrastructure operations to product vision and enterprise outcomes.",
+        outcome: "Aligned leadership, measurable innovation velocity"
       }
     ],
     href: "/industries/technology"
@@ -204,6 +210,12 @@ export const industries: Industry[] = [
         outcome: "30% infrastructure cost reduction, precise capacity planning"
       },
       {
+        id: "rapid-prototyping",
+        title: "Rapid Prototyping & Development",
+        description: "Accelerated financial feature delivery with AI-assisted prototyping and compliance review.",
+        outcome: "Compliance-ready pilots in weeks, 4x faster launch cadence"
+      },
+      {
         id: "strategic-technology-partnership",
         title: "Strategic Technology Partnership",
         description: "Executive-level guidance for technology strategy and regulatory compliance partnerships.",
@@ -267,44 +279,50 @@ export const industries: Industry[] = [
       {
         id: "security-identity-assurance",
         title: "Security & Identity Assurance",
-        description: "Healthcare compliance automation, patient data protection, and healthcare-specific security controls.",
-        outcome: "Zero patient data breaches, 100% healthcare compliance, continuous audit readiness"
+        description: "Healthcare compliance automation, patient data protection, and zero-trust controls.",
+        outcome: "Zero patient data breaches, audit-readiness on demand"
       },
       {
         id: "infrastructure-cloud-operations",
         title: "Infrastructure & Cloud Operations",
-        description: "Mission-critical healthcare infrastructure with 99.999% availability and patient safety monitoring.",
-        outcome: "Zero downtime during critical care, automated failover capabilities"
+        description: "Clinician-grade infrastructure with redundant failover, compliance reporting, and sensor reliability.",
+        outcome: "99.999% availability during critical care windows"
       },
       {
         id: "system-oversight-event-reduction",
         title: "System Oversight & Event Reduction",
-        description: "Clinical system monitoring, real-time alerting, and patient safety event correlation.",
-        outcome: "Real-time patient safety monitoring, instant incident response"
+        description: "Real-time clinical telemetry, alert noise reduction, and patient safety event correlation.",
+        outcome: "Real-time patient safety insight, <2-minute detection"
       },
       {
         id: "reliability-performance-engineering",
         title: "Reliability & Performance Engineering",
-        description: "High-reliability architecture for EHR systems and clinical decision support platforms.",
-        outcome: "Zero patient safety incidents, 100% system availability"
+        description: "EHR and clinical system engineering with strict SLOs and performance guardrails.",
+        outcome: "Zero interruptions, 100% SLO compliance for care delivery"
       },
       {
         id: "automated-corrective-actions",
         title: "Automated Corrective Actions",
-        description: "Self-healing automation for healthcare systems with patient data protection guardrails.",
-        outcome: "Instant system recovery, automated compliance corrective actions"
-      },
-      {
-        id: "infrastructure-cloud-operations",
-        title: "Strategy & Partnership",
-        description: "Healthcare technology strategy, regulatory guidance, and healthcare compliance expertise.",
-        outcome: "Regulatory confidence, technology strategy alignment"
+        description: "Self-healing automation that keeps healthcare workflows compliant while remediating incidents.",
+        outcome: "Instant recovery, automated compliance reporting"
       },
       {
         id: "cost-efficiency-capacity-strategy",
         title: "Cost Efficiency & Capacity Strategy",
-        description: "Healthcare FinOps with predictive capacity planning for patient volume and seasonal fluctuations.",
-        outcome: "Cost-effective scaling, optimized resource utilization"
+        description: "Healthcare FinOps with volume-based capacity planning for seasonal peaks.",
+        outcome: "Optimized spend, predictable care capacity"
+      },
+      {
+        id: "rapid-prototyping",
+        title: "Rapid Prototyping & Development",
+        description: "Clinical innovation prototyping with compliance review baked in.",
+        outcome: "Compliance-ready pilots in weeks, patient-safe rollouts"
+      },
+      {
+        id: "strategic-technology-partnership",
+        title: "Strategic Technology Partnership",
+        description: "Executive support for healthcare digital transformation, governance, and compliance leadership.",
+        outcome: "Aligned leadership, measurable patient outcomes"
       }
     ],
     href: "/industries/healthcare"
@@ -402,6 +420,12 @@ export const industries: Industry[] = [
         title: "Rapid Prototyping & Development",
         description: "Fast feature deployment and A/B testing for e-commerce optimization.",
         outcome: "4x faster feature deployment, data-driven optimization"
+      },
+      {
+        id: "strategic-technology-partnership",
+        title: "Strategic Technology Partnership",
+        description: "Executive alignment that ties infrastructure operations to revenue targets and seasonal plans.",
+        outcome: "Aligned leadership, resilient peak-season execution"
       }
     ],
     href: "/industries/ecommerce"
@@ -499,6 +523,12 @@ export const industries: Industry[] = [
         title: "Rapid Prototyping & Development",
         description: "Accelerated SaaS feature development with AI-assisted prototyping.",
         outcome: "6x faster product development, competitive feature advantage"
+      },
+      {
+        id: "strategic-technology-partnership",
+        title: "Strategic Technology Partnership",
+        description: "Executive alignment that ties platform operations to roadmap velocity and enterprise expectations.",
+        outcome: "Aligned teams, measurable business outcomes"
       }
     ],
     href: "/industries/saas"

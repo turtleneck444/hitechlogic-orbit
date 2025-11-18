@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
+import WhyDifferentSection from "@/components/sections/WhyDifferentSection";
 import {
   Activity,
   TrendingUp,
@@ -462,85 +463,7 @@ export default function SystemOversightEventReduction() {
         </section>
 
         {/* Why HiTechLogic Is Different */}
-        <section className="section-space bg-gradient-to-br from-slate-50 to-blue-50/20">
-          <div className="mx-auto w-full max-w-6xl px-6">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="eyebrow text-[hsl(var(--accent-blue))]">Why HiTechLogic Is Different</span>
-              <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
-                Enterprise-Grade Infrastructure Perfection
-              </h2>
-            </div>
-
-            <Card className="p-8 border-2 border-[hsl(var(--accent-blue))]/20 bg-gradient-to-br from-white to-blue-50/30 group hover:border-[hsl(var(--accent-blue))]/50 transition-all duration-500">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/80 border border-slate-200 hover:border-[hsl(var(--accent-blue))]/30 transition-all hover:translate-x-2 duration-300 group/item">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white text-lg font-bold group-hover/item:scale-110 transition-transform duration-300">
-                      AI
-                    </div>
-                    <div>
-                      <div className="font-semibold text-[hsl(var(--navy))]">Adaptive AI trained on your environment — not generic datasets</div>
-                      <div className="text-slate-600 mt-1">Our AI learns your specific infrastructure patterns, predicting issues before they impact production</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/80 border border-slate-200 hover:border-[hsl(var(--accent-blue))]/30 transition-all hover:translate-x-2 duration-300 group/item">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white text-lg font-bold group-hover/item:scale-110 transition-transform duration-300">
-                      📊
-                    </div>
-                    <div>
-                      <div className="font-semibold text-[hsl(var(--navy))]">Executive-level dashboards tailored to board reporting</div>
-                      <div className="text-slate-600 mt-1">C-level dashboards with real-time KPIs and predictive analytics for informed decision-making</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/80 border border-slate-200 hover:border-[hsl(var(--accent-blue))]/30 transition-all hover:translate-x-2 duration-300 group/item">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white text-lg font-bold group-hover/item:scale-110 transition-transform duration-300">
-                      🔗
-                    </div>
-                    <div>
-                      <div className="font-semibold text-[hsl(var(--navy))]">Seamless integration with existing tools (Datadog, Dynatrace, NewRelic, Splunk, Grafana)</div>
-                      <div className="text-slate-600 mt-1">Works with your current monitoring stack, no rip-and-replace required</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/80 border border-slate-200 hover:border-[hsl(var(--accent-blue))]/30 transition-all hover:translate-x-2 duration-300 group/item">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white text-lg font-bold group-hover/item:scale-110 transition-transform duration-300">
-                      👥
-                    </div>
-                    <div>
-                      <div className="font-semibold text-[hsl(var(--navy))]">24/7 onshore SOC + AI co-pilot</div>
-                      <div className="text-slate-600 mt-1">American-based security operations center with AI assistance for threat detection and response</div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/80 border border-slate-200 hover:border-[hsl(var(--accent-blue))]/30 transition-all hover:translate-x-2 duration-300 group/item">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white text-lg font-bold group-hover/item:scale-110 transition-transform duration-300">
-                      ⚡
-                    </div>
-                    <div>
-                      <div className="font-semibold text-[hsl(var(--navy))]">Zero disruption implementation in {"< 8 weeks"}</div>
-                      <div className="text-slate-600 mt-1">Non-invasive deployment that doesn't impact your existing operations</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="text-center">
-                  <div className="bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 rounded-2xl p-8 border border-[hsl(var(--accent-blue))]/20">
-                    <Zap className="h-16 w-16 text-[hsl(var(--accent-blue))] mx-auto mb-6" />
-                    <h3 className="text-2xl font-bold text-[hsl(var(--navy))] mb-4">Not Just Another MSP</h3>
-                    <p className="text-slate-600 leading-relaxed mb-6">
-                      While others offer basic monitoring, we deliver intelligent infrastructure optimization
-                      powered by context-aware AI and proven enterprise methodologies.
-                    </p>
-                    <div className="text-4xl font-black text-[hsl(var(--accent-blue))]">99.99%</div>
-                    <div className="text-sm font-semibold text-slate-600">Sustained Uptime</div>
-                  </div>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </section>
+        <WhyDifferentSection />
 
         {/* Why customers replace legacy monitoring with HiTechLogic */}
         <section className="section-space bg-gradient-to-br from-slate-50 to-white">

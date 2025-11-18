@@ -48,12 +48,12 @@ export function ServiceExplorer() {
       <div className="relative z-10">
         {/* Blended Top Transition */}
         <div className="w-full bg-white relative">
-          <div className="absolute inset-0 z-[1] opacity-15 rotate-180">
+          <div className="absolute inset-0 -z-10 opacity-15 rotate-180">
             <BackgroundPaths />
           </div>
-          <div className="absolute inset-0 z-[2] bg-white/20" />
-          <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-slate-50/30 to-slate-50/0 z-[3]" />
-          <div className="mx-auto w-full max-w-[1360px] 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-12 py-8 lg:py-12 relative z-10">
+          <div className="absolute inset-0 -z-10 bg-white/20" />
+          <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-slate-50/30 to-slate-50/0 -z-10" />
+          <div className="mx-auto w-full max-w-[1360px] 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-12 py-8 lg:py-12 relative z-20">
             <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_420px] items-stretch">
               <div>
                 <span className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--accent-blue))]/30 bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[hsl(var(--accent-blue))]">

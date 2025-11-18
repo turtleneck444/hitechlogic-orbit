@@ -75,10 +75,10 @@ export default function Healthcare() {
               </div>
               <span className="text-sm font-medium text-white/90 tracking-wide">Healthcare</span>
             </div>
-            <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
-              Patient Safety Through
-              <span className="text-[hsl(var(--accent-blue))]">Technology Reliability</span>
-            </h1>
+          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-white">
+            Patient Safety Through{" "}
+            <span className="text-[hsl(var(--accent-blue))] block sm:inline">Technology Reliability</span>
+          </h1>
             <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed">
               Healthcare organizations trust us to safeguard patient data, ensure system availability during critical moments,
               and maintain strict regulatory compliance with healthcare standards.
@@ -166,18 +166,20 @@ export default function Healthcare() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {industry.services.map((service, index) => (
                 <Card
                   key={service.id}
-                  className="p-6 text-center hover:shadow-xl transition-all duration-300 border-2 hover:border-[hsl(var(--accent-blue))]/30 group hover:-translate-y-1"
+                  className="p-6 text-left h-full flex flex-col justify-between border-2 border-slate-100 bg-white/80 shadow-sm hover:shadow-xl transition-all duration-300 hover:border-[hsl(var(--accent-blue))]/30 group hover:-translate-y-1"
                   style={{
                     animationDelay: `${index * 0.1}s`,
                   }}
                 >
-                  <h3 className="text-lg font-semibold text-[hsl(var(--navy))] mb-3">{service.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-4">{service.description}</p>
-                  <div className="text-xs text-[hsl(var(--accent-blue))] font-semibold border-t border-slate-100 pt-3">
+                  <div>
+                    <h3 className="text-lg font-semibold text-[hsl(var(--navy))] mb-3">{service.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">{service.description}</p>
+                  </div>
+                  <div className="text-xs text-[hsl(var(--accent-blue))] font-semibold border-t border-slate-100 pt-3 mt-6">
                     {service.outcome}
                   </div>
                 </Card>

@@ -111,25 +111,6 @@ export function Header() {
           : "bg-white shadow-[0_10px_35px_-30px_rgba(30,64,175,0.4)]",
       )}
     >
-      {/* Top Bar */}
-      <div className="w-full border-b border-slate-200 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex h-12 items-center justify-between">
-            <div className="flex items-center gap-3">
-              <span className="text-sm font-semibold text-slate-900">Enterprise Managed Services Provider</span>
-            </div>
-            <div className="hidden md:flex items-center gap-5">
-              <a
-                href="mailto:contact@hitechlogic.com"
-                className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-200"
-              >
-                contact@hitechlogic.com
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main Navigation */}
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">

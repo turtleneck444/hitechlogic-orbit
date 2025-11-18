@@ -57,7 +57,7 @@ export function AIAutomationFlow() {
   const [activeStep, setActiveStep] = useState<string | null>(null);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-slate-50 to-blue-50/30">
+    <section className="pt-12 lg:pt-16 pb-16 bg-gradient-to-br from-slate-50 to-blue-50/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-12">

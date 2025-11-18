@@ -156,8 +156,8 @@ export default function About() {
               </div>
               <span className="text-sm font-medium text-white/90 tracking-wide">About HiTechLogic</span>
             </div>
-            <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
-              Operational Excellence
+            <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-white">
+              Operational Excellence{" "}
               <span className="text-[hsl(var(--accent-blue))] block sm:inline">Perfected</span>
             </h1>
             <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed">

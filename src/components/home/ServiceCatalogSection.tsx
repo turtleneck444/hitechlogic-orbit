@@ -95,7 +95,7 @@ export function ServiceCatalogSection({ services = coreServices, anchorId }: Ser
   );
 
   return (
-    <section id={anchorId} className="section-space bg-white">
+    <section id={anchorId} className="section-space bg-white relative z-30">
       <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-12">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_1fr] items-start">
           <div className="space-y-6">
@@ -171,7 +171,7 @@ export function ServiceCatalogSection({ services = coreServices, anchorId }: Ser
                 onClick={() => setCatalogExpanded((prev) => !prev)}
                 className="group flex w-full items-center justify-between gap-2 rounded-2xl border border-slate-200 bg-white/90 px-4 py-3 text-sm font-semibold text-[hsl(var(--navy))] transition-all hover:border-[hsl(var(--accent-blue))]/40"
               >
-                <span>{catalogExpanded ? "Show Fewer Services" : `View ${services.length - initialServicesToShow} More Services`}</span>
+                <span>{catalogExpanded ? "Show First 3 Services Only" : `View All ${services.length} Services`}</span>
                 <ChevronDown className={`h-5 w-5 text-[hsl(var(--accent-blue))] transition-transform ${catalogExpanded ? "-rotate-180" : ""}`} />
               </button>
             )}

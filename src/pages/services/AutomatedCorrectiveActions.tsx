@@ -61,19 +61,21 @@ export default function AutomatedCorrectiveActions() {
         {/* Hero */}
         <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--navy))] to-[hsl(var(--deep-navy))]">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvZz48L3N2Zz4=')] opacity-20" />
-          <div className="relative mx-auto w-full max-w-6xl px-6 py-24 text-center">
-            <div className="inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm text-white/80 mb-6">
-              <Zap className="h-5 w-5 text-white" />
-              Automated Corrective Actions
+        <div className="relative mx-auto w-full max-w-6xl px-6 pt-32 pb-20 sm:pt-40 sm:pb-28">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg">
+              <Zap className="h-7 w-7 text-[hsl(var(--accent-blue))]" />
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
-              Self-Healing Infrastructure
-              <span className="text-[hsl(var(--accent-blue))] block">Powered by AI Automation</span>
-            </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-              Intelligent remediation that resolves incidents before stakeholders even notice. Built for enterprises that cannot tolerate downtime.
-            </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
+            <span className="text-sm font-medium text-white/90 tracking-wide">Automated Corrective Actions</span>
+          </div>
+          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
+            Self-Healing Infrastructure
+            <span className="text-[hsl(var(--accent-blue))] block">Powered by AI Automation</span>
+          </h1>
+          <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed">
+            Intelligent remediation that resolves incidents before stakeholders even notice. Built for enterprises that cannot tolerate downtime.
+          </p>
+          <div className="mt-10">
               <Button asChild size="xl" className="bg-[hsl(var(--accent-blue))] hover:bg-[hsl(var(--accent-blue))]/90">
                 <Link to="/contact" className="flex items-center gap-2">
                   <Target className="h-5 w-5" />

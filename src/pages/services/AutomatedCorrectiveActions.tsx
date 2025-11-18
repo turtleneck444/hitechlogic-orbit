@@ -173,9 +173,9 @@ export default function AutomatedCorrectiveActions() {
               Stop reacting to alerts and start orchestrating reliability. Our experts will build the corrective actions that keep you ahead of disruption.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="xl" className="bg-white text-[hsl(var(--navy))] hover:bg-slate-50">
+              <Button asChild size="xl" className="bg-white text-black hover:bg-slate-50">
                 <Link to="/contact" className="flex items-center gap-2">
-                  <ArrowRight className="h-5 w-5" />
+                  <ArrowRight className="h-5 w-5 text-black" />
                   Request Automation Workshop
                 </Link>
               </Button>

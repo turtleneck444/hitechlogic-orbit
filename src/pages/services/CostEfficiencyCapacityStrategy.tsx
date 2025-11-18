@@ -79,7 +79,7 @@ const metrics = [
   { label: "Total Savings Delivered", value: "$50M+", icon: DollarSign },
   { label: "Average Cost Reduction", value: "35%", icon: TrendingDown },
   { label: "Forecast Accuracy", value: "95%", icon: Target },
-  { label: "Business Agility", value: "↑", icon: TrendingUp },
+  { label: "Business Agility", value: "", icon: TrendingUp },
 ];
 
 const finOpsJourney = [

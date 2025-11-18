@@ -35,7 +35,7 @@ export const serviceCategories: ServiceCategory[] = [
         benefits: [
           "Reduce attack surface by 80%",
           "Accelerate patch deployment by 60%",
-          "Ensure compliance with SOC 2, ISO 27001, GDPR",
+          "Ensure compliance with enterprise security standards",
         ],
         href: "/services/security-identity-assurance",
       },
@@ -102,7 +102,7 @@ export const serviceCategories: ServiceCategory[] = [
         ],
         benefits: [
           "Identify vulnerabilities before deployment",
-          "Ensure compliance with NIST SSDF",
+          "Ensure compliance with security frameworks",
           "Protect against supply chain attacks",
         ],
         href: "/services/security-identity-assurance",
@@ -343,7 +343,7 @@ export const serviceCategories: ServiceCategory[] = [
         description: "Strategic security guidance and compliance advisory services",
         features: [
           "Security posture assessment",
-          "Compliance roadmap (SOC 2, ISO 27001, HIPAA, PCI-DSS)",
+          "Compliance roadmap for enterprise standards and regulations",
           "Security program development",
           "Executive security training and awareness",
         ],

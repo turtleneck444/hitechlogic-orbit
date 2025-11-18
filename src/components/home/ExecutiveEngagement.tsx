@@ -166,8 +166,8 @@ export function ExecutiveEngagement() {
           </div>
           <p className="text-slate-600 mb-4">
             Our executive partnership model has helped Fortune 500 companies and fast-growing enterprises
-            scale infrastructure, reduce costs, and accelerate innovation—all while maintaining SOC 2, HIPAA,
-            and GDPR compliance.
+            scale infrastructure, reduce costs, and accelerate innovation—all while maintaining enterprise compliance
+            with regulatory standards.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6 text-sm font-semibold text-slate-700">
             <div className="flex items-center gap-2">

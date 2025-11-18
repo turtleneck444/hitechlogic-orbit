@@ -76,10 +76,10 @@ const useCases = [
 ];
 
 const metrics = [
-  { label: "Years Experience", value: "15+", icon: Award },
-  { label: "SLOs Managed", value: "1000+", icon: Target },
-  { label: "Client Satisfaction", value: "98%", icon: Users },
-  { label: "Uptime Achieved", value: "99.99%", icon: TrendingUp },
+  { label: "Uptime Achievement", value: "99.99%", icon: TrendingUp },
+  { label: "MTTR Reduction", value: "90%", icon: Zap },
+  { label: "SLO Success Rate", value: "98%", icon: Target },
+  { label: "Performance Optimization", value: "85%", icon: BarChart3 },
 ];
 
 const engineeringProcess = [
@@ -572,8 +572,8 @@ export default function ReliabilityPerformanceEngineering() {
                 <tr className="border-b border-slate-200 bg-slate-50">
                   <td className="p-4 font-medium text-slate-900">SRE Expertise Level</td>
                   <td className="p-4 text-center">
-                    <div className="text-[hsl(var(--accent-blue))] font-bold">Senior (15+ years)</div>
-                    <div className="text-xs text-slate-500">Expert SREs</div>
+                    <div className="text-[hsl(var(--accent-blue))] font-bold">Senior Expert</div>
+                    <div className="text-xs text-slate-500">Seasoned SRE professionals</div>
                   </td>
                   <td className="p-4 text-center">
                     <div className="text-slate-600">Varies widely</div>

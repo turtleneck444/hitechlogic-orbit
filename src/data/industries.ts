@@ -32,7 +32,7 @@ export const industries: Industry[] = [
     icon: "Code",
     heroImage: "/images/industries/tech-hero.jpg",
     audience: ["Chief Technology Officers", "Chief Information Officers", "VP of Engineering", "VP of Infrastructure", "DevOps Directors"],
-    compliance: ["SOC 2", "ISO 27001", "GDPR", "CCPA"],
+    compliance: ["Enterprise Compliance", "Security Standards", "Privacy Regulations", "Data Protection"],
     challenges: [
       "24/7 uptime requirements with zero maintenance windows",
       "Scaling infrastructure exponentially during growth phases",
@@ -125,7 +125,7 @@ export const industries: Industry[] = [
     icon: "TrendingUp",
     heroImage: "/images/industries/finance-hero.jpg",
     audience: ["Chief Information Security Officers", "Chief Compliance Officers", "Chief Technology Officers", "VP of Risk", "Director of Operations"],
-    compliance: ["SOC 2", "PCI DSS", "GLBA", "FFIEC", "ISO 27001", "GDPR", "HIPAA"],
+    compliance: ["Enterprise Compliance", "Payment Security", "Banking Regulations", "Financial Standards", "Security Frameworks", "Privacy Regulations", "Data Protection"],
     challenges: [
       "Strict regulatory compliance requiring continuous monitoring and reporting",
       "Financial transaction processing that must be available 99.999% of the time",
@@ -216,15 +216,15 @@ export const industries: Industry[] = [
     id: "healthcare",
     name: "Healthcare",
     tagline: "Patient safety and compliance through technology reliability",
-    description: "Healthcare organizations trust us to safeguard patient data, ensure system availability during critical moments, and maintain strict compliance with HIPAA and other healthcare regulations.",
+    description: "Healthcare organizations trust us to safeguard patient data, ensure system availability during critical moments, and maintain strict regulatory compliance with healthcare standards.",
     icon: "Heart",
     heroImage: "/images/industries/healthcare-hero.jpg",
     audience: ["Chief Information Officers", "Chief Compliance Officers", "Chief Technology Officers", "VP of IT", "Director of Clinical Informatics"],
-    compliance: ["HIPAA", "HITECH", "FDA 21 CFR Part 11", "GDPR", "ISO 27001", "HITRUST"],
+    compliance: ["Healthcare Compliance", "Health Data Protection", "Medical Device Standards", "Privacy Regulations", "Security Frameworks", "Healthcare Security"],
     challenges: [
-      "HIPAA compliance requirements across all patient data systems",
+      "Healthcare compliance requirements across all patient data systems",
       "24/7 availability for critical patient care systems and emergency response",
-      "Protecting sensitive patient health information (PHI) across all touchpoints",
+      "Protecting sensitive patient health information across all touchpoints",
       "Maintaining data integrity for electronic health records (EHR) systems",
       "Real-time monitoring and alerting for clinical decision support systems",
       "Regulatory reporting and audit requirements for patient safety",
@@ -232,9 +232,9 @@ export const industries: Industry[] = [
       "Scalability for telemedicine and mobile health applications"
     ],
     solutions: [
-      "Comprehensive HIPAA compliance automation with continuous monitoring and reporting",
+      "Comprehensive healthcare compliance automation with continuous monitoring and reporting",
       "Mission-critical system availability with redundant failover capabilities",
-      "End-to-end PHI protection with zero-trust security and encryption at rest/transit",
+      "End-to-end patient data protection with zero-trust security and encryption at rest/transit",
       "Blockchain-level data integrity controls for electronic health records",
       "24/7 clinical system monitoring with immediate incident response capabilities",
       "Automated compliance documentation and audit trail generation",
@@ -243,12 +243,12 @@ export const industries: Industry[] = [
     ],
     metrics: [
       {
-        label: "HIPAA Success",
+        label: "Compliance Success",
         value: "100%",
         icon: "ShieldCheck"
       },
       {
-        label: "PHI Protection",
+        label: "Patient Data Protection",
         value: "Zero Breaches",
         icon: "Lock"
       },
@@ -267,8 +267,8 @@ export const industries: Industry[] = [
       {
         id: "security-identity-assurance",
         title: "Security & Identity Assurance",
-        description: "HIPAA compliance automation, PHI protection, and healthcare-specific security controls.",
-        outcome: "Zero PHI breaches, 100% HIPAA compliance, continuous audit readiness"
+        description: "Healthcare compliance automation, patient data protection, and healthcare-specific security controls.",
+        outcome: "Zero patient data breaches, 100% healthcare compliance, continuous audit readiness"
       },
       {
         id: "infrastructure-cloud-operations",
@@ -291,13 +291,13 @@ export const industries: Industry[] = [
       {
         id: "automated-corrective-actions",
         title: "Automated Corrective Actions",
-        description: "Self-healing automation for healthcare systems with PHI protection guardrails.",
+        description: "Self-healing automation for healthcare systems with patient data protection guardrails.",
         outcome: "Instant system recovery, automated compliance corrective actions"
       },
       {
         id: "infrastructure-cloud-operations",
         title: "Strategy & Partnership",
-        description: "Healthcare technology strategy, regulatory guidance, and HIPAA compliance expertise.",
+        description: "Healthcare technology strategy, regulatory guidance, and healthcare compliance expertise.",
         outcome: "Regulatory confidence, technology strategy alignment"
       },
       {
@@ -317,12 +317,12 @@ export const industries: Industry[] = [
     icon: "ShoppingCart",
     heroImage: "/images/industries/ecommerce-hero.jpg",
     audience: ["Chief Technology Officers", "VP of Engineering", "Director of E-commerce", "Chief Information Officers", "VP of Operations"],
-    compliance: ["PCI DSS", "GDPR", "CCPA", "SOC 2", "ISO 27001"],
+    compliance: ["Payment Security", "Privacy Regulations", "Data Protection", "Enterprise Compliance", "Security Frameworks"],
     challenges: [
       "Website and checkout system availability during peak traffic periods",
       "Scalability for flash sales, promotions, and viral marketing campaigns",
-      "Payment processing security and PCI DSS compliance",
-      "Customer data protection and privacy regulations (GDPR, CCPA)",
+      "Payment processing security and compliance standards",
+      "Customer data protection and privacy regulations compliance",
       "Real-time order processing and inventory synchronization",
       "Mobile commerce performance and cross-device consistency",
       "Holiday and seasonal traffic spikes with automated scaling",
@@ -331,8 +331,8 @@ export const industries: Industry[] = [
     solutions: [
       "Auto-scaling infrastructure that handles 10x+ traffic spikes instantly",
       "99.999% uptime during peak sales events and promotions",
-      "PCI DSS compliance automation with continuous security monitoring",
-      "GDPR-compliant data handling with automated audit trails",
+      "Payment security compliance automation with continuous monitoring",
+      "Privacy-compliant data handling with automated audit trails",
       "Real-time order processing with transactional consistency guarantees",
       "Unified performance across desktop, mobile, and app experiences",
       "Predictive scaling algorithms for seasonal and promotional events",
@@ -388,8 +388,8 @@ export const industries: Industry[] = [
       {
         id: "security-identity-assurance",
         title: "Security & Identity Assurance",
-        description: "PCI DSS compliance, payment security, and customer data protection.",
-        outcome: "Zero payment breaches, 100% PCI compliance"
+        description: "Payment security compliance, transaction protection, and customer data security.",
+        outcome: "Zero payment breaches, 100% payment security compliance"
       },
       {
         id: "cost-efficiency-capacity-strategy",
@@ -414,7 +414,7 @@ export const industries: Industry[] = [
     icon: "Cloud",
     heroImage: "/images/industries/saas-hero.jpg",
     audience: ["Chief Technology Officers", "VP of Engineering", "VP of Product", "Director of Infrastructure", "Chief Information Officers"],
-    compliance: ["SOC 2", "ISO 27001", "GDPR", "CCPA", "HIPAA", "PCI DSS"],
+    compliance: ["Enterprise Compliance", "Security Frameworks", "Privacy Regulations", "Data Protection", "Healthcare Standards", "Payment Security"],
     challenges: [
       "99.99% or higher uptime SLAs for enterprise SaaS customers",
       "Multi-tenant architecture scaling across millions of users",
@@ -430,7 +430,7 @@ export const industries: Industry[] = [
       "Elastic multi-tenant architecture that scales to millions of users",
       "Zero-trust security with tenant data isolation and encryption",
       "Global CDN and edge computing for optimal user performance worldwide",
-      "Multi-framework compliance automation (SOC 2, HIPAA, GDPR, PCI DSS)",
+      "Multi-framework compliance automation across enterprise standards",
       "Blue-green deployment strategies and canary release automation",
       "Comprehensive API monitoring and third-party integration management",
       "Predictive resource allocation and automated cost optimization"
@@ -485,8 +485,8 @@ export const industries: Industry[] = [
       {
         id: "security-identity-assurance",
         title: "Security & Identity Assurance",
-        description: "Enterprise security controls, compliance automation, and tenant data protection.",
-        outcome: "SOC 2/ISO 27001 compliance, zero data breaches"
+        description: "Enterprise security controls, regulatory compliance automation, and tenant data protection.",
+        outcome: "Enterprise compliance certification, zero data breaches"
       },
       {
         id: "cost-efficiency-capacity-strategy",

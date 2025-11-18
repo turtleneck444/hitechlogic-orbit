@@ -79,7 +79,7 @@ const metrics = [
   { label: "Time to Production MVP", value: "4-8 weeks", icon: Clock },
   { label: "Cost Efficiency", value: "60% savings", icon: TrendingUp },
   { label: "Development Acceleration", value: "3-5x faster", icon: Zap },
-  { label: "Client Success Rate", value: "95%", icon: Award },
+  { label: "Project Success Rate", value: "95%", icon: Award },
 ];
 
 const process = [
@@ -624,6 +624,193 @@ export default function RapidPrototyping() {
                     <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why HiTechLogic Is Different */}
+        <section className="section-space bg-gradient-to-br from-slate-50 to-blue-50/20">
+          <div className="mx-auto w-full max-w-6xl px-6">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="eyebrow text-[hsl(var(--accent-blue))]">Why HiTechLogic Is Different</span>
+              <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
+                Enterprise-Grade Infrastructure Perfection
+              </h2>
+            </div>
+
+            <Card className="p-8 border-2 border-[hsl(var(--accent-blue))]/20 bg-gradient-to-br from-white to-blue-50/30 group hover:border-[hsl(var(--accent-blue))]/50 transition-all duration-500">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/80 border border-slate-200 hover:border-[hsl(var(--accent-blue))]/30 transition-all hover:translate-x-2 duration-300 group/item">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white text-lg font-bold group-hover/item:scale-110 transition-transform duration-300">
+                      AI
+                    </div>
+                    <div>
+                      <div className="font-semibold text-[hsl(var(--navy))]">Adaptive AI trained on your environment — not generic datasets</div>
+                      <div className="text-slate-600 mt-1">Our AI learns your specific infrastructure patterns, predicting issues before they impact production</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/80 border border-slate-200 hover:border-[hsl(var(--accent-blue))]/30 transition-all hover:translate-x-2 duration-300 group/item">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white text-lg font-bold group-hover/item:scale-110 transition-transform duration-300">
+                      📊
+                    </div>
+                    <div>
+                      <div className="font-semibold text-[hsl(var(--navy))]">Executive-level dashboards tailored to board reporting</div>
+                      <div className="text-slate-600 mt-1">C-level dashboards with real-time KPIs and predictive analytics for informed decision-making</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/80 border border-slate-200 hover:border-[hsl(var(--accent-blue))]/30 transition-all hover:translate-x-2 duration-300 group/item">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white text-lg font-bold group-hover/item:scale-110 transition-transform duration-300">
+                      🔗
+                    </div>
+                    <div>
+                      <div className="font-semibold text-[hsl(var(--navy))]">Seamless integration with existing tools (Datadog, Dynatrace, NewRelic, Splunk, Grafana)</div>
+                      <div className="text-slate-600 mt-1">Works with your current monitoring stack, no rip-and-replace required</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/80 border border-slate-200 hover:border-[hsl(var(--accent-blue))]/30 transition-all hover:translate-x-2 duration-300 group/item">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white text-lg font-bold group-hover/item:scale-110 transition-transform duration-300">
+                      👥
+                    </div>
+                    <div>
+                      <div className="font-semibold text-[hsl(var(--navy))]">24/7 onshore SOC + AI co-pilot</div>
+                      <div className="text-slate-600 mt-1">American-based security operations center with AI assistance for threat detection and response</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white/80 border border-slate-200 hover:border-[hsl(var(--accent-blue))]/30 transition-all hover:translate-x-2 duration-300 group/item">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white text-lg font-bold group-hover/item:scale-110 transition-transform duration-300">
+                      ⚡
+                    </div>
+                    <div>
+                      <div className="font-semibold text-[hsl(var(--navy))]">Zero disruption implementation in {"< 8 weeks"}</div>
+                      <div className="text-slate-600 mt-1">Non-invasive deployment that doesn't impact your existing operations</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <div className="bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 rounded-2xl p-8 border border-[hsl(var(--accent-blue))]/20">
+                    <Zap className="h-16 w-16 text-[hsl(var(--accent-blue))] mx-auto mb-6" />
+                    <h3 className="text-2xl font-bold text-[hsl(var(--navy))] mb-4">Not Just Another MSP</h3>
+                    <p className="text-slate-600 leading-relaxed mb-6">
+                      While others offer basic monitoring, we deliver intelligent infrastructure optimization
+                      powered by context-aware AI and proven enterprise methodologies.
+                    </p>
+                    <div className="text-4xl font-black text-[hsl(var(--accent-blue))]">99.99%</div>
+                    <div className="text-sm font-semibold text-slate-600">Sustained Uptime</div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </section>
+
+        {/* Why customers replace legacy monitoring with HiTechLogic */}
+        <section className="section-space bg-gradient-to-br from-slate-50 to-white">
+          <div className="mx-auto w-full max-w-6xl px-6">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="eyebrow text-[hsl(var(--accent-blue))]">4. Why customers replace legacy monitoring with HiTechLogic</span>
+              <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
+                Intelligent Automation vs. Basic Monitoring
+              </h2>
+              <p className="mt-6 text-lg text-slate-600">
+                We don't just monitor - we prevent issues, automate recovery, and continuously optimize
+                performance across your entire infrastructure ecosystem.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full bg-white border border-slate-200 rounded-2xl shadow-lg">
+                <thead>
+                  <tr className="bg-gradient-to-r from-[hsl(var(--navy))] to-[hsl(var(--navy))]/90 text-white">
+                    <th className="px-6 py-4 text-left font-bold text-lg">Capability</th>
+                    <th className="px-6 py-4 text-center font-bold text-lg border-l border-slate-300">Legacy Monitoring</th>
+                    <th className="px-6 py-4 text-center font-bold text-lg border-l border-slate-300 bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--accent-blue))]/90">HiTechLogic</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    {
+                      capability: "Issue Detection",
+                      legacy: "Reactive alerts on symptoms only",
+                      hitechlogic: "Predictive anomaly detection with root cause correlation",
+                    },
+                    {
+                      capability: "Response Time",
+                      legacy: "15-30 minutes to detect and notify",
+                      hitechlogic: "<2 minutes automated remediation",
+                    },
+                    {
+                      capability: "Resolution Method",
+                      legacy: "Manual investigation and human intervention",
+                      hitechlogic: "Automated runbooks with intelligent decision trees",
+                    },
+                    {
+                      capability: "Learning & Adaptation",
+                      legacy: "Static thresholds and fixed alerts",
+                      hitechlogic: "AI learns from each incident, continuously improving",
+                    },
+                    {
+                      capability: "Operational Overhead",
+                      legacy: "70% of time spent on routine tasks",
+                      hitechlogic: "DevOps focus on innovation, not firefighting",
+                    },
+                    {
+                      capability: "Cost Efficiency",
+                      legacy: "$5,400 average cost per incident",
+                      hitechlogic: "$540 average with 90% cost reduction",
+                    },
+                    {
+                      capability: "Uptime SLA",
+                      legacy: "Industry standard 99.9%",
+                      hitechlogic: "Guaranteed 99.99% with automated fallbacks",
+                    },
+                  ].map((row, index) => (
+                    <tr key={index} className={`${index % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'} hover:bg-blue-50/30 transition-all duration-300`}>
+                      <td className="px-6 py-4 font-semibold text-[hsl(var(--navy))] text-left border-r border-slate-200">
+                        {row.capability}
+                      </td>
+                      <td className="px-6 py-4 text-slate-600 text-center text-sm">
+                        {row.legacy}
+                      </td>
+                      <td className="px-6 py-4 bg-gradient-to-r from-green-50 to-green-100/50 font-semibold text-green-800 text-center text-sm border-l-2 border-green-200">
+                        <CheckCircle2 className="h-5 w-5 text-green-600 inline-block mr-2" />
+                        {row.hitechlogic}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="mt-12 text-center">
+              <div className="bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-green-50/50 rounded-2xl p-8 border border-[hsl(var(--accent-blue))]/20">
+                <TrendingUp className="h-12 w-12 text-[hsl(var(--accent-blue))] mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-[hsl(var(--navy))] mb-4">90% Operational Cost Reduction</h3>
+                <p className="text-lg text-slate-600 mb-6 max-w-2xl mx-auto">
+                  Customers consistently report dramatic improvements in both operational efficiency
+                  and system reliability when replacing legacy monitoring with HiTechLogic's
+                  intelligent automation platform.
+                </p>
+                <div className="flex justify-center gap-8 text-sm">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">615</div>
+                    <div className="text-slate-600">Pre-built runbooks</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">99.9%</div>
+                    <div className="text-slate-600">Automation success</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">$2.1M</div>
+                    <div className="text-slate-600">Annual savings</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

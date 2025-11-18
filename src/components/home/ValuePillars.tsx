@@ -5,9 +5,6 @@ import { Accordion05 } from "@/components/ui/accordion-05";
 export function ValuePillars() {
   return (
     <section className="relative bg-[hsl(var(--accent-blue))] py-16 text-white overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[hsl(var(--signal-purple))]/5 to-transparent opacity-50 pointer-events-none"></div>
-      <div className="absolute inset-0 gradient-premium-dark opacity-30 pointer-events-none"></div>
-      <div className="absolute inset-0 z-0 bg-tech-circuit opacity-30 pointer-events-none"></div>
 
       <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto">
         {/* Centered Single Column Layout */}

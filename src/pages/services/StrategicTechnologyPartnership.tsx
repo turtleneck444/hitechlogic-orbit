@@ -76,10 +76,10 @@ const useCases = [
 ];
 
 const metrics = [
-  { label: "Partnership Years", value: "5+", icon: Calendar },
-  { label: "Client NPS", value: "92", icon: Award },
-  { label: "Avg. Engagement", value: "3.5yr", icon: Clock },
-  { label: "Team Satisfaction", value: "4.8/5", icon: Users },
+  { label: "Client Success Score", value: "92", icon: Award },
+  { label: "Strategic Impact", value: "95%", icon: Target },
+  { label: "Engagement Quality", value: "4.8/5", icon: Users },
+  { label: "Partnership Value", value: "High", icon: TrendingUp },
 ];
 
 const partnershipJourney = [

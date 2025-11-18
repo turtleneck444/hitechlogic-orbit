@@ -83,8 +83,8 @@ export function Hero() {
       {/* 15% White Overlay - Reduced Opacity for Better Background Visibility */}
       <div className="absolute inset-0 z-[7] bg-white/15 pointer-events-none"></div>
 
-      <div className="relative z-10 mx-auto w-full max-w-[1360px] 2xl:max-w-[1440px] px-4 sm:px-6 lg:px-12 py-8 lg:py-12">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-[2fr_1fr] lg:grid-cols-[3fr_2fr] lg:gap-12 items-center min-w-0">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+        <div className="grid gap-8 md:grid-cols-[2fr_1fr] lg:grid-cols-[3fr_2fr] lg:gap-12 items-center">
           {/* Left Column - Content */}
           <div className="relative">
             {/* Enhanced White Glow Protection Layers */}
@@ -97,10 +97,10 @@ export function Hero() {
             <div className="relative">
             {/* Sophisticated Corporate Headline */}
             <div className="relative mb-4">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight md:leading-snug text-[hsl(var(--navy))] relative font-['Inter']
-                     drop-shadow-[0_2px_8px_rgba(0,0,0,0.1)] border-l-4 border-l-[hsl(var(--accent-blue))] pl-4 md:pl-6">
+              <h1 className="text-5xl md:text-7xl lg:text-7xl font-semibold leading-none md:leading-snug text-[hsl(var(--navy))] relative font-['Inter']
+                     drop-shadow-[0_2px_8px_rgba(0,0,0,0.1)] border-l-4 border-l-[hsl(var(--accent-blue))] pl-6">
                 <span className="text-[hsl(var(--navy))] block">We Engineer</span>{" "}
-                <span className="block whitespace-nowrap"><span className="text-[hsl(var(--accent-blue))]">Your</span> <span className="text-[hsl(var(--navy))]">Competitive</span></span>{" "}
+                <span className="block"><span className="whitespace-nowrap"><span className="text-[hsl(var(--accent-blue))]">Your</span> <span className="text-[hsl(var(--navy))]">Competitive</span></span></span>{" "}
                 <span className="text-[hsl(var(--accent-blue))] block">Advantage</span>
               </h1>
 
@@ -109,13 +109,13 @@ export function Hero() {
             </div>
 
             {/* Subheadline with Enhanced Value Propositions - Perfect Responsive Wrapping */}
-            <p className="text-lg md:text-xl text-slate-700 mb-6 leading-relaxed max-w-2xl font-light break-words">
+            <p className="text-lg md:text-xl text-slate-700 mb-6 leading-relaxed max-w-2xl font-light">
               Achieve operational excellence with{" "}
-              <span className="md:whitespace-nowrap font-bold text-[hsl(var(--accent-blue))]">intelligent automation</span> and{" "}
-              <span className="md:whitespace-nowrap font-bold text-[hsl(var(--accent-blue))]">AI-powered</span> managed services that deliver{" "}
-              <span className="md:whitespace-nowrap font-bold text-slate-800">50% cost savings</span>,{" "}
-              <span className="md:whitespace-nowrap font-bold text-slate-800">75% faster incident resolution</span>, and{" "}
-              <span className="md:whitespace-nowrap font-bold text-slate-800">complete operational autonomy</span>.
+              <span className="whitespace-nowrap font-bold text-[hsl(var(--accent-blue))]">intelligent automation</span> and{" "}
+              <span className="whitespace-nowrap font-bold text-[hsl(var(--accent-blue))]">AI-powered</span> managed services that deliver{" "}
+              <span className="whitespace-nowrap font-bold text-slate-800">50% cost savings</span>,{" "}
+              <span className="whitespace-nowrap font-bold text-slate-800">75% faster incident resolution</span>, and{" "}
+              <span className="whitespace-nowrap font-bold text-slate-800">complete operational autonomy</span>.
             </p>
 
             {/* CTA Buttons with Enhanced Design */}
@@ -206,19 +206,19 @@ export function Hero() {
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent mb-3"></div>
 
                 {/* Clean Professional Metrics Grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 min-w-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {heroRealTimeCards.map((card, index) => {
                     const isActive = index === activeCardIndex;
                     return (
                       <div key={card.label} className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
                         <div className="text-center space-y-2">
-                          <div className={`text-2xl font-bold leading-none transition-colors duration-300 ${isActive ? 'text-[hsl(var(--accent-blue))]' : 'text-gray-900'}`}>
+                          <div className={`text-2xl font-bold leading-none transition-colors duration-1000 ${isActive ? 'text-[hsl(var(--accent-blue))]' : 'text-gray-900'}`}>
                             {card.value}
                           </div>
-                          <div className={`text-xs uppercase tracking-wider font-semibold transition-colors duration-300 ${isActive ? 'text-[hsl(var(--signal-purple))]' : 'text-slate-600'}`}>
+                          <div className={`text-xs uppercase tracking-wider font-semibold transition-colors duration-1000 ${isActive ? 'text-[hsl(var(--signal-purple))]' : 'text-slate-600'}`}>
                             {card.label}
                           </div>
-                          <div className={`text-xs leading-relaxed transition-colors duration-300 ${isActive ? 'text-slate-700' : 'text-slate-500'}`}>
+                          <div className={`text-xs leading-relaxed transition-colors duration-1000 ${isActive ? 'text-slate-700' : 'text-slate-500'}`}>
                             {card.detail}
                           </div>
                         </div>

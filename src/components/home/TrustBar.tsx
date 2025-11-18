@@ -3,35 +3,35 @@ import { Shield, CheckCircle2, Award, Lock } from "lucide-react";
 export function TrustBar() {
   const certifications = [
     {
-      name: "SOC 2 Type II",
+      name: "Enterprise Compliance",
       description: "Certified",
       icon: Shield,
       color: "text-blue-600",
       bgColor: "bg-blue-50"
     },
     {
-      name: "HIPAA",
+      name: "Healthcare Standards",
       description: "Compliant",
       icon: Lock,
       color: "text-emerald-600",
       bgColor: "bg-emerald-50"
     },
     {
-      name: "PCI DSS",
+      name: "Payment Security",
       description: "Certified",
       icon: CheckCircle2,
       color: "text-purple-600",
       bgColor: "bg-purple-50"
     },
     {
-      name: "GDPR",
+      name: "Privacy Regulations",
       description: "Compliant",
       icon: Award,
       color: "text-indigo-600",
       bgColor: "bg-indigo-50"
     },
     {
-      name: "ISO 27001",
+      name: "Security Frameworks",
       description: "Certified",
       icon: Shield,
       color: "text-rose-600",

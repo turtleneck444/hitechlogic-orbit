@@ -106,7 +106,7 @@ const securityQuestions: Question[] = [
     options: [
       { value: 1, label: "No compliance framework" },
       { value: 2, label: "Working toward first certification" },
-      { value: 3, label: "SOC 2 or ISO 27001 certified" },
+      { value: 3, label: "Enterprise compliance certified" },
       { value: 4, label: "Multiple certifications with continuous compliance" },
     ],
   },

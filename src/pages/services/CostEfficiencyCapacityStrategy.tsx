@@ -615,7 +615,7 @@ export default function CostEfficiencyCapacityStrategy() {
                   <td className="p-4 font-medium text-slate-900">Expertise Level</td>
                   <td className="p-4 text-center">
                     <div className="text-[hsl(var(--accent-blue))] font-bold">Senior FinOps</div>
-                    <div className="text-xs text-slate-500">12+ years experience</div>
+                    <div className="text-xs text-slate-500">Expert-level professionals</div>
                   </td>
                   <td className="p-4 text-center">
                     <div className="text-slate-600">Variable</div>

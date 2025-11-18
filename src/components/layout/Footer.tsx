@@ -8,50 +8,42 @@ import {
   MapPin,
   Server,
   BookOpen,
-  Shield,
   FileCheck,
   Briefcase,
   Target,
   Users,
   MessageSquare,
-  CheckCircle2
+  Globe,
 } from "lucide-react";
 import { useState } from "react";
 
 const footerLinks = {
   company: [
     { name: "Services", href: "/services", icon: Server },
-    { name: "Approach", href: "/approach", icon: Target },
-    { name: "Principles", href: "/principles", icon: Shield },
+    { name: "Industries", href: "/industries", icon: Globe },
     { name: "About", href: "/about", icon: Users },
+    { name: "Contact", href: "/contact", icon: MessageSquare },
   ],
   resources: [
     { name: "Blog", href: "/blog", icon: BookOpen },
-    { name: "Contact", href: "/contact", icon: MessageSquare },
+    { name: "Case Studies", href: "/case-studies", icon: Briefcase },
   ],
   legal: [
-    { name: "Privacy Policy", href: "/legal/privacy", icon: Shield },
+    { name: "Privacy Policy", href: "/legal/privacy", icon: FileCheck },
     { name: "Terms of Service", href: "/legal/terms", icon: FileCheck },
   ],
 };
 
 const socialLinks = [
-  { name: "Twitter", icon: Twitter, href: "#" },
-  { name: "LinkedIn", icon: Linkedin, href: "#" },
-  { name: "GitHub", icon: Github, href: "#" },
+  { name: "Twitter", icon: Twitter, href: "https://twitter.com/hitechlogic" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/company/hitechlogic" },
+  { name: "GitHub", icon: Github, href: "https://github.com/hitechlogic" },
 ];
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "hello@hitechlogic.com", href: "mailto:hello@hitechlogic.com" },
   { icon: Phone, label: "Phone", value: "+1 (888) 448-3244", href: "tel:+18884483244" },
-  { icon: MapPin, label: "Location", value: "San Francisco, CA", href: "#" },
-];
-
-const trustIndicators = [
-  "SOC 2 Type II Certified",
-  "ISO 27001 Compliant",
-  "GDPR Ready",
-  "99.99% Uptime SLA"
+  { icon: MapPin, label: "Location", value: "San Francisco, CA", href: "https://maps.google.com/?q=San+Francisco,+CA" },
 ];
 
 export function Footer() {
@@ -152,7 +144,7 @@ export function Footer() {
 
               {/* Legal Links */}
               <div>
-                <h3 className="text-sm font-bold uppercase tracking-wider text-[hsl(var(--navy))] mb-4">Governance</h3>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-[hsl(var(--navy))] mb-4">Legal</h3>
                 <ul className="space-y-2.5 mb-4">
                   {footerLinks.legal.map((link) => (
                     <li key={link.name}>
@@ -168,26 +160,13 @@ export function Footer() {
                     </li>
                   ))}
                 </ul>
-
-                {/* Trust Indicators */}
-                <div className="pt-3 border-t border-slate-200">
-                  <p className="text-xs font-semibold text-slate-500 mb-2 uppercase tracking-wider">Compliance</p>
-                  <div className="space-y-1.5">
-                    {trustIndicators.map((indicator) => (
-                      <div key={indicator} className="flex items-center space-x-2">
-                        <CheckCircle2 className="h-3.5 w-3.5 text-[hsl(var(--accent-blue))]" />
-                        <span className="text-xs text-slate-600">{indicator}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 pt-6 border-t border-slate-200/60">
+            <div className="mt-8 pt-6 border-t border-slate-200/60">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-500">
               <span className="font-medium">

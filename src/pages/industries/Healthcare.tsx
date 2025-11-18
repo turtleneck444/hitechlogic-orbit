@@ -25,8 +25,8 @@ export default function Healthcare() {
 
   const faqs = [
     {
-      question: "How do you ensure HIPAA compliance across our healthcare systems?",
-      answer: "We implement comprehensive HIPAA compliance automation with continuous monitoring, access controls, and audit trail generation. Our zero-trust architecture ensures PHI protection while maintaining care delivery capabilities. We provide automated compliance reporting and support for HIPAA risk assessments and Business Associate Agreements.",
+      question: "How do you ensure healthcare compliance across our healthcare systems?",
+      answer: "We implement comprehensive healthcare compliance automation with continuous monitoring, access controls, and audit trail generation. Our zero-trust architecture ensures patient data protection while maintaining care delivery capabilities. We provide automated compliance reporting and support for regulatory risk assessments and compliance frameworks.",
     },
     {
       question: "What happens during critical patient care moments if systems fail?",
@@ -49,15 +49,15 @@ export default function Healthcare() {
       "@id": "https://hitechlogic.com/#organization"
     },
     slogan: "Patient safety and compliance through technology reliability",
-    description: "Healthcare infrastructure with HIPAA compliance, 99.999% uptime for clinical systems, zero PHI breaches, and patient safety monitoring for hospitals and healthcare providers."
+    description: "Healthcare infrastructure with regulatory compliance, 99.999% uptime for clinical systems, zero patient data breaches, and patient safety monitoring for hospitals and healthcare providers."
   };
 
   return (
     <>
       <SEO
         title="Healthcare Solutions | Patient Safety Infrastructure | HiTechLogic"
-        description="Patient safety and compliance through technology reliability. HIPAA compliance automation, 99.999% clinical system uptime, zero PHI breaches for hospitals and healthcare organizations."
-        keywords="healthcare infrastructure, HIPAA compliance, patient safety, clinical systems, electronic health records, PHI protection, healthcare IT, medical technology"
+        description="Patient safety and compliance through technology reliability. Healthcare compliance automation, 99.999% clinical system uptime, zero patient data breaches for hospitals and healthcare organizations."
+        keywords="healthcare infrastructure, healthcare compliance, patient safety, clinical systems, electronic health records, patient data protection, healthcare IT, medical technology"
         canonical="https://hitechlogic.com/industries/healthcare"
         schema={schema}
         ogType="website"
@@ -66,48 +66,45 @@ export default function Healthcare() {
       />
       <Layout>
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-red-900 to-rose-900">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+        <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--deep-navy))] via-[hsl(var(--graphite))] to-[hsl(var(--deep-navy))]">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvZz48L3N2Zz4=')] opacity-20" />
           <div className="relative mx-auto w-full max-w-6xl px-6 pt-32 pb-20 sm:pt-40 sm:pb-28">
-            <div className="animate-[fade-in_0.5s_ease-out]">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-rose-500 to-red-600 shadow-lg shadow-rose-500/25">
-                  <Heart className="h-7 w-7 text-white" />
-                </div>
-                <span className="eyebrow text-rose-400">Healthcare</span>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg">
+                <Heart className="h-7 w-7 text-[hsl(var(--accent-blue))]" />
               </div>
+              <span className="text-sm font-medium text-white/90 tracking-wide">Healthcare</span>
             </div>
-            <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white animate-[fade-in_0.6s_ease-out_0.1s_both]">
-              Patient safety<br />
-              <span className="text-rose-400">through technology reliability</span>
+            <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
+              Patient Safety Through
+              <span className="text-[hsl(var(--accent-blue))]">Technology Reliability</span>
             </h1>
-            <p className="mt-6 text-xl text-slate-300 max-w-3xl leading-relaxed animate-[fade-in_0.7s_ease-out_0.2s_both]">
+            <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed">
               Healthcare organizations trust us to safeguard patient data, ensure system availability during critical moments,
-              and maintain strict compliance with HIPAA and other healthcare regulations.
+              and maintain strict regulatory compliance with healthcare standards.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-4 animate-[fade-in_0.8s_ease-out_0.3s_both]">
-              <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(244,63,94,0.8)] hover:scale-105 transition-transform">
-                <Link to="/contact" className="flex items-center gap-2">
+            <div className="mt-10">
+              <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(139,92,246,0.8)] hover:shadow-[0_25px_45px_-12px_rgba(139,92,246,0.9)] hover:scale-105 transition-all duration-300">
+                <Link to="/contact" className="flex items-center gap-2 group">
                   <span>Schedule Healthcare Assessment</span>
-                  <ArrowRight className="h-5 w-5" />
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
-              </Button>
-              <Button variant="outline" size="xl" asChild className="border-white text-white hover:bg-white hover:text-slate-900 hover:scale-105 transition-all">
-                <Link to="/demo">View Clinical Systems Demo</Link>
               </Button>
             </div>
 
-            {/* Metrics */}
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 animate-[fade-in_0.9s_ease-out_0.4s_both]">
+            {/* Key Metrics */}
+            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
               {industry.metrics.map((metric) => {
                 const IconComponent = iconMap[metric.icon] || CheckCircle2;
                 return (
-                  <div key={metric.label} className="text-center group hover:scale-105 transition-transform">
-                    <div className="flex items-center justify-center mb-2">
-                      <IconComponent className="h-6 w-6 text-rose-400" />
+                  <div key={metric.label} className="text-center group">
+                    <div className="flex justify-center mb-3">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white/5 group-hover:from-[hsl(var(--accent-blue))]/20 group-hover:to-white/10 transition-all duration-300">
+                        <IconComponent className="h-6 w-6 text-white" />
+                      </div>
                     </div>
-                    <div className="text-3xl md:text-4xl font-bold text-rose-400">{metric.value}</div>
+                    <div className="text-3xl md:text-4xl font-bold text-white group-hover:scale-110 transition-transform duration-300">{metric.value}</div>
                     <div className="mt-2 text-sm font-medium text-slate-300">{metric.label}</div>
                   </div>
                 );
@@ -126,39 +123,39 @@ export default function Healthcare() {
             </div>
             <div className="grid md:grid-cols-2 gap-12">
               <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-100 text-red-700 font-semibold text-sm mb-6">
-                  <AlertTriangle className="h-4 w-4" />
-                  Healthcare reliability challenges
-                </div>
-                <div className="space-y-4 text-slate-600">
-                  {industry.challenges.map((challenge, index) => (
-                    <p key={index} className="flex items-start gap-3">
-                      <span className="text-red-500 font-bold mt-1">→</span>
-                      <span>{challenge}</span>
-                    </p>
-                  ))}
-                </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--accent-blue))]/10 text-[hsl(var(--accent-blue))] font-semibold text-sm mb-6">
+                <AlertTriangle className="h-4 w-4" />
+                Healthcare reliability challenges
               </div>
-              <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-100 text-rose-700 font-semibold text-sm mb-6">
-                  <CheckCircle2 className="h-4 w-4" />
-                  Our healthcare solutions
-                </div>
-                <div className="space-y-4 text-slate-600">
-                  {industry.solutions.map((solution, index) => (
-                    <p key={index} className="flex items-start gap-3">
-                      <span className="text-rose-600 font-bold mt-1">✓</span>
-                      <span>{solution}</span>
-                    </p>
-                  ))}
-                </div>
+              <div className="space-y-4 text-slate-600">
+                {industry.challenges.map((challenge, index) => (
+                  <p key={index} className="flex items-start gap-3">
+                    <span className="text-[hsl(var(--accent-blue))] font-bold mt-1">→</span>
+                    <span>{challenge}</span>
+                  </p>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--accent-blue))]/10 text-[hsl(var(--accent-blue))] font-semibold text-sm mb-6">
+                <CheckCircle2 className="h-4 w-4" />
+                Our healthcare solutions
+              </div>
+              <div className="space-y-4 text-slate-600">
+                {industry.solutions.map((solution, index) => (
+                  <p key={index} className="flex items-start gap-3">
+                    <span className="text-[hsl(var(--accent-blue))] font-bold mt-1">✓</span>
+                    <span>{solution}</span>
+                  </p>
+                ))}
+              </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Services Grid */}
-        <section className="section-space bg-gradient-to-br from-slate-50 to-rose-50/30">
+        <section className="section-space bg-gradient-to-br from-slate-50 to-[hsl(var(--accent-blue))]/15">
           <div className="mx-auto w-full max-w-6xl px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
@@ -173,14 +170,14 @@ export default function Healthcare() {
               {industry.services.map((service, index) => (
                 <Card
                   key={service.id}
-                  className="p-6 text-center hover:shadow-xl transition-all duration-300 border-2 hover:border-rose-300 group hover:-translate-y-1"
+                  className="p-6 text-center hover:shadow-xl transition-all duration-300 border-2 hover:border-[hsl(var(--accent-blue))]/30 group hover:-translate-y-1"
                   style={{
                     animationDelay: `${index * 0.1}s`,
                   }}
                 >
                   <h3 className="text-lg font-semibold text-[hsl(var(--navy))] mb-3">{service.title}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed mb-4">{service.description}</p>
-                  <div className="text-xs text-rose-600 font-semibold border-t border-slate-100 pt-3">
+                  <div className="text-xs text-[hsl(var(--accent-blue))] font-semibold border-t border-slate-100 pt-3">
                     {service.outcome}
                   </div>
                 </Card>
@@ -200,8 +197,8 @@ export default function Healthcare() {
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {industry.compliance.map((compliance, index) => (
-                <Card key={index} className="p-6 text-center hover:shadow-xl transition-all hover:scale-105 border-2 hover:border-rose-300">
-                  <Shield className="h-8 w-8 text-rose-600 mx-auto mb-3" />
+                <Card key={index} className="p-6 text-center hover:shadow-xl transition-all hover:scale-105 border-2 hover:border-[hsl(var(--accent-blue))]/30">
+                  <Shield className="h-8 w-8 text-[hsl(var(--accent-blue))] mx-auto mb-3" />
                   <div className="text-sm font-semibold text-[hsl(var(--navy))]">{compliance}</div>
                   <div className="text-xs text-slate-500 mt-1">Certified</div>
                 </Card>
@@ -211,7 +208,7 @@ export default function Healthcare() {
         </section>
 
         {/* FAQ Section */}
-        <section className="section-space bg-gradient-to-br from-slate-50 to-rose-50/30">
+        <section className="section-space bg-gradient-to-br from-slate-50 to-[hsl(var(--accent-blue))]/15">
           <div className="mx-auto w-full max-w-4xl px-6">
             <div className="text-center mb-16">
               <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">
@@ -221,12 +218,12 @@ export default function Healthcare() {
 
             <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <Card key={index} className="border-2 border-rose-100 overflow-hidden">
-                  <button className="w-full p-6 text-left flex items-center justify-between hover:bg-rose-50/50 transition-colors">
+                <Card key={index} className="border-2 border-[hsl(var(--accent-blue))]/20 overflow-hidden">
+                  <button className="w-full p-6 text-left flex items-center justify-between hover:bg-[hsl(var(--accent-blue))]/15 transition-colors">
                     <span className="font-semibold text-[hsl(var(--navy))] pr-8">{faq.question}</span>
-                    <ArrowRight className="h-5 w-5 text-rose-600 shrink-0" />
+                    <ArrowRight className="h-5 w-5 text-[hsl(var(--accent-blue))] shrink-0" />
                   </button>
-                  <div className="px-6 pb-6 text-slate-600 leading-relaxed border-t border-rose-100 pt-4">
+                  <div className="px-6 pb-6 text-slate-600 leading-relaxed border-t border-[hsl(var(--accent-blue))]/20 pt-4">
                     {faq.answer}
                   </div>
                 </Card>
@@ -236,15 +233,15 @@ export default function Healthcare() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="section-space bg-gradient-to-br from-rose-600 to-red-600">
+        <section className="section-space bg-gradient-to-br from-[hsl(var(--accent-blue))] via-[hsl(var(--navy))]/80 to-[hsl(var(--navy))]">
           <div className="mx-auto max-w-4xl px-6 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white">Ready to prioritize patient safety through technology?</h2>
-            <p className="mt-6 text-xl text-rose-100">
+            <p className="mt-6 text-xl text-white/80">
               Let's ensure your clinical systems, patient data, and care delivery technology
               are as reliable as the healthcare professionals who depend on them.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <Button variant="secondary" size="xl" asChild className="bg-white text-rose-600 hover:bg-white/90 hover:scale-105 transition-transform">
+              <Button variant="secondary" size="xl" asChild className="bg-white text-[hsl(var(--accent-blue))] hover:bg-white/90 hover:scale-105 transition-transform">
                 <Link to="/contact" className="flex items-center gap-2">
                   <span>Schedule Patient Safety Assessment</span>
                   <ArrowRight className="h-5 w-5" />

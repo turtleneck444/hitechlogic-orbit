@@ -18,7 +18,6 @@ import {
   Phone,
   MessageCircle,
   Clock,
-  Zap,
   Users,
   Award,
   Shield,
@@ -31,6 +30,7 @@ import {
   Cpu,
   Monitor,
   Network,
+  TrendingUp,
 } from "lucide-react";
 
 export default function InfrastructureCloudOperations() {
@@ -233,74 +233,97 @@ export default function InfrastructureCloudOperations() {
           </div>
         </section>
 
-        {/* Operational Processes */}
+        {/* Partnership Journey Timeline */}
         <section className="section-space bg-slate-50">
           <div className="mx-auto w-full max-w-6xl px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="eyebrow text-[hsl(var(--accent-blue))]">Operational rigor</span>
               <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
-                Disciplined change management & monitoring
+                How we achieve infrastructure excellence
               </h2>
               <p className="mt-6 text-lg text-slate-600">
-                Structured processes ensure zero-downtime deployments, traceable changes, and
-                rapid issue resolution with comprehensive audit trails.
+                From initial infrastructure assessment to full operational automation, our proven framework
+                delivers reliable, scalable cloud operations that enable business growth and innovation.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <h3 className="text-2xl font-bold text-[hsl(var(--navy))] mb-6">Change Management</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 hover:border-[hsl(var(--accent-blue))]/30 transition-all hover:translate-x-2 duration-300 group">
-                    <CheckCircle2 className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                    <div>
-                      <div className="font-semibold text-[hsl(var(--navy))]">Change Planning & Review</div>
-                      <div className="text-slate-600">All infrastructure changes require documented plans and peer review</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 hover:border-[hsl(var(--accent-blue))]/30 transition-all hover:translate-x-2 duration-300 group">
-                    <CheckCircle2 className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                    <div>
-                      <div className="font-semibold text-[hsl(var(--navy))]">Automated Deployments</div>
-                      <div className="text-slate-600">Infrastructure as Code with automated testing and rollback capabilities</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 hover:border-[hsl(var(--accent-blue))]/30 transition-all hover:translate-x-2 duration-300 group">
-                    <CheckCircle2 className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                    <div>
-                      <div className="font-semibold text-[hsl(var(--navy))]">Change Traceability</div>
-                      <div className="text-slate-600">Complete audit trails for all infrastructure modifications and incidents</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="relative">
+              {/* Connecting Line */}
+              <div className="hidden md:block absolute left-[50%] top-0 bottom-0 w-0.5 bg-gradient-to-b from-[hsl(var(--accent-blue))]/20 via-[hsl(var(--accent-blue))]/30 to-[hsl(var(--accent-blue))]/20" />
 
-              <div>
-                <h3 className="text-2xl font-bold text-[hsl(var(--navy))] mb-6">Production Stewardship</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 hover:border-[hsl(var(--accent-blue))]/30 transition-all hover:translate-x-2 duration-300 group">
-                    <CheckCircle2 className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                    <div>
-                      <div className="font-semibold text-[hsl(var(--navy))]">24/7 Infrastructure Monitoring</div>
-                      <div className="text-slate-600">Real-time monitoring of all systems with automated alerting and response</div>
-                    </div>
+              <div className="space-y-12">
+                {[
+                  {
+                    step: "1",
+                    title: "Infrastructure Discovery & Assessment",
+                    description: "Comprehensive analysis of your current cloud environment, performance baselines, and cost optimization opportunities. Multi-cloud inventory and security posture evaluation across all platforms.",
+                    icon: Monitor,
+                  },
+                  {
+                    step: "2",
+                    title: "Operational Standardization & Monitoring",
+                    description: "Implement unified monitoring, alerting, and governance frameworks. Establish Infrastructure as Code practices and automated deployment pipelines across all cloud platforms.",
+                    icon: Activity,
+                  },
+                  {
+                    step: "3",
+                    title: "Performance Optimization & Automation",
+                    description: "Deploy right-sizing recommendations, auto-scaling policies, and intelligent resource allocation. Implement automated remediation for common operational issues and performance tuning.",
+                    icon: TrendingUp,
+                  },
+                  {
+                    step: "4",
+                    title: "Production Excellence & Continuous Optimization",
+                    description: "24/7 monitoring ensures infrastructure reliability while continuous optimization drives cost efficiency. Advanced analytics identify patterns and forecast capacity requirements.",
+                    icon: Cloud,
+                  },
+                ].map((phase, index) => (
+                  <div key={phase.step} className={`relative grid md:grid-cols-2 gap-8 items-center ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
+                    {index % 2 === 0 ? (
+                      <>
+                        <Card className="p-8 border-2 border-[hsl(var(--accent-blue))]/30 bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white hover:shadow-xl transition-all md:ml-auto">
+                          <div className="flex items-center gap-4 mb-4">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white font-bold text-xl shadow-lg">
+                              {phase.step}
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-bold text-[hsl(var(--navy))]">{phase.title}</h3>
+                            </div>
+                          </div>
+                          <p className="text-slate-600 leading-relaxed">{phase.description}</p>
+                        </Card>
+                        <div className="hidden md:block" />
+                      </>
+                    ) : (
+                      <>
+                        <div className="hidden md:block" />
+                        <Card className="p-8 border-2 border-[hsl(var(--accent-blue))]/30 bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white hover:shadow-xl transition-all">
+                          <div className="flex items-center gap-4 mb-4">
+                            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white font-bold text-xl shadow-lg">
+                              {phase.step}
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-bold text-[hsl(var(--navy))]">{phase.title}</h3>
+                            </div>
+                          </div>
+                          <p className="text-slate-600 leading-relaxed">{phase.description}</p>
+                        </Card>
+                      </>
+                    )}
+                    {/* Center Circle */}
+                    <div className="hidden md:block absolute left-[50%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[hsl(var(--accent-blue))] border-4 border-white shadow-lg z-10" />
                   </div>
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 hover:border-[hsl(var(--accent-blue))]/30 transition-all hover:translate-x-2 duration-300 group">
-                    <CheckCircle2 className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                    <div>
-                      <div className="font-semibold text-[hsl(var(--navy))]">Capacity Planning</div>
-                      <div className="text-slate-600">Quarterly capacity assessments and proactive scaling recommendations</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 hover:border-[hsl(var(--accent-blue))]/30 transition-all hover:translate-x-2 duration-300 group">
-                    <CheckCircle2 className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                    <div>
-                      <div className="font-semibold text-[hsl(var(--navy))]">Performance Optimization</div>
-                      <div className="text-slate-600">Continuous tuning for optimal performance and cost efficiency</div>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
+            </div>
+
+            <div className="mt-12 text-center">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/contact" className="flex items-center gap-2 group">
+                  <span>Start Infrastructure Excellence</span>
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
             </div>
           </div>
         </section>
@@ -400,6 +423,158 @@ export default function InfrastructureCloudOperations() {
                       <div className="font-semibold text-[hsl(var(--accent-blue))]">Revenue Protection</div>
                       <div className="text-slate-600">Downtime prevention protects critical business revenue streams</div>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why HiTechLogic Is Different */}
+        <section className="section-space bg-gradient-to-br from-slate-50 to-blue-50/20">
+          <div className="mx-auto w-full max-w-6xl px-6">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="eyebrow text-[hsl(var(--accent-blue))]">Why HiTechLogic Is Different</span>
+              <h2 className="mt-4 text-3xl md:text-4xl font-bold text-[hsl(var(--navy))]">
+                Enterprise-Grade Infrastructure Excellence
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="p-6 border-2 border-[hsl(var(--accent-blue))]/20 bg-white hover:border-[hsl(var(--accent-blue))]/40 hover:shadow-lg transition-all duration-300 text-center">
+                <div className="flex h-12 w-12 mx-auto mb-4 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white font-bold">
+                  AI
+                </div>
+                <h3 className="font-semibold text-[hsl(var(--navy))] mb-2">Adaptive AI Learning</h3>
+                <p className="text-sm text-slate-600">Environment-specific training for predictive issue prevention</p>
+              </Card>
+
+              <Card className="p-6 border-2 border-[hsl(var(--accent-blue))]/20 bg-white hover:border-[hsl(var(--accent-blue))]/40 hover:shadow-lg transition-all duration-300 text-center">
+                <div className="flex h-12 w-12 mx-auto mb-4 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white text-xl">
+                  📊
+                </div>
+                <h3 className="font-semibold text-[hsl(var(--navy))] mb-2">Executive Dashboards</h3>
+                <p className="text-sm text-slate-600">Board-ready reporting with real-time KPIs and analytics</p>
+              </Card>
+
+              <Card className="p-6 border-2 border-[hsl(var(--accent-blue))]/20 bg-white hover:border-[hsl(var(--accent-blue))]/40 hover:shadow-lg transition-all duration-300 text-center">
+                <div className="flex h-12 w-12 mx-auto mb-4 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white text-xl">
+                  🔗
+                </div>
+                <h3 className="font-semibold text-[hsl(var(--navy))] mb-2">Tool Integration</h3>
+                <p className="text-sm text-slate-600">Works with Datadog, Dynatrace, NewRelic, Splunk, Grafana</p>
+              </Card>
+
+              <Card className="p-6 border-2 border-[hsl(var(--accent-blue))]/20 bg-white hover:border-[hsl(var(--accent-blue))]/40 hover:shadow-lg transition-all duration-300 text-center">
+                <div className="flex h-12 w-12 mx-auto mb-4 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white text-xl">
+                  ⚡
+                </div>
+                <h3 className="font-semibold text-[hsl(var(--navy))] mb-2">Fast Implementation</h3>
+                <p className="text-sm text-slate-600">Zero-disruption deployment in under 8 weeks</p>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Why customers replace legacy monitoring with HiTechLogic */}
+        <section className="section-space bg-gradient-to-br from-slate-50 to-white">
+          <div className="mx-auto w-full max-w-6xl px-6">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="eyebrow text-[hsl(var(--accent-blue))]">4. Why customers replace legacy monitoring with HiTechLogic</span>
+              <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
+                Intelligent Automation vs. Basic Monitoring
+              </h2>
+              <p className="mt-6 text-lg text-slate-600">
+                We don't just monitor - we prevent issues, automate recovery, and continuously optimize
+                performance across your entire infrastructure ecosystem.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full bg-white border border-slate-200 rounded-2xl shadow-lg">
+                <thead>
+                  <tr className="bg-gradient-to-r from-[hsl(var(--navy))] to-[hsl(var(--navy))]/90 text-white">
+                    <th className="px-6 py-4 text-left font-bold text-lg">Capability</th>
+                    <th className="px-6 py-4 text-center font-bold text-lg border-l border-slate-300">Legacy Monitoring</th>
+                    <th className="px-6 py-4 text-center font-bold text-lg border-l border-slate-300 bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--accent-blue))]/90">HiTechLogic</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    {
+                      capability: "Issue Detection",
+                      legacy: "Reactive alerts on symptoms only",
+                      hitechlogic: "Predictive anomaly detection with root cause correlation",
+                    },
+                    {
+                      capability: "Response Time",
+                      legacy: "15-30 minutes to detect and notify",
+                      hitechlogic: "<2 minutes automated remediation",
+                    },
+                    {
+                      capability: "Resolution Method",
+                      legacy: "Manual investigation and human intervention",
+                      hitechlogic: "Automated runbooks with intelligent decision trees",
+                    },
+                    {
+                      capability: "Learning & Adaptation",
+                      legacy: "Static thresholds and fixed alerts",
+                      hitechlogic: "AI learns from each incident, continuously improving",
+                    },
+                    {
+                      capability: "Operational Overhead",
+                      legacy: "70% of time spent on routine tasks",
+                      hitechlogic: "DevOps focus on innovation, not firefighting",
+                    },
+                    {
+                      capability: "Cost Efficiency",
+                      legacy: "$5,400 average cost per incident",
+                      hitechlogic: "$540 average with 90% cost reduction",
+                    },
+                    {
+                      capability: "Uptime SLA",
+                      legacy: "Industry standard 99.9%",
+                      hitechlogic: "Guaranteed 99.99% with automated fallbacks",
+                    },
+                  ].map((row, index) => (
+                    <tr key={index} className={`${index % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'} hover:bg-blue-50/30 transition-all duration-300`}>
+                      <td className="px-6 py-4 font-semibold text-[hsl(var(--navy))] text-left border-r border-slate-200">
+                        {row.capability}
+                      </td>
+                      <td className="px-6 py-4 text-slate-600 text-center text-sm">
+                        {row.legacy}
+                      </td>
+                      <td className="px-6 py-4 bg-gradient-to-r from-green-50 to-green-100/50 font-semibold text-green-800 text-center text-sm border-l-2 border-green-200">
+                        <CheckCircle2 className="h-5 w-5 text-green-600 inline-block mr-2" />
+                        {row.hitechlogic}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="mt-12 text-center">
+              <div className="bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-green-50/50 rounded-2xl p-8 border border-[hsl(var(--accent-blue))]/20">
+                <TrendingUp className="h-12 w-12 text-[hsl(var(--accent-blue))] mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-[hsl(var(--navy))] mb-4">40% Average Cost Reduction</h3>
+                <p className="text-lg text-slate-600 mb-6 max-w-2xl mx-auto">
+                  Customers consistently report dramatic improvements in both operational efficiency
+                  and system reliability when replacing legacy monitoring with HiTechLogic's
+                  intelligent automation platform.
+                </p>
+                <div className="flex justify-center gap-8 text-sm">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">615+</div>
+                    <div className="text-slate-600">Automation runbooks</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">99.9%</div>
+                    <div className="text-slate-600">Automation success rate</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">40%</div>
+                    <div className="text-slate-600">Cost reduction</div>
                   </div>
                 </div>
               </div>

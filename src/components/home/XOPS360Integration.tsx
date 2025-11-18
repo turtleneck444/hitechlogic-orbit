@@ -103,7 +103,7 @@ export function XOPS360Integration() {
                 "Global infrastructure with presence in 50+ AWS/Azure regions",
                 "AI agents handling 1M+ automated decisions daily",
                 "Real-time cost analytics across $2B+ cloud infrastructure",
-                "Integrated compliance framework (SOC 2, ISO 27001, HIPAA, PCI-DSS)",
+                "Integrated compliance framework for enterprise standards and regulations",
                 "Enterprise SLAs with 99.99% uptime guarantee",
                 "24/7 NOC/SOC operations with <15-minute response time",
               ].map((benefit) => (

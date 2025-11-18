@@ -11,13 +11,13 @@ import Resources from "./pages/Resources";
 import Approach from "./pages/Approach";
 import Pricing from "./pages/Pricing";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import Demo from "./pages/Demo";
-import Principles from "./pages/Principles";
 import Admin from "./pages/Admin";
 import { AdminProvider } from "./contexts/AdminContext";
 import InfrastructureCloudOperations from "./pages/services/InfrastructureCloudOperations";
@@ -55,9 +55,9 @@ const App = () => (
           <Route path="/approach" element={<Approach />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/principles" element={<Principles />} />
           <Route path="/admin" element={<AdminProvider><Admin /></AdminProvider>} />
           <Route path="/legal/privacy" element={<Privacy />} />
           <Route path="/legal/terms" element={<Terms />} />

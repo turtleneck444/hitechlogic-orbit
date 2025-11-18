@@ -3,230 +3,26 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
+import { ServiceCatalogSection } from "@/components/home/ServiceCatalogSection";
+import { coreServices } from "@/data/coreServices";
 import {
   Activity,
+  ArrowRight,
   BarChart3,
   Gauge,
   Handshake,
   Server,
   ShieldCheck,
   Workflow,
-  ArrowRight,
   Sparkles,
   Target,
-  Globe,
-  Phone,
-  MessageCircle,
   Clock,
   Zap,
-  Users,
   Award,
   Shield,
-  CheckCircle2,
-  Cloud,
-  Mail,
-  Calendar,
-  AlertTriangle,
+  TrendingUp,
+  Rocket,
 } from "lucide-react";
-
-type Service = {
-  icon: React.ComponentType<{ className?: string }>;
-  title: string;
-  slug: string;
-  overview: string;
-  tagline: string;
-  outcomes: string[];
-  kpis: { label: string; value: string }[];
-  color: string;
-  gradient: string;
-};
-
-const services: Service[] = [
-  {
-    icon: Server,
-    title: "Infrastructure & Cloud Operations",
-    slug: "/services/infrastructure-cloud-operations",
-    tagline: "Always-on infrastructure with zero surprises",
-    overview:
-      "Unified command of hybrid estates with disciplined change management, capacity planning, and production stewardship.",
-    outcomes: [
-      "Co-managed runbooks for every environment",
-      "Capacity signals surfaced quarterly",
-      "Change execution tracked and reported",
-      "24/7 monitoring across all cloud platforms",
-      "Proactive capacity planning and forecasting",
-      "99.99% uptime SLA guarantee",
-    ],
-    kpis: [
-      { label: "Uptime SLA", value: "99.99%" },
-      { label: "Response Time", value: "<15 min" },
-      { label: "Cost Savings", value: "30-40%" },
-    ],
-    color: "blue",
-    gradient: "from-blue-500 via-blue-600 to-[hsl(var(--navy))]",
-  },
-  {
-    icon: Activity,
-    title: "System Oversight & Event Reduction",
-    slug: "/services/system-oversight-event-reduction",
-    tagline: "Transform alert chaos into actionable intelligence",
-    overview:
-      "Noise-calmed telemetry, expert routing, and correlation that keep executives aligned on true risk signals.",
-    outcomes: [
-      "Alert noise reduced through correlation",
-      "Playbooks tuned to business impact tiers",
-      "Weekly reliability briefings for leadership",
-      "AI-powered event correlation engine",
-      "Sub-2-minute threat detection",
-      "95% reduction in false positives",
-    ],
-    kpis: [
-      { label: "Noise Reduction", value: "−82%" },
-      { label: "Detection Time", value: "<2 min" },
-      { label: "Accuracy", value: "97%" },
-    ],
-    color: "purple",
-    gradient: "from-purple-500 via-purple-600 to-indigo-600",
-  },
-  {
-    icon: Workflow,
-    title: "Automated Corrective Actions",
-    slug: "/services/automated-corrective-actions",
-    tagline: "Self-healing infrastructure that never sleeps",
-    overview:
-      "Verified automation and self-healing workflows that shrink incident counts and free engineers to focus on delivery.",
-    outcomes: [
-      "Automation catalog with approvals + guardrails",
-      "Self-healing runbooks covering top incidents",
-      "Compliance-ready audit trail for every action",
-      "65+ production-ready runbooks",
-      "95% faster incident resolution",
-      "48% reduction in repeat incidents",
-    ],
-    kpis: [
-      { label: "Runbooks", value: "65+" },
-      { label: "MTTR Reduction", value: "95%" },
-      { label: "Success Rate", value: "99.2%" },
-    ],
-    color: "emerald",
-    gradient: "from-emerald-500 via-emerald-600 to-green-600",
-  },
-  {
-    icon: Gauge,
-    title: "Reliability & Performance Engineering",
-    slug: "/services/reliability-performance-engineering",
-    tagline: "Engineering excellence at scale",
-    overview:
-      "SLO-backed engineering discipline, architectural reviews, and load assurance delivered alongside your teams.",
-    outcomes: [
-      "Service level objectives mapped to revenue",
-      "Performance baselines enforced pre-release",
-      "Reliability debt backlog owned and tracked",
-      "100% SLO coverage for critical services",
-      "Chaos engineering testing protocols",
-      "90% MTTR improvement",
-    ],
-    kpis: [
-      { label: "SLO Coverage", value: "100%" },
-      { label: "Uptime", value: "99.99%" },
-      { label: "MTTR Trend", value: "↓ 90%" },
-    ],
-    color: "orange",
-    gradient: "from-orange-500 via-orange-600 to-amber-600",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Security & Identity Assurance",
-    slug: "/services/security-identity-assurance",
-    tagline: "Zero-trust security, always compliant",
-    overview:
-      "Identity lifecycle governance, privileged access controls, and operational security rigor embedded in every routine.",
-    outcomes: [
-      "Just-in-time access flows verified quarterly",
-      "Threat detection integrated with ops cadences",
-      "Incident tabletop + resilience drills scheduled",
-      "Zero-trust architecture implementation",
-      "<10-minute threat detection",
-      "100% audit success rate",
-    ],
-    kpis: [
-      { label: "Threat Detection", value: "<10 min" },
-      { label: "Compliance", value: "99.8%" },
-      { label: "Zero Breaches", value: "100%" },
-    ],
-    color: "red",
-    gradient: "from-red-500 via-red-600 to-rose-600",
-  },
-  {
-    icon: BarChart3,
-    title: "Cost Efficiency & Capacity Strategy",
-    slug: "/services/cost-efficiency-capacity-strategy",
-    tagline: "Financial transparency, optimized growth",
-    overview:
-      "FinOps telemetry, unit economics, and capacity guardrails that keep technology spend predictable and defensible.",
-    outcomes: [
-      "Spend modeled vs. plan with scenarios",
-      "Rightsizing + reservation coverage executed",
-      "Capacity buffers linked to demand curves",
-      "$50M+ total savings delivered",
-      "95% forecast accuracy",
-      "35% average cost reduction",
-    ],
-    kpis: [
-      { label: "Cost Reduction", value: "35%" },
-      { label: "Forecast", value: "±4%" },
-      { label: "ROI", value: "8x" },
-    ],
-    color: "green",
-    gradient: "from-green-500 via-green-600 to-emerald-600",
-  },
-  {
-    icon: Handshake,
-    title: "Strategic Technology Partnership",
-    slug: "/services/strategic-technology-partnership",
-    tagline: "Your trusted technology partner",
-    overview:
-      "Embedded leadership, executive working sessions, and culture programs that keep reliability aligned to business goals.",
-    outcomes: [
-      "Quarterly strategy councils with CXO dashboards",
-      "Transformation delivery paired with run-state care",
-      "Joint hiring + capability planning facilitated",
-      "92 Net Promoter Score",
-      "3.5 year average engagement",
-      "85% multi-year renewals",
-    ],
-    kpis: [
-      { label: "NPS", value: "92" },
-      { label: "Satisfaction", value: "100%" },
-      { label: "Renewals", value: "85%" },
-    ],
-    color: "indigo",
-    gradient: "from-indigo-500 via-indigo-600 to-purple-600",
-  },
-  {
-    icon: Zap,
-    title: "Autonomous Agent Swarm",
-    slug: "/services/autonomous-agent-swarm",
-    tagline: "AI-driven prototyping, build, and operate",
-    overview:
-      "A unified agent library that orchestrates Rapid Design, AI-accelerated development, and 24/7 autonomous operations across the entire delivery lifecycle.",
-    outcomes: [
-      "Seamless handoff between prototypes, MVPs, and operations",
-      "Automation-first safeguards detecting, triaging, and remediating incidents",
-      "Re-usable AI agents tuned to your stack and compliance mandates",
-      "24/7 reliability with predictive runbooks",
-      "Accelerated go-to-market 3–5× faster",
-      "Cost-effective delivery with live operations oversight",
-    ],
-    kpis: [
-      { label: "MVP Launch", value: "Rapid delivery" },
-      { label: "Cost Reduction", value: "60%" },
-      { label: "Uptime", value: "99.99%" },
-    ],
-    color: "fuchsia",
-    gradient: "from-fuchsia-500 via-pink-600 to-rose-600",
-  },
-];
 
 export default function Services() {
   const schema = {
@@ -237,657 +33,206 @@ export default function Services() {
       name: "HiTechLogic",
     },
     serviceType: "Managed Infrastructure Services",
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Infrastructure Management Services",
-      itemListElement: services.map((service) => ({
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: service.title,
-          description: service.overview,
-        },
-      })),
-    },
+    description: "Comprehensive cloud infrastructure management services including monitoring, automation, security, cost optimization, and strategic partnership.",
   };
 
   return (
     <>
       <SEO
-        title="Cloud Services: Security, DevOps, FinOps & Consulting | HiTechLogic"
-        description="Comprehensive cloud solutions including cybersecurity, DevOps automation, cloud infrastructure & FinOps, and strategic consulting. Reduce costs 50%, improve MTTR 75%, achieve 99.99% uptime."
-        keywords="cloud security, devops automation, cloud finops, kubernetes, zero-trust security, soc 2 compliance, cloud migration, infrastructure as code, vulnerability management, cost optimization, managed services"
+        title="Managed IT Services for Enterprise Cloud Infrastructure & Reliability | HiTechLogic"
+        description="Complete managed infrastructure services delivering 99.99% uptime, 40% cost reduction, and operational excellence. AI-powered automation, 24/7 expert support, DevOps reliability, and cloud security for enterprises."
+        keywords="managed infrastructure services, cloud operations, DevOps automation, site reliability engineering, cloud security, FinOps, enterprise IT services, managed services, cloud infrastructure, infrastructure automation, reliability engineering"
         canonical="https://hitechlogic.com/services"
         schema={schema}
       />
       <Layout>
-      {/* Hero Section - Matching Detailed Service Pages */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--deep-navy))] via-[hsl(var(--graphite))] to-[hsl(var(--deep-navy))]">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvZz48L3N2Zz4=')] opacity-20" />
-        <div className="relative mx-auto w-full max-w-6xl px-6 pt-32 pb-20 sm:pt-40 sm:pb-28">
-          <div className="flex items-center gap-3 mb-6 animate-[fade-in_0.5s_ease-out]">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg transition-transform duration-300 hover:scale-110 hover:bg-white/15">
-              <Server className="h-7 w-7 text-[hsl(var(--accent-blue))]" />
-            </div>
-            <span className="text-sm font-medium text-white/90 tracking-wide">Complete Service Ecosystem</span>
-          </div>
-          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white animate-[fade-in_0.6s_ease-out_0.1s_both]">
-            HiTechLogic
-            <span className="text-[hsl(var(--accent-blue))]"> Services Overview</span>
-          </h1>
-          <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed animate-[fade-in_0.7s_ease-out_0.2s_both]">
-            Eight integrated managed services pillars delivering enterprise-grade operational excellence,
-            security, and strategic alignment across your entire technology stack.
-            <span className="block mt-3 font-semibold text-white">$50M+ client cost savings achieved</span>
-          </p>
-
-          <div className="mt-10 animate-[fade-in_0.8s_ease-out_0.3s_both]">
-            <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(139,92,246,0.8)] hover:shadow-[0_25px_50px_-12px_rgba(139,92,246,0.9)] hover:scale-105 transition-all duration-300">
-              <Link to="/contact" className="flex items-center gap-2 group">
-                <Target className="h-5 w-5" />
-                <span>Start Your Assessment</span>
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </Button>
-          </div>
-
-          {/* Metrics */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 animate-[fade-in_0.9s_ease-out_0.4s_both]">
-            {[
-              { label: "Operational Services", value: "8", icon: Sparkles },
-              { label: "Client Retention", value: "98%", icon: Users },
-              { label: "Industry Coverage", value: "15+", icon: Globe },
-              { label: "Total Savings", value: "$50M+", icon: Award },
-            ].map((metric, index) => (
-              <div key={metric.label} className="text-center group">
-                <div className="flex justify-center mb-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white/5 group-hover:from-[hsl(var(--accent-blue))]/20 group-hover:to-white/10 transition-all duration-300">
-                    <metric.icon className="h-6 w-6 text-white" />
-                  </div>
-                </div>
-                <div className="text-3xl md:text-4xl font-bold text-white group-hover:scale-110 transition-transform duration-300">{metric.value}</div>
-                <div className="mt-2 text-sm font-medium text-slate-300">{metric.label}</div>
+        {/* Hero Section - Matching Detailed Service Pages */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--deep-navy))] via-[hsl(var(--graphite))] to-[hsl(var(--deep-navy))]">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvZz48L3N2Zz4=')] opacity-20" />
+          <div className="relative mx-auto w-full max-w-6xl px-6 pt-32 pb-20 sm:pt-40 sm:pb-28">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg">
+                <Rocket className="h-7 w-7 text-[hsl(var(--accent-blue))]" />
               </div>
-            ))}
-          </div>
-        </div>
-        </section>
-
-
-        {/* Trust Indicators */}
-        <section className="py-12 bg-[hsl(var(--navy))]">
-          <div className="mx-auto w-full max-w-6xl px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {[
-                { label: "Services Offered", value: "8", description: "Complete offerings" },
-                { label: "Client Retention", value: "98%", description: "Across all engagements" },
-                { label: "Industry Experience", value: "15+ years", description: "Enterprise operations" },
-                { label: "Cost Savings Delivered", value: "$50M+", description: "To client organizations" },
-              ].map((indicator) => (
-                <div key={indicator.label} className="text-center">
-                  <div className="text-4xl font-bold text-white mb-2">{indicator.value}</div>
-                  <div className="text-sm text-blue-200">{indicator.label}</div>
-                  <div className="text-xs text-blue-300 mt-1">{indicator.description}</div>
-                </div>
-              ))}
+              <span className="text-sm font-medium text-white/90 tracking-wide">Enterprise Services</span>
             </div>
-          </div>
-        </section>
+            <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
+              Enterprise Infrastructure Management
+              <span className="text-[hsl(var(--accent-blue))] block sm:inline"> & Cloud Operations Services</span>
+            </h1>
+            <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed">
+              Comprehensive managed IT services delivering 99.99% uptime, 40% cost reduction, and operational excellence.
+              DevOps automation, cloud infrastructure management, and reliability engineering for modern enterprises.
+            </p>
 
-        {/* Problem/Solution Section */}
-        <section className="section-space bg-white">
-          <div className="mx-auto w-full max-w-6xl px-6">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <span className="eyebrow text-[hsl(var(--accent-blue))]">The challenge</span>
-                <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">Technology operations are complexity disasters</h2>
-                <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-                  Modern technology stacks generate unprecedented complexity. On-premise data centers plus multiple clouds,
-                  compliance requirements, security threats, and rising costs create operational nightmares that distract
-                  teams from innovation and business goals.
-                </p>
-                <div className="mt-6 p-6 bg-red-50 border-l-4 border-red-400 rounded-r-xl">
-                  <div className="flex items-start gap-3">
-                    <AlertTriangle className="h-6 w-6 text-red-600 shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-semibold text-red-900">The Hidden Cost of Complexity</div>
-                      <div className="text-sm text-red-800 mt-1">
-                        Organizations spend 70% of their technology budget on operations and maintenance,
-                        leaving only 30% for innovation and competitive advantage.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <span className="eyebrow text-[hsl(var(--accent-blue))]">Our solution</span>
-                <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">Managed services excellence across your entire stack</h2>
-                <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-                  HiTechLogic delivers end-to-end managed services that transform technology from a cost center
-                  into a strategic advantage. Our eight integrated service pillars cover everything from infrastructure
-                  to innovation, with guaranteed SLAs and enterprise-grade operational excellence.
-                </p>
-                <div className="mt-6 p-6 bg-green-50 border-l-4 border-green-400 rounded-r-xl">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-green-600 shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-semibold text-green-900">Proven Operational Excellence</div>
-                      <div className="text-sm text-green-800 mt-1">
-                        99.99% uptime guarantees, $50M+ client cost savings, and teams freed to focus
-                        on strategic initiatives that drive business growth.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-8">
-                  <Button variant="hero" size="lg" asChild>
-                    <Link to="/contact" className="flex items-center gap-2 group">
-                      <span>See How We Transform Operations</span>
-                      <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Before/After Comparison */}
-        <section className="section-space bg-gradient-to-br from-slate-50 to-blue-50/20">
-          <div className="mx-auto w-full max-w-6xl px-6">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="eyebrow text-[hsl(var(--accent-blue))]">Real transformation</span>
-              <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
-                Traditional operations vs. managed excellence
-              </h2>
-              <p className="mt-6 text-lg text-slate-600">
-                See how our comprehensive managed services approach transforms operational outcomes.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  metric: "Cost Allocation",
-                  before: "70% ops",
-                  after: "70% innovation",
-                  improvement: "100% operational efficiency",
-                },
-                {
-                  metric: "Team Focus",
-                  before: "Reactive firefighting",
-                  after: "Strategic innovation",
-                  improvement: "teams fully focused",
-                },
-                {
-                  metric: "Incident Response",
-                  before: "15-30 min detection",
-                  after: "Sub-2 min detection",
-                  improvement: "10x faster response",
-                },
-                {
-                  metric: "Compliance Success",
-                  before: "80% manual effort",
-                  after: "100% automated",
-                  improvement: "fully compliant",
-                },
-              ].map((item) => (
-                <Card key={item.metric} className="p-6 text-center border-2 hover:border-[hsl(var(--accent-blue))]/30 hover:shadow-xl transition-all hover:-translate-y-1 duration-300 group">
-                  <div className="text-sm font-semibold text-slate-600 mb-4">{item.metric}</div>
-                  <div className="space-y-3">
-                    <div>
-                      <div className="text-xs text-slate-500 mb-1">Traditional</div>
-                      <div className="text-lg font-bold text-red-600">{item.before}</div>
-                    </div>
-                    <ArrowRight className="h-5 w-5 text-[hsl(var(--accent-blue))] mx-auto rotate-90 group-hover:translate-y-1 transition-transform" />
-                    <div>
-                      <div className="text-xs text-slate-500 mb-1">HiTechLogic</div>
-                      <div className="text-lg font-bold text-green-600">{item.after}</div>
-                    </div>
-                  </div>
-                  <div className="mt-4 px-2 py-1 bg-[hsl(var(--accent-blue))]/10 rounded-lg">
-                    <div className="text-xs font-semibold text-[hsl(var(--accent-blue))]">{item.improvement}</div>
-                  </div>
-                </Card>
-              ))}
-            </div>
-
-            <div className="mt-12 text-center">
-              <Button variant="hero" size="xl" asChild>
+            <div className="mt-10">
+              <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(139,92,246,0.8)] hover:shadow-[0_25px_45px_-12px_rgba(139,92,246,0.9)] hover:scale-105 transition-all duration-300">
                 <Link to="/contact" className="flex items-center gap-2 group">
-                  <span>Start Your Operational Transformation</span>
+                  <Target className="h-5 w-5" />
+                  <span>Transform Operations</span>
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             </div>
-          </div>
-        </section>
 
-        {/* Process Timeline */}
-        <section className="section-space bg-white">
-          <div className="mx-auto w-full max-w-6xl px-6">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="eyebrow text-[hsl(var(--accent-blue))]">Our engagement model</span>
-              <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
-                From assessment to operational excellence in 90 days
-              </h2>
-              <p className="mt-6 text-lg text-slate-600">
-                Our systematic methodology delivers measurable improvements quickly with zero business disruption.
-              </p>
-            </div>
-
-            <div className="relative">
-              <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-[hsl(var(--accent-blue))]/20 via-[hsl(var(--accent-blue))] to-[hsl(var(--accent-blue))]/20 -translate-y-1/2" />
-
-              <div className="grid md:grid-cols-4 gap-6 relative">
-                {[
-                  {
-                    step: "1",
-                    title: "Assessment & Planning",
-                    description: "Comprehensive technology audit, gap analysis, and customized service portfolio design.",
-                    duration: "Days 1-14",
-                  },
-                  {
-                    step: "2",
-                    title: "Minimized Transition",
-                    description: "Seamless service activation with zero-downtime transfer and gradual responsibility handover.",
-                    duration: "Days 15-30",
-                  },
-                  {
-                    step: "3",
-                    title: "Optimized Operations",
-                    description: "Performance tuning, process optimization, and continuous improvement implementation.",
-                    duration: "Days 31-90",
-                  },
-                  {
-                    step: "4",
-                    title: "Strategic Partnership",
-                    description: "Executive collaboration, capability expansion, and ongoing technology leadership.",
-                    duration: "Ongoing",
-                  },
-                ].map((item) => (
-                  <Card key={item.step} className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-[hsl(var(--accent-blue))]/50 group">
-                    <div className="flex flex-col items-center text-center">
-                      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white text-2xl font-bold mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                        {item.step}
-                      </div>
-                      <div className="text-sm font-semibold text-[hsl(var(--accent-blue))] mb-2">{item.duration}</div>
-                      <h3 className="text-lg font-bold text-[hsl(var(--navy))] mb-3">{item.title}</h3>
-                      <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
+            {/* Key Metrics */}
+            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                { label: "Uptime SLA", value: "99.99%", icon: Shield },
+                { label: "Cost Reduction", value: "40%", icon: BarChart3 },
+                { label: "Alert Reduction", value: "82%", icon: Activity },
+                { label: "Services Offered", value: String(coreServices.length), icon: Award },
+              ].map((metric, index) => (
+                <div key={metric.label} className="text-center group">
+                  <div className="flex justify-center mb-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white/5 group-hover:from-[hsl(var(--accent-blue))]/20 group-hover:to-white/10 transition-all duration-300">
+                      <metric.icon className="h-6 w-6 text-white" />
                     </div>
-                  </Card>
-                ))}
-              </div>
+                  </div>
+                  <div className="text-3xl md:text-4xl font-bold text-white group-hover:scale-110 transition-transform duration-300">{metric.value}</div>
+                  <div className="mt-2 text-sm font-medium text-slate-300">{metric.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Service Capabilities Section */}
+        <ServiceCatalogSection services={coreServices} anchorId="services-catalog" />
+
+        {/* Enterprise Results */}
         <section className="section-space bg-slate-50">
           <div className="mx-auto w-full max-w-6xl px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="eyebrow text-[hsl(var(--accent-blue))]">How each service delivers</span>
+              <span className="eyebrow text-[hsl(var(--accent-blue))]">Proven Impact</span>
               <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
-                50+ capabilities across 8 service pillars
+                Measurable Enterprise Results
               </h2>
               <p className="mt-6 text-lg text-slate-600">
-                Each managed service is delivered through multiple interconnected capabilities,
-                ensuring comprehensive coverage of your operational requirements.
+                Delivering operational excellence with guaranteed 99.99% uptime and measurable impact
+                across reliability, cost optimization, and innovation acceleration.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                { service: "Infrastructure & Cloud Operations", caps: ["24/7 monitoring", "99.99% SLA", "Multi-cloud", "Capacity planning"] },
-                { service: "System Oversight & Event Reduction", caps: ["AI correlation", "82% noise reduction", "2min detection", "Pattern analysis"] },
-                { service: "Automated Corrective Actions", caps: ["65+ runbooks", "Self-healing", "95% faster MTTR", "Compliance trails"] },
-                { service: "Reliability & Performance Engineering", caps: ["SLO mapping", "Chaos testing", "Load assurance", "100% SLO coverage"] },
-                { service: "Security & Identity Assurance", caps: ["Zero trust", "10min threat detection", "100% compliance", "Audit automation"] },
-                { service: "Cost Efficiency & Capacity Strategy", caps: ["$50M+ savings", "95% forecast", "ROI tracking", "Spend optimization"] },
-                { service: "Strategic Technology Partnership", caps: ["CXO alignment", "3.5yr retention", "92 NPS", "Innovation focus"] },
-                { service: "Rapid Prototyping & App Development", caps: ["Rapid delivery", "MVP validation", "3-5x faster", "Production scaling"] },
-              ].map((capability, index) => (
-                <Card key={capability.service} className="p-6 border-2 hover:border-[hsl(var(--accent-blue))]/30 hover:shadow-xl transition-all hover:-translate-y-1 duration-300 group">
-                  <h3 className="text-lg font-bold text-[hsl(var(--navy))] mb-4">{capability.service}</h3>
-                  <div className="grid grid-cols-2 gap-2">
-                    {capability.caps.map((cap) => (
-                      <div key={cap} className="text-xs bg-[hsl(var(--accent-blue))]/10 text-[hsl(var(--accent-blue))] px-2 py-1 rounded-full text-center">
-                        {cap}
+                {
+                  category: "Operational Excellence",
+                  results: [
+                    { metric: "99.99%", subtext: "Uptime SLA", description: "Consistent availability" },
+                    { metric: "↓90sec", subtext: "Incident Response", description: "Average detection time" },
+                    { metric: "85%", subtext: "Faster Resolution", description: "MTTR improvement" },
+                  ]
+                },
+                {
+                  category: "Cost Optimization",
+                  results: [
+                    { metric: "40%", subtext: "Average Savings", description: "Infrastructure costs" },
+                    { metric: "48%", subtext: "Efficiency Gains", description: "Resource optimization" },
+                    { metric: "35%", subtext: "Operational Costs", description: "Reduced overhead" },
+                  ]
+                },
+                {
+                  category: "Innovation Acceleration",
+                  results: [
+                    { metric: "3-5x", subtext: "Development Speed", description: "Faster delivery" },
+                    { metric: "95%", subtext: "Automation Rate", description: "Workflow coverage" },
+                    { metric: "90%", subtext: "MTTR Reduction", description: "Issue resolution" },
+                  ]
+                },
+                {
+                  category: "Security & Compliance",
+                  results: [
+                    { metric: "100%", subtext: "Compliance Rate", description: "Regulatory standards" },
+                    { metric: "99.9%", subtext: "Security Score", description: "Threat prevention" },
+                    { metric: "0", subtext: "Security Breaches", description: "Proven track record" },
+                  ]
+                }
+              ].map((category) => (
+                <Card key={category.category} className="p-6 bg-white border-2 hover:border-[hsl(var(--accent-blue))]/30 hover:shadow-xl transition-all group">
+                  <h3 className="text-lg font-bold text-[hsl(var(--navy))] mb-6 text-center">{category.category}</h3>
+                  <div className="space-y-4">
+                    {category.results.map((result, i) => (
+                      <div key={i} className="text-center">
+                        <div className="text-3xl font-black text-[hsl(var(--accent-blue))] mb-1 group-hover:scale-110 transition-transform">{result.metric}</div>
+                        <div className="text-sm font-bold text-slate-700 mb-1">{result.subtext}</div>
+                        <div className="text-xs text-slate-600">{result.description}</div>
                       </div>
                     ))}
                   </div>
-                  {index === 0 && (
-                    <div className="mt-4 p-3 bg-gradient-to-r from-[hsl(var(--accent-blue))]/5 to-transparent rounded-lg">
-                      <p className="text-xs text-[hsl(var(--accent-blue))]">Foundational tier - enables all other services</p>
-                    </div>
-                  )}
                 </Card>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Service Catalog Section */}
-        <section className="section-space bg-gradient-to-br from-slate-50 to-blue-50/20">
-          <div className="mx-auto w-full max-w-6xl px-6">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="eyebrow text-[hsl(var(--accent-blue))]">Service catalog</span>
-              <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
-                Mastering Enterprise Technology Operations
-              </h2>
-              <p className="mt-6 text-lg text-slate-600">
-                Eight interconnected services designed to deliver comprehensive managed technology operations,
-                from infrastructure to innovation, all aligned to your business objectives.
-              </p>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              {services.map((service) => (
-                <Card key={service.title} className="p-8 border-2 hover:border-[hsl(var(--accent-blue))]/30 hover:shadow-xl transition-all hover:-translate-y-1 duration-300 group">
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 group-hover:scale-110 transition-transform duration-300">
-                      <service.icon className="h-6 w-6 text-[hsl(var(--accent-blue))]" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="text-xl font-bold text-[hsl(var(--navy))]">{service.title}</h3>
-                        <span className="text-sm font-semibold text-[hsl(var(--accent-blue))] bg-blue-50 px-2 py-1 rounded-full">
-                          {service.outcomes.length} outcomes
-                        </span>
-                      </div>
-                      <p className="text-slate-600 leading-relaxed">{service.overview}</p>
-                    </div>
-                  </div>
-                  <div className="mt-6 pt-6 border-t border-slate-100">
-                    <Button variant="outline" size="lg" asChild className="w-full justify-between">
-                      <Link to={service.slug} className="flex w-full items-center justify-between text-sm font-semibold group">
-                        <span className="text-slate-700">Explore service details</span>
-                        <ArrowRight className="h-4 w-4 text-[hsl(var(--accent-blue))] transition-transform group-hover:translate-x-1" />
-                      </Link>
-                    </Button>
-                  </div>
-                </Card>
-              ))}
-            </div>
-
-            <div className="mt-12 text-center">
-              <Card className="p-8 border-2 border-[hsl(var(--accent-blue))]/20 mx-auto max-w-2xl">
-                <h3 className="text-xl font-bold text-[hsl(var(--navy))] mb-3">Need a Custom Solution?</h3>
-                <p className="text-slate-600 mb-6">We can design a tailored managed services portfolio that perfectly matches your unique requirements and technology stack.</p>
-                <Button variant="hero" size="lg" asChild>
-                  <Link to="/contact" className="flex items-center gap-2 group">
-                    <span>Request Custom Assessment</span>
-                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </Button>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits Section */}
+        {/* Why Choose HiTechLogic */}
         <section className="section-space bg-white">
           <div className="mx-auto w-full max-w-6xl px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="eyebrow text-[hsl(var(--accent-blue))]">Business outcomes</span>
+              <span className="eyebrow text-[hsl(var(--accent-blue))]">Our Approach</span>
               <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
-                Transforming technology from cost center to competitive advantage
+                Why Choose HiTechLogic
               </h2>
               <p className="mt-6 text-lg text-slate-600">
-                Our comprehensive managed services approach delivers measurable results across efficiency,
-                reliability, innovation, and strategic alignment.
+                Enterprise-grade infrastructure management with proven results,
+                AI-powered automation, and 24/7 expert support.
               </p>
             </div>
 
-            <div className="grid gap-8">
-              <div className="grid md:grid-cols-2 gap-16">
-                <div>
-                  <h3 className="text-2xl font-bold text-[hsl(var(--navy))] mb-6">Operational Excellence</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-50/50 to-transparent hover:from-blue-50 transition-all hover:translate-x-2 duration-300 group">
-                      <CheckCircle2 className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                      <div>
-                        <div className="font-semibold text-[hsl(var(--navy))]">24/7 Infrastructure Reliability</div>
-                        <div className="text-slate-600">Never-sleep operations with guaranteed 99.99% uptime</div>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-50/50 to-transparent hover:from-blue-50 transition-all hover:translate-x-2 duration-300 group">
-                      <CheckCircle2 className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                      <div>
-                        <div className="font-semibold text-[hsl(var(--navy))]">85% Faster Incident Response</div>
-                        <div className="text-slate-600">Automated detection and remediation reduces mean time to resolution</div>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-50/50 to-transparent hover:from-blue-50 transition-all hover:translate-x-2 duration-300 group">
-                      <CheckCircle2 className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                      <div>
-                        <div className="font-semibold text-[hsl(var(--navy))]">Enterprise-Grade Security</div>
-                        <div className="text-slate-600">Zero-trust architecture with compliance and threat protection</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-[hsl(var(--navy))] mb-6">Business Impact</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-50/50 to-transparent hover:from-blue-50 transition-all hover:translate-x-2 duration-300 group">
-                      <CheckCircle2 className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                      <div>
-                        <div className="font-semibold text-[hsl(var(--navy))]">$50M+ Cost Savings Confirmed</div>
-                        <div className="text-slate-600">Measurable ROI through optimization and automation</div>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-50/50 to-transparent hover:from-blue-50 transition-all hover:translate-x-2 duration-300 group">
-                      <CheckCircle2 className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                      <div>
-                        <div className="font-semibold text-[hsl(var(--navy))]">3x Faster Development</div>
-                        <div className="text-slate-600">Accelerated innovation with rapid prototyping capabilities</div>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-r from-blue-50/50 to-transparent hover:from-blue-50 transition-all hover:translate-x-2 duration-300 group">
-                      <CheckCircle2 className="h-6 w-6 text-[hsl(var(--accent-blue))] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                      <div>
-                        <div className="font-semibold text-[hsl(var(--navy))]">Executive Strategic Partnership</div>
-                        <div className="text-slate-600">Technology leadership that drives business transformation</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="text-center mt-12">
-                <div className="inline-flex items-center gap-4 p-6 rounded-2xl border border-[hsl(var(--accent-blue))]/20 bg-gradient-to-r from-[hsl(var(--accent-blue))]/5 to-transparent">
-                  <div className="text-3xl font-bold text-[hsl(var(--navy))]">98%</div>
-                  <div className="text-left">
-                    <div className="font-semibold text-[hsl(var(--navy))]">Client Retention Rate</div>
-                    <div className="text-sm text-slate-600">Year after year of successful partnerships</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Use Cases Section */}
-        <section className="section-space bg-slate-50">
-          <div className="mx-auto w-full max-w-6xl px-6">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="eyebrow text-[hsl(var(--accent-blue))]">Industry applications</span>
-              <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">Built for enterprise scale and complexity</h2>
-              <p className="mt-6 text-lg text-slate-600">
-                Our managed services deliver proven results across every major industry, from fintech to healthcare,
-                ensuring compliance, security, and reliability in mission-critical environments.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  title: "Financial Services",
-                  description: "99.999% uptime requirements with regulatory compliance and zero-breach operation.",
-                  icon: Server,
-                  capabilities: ["PCI DSS", "SOC 2 Type II", "FedRAMP", "Zero downtime"]
+                  title: "AI-Powered Automation",
+                  description: "615+ automated runbooks with 99.9% success rate reducing manual intervention by 85%",
+                  icon: Workflow,
                 },
                 {
-                  title: "Healthcare & Life Sciences",
-                  description: "HIPAA compliance with 24/7 availability and patient safety monitoring.",
-                  icon: ShieldCheck,
-                  capabilities: ["HIPAA", "HITRUST", "Patient safety", "Telemedicine"]
+                  title: "24/7 Expert Support",
+                  description: "Dedicated teams with deep expertise ensuring sub-15-minute incident response times",
+                  icon: Clock,
                 },
                 {
-                  title: "E-commerce & Retail",
-                  description: "High-availability systems built for peak traffic and seasonal demand spikes.",
-                  icon: Activity,
-                  capabilities: ["Auto-scaling", "Fast deployment", "Performance", "SEO optimization"]
+                  title: "Proven Results",
+                  description: "99.99% uptime SLA with 40% cost reduction and 90% MTTR improvement",
+                  icon: TrendingUp,
                 },
-                {
-                  title: "Technology & SaaS",
-                  description: "Multi-cloud orchestration with automated compliance and security testing.",
-                  icon: Cloud,
-                  capabilities: ["Multi-cloud", "Compliance", "DevSecOps", "Cost optimization"]
-                },
-                {
-                  title: "Manufacturing & Logistics",
-                  description: "Operational technology integration with predictive maintenance and monitoring.",
-                  icon: Gauge,
-                  capabilities: ["OT monitoring", "Predictive maintenance", "Automation", "Supply chain"]
-                },
-                {
-                  title: "Government & Defense",
-                  description: "Classified information handling with federal security standards and audit trails.",
-                  icon: Target,
-                  capabilities: ["CUI protection", "Audit logging", "Zero trust", "FedRAMP Gov"]
-                },
-              ].map((useCase, index) => (
-                <Card key={useCase.title} className="p-6 border-2 hover:border-[hsl(var(--accent-blue))]/30 hover:shadow-xl transition-all hover:-translate-y-1 duration-300 group">
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 group-hover:scale-110 transition-transform duration-300">
-                      <useCase.icon className="h-6 w-6 text-[hsl(var(--accent-blue))]" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-[hsl(var(--navy))] mb-2">{useCase.title}</h3>
-                      <p className="text-slate-600 text-sm mb-4">{useCase.description}</p>
-                      <div className="flex flex-wrap gap-1">
-                        {useCase.capabilities.map((cap) => (
-                          <span key={cap} className="text-xs font-medium text-[hsl(var(--accent-blue))] bg-blue-50 px-2 py-1 rounded-full">
-                            {cap}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+              ].map((feature) => (
+                <Card key={feature.title} className="p-8 border-2 hover:border-[hsl(var(--accent-blue))]/30 hover:shadow-xl transition-all hover:-translate-y-1 duration-300 group">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <feature.icon className="h-7 w-7 text-[hsl(var(--accent-blue))]" />
                   </div>
+                  <h3 className="text-xl font-bold text-[hsl(var(--navy))] mb-4">{feature.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{feature.description}</p>
                 </Card>
               ))}
             </div>
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="section-space bg-white">
-          <div className="mx-auto w-full max-w-4xl px-6">
-            <div className="text-center mb-16">
-              <span className="eyebrow text-[hsl(var(--accent-blue))]">Common questions</span>
-              <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">Everything you need to know about our services</h2>
-            </div>
-
-            <div className="space-y-4">
-              {[
-                {
-                  question: "How do you ensure service quality across all offerings?",
-                  answer: "Every service is delivered by our certified team with unified processes, tools, and reporting. We maintain consistent SLAs, documentation, and executive communication across all service pillars."
-                },
-                {
-                  question: "Can you customize services for our specific requirements?",
-                  answer: "Absolutely. We work with every client to tailor our service offerings to their technology stack, compliance requirements, and business objectives. No two engagements are identical."
-                },
-                {
-                  question: "How do you handle multi-cloud or hybrid environments?",
-                  answer: "Multi-cloud management is our core competency. We provide unified operations across AWS, Azure, GCP, and on-premises infrastructure with consistent security, compliance, and performance monitoring."
-                },
-                {
-                  question: "What's your typical engagement timeline and process?",
-                  answer: "Discovery and assessment happen rapidly, followed by a thoughtful transition period. We work toward steady-state operations as soon as your teams are ready and aligned."
-                },
-                {
-                  question: "Do you provide training for our internal teams?",
-                  answer: "Knowledge transfer and enablement are built into every engagement. We provide ongoing training, documentation, and collaborative sessions to build your team's capabilities."
-                },
-              ].map((faq, index) => (
-                <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300 border-2 hover:border-[hsl(var(--accent-blue))]/30">
-                  <h3 className="text-lg font-bold text-[hsl(var(--navy))] mb-3">{faq.question}</h3>
-                  <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
-                </Card>
-              ))}
-            </div>
-
-            <div className="mt-12 text-center">
-              <p className="text-slate-600 mb-6">Ready to learn more about our managed services?</p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button variant="outline" size="lg" asChild>
-                  <Link to="/contact" className="flex items-center gap-2">
-                    <Phone className="h-5 w-5" />
-                    <span>Schedule Consultation</span>
-                  </Link>
-                </Button>
-                <Button variant="hero" size="lg" asChild>
-                  <Link to="/contact" className="flex items-center gap-2 group">
-                    <Mail className="h-5 w-5" />
-                    <span>Get Detailed Information</span>
-                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="section-space bg-gradient-to-br from-[hsl(var(--navy))] to-[hsl(var(--navy))]/90 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#ffffff10,transparent_55%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.1),transparent_70%)]" />
-          <div className="relative mx-auto max-w-4xl px-6 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white mb-6">
-              <Target className="h-4 w-4" />
-              <span className="text-sm font-semibold">Enterprise-Ready Solutions</span>
-            </div>
+        {/* CTA Section */}
+        <section className="section-space bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))]">
+          <div className="mx-auto w-full max-w-4xl px-6 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Transform Your Technology Operations Today
+              Ready to Transform Your Operations?
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Join hundreds of organizations that have transformed their technology operations
-              with HiTechLogic's comprehensive managed services. Let's discuss how we can
-              deliver enterprise-grade reliability, security, and innovation for your business.
+            <p className="text-xl text-white/80 mb-10 leading-relaxed">
+              Schedule a consultation to discuss how our 8 core services can deliver
+              operational excellence for your organization.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Button variant="secondary" size="xl" asChild className="bg-white text-[hsl(var(--navy))] hover:bg-blue-50 shadow-2xl hover:scale-105 transition-all">
-                <Link to="/contact" className="flex items-center gap-2 group">
-                  <Calendar className="h-5 w-5" />
-                  <span>Schedule Strategy Session</span>
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="secondary" size="xl" asChild className="bg-white text-[hsl(var(--navy))] hover:bg-slate-50">
+                <Link to="/contact" className="flex items-center gap-2">
+                  <Target className="h-5 w-5" />
+                  <span>Schedule Consultation</span>
+                  <ArrowRight className="h-5 w-5" />
                 </Link>
               </Button>
-            </div>
-
-            <div className="pt-8 border-t border-white/10">
-              <p className="text-blue-200 text-sm mb-4">Get started risk-free with our 30-day satisfaction guarantee</p>
-              <div className="flex justify-center gap-8 text-sm text-white/80">
-                <div className="text-center">
-                  <div className="font-medium text-white">Enterprise Scale</div>
-                  <div>$2B+ infrastructure managed</div>
-                </div>
-                <div className="text-center">
-                  <div className="font-medium text-white">Proven Results</div>
-                  <div>99.99% uptime guaranteed</div>
-                </div>
-                <div className="text-center">
-                  <div className="font-medium text-white">Always On</div>
-                  <div>24/7 operations support</div>
-                </div>
-              </div>
+              <Button variant="outline" size="xl" asChild className="border-2 border-white text-white hover:bg-white/10">
+                <Link to="/industries">View Industry Solutions</Link>
+              </Button>
             </div>
           </div>
         </section>
-
       </Layout>
     </>
   );

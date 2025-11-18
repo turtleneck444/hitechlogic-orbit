@@ -149,20 +149,20 @@ export default function Technology() {
       />
       <Layout>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-[hsl(var(--navy))]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--deep-navy))] via-[hsl(var(--graphite))] to-[hsl(var(--deep-navy))]">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         <div className="relative mx-auto w-full max-w-6xl px-6 pt-32 pb-20 sm:pt-40 sm:pb-28">
           <div className="animate-[fade-in_0.5s_ease-out]">
             <div className="flex items-center gap-3 mb-6">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 shadow-lg shadow-emerald-500/25">
-                <Code className="h-7 w-7 text-white" />
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg">
+                <Code className="h-7 w-7 text-[hsl(var(--accent-blue))]" />
               </div>
-              <span className="eyebrow text-emerald-400">Technology & Software Development</span>
+              <span className="eyebrow text-white/90">Technology & Software Development</span>
             </div>
           </div>
           <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white animate-[fade-in_0.6s_ease-out_0.1s_both]">
             Accelerate innovation<br />
-            <span className="text-emerald-400">without sacrificing reliability</span>
+            <span className="text-[hsl(var(--accent-blue))]">without sacrificing reliability</span>
           </h1>
           <p className="mt-6 text-xl text-slate-300 max-w-3xl leading-relaxed animate-[fade-in_0.7s_ease-out_0.2s_both]">
             Technology companies depend on infrastructure that enables rapid iteration and seamless scaling.
@@ -170,14 +170,11 @@ export default function Technology() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4 animate-[fade-in_0.8s_ease-out_0.3s_both]">
-            <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(16,185,129,0.8)] hover:scale-105 transition-transform">
+            <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(139,92,246,0.8)] hover:scale-105 transition-transform">
               <Link to="/contact" className="flex items-center gap-2">
                 <span>Discuss Your Tech Stack</span>
                 <ArrowRight className="h-5 w-5" />
               </Link>
-            </Button>
-            <Button variant="outline" size="xl" asChild className="border-white text-white hover:bg-white hover:text-slate-900 hover:scale-105 transition-all">
-              <Link to="/demo">View Platform Demo</Link>
             </Button>
           </div>
 
@@ -188,9 +185,9 @@ export default function Technology() {
               return (
                 <div key={metric.label} className="text-center group hover:scale-105 transition-transform">
                   <div className="flex items-center justify-center mb-2">
-                    <IconComponent className="h-6 w-6 text-emerald-400" />
+                    <IconComponent className="h-6 w-6 text-[hsl(var(--accent-blue))]" />
                   </div>
-                  <div className="text-3xl md:text-4xl font-bold text-emerald-400">{metric.value}</div>
+                  <div className="text-3xl md:text-4xl font-bold text-[hsl(var(--accent-blue))]">{metric.value}</div>
                   <div className="mt-2 text-sm font-medium text-slate-300">{metric.label}</div>
                 </div>
               );
@@ -204,7 +201,7 @@ export default function Technology() {
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-100 text-red-700 font-semibold text-sm mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 border border-red-200 text-red-700 font-semibold text-sm mb-6">
                 <AlertTriangle className="h-4 w-4" />
                 Development velocity challenges
               </div>
@@ -221,7 +218,7 @@ export default function Technology() {
               </div>
             </div>
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 font-semibold text-sm mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-blue-700 font-semibold text-sm mb-6">
                 <CheckCircle2 className="h-4 w-4" />
                 Our technology solutions
               </div>
@@ -231,13 +228,13 @@ export default function Technology() {
               <div className="space-y-4 text-slate-600">
                 {industry.solutions.map((solution, index) => (
                   <p key={index} className="flex items-start gap-3">
-                    <span className="text-emerald-600 font-bold mt-1">✓</span>
+                    <span className="text-blue-600 font-bold mt-1">✓</span>
                     <span>{solution}</span>
                   </p>
                 ))}
               </div>
               <div className="mt-8">
-                <Button variant="primary" size="lg" asChild className="bg-emerald-600 hover:bg-emerald-700">
+                <Button variant="primary" size="lg" asChild className="bg-blue-600 hover:bg-blue-700">
                   <Link to="/contact" className="flex items-center gap-2">
                     <span>Get Technology Assessment</span>
                     <ArrowRight className="h-4 w-4" />
@@ -250,10 +247,10 @@ export default function Technology() {
       </section>
 
       {/* Transformation Journey */}
-      <section className="section-space bg-gradient-to-br from-slate-50 to-emerald-50/30">
+      <section className="section-space bg-gradient-to-br from-slate-50 to-[hsl(var(--accent-blue))]/15">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow text-emerald-600">Implementation roadmap</span>
+            <span className="eyebrow text-[hsl(var(--accent-blue))]">Implementation roadmap</span>
             <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
               From constrained to unlimited scalability
             </h2>
@@ -264,21 +261,21 @@ export default function Technology() {
 
           <div className="relative">
             {/* Connecting Line */}
-            <div className="hidden md:block absolute left-[50%] top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-200 via-emerald-300 to-emerald-200" />
+            <div className="hidden md:block absolute left-[50%] top-0 bottom-0 w-0.5 bg-gradient-to-b from-[hsl(var(--accent-blue))]/30 via-[hsl(var(--accent-blue))]/40 to-[hsl(var(--accent-blue))]/30" />
 
             <div className="space-y-12">
               {transformationJourney.map((phase, index) => (
                 <div key={phase.step} className={`relative grid md:grid-cols-2 gap-8 items-center ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
                   {index % 2 === 0 ? (
                     <>
-                      <Card className="p-8 border-2 border-emerald-200 bg-gradient-to-br from-emerald-50/50 to-white hover:shadow-xl transition-all md:ml-auto">
+                      <Card className="p-8 border-2 border-[hsl(var(--accent-blue))]/30 bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white hover:shadow-xl transition-all md:ml-auto">
                         <div className="flex items-center gap-4 mb-4">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white font-bold text-xl shadow-lg">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--accent-blue))]/70 text-white font-bold text-xl shadow-lg">
                             {phase.step}
                           </div>
                           <div>
                             <h3 className="text-xl font-bold text-[hsl(var(--navy))]">{phase.title}</h3>
-                            <span className="text-sm text-emerald-600 font-semibold">{phase.duration}</span>
+                            <span className="text-sm text-[hsl(var(--accent-blue))] font-semibold">{phase.duration}</span>
                           </div>
                         </div>
                         <p className="text-slate-600 leading-relaxed">{phase.description}</p>
@@ -288,14 +285,14 @@ export default function Technology() {
                   ) : (
                     <>
                       <div className="hidden md:block" />
-                      <Card className="p-8 border-2 border-emerald-200 bg-gradient-to-br from-emerald-50/50 to-white hover:shadow-xl transition-all">
+                      <Card className="p-8 border-2 border-[hsl(var(--accent-blue))]/30 bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white hover:shadow-xl transition-all">
                         <div className="flex items-center gap-4 mb-4">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white font-bold text-xl shadow-lg">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--accent-blue))]/70 text-white font-bold text-xl shadow-lg">
                             {phase.step}
                           </div>
                           <div>
                             <h3 className="text-xl font-bold text-[hsl(var(--navy))]">{phase.title}</h3>
-                            <span className="text-sm text-emerald-600 font-semibold">{phase.duration}</span>
+                            <span className="text-sm text-[hsl(var(--accent-blue))] font-semibold">{phase.duration}</span>
                           </div>
                         </div>
                         <p className="text-slate-600 leading-relaxed">{phase.description}</p>
@@ -303,14 +300,14 @@ export default function Technology() {
                     </>
                   )}
                   {/* Center Circle */}
-                  <div className="hidden md:block absolute left-[50%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-emerald-500 border-4 border-white shadow-lg z-10" />
+                  <div className="hidden md:block absolute left-[50%] top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-[hsl(var(--accent-blue))] border-4 border-white shadow-lg z-10" />
                 </div>
               ))}
             </div>
           </div>
 
           <div className="mt-12 text-center">
-            <Button variant="primary" size="lg" asChild className="bg-emerald-600 hover:bg-emerald-700">
+            <Button variant="primary" size="lg" asChild className="bg-[hsl(var(--accent-blue))] hover:bg-[hsl(var(--accent-blue))]/90">
               <Link to="/contact" className="flex items-center gap-2">
                 <span>Start Your Journey</span>
                 <ArrowRight className="h-4 w-4" />
@@ -323,8 +320,8 @@ export default function Technology() {
       {/* Services Grid */}
       <section className="section-space bg-white">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow text-emerald-600">Service integration</span>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="eyebrow text-[hsl(var(--accent-blue))]">Service integration</span>
             <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
               Specialized services for technology companies
             </h2>
@@ -335,16 +332,16 @@ export default function Technology() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {industry.services.map((service, index) => (
-              <Card
-                key={service.id}
-                className="p-6 text-center hover:shadow-xl transition-all duration-300 border-2 hover:border-emerald-300 group hover:-translate-y-1"
+                <Card
+                  key={service.id}
+                  className="p-6 text-center hover:shadow-xl transition-all duration-300 border-2 hover:border-[hsl(var(--accent-blue))]/30 group hover:-translate-y-1"
                 style={{
                   animationDelay: `${index * 0.1}s`,
                 }}
               >
                 <h3 className="text-lg font-semibold text-[hsl(var(--navy))] mb-3">{service.title}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed mb-4">{service.description}</p>
-                <div className="text-xs text-emerald-600 font-semibold border-t border-slate-100 pt-3">
+                  <div className="text-xs text-[hsl(var(--accent-blue))] font-semibold border-t border-slate-100 pt-3">
                   {service.outcome}
                 </div>
               </Card>
@@ -354,11 +351,11 @@ export default function Technology() {
       </section>
 
       {/* Target Audience */}
-      <section className="section-space bg-gradient-to-br from-slate-50 to-emerald-50/30">
+      <section className="section-space bg-gradient-to-br from-slate-50 to-[hsl(var(--accent-blue))]/15">
         <div className="mx-auto w-full max-w-6xl px-6">
           <div className="grid md:grid-cols-2 gap-16">
             <div>
-              <span className="eyebrow text-emerald-600">Ideal for</span>
+              <span className="eyebrow text-[hsl(var(--accent-blue))]">Ideal for</span>
               <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">Technology leaders</h2>
               <p className="mt-6 text-lg text-slate-600 leading-relaxed">
                 Whether you're scaling a startup, managing rapid growth, or leading enterprise transformation,
@@ -369,12 +366,12 @@ export default function Technology() {
               {industry.audience.map((role, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-emerald-50/50 to-transparent hover:from-emerald-50 transition-all hover:scale-105"
+                  className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-[hsl(var(--accent-blue))]/20 to-transparent hover:from-[hsl(var(--accent-blue))]/30 transition-all hover:scale-105"
                   style={{
                     animationDelay: `${index * 0.1}s`,
                   }}
                 >
-                  <Users className="h-5 w-5 text-emerald-600 shrink-0" />
+                  <Users className="h-5 w-5 text-[hsl(var(--accent-blue))] shrink-0" />
                   <span className="text-slate-700 font-medium">{role}</span>
                 </div>
               ))}
@@ -386,17 +383,17 @@ export default function Technology() {
       {/* Compliance & Security */}
       <section className="section-space bg-white">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="eyebrow text-emerald-600">Standards & compliance</span>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="eyebrow text-[hsl(var(--accent-blue))]">Standards & compliance</span>
             <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
               Built for enterprise technology environments
             </h2>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {industry.compliance.map((compliance, index) => (
-              <Card key={index} className="p-6 text-center hover:shadow-xl transition-all hover:scale-105 border-2 hover:border-emerald-300">
-                <Shield className="h-8 w-8 text-emerald-600 mx-auto mb-3" />
+              {industry.compliance.map((compliance, index) => (
+              <Card key={index} className="p-6 text-center hover:shadow-xl transition-all hover:scale-105 border-2 hover:border-[hsl(var(--accent-blue))]/30">
+                <Shield className="h-8 w-8 text-[hsl(var(--accent-blue))] mx-auto mb-3" />
                 <div className="text-sm font-semibold text-[hsl(var(--navy))]">{compliance}</div>
                 <div className="text-xs text-slate-500 mt-1">Certified</div>
               </Card>
@@ -404,7 +401,7 @@ export default function Technology() {
           </div>
 
           <div className="mt-12 text-center">
-            <Button variant="primary" size="lg" asChild className="bg-emerald-600 hover:bg-emerald-700">
+            <Button variant="primary" size="lg" asChild className="bg-[hsl(var(--accent-blue))] hover:bg-[hsl(var(--accent-blue))]/90">
               <Link to="/case-studies">View Technology Success Stories</Link>
             </Button>
           </div>
@@ -412,10 +409,10 @@ export default function Technology() {
       </section>
 
       {/* FAQ Section */}
-      <section className="section-space bg-gradient-to-br from-slate-50 to-emerald-50/30">
+      <section className="section-space bg-gradient-to-br from-slate-50 to-[hsl(var(--accent-blue))]/15">
         <div className="mx-auto w-full max-w-4xl px-6">
           <div className="text-center mb-16">
-            <span className="eyebrow text-emerald-600">Technical questions</span>
+            <span className="eyebrow text-[hsl(var(--accent-blue))]">Technical questions</span>
             <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">
               Everything you need to know about our technology solutions
             </h2>
@@ -423,18 +420,18 @@ export default function Technology() {
 
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <Card key={index} className="border-2 border-emerald-100 overflow-hidden">
+              <Card key={index} className="border-2 border-[hsl(var(--accent-blue))]/20 overflow-hidden">
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full p-6 text-left flex items-center justify-between hover:bg-emerald-50/50 transition-colors"
+                  className="w-full p-6 text-left flex items-center justify-between hover:bg-[hsl(var(--accent-blue))]/15 transition-colors"
                 >
                   <span className="font-semibold text-[hsl(var(--navy))] pr-8">{faq.question}</span>
                   <ArrowRight
-                    className={`h-5 w-5 text-emerald-600 shrink-0 transition-transform ${openFaq === index ? 'rotate-90' : ''}`}
+                    className={`h-5 w-5 text-[hsl(var(--accent-blue))] shrink-0 transition-transform ${openFaq === index ? 'rotate-90' : ''}`}
                   />
                 </button>
                 {openFaq === index && (
-                  <div className="px-6 pb-6 text-slate-600 leading-relaxed border-t border-emerald-100 pt-4">
+                  <div className="px-6 pb-6 text-slate-600 leading-relaxed border-t border-[hsl(var(--accent-blue))]/20 pt-4">
                     {faq.answer}
                   </div>
                 )}
@@ -444,7 +441,7 @@ export default function Technology() {
 
           <div className="mt-12 text-center">
             <p className="text-slate-600 mb-4">Have more technical questions?</p>
-            <Button variant="outline" size="lg" asChild className="border-emerald-600 text-emerald-600 hover:bg-emerald-50">
+            <Button variant="outline" size="lg" asChild className="border-[hsl(var(--accent-blue))] text-[hsl(var(--accent-blue))] hover:bg-[hsl(var(--accent-blue))]/10">
               <Link to="/contact">Connect with Engineering Team</Link>
             </Button>
           </div>
@@ -452,15 +449,15 @@ export default function Technology() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="section-space bg-gradient-to-br from-emerald-600 to-[hsl(var(--navy))]">
+      <section className="section-space bg-gradient-to-br from-[hsl(var(--accent-blue))] via-[hsl(var(--navy))]/80 to-[hsl(var(--navy))]">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white">Ready to accelerate your technology innovation?</h2>
-          <p className="mt-6 text-xl text-emerald-100">
+          <p className="mt-6 text-xl text-white/80">
             Let's assess your current infrastructure and build a plan for reliable scaling that supports
             your development velocity without compromise.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Button variant="secondary" size="xl" asChild className="bg-white text-emerald-600 hover:bg-white/90 hover:scale-105 transition-transform">
+            <Button variant="secondary" size="xl" asChild className="bg-white text-[hsl(var(--accent-blue))] hover:bg-white/90 hover:scale-105 transition-transform">
               <Link to="/contact" className="flex items-center gap-2">
                 <span>Schedule Technology Assessment</span>
                 <ArrowRight className="h-5 w-5" />
@@ -472,12 +469,12 @@ export default function Technology() {
           </div>
 
           {/* Success Guarantee */}
-          <div className="mt-16 pt-8 border-t border-emerald-400/30">
+          <div className="mt-16 pt-8 border-t border-[hsl(var(--accent-blue))]/30">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <Zap className="h-6 w-6 text-emerald-200" />
-              <span className="text-emerald-100 font-semibold text-lg">Velocity Guarantee</span>
+              <Zap className="h-6 w-6 text-[hsl(var(--accent-blue))]" />
+              <span className="text-white font-semibold text-lg">Velocity Guarantee</span>
             </div>
-            <p className="text-emerald-100/90 max-w-2xl mx-auto">
+            <p className="text-white/80 max-w-2xl mx-auto">
               We guarantee your deployment frequency will increase by 3x within 90 days, or we'll provide
               infrastructure services at no cost until you achieve your reliability goals.
             </p>

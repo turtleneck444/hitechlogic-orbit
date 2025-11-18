@@ -377,7 +377,7 @@ export const projects: Project[] = [
       {
         id: "ms-06",
         title: "Security Audit & Certification",
-        description: "Complete SOC 2 Type II audit with zero findings",
+        description: "Complete enterprise compliance audit with zero findings",
         dueDate: "2025-08-15",
         completed: false,
       },

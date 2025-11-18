@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useState, useCallback } from "react";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 const items = [
   {
@@ -55,6 +56,14 @@ export function Accordion05() {
     setHoveredItem(null);
   };
 
+  // Handle card click to toggle accordion
+  const handleCardClick = (e: React.MouseEvent, itemId: string) => {
+    // Only toggle accordion if not clicking on a link
+    if (!(e.target as HTMLElement).closest('a[href]')) {
+      setOpenItems(openItems[0] === itemId ? [] : [itemId]);
+    }
+  };
+
   return (
     <div className="w-full max-w-6xl mx-auto">
       <Accordion
@@ -71,7 +80,7 @@ export function Accordion05() {
             onMouseLeave={handleMouseLeave}
           >
             <AccordionTrigger
-              onClick={() => window.location.href = item.href}
+              onClick={(e) => handleCardClick(e, item.id)}
               className={cn(
                 "text-left px-6 md:px-8 py-6 overflow-hidden text-white/60 duration-500 hover:no-underline hover:text-white cursor-pointer w-full [&>svg]:hidden transition-all duration-500",
                 hoveredItem === item.id ? "text-white transform scale-[1.02]" : ""
@@ -90,14 +99,18 @@ export function Accordion05() {
             <AccordionContent className="text-white/90 px-6 md:px-8 pb-6 text-base md:text-lg leading-relaxed bg-white/5 pt-4 border-t border-white/10 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:slide-out-to-top-2 data-[state=open]:slide-in-from-top-2 duration-500">
               {item.content}
               <div className="mt-6 pt-4 border-t border-white/10">
-                <Button
-                  onClick={() => window.location.href = item.href}
-                  className="bg-white/15 hover:bg-white/25 text-white border border-white/30 hover:border-white/50 transition-all duration-300 group"
-                  size="sm"
+                <Link
+                  to={item.href}
+                  onClick={(e) => e.stopPropagation()}
                 >
-                  Learn More
-                  <ArrowRight className="h-3 w-3 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                  <Button
+                    className="bg-white/15 hover:bg-white/25 text-white border border-white/30 hover:border-white/50 transition-all duration-300 group"
+                    size="sm"
+                  >
+                    Learn More
+                    <ArrowRight className="h-3 w-3 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
               </div>
             </AccordionContent>
           </AccordionItem>

@@ -27,7 +27,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Healthcare Provider Achieves Zero-Downtime Cloud Migration",
     client: "Ruixen Healthcare",
     industry: "Healthcare",
-    challenge: "A leading healthcare provider needed to migrate their legacy on-premises infrastructure to AWS while maintaining HIPAA compliance and ensuring zero downtime for critical patient care systems.",
+    challenge: "A leading healthcare provider needed to migrate their legacy on-premises infrastructure to AWS while maintaining healthcare compliance and ensuring zero downtime for critical patient care systems.",
     solution: "HiTechLogic designed and executed a phased migration strategy with automated failover, real-time data synchronization, and comprehensive security controls including encryption at rest and in transit.",
     results: [
       {
@@ -47,7 +47,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         metric: "100%",
-        value: "HIPAA Compliance",
+        value: "Healthcare Compliance",
         description: "Achieved and maintained full regulatory compliance",
       },
     ],
@@ -62,16 +62,16 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "fintech-security-transformation",
-    title: "FinTech Company Achieves SOC 2 Type II Certification",
+    title: "FinTech Company Achieves Enterprise Compliance Certification",
     client: "Bridgestone FinTech",
     industry: "Financial Services",
-    challenge: "A rapidly growing fintech startup needed to achieve SOC 2 Type II certification to win enterprise customers, but lacked the security infrastructure and processes required for compliance.",
+    challenge: "A rapidly growing fintech startup needed to achieve enterprise compliance certification to win enterprise customers, but lacked the security infrastructure and processes required for compliance.",
     solution: "HiTechLogic implemented a comprehensive zero-trust security architecture, deployed continuous vulnerability management, established incident response procedures, and guided the company through the audit process.",
     results: [
       {
         metric: "6 Months",
         value: "Time to Certification",
-        description: "Achieved SOC 2 Type II certification in record time",
+        description: "Achieved enterprise compliance certification in record time",
       },
       {
         metric: "Zero",

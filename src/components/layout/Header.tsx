@@ -1,129 +1,80 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, ArrowRight, Server, Activity, Workflow, ShieldCheck, BarChart3, Handshake, Gauge, Sparkles, Home, Building2, Briefcase, BookOpen, Phone, Users, Lightbulb, Search } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { allServices } from "@/data/services";
+import { industries } from "@/data/industries";
 
-import { Code, TrendingUp, Heart, ShoppingCart, Cloud } from "lucide-react";
-
-const serviceMegaMenu = [
+// Hardcoded list of your 8 core services exactly as requested
+const coreServices = [
   {
-    icon: Server,
-    title: "Infrastructure & Cloud Operations",
-    description: "Elite multi-cloud orchestration with zero-downtime deployments",
-    href: "/services/infrastructure-cloud-operations",
+    id: 'infrastructure-cloud-operations',
+    name: 'Infrastructure & Cloud Operations',
+    href: '/services/infrastructure-cloud-operations',
   },
   {
-    icon: Activity,
-    title: "System Oversight & Event Reduction",
-    description: "AI-powered observability that transforms chaos into clarity",
-    href: "/services/system-oversight-event-reduction",
+    id: 'system-oversight-event-reduction',
+    name: 'System Oversight & Event Reduction',
+    href: '/services/system-oversight-event-reduction',
   },
   {
-    icon: Workflow,
-    title: "Automated Corrective Actions",
-    description: "Self-healing infrastructure that works around the clock",
-    href: "/services/automated-corrective-actions",
+    id: 'automated-corrective-actions',
+    name: 'Automated Corrective Actions',
+    href: '/services/automated-corrective-actions',
   },
   {
-    icon: Gauge,
-    title: "Reliability & Performance Engineering",
-    description: "Architectural tuning, load assurance, and SLO management",
-    href: "/services/reliability-performance-engineering",
+    id: 'reliability-performance-engineering',
+    name: 'Reliability & Performance Engineering',
+    href: '/services/reliability-performance-engineering',
   },
   {
-    icon: ShieldCheck,
-    title: "Security & Identity Assurance",
-    description: "Identity governance, access fidelity, and threat monitoring",
-    href: "/services/security-identity-assurance",
+    id: 'security-identity-assurance',
+    name: 'Security & Identity Assurance',
+    href: '/services/security-identity-assurance',
   },
   {
-    icon: BarChart3,
-    title: "Cost Efficiency & Capacity Strategy",
-    description: "Data-driven financial optimization that maximizes ROI",
-    href: "/services/cost-efficiency-capacity-strategy",
+    id: 'cost-efficiency-capacity-strategy',
+    name: 'Cost Efficiency & Capacity Strategy',
+    href: '/services/cost-efficiency-capacity-strategy',
   },
   {
-    icon: Handshake,
-    title: "Strategic Technology Partnership",
-    description: "Executive alignment, roadmap facilitation, and leadership",
-    href: "/services/strategic-technology-partnership",
+    id: 'strategic-technology-partnership',
+    name: 'Strategic Technology Partnership',
+    href: '/services/strategic-technology-partnership',
   },
   {
-    icon: Sparkles,
-    title: "Rapid Prototyping & App Development",
-    description: "Human-centered design sprints that validate and build MVPs",
-    href: "/services/rapid-prototyping",
+    id: 'rapid-prototyping',
+    name: 'Rapid Prototyping & App Development',
+    href: '/services/rapid-prototyping',
   },
 ];
 
-const industriesMegaMenu = [
-  {
-    icon: Code,
-    title: "Technology & Software Development",
-    description: "Reliability for rapid deployment and scaling",
-    href: "/industries/technology",
-  },
-  {
-    icon: TrendingUp,
-    title: "Financial Services",
-    description: "Compliance, security, and 99.999% availability",
-    href: "/industries/financial-services",
-  },
-  {
-    icon: Heart,
-    title: "Healthcare",
-    description: "Patient safety and HIPAA compliance",
-    href: "/industries/healthcare",
-  },
-  {
-    icon: ShoppingCart,
-    title: "E-commerce & Retail",
-    description: "Zero downtime during peak sales events",
-    href: "/industries/ecommerce",
-  },
-  {
-    icon: Cloud,
-    title: "SaaS & Cloud Software",
-    description: "Enterprise-grade reliability and compliance",
-    href: "/industries/saas",
-  },
-];
+
+
+
 
 const navigation = [
   { name: "Home", href: "/" },
   {
-    name: "Solutions",
+    name: "Services",
     href: "/services",
-    hasMegaMenu: true,
+    hasServicesDropdown: true
   },
   {
     name: "Industries",
     href: "/industries",
-    hasIndustriesMenu: true,
+    hasIndustriesDropdown: true
   },
-  { name: "Principles", href: "/principles" },
-  {
-    name: "Resources",
-    href: "#",
-    submenu: [
-      { name: "Resource Library", href: "/resources", description: "Guides, whitepapers & tools" },
-      { name: "Blog", href: "/blog", description: "Operational intelligence & viewpoints" },
-    ],
-  },
+  { name: "Contact", href: "/contact" },
   { name: "About", href: "/about" },
 ];
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({
-    solutions: false,
-    industries: false,
-    resources: false,
-    company: false,
-  });
+  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
+  const [activeDesktopDropdown, setActiveDesktopDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -139,6 +90,18 @@ export function Header() {
     return location.pathname.startsWith(href);
   };
 
+  const toggleSection = (sectionName: string) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [sectionName]: !prev[sectionName]
+    }));
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setExpandedSections({});
+  };
+
   return (
     <header
       className={cn(
@@ -148,33 +111,20 @@ export function Header() {
           : "bg-white shadow-[0_10px_35px_-30px_rgba(30,64,175,0.4)]",
       )}
     >
-      {/* Top Bar - White background with glow */}
-      <div className="w-full border-b border-slate-200 bg-white/95 text-slate-700 shadow-[0_20px_45px_-35px_rgba(37,99,235,0.5)] backdrop-blur-lg">
+      {/* Top Bar */}
+      <div className="w-full border-b border-slate-200 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-12 items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="flex h-6 w-6 items-center justify-center rounded-md bg-white/60 border border-[hsl(var(--accent-blue))]/20 shadow-sm">
-                <ShieldCheck className="h-3.5 w-3.5 text-[hsl(var(--accent-blue))]" />
-              </div>
               <span className="text-sm font-semibold text-slate-900">Enterprise Managed Services Provider</span>
             </div>
             <div className="hidden md:flex items-center gap-5">
               <a
                 href="mailto:contact@hitechlogic.com"
-                className="group flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-200"
+                className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors duration-200"
               >
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <span>contact@hitechlogic.com</span>
+                contact@hitechlogic.com
               </a>
-              <div className="h-4 w-px bg-slate-200" />
-              <div className="flex items-center gap-2 text-sm font-medium text-slate-600">
-                <svg className="h-4 w-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <span>+1 (555) 123-4567</span>
-              </div>
             </div>
           </div>
         </div>
@@ -183,102 +133,29 @@ export function Header() {
       {/* Main Navigation */}
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          {/* Professional Text Logo */}
+          {/* Professional Text Logo - Responsive Sizing */}
           <div className="flex items-center">
-            <Link to="/" className="group flex items-center gap-3">
-              <div className="flex items-baseline gap-1">
-                <span className="text-2xl font-black tracking-tighter text-slate-900 transition-colors duration-300 group-hover:text-[hsl(var(--accent-blue))] leading-none">
-                  HiTech
+            <Link to="/" className="flex items-center group">
+              <div className="relative">
+                <span className="text-lg sm:text-xl md:text-2xl lg:text-2xl font-bold tracking-tight text-slate-900">
+                  HiTech<span className="text-[hsl(var(--accent-blue))] font-bold">Logic</span>
                 </span>
-                <span className="text-2xl font-black tracking-tighter text-[hsl(var(--accent-blue))] leading-none">
-                  Logic
-                </span>
+                {/* Subtle accent glow on hover - Only on desktop */}
+                <div className="hidden lg:block absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-20 h-0.5 bg-gradient-to-r from-transparent via-[hsl(var(--accent-blue))]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
-              <div className="h-px w-12 bg-gradient-to-r from-slate-300 to-[hsl(var(--accent-blue))] transition-all duration-300 opacity-0 group-hover:opacity-100 group-hover:from-[hsl(var(--accent-blue))] group-hover:to-slate-300" />
             </Link>
           </div>
 
-          {/* Navigation */}
+          {/* Navigation - With Dropdowns */}
           <div className="hidden lg:flex items-center gap-2">
             {navigation.map((item) => (
               <div
                 key={item.name}
                 className="relative group"
-                onMouseEnter={() => (item.hasMegaMenu || item.hasIndustriesMenu || item.submenu) && setActiveDropdown(item.name)}
-                onMouseLeave={() => setActiveDropdown(null)}
+                onMouseEnter={item.hasServicesDropdown || item.hasIndustriesDropdown ? () => setActiveDesktopDropdown(item.name) : undefined}
+                onMouseLeave={item.hasServicesDropdown || item.hasIndustriesDropdown ? () => setActiveDesktopDropdown(null) : undefined}
               >
-                {item.hasMegaMenu ? (
-                  <>
-                  <Link
-                    to={item.href}
-                    className={cn(
-                      "relative flex items-center gap-1.5 px-5 py-2.5 text-[15px] font-semibold transition-all duration-200",
-                      isActivePath(item.href)
-                        ? "text-[hsl(var(--navy))]"
-                        : "text-slate-600 hover:text-[hsl(var(--navy))]",
-                      "before:absolute before:bottom-0 before:left-5 before:right-5 before:h-0.5 before:bg-gradient-to-r before:from-[hsl(var(--accent-blue))] before:to-[hsl(var(--navy))] before:transition-all before:duration-300",
-                      isActivePath(item.href)
-                        ? "before:scale-x-100 before:opacity-100 before:shadow-[0_0_12px_rgba(46,107,255,0.6)] before:drop-shadow-[0_0_8px_rgba(46,107,255,0.8)]"
-                        : "before:scale-x-0 before:opacity-0 hover:before:scale-x-100 hover:before:opacity-100"
-                    )}
-                  >
-                    <span>{item.name}</span>
-                    <ChevronDown className={cn(
-                      "h-3.5 w-3.5 transition-all duration-300",
-                      activeDropdown === item.name ? "rotate-180" : ""
-                    )} />
-                  </Link>
-                    {activeDropdown === item.name && (
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 w-[820px] pt-2 transition-opacity duration-200 opacity-100">
-                        <div className="rounded-2xl border border-slate-200/80 bg-white shadow-2xl shadow-slate-900/10 overflow-hidden backdrop-blur-xl">
-                          <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 via-white to-blue-50/20 pointer-events-none" />
-                          <div className="relative p-8">
-                            <div className="mb-7 flex items-center justify-between">
-                              <div>
-                                <h3 className="text-base font-bold text-[hsl(var(--navy))] mb-1.5">Our Services</h3>
-                                <p className="text-sm text-slate-500">Comprehensive managed reliability solutions</p>
-                              </div>
-                              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5">
-                                <Server className="h-5 w-5 text-[hsl(var(--accent-blue))]" />
-                              </div>
-                            </div>
-                            <div className="grid grid-cols-2 gap-3">
-                              {serviceMegaMenu.map((service) => (
-                                <Link
-                                  key={service.title}
-                                  to={service.href}
-                                  className="group/service flex items-start gap-3.5 rounded-xl p-4 transition-all duration-200 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 border border-slate-100 hover:border-[hsl(var(--accent-blue))]/20 hover:-translate-y-0.5"
-                                >
-                                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-slate-50 to-white border border-slate-200/60 shadow-sm group-hover/service:from-[hsl(var(--accent-blue))]/5 group-hover/service:to-blue-50/50 group-hover/service:border-[hsl(var(--accent-blue))]/30 group-hover/service:shadow-md group-hover/service:shadow-[hsl(var(--accent-blue))]/10 transition-all duration-200">
-                                    <service.icon className="h-5 w-5 text-[hsl(var(--accent-blue))] transition-transform duration-200 group-hover/service:scale-110" />
-                                  </div>
-                                  <div className="flex-1 min-w-0">
-                                    <div className="flex items-center justify-between gap-2">
-                                      <h4 className="text-sm font-semibold text-[hsl(var(--navy))] group-hover/service:text-[hsl(var(--accent-blue))] transition-colors line-clamp-1">
-                                        {service.title}
-                                      </h4>
-                                      <ArrowRight className="h-3.5 w-3.5 shrink-0 text-[hsl(var(--accent-blue))] opacity-0 -translate-x-2 group-hover/service:opacity-100 group-hover/service:translate-x-0 transition-all duration-200" />
-                                    </div>
-                                    <p className="text-xs text-slate-500 mt-1 line-clamp-1">{service.description}</p>
-                                  </div>
-                                </Link>
-                              ))}
-                            </div>
-                            <div className="mt-6 pt-6 border-t border-slate-200/60">
-                              <Link
-                                to="/contact"
-                                className="group/cta inline-flex items-center gap-2.5 rounded-lg px-5 py-2.5 text-sm font-semibold text-[hsl(var(--accent-blue))] hover:bg-[hsl(var(--accent-blue))]/5 transition-all duration-200"
-                              >
-                                <span>Schedule a consultation</span>
-                                <ArrowRight className="h-4 w-4 transition-transform group-hover/cta:translate-x-1" />
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </>
-                ) : item.hasIndustriesMenu ? (
+                {item.hasServicesDropdown ? (
                   <>
                     <Link
                       to={item.href}
@@ -289,59 +166,57 @@ export function Header() {
                           : "text-slate-600 hover:text-[hsl(var(--navy))]",
                         "before:absolute before:bottom-0 before:left-5 before:right-5 before:h-0.5 before:bg-gradient-to-r before:from-[hsl(var(--accent-blue))] before:to-[hsl(var(--navy))] before:transition-all before:duration-300",
                         isActivePath(item.href)
-                          ? "before:scale-x-100 before:opacity-100"
+                          ? "before:scale-x-100 before:opacity-100 before:shadow-[0_0_12px_rgba(46,107,255,0.6)] before:drop-shadow-[0_0_8px_rgba(46,107,255,0.8)]"
                           : "before:scale-x-0 before:opacity-0 hover:before:scale-x-100 hover:before:opacity-100"
                       )}
                     >
                       <span>{item.name}</span>
                       <ChevronDown className={cn(
                         "h-3.5 w-3.5 transition-all duration-300",
-                        activeDropdown === item.name ? "rotate-180" : ""
+                        activeDesktopDropdown === item.name ? "rotate-180" : ""
                       )} />
                     </Link>
-                    {activeDropdown === item.name && (
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 w-[900px] pt-2 transition-opacity duration-200 opacity-100">
-                        <div className="rounded-2xl border border-slate-200/80 bg-white shadow-2xl shadow-slate-900/10 overflow-hidden backdrop-blur-xl">
-                          <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 via-white to-purple-50/20 pointer-events-none" />
-                          <div className="relative p-8">
-                            <div className="mb-7 flex items-center justify-between">
-                              <div>
-                                <h3 className="text-base font-bold text-[hsl(var(--navy))] mb-1.5">Industry Solutions</h3>
-                                <p className="text-sm text-slate-500">Specialized reliability solutions for your industry</p>
-                              </div>
-                              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5">
-                                <Server className="h-5 w-5 text-[hsl(var(--accent-blue))]" />
-                              </div>
+                    {activeDesktopDropdown === item.name && (
+                        <div className="absolute top-full left-1/2 -translate-x-1/2 w-80 pt-3 transition-all duration-300 opacity-100 z-50">
+                        <div className="rounded-2xl border border-slate-200/60 bg-white shadow-2xl shadow-slate-900/10 overflow-hidden backdrop-blur-sm">
+                          {/* Header Section */}
+                          <div className="bg-gradient-to-br from-blue-50/70 via-blue-25/50 to-white/90 px-6 py-5 border-b border-slate-200/50">
+                            <div className="text-center">
+                              <h3 className="text-sm font-bold text-blue-900 tracking-tight">Enterprise Services</h3>
+                              <p className="text-xs text-blue-700/80 mt-1 font-medium">Complete managed solutions</p>
                             </div>
-                            <div className="grid grid-cols-1 gap-3">
-                              {industriesMegaMenu.map((industry) => (
+                          </div>
+
+                          {/* Services Grid */}
+                          <div className="p-4">
+                            <div className="grid grid-cols-1 gap-1 max-h-80 overflow-y-auto">
+                              {coreServices.map((service, index) => (
                                 <Link
-                                  key={industry.title}
-                                  to={industry.href}
-                                  className="group/industry flex items-start gap-3.5 rounded-xl p-4 transition-all duration-200 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 border border-slate-100 hover:border-purple-300/20 hover:-translate-y-0.5"
+                                  key={service.id}
+                                  to={service.href}
+                                  className="group/service flex items-center justify-between rounded-lg py-3 px-4 hover:bg-gradient-to-r hover:from-blue-50/60 hover:to-slate-50/60 transition-all duration-300 hover:translate-x-1"
+                                  style={{animationDelay: `${index * 50}ms`}}
                                 >
-                                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-slate-50 to-white border border-slate-200/60 shadow-sm group-hover/industry:from-purple-50/50 group-hover/industry:to-blue-50/50 group-hover/industry:border-purple-300/30 group-hover/industry:shadow-md group-hover/industry:shadow-purple-200/10 transition-all duration-200">
-                                    <industry.icon className="h-5 w-5 text-purple-600 transition-transform duration-200 group-hover/industry:scale-110" />
-                                  </div>
-                                  <div className="flex-1 min-w-0">
-                                    <div className="flex items-center justify-between gap-2">
-                                      <h4 className="text-sm font-semibold text-[hsl(var(--navy))] group-hover/industry:text-purple-600 transition-colors line-clamp-1">
-                                        {industry.title}
-                                      </h4>
-                                      <ArrowRight className="h-3.5 w-3.5 shrink-0 text-purple-600 opacity-0 -translate-x-2 group-hover/industry:opacity-100 group-hover/industry:translate-x-0 transition-all duration-200" />
+                                  <div className="flex-1">
+                                    <div className="text-sm font-medium text-slate-900 group-hover/service:text-blue-900 transition-colors duration-200 line-clamp-2">
+                                      {service.name}
                                     </div>
-                                    <p className="text-xs text-slate-500 mt-1 line-clamp-1">{industry.description}</p>
+                                  </div>
+                                  <div className="w-5 h-5 flex items-center justify-center ml-3">
+                                    <div className="w-0 group-hover/service:w-4 h-4 border-t-2 border-r-2 border-blue-600 rotate-45 transition-all duration-300 opacity-0 group-hover/service:opacity-100 group-hover/service:scale-110"></div>
                                   </div>
                                 </Link>
                               ))}
                             </div>
-                            <div className="mt-6 pt-6 border-t border-slate-200/60">
+
+                            {/* Footer CTA */}
+                            <div className="mt-4 pt-3 border-t border-slate-200/40">
                               <Link
-                                to="/contact"
-                                className="group/cta inline-flex items-center gap-2.5 rounded-lg px-5 py-2.5 text-sm font-semibold text-purple-600 hover:bg-purple-50 transition-all duration-200"
+                                to="/services"
+                                className="flex items-center justify-center gap-2 w-full px-4 py-2 bg-gradient-to-r from-slate-100 to-slate-50 hover:from-slate-200 hover:to-slate-100 rounded-lg transition-all duration-200 border border-slate-200/50 hover:border-slate-300 group/footer"
                               >
-                                <span>Discuss your industry needs</span>
-                                <ArrowRight className="h-4 w-4 transition-transform group-hover/cta:translate-x-1" />
+                                <span className="text-sm font-medium text-slate-700 group-hover/footer:text-slate-900">View All Services</span>
+                                <span className="text-xs text-slate-500 group-hover/footer:text-slate-700">→</span>
                               </Link>
                             </div>
                           </div>
@@ -349,42 +224,71 @@ export function Header() {
                       </div>
                     )}
                   </>
-                ) : item.submenu ? (
+                ) : item.hasIndustriesDropdown ? (
                   <>
-                    <button className={cn(
-                      "relative flex items-center gap-1.5 px-5 py-2.5 text-[15px] font-semibold transition-all duration-200",
-                      "text-slate-600 hover:text-[hsl(var(--navy))]"
-                    )}>
+                    <Link
+                      to={item.href}
+                      className={cn(
+                        "relative flex items-center gap-1.5 px-5 py-2.5 text-[15px] font-semibold transition-all duration-200",
+                        isActivePath(item.href)
+                          ? "text-[hsl(var(--navy))]"
+                          : "text-slate-600 hover:text-[hsl(var(--navy))]",
+                        "before:absolute before:bottom-0 before:left-5 before:right-5 before:h-0.5 before:bg-gradient-to-r before:from-[hsl(var(--accent-blue))] before:to-[hsl(var(--navy))] before:transition-all before:duration-300",
+                        isActivePath(item.href)
+                          ? "before:scale-x-100 before:opacity-100 before:shadow-[0_0_12px_rgba(46,107,255,0.6)] before:drop-shadow-[0_0_8px_rgba(46,107,255,0.8)]"
+                          : "before:scale-x-0 before:opacity-0 hover:before:scale-x-100 hover:before:opacity-100"
+                      )}
+                    >
                       <span>{item.name}</span>
                       <ChevronDown className={cn(
                         "h-3.5 w-3.5 transition-all duration-300",
-                        activeDropdown === item.name ? "rotate-180" : ""
+                        activeDesktopDropdown === item.name ? "rotate-180" : ""
                       )} />
-                    </button>
-                    {activeDropdown === item.name && (
-                      <div className="absolute top-full left-0 w-80 pt-2 transition-opacity duration-200 opacity-100">
-                        <div className="rounded-xl border border-slate-200 bg-white p-3 shadow-2xl shadow-slate-900/10">
-                        {item.submenu.map((subitem: any) => (
-                          <Link
-                            key={subitem.name}
-                            to={subitem.href}
-                            className="group/item block rounded-lg px-4 py-3.5 transition-all duration-200 hover:bg-slate-50"
-                          >
-                            <div className="flex items-start justify-between gap-3">
-                              <div className="flex-1">
-                                <div className="text-[15px] font-semibold text-[hsl(var(--navy))] group-hover/item:text-[hsl(var(--accent-blue))] transition-colors">
-                                  {subitem.name}
-                                </div>
-                                {subitem.description && (
-                                  <div className="text-xs text-slate-500 mt-1">
-                                    {subitem.description}
-                                  </div>
-                                )}
-                              </div>
-                              <ArrowRight className="h-4 w-4 text-[hsl(var(--accent-blue))] opacity-0 -translate-x-1 transition-all duration-200 group-hover/item:opacity-100 group-hover/item:translate-x-0 flex-shrink-0 mt-0.5" />
+                    </Link>
+                    {activeDesktopDropdown === item.name && (
+                      <div className="absolute top-full left-1/2 -translate-x-1/2 w-80 pt-3 transition-all duration-300 opacity-100 z-50">
+                        <div className="rounded-2xl border border-slate-200/60 bg-white shadow-2xl shadow-slate-900/10 overflow-hidden backdrop-blur-sm">
+                          {/* Header Section */}
+                          <div className="bg-gradient-to-br from-blue-50/70 via-blue-25/50 to-white/90 px-6 py-5 border-b border-slate-200/50">
+                            <div className="text-center">
+                              <h3 className="text-sm font-bold text-blue-900 tracking-tight">Industry Sectors</h3>
+                              <p className="text-xs text-blue-700/80 mt-1 font-medium">Tailored enterprise solutions</p>
                             </div>
-                          </Link>
-                        ))}
+                          </div>
+
+                          {/* Industries Grid */}
+                          <div className="p-4">
+                            <div className="grid grid-cols-1 gap-1 max-h-80 overflow-y-auto">
+                              {industries.map((industry, index) => (
+                                <Link
+                                  key={industry.id}
+                                  to={industry.href}
+                                  className="group/industry flex items-center justify-between rounded-lg py-3 px-4 hover:bg-gradient-to-r hover:from-blue-50/60 hover:to-slate-50/60 transition-all duration-300 hover:translate-x-1"
+                                  style={{animationDelay: `${index * 50}ms`}}
+                                >
+                                  <div className="flex-1">
+                                    <div className="text-sm font-medium text-slate-900 group-hover/industry:text-blue-900 transition-colors duration-200 line-clamp-2">
+                                      {industry.name}
+                                    </div>
+                                  </div>
+                                  <div className="w-5 h-5 flex items-center justify-center ml-3">
+                                    <div className="w-0 group-hover/industry:w-4 h-4 border-t-2 border-r-2 border-blue-600 rotate-45 transition-all duration-300 opacity-0 group-hover/industry:opacity-100 group-hover/industry:scale-110"></div>
+                                  </div>
+                                </Link>
+                              ))}
+                            </div>
+
+                            {/* Footer CTA */}
+                            <div className="mt-4 pt-3 border-t border-slate-200/40">
+                              <Link
+                                to="/services"
+                                className="flex items-center justify-center gap-2 w-full px-4 py-2 bg-gradient-to-r from-slate-100 to-slate-50 hover:from-slate-200 hover:to-slate-100 rounded-lg transition-all duration-200 border border-slate-200/50 hover:border-slate-300 group/footer"
+                              >
+                                <span className="text-sm font-medium text-slate-700 group-hover/footer:text-slate-900">Explore All Solutions</span>
+                                <span className="text-xs text-slate-500 group-hover/footer:text-slate-700">→</span>
+                              </Link>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     )}
@@ -412,376 +316,294 @@ export function Header() {
 
           {/* CTA Section */}
           <div className="flex items-center gap-3">
-            <div className="hidden lg:block">
-              <Button variant="hero" size="lg" asChild className="px-7 py-3.5 text-[15px] font-semibold shadow-[0_20px_45px_-20px_rgba(46,107,255,0.8)] hover:scale-[1.03]">
-                <Link to="/contact" className="group flex items-center gap-2">
-                  <span>Request Strategy Consultation</span>
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            <div className="hidden lg:block relative group">
+              <Button
+                variant="hero"
+                size="lg"
+                className="relative overflow-hidden transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-blue-500/25"
+              >
+                <Link to="/contact" className="relative z-10 flex items-center gap-2">
+                  <span>Request Consultation</span>
+                  <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
                 </Link>
+                {/* Subtle glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg" />
               </Button>
+
+              {/* Casino-Style Rolling Buttons */}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 delay-100">
+                <div className="flex flex-col gap-1">
+                  {/* Strategic Assessment - Elegant Blue */}
+                  <Link
+                    to="/contact?type=strategy"
+                    className="hidden lg:flex items-center gap-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 transform opacity-0 group-hover:opacity-100 translate-y-[-10px] group-hover:translate-y-0"
+                    style={{transitionDelay: '0ms'}}
+                  >
+                    <span className="text-lg">🎯</span>
+                    <span className="text-sm whitespace-nowrap">Strategic Assessment</span>
+                  </Link>
+
+                  {/* Architecture Review - Professional Purple */}
+                  <Link
+                    to="/contact?type=architecture"
+                    className="hidden lg:flex items-center gap-3 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 transform opacity-0 group-hover:opacity-100 translate-y-[-10px] group-hover:translate-y-0"
+                    style={{transitionDelay: '100ms'}}
+                  >
+                    <span className="text-lg">🏗️</span>
+                    <span className="text-sm whitespace-nowrap">Architecture Review</span>
+                  </Link>
+
+                  {/* Cost Optimization - Success Green */}
+                  <Link
+                    to="/contact?type=cost-optimization"
+                    className="hidden lg:flex items-center gap-3 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 transform opacity-0 group-hover:opacity-100 translate-y-[-10px] group-hover:translate-y-0"
+                    style={{transitionDelay: '200ms'}}
+                  >
+                    <span className="text-lg">💰</span>
+                    <span className="text-sm whitespace-nowrap">Cost Optimization</span>
+                  </Link>
+
+                  {/* Security Audit - Trust Orange */}
+                  <Link
+                    to="/contact?type=security"
+                    className="hidden lg:flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 transform opacity-0 group-hover:opacity-100 translate-y-[-10px] group-hover:translate-y-0"
+                    style={{transitionDelay: '300ms'}}
+                  >
+                    <span className="text-lg">🔒</span>
+                    <span className="text-sm whitespace-nowrap">Security Audit</span>
+                  </Link>
+
+                  {/* Emergency Response - Alert Red */}
+                  <Link
+                    to="/contact?type=emergency"
+                    className="hidden lg:flex items-center gap-3 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 transform opacity-0 group-hover:opacity-100 translate-y-[-10px] group-hover:translate-y-0"
+                    style={{transitionDelay: '400ms'}}
+                  >
+                    <span className="text-lg">🚨</span>
+                    <span className="text-sm whitespace-nowrap">Emergency Response</span>
+                  </Link>
+
+                  {/* Long-term Partnership - Premium Indigo */}
+                  <Link
+                    to="/contact?type=partnership"
+                    className="hidden lg:flex items-center gap-3 bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 transform opacity-0 group-hover:opacity-100 translate-y-[-10px] group-hover:translate-y-0"
+                    style={{transitionDelay: '500ms'}}
+                  >
+                    <span className="text-lg">🤝</span>
+                    <span className="text-sm whitespace-nowrap">Long-term Partnership</span>
+                  </Link>
+                </div>
+              </div>
             </div>
 
             <button
-              className="lg:hidden flex items-center justify-center rounded-lg border border-slate-200 bg-white p-2.5 text-slate-600 shadow-sm transition-all hover:border-slate-300 hover:bg-slate-50 hover:shadow"
+              className="md:hidden flex items-center justify-center p-4 text-slate-700 transition-all duration-200 hover:text-[hsl(var(--accent-blue))] hover:bg-slate-100/50 rounded-lg active:scale-95 touch-manipulation"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle navigation"
+              style={{minWidth: '48px', minHeight: '48px'}}
             >
-              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              <Menu className="h-7 w-7" />
             </button>
           </div>
         </div>
 
+        {/* Full Screen Mobile Menu - Slides from Right */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-x-0 top-[112px] bottom-0 overflow-y-auto bg-white/98 backdrop-blur-xl border-t border-slate-200/60 animate-in slide-in-from-top-2 duration-300">
-            <div className="flex flex-col min-h-full">
-              {/* Search Bar */}
-              <div className="px-6 py-4 border-b border-slate-100">
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-                  <input
-                    type="text"
-                    placeholder="Search services, industries..."
-                    className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent-blue))]/20 focus:border-[hsl(var(--accent-blue))]/40 transition-all duration-200"
-                  />
+          <>
+            {/* Full Backdrop */}
+            <div
+              className="lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm animate-in fade-in duration-300 z-40"
+              onClick={closeMobileMenu}
+            />
+
+            {/* Full Screen Panel - Slides from Right */}
+            <div className="lg:hidden fixed inset-0 bg-white animate-in slide-in-from-right-full duration-400 z-50">
+              <div className="flex flex-col h-full">
+                {/* Header with Close Button */}
+                <div className="flex-shrink-0 px-6 py-6 border-b border-slate-200/60 bg-white flex items-center justify-between">
+                  {/* HiTechLogic Branding */}
+                  <div className="flex items-center">
+                    <span className="text-xl font-bold tracking-tight text-slate-900">
+                      HiTech<span className="text-[hsl(var(--accent-blue))] font-bold">Logic</span>
+                    </span>
+                  </div>
+
+                  {/* Close Button */}
+                  <button
+                    onClick={closeMobileMenu}
+                    className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 hover:bg-slate-200 transition-colors duration-200"
+                    aria-label="Close navigation"
+                  >
+                    <X className="w-5 h-5 text-slate-700" />
+                  </button>
                 </div>
-              </div>
 
-              {/* Navigation Content */}
-              <div className="flex-1 overflow-y-auto px-6 py-6">
-                <nav className="space-y-3">
-                  {/* Home Section */}
-                  <div className="space-y-2">
-                    <Link
-                      to="/"
-                      onClick={handleMobileNavClick}
-                      className={cn(
-                        "flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 active:scale-95",
-                        isActivePath("/")
-                          ? "bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] text-white shadow-lg shadow-[hsl(var(--accent-blue))]/25"
-                          : "hover:bg-slate-50 text-slate-700 hover:text-[hsl(var(--navy))]"
-                      )}
-                    >
-                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-100 group-hover:bg-slate-200 transition-colors duration-200">
-                        <Home className="h-4 w-4 text-slate-600" />
-                      </div>
-                      <div>
-                        <div className="text-sm font-semibold">Home</div>
-                        <div className="text-xs text-slate-500">Welcome & overview</div>
-                      </div>
-                      {isActivePath("/") && <ArrowRight className="h-4 w-4 text-white ml-auto" />}
-                    </Link>
-                  </div>
-
-                  {/* Solutions Section */}
-                  <div className="space-y-2">
-                    <button
-                      onClick={() => toggleSection('solutions')}
-                      className="flex items-center justify-between w-full px-4 py-3 rounded-xl hover:bg-slate-50 transition-all duration-200 active:scale-95"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-100">
-                          <Briefcase className="h-4 w-4 text-slate-600" />
-                        </div>
-                        <div>
-                          <div className="text-sm font-semibold text-slate-900">Solutions</div>
-                          <div className="text-xs text-slate-500">Our services & offerings</div>
-                        </div>
-                      </div>
-                      <ChevronDown
-                        className={cn(
-                          "h-4 w-4 text-slate-400 transition-transform duration-300",
-                          expandedSections.solutions && "rotate-180"
-                        )}
-                      />
-                    </button>
-
-                    {expandedSections.solutions && (
-                      <div className="ml-12 space-y-1 animate-in slide-in-from-top-1 duration-200">
-                        <Link
-                          to="/services"
-                          onClick={handleMobileNavClick}
-                          className={cn(
-                            "flex items-center gap-3 px-4 py-2.5 rounded-lg transition-all duration-200 active:scale-95",
-                            isActivePath("/services")
-                              ? "bg-[hsl(var(--accent-blue))]/10 text-[hsl(var(--accent-blue))] font-semibold"
-                              : "hover:bg-slate-50 text-slate-600 hover:text-[hsl(var(--navy))]"
-                          )}
-                        >
-                          <div className="text-xs font-medium">All Services</div>
-                          {isActivePath("/services") && <ArrowRight className="h-3 w-3 text-[hsl(var(--accent-blue))] ml-auto" />}
-                        </Link>
-
-                        {serviceMegaMenu.map((service) => (
-                          <Link
-                            key={service.href}
-                            to={service.href}
-                            onClick={handleMobileNavClick}
-                            className={cn(
-                              "flex items-start gap-3 px-4 py-2.5 rounded-lg transition-all duration-200 active:scale-95",
-                              isActivePath(service.href)
-                                ? "bg-[hsl(var(--accent-blue))]/10 border-l-2 border-[hsl(var(--accent-blue))]"
-                                : "hover:bg-slate-50 hover:border-l-2 hover:border-slate-200"
-                            )}
-                          >
-                            <div className="flex h-6 w-6 items-center justify-center rounded bg-slate-100 mt-0.5">
-                              <service.icon className="h-3 w-3 text-slate-500" />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <div className="text-xs font-medium text-slate-700 leading-tight">{service.title}</div>
-                            </div>
-                            {isActivePath(service.href) && <ArrowRight className="h-3 w-3 text-[hsl(var(--accent-blue))] flex-shrink-0 mt-0.5" />}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Industries Section */}
-                  <div className="space-y-2">
-                    <button
-                      onClick={() => toggleSection('industries')}
-                      className="flex items-center justify-between w-full px-4 py-3 rounded-xl hover:bg-slate-50 transition-all duration-200 active:scale-95"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-100">
-                          <Building2 className="h-4 w-4 text-slate-600" />
-                        </div>
-                        <div>
-                          <div className="text-sm font-semibold text-slate-900">Industries</div>
-                          <div className="text-xs text-slate-500">Industry-specific solutions</div>
-                        </div>
-                      </div>
-                      <ChevronDown
-                        className={cn(
-                          "h-4 w-4 text-slate-400 transition-transform duration-300",
-                          expandedSections.industries && "rotate-180"
-                        )}
-                      />
-                    </button>
-
-                    {expandedSections.industries && (
-                      <div className="ml-12 space-y-1 animate-in slide-in-from-top-1 duration-200">
-                        <Link
-                          to="/industries"
-                          onClick={handleMobileNavClick}
-                          className={cn(
-                            "flex items-center gap-3 px-4 py-2.5 rounded-lg transition-all duration-200 active:scale-95",
-                            isActivePath("/industries")
-                              ? "bg-[hsl(var(--accent-blue))]/10 text-[hsl(var(--accent-blue))] font-semibold"
-                              : "hover:bg-slate-50 text-slate-600 hover:text-[hsl(var(--navy))]"
-                          )}
-                        >
-                          <div className="text-xs font-medium">All Industries</div>
-                          {isActivePath("/industries") && <ArrowRight className="h-3 w-3 text-[hsl(var(--accent-blue))] ml-auto" />}
-                        </Link>
-
-                        {industriesMegaMenu.map((industry) => (
-                          <Link
-                            key={industry.href}
-                            to={industry.href}
-                            onClick={handleMobileNavClick}
-                            className={cn(
-                              "flex items-start gap-3 px-4 py-2.5 rounded-lg transition-all duration-200 active:scale-95",
-                              isActivePath(industry.href)
-                                ? "bg-[hsl(var(--accent-blue))]/10 border-l-2 border-[hsl(var(--accent-blue))]"
-                                : "hover:bg-slate-50 hover:border-l-2 hover:border-slate-200"
-                            )}
-                          >
-                            <div className="flex h-6 w-6 items-center justify-center rounded bg-slate-100 mt-0.5">
-                              <industry.icon className="h-3 w-3 text-slate-500" />
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <div className="text-xs font-medium text-slate-700 leading-tight">{industry.title}</div>
-                            </div>
-                            {isActivePath(industry.href) && <ArrowRight className="h-3 w-3 text-[hsl(var(--accent-blue))] flex-shrink-0 mt-0.5" />}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Resources Section */}
-                  <div className="space-y-2">
-                    <button
-                      onClick={() => toggleSection('resources')}
-                      className="flex items-center justify-between w-full px-4 py-3 rounded-xl hover:bg-slate-50 transition-all duration-200 active:scale-95"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-100">
-                          <BookOpen className="h-4 w-4 text-slate-600" />
-                        </div>
-                        <div>
-                          <div className="text-sm font-semibold text-slate-900">Resources</div>
-                          <div className="text-xs text-slate-500">Guides & insights</div>
-                        </div>
-                      </div>
-                      <ChevronDown
-                        className={cn(
-                          "h-4 w-4 text-slate-400 transition-transform duration-300",
-                          expandedSections.resources && "rotate-180"
-                        )}
-                      />
-                    </button>
-
-                    {expandedSections.resources && (
-                      <div className="ml-12 space-y-1 animate-in slide-in-from-top-1 duration-200">
-                        <Link
-                          to="/resources"
-                          onClick={handleMobileNavClick}
-                          className={cn(
-                            "flex items-center gap-3 px-4 py-2.5 rounded-lg transition-all duration-200 active:scale-95",
-                            isActivePath("/resources")
-                              ? "bg-[hsl(var(--accent-blue))]/10 text-[hsl(var(--accent-blue))] font-semibold"
-                              : "hover:bg-slate-50 text-slate-600 hover:text-[hsl(var(--navy))]"
-                          )}
-                        >
-                          <div className="text-xs font-medium">Resource Library</div>
-                          {isActivePath("/resources") && <ArrowRight className="h-3 w-3 text-[hsl(var(--accent-blue))] ml-auto" />}
-                        </Link>
-
-                        <Link
-                          to="/blog"
-                          onClick={handleMobileNavClick}
-                          className={cn(
-                            "flex items-center gap-3 px-4 py-2.5 rounded-lg transition-all duration-200 active:scale-95",
-                            isActivePath("/blog")
-                              ? "bg-[hsl(var(--accent-blue))]/10 text-[hsl(var(--accent-blue))] font-semibold"
-                              : "hover:bg-slate-50 text-slate-600 hover:text-[hsl(var(--navy))]"
-                          )}
-                        >
-                          <div className="text-xs font-medium">Blog</div>
-                          {isActivePath("/blog") && <ArrowRight className="h-3 w-3 text-[hsl(var(--accent-blue))] ml-auto" />}
-                        </Link>
-
-                        <Link
-                          to="/case-studies"
-                          onClick={handleMobileNavClick}
-                          className={cn(
-                            "flex items-center gap-3 px-4 py-2.5 rounded-lg transition-all duration-200 active:scale-95",
-                            isActivePath("/case-studies")
-                              ? "bg-[hsl(var(--accent-blue))]/10 text-[hsl(var(--accent-blue))] font-semibold"
-                              : "hover:bg-slate-50 text-slate-600 hover:text-[hsl(var(--navy))]"
-                          )}
-                        >
-                          <div className="text-xs font-medium">Case Studies</div>
-                          {isActivePath("/case-studies") && <ArrowRight className="h-3 w-3 text-[hsl(var(--accent-blue))] ml-auto" />}
-                        </Link>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Company Section */}
-                  <div className="space-y-2">
-                    <button
-                      onClick={() => toggleSection('company')}
-                      className="flex items-center justify-between w-full px-4 py-3 rounded-xl hover:bg-slate-50 transition-all duration-200 active:scale-95"
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-100">
-                          <Users className="h-4 w-4 text-slate-600" />
-                        </div>
-                        <div>
-                          <div className="text-sm font-semibold text-slate-900">Company</div>
-                          <div className="text-xs text-slate-500">About & principles</div>
-                        </div>
-                      </div>
-                      <ChevronDown
-                        className={cn(
-                          "h-4 w-4 text-slate-400 transition-transform duration-300",
-                          expandedSections.company && "rotate-180"
-                        )}
-                      />
-                    </button>
-
-                    {expandedSections.company && (
-                      <div className="ml-12 space-y-1 animate-in slide-in-from-top-1 duration-200">
-                        <Link
-                          to="/about"
-                          onClick={handleMobileNavClick}
-                          className={cn(
-                            "flex items-center gap-3 px-4 py-2.5 rounded-lg transition-all duration-200 active:scale-95",
-                            isActivePath("/about")
-                              ? "bg-[hsl(var(--accent-blue))]/10 text-[hsl(var(--accent-blue))] font-semibold"
-                              : "hover:bg-slate-50 text-slate-600 hover:text-[hsl(var(--navy))]"
-                          )}
-                        >
-                          <div className="text-xs font-medium">About</div>
-                          {isActivePath("/about") && <ArrowRight className="h-3 w-3 text-[hsl(var(--accent-blue))] ml-auto" />}
-                        </Link>
-
-                        <Link
-                          to="/principles"
-                          onClick={handleMobileNavClick}
-                          className={cn(
-                            "flex items-center gap-3 px-4 py-2.5 rounded-lg transition-all duration-200 active:scale-95",
-                            isActivePath("/principles")
-                              ? "bg-[hsl(var(--accent-blue))]/10 text-[hsl(var(--accent-blue))] font-semibold"
-                              : "hover:bg-slate-50 text-slate-600 hover:text-[hsl(var(--navy))]"
-                          )}
-                        >
-                          <div className="text-xs font-medium">Principles</div>
-                          {isActivePath("/principles") && <ArrowRight className="h-3 w-3 text-[hsl(var(--accent-blue))] ml-auto" />}
-                        </Link>
-                      </div>
-                    )}
-                  </div>
-                </nav>
-
-                {/* CTA Section */}
-                <div className="mt-8 pt-6 border-t border-slate-200/60">
-                  <div className="space-y-3">
-                    <Button
-                      variant="hero"
-                      size="lg"
-                      asChild
-                      className="w-full h-12 text-sm font-semibold shadow-lg shadow-[hsl(var(--accent-blue))]/20 hover:shadow-xl hover:shadow-[hsl(var(--accent-blue))]/30"
-                    >
-                      <Link to="/contact" onClick={handleMobileNavClick} className="flex items-center justify-center gap-2">
-                        <Phone className="h-4 w-4" />
-                        Request Consultation
+                {/* Content - Scrollable */}
+                <div className="flex-1 overflow-y-auto">
+                  <nav className="px-6 py-6">
+                    {/* Main Navigation Items */}
+                    <div className="space-y-1">
+                      {/* Home */}
+                      <Link
+                        to="/"
+                        onClick={closeMobileMenu}
+                        className="flex items-center px-4 py-4 text-lg font-medium text-slate-900 hover:text-[hsl(var(--accent-blue))] hover:bg-slate-50 rounded-xl transition-all duration-300 active:scale-[0.98]"
+                      >
+                        <span>Home</span>
                       </Link>
-                    </Button>
 
-                    {/* Quick Contact Actions */}
-                    <div className="grid grid-cols-2 gap-3">
+                      {/* Services Section */}
+                      <div className="py-2">
+                        <button
+                          onClick={() => toggleSection('services')}
+                          className="w-full flex items-center justify-between px-4 py-4 text-left text-lg font-medium text-slate-900 hover:text-[hsl(var(--accent-blue))] hover:bg-slate-50 rounded-xl transition-all duration-300"
+                        >
+                          <span>Services</span>
+                          <ChevronDown className={cn(
+                            "w-5 h-5 text-slate-400 transition-transform duration-300",
+                            expandedSections.services && "rotate-180 text-slate-700"
+                          )} />
+                        </button>
+
+                        {expandedSections.services && (
+                          <div className="ml-8 mt-2 space-y-2 animate-in slide-in-from-left-2 duration-300 max-h-screen overflow-y-auto relative">
+                            {coreServices.map((service) => (
+                              <Link
+                                key={service.id}
+                                to={service.href}
+                                onClick={closeMobileMenu}
+                                className="group/service flex items-center gap-3 px-4 py-2.5 text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/50 rounded-lg transition-all duration-200 active:scale-[0.98] relative"
+                              >
+                                <div className="w-0 group-hover/service:w-1 h-4 bg-gradient-to-b from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] rounded-full transition-all duration-300 shrink-0"></div>
+                                <span className="relative">
+                                  {service.name}
+                                  <div className="absolute -bottom-1 left-0 w-0 group-hover/service:w-full h-px bg-[hsl(var(--accent-blue))]/30 transition-all duration-300"></div>
+                                </span>
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Industries Section */}
+                      <div className="py-2">
+                        <button
+                          onClick={() => toggleSection('industries')}
+                          className="w-full flex items-center justify-between px-4 py-4 text-left text-lg font-medium text-slate-900 hover:text-[hsl(var(--accent-blue))] hover:bg-slate-50 rounded-xl transition-all duration-300"
+                        >
+                          <span>Industries</span>
+                          <ChevronDown className={cn(
+                            "w-5 h-5 text-slate-400 transition-transform duration-300",
+                            expandedSections.industries && "rotate-180 text-slate-700"
+                          )} />
+                        </button>
+
+                        {expandedSections.industries && (
+                          <div className="ml-8 mt-2 space-y-2 animate-in slide-in-from-left-2 duration-300">
+                            {industries.map((industry) => (
+                              <Link
+                                key={industry.id}
+                                to={industry.href}
+                                onClick={closeMobileMenu}
+                                className="group/industry flex items-center gap-3 px-4 py-2.5 text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100/50 rounded-lg transition-all duration-200 active:scale-[0.98] relative"
+                              >
+                                <div className="w-0 group-hover/industry:w-1 h-4 bg-gradient-to-b from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] rounded-full transition-all duration-300 shrink-0"></div>
+                                <span className="relative">
+                                  {industry.name}
+                                  <div className="absolute -bottom-1 left-0 w-0 group-hover/industry:w-full h-px bg-[hsl(var(--accent-blue))]/30 transition-all duration-300"></div>
+                                </span>
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Other Pages */}
+                      <Link
+                        to="/contact"
+                        onClick={closeMobileMenu}
+                        className="flex items-center px-4 py-4 text-lg font-medium text-slate-900 hover:text-[hsl(var(--accent-blue))] hover:bg-slate-50 rounded-xl transition-all duration-300 active:scale-[0.98]"
+                      >
+                        <span>Contact</span>
+                      </Link>
+
+                      <Link
+                        to="/about"
+                        onClick={closeMobileMenu}
+                        className="flex items-center px-4 py-4 text-lg font-medium text-slate-900 hover:text-[hsl(var(--accent-blue))] hover:bg-slate-50 rounded-xl transition-all duration-300 active:scale-[0.98]"
+                      >
+                        <span>About</span>
+                      </Link>
+                    </div>
+
+                    {/* Spacer */}
+                    <div className="h-8"></div>
+                  </nav>
+                </div>
+
+                {/* Bottom Section - Compact Contact & Branding */}
+                <div className="flex-shrink-0 border-t border-slate-200 bg-gradient-to-b from-white to-slate-50">
+                  {/* Contact Information - Much More Compact */}
+                  <div className="px-6 py-4 border-b border-slate-200/50">
+                    <h3 className="text-sm font-semibold text-slate-900 mb-3">Contact</h3>
+                    <div className="flex gap-2">
                       <a
                         href="mailto:contact@hitechlogic.com"
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-[hsl(var(--accent-blue))]/30 hover:bg-[hsl(var(--accent-blue))]/5 transition-all duration-200 active:scale-95"
+                        className="flex items-center gap-2 p-2 bg-blue-50/50 hover:bg-blue-100/50 rounded-lg transition-all duration-200 text-xs"
                       >
-                        <svg className="h-4 w-4 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        <span className="text-xs font-medium">Email</span>
+                        <span className="text-blue-600">✉️</span>
+                        <span className="text-slate-700 font-medium">Email</span>
                       </a>
 
-                      <div className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-50 border border-slate-200">
-                        <svg className="h-4 w-4 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                        </svg>
-                        <span className="text-xs font-medium">Call</span>
-                      </div>
+                      <a
+                        href="tel:+18884483244"
+                        className="flex items-center gap-2 p-2 bg-emerald-50/50 hover:bg-emerald-100/50 rounded-lg transition-all duration-200 text-xs"
+                      >
+                        <span className="text-emerald-600">📞</span>
+                        <span className="text-slate-700 font-medium">Call</span>
+                      </a>
+
+                      <Link
+                        to="/contact"
+                        className="flex items-center gap-2 p-2 bg-purple-50/50 hover:bg-purple-100/50 rounded-lg transition-all duration-200 text-xs"
+                      >
+                        <span className="text-purple-600">💬</span>
+                        <span className="text-slate-700 font-medium">Chat</span>
+                      </Link>
                     </div>
                   </div>
-                </div>
-              </div>
 
-              {/* Bottom Branding */}
-              <div className="px-6 py-4 border-t border-slate-200/60 bg-slate-50/50">
-                <div className="text-center">
-                  <div className="flex items-center justify-center gap-2">
-                    <div className="h-6 w-6 rounded-lg bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] flex items-center justify-center">
-                      <ShieldCheck className="h-3 w-3 text-white" />
+                  {/* HiTechLogic Branding & CTA */}
+                  <div className="px-6 py-4">
+                    {/* Brand with accent design */}
+                    <div className="text-center mb-4">
+                      <div className="relative inline-block">
+                        <span className="text-xl font-bold tracking-tight text-slate-900">
+                          HiTech<span className="text-[hsl(var(--accent-blue))] font-bold">Logic</span>
+                        </span>
+                        {/* Subtle accent underline */}
+                        <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-16 h-0.5 bg-gradient-to-r from-transparent via-[hsl(var(--accent-blue))] to-transparent opacity-60"></div>
+                      </div>
+                      <div className="text-xs text-slate-500 mt-1">Enterprise Solutions</div>
                     </div>
-                    <div>
-                      <p className="text-xs font-semibold text-[hsl(var(--navy))]">HiTechLogic</p>
-                      <p className="text-xs text-slate-500">Enterprise Managed Services</p>
+
+                    {/* Single prominent CTA */}
+                    <div className="flex justify-center">
+                      <Button
+                        variant="hero"
+                        asChild
+                        size="sm"
+                        onClick={closeMobileMenu}
+                        className="w-full max-w-xs"
+                      >
+                        <Link to="/contact">Get Started</Link>
+                      </Button>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </>
         )}
       </nav>
     </header>

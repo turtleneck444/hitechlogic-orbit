@@ -176,16 +176,16 @@ export default function About() {
             </div>
 
             {/* Key Metrics */}
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {companyStats.map((metric, index) => (
-                <div key={metric.label} className="text-center group">
+                <div key={metric.label} className="text-center group px-4 py-2">
                   <div className="flex justify-center mb-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white/5 group-hover:from-[hsl(var(--accent-blue))]/20 group-hover:to-white/10 transition-all duration-300">
-                      <metric.icon className="h-6 w-6 text-white" />
+                    <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white/5 group-hover:from-[hsl(var(--accent-blue))]/20 group-hover:to-white/10 transition-all duration-300">
+                      <metric.icon className="h-5 w-5 md:h-6 md:w-6 text-white" />
                     </div>
                   </div>
-                  <div className="text-3xl md:text-4xl font-bold text-white group-hover:scale-110 transition-transform duration-300">{metric.metric}</div>
-                  <div className="mt-2 text-sm font-medium text-slate-300">{metric.label}</div>
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white group-hover:scale-110 transition-transform duration-300">{metric.metric}</div>
+                  <div className="mt-1 md:mt-2 text-xs md:text-sm font-medium text-slate-300">{metric.label}</div>
                 </div>
               ))}
             </div>
@@ -330,37 +330,35 @@ export default function About() {
             </div>
 
             <div className="relative">
-              {/* Central timeline line */}
-              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-200 via-blue-300 to-purple-200 transform -translate-x-px" />
+              {/* Central timeline line - hidden on mobile */}
+              <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-200 via-blue-300 to-purple-200 transform -translate-x-px" />
 
-              <div className="space-y-12">
+              <div className="space-y-8 lg:space-y-12">
                 {timeline.map((item, index) => (
-                  <div key={item.year} className={`relative flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                  <div key={item.year} className="relative flex flex-col items-center">
+                    {/* Timeline dot - positioned differently for mobile */}
+                    <div className="flex lg:hidden w-3 h-3 rounded-full bg-blue-600 border-2 border-white shadow-md mb-4"></div>
+                    <div className="hidden lg:flex absolute left-1/2 w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow-lg transform -translate-x-1/2 items-center justify-center -top-2">
+                      <div className="w-2 h-2 bg-white rounded-full"></div>
+                    </div>
+
                     {/* Content Card */}
-                    <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
-                      <Card className="p-6 hover:shadow-xl transition-all hover:-translate-y-1 border-2 border-slate-200 hover:border-blue-200 group">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="text-2xl font-black text-blue-600">{item.year}</div>
-                          <div className="px-3 py-1 rounded-full border border-slate-200 bg-white text-xs font-bold text-[hsl(var(--navy))]">
+                    <div className="w-full max-w-2xl">
+                      <Card className="p-4 md:p-6 hover:shadow-xl transition-all hover:-translate-y-1 border-2 border-slate-200 hover:border-blue-200 group">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+                          <div className="text-xl md:text-2xl font-black text-blue-600">{item.year}</div>
+                          <div className="px-2 py-1 md:px-3 md:py-1 rounded-full border border-slate-200 bg-white text-xs font-bold text-[hsl(var(--navy))] w-fit">
                             {item.type.charAt(0).toUpperCase() + item.type.slice(1)}
                           </div>
                         </div>
-                        <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
+                        <h3 className="text-base md:text-lg font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
                           {item.title}
                         </h3>
-                        <p className="text-slate-600 leading-relaxed">
+                        <p className="text-sm md:text-base text-slate-600 leading-relaxed">
                           {item.description}
                         </p>
                       </Card>
                     </div>
-
-                    {/* Timeline dot */}
-                    <div className="hidden md:flex absolute left-1/2 w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow-lg transform -translate-x-1/2 items-center justify-center">
-                      <div className="w-2 h-2 bg-white rounded-full"></div>
-                    </div>
-
-                    {/* Spacer for alternating layout */}
-                    <div className="hidden md:block md:w-1/2" />
                   </div>
                 ))}
               </div>

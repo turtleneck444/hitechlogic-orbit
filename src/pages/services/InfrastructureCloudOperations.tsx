@@ -93,21 +93,21 @@ export default function InfrastructureCloudOperations() {
             </div>
 
             {/* Key Metrics */}
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {[
                 { label: "Uptime SLA", value: "99.99%", icon: Shield },
                 { label: "Response Time", value: "<15 min", icon: Clock },
                 { label: "Cost Savings", value: "40%", icon: BarChart3 },
                 { label: "Multi-Cloud", value: "AWS/Azure/GCP", icon: Cloud },
               ].map((metric, index) => (
-                <div key={metric.label} className="text-center group">
+                <div key={metric.label} className="text-center group px-4 py-2">
                   <div className="flex justify-center mb-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white/5 group-hover:from-[hsl(var(--accent-blue))]/20 group-hover:to-white/10 transition-all duration-300">
-                      <metric.icon className="h-6 w-6 text-white" />
+                    <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white/5 group-hover:from-[hsl(var(--accent-blue))]/20 group-hover:to-white/10 transition-all duration-300">
+                      <metric.icon className="h-5 w-5 md:h-6 md:w-6 text-white" />
                     </div>
                   </div>
-                  <div className="text-3xl md:text-4xl font-bold text-white group-hover:scale-110 transition-transform duration-300">{metric.value}</div>
-                  <div className="mt-2 text-sm font-medium text-slate-300">{metric.label}</div>
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white group-hover:scale-110 transition-transform duration-300">{metric.value}</div>
+                  <div className="mt-1 md:mt-2 text-xs md:text-sm font-medium text-slate-300">{metric.label}</div>
                 </div>
               ))}
             </div>
@@ -346,7 +346,8 @@ export default function InfrastructureCloudOperations() {
               </p>
             </div>
 
-            <div className="overflow-x-auto">
+            {/* Desktop Table */}
+            <div className="hidden md:block overflow-x-auto">
               <table className="w-full bg-white border border-slate-200 rounded-2xl shadow-lg">
                 <thead>
                   <tr className="bg-gradient-to-r from-[hsl(var(--navy))] to-[hsl(var(--navy))]/90 text-white">
@@ -408,6 +409,68 @@ export default function InfrastructureCloudOperations() {
                   ))}
                 </tbody>
               </table>
+            </div>
+
+            {/* Mobile Card Layout */}
+            <div className="md:hidden space-y-6">
+              {[
+                {
+                  capability: "Issue Detection",
+                  legacy: "Reactive alerts on symptoms only",
+                  hitechlogic: "Predictive anomaly detection with root cause correlation",
+                },
+                {
+                  capability: "Response Time",
+                  legacy: "15-30 minutes to detect and notify",
+                  hitechlogic: "<2 minutes automated remediation",
+                },
+                {
+                  capability: "Resolution Method",
+                  legacy: "Manual investigation and human intervention",
+                  hitechlogic: "Automated runbooks with intelligent decision trees",
+                },
+                {
+                  capability: "Learning & Adaptation",
+                  legacy: "Static thresholds and fixed alerts",
+                  hitechlogic: "AI learns from each incident, continuously improving",
+                },
+                {
+                  capability: "Operational Overhead",
+                  legacy: "70% of time spent on routine tasks",
+                  hitechlogic: "DevOps focus on innovation, not firefighting",
+                },
+                {
+                  capability: "Cost Efficiency",
+                  legacy: "$5,400 average cost per incident",
+                  hitechlogic: "$540 average with 90% cost reduction",
+                },
+                {
+                  capability: "Uptime SLA",
+                  legacy: "Industry standard 99.9%",
+                  hitechlogic: "Guaranteed 99.99% with automated fallbacks",
+                },
+              ].map((row, index) => (
+                <Card key={index} className="p-4 border border-slate-200 bg-white shadow-lg">
+                  <div className="space-y-4">
+                    <h3 className="font-bold text-[hsl(var(--navy))] text-lg">{row.capability}</h3>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 mb-2">Legacy Monitoring</p>
+                        <p className="text-sm text-slate-600">{row.legacy}</p>
+                      </div>
+
+                      <div className="p-3 bg-gradient-to-r from-green-50 to-green-100/50 rounded-lg border-2 border-green-200">
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-green-700 mb-2">HiTechLogic</p>
+                        <div className="flex items-start gap-2">
+                          <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                          <p className="text-sm text-green-800 font-medium">{row.hitechlogic}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              ))}
             </div>
 
             <div className="mt-12 text-center">

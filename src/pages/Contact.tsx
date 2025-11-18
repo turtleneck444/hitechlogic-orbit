@@ -136,21 +136,21 @@ export default function Contact() {
                 </Link>
               </Button>
             </div>
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {[
                 { label: "Response Time", value: "5 min", icon: Clock },
                 { label: "Uptime SLA", value: "99.99%", icon: Shield },
                 { label: "Global Reach", value: "24/7", icon: Globe },
                 { label: "Client Success", value: "500+", icon: Users },
               ].map((metric) => (
-                <div key={metric.label} className="text-center group">
+                <div key={metric.label} className="text-center group px-4 py-2">
                   <div className="flex justify-center mb-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white/5 group-hover:from-[hsl(var(--accent-blue))]/20 group-hover:to-white/10 transition-all duration-300">
-                      <metric.icon className="h-6 w-6 text-white" />
+                    <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white/5 group-hover:from-[hsl(var(--accent-blue))]/20 group-hover:to-white/10 transition-all duration-300">
+                      <metric.icon className="h-5 w-5 md:h-6 md:w-6 text-white" />
                     </div>
                   </div>
-                  <div className="text-3xl md:text-4xl font-bold text-white group-hover:scale-110 transition-transform duration-300">{metric.value}</div>
-                  <div className="mt-2 text-sm font-medium text-slate-300">{metric.label}</div>
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white group-hover:scale-110 transition-transform duration-300">{metric.value}</div>
+                  <div className="mt-1 md:mt-2 text-xs md:text-sm font-medium text-slate-300">{metric.label}</div>
                 </div>
               ))}
             </div>
@@ -160,37 +160,37 @@ export default function Contact() {
         <section id="consultation" className="section-space bg-slate-50">
           <div className="mx-auto w-full max-w-6xl px-6">
             <div className="grid gap-12 lg:grid-cols-[1.05fr,0.95fr] items-start">
-              <div className="space-y-6">
+              <div className="space-y-6 order-2 lg:order-1">
                 <div className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-2 text-[hsl(var(--navy))] font-semibold">
                   <Calendar className="h-4 w-4" />
                   Consultation & Support
                 </div>
-                <h2 className="text-4xl md:text-5xl font-black text-[hsl(var(--navy))]">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[hsl(var(--navy))]">
                   Let’s architect your next era.
                   <span className="block bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))] bg-clip-text text-transparent">
                     Reliable, autonomous, and executive-backed.
                   </span>
                 </h2>
-                <p className="text-lg text-slate-600 leading-relaxed">
+                <p className="text-base md:text-lg text-slate-600 leading-relaxed">
                   Share the outcomes you need and our enterprise specialists will design the automated programs, strategic guardrails,
                   and operations advisory that keeps your infrastructure ahead of disruption.
                 </p>
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2">
                   {contactHighlights.map((item) => (
-                    <div key={item} className="flex gap-3 rounded-xl border border-slate-200 bg-white/90 p-4 text-sm text-slate-600">
-                      <CheckCircle2 className="h-5 w-5 text-[hsl(var(--accent-blue))]" />
-                      <span>{item}</span>
+                    <div key={item} className="flex gap-3 rounded-xl border border-slate-200 bg-white/90 p-3 md:p-4 text-sm text-slate-600">
+                      <CheckCircle2 className="h-5 w-5 text-[hsl(var(--accent-blue))] flex-shrink-0 mt-0.5" />
+                      <span className="leading-relaxed">{item}</span>
                     </div>
                   ))}
                 </div>
-                <div className="rounded-2xl border border-slate-200 bg-white/90 p-5 text-sm text-slate-600">
+                <div className="rounded-2xl border border-slate-200 bg-white/90 p-4 md:p-5 text-sm text-slate-600">
                   {contactInfo.map((contact) => (
                     <a
                       key={contact.label}
                       href={contact.href}
                       className="flex items-center gap-3 py-2 border-b border-slate-100 last:border-b-0 hover:text-[hsl(var(--accent-blue))] transition-colors"
                     >
-                      <contact.icon className="h-5 w-5 text-slate-500" />
+                      <contact.icon className="h-5 w-5 text-slate-500 flex-shrink-0" />
                       <div>
                         <p className="text-[0.65rem] uppercase tracking-[0.35em] text-slate-400">{contact.label}</p>
                         <p className="font-semibold text-[hsl(var(--navy))]">{contact.value}</p>
@@ -199,11 +199,11 @@ export default function Contact() {
                   ))}
                 </div>
               </div>
-              <div>
-                <Card className="space-y-6 border border-slate-200 bg-white p-8 shadow-2xl">
+              <div className="order-1 lg:order-2">
+                <Card className="space-y-6 border border-slate-200 bg-white p-6 md:p-8 shadow-2xl">
                   <div className="space-y-2">
                     <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-400">Need a focused dialogue?</p>
-                    <h3 className="text-2xl font-bold text-[hsl(var(--navy))]">Request a Strategy Session</h3>
+                    <h3 className="text-xl md:text-2xl font-bold text-[hsl(var(--navy))]">Request a Strategy Session</h3>
                     <p className="text-sm text-slate-600">
                       Fill out your details, tell us your top priorities, and we’ll respond with a curated plan within one business day.
                     </p>
@@ -217,7 +217,7 @@ export default function Contact() {
                       <Label htmlFor="email">Email *</Label>
                       <Input id="email" name="email" type="email" placeholder="jordan@company.com" required />
                     </div>
-                    <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
                       <div className="space-y-2">
                         <Label htmlFor="company">Company *</Label>
                         <Input id="company" name="company" placeholder="Northwind Bank" required />
@@ -229,14 +229,15 @@ export default function Contact() {
                     </div>
                     <div className="space-y-2">
                       <Label>Current infrastructure challenges *</Label>
-                      <div className="grid gap-3 sm:grid-cols-2">
+                      <div className="grid gap-3 grid-cols-1 sm:grid-cols-2">
                         {challengeOptions.map((option) => (
-                          <label key={option} className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-3 hover:border-indigo-300 transition-colors">
+                          <label key={option} className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-3 hover:border-indigo-300 transition-colors cursor-pointer">
                             <Checkbox
                               checked={selectedChallenges.includes(option)}
                               onCheckedChange={() => toggleChallenge(option)}
+                              className="mt-1"
                             />
-                            <span className="text-sm text-slate-700">{option}</span>
+                            <span className="text-sm text-slate-700 leading-relaxed">{option}</span>
                           </label>
                         ))}
                         {selectedChallenges.map((challenge) => (
@@ -244,7 +245,7 @@ export default function Contact() {
                         ))}
                       </div>
                     </div>
-                    <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2">
                       <div className="space-y-2">
                         <Label htmlFor="best-time">Preferred time for call *</Label>
                         <Select name="best-time" required>
@@ -280,7 +281,8 @@ export default function Contact() {
                         id="context"
                         name="context"
                         placeholder="Share details about your current infrastructure, recent challenges, planned initiatives, or anything else that might help us prepare for our discussion."
-                        rows={4}
+                        rows={3}
+                        className="resize-none"
                       />
                     </div>
                     <div className="space-y-2">
@@ -289,9 +291,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <Button
-                        className="w-full bg-[hsl(var(--accent-blue))] hover:bg-[hsl(var(--accent-blue))]/80"
+                        className="w-full bg-[hsl(var(--accent-blue))] hover:bg-[hsl(var(--accent-blue))]/80 h-12 text-base font-semibold"
                         disabled={isSubmitting}
-                        size="xl"
                         type="submit"
                       >
                         {isSubmitting ? "Scheduling..." : "Schedule Strategy Consultation"}

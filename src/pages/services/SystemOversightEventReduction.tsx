@@ -126,18 +126,18 @@ export default function SystemOversightEventReduction() {
             </div>
 
             {/* Key Metrics */}
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {[
                 { label: "Noise Reduction", value: "−82%", icon: AlertTriangle },
                 { label: "Detection Time", value: "<2 min", icon: Clock },
                 { label: "Alert Accuracy", value: "97%", icon: Target },
                 { label: "MTTR Impact", value: "−65%", icon: TrendingUp },
               ].map((metric, index) => (
-                <Card key={metric.label} className="bg-white/10 backdrop-blur-sm border-white/20 text-white p-4 text-center group hover:bg-white/15 transition-all hover:scale-105">
+                <Card key={metric.label} className="bg-white/10 backdrop-blur-sm border-white/20 text-white p-3 md:p-4 text-center group hover:bg-white/15 transition-all hover:scale-105">
                   <div className="flex justify-center mb-2">
-                    <metric.icon className="h-6 w-6" />
+                    <metric.icon className="h-5 w-5 md:h-6 md:w-6" />
                   </div>
-                  <div className="text-2xl md:text-3xl font-bold mb-1">{metric.value}</div>
+                  <div className="text-xl md:text-2xl lg:text-3xl font-bold mb-1">{metric.value}</div>
                   <div className="text-xs font-medium text-slate-300">{metric.label}</div>
                 </Card>
               ))}

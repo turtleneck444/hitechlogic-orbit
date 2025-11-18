@@ -86,16 +86,16 @@ export default function AutomatedCorrectiveActions() {
                 <Link to="/services">Explore Services</Link>
               </Button>
             </div>
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-white/80">
+            <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 text-white/80">
               {[
                 { label: "MTTR Improvement", value: "95%" },
                 { label: "Automation Outcomes", value: "615+ runbooks" },
                 { label: "Detection Time", value: "<90s" },
                 { label: "Availability", value: "99.99%" },
               ].map((metric) => (
-                <div key={metric.label} className="rounded-2xl border border-white/20 bg-white/5 p-4">
-                  <p className="text-sm uppercase tracking-[0.4em] text-white/60">{metric.label}</p>
-                  <p className="text-3xl font-bold mt-2">{metric.value}</p>
+                <div key={metric.label} className="rounded-2xl border border-white/20 bg-white/5 p-4 md:px-6 py-4 md:py-6">
+                  <p className="text-xs md:text-sm uppercase tracking-[0.4em] text-white/60">{metric.label}</p>
+                  <p className="text-2xl md:text-3xl font-bold mt-2">{metric.value}</p>
                 </div>
               ))}
             </div>
@@ -105,22 +105,22 @@ export default function AutomatedCorrectiveActions() {
         {/* Content Grid */}
         <section className="section-space bg-white">
           <div className="mx-auto w-full max-w-6xl px-6">
-            <div className="grid gap-10 lg:grid-cols-[1fr,400px]">
-              <div className="space-y-8">
-                <p className="text-lg text-slate-700 leading-relaxed">
+            <div className="grid gap-8 lg:gap-10 lg:grid-cols-[1fr,400px]">
+              <div className="space-y-8 order-2 lg:order-1">
+                <p className="text-base md:text-lg text-slate-700 leading-relaxed">
                   HiTechLogic automates corrective actions with enterprise-grade safety nets. We combine AI-driven remediation, runbook libraries, and executive-ready reporting to resolve incidents before business stakeholders are impacted.
                 </p>
-                <div className="grid gap-6 md:grid-cols-2">
+                <div className="grid gap-4 md:gap-6 md:grid-cols-2">
                   {highlights.map((item) => (
-                    <Card key={item} className="p-6 border border-slate-200 bg-white shadow-sm">
+                    <Card key={item} className="p-4 md:p-6 border border-slate-200 bg-white shadow-sm">
                       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400 mb-3">Capability</p>
-                      <p className="text-slate-700">{item}</p>
+                      <p className="text-sm md:text-base text-slate-700">{item}</p>
                     </Card>
                   ))}
                 </div>
-                <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-                  <h3 className="text-xl font-semibold text-[hsl(var(--navy))] mb-3">Executive Impact</h3>
-                  <p className="text-slate-600 mb-4">
+                <div className="rounded-2xl md:rounded-3xl border border-slate-200 bg-slate-50 p-4 md:p-6">
+                  <h3 className="text-lg md:text-xl font-semibold text-[hsl(var(--navy))] mb-3">Executive Impact</h3>
+                  <p className="text-sm md:text-base text-slate-600 mb-4">
                     Automations execute with human governance, delivering measurable MTTR, reliability, and confidence at the CXO level.
                   </p>
                   <ul className="space-y-2 text-sm text-slate-600">
@@ -131,13 +131,13 @@ export default function AutomatedCorrectiveActions() {
                 </div>
               </div>
 
-              <aside className="space-y-6">
-                <Card className="p-6 border border-slate-200 bg-white">
+              <aside className="space-y-6 order-1 lg:order-2">
+                <Card className="p-4 md:p-6 border border-slate-200 bg-white">
                   <h3 className="text-sm font-semibold uppercase tracking-[0.4em] text-slate-500 mb-4">Approach</h3>
                   <div className="space-y-4">
                     {implementation.map((phase) => (
-                      <div key={phase.step} className="flex gap-4">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white text-lg font-bold text-[hsl(var(--navy))]">
+                      <div key={phase.step} className="flex gap-3 md:gap-4">
+                        <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-xl border border-slate-200 bg-white text-base md:text-lg font-bold text-[hsl(var(--navy))]">
                           {phase.step}
                         </div>
                         <div>
@@ -148,12 +148,12 @@ export default function AutomatedCorrectiveActions() {
                     ))}
                   </div>
                 </Card>
-                <Card className="p-6 border border-slate-200 bg-[hsl(var(--accent-blue))]/10">
-                  <h3 className="text-base font-semibold text-[hsl(var(--navy))] mb-4">Ready for autonomous operations?</h3>
+                <Card className="p-4 md:p-6 border border-slate-200 bg-[hsl(var(--accent-blue))]/10">
+                  <h3 className="text-sm md:text-base font-semibold text-[hsl(var(--navy))] mb-4">Ready for autonomous operations?</h3>
                   <p className="text-sm text-slate-600 mb-6">
                     We build self-healing controls that harmonize with your engineering practices—no disruption, only measurable downtime reduction.
                   </p>
-                  <Button variant="primary" size="lg" asChild className="w-full">
+                  <Button variant="primary" size="lg" asChild className="w-full h-12 text-base font-semibold">
                     <Link to="/contact" className="flex items-center justify-center gap-2">
                       <ShieldCheck className="h-4 w-4" />
                       Discuss Automation Partnership

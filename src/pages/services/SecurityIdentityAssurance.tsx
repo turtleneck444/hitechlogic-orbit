@@ -126,18 +126,18 @@ export default function SecurityIdentityAssurance() {
             </div>
 
             {/* Key Metrics */}
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {[
                 { label: "Threat Detection", value: "<10 min", icon: Clock },
                 { label: "Compliance Rate", value: "99.8%", icon: ShieldCheck },
                 { label: "Zero Breaches", value: "100%", icon: Lock },
                 { label: "Audit Success", value: "100%", icon: CheckCircle2 },
               ].map((metric, index) => (
-                <Card key={metric.label} className="bg-white/10 backdrop-blur-sm border-white/20 text-white p-4 text-center group hover:bg-white/15 transition-all hover:scale-105">
+                <Card key={metric.label} className="bg-white/10 backdrop-blur-sm border-white/20 text-white p-3 md:p-4 text-center group hover:bg-white/15 transition-all hover:scale-105">
                   <div className="flex justify-center mb-2">
-                    <metric.icon className="h-6 w-6" />
+                    <metric.icon className="h-5 w-5 md:h-6 md:w-6" />
                   </div>
-                  <div className="text-2xl md:text-3xl font-bold mb-1">{metric.value}</div>
+                  <div className="text-xl md:text-2xl lg:text-3xl font-bold mb-1">{metric.value}</div>
                   <div className="text-xs font-medium text-blue-200">{metric.label}</div>
                 </Card>
               ))}

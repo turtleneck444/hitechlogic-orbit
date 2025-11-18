@@ -79,7 +79,7 @@ const metrics = [
   { label: "Total Savings Delivered", value: "$50M+", icon: DollarSign },
   { label: "Average Cost Reduction", value: "35%", icon: TrendingDown },
   { label: "Forecast Accuracy", value: "95%", icon: Target },
-  { label: "Business Agility", value: "↑", icon: TrendingUp },
+  { label: "Business Agility", value: "⚡", icon: TrendingUp },
 ];
 
 const finOpsJourney = [
@@ -282,11 +282,6 @@ export default function CostEfficiencyCapacityStrategy() {
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 animate-[fade-in_0.9s_ease-out_0.4s_both]">
             {metrics.map((metric) => (
               <div key={metric.label} className="text-center group">
-                <div className="flex justify-center mb-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 group-hover:bg-white/15 group-hover:border-white/20 transition-all duration-300">
-                    <metric.icon className="h-6 w-6 text-[hsl(var(--accent-blue))]" />
-                  </div>
-                </div>
                 <div className="text-3xl md:text-4xl font-bold text-[hsl(var(--accent-blue))] group-hover:scale-110 transition-transform duration-300">{metric.value}</div>
                 <div className="mt-2 text-sm font-medium text-white/80">{metric.label}</div>
               </div>

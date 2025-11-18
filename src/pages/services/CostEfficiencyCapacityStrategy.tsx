@@ -76,9 +76,9 @@ const useCases = [
 ];
 
 const metrics = [
-  { label: "FinOps Experience", value: "12+", icon: Award },
-  { label: "Avg. Savings", value: "35%", icon: TrendingDown },
-  { label: "Forecast Accuracy", value: "95%+", icon: Target },
+  { label: "Total Savings Delivered", value: "$50M+", icon: DollarSign },
+  { label: "Average Cost Reduction", value: "35%", icon: TrendingDown },
+  { label: "Forecast Accuracy", value: "95%", icon: Target },
   { label: "Clients Served", value: "200+", icon: Users },
 ];
 
@@ -295,29 +295,7 @@ export default function CostEfficiencyCapacityStrategy() {
         </div>
       </section>
 
-      {/* Trust Indicators */}
-      <section className="bg-gradient-to-r from-[hsl(var(--navy))] to-slate-900 py-8">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">$50M+</div>
-              <div className="mt-1 text-sm text-slate-300">Total Savings Delivered</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">35%</div>
-              <div className="mt-1 text-sm text-slate-300">Average Cost Reduction</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">95%</div>
-              <div className="mt-1 text-sm text-slate-300">Forecast Accuracy</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">8x</div>
-              <div className="mt-1 text-sm text-slate-300">Average ROI</div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Problem/Solution */}
       <section className="section-space bg-white">

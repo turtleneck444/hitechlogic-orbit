@@ -535,7 +535,7 @@ Remember: You represent HiTechLogic's enterprise excellence. Every response shou
 
   if (!isOpen) {
     return (
-      <div className="fixed bottom-6 right-6 z-50 group">
+      <div className="fixed bottom-6 right-6 z-[9999] group">
         <Button
           onClick={() => setIsOpen(true)}
           className="h-14 w-14 rounded-full bg-white border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95"
@@ -544,7 +544,7 @@ Remember: You represent HiTechLogic's enterprise excellence. Every response shou
         </Button>
 
         {/* Clean tooltip */}
-        <div className="absolute bottom-full right-0 mb-3 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
+        <div className="absolute bottom-full right-0 mb-3 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg z-[10000]">
           <span>Chat with AI Assistant</span>
           <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
         </div>
@@ -554,7 +554,7 @@ Remember: You represent HiTechLogic's enterprise excellence. Every response shou
 
   return (
     <div className={cn(
-      "fixed bottom-6 right-6 z-50 transition-all duration-300 ease-out",
+      "fixed bottom-6 right-6 z-[9999] transition-all duration-500 ease-out",
       isMinimized ? "w-80 h-16" : "w-96 h-[500px]"
     )}>
       {/* Clean Header */}

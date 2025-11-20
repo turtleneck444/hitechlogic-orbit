@@ -231,30 +231,28 @@ export function AIChatWidget() {
     const apiKey = import.meta.env.VITE_ELEVENLABS_API_KEY;
     const agentId = import.meta.env.VITE_ELEVEN_LABS_AGENT_ID;
 
-    if (!apiKey || !agentId) {
-      throw new Error('Eleven Labs configuration missing. Please check your .env file.');
+    if (!apiKey) {
+      throw new Error('Eleven Labs API key missing. Please check your .env file.');
     }
 
     try {
       // Format conversation history for Eleven Labs
       const conversationContext = conversationHistory
-        .slice(-10) // Keep last 10 messages for context
+        .slice(-3) // Keep last 3 messages for context
         .map(msg => `${msg.sender === 'user' ? 'User' : 'Assistant'}: ${msg.content}`)
         .join('\n');
 
-      // Create the personality prompt context
-      const personalityContext = `# HiTechLogic AI Agent Personality Prompt
+      // Create the system prompt for HiTechLogic personality
+      const systemPrompt = `You are Aurora, the advanced AI Assistant for HiTechLogic, a premier enterprise infrastructure solutions provider. You combine deep technical expertise with business acumen, speaking confidently about complex infrastructure challenges while making them accessible to executives and technical teams alike.
 
-You are Aurora, the advanced AI Assistant for HiTechLogic, a premier enterprise infrastructure solutions provider. You combine deep technical expertise with business acumen, speaking confidently about complex infrastructure challenges while making them accessible to executives and technical teams alike.
-
-## Key Guidelines:
+Key Guidelines:
 - Be strategic, visionary, and solution-oriented
 - Focus on business outcomes, not just technical details
 - Use enterprise terminology (enterprise-grade, mission-critical, scalability, ROI optimization)
 - Provide specific metrics and quantifiable benefits
 - Always tie solutions to competitive advantage
 
-## HiTechLogic Services (Reference Only):
+HiTechLogic Services:
 1. Infrastructure & Cloud Operations - Zero-downtime multi-cloud orchestration
 2. System Oversight & Event Reduction - AI-powered monitoring and alerting
 3. AI Business Automation - Intelligent infrastructure management and remediation
@@ -264,7 +262,7 @@ You are Aurora, the advanced AI Assistant for HiTechLogic, a premier enterprise 
 7. Strategic Technology Partnership - Executive-level technology guidance
 8. Rapid Prototyping & App Development - From concept to production acceleration
 
-## Response Style:
+Response Style:
 - Start with empathy and understanding
 - Provide comprehensive yet concise information
 - End with specific next steps or questions
@@ -273,14 +271,18 @@ You are Aurora, the advanced AI Assistant for HiTechLogic, a premier enterprise 
 
 Remember: You represent HiTechLogic's enterprise excellence. Every response should reinforce our position as the premier infrastructure solutions provider.`;
 
+      // Try the Conversational AI endpoint with agent
       const requestBody = {
         message: message,
-        conversation_context: conversationContext,
-        personality_prompt: personalityContext,
-        agent_id: agentId
+        user_id: "hitechlogic-user",
+        conversation_id: "hitechlogic-session",
+        ...(conversationContext && { context: conversationContext }),
+        ...(systemPrompt && { system_prompt: systemPrompt })
       };
 
-      const response = await fetch(`https://api.elevenlabs.io/v1/convai/conversation`, {
+      console.log('Sending to Eleven Labs:', requestBody);
+
+      const response = await fetch(`https://api.elevenlabs.io/v1/convai/conversations`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -290,23 +292,105 @@ Remember: You represent HiTechLogic's enterprise excellence. Every response shou
       });
 
       if (!response.ok) {
-        throw new Error(`Eleven Labs API error: ${response.status} ${response.statusText}`);
+        const errorText = await response.text();
+        console.error('Eleven Labs API error:', response.status, errorText);
+
+        // Try alternative endpoint if agent-specific endpoint fails
+        if (response.status === 404 || response.status === 400) {
+          console.log('Trying alternative endpoint...');
+          return await tryAlternativeEndpoint(message, conversationContext, systemPrompt, apiKey);
+        }
+
+        throw new Error(`Eleven Labs API error: ${response.status} - ${errorText}`);
       }
 
       const data = await response.json();
+      console.log('Eleven Labs response:', data);
 
-      // Extract the AI response from the conversation result
-      if (data.conversation && data.conversation.length > 0) {
-        const lastMessage = data.conversation[data.conversation.length - 1];
-        return lastMessage.message || lastMessage.text || 'I apologize, but I couldn\'t process that response properly.';
+      // Extract the AI response from various possible response formats
+      if (data.response) {
+        return data.response;
       }
 
-      return data.response || data.message || 'I received your message but couldn\'t generate a proper response.';
+      if (data.message) {
+        return data.message;
+      }
+
+      if (data.text) {
+        return data.text;
+      }
+
+      if (data.choices && data.choices.length > 0 && data.choices[0].message) {
+        return data.choices[0].message.content;
+      }
+
+      return 'I received your message but couldn\'t generate a proper response.';
 
     } catch (error) {
       console.error('Eleven Labs API error:', error);
-      throw error;
+
+      // Try alternative endpoint as fallback
+      try {
+        console.log('Trying alternative endpoint as fallback...');
+        return await tryAlternativeEndpoint(message, '', '', apiKey);
+      } catch (fallbackError) {
+        console.error('All Eleven Labs endpoints failed:', fallbackError);
+        throw error;
+      }
     }
+  };
+
+  // Alternative endpoint for conversational AI
+  const tryAlternativeEndpoint = async (
+    message: string,
+    conversationContext: string,
+    systemPrompt: string,
+    apiKey: string
+  ): Promise<string> => {
+    // Try using OpenAI-compatible endpoint that Eleven Labs might support
+    const requestBody = {
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "system",
+          content: systemPrompt
+        },
+        ...(conversationContext ? [{
+          role: "system",
+          content: `Previous conversation:\n${conversationContext}`
+        }] : []),
+        {
+          role: "user",
+          content: message
+        }
+      ],
+      temperature: 0.7,
+      max_tokens: 800
+    };
+
+    const response = await fetch(`https://api.elevenlabs.io/v1/chat/completions`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify(requestBody),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Alternative API error:', response.status, errorText);
+      throw new Error(`Alternative API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log('Alternative API response:', data);
+
+    if (data.choices && data.choices.length > 0) {
+      return data.choices[0].message.content;
+    }
+
+    return 'I apologize, but I couldn\'t generate a response at this time.';
   };
 
   // Text-to-Speech using Eleven Labs

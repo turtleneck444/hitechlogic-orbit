@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
 import { ArrowRight, Target, Zap, ShieldCheck, Clock } from "lucide-react";
 
-export default function AutomatedCorrectiveActions() {
+export default function AIBusinessAutomation() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -13,16 +13,16 @@ export default function AutomatedCorrectiveActions() {
       "@type": "Organization",
       name: "HiTechLogic",
     },
-    serviceType: "Automated Corrective Actions",
-    name: "Automated Corrective Actions",
-    description: "AI-driven remediation, self-healing runbooks, and automated workflows that resolve incidents within minutes.",
+    serviceType: "AI Business Automation",
+    name: "AI Business Automation",
+    description: "Intelligent AI agents that proactively manage infrastructure, predict issues, and execute intelligent remediation with human oversight and governance.",
   };
 
   const highlights = [
-    "AI learns from every incident to improve responses",
-    "Built-in governance, approvals, and audit trails",
-    "Human-in-the-loop controls for critical flows",
-    "Confidence scoring that powers executive oversight",
+    "Autonomous AI agents that learn and adapt continuously",
+    "Human-AI collaboration with intelligent oversight",
+    "Predictive analytics and proactive issue prevention",
+    "Enterprise-grade governance and audit capabilities",
   ];
 
   const implementation = [
@@ -51,10 +51,10 @@ export default function AutomatedCorrectiveActions() {
   return (
     <>
       <SEO
-        title="Automated Corrective Actions & Self-Healing Infrastructure | HiTechLogic"
-        description="Automated remediation that resolves incidents in minutes with AI-powered workflows, runbooks, and governance for enterprise operations."
-        keywords="automated corrective actions, self-healing infrastructure, runbooks, incident automation, MTTR reduction, AI remediation"
-        canonical="https://hitechlogic.com/services/automated-corrective-actions"
+        title="AI Business Automation & AI Agent Services | HiTechLogic"
+        description="Intelligent AI agents that proactively manage infrastructure, predict issues, and execute intelligent remediation with human oversight for enterprise operations."
+        keywords="AI business automation, AI agent services, autonomous infrastructure, AI agents, predictive maintenance, intelligent automation, autonomous operations"
+        canonical="https://hitechlogic.com/services/ai-business-automation"
         schema={schema}
       />
       <Layout>
@@ -66,14 +66,14 @@ export default function AutomatedCorrectiveActions() {
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg">
               <Zap className="h-7 w-7 text-[hsl(var(--accent-blue))]" />
             </div>
-            <span className="text-sm font-medium text-white/90 tracking-wide">Automated Corrective Actions</span>
+            <span className="text-sm font-medium text-white/90 tracking-wide">AI Business Automation</span>
           </div>
           <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
-            Self-Healing Infrastructure
-            <span className="text-[hsl(var(--accent-blue))] block">Powered by AI Automation</span>
+            AI Business Automation
+            <span className="text-[hsl(var(--accent-blue))] block">& AI Agent Services</span>
           </h1>
           <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed">
-            Intelligent remediation that resolves incidents before stakeholders even notice. Built for enterprises that cannot tolerate downtime.
+            Intelligent AI agents that proactively manage infrastructure, predict issues, and execute autonomous remediation with human oversight. The future of operations is here.
           </p>
           <div className="mt-10">
               <Button asChild size="xl" className="bg-[hsl(var(--accent-blue))] hover:bg-[hsl(var(--accent-blue))]/90">
@@ -108,7 +108,7 @@ export default function AutomatedCorrectiveActions() {
             <div className="grid gap-8 lg:gap-10 lg:grid-cols-[1fr,400px]">
               <div className="space-y-8 order-2 lg:order-1">
                 <p className="text-base md:text-lg text-slate-700 leading-relaxed">
-                  HiTechLogic automates corrective actions with enterprise-grade safety nets. We combine AI-driven remediation, runbook libraries, and executive-ready reporting to resolve incidents before business stakeholders are impacted.
+                  HiTechLogic deploys autonomous AI agents that continuously learn from your infrastructure patterns, predict potential issues before they occur, and execute intelligent remediation with human oversight. Our agentic AI systems transform reactive operations into proactive, self-optimizing infrastructure management.
                 </p>
                 <div className="grid gap-4 md:gap-6 md:grid-cols-2">
                   {highlights.map((item) => (
@@ -121,12 +121,12 @@ export default function AutomatedCorrectiveActions() {
                 <div className="rounded-2xl md:rounded-3xl border border-slate-200 bg-slate-50 p-4 md:p-6">
                   <h3 className="text-lg md:text-xl font-semibold text-[hsl(var(--navy))] mb-3">Executive Impact</h3>
                   <p className="text-sm md:text-base text-slate-600 mb-4">
-                    Automations execute with human governance, delivering measurable MTTR, reliability, and confidence at the CXO level.
+                    AI agents operate with human oversight, delivering predictive insights, autonomous remediation, and measurable operational excellence at the CXO level.
                   </p>
                   <ul className="space-y-2 text-sm text-slate-600">
-                    <li>• Real-time remediation scorecards and dashboards</li>
-                    <li>• Auditable runbooks with approvals and rollback options</li>
-                    <li>• Confidence scoring so leadership trusts every automation</li>
+                    <li>• Predictive issue prevention and autonomous resolution</li>
+                    <li>• Real-time AI agent performance dashboards and analytics</li>
+                    <li>• Human-AI collaboration with intelligent escalation protocols</li>
                   </ul>
                 </div>
               </div>
@@ -168,14 +168,14 @@ export default function AutomatedCorrectiveActions() {
         {/* CTA */}
         <section className="section-space bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))]">
           <div className="mx-auto w-full max-w-4xl px-6 text-center text-white">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Master your infrastructure operations with automated remediation</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Transform operations with autonomous AI agents</h2>
             <p className="text-lg text-white/80 mb-8">
-              Stop reacting to alerts and start orchestrating reliability. Our experts will build the corrective actions that keep you ahead of disruption.
+              Move beyond reactive monitoring to proactive, self-optimizing infrastructure. Our AI agents continuously learn and adapt to keep your operations ahead of every potential issue.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="xl" className="bg-white text-black hover:bg-slate-50">
+              <Button asChild size="xl" className="bg-white text-[hsl(var(--accent-blue))] hover:bg-slate-50">
                 <Link to="/contact" className="flex items-center gap-2">
-                  <ArrowRight className="h-5 w-5 text-black" />
+                  <ArrowRight className="h-5 w-5 text-[hsl(var(--accent-blue))]" />
                   Request Automation Workshop
                 </Link>
               </Button>

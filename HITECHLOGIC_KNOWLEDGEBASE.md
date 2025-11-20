@@ -154,9 +154,9 @@ Key recent changes to reflect in all responses and build decisions:
 
 ---
 
-## 3. THE SEVEN SERVICE PILLARS
+## 3. THE EIGHT SERVICE PILLARS
 
-HiTechLogic delivers comprehensive managed services through seven integrated pillars:
+HiTechLogic delivers comprehensive managed services through eight integrated pillars:
 
 ### 3.1 Infrastructure & Cloud Operations
 
@@ -212,30 +212,30 @@ Noise-calmed telemetry, expert routing, and correlation that keep executives ali
 
 ---
 
-### 3.3 Automated Corrective Actions
+### 3.3 AI Business Automation
 
-**Tagline:** "Self-healing infrastructure that never sleeps"
+**Tagline:** "Intelligent AI agents that predict, prevent, and resolve"
 
 **Overview:**
-Verified automation and self-healing workflows that shrink incident counts and free engineers to focus on delivery.
+AI-driven automation that transforms reactive operations into proactive, self-optimizing infrastructure management with continuous learning and predictive capabilities.
 
 **Key Capabilities:**
-- Automation catalog with approvals + guardrails
-- Self-healing runbooks covering top incidents
-- Compliance-ready audit trail for every action
-- 65+ production-ready runbooks
-- 95% faster incident resolution
-- 48% reduction in repeat incidents
+- Intelligent AI agents with continuous learning
+- Predictive analytics and proactive issue prevention
+- Human-AI collaboration with intelligent escalation
+- Enterprise-grade governance and audit capabilities
+- Real-time agent performance monitoring
+- AI-driven business process automation
 
 **KPIs:**
-- **Runbooks:** 65+
-- **MTTR Reduction:** 95%
-- **Success Rate:** 99.2%
+- **Prediction Accuracy:** 97%
+- **Autonomous Resolution:** 85%
+- **MTTR Improvement:** 95%
 
 **Ideal For:**
-- Organizations with repetitive manual incident response
-- Teams wanting to reduce MTTR dramatically
-- Companies seeking compliance-ready automation
+- Organizations seeking autonomous operations
+- Teams wanting predictive maintenance
+- Companies ready for AI-driven infrastructure management
 
 ---
 
@@ -266,7 +266,7 @@ SLO-backed engineering discipline, architectural reviews, and load assurance del
 
 ---
 
-### 3.5 Security & Identity Assurance
+### 3.5 Cybersecurity & Identity Assurance
 
 **Tagline:** "Zero-trust security, always compliant"
 
@@ -489,7 +489,7 @@ Three cultural truths guide our work:
 
 ### What Makes HiTechLogic Different
 
-1. **Holistic Integration:** Seven service pillars work together seamlessly, not siloed point solutions
+1. **Holistic Integration:** Eight service pillars work together seamlessly, not siloed point solutions
 
 2. **Proven Track Record:**
    - $2B+ infrastructure under management
@@ -732,7 +732,7 @@ Three cultural truths guide our work:
 ## 17. SALES OBJECTION HANDLING
 
 ### Objection: "We already have an internal DevOps/SRE team"
-**Response:** That's excellent—we work alongside your team, not replace them. We augment their capabilities with 24/7 coverage, specialized expertise across seven service pillars, and free them from operational firefighting so they can focus on strategic innovation. Most of our clients have strong internal teams that we enhance.
+**Response:** That's excellent—we work alongside your team, not replace them. We augment their capabilities with 24/7 coverage, specialized expertise across eight service pillars, and free them from operational firefighting so they can focus on strategic innovation. Most of our clients have strong internal teams that we enhance.
 
 ### Objection: "This seems expensive"
 **Response:** Let's look at total cost of ownership. Building internal capabilities across infrastructure ops, security, automation, and FinOps requires multiple senior hires ($150K-$250K each), 24/7 coverage (3-4x staffing), tools, training, and knowledge concentration risk. Most clients see 30-40% cost reduction while gaining enterprise-grade capabilities. We can model your specific TCO.

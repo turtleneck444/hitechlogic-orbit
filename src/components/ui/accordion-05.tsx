@@ -5,7 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { useState, useCallback } from "react";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
@@ -27,10 +27,10 @@ const items = [
   },
   {
     id: "3",
-    title: "Automated Corrective Actions",
+    title: "AI Business Automation",
     content:
-      "Self-healing infrastructure that works around the clock. Deploy sophisticated remediation workflows that handle critical system issues automatically. Our AI learns from every incident, continuously improving uptime and significantly reducing manual intervention.",
-    href: "/services/automated-corrective-actions",
+      "Intelligent AI agents that proactively manage infrastructure, predict issues, and execute autonomous remediation with human oversight. AI-driven automation transforms reactive operations into proactive, self-optimizing infrastructure management with continuous learning and predictive capabilities.",
+    href: "/services/ai-business-automation",
   },
   {
     id: "4",
@@ -42,26 +42,11 @@ const items = [
 ];
 
 export function Accordion05() {
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const [openItems, setOpenItems] = useState<string[]>(["1"]); // Default first item open
+  const [openItems, setOpenItems] = useState<string[]>([]); // Start with no items open
 
-  const handleMouseEnter = useCallback((itemId: string) => {
-    setHoveredItem(itemId);
-    setTimeout(() => {
-      setOpenItems([itemId]);
-    }, 50); // Reduced delay for faster response
-  }, []);
-
-  const handleMouseLeave = () => {
-    setHoveredItem(null);
-  };
-
-  // Handle card click to toggle accordion
-  const handleCardClick = (e: React.MouseEvent, itemId: string) => {
-    // Only toggle accordion if not clicking on a link
-    if (!(e.target as HTMLElement).closest('a[href]')) {
-      setOpenItems(openItems[0] === itemId ? [] : [itemId]);
-    }
+  // Handle expand button click to toggle accordion
+  const handleExpandClick = (itemId: string) => {
+    setOpenItems(openItems[0] === itemId ? [] : [itemId]);
   };
 
   return (
@@ -76,23 +61,37 @@ export function Accordion05() {
             value={item.id}
             key={item.id}
             className="border border-white/10 rounded-lg bg-white/5 backdrop-blur-sm transition-all duration-500"
-            onMouseEnter={() => handleMouseEnter(item.id)}
-            onMouseLeave={handleMouseLeave}
           >
-            <AccordionTrigger
-              onClick={(e) => handleCardClick(e, item.id)}
-              className={cn(
-                "text-left px-6 md:px-8 py-6 overflow-hidden text-white/60 duration-500 hover:no-underline hover:text-white cursor-pointer w-full [&>svg]:hidden transition-all duration-500",
-                hoveredItem === item.id ? "text-white transform scale-[1.02]" : ""
-              )}
-            >
-              <div className="flex flex-1 items-start gap-4">
-                <p className="text-xs text-white/80 font-bold bg-white/10 rounded-full w-6 h-6 flex items-center justify-center transition-all duration-500 group-hover:bg-white/25">{item.id}</p>
-                <h1
-                  className="text-left text-xl md:text-2xl lg:text-3xl font-semibold leading-tight text-white transition-all duration-500"
-                >
-                  {item.title}
-                </h1>
+            <AccordionTrigger className="text-left px-6 md:px-8 py-6 overflow-hidden text-white hover:no-underline hover:text-white cursor-pointer w-full [&>svg]:hidden">
+              <div
+                className="flex items-start justify-between w-full"
+                onClick={() => handleExpandClick(item.id)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleExpandClick(item.id);
+                  }
+                }}
+                aria-expanded={openItems[0] === item.id}
+                aria-controls={`accordion-content-${item.id}`}
+              >
+                <div className="flex flex-1 items-start gap-4">
+                  <p className="text-xs text-white/80 font-bold bg-white/10 rounded-full w-6 h-6 flex items-center justify-center">{item.id}</p>
+                  <h1 className="text-left text-xl md:text-2xl lg:text-3xl font-semibold leading-tight text-white">
+                    {item.title}
+                  </h1>
+                </div>
+
+                {/* Expand indicator */}
+                <div className="flex items-center gap-1 text-xs text-white/60 ml-4">
+                  <span className="text-xs font-medium">{openItems[0] === item.id ? 'Collapse' : 'Expand'}</span>
+                  <ChevronDown className={cn(
+                    "h-3 w-3 transition-transform duration-200",
+                    openItems[0] === item.id ? "rotate-180" : ""
+                  )} />
+                </div>
               </div>
             </AccordionTrigger>
 

@@ -30,14 +30,14 @@ export default function SecurityIdentityAssurance() {
       "@type": "Organization",
       name: "HiTechLogic",
     },
-    serviceType: "Security & Identity Management",
-    name: "Security & Identity Assurance",
-    description: "Zero-trust security architecture with identity lifecycle governance, privileged access controls, and operational security that ensures compliance and threat protection.",
+    serviceType: "Cybersecurity & Identity Management",
+    name: "Cybersecurity & Identity Assurance",
+    description: "Enterprise-grade cybersecurity with zero-trust architecture, advanced threat detection, identity lifecycle governance, and automated compliance assurance. Protect against modern cyber threats while maintaining operational efficiency.",
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "USD",
-      description: "Enterprise security and compliance assurance service",
+      description: "Comprehensive cybersecurity and identity assurance service",
     },
   };
 
@@ -88,9 +88,9 @@ export default function SecurityIdentityAssurance() {
   return (
     <>
       <SEO
-        title="Security & Identity Assurance Services | HiTechLogic"
-        description="Zero-trust security architecture with 99.9% threat detection under 10 minutes. Identity governance, compliance assurance, and enterprise-grade security."
-        keywords="zero trust security, identity management, compliance assurance, threat detection, privileged access, security operations, enterprise compliance"
+        title="Cybersecurity & Identity Assurance Services | HiTechLogic"
+        description="Enterprise-grade cybersecurity with zero-trust architecture, advanced threat detection under 10 minutes, identity lifecycle governance, and automated compliance assurance. Protect against modern cyber threats."
+        keywords="cybersecurity, zero trust security, identity management, threat detection, compliance assurance, privileged access, security operations, enterprise compliance, cyber defense"
         canonical="https://hitechlogic.com/services/security-identity-assurance"
         schema={schema}
       />
@@ -106,13 +106,13 @@ export default function SecurityIdentityAssurance() {
               <span className="text-sm font-medium text-white/90 tracking-wide">Zero-Trust Security</span>
             </div>
             <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
-              Security & Identity
+              Cybersecurity & Identity
               <span className="text-blue-200 block sm:inline"> Assurance</span>
             </h1>
             <p className="mt-6 text-xl text-blue-100 max-w-3xl leading-relaxed">
-              Zero-trust security that's always compliant. We implement identity lifecycle governance,
-              privileged access controls, and operational security that protects your business while
-              ensuring regulatory compliance.
+              Enterprise-grade cybersecurity with zero-trust architecture. We protect against modern cyber threats
+              through advanced threat detection, identity lifecycle governance, privileged access controls,
+              and automated compliance assurance that keeps your business secure and compliant.
             </p>
 
             <div className="mt-10">
@@ -215,13 +215,14 @@ export default function SecurityIdentityAssurance() {
         <section id="capabilities" className="section-space bg-slate-50">
           <div className="mx-auto w-full max-w-6xl px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="eyebrow text-[hsl(var(--accent-blue))]">Enterprise security platform</span>
+              <span className="eyebrow text-[hsl(var(--accent-blue))]">Enterprise cybersecurity platform</span>
               <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
-                Identity governance with zero-trust fortress
+                Advanced cybersecurity with zero-trust architecture
               </h2>
               <p className="mt-6 text-lg text-slate-600">
-                Complete security and compliance platform that secures every identity, device,
-                and access attempt while maintaining operational efficiency and regulatory compliance.
+                Comprehensive cybersecurity platform that protects against modern threats through
+                advanced threat detection, identity governance, and automated defense mechanisms
+                while ensuring compliance and maintaining operational efficiency.
               </p>
             </div>
 

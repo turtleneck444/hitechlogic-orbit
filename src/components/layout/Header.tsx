@@ -19,9 +19,9 @@ const coreServices = [
     href: '/services/system-oversight-event-reduction',
   },
   {
-    id: 'automated-corrective-actions',
-    name: 'Automated Corrective Actions',
-    href: '/services/automated-corrective-actions',
+    id: 'ai-business-automation',
+    name: 'AI Business Automation',
+    href: '/services/ai-business-automation',
   },
   {
     id: 'reliability-performance-engineering',
@@ -30,7 +30,7 @@ const coreServices = [
   },
   {
     id: 'security-identity-assurance',
-    name: 'Security & Identity Assurance',
+    name: 'Cybersecurity & Identity Assurance',
     href: '/services/security-identity-assurance',
   },
   {
@@ -311,68 +311,55 @@ export function Header() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg" />
               </Button>
 
-              {/* Casino-Style Rolling Buttons */}
-              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 delay-100">
-                <div className="flex flex-col gap-1">
-                  {/* Strategic Assessment - Elegant Blue */}
-                  <Link
-                    to="/contact?type=strategy"
-                    className="hidden lg:flex items-center gap-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 transform opacity-0 group-hover:opacity-100 translate-y-[-10px] group-hover:translate-y-0"
-                    style={{transitionDelay: '0ms'}}
-                  >
-                    <span className="text-lg">🎯</span>
-                    <span className="text-sm whitespace-nowrap">Strategic Assessment</span>
-                  </Link>
+              {/* Creative & Powerful Service Options */}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 delay-150">
+                <div className="relative">
+                  {/* Background glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 via-transparent to-[hsl(var(--navy))]/10 rounded-2xl blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
-                  {/* Architecture Review - Professional Purple */}
-                  <Link
-                    to="/contact?type=architecture"
-                    className="hidden lg:flex items-center gap-3 bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 transform opacity-0 group-hover:opacity-100 translate-y-[-10px] group-hover:translate-y-0"
-                    style={{transitionDelay: '100ms'}}
-                  >
-                    <span className="text-lg">🏗️</span>
-                    <span className="text-sm whitespace-nowrap">Architecture Review</span>
-                  </Link>
+                  <div className="relative flex flex-col gap-0.5 min-w-[260px] p-1.5 bg-white/95 backdrop-blur-xl rounded-xl shadow-lg shadow-[hsl(var(--accent-blue))]/8 border border-white/40">
+                    {/* Reduce Your Costs */}
+                    <Link
+                      to="/services/cost-efficiency-capacity-strategy"
+                      className="group/costs flex items-center justify-between bg-white hover:bg-slate-50/60 text-[hsl(var(--navy))] hover:text-[hsl(var(--accent-blue))] font-medium px-3 py-2.5 rounded-full transition-all duration-200 border border-slate-200/30 hover:border-[hsl(var(--accent-blue))]/25"
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-br from-green-400 to-emerald-500"></div>
+                        <span className="text-xs tracking-wide">Reduce Your Costs</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-xs font-medium text-slate-400 group-hover/costs:text-[hsl(var(--accent-blue))] transition-colors duration-200">Save 35%</span>
+                      </div>
+                    </Link>
 
-                  {/* Cost Optimization - Success Green */}
-                  <Link
-                    to="/contact?type=cost-optimization"
-                    className="hidden lg:flex items-center gap-3 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 transform opacity-0 group-hover:opacity-100 translate-y-[-10px] group-hover:translate-y-0"
-                    style={{transitionDelay: '200ms'}}
-                  >
-                    <span className="text-lg">💰</span>
-                    <span className="text-sm whitespace-nowrap">Cost Optimization</span>
-                  </Link>
+                    {/* Reduce Your Risks */}
+                    <Link
+                      to="/services/security-identity-assurance"
+                      className="group/risks flex items-center justify-between bg-white hover:bg-slate-50/60 text-[hsl(var(--navy))] hover:text-[hsl(var(--accent-blue))] font-medium px-3 py-2.5 rounded-full transition-all duration-200 border border-slate-200/30 hover:border-[hsl(var(--accent-blue))]/25"
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-br from-blue-400 to-blue-500"></div>
+                        <span className="text-xs tracking-wide">Reduce Your Risks</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-xs font-medium text-slate-400 group-hover/risks:text-[hsl(var(--accent-blue))] transition-colors duration-200">Zero Breaches</span>
+                      </div>
+                    </Link>
 
-                  {/* Security Audit - Trust Orange */}
-                  <Link
-                    to="/contact?type=security"
-                    className="hidden lg:flex items-center gap-3 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 transform opacity-0 group-hover:opacity-100 translate-y-[-10px] group-hover:translate-y-0"
-                    style={{transitionDelay: '300ms'}}
-                  >
-                    <span className="text-lg">🔒</span>
-                    <span className="text-sm whitespace-nowrap">Security Audit</span>
-                  </Link>
-
-                  {/* Emergency Response - Alert Red */}
-                  <Link
-                    to="/contact?type=emergency"
-                    className="hidden lg:flex items-center gap-3 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 transform opacity-0 group-hover:opacity-100 translate-y-[-10px] group-hover:translate-y-0"
-                    style={{transitionDelay: '400ms'}}
-                  >
-                    <span className="text-lg">🚨</span>
-                    <span className="text-sm whitespace-nowrap">Emergency Response</span>
-                  </Link>
-
-                  {/* Long-term Partnership - Premium Indigo */}
-                  <Link
-                    to="/contact?type=partnership"
-                    className="hidden lg:flex items-center gap-3 bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 transform opacity-0 group-hover:opacity-100 translate-y-[-10px] group-hover:translate-y-0"
-                    style={{transitionDelay: '500ms'}}
-                  >
-                    <span className="text-lg">🤝</span>
-                    <span className="text-sm whitespace-nowrap">Long-term Partnership</span>
-                  </Link>
+                    {/* Talk To Us About Your Ideas */}
+                    <Link
+                      to="/contact"
+                      className="group/ideas flex items-center justify-between bg-white hover:bg-slate-50/60 text-[hsl(var(--navy))] hover:text-[hsl(var(--accent-blue))] font-medium px-3 py-2.5 rounded-full transition-all duration-200 border border-slate-200/30 hover:border-[hsl(var(--accent-blue))]/25"
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <div className="w-2 h-2 rounded-full bg-gradient-to-br from-purple-400 to-purple-500"></div>
+                        <span className="text-xs tracking-wide">Talk To Us About Your Ideas</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-xs font-medium text-slate-400 group-hover/ideas:text-[hsl(var(--accent-blue))] transition-colors duration-200">Get Started</span>
+                      </div>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

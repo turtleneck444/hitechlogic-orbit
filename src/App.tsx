@@ -22,7 +22,7 @@ import Admin from "./pages/Admin";
 import { AdminProvider } from "./contexts/AdminContext";
 import InfrastructureCloudOperations from "./pages/services/InfrastructureCloudOperations";
 import SystemOversightEventReduction from "./pages/services/SystemOversightEventReduction";
-import AutomatedCorrectiveActions from "./pages/services/AutomatedCorrectiveActions";
+import AIBusinessAutomation from "./pages/services/AutomatedCorrectiveActions";
 import ReliabilityPerformanceEngineering from "./pages/services/ReliabilityPerformanceEngineering";
 import SecurityIdentityAssurance from "./pages/services/SecurityIdentityAssurance";
 import CostEfficiencyCapacityStrategy from "./pages/services/CostEfficiencyCapacityStrategy";
@@ -68,7 +68,7 @@ const App = () => (
           {/* Service Detail Pages */}
           <Route path="/services/infrastructure-cloud-operations" element={<InfrastructureCloudOperations />} />
           <Route path="/services/system-oversight-event-reduction" element={<SystemOversightEventReduction />} />
-          <Route path="/services/automated-corrective-actions" element={<AutomatedCorrectiveActions />} />
+          <Route path="/services/ai-business-automation" element={<AIBusinessAutomation />} />
           <Route path="/services/reliability-performance-engineering" element={<ReliabilityPerformanceEngineering />} />
           <Route path="/services/security-identity-assurance" element={<SecurityIdentityAssurance />} />
           <Route path="/services/cost-efficiency-capacity-strategy" element={<CostEfficiencyCapacityStrategy />} />

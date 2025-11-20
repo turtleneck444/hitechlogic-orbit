@@ -61,10 +61,10 @@ const allActions: Action[] = [
   },
   {
     id: "3",
-    label: "Automated Corrective Actions",
+    label: "Agentic AI",
     icon: <Workflow className="h-4 w-4 text-[hsl(var(--accent-blue))]" />,
     description: "Self-healing workflows and runbooks",
-    href: "/services/automated-corrective-actions",
+    href: "/services/agentic-ai",
   },
   {
     id: "4",
@@ -75,7 +75,7 @@ const allActions: Action[] = [
   },
   {
     id: "5",
-    label: "Security & Identity Assurance",
+    label: "Cybersecurity & Identity Assurance",
     icon: <ShieldCheck className="h-4 w-4 text-[hsl(var(--accent-blue))]" />,
     description: "Access governance and threat monitoring",
     href: "/services/security-identity-assurance",

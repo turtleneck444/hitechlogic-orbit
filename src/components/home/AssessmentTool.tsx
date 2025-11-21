@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { ChevronRight, CheckCircle2, AlertCircle, TrendingUp, Shield, DollarSign, BarChart3, ArrowRight } from "lucide-react";
+import { ChevronRight, CheckCircle2, AlertCircle, TrendingUp, Shield, DollarSign, BarChart3, ArrowRight, Bot } from "lucide-react";
 import { Link } from "react-router-dom";
 
-type AssessmentType = "finops" | "security" | null;
+type AssessmentType = "finops" | "security" | "ai" | null;
 
 type Question = {
   id: string;
@@ -122,6 +122,59 @@ const securityQuestions: Question[] = [
   },
 ];
 
+const aiQuestions: Question[] = [
+  {
+    id: "ai-adoption",
+    question: "How extensively are you using AI/ML technologies in your operations?",
+    options: [
+      { value: 1, label: "No AI/ML usage" },
+      { value: 2, label: "Basic AI tools (chatbots, simple automation)" },
+      { value: 3, label: "AI integrated in some business processes" },
+      { value: 4, label: "AI-driven operations across multiple domains" },
+    ],
+  },
+  {
+    id: "ai-strategy",
+    question: "Do you have a formal AI strategy and governance framework?",
+    options: [
+      { value: 1, label: "No AI strategy or governance" },
+      { value: 2, label: "Informal AI initiatives without governance" },
+      { value: 3, label: "Documented AI strategy with basic governance" },
+      { value: 4, label: "Comprehensive AI strategy with enterprise governance" },
+    ],
+  },
+  {
+    id: "data-quality",
+    question: "How do you ensure data quality for AI/ML models?",
+    options: [
+      { value: 1, label: "No data quality processes" },
+      { value: 2, label: "Basic data cleaning for specific projects" },
+      { value: 3, label: "Standardized data quality processes" },
+      { value: 4, label: "Automated data quality monitoring and governance" },
+    ],
+  },
+  {
+    id: "ai-skills",
+    question: "What's your team's AI/ML expertise level?",
+    options: [
+      { value: 1, label: "No internal AI expertise" },
+      { value: 2, label: "Basic understanding, rely on external vendors" },
+      { value: 3, label: "Dedicated AI team with growing expertise" },
+      { value: 4, label: "Center of excellence with advanced AI capabilities" },
+    ],
+  },
+  {
+    id: "ai-ethics",
+    question: "How do you address AI ethics, bias, and responsible AI practices?",
+    options: [
+      { value: 1, label: "No consideration for AI ethics" },
+      { value: 2, label: "Basic awareness, minimal implementation" },
+      { value: 3, label: "Established ethical guidelines and reviews" },
+      { value: 4, label: "Comprehensive responsible AI framework with monitoring" },
+    ],
+  },
+];
+
 type MaturityLevel = "beginner" | "developing" | "advanced" | "optimized";
 
 const getMaturityLevel = (score: number, maxScore: number): MaturityLevel => {
@@ -173,7 +226,7 @@ export function AssessmentTool() {
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [showResults, setShowResults] = useState(false);
 
-  const questions = assessmentType === "finops" ? finopsQuestions : securityQuestions;
+  const questions = assessmentType === "finops" ? finopsQuestions : assessmentType === "security" ? securityQuestions : aiQuestions;
   const maxScore = questions.length * 4;
   const currentScore = Object.values(answers).reduce((sum, val) => sum + val, 0);
   const maturityLevel = getMaturityLevel(currentScore, maxScore);
@@ -208,7 +261,7 @@ export function AssessmentTool() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             <Card
               className="group relative p-8 cursor-pointer hover:shadow-2xl transition-all duration-300 border-2 hover:border-[hsl(var(--accent-blue))]/40"
               onClick={() => setAssessmentType("finops")}
@@ -260,6 +313,32 @@ export function AssessmentTool() {
                 </div>
               </div>
             </Card>
+
+            <Card
+              className="group relative p-8 cursor-pointer hover:shadow-2xl transition-all duration-300 border-2 hover:border-[hsl(var(--accent-blue))]/40"
+              onClick={() => setAssessmentType("ai")}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--accent-blue))]/5 to-[hsl(var(--signal-purple))]/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg" />
+              <div className="relative">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="p-4 rounded-xl bg-gradient-to-br from-green-500/10 to-emerald-50 group-hover:from-green-500/20 group-hover:to-emerald-100 transition-colors">
+                    <Bot className="h-8 w-8 text-green-600" />
+                  </div>
+                  <ChevronRight className="h-6 w-6 text-slate-400 group-hover:text-green-600 group-hover:translate-x-1 transition-all" />
+                </div>
+                <h3 className="text-2xl font-bold text-[hsl(var(--navy))] mb-3">
+                  AI Maturity Assessment
+                </h3>
+                <p className="text-slate-600 mb-4">
+                  Evaluate your AI readiness and discover opportunities to leverage AI for competitive advantage
+                </p>
+                <div className="flex items-center gap-2 text-sm font-semibold text-green-600">
+                  <span>5 minutes</span>
+                  <span>•</span>
+                  <span>Instant results</span>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
@@ -283,7 +362,7 @@ export function AssessmentTool() {
               </div>
 
               <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--navy))] mb-4">
-                Your {assessmentType === "finops" ? "FinOps" : "Security"} Assessment Results
+                Your {assessmentType === "finops" ? "FinOps" : assessmentType === "security" ? "Security" : "AI"} Assessment Results
               </h2>
 
               <p className="text-lg text-slate-600 mb-8">
@@ -305,21 +384,27 @@ export function AssessmentTool() {
                   <div className={`p-3 rounded-lg bg-white shadow-sm`}>
                     {assessmentType === "finops" ? (
                       <DollarSign className={`h-6 w-6 ${maturity.color}`} />
-                    ) : (
+                    ) : assessmentType === "security" ? (
                       <Shield className={`h-6 w-6 ${maturity.color}`} />
+                    ) : (
+                      <Bot className={`h-6 w-6 ${maturity.color}`} />
                     )}
                   </div>
                   <div>
                     <h3 className="font-bold text-[hsl(var(--navy))] mb-2">
                       {assessmentType === "finops"
                         ? `Potential ${savingsPotential}% Cost Savings`
-                        : `${savingsPotential}% Security Risk Reduction Opportunity`
+                        : assessmentType === "security"
+                        ? `${savingsPotential}% Security Risk Reduction Opportunity`
+                        : `${savingsPotential}% AI Transformation Opportunity`
                       }
                     </h3>
                     <p className="text-sm text-slate-700">
                       {assessmentType === "finops"
                         ? "Based on your current maturity, our FinOps experts can help you optimize cloud spending and eliminate waste."
-                        : "Our security team can help you strengthen your defenses and reduce your risk exposure significantly."
+                        : assessmentType === "security"
+                        ? "Our security team can help you strengthen your defenses and reduce your risk exposure significantly."
+                        : "Our AI specialists can help you implement cutting-edge AI solutions to transform your business operations."
                       }
                     </p>
                   </div>
@@ -344,7 +429,7 @@ export function AssessmentTool() {
                         <p className="text-slate-700">Establish cost governance policies and budget guardrails</p>
                       </div>
                     </>
-                  ) : (
+                  ) : assessmentType === "security" ? (
                     <>
                       <div className="flex items-start gap-3">
                         <CheckCircle2 className="h-5 w-5 text-[hsl(var(--signal-purple))] mt-0.5 flex-shrink-0" />
@@ -359,9 +444,46 @@ export function AssessmentTool() {
                         <p className="text-slate-700">Establish zero-trust architecture with identity-based access</p>
                       </div>
                     </>
+                  ) : (
+                    <>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                        <p className="text-slate-700">Develop a comprehensive AI strategy and governance framework</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                        <p className="text-slate-700">Establish data quality processes and AI ethics guidelines</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                        <p className="text-slate-700">Build internal AI capabilities and partner with AI specialists</p>
+                      </div>
+                    </>
                   )}
                 </div>
               </div>
+
+              {assessmentType === "ai" && (
+                <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl p-6 mb-8">
+                  <div className="flex items-start gap-4">
+                    <img src="/xops.png" alt="XOps Platform" className="h-12 w-12 rounded-lg shadow-sm" />
+                    <div className="flex-1">
+                      <h4 className="font-bold text-[hsl(var(--navy))] mb-2">
+                        Don't think this is deep or detailed enough? Get deeper with our tool XOps for assessments.
+                      </h4>
+                      <p className="text-sm text-slate-700 mb-4">
+                        XOps provides enterprise-grade AI assessment tools with advanced analytics, custom frameworks, and comprehensive reporting for organizations serious about AI transformation.
+                      </p>
+                      <Button variant="outline" size="sm" asChild className="border-green-600 text-green-700 hover:bg-green-50">
+                        <a href="https://xops.axiomio.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                          <span>Sign up for free trial</span>
+                          <ArrowRight className="h-3 w-3" />
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="primary" size="lg" asChild className="flex-1">

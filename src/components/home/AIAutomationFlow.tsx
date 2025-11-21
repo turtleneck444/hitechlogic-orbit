@@ -59,6 +59,9 @@ export function AIAutomationFlow() {
   return (
     <section className="pt-12 lg:pt-16 pb-16 bg-gradient-to-br from-slate-50 to-blue-50/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Blue Accent Separator */}
+        <div className="w-full h-2 bg-gradient-to-r from-[hsl(var(--accent-blue))] via-[hsl(var(--signal-purple))] to-[hsl(var(--accent-blue))] rounded-full mb-16 shadow-lg"></div>
+
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 border border-[hsl(var(--accent-blue))]/20 mb-6">

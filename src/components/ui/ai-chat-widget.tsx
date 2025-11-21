@@ -235,12 +235,27 @@ export function AIChatWidget() {
       throw new Error('Eleven Labs API key missing. Please check your .env file.');
     }
 
+    if (!agentId) {
+      throw new Error('Eleven Labs Agent ID missing. Please check your .env file.');
+    }
+
     try {
       // Format conversation history for Eleven Labs
       const conversationContext = conversationHistory
-        .slice(-3) // Keep last 3 messages for context
-        .map(msg => `${msg.sender === 'user' ? 'User' : 'Assistant'}: ${msg.content}`)
-        .join('\n');
+        .slice(-5) // Keep last 5 messages for context
+        .map(msg => ({
+          role: msg.sender === 'user' ? 'user' : 'assistant',
+          content: msg.content
+        }));
+
+      // Add the current user message
+      const messages = [
+        ...conversationContext,
+        {
+          role: 'user',
+          content: message
+        }
+      ];
 
       // Create the system prompt for HiTechLogic personality
       const systemPrompt = `You are Aurora, the advanced AI Assistant for HiTechLogic, a premier enterprise infrastructure solutions provider. You combine deep technical expertise with business acumen, speaking confidently about complex infrastructure challenges while making them accessible to executives and technical teams alike.
@@ -271,18 +286,29 @@ Response Style:
 
 Remember: You represent HiTechLogic's enterprise excellence. Every response should reinforce our position as the premier infrastructure solutions provider.`;
 
-      // Try the Conversational AI endpoint with agent
+      // Use the correct Eleven Labs Conversational AI API format
       const requestBody = {
-        message: message,
-        user_id: "hitechlogic-user",
-        conversation_id: "hitechlogic-session",
-        ...(conversationContext && { context: conversationContext }),
-        ...(systemPrompt && { system_prompt: systemPrompt })
+        user_input: message,
+        conversation_config_override: {
+          agent: {
+            prompt: {
+              prompt: systemPrompt
+            }
+          }
+        },
+        conversation_history: conversationContext.map(msg => ({
+          role: msg.sender === 'user' ? 'user' : 'assistant',
+          message: msg.content
+        }))
       };
 
-      console.log('Sending to Eleven Labs:', requestBody);
+      console.log('Sending to Eleven Labs Conversational AI:', {
+        agentId,
+        message,
+        historyLength: conversationContext.length
+      });
 
-      const response = await fetch(`https://api.elevenlabs.io/v1/convai/conversations`, {
+      const response = await fetch(`https://api.elevenlabs.io/v1/convai/conversation`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -293,22 +319,26 @@ Remember: You represent HiTechLogic's enterprise excellence. Every response shou
 
       if (!response.ok) {
         const errorText = await response.text();
-        console.error('Eleven Labs API error:', response.status, errorText);
+        console.error('Eleven Labs Conversational AI error:', response.status, errorText);
 
-        // Try alternative endpoint if agent-specific endpoint fails
+        // Try alternative approach if the conversational AI endpoint fails
         if (response.status === 404 || response.status === 400) {
-          console.log('Trying alternative endpoint...');
-          return await tryAlternativeEndpoint(message, conversationContext, systemPrompt, apiKey);
+          console.log('Trying alternative chat completions endpoint...');
+          return await tryChatCompletions(message, conversationHistory, systemPrompt, apiKey);
         }
 
         throw new Error(`Eleven Labs API error: ${response.status} - ${errorText}`);
       }
 
       const data = await response.json();
-      console.log('Eleven Labs response:', data);
+      console.log('Eleven Labs Conversational AI response:', data);
 
-      // Extract the AI response from various possible response formats
-      if (data.response) {
+      // Extract the AI response from the conversational AI response format
+      if (data.response && data.response.text) {
+        return data.response.text;
+      }
+
+      if (data.response && typeof data.response === 'string') {
         return data.response;
       }
 
@@ -324,15 +354,15 @@ Remember: You represent HiTechLogic's enterprise excellence. Every response shou
         return data.choices[0].message.content;
       }
 
-      return 'I received your message but couldn\'t generate a proper response.';
+      return 'I received your message but couldn\'t generate a proper response. Please try again.';
 
     } catch (error) {
-      console.error('Eleven Labs API error:', error);
+      console.error('Eleven Labs Conversational AI error:', error);
 
-      // Try alternative endpoint as fallback
+      // Try alternative chat completions endpoint as fallback
       try {
-        console.log('Trying alternative endpoint as fallback...');
-        return await tryAlternativeEndpoint(message, '', '', apiKey);
+        console.log('Trying chat completions endpoint as fallback...');
+        return await tryChatCompletions(message, [], '', apiKey);
       } catch (fallbackError) {
         console.error('All Eleven Labs endpoints failed:', fallbackError);
         throw error;
@@ -340,30 +370,32 @@ Remember: You represent HiTechLogic's enterprise excellence. Every response shou
     }
   };
 
-  // Alternative endpoint for conversational AI
-  const tryAlternativeEndpoint = async (
+  // Alternative chat completions endpoint
+  const tryChatCompletions = async (
     message: string,
-    conversationContext: string,
+    conversationContext: Message[],
     systemPrompt: string,
     apiKey: string
   ): Promise<string> => {
     // Try using OpenAI-compatible endpoint that Eleven Labs might support
+    const messages = [
+      {
+        role: "system",
+        content: systemPrompt
+      },
+      ...conversationContext.slice(-3).map(msg => ({
+        role: msg.sender === 'user' ? 'user' : 'assistant',
+        content: msg.content
+      })),
+      {
+        role: "user",
+        content: message
+      }
+    ];
+
     const requestBody = {
       model: "gpt-3.5-turbo",
-      messages: [
-        {
-          role: "system",
-          content: systemPrompt
-        },
-        ...(conversationContext ? [{
-          role: "system",
-          content: `Previous conversation:\n${conversationContext}`
-        }] : []),
-        {
-          role: "user",
-          content: message
-        }
-      ],
+      messages: messages,
       temperature: 0.7,
       max_tokens: 800
     };
@@ -379,12 +411,12 @@ Remember: You represent HiTechLogic's enterprise excellence. Every response shou
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error('Alternative API error:', response.status, errorText);
-      throw new Error(`Alternative API error: ${response.status}`);
+      console.error('Chat completions API error:', response.status, errorText);
+      throw new Error(`Chat completions API error: ${response.status}`);
     }
 
     const data = await response.json();
-    console.log('Alternative API response:', data);
+    console.log('Chat completions API response:', data);
 
     if (data.choices && data.choices.length > 0) {
       return data.choices[0].message.content;
@@ -444,7 +476,7 @@ Remember: You represent HiTechLogic's enterprise excellence. Every response shou
 
   const simulateAIResponse = async (userMessage: string): Promise<{ content: string; suggestions?: string[] }> => {
     try {
-      // Use real Eleven Labs API
+      // Use real Eleven Labs Conversational AI API
       const aiResponse = await sendToElevenLabs(userMessage, messages);
 
       // Generate contextual suggestions based on the response
@@ -461,13 +493,14 @@ Remember: You represent HiTechLogic's enterprise excellence. Every response shou
       };
 
     } catch (error) {
-      console.error('AI Response error:', error);
+      console.error('Eleven Labs API error:', error);
 
-      // Fallback to intelligent responses if API fails
-      const fallbackResponse = getFallbackResponse(userMessage);
+      // Provide helpful error message to user
+      const errorMessage = `I'm experiencing a connection issue right now. Please check your internet connection and try again in a moment. If the problem persists, feel free to contact our team directly.`;
+
       return {
-        content: fallbackResponse.content,
-        suggestions: fallbackResponse.suggestions
+        content: errorMessage,
+        suggestions: ['Contact support', 'Schedule consultation', 'View services']
       };
     }
   };

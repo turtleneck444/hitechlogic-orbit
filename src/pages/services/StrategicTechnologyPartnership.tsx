@@ -261,9 +261,9 @@ export default function StrategicTechnologyPartnership() {
               <span className="eyebrow text-[hsl(var(--accent-blue))]">Strategic Technology Partnership</span>
             </div>
           </div>
-          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white animate-[fade-in_0.6s_ease-out_0.1s_both]">
-            Your Trusted<br />
-            <span className="text-[hsl(var(--accent-blue))]">Technology Partner</span>
+          <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight text-white animate-[fade-in_0.6s_ease-out_0.1s_both]">
+            Your Trusted{" "}
+            <span className="text-[hsl(var(--accent-blue))] block sm:inline md:block lg:inline">Technology Partner</span>
           </h1>
           <p className="mt-6 text-xl text-slate-300 max-w-3xl leading-relaxed animate-[fade-in_0.7s_ease-out_0.2s_both]">
             Executive-level partnership with strategic guidance, embedded coaching, and roadmap planning

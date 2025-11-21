@@ -68,9 +68,9 @@ export default function AIBusinessAutomation() {
             </div>
             <span className="text-sm font-medium text-white/90 tracking-wide">AI Business Automation</span>
           </div>
-          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
-            AI Business Automation
-            <span className="text-[hsl(var(--accent-blue))] block">& AI Agent Services</span>
+          <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight text-white">
+            AI Business Automation{" "}
+            <span className="text-[hsl(var(--accent-blue))] block sm:inline md:block lg:inline">& AI Agent Services</span>
           </h1>
           <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed">
             Intelligent AI agents that proactively manage infrastructure, predict issues, and execute autonomous remediation with human oversight. The future of operations is here.

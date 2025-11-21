@@ -104,13 +104,13 @@ export const industries: Industry[] = [
       },
       {
         id: "security-identity-assurance",
-        title: "Security & Identity Assurance",
+        title: "Cybersecurity & Identity Assurance",
         description: "Zero-trust security with automated compliance monitoring and threat detection.",
         outcome: "<10 minutes threat detection, 100% compliance"
       },
       {
         id: "cost-efficiency-capacity-strategy",
-        title: "Cost Efficiency & Capacity Strategy",
+        title: "World Cloud Cost Efficiency & Capacity Strategy",
         description: "Automated FinOps with predictive capacity planning and cost optimization.",
         outcome: "35% cost reduction, 95% forecast accuracy"
       },

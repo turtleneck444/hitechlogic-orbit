@@ -61,10 +61,10 @@ const allActions: Action[] = [
   },
   {
     id: "3",
-    label: "Agentic AI",
+    label: "AI Business Automation",
     icon: <Workflow className="h-4 w-4 text-[hsl(var(--accent-blue))]" />,
-    description: "Self-healing workflows and runbooks",
-    href: "/services/agentic-ai",
+    description: "Intelligent AI agents and automation",
+    href: "/services/ai-business-automation",
   },
   {
     id: "4",
@@ -82,7 +82,7 @@ const allActions: Action[] = [
   },
   {
     id: "6",
-    label: "Cost Efficiency & Capacity Strategy",
+    label: "World Cloud Cost Efficiency & Capacity Strategy",
     icon: <BarChart3 className="h-4 w-4 text-[hsl(var(--accent-blue))]" />,
     description: "Financial transparency and optimization",
     href: "/services/cost-efficiency-capacity-strategy",

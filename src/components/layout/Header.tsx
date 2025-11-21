@@ -35,7 +35,7 @@ const coreServices = [
   },
   {
     id: 'cost-efficiency-capacity-strategy',
-    name: 'Cost Efficiency & Capacity Strategy',
+    name: 'World Cloud Cost Efficiency & Capacity Strategy',
     href: '/services/cost-efficiency-capacity-strategy',
   },
   {

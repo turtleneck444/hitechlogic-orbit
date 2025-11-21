@@ -110,7 +110,7 @@ export const industries: Industry[] = [
       },
       {
         id: "cost-efficiency-capacity-strategy",
-        title: "World Cloud Cost Efficiency & Capacity Strategy",
+        title: "Cloud Cost Efficiency & Capacity Strategy",
         description: "Automated FinOps with predictive capacity planning and cost optimization.",
         outcome: "35% cost reduction, 95% forecast accuracy"
       },

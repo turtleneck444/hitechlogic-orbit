@@ -293,7 +293,7 @@ Identity lifecycle governance, privileged access controls, and operational secur
 
 ---
 
-### 3.6 World Cloud Cost Efficiency & Capacity Strategy
+### 3.6 Cloud Cost Efficiency & Capacity Strategy
 
 **Tagline:** "Financial transparency, optimized growth"
 

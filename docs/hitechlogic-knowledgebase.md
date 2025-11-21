@@ -37,7 +37,7 @@ Keep new components aligned by using Tailwind tokens already defined in `tailwin
 3. Automated Corrective Actions & Stabilization Workflows  
 4. Reliability & Performance Engineering  
 5. Security & Identity Assurance  
-6. World Cloud Cost Efficiency & Capacity Strategy
+6. Cloud Cost Efficiency & Capacity Strategy
 7. Strategic Technology Partnership
 
 ### Operational Evolution Model

@@ -239,7 +239,7 @@ export default function CostEfficiencyCapacityStrategy() {
   return (
     <>
       <SEO
-        title="World Cloud Cost Efficiency & Capacity Strategy | FinOps & Cloud Cost Optimization | HiTechLogic"
+        title="Cloud Cost Efficiency & Capacity Strategy | FinOps & Cloud Cost Optimization | HiTechLogic"
         description="Reduce cloud costs by 35% with expert FinOps services. $50M+ savings delivered, 95% forecast accuracy, 8x ROI. Complete cost visibility, rightsizing, commitment management, and capacity planning for AWS, Azure, GCP."
         keywords="FinOps, cloud cost optimization, AWS cost reduction, Azure cost savings, GCP optimization, cloud financial management, cost forecasting, capacity planning, reserved instances, cloud economics, unit economics"
         canonical="https://hitechlogic.com/services/cost-efficiency-capacity-strategy"
@@ -262,7 +262,7 @@ export default function CostEfficiencyCapacityStrategy() {
             </div>
           </div>
           <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white animate-[fade-in_0.6s_ease-out_0.1s_both]">
-            Cost Efficiency & <span className="text-[hsl(var(--accent-blue))]">Capacity Strategy</span>
+            World Cloud Cost Efficiency & <span className="text-[hsl(var(--accent-blue))]">Capacity Strategy</span>
           </h1>
           <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed animate-[fade-in_0.7s_ease-out_0.2s_both]">
             Financial observability and optimization programs that keep spend predictable and accountable.

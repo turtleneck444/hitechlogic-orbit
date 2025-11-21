@@ -82,7 +82,7 @@ const allActions: Action[] = [
   },
   {
     id: "6",
-    label: "World Cloud Cost Efficiency & Capacity Strategy",
+    label: "Cloud Cost Efficiency & Capacity Strategy",
     icon: <BarChart3 className="h-4 w-4 text-[hsl(var(--accent-blue))]" />,
     description: "Financial transparency and optimization",
     href: "/services/cost-efficiency-capacity-strategy",

@@ -34,7 +34,7 @@ const items = [
   },
   {
     id: "4",
-    title: "World Cloud Cost Efficiency & Capacity Strategy",
+    title: "Cloud Cost Efficiency & Capacity Strategy",
     content:
       "Data-driven financial optimization that maximizes ROI. Real-time cost monitoring with machine learning predicts usage patterns and recommends resource rightsizing. Automated purchasing leverages enterprise discounts while maintaining compliance, delivering substantial cloud infrastructure cost savings.",
     href: "/services/cost-efficiency-capacity-strategy",

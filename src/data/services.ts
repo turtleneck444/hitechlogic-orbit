@@ -185,13 +185,13 @@ export const serviceCategories: ServiceCategory[] = [
       },
       {
         id: "rapid-prototyping",
-        name: "Rapid Prototyping & App Development",
-        description: "Turn ideas into working prototypes and production-ready applications in weeks, not months",
+        name: "Rapid Prototyping & Development",
+        description: "Turn ideas into production-ready MVPs in 4-8 weeks with AI-accelerated delivery",
         features: [
-          "Idea refinement & UX design workshops",
-          "AI-accelerated full-stack development",
+          "Concept validation and clickable prototypes",
+          "AI-assisted full-stack development with enterprise patterns",
           "Cloud-native architecture (serverless, Kubernetes, microservices)",
-          "Iterative sprint-based delivery",
+          "Security, testing, and CI/CD built in from sprint one",
           "Seamless hand-off to managed services for scaling",
         ],
         benefits: [

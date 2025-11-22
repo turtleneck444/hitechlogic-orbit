@@ -73,7 +73,7 @@ export default function InfrastructureCloudOperations() {
               </div>
               <span className="text-sm font-medium text-white/90 tracking-wide">Cloud Infrastructure</span>
             </div>
-            <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
+            <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white text-balance max-w-5xl">
               Infrastructure
               <span className="text-[hsl(var(--accent-blue))] block sm:inline"> & Cloud Operations</span>
             </h1>
@@ -99,15 +99,13 @@ export default function InfrastructureCloudOperations() {
                 { label: "Response Time", value: "<15 min", icon: Clock },
                 { label: "Cost Savings", value: "40%", icon: BarChart3 },
                 { label: "Multi-Cloud", value: "AWS/Azure/GCP", icon: Cloud },
-              ].map((metric, index) => (
-                <div key={metric.label} className="text-center group px-4 py-2">
-                  <div className="flex justify-center mb-3">
-                    <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white/5 group-hover:from-[hsl(var(--accent-blue))]/20 group-hover:to-white/10 transition-all duration-300">
-                      <metric.icon className="h-5 w-5 md:h-6 md:w-6 text-white" />
-                    </div>
+              ].map((metric) => (
+                <div key={metric.label} className="rounded-2xl border border-white/15 bg-white/5 p-4 md:p-5 text-center shadow-lg shadow-black/10">
+                  <div className="flex justify-center mb-2">
+                    <metric.icon className="h-5 w-5 md:h-6 md:w-6 text-[hsl(var(--accent-blue))]" />
                   </div>
-                  <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white group-hover:scale-110 transition-transform duration-300">{metric.value}</div>
-                  <div className="mt-1 md:mt-2 text-xs md:text-sm font-medium text-slate-300">{metric.label}</div>
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">{metric.value}</div>
+                  <div className="mt-1 md:mt-2 text-xs md:text-sm font-medium text-white/70">{metric.label}</div>
                 </div>
               ))}
             </div>

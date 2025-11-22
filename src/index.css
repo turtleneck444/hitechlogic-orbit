@@ -151,6 +151,15 @@ All colors MUST be HSL.
     background-clip: text;
   }
 
+  @keyframes flowLine {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+
   /* Path Animation */
   .animate-path-fade {
     animation: path-fade infinite ease-in-out;

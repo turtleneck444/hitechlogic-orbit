@@ -69,7 +69,7 @@ export default function AutonomousAgentSwarm() {
                 <Sparkles className="h-4 w-4" />
                 Autonomous Agent Swarm
               </div>
-              <h1 className="text-4xl font-black leading-tight md:text-5xl lg:text-6xl">
+              <h1 className="text-4xl font-black leading-tight md:text-5xl lg:text-6xl text-balance max-w-5xl">
                 How our AI agent library powers rapid prototyping, development, and operations into one seamless experience.
               </h1>
               <p className="text-lg text-slate-600">

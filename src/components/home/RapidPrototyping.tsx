@@ -19,7 +19,7 @@ export function RapidPrototyping() {
               <span className="text-sm font-semibold text-slate-700">Transform Ideas Into Reality</span>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900">
-              Rapid Prototyping & App Development
+              Rapid Prototyping & Development
             </h2>
             <p className="text-lg text-slate-600">
               Bring your ideas to life faster. Our studio blends human-centered design, AI-assisted engineering, and MSP-grade reliability so prototypes hit production-ready quality in weeks.

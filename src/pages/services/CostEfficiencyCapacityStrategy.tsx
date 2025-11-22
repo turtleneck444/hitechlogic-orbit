@@ -261,7 +261,7 @@ export default function CostEfficiencyCapacityStrategy() {
               <span className="text-sm font-medium text-white/90 tracking-wide">Core Operations Discipline</span>
             </div>
           </div>
-          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white animate-[fade-in_0.6s_ease-out_0.1s_both]">
+          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white text-balance max-w-5xl animate-[fade-in_0.6s_ease-out_0.1s_both]">
             Cloud Cost Efficiency & <span className="text-[hsl(var(--accent-blue))]">Capacity Strategy</span>
           </h1>
           <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed animate-[fade-in_0.7s_ease-out_0.2s_both]">
@@ -279,11 +279,14 @@ export default function CostEfficiencyCapacityStrategy() {
           </div>
 
           {/* Metrics */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 animate-[fade-in_0.9s_ease-out_0.4s_both]">
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 animate-[fade-in_0.9s_ease-out_0.4s_both]">
             {metrics.map((metric) => (
-              <div key={metric.label} className="text-center group">
-                <div className="text-3xl md:text-4xl font-bold text-[hsl(var(--accent-blue))] group-hover:scale-110 transition-transform duration-300">{metric.value}</div>
-                <div className="mt-2 text-sm font-medium text-white/80">{metric.label}</div>
+              <div key={metric.label} className="rounded-2xl border border-white/15 bg-white/5 p-4 md:p-5 text-center shadow-lg shadow-black/10">
+                <div className="flex justify-center mb-2">
+                  <metric.icon className="h-5 w-5 md:h-6 md:w-6 text-[hsl(var(--accent-blue))]" />
+                </div>
+                <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">{metric.value}</div>
+                <div className="mt-1 text-xs md:text-sm font-medium text-white/70">{metric.label}</div>
               </div>
             ))}
           </div>
@@ -766,7 +769,7 @@ export default function CostEfficiencyCapacityStrategy() {
 
       {/* Final CTA Section */}
       <section className="section-space bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))]">
-        <div className="mx-auto max-w-4xl px-6 text-center">
+        <div className="mx-auto max-w-4xl px-6 text-center text-white">
           <h2 className="text-4xl md:text-5xl font-bold text-white">Ready to optimize cloud costs?</h2>
           <p className="mt-6 text-xl text-blue-100">
             Let's conduct a comprehensive cost assessment, identify optimization opportunities,

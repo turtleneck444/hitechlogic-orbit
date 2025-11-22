@@ -166,7 +166,7 @@ export function ServiceExplorer() {
         </div>
       </div>
 
-      <ServiceCatalogSection anchorId="service-catalog-section" services={coreServices} />
+      <ServiceCatalogSection anchorId="service-catalog-section" services={coreServices} compactPadding />
     </section>
   );
 }

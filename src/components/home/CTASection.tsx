@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 export function CTASection() {
   return (
-    <section className="section-space bg-[hsl(var(--background))]">
+    <section className="bg-[hsl(var(--accent-blue))] py-14 sm:py-16 lg:py-20">
       <div className="mx-auto w-full max-w-[1420px] px-4 sm:px-6 lg:px-14">
-        <div className="relative overflow-hidden rounded-[28px] border border-[hsl(var(--border))] bg-white px-6 sm:px-8 py-10 shadow-[0_24px_60px_-48px_rgba(11,18,32,0.35)]">
+        <div className="relative overflow-hidden rounded-[24px] border border-[hsl(var(--border))]/70 bg-white px-6 sm:px-8 py-8 shadow-[0_24px_60px_-48px_rgba(11,18,32,0.35)]">
           <div className="absolute inset-0 bg-node-field [background-size:22px_22px] opacity-5" />
           <div className="relative grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
             <div className="space-y-5 order-2 lg:order-1">
@@ -17,7 +17,7 @@ export function CTASection() {
                 <p className="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500">
                   Executive briefing
                 </p>
-                <h2 className="mt-3 text-[2.2rem] md:text-[2.5rem] leading-tight text-foreground">
+                <h2 className="mt-3 text-[2.05rem] md:text-[2.3rem] leading-tight text-foreground">
                   Schedule a Strategy Call to Baseline Your Operations Roadmap
                 </h2>
               </div>
@@ -74,34 +74,86 @@ export function CTASection() {
               </div>
             </div>
 
-            <div className="rounded-[22px] border border-slate-200 bg-slate-50/80 p-4 sm:p-5 shadow-inner shadow-white/30 order-1 lg:order-2">
+            <div className="rounded-[20px] border border-slate-200 bg-slate-50/80 p-4 sm:p-5 shadow-inner shadow-white/30 order-1 lg:order-2">
               <h4 className="text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">
                 Quick Request
               </h4>
               <p className="text-xs text-slate-500 mb-3">
                 Share your details for a tailored strategy session
               </p>
-              <form className="space-y-2">
+              <form className="space-y-3">
                 <div className="grid grid-cols-2 gap-2">
                   <input
                     type="text"
                     placeholder="Full Name"
                     className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
+                    required
                   />
                   <input
                     type="email"
                     placeholder="Work Email"
                     className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
+                    required
                   />
                 </div>
-                <input
-                  type="text"
-                  placeholder="Company Name"
-                  className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
-                />
+                <div className="grid grid-cols-2 gap-2">
+                  <input
+                    type="text"
+                    placeholder="Role / Title"
+                    className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Company"
+                    className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <select
+                    className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs text-slate-600 focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
+                    defaultValue=""
+                    required
+                  >
+                    <option value="" disabled>Primary cloud / stack</option>
+                    <option>AWS</option>
+                    <option>GCP</option>
+                    <option>Azure</option>
+                    <option>Multi-cloud</option>
+                    <option>Hybrid / On-prem</option>
+                  </select>
+                  <select
+                    className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs text-slate-600 focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
+                    defaultValue=""
+                  >
+                    <option value="" disabled>Urgency / timeline</option>
+                    <option>Immediate (0-4 weeks)</option>
+                    <option>1-3 months</option>
+                    <option>Quarter (3-6 months)</option>
+                    <option>Exploring options</option>
+                  </select>
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <select
+                    className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs text-slate-600 focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
+                    defaultValue=""
+                  >
+                    <option value="" disabled>Top focus</option>
+                    <option>Reduce alert noise</option>
+                    <option>Improve MTTR / SRE</option>
+                    <option>Cost optimization / FinOps</option>
+                    <option>Platform reliability / scaling</option>
+                    <option>Security & compliance</option>
+                    <option>AI automation use cases</option>
+                  </select>
+                  <input
+                    type="text"
+                    placeholder="Key tooling (Datadog, PagerDuty, Jira, etc.)"
+                    className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
+                  />
+                </div>
                 <textarea
-                  placeholder="Brief description of your priority (optional)"
-                  rows={2}
+                  placeholder="Context we should know (pain points, environments, success criteria)"
+                  rows={3}
                   className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition resize-none"
                 />
                 <div className="grid grid-cols-2 gap-2 pt-1">
@@ -113,13 +165,16 @@ export function CTASection() {
                     Request Callback
                   </Button>
                 </div>
+                <p className="text-[10px] text-slate-500 text-center">
+                  We reply within 1 business day with a tailored plan and times to meet.
+                </p>
               </form>
               <p className="mt-2 text-[10px] text-slate-400 text-center">
                 Response within 1 business day
               </p>
             </div>
           </div>
-          <div className="relative mt-8 text-xs font-medium tracking-wide text-slate-500 text-center">
+          <div className="relative mt-6 text-xs font-medium tracking-wide text-slate-500 text-center">
             Includes current-state assessment, automation opportunities, and governance plan.
           </div>
         </div>

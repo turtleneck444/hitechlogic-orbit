@@ -102,7 +102,7 @@ export default function BuildLaunch() {
               </div>
               <span className="text-sm font-medium text-white/90 tracking-wide">Phase 02</span>
             </div>
-            <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
+            <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white text-balance max-w-5xl">
               Build & Launch
               <span className="text-[hsl(var(--accent-blue))]/80 block sm:inline"> Production MVPs</span>
             </h1>
@@ -129,20 +129,20 @@ export default function BuildLaunch() {
             </div>
 
             {/* Key Metrics */}
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {[
                 { label: "Development Speed", value: "3-5x faster", icon: Rocket },
                 { label: "Time to Launch", value: "4-8 weeks", icon: Clock },
                 { label: "Production Ready", value: "100%", icon: CheckCircle2 },
                 { label: "Enterprise Scale", value: "Built-in", icon: TrendingUp },
-              ].map((metric, index) => (
-                <Card key={metric.label} className="bg-white/10 backdrop-blur-sm border-white/20 text-white p-4 text-center group hover:bg-white/15 transition-all hover:scale-105">
+              ].map((metric) => (
+                <div key={metric.label} className="rounded-2xl border border-white/15 bg-white/5 p-4 md:p-5 text-center shadow-lg shadow-black/10">
                   <div className="flex justify-center mb-2">
-                    <metric.icon className="h-6 w-6" />
+                    <metric.icon className="h-5 w-5 md:h-6 md:w-6 text-[hsl(var(--accent-blue))]" />
                   </div>
-                  <div className="text-2xl md:text-3xl font-bold mb-1">{metric.value}</div>
-                  <div className="text-xs font-medium text-[hsl(var(--accent-blue))]/80">{metric.label}</div>
-                </Card>
+                  <div className="text-2xl md:text-3xl font-bold text-white">{metric.value}</div>
+                  <div className="mt-1 text-xs md:text-sm font-medium text-white/70">{metric.label}</div>
+                </div>
               ))}
             </div>
           </div>

@@ -192,7 +192,7 @@ export default function RapidPrototyping() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Rapid Prototyping & App Development",
+    "name": "Rapid Prototyping & Development",
     "description": "Turn ideas into working prototypes and production-ready applications in 4-8 weeks with AI-accelerated development, cloud-native architecture, and MSP-grade reliability.",
     "provider": {
       "@type": "Organization",
@@ -231,7 +231,7 @@ export default function RapidPrototyping() {
   return (
     <>
       <SEO
-        title="Rapid Prototyping & App Development | HiTechLogic"
+        title="Rapid Prototyping & Development | HiTechLogic"
         description="Turn ideas into working MVPs in 4-8 weeks. AI-accelerated development with cloud-native architecture and MSP-grade reliability. Reduce development costs by 60%."
         keywords="rapid prototyping, mvp development, app development, AI-assisted development, cloud-native apps, serverless, react native, product development, startup mvp, proof of concept"
         canonical="https://hitechlogic.com/services/rapid-prototyping"
@@ -248,9 +248,9 @@ export default function RapidPrototyping() {
               </div>
               <span className="text-sm font-medium text-white/90 tracking-wide">Rapid Prototyping</span>
             </div>
-            <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
+            <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white text-balance max-w-5xl">
               Rapid Prototyping
-              <span className="text-[hsl(var(--accent-blue))] block sm:inline"> & App Development</span>
+              <span className="text-[hsl(var(--accent-blue))] block sm:inline"> & Development</span>
             </h1>
             <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed">
               From whiteboard to working product in 4-8 weeks. AI-accelerated development with production-ready infrastructure,
@@ -268,18 +268,16 @@ export default function RapidPrototyping() {
             </div>
 
             {/* Key Metrics */}
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-              {metrics.map((metric, index) => {
+            <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+              {metrics.map((metric) => {
                 const Icon = metric.icon;
                 return (
-                  <div key={metric.label} className="text-center group">
-                    <div className="flex justify-center mb-3">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white/5 group-hover:from-[hsl(var(--accent-blue))]/20 group-hover:to-white/10 transition-all duration-300">
-                        <Icon className="h-6 w-6 text-white" />
-                      </div>
+                  <div key={metric.label} className="rounded-2xl border border-white/15 bg-white/5 p-4 md:p-5 text-center shadow-lg shadow-black/10">
+                    <div className="flex justify-center mb-2">
+                      <Icon className="h-5 w-5 md:h-6 md:w-6 text-[hsl(var(--accent-blue))]" />
                     </div>
-                    <div className="text-3xl md:text-4xl font-bold text-white group-hover:scale-110 transition-transform duration-300">{metric.value}</div>
-                    <div className="mt-2 text-sm font-medium text-slate-300">{metric.label}</div>
+                    <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">{metric.value}</div>
+                    <div className="mt-1 text-xs md:text-sm font-medium text-white/70">{metric.label}</div>
                   </div>
                 );
               })}

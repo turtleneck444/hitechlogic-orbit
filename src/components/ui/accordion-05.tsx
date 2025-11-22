@@ -15,28 +15,28 @@ const items = [
     id: "1",
     title: "Infrastructure & Cloud Operations",
     content:
-      "Elite multi-cloud orchestration with zero-downtime deployments. Our enterprise-grade infrastructure automation handles complex hybrid estates across leading cloud platforms. Automated scaling, intelligent workload placement, and predictive capacity planning ensure your applications run at peak efficiency while minimizing infrastructure costs significantly.",
+      "Multi-cloud operations with golden patterns for zero-downtime change. We standardize landing zones, automate patching and failover, and give you live SLOs per service so leaders see reliability in business language. Outcome: fewer escalations, safer releases, and predictable performance even during peak demand.",
     href: "/services/infrastructure-cloud-operations",
   },
   {
     id: "2",
     title: "System Oversight & Event Reduction",
     content:
-      "AI-powered observability that transforms chaos into clarity. Our anomaly detection algorithms reduce alert fatigue through intelligent event correlation and predictive maintenance. Executive dashboards provide real-time business insights, while automated root cause analysis dramatically cuts incident response time.",
+      "Signal intelligence that turns alert floods into clear actions. We de-duplicate, correlate, and score events with AI so responders see root cause first, not noise. Expect a 70–90% reduction in noise, faster triage, and executive-ready dashboards that show risk, impact, and next steps.",
     href: "/services/system-oversight-event-reduction",
   },
   {
     id: "3",
     title: "AI Business Automation",
     content:
-      "Intelligent AI agents that proactively manage infrastructure, predict issues, and execute autonomous remediation with human oversight. AI-driven automation transforms reactive operations into proactive, self-optimizing infrastructure management with continuous learning and predictive capabilities.",
-    href: "/services/ai-business-automation",
+      "Specialized AI agents that plan, execute, and verify operational work. From ticket triage to config changes and remediation, every action is policy-bound, auditable, and measured against MTTR and change success. We help you ship an automation backlog tied to business outcomes, not scripts.",
+    href: "/services/automated-corrective-actions",
   },
   {
     id: "4",
     title: "Cloud Cost Efficiency & Capacity Strategy",
     content:
-      "Data-driven financial optimization that maximizes ROI. Real-time cost monitoring with machine learning predicts usage patterns and recommends resource rightsizing. Automated purchasing leverages enterprise discounts while maintaining compliance, delivering substantial cloud infrastructure cost savings.",
+      "FinOps you can act on weekly: unit economics by product, automated rightsizing, commitment management, and executive scorecards that connect spend to revenue and risk. We pair engineering runbooks with finance guardrails so you cut waste, avoid surprise bills, and still meet growth targets.",
     href: "/services/cost-efficiency-capacity-strategy",
   },
 ];

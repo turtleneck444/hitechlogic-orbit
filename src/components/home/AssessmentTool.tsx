@@ -463,27 +463,28 @@ export function AssessmentTool() {
                 </div>
               </div>
 
-              {assessmentType === "ai" && (
-                <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl p-6 mb-8">
-                  <div className="flex items-start gap-4">
-                    <img src="/xops.png" alt="XOps Platform" className="h-12 w-12 rounded-lg shadow-sm" />
-                    <div className="flex-1">
-                      <h4 className="font-bold text-[hsl(var(--navy))] mb-2">
-                        Don't think this is deep or detailed enough? Get deeper with our tool XOps for assessments.
-                      </h4>
-                      <p className="text-sm text-slate-700 mb-4">
-                        XOps provides enterprise-grade AI assessment tools with advanced analytics, custom frameworks, and comprehensive reporting for organizations serious about AI transformation.
-                      </p>
-                      <Button variant="outline" size="sm" asChild className="border-green-600 text-green-700 hover:bg-green-50">
-                        <a href="https://xops.axiomio.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                          <span>Sign up for free trial</span>
-                          <ArrowRight className="h-3 w-3" />
-                        </a>
-                      </Button>
-                    </div>
+              <div className="bg-gradient-to-r from-[hsl(var(--accent-blue))]/8 via-white to-[hsl(var(--accent-blue))]/6 border-2 border-[hsl(var(--accent-blue))]/20 rounded-xl p-6 mb-8 shadow-sm">
+                <div className="flex flex-col sm:flex-row items-start gap-4">
+                  <img src="/xops.png" alt="XOps360" className="h-12 w-12 rounded-lg shadow-sm bg-white border border-slate-200" />
+                  <div className="flex-1">
+                    <h4 className="font-bold text-[hsl(var(--navy))] mb-2">
+                      Need a deeper, program-level view? Explore XOps360.
+                    </h4>
+                    <p className="text-sm text-slate-700 mb-3">
+                      XOps360 gives you executive dashboards, coverage heatmaps, and implementation runbooks so you can take this assessment further with prioritized action plans.
+                    </p>
+                    <p className="text-[11px] text-slate-500 mb-4">
+                      Partner solution powered by AXIOMIO—our primary XOps collaborator.
+                    </p>
+                    <Button variant="outline" size="sm" asChild className="border-[hsl(var(--accent-blue))] text-[hsl(var(--accent-blue))] hover:bg-[hsl(var(--accent-blue))]/5">
+                      <a href="https://xops.axiomio.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                        <span>View XOps360</span>
+                        <ArrowRight className="h-3 w-3" />
+                      </a>
+                    </Button>
                   </div>
                 </div>
-              )}
+              </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="primary" size="lg" asChild className="flex-1">

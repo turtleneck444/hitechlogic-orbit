@@ -175,7 +175,7 @@ export const industries: Industry[] = [
     services: [
       {
         id: "security-identity-assurance",
-        title: "Security & Identity Assurance",
+        title: "Cybersecurity & Identity Assurance",
         description: "Comprehensive security controls, compliance automation, and identity governance for financial data.",
         outcome: "Zero breaches, 100% audit success, regulatory compliance"
       },
@@ -278,7 +278,7 @@ export const industries: Industry[] = [
     services: [
       {
         id: "security-identity-assurance",
-        title: "Security & Identity Assurance",
+        title: "Cybersecurity & Identity Assurance",
         description: "Healthcare compliance automation, patient data protection, and zero-trust controls.",
         outcome: "Zero patient data breaches, audit-readiness on demand"
       },
@@ -405,7 +405,7 @@ export const industries: Industry[] = [
       },
       {
         id: "security-identity-assurance",
-        title: "Security & Identity Assurance",
+        title: "Cybersecurity & Identity Assurance",
         description: "Payment security compliance, transaction protection, and customer data security.",
         outcome: "Zero payment breaches, 100% payment security compliance"
       },
@@ -508,7 +508,7 @@ export const industries: Industry[] = [
       },
       {
         id: "security-identity-assurance",
-        title: "Security & Identity Assurance",
+        title: "Cybersecurity & Identity Assurance",
         description: "Enterprise security controls, regulatory compliance automation, and tenant data protection.",
         outcome: "Enterprise compliance certification, zero data breaches"
       },

@@ -212,30 +212,30 @@ Noise-calmed telemetry, expert routing, and correlation that keep executives ali
 
 ---
 
-### 3.3 AI Business Automation
+### 3.3 AI Business Automation & Agent Services
 
-**Tagline:** "Intelligent AI agents that predict, prevent, and resolve"
+**Tagline:** "Autonomous runbooks with human oversight"
 
 **Overview:**
-AI-driven automation that transforms reactive operations into proactive, self-optimizing infrastructure management with continuous learning and predictive capabilities.
+AI agents that triage, remediate, and verify changes with policy-bound guardrails. We pair corrective automation with approvals, logging, and success checks so MTTR drops without sacrificing control.
 
 **Key Capabilities:**
-- Intelligent AI agents with continuous learning
-- Predictive analytics and proactive issue prevention
-- Human-AI collaboration with intelligent escalation
-- Enterprise-grade governance and audit capabilities
-- Real-time agent performance monitoring
-- AI-driven business process automation
+- Agent-run playbooks with human-in-the-loop approvals
+- Predictive detection tied to automated remediation
+- Change verification and rollback automations
+- Compliance-grade audit trails for every action
+- Runbook catalog of 600+ production-tested automations
+- Success metrics mapped to MTTR and change success rate
 
 **KPIs:**
-- **Prediction Accuracy:** 97%
-- **Autonomous Resolution:** 85%
 - **MTTR Improvement:** 95%
+- **Automated Outcomes:** 600+ runbooks
+- **Detection to Action:** <90 seconds
 
 **Ideal For:**
-- Organizations seeking autonomous operations
-- Teams wanting predictive maintenance
-- Companies ready for AI-driven infrastructure management
+- Teams drowning in repetitive incidents
+- Organizations needing safer, faster remediation
+- Leaders wanting automation tied to measurable reliability
 
 ---
 
@@ -344,6 +344,33 @@ Embedded leadership, executive working sessions, and culture programs that keep 
 - CIOs and CTOs needing strategic technology guidance
 - Organizations undergoing digital transformation
 - Companies wanting long-term partnership, not vendor relationships
+
+---
+
+### 3.8 Rapid Prototyping & Development
+
+**Tagline:** "Production-ready MVPs in weeks, not months"
+
+**Overview:**
+AI-accelerated design and build sprints that turn concepts into operational MVPs in 4–8 weeks. Every prototype ships with security, observability, and handoff to 24/7 managed operations.
+
+**Key Capabilities:**
+- Concept validation and clickable prototypes in days
+- AI-assisted full-stack development with enterprise patterns
+- Cloud-native architecture (Kubernetes, serverless, microservices)
+- Built-in security, testing, and CI/CD from sprint one
+- Seamless transition to managed run-state teams
+- Executive-ready updates tied to milestones and risk
+
+**KPIs:**
+- **Time to MVP:** 4–8 weeks
+- **Development Savings:** 60%
+- **Readiness:** Production-grade from day one
+
+**Ideal For:**
+- Teams needing fast proof-of-value without rework
+- Product leaders wanting reliable MVPs that scale
+- Enterprises experimenting with new lines of business
 
 ---
 
@@ -763,7 +790,7 @@ Three cultural truths guide our work:
 
 ### Use Case 2: Financial Services Compliance
 **Challenge:** Fintech startup needed SOC 2 Type II certification
-**Solution:** Deployed Security & Identity Assurance + Strategic Partnership
+**Solution:** Deployed Cybersecurity & Identity Assurance + Strategic Partnership
 **Results:**
 - Achieved SOC 2 Type II in 4 months
 - Zero audit findings

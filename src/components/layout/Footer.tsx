@@ -165,6 +165,26 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Partner Highlight */}
+        <div className="mt-6 flex justify-end">
+          <div className="flex items-center gap-3 rounded-xl border border-slate-200/70 bg-white/80 px-3.5 py-2 shadow-[0_10px_25px_-20px_rgba(46,107,255,0.35)] max-w-sm">
+            <img src="/main-logo.svg" alt="AXIOMIO" className="h-7 w-auto object-contain" />
+            <div className="flex-1 min-w-0">
+              <div className="text-[10px] font-semibold text-[hsl(var(--navy))] leading-tight">AXIOMIO Partnership</div>
+              <div className="text-[9px] text-slate-500 leading-tight">Primary XOps collaborator</div>
+            </div>
+            <a
+              href="https://axiomio.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-[hsl(var(--accent-blue))]/30 bg-[hsl(var(--accent-blue))]/10 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.22em] text-[hsl(var(--accent-blue))] hover:bg-[hsl(var(--accent-blue))]/15 hover:border-[hsl(var(--accent-blue))]/50 transition-colors whitespace-nowrap"
+            >
+              Visit
+              <span className="text-[0.8em]">↗</span>
+            </a>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
             <div className="mt-8 pt-6 border-t border-slate-200/60">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">

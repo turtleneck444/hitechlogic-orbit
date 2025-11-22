@@ -54,7 +54,7 @@ export default function AIBusinessAutomation() {
         title="AI Business Automation & AI Agent Services | HiTechLogic"
         description="Intelligent AI agents that proactively manage infrastructure, predict issues, and execute intelligent remediation with human oversight for enterprise operations."
         keywords="AI business automation, AI agent services, autonomous infrastructure, AI agents, predictive maintenance, intelligent automation, autonomous operations"
-        canonical="https://hitechlogic.com/services/ai-business-automation"
+        canonical="https://hitechlogic.com/services/automated-corrective-actions"
         schema={schema}
       />
       <Layout>
@@ -68,7 +68,7 @@ export default function AIBusinessAutomation() {
             </div>
             <span className="text-sm font-medium text-white/90 tracking-wide">AI Business Automation</span>
           </div>
-          <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight text-white">
+          <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight text-white text-balance max-w-5xl">
             AI Business Automation{" "}
             <span className="text-[hsl(var(--accent-blue))] block sm:inline md:block lg:inline">& AI Agent Services</span>
           </h1>
@@ -86,16 +86,16 @@ export default function AIBusinessAutomation() {
                 <Link to="/services">Explore Services</Link>
               </Button>
             </div>
-            <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 text-white/80">
+            <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {[
                 { label: "MTTR Improvement", value: "95%" },
                 { label: "Automation Outcomes", value: "615+ runbooks" },
                 { label: "Detection Time", value: "<90s" },
                 { label: "Availability", value: "99.99%" },
               ].map((metric) => (
-                <div key={metric.label} className="rounded-2xl border border-white/20 bg-white/5 p-4 md:px-6 py-4 md:py-6">
-                  <p className="text-xs md:text-sm uppercase tracking-[0.4em] text-white/60">{metric.label}</p>
-                  <p className="text-2xl md:text-3xl font-bold mt-2">{metric.value}</p>
+                <div key={metric.label} className="rounded-2xl border border-white/15 bg-white/5 p-4 md:p-5 text-center shadow-lg shadow-black/10">
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">{metric.value}</div>
+                  <div className="mt-1 text-xs md:text-sm font-medium text-white/70 uppercase tracking-[0.3em]">{metric.label}</div>
                 </div>
               ))}
             </div>

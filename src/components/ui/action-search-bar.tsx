@@ -61,10 +61,10 @@ const allActions: Action[] = [
   },
   {
     id: "3",
-    label: "AI Business Automation",
+    label: "AI Business Automation & Agent Services",
     icon: <Workflow className="h-4 w-4 text-[hsl(var(--accent-blue))]" />,
     description: "Intelligent AI agents and automation",
-    href: "/services/ai-business-automation",
+    href: "/services/automated-corrective-actions",
   },
   {
     id: "4",
@@ -96,7 +96,7 @@ const allActions: Action[] = [
   },
   {
     id: "8",
-    label: "Rapid Prototyping & App Development",
+    label: "Rapid Prototyping & Development",
     icon: <Sparkles className="h-4 w-4 text-[hsl(var(--accent-blue))]" />,
     description: "Fast MVPs and production prototypes",
     href: "/services/rapid-prototyping",

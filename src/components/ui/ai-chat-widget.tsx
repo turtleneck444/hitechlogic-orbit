@@ -270,12 +270,12 @@ Key Guidelines:
 HiTechLogic Services:
 1. Infrastructure & Cloud Operations - Zero-downtime multi-cloud orchestration
 2. System Oversight & Event Reduction - AI-powered monitoring and alerting
-3. AI Business Automation - Intelligent infrastructure management and remediation
+3. AI Business Automation & Agent Services - Intelligent automation, remediation, and change verification
 4. Reliability & Performance Engineering - SLO-backed operations and optimization
 5. Cybersecurity & Identity Assurance - Zero-trust security frameworks
-6. Cost Efficiency & Capacity Strategy - Data-driven financial optimization
+6. Cloud Cost Efficiency & Capacity Strategy - Data-driven financial optimization
 7. Strategic Technology Partnership - Executive-level technology guidance
-8. Rapid Prototyping & App Development - From concept to production acceleration
+8. Rapid Prototyping & Development - From concept to production acceleration
 
 Response Style:
 - Start with empathy and understanding
@@ -535,7 +535,7 @@ Remember: You represent HiTechLogic's enterprise excellence. Every response shou
 
     if (message.includes('services') || message.includes('what do you do')) {
       return {
-        content: `🚀 **HiTechLogic Services Overview**\n\nWe provide comprehensive enterprise infrastructure solutions through our **Eight Service Pillars**:\n\n**Core Services:**\n• **Infrastructure & Cloud Operations** - Zero-downtime deployments\n• **System Oversight & Event Reduction** - AI-powered monitoring\n• **AI Business Automation** - Intelligent infrastructure management\n• **Reliability & Performance Engineering** - SLO-backed operations\n• **Cybersecurity & Identity Assurance** - Zero-trust security\n• **Cost Efficiency & Capacity Strategy** - Data-driven optimization\n• **Strategic Technology Partnership** - Executive-level guidance\n• **Rapid Prototyping & App Development** - From idea to production\n\nEach service is designed to work together for maximum business impact. **What specific area interests you most?**`,
+        content: `🚀 **HiTechLogic Services Overview**\n\nWe provide comprehensive enterprise infrastructure solutions through our **Eight Service Pillars**:\n\n**Core Services:**\n• **Infrastructure & Cloud Operations** - Zero-downtime deployments\n• **System Oversight & Event Reduction** - AI-powered monitoring\n• **AI Business Automation & Agent Services** - Intelligent remediation and change verification\n• **Reliability & Performance Engineering** - SLO-backed operations\n• **Cybersecurity & Identity Assurance** - Zero-trust security\n• **Cloud Cost Efficiency & Capacity Strategy** - Data-driven optimization\n• **Strategic Technology Partnership** - Executive-level guidance\n• **Rapid Prototyping & Development** - From idea to production\n\nEach service is designed to work together for maximum business impact. **What specific area interests you most?**`,
         suggestions: ['Infrastructure operations', 'AI automation details', 'Cost optimization', 'Security solutions']
       };
     }

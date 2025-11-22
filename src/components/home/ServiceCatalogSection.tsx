@@ -27,12 +27,14 @@ const refinedHighlights = [
 type ServiceCatalogSectionProps = {
   services?: CoreService[];
   anchorId?: string;
+  compactPadding?: boolean;
 };
 
-export function ServiceCatalogSection({ services = coreServices, anchorId }: ServiceCatalogSectionProps) {
+export function ServiceCatalogSection({ services = coreServices, anchorId, compactPadding = false }: ServiceCatalogSectionProps) {
   const [catalogExpanded, setCatalogExpanded] = useState(false);
   const visibleServices = catalogExpanded ? services : services.slice(0, initialServicesToShow);
   const hiddenServices = services.slice(initialServicesToShow);
+  const paddingClass = compactPadding ? "pt-12 sm:pt-14 lg:pt-16 pb-12 sm:pb-14 lg:pb-16" : "section-space";
 
   const renderServiceTrack = (service: CoreService) => (
     <article
@@ -95,7 +97,7 @@ export function ServiceCatalogSection({ services = coreServices, anchorId }: Ser
   );
 
   return (
-    <section id={anchorId} className="section-space bg-white relative z-30">
+    <section id={anchorId} className={`${paddingClass} bg-white relative z-30`}>
       <div className="mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-12">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_1fr] items-start">
           <div className="space-y-6">
@@ -179,7 +181,7 @@ export function ServiceCatalogSection({ services = coreServices, anchorId }: Ser
         </div>
       </div>
 
-      <div className="mt-10 flex justify-center">
+      <div className={`${compactPadding ? "mt-6" : "mt-10"} flex justify-center`}>
         <div className="inline-flex flex-col items-center gap-2 rounded-3xl border border-[hsl(var(--accent-blue))]/30 bg-white/90 px-8 py-6 text-center text-sm text-[hsl(var(--navy))] shadow-lg">
           <p className="font-semibold text-[hsl(var(--navy))]">Need a purpose-built program?</p>
           <p className="text-xs text-slate-500">

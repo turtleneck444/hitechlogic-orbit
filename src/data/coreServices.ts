@@ -49,14 +49,14 @@ export const coreServices: CoreService[] = [
   },
   {
     id: "automated-corrective-actions",
-    name: "Automated Corrective Actions",
-    description: "Self-healing runbooks that resolve incidents automatically, shaving 95% off your recovery window.",
+    name: "AI Business Automation & Agent Services",
+    description: "Autonomous agents and corrective automations that triage, resolve, and verify changes with audit-grade governance.",
     icon: Workflow,
     href: "/services/automated-corrective-actions",
     outcomes: [
-      "95% faster MTTR",
-      "615+ automated playbooks",
-      "Compliance-grade audit trails",
+      "95% faster MTTR via agent-run playbooks",
+      "615+ automated runbooks with human oversight",
+      "Policy, approvals, and audit trails baked in",
     ],
     metric: "95% MTTR Drop",
   },
@@ -75,7 +75,7 @@ export const coreServices: CoreService[] = [
   },
   {
     id: "security-identity-assurance",
-    name: "Security & Identity Assurance",
+    name: "Cybersecurity & Identity Assurance",
     description: "Zero-trust security with automated detection and policy enforcement that meets compliance requirements.",
     icon: ShieldCheck,
     href: "/services/security-identity-assurance",
@@ -88,7 +88,7 @@ export const coreServices: CoreService[] = [
   },
   {
     id: "cost-efficiency-capacity-strategy",
-    name: "Cost Efficiency & Capacity Strategy",
+    name: "Cloud Cost Efficiency & Capacity Strategy",
     description: "AI-driven FinOps paired with predictive capacity planning to reduce spend while increasing control.",
     icon: BarChart3,
     href: "/services/cost-efficiency-capacity-strategy",

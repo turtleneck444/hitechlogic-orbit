@@ -105,7 +105,7 @@ export default function SystemOversightEventReduction() {
               </div>
               <span className="text-sm font-medium text-white/90 tracking-wide">Intelligent Monitoring</span>
             </div>
-            <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
+            <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white text-balance max-w-5xl">
               System Oversight
               <span className="text-[hsl(var(--accent-blue))] block sm:inline"> & Event Reduction</span>
             </h1>
@@ -132,14 +132,14 @@ export default function SystemOversightEventReduction() {
                 { label: "Detection Time", value: "<2 min", icon: Clock },
                 { label: "Alert Accuracy", value: "97%", icon: Target },
                 { label: "MTTR Impact", value: "−65%", icon: TrendingUp },
-              ].map((metric, index) => (
-                <Card key={metric.label} className="bg-white/10 backdrop-blur-sm border-white/20 text-white p-3 md:p-4 text-center group hover:bg-white/15 transition-all hover:scale-105">
+              ].map((metric) => (
+                <div key={metric.label} className="rounded-2xl border border-white/15 bg-white/5 p-4 md:p-5 text-center shadow-lg shadow-black/10">
                   <div className="flex justify-center mb-2">
-                    <metric.icon className="h-5 w-5 md:h-6 md:w-6" />
+                    <metric.icon className="h-5 w-5 md:h-6 md:w-6 text-[hsl(var(--accent-blue))]" />
                   </div>
-                  <div className="text-xl md:text-2xl lg:text-3xl font-bold mb-1">{metric.value}</div>
-                  <div className="text-xs font-medium text-slate-300">{metric.label}</div>
-                </Card>
+                  <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">{metric.value}</div>
+                  <div className="mt-1 text-xs md:text-sm font-medium text-white/70">{metric.label}</div>
+                </div>
               ))}
             </div>
           </div>

@@ -261,7 +261,7 @@ export default function StrategicTechnologyPartnership() {
               <span className="eyebrow text-[hsl(var(--accent-blue))]">Strategic Technology Partnership</span>
             </div>
           </div>
-          <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight text-white animate-[fade-in_0.6s_ease-out_0.1s_both]">
+          <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight text-white text-balance max-w-5xl animate-[fade-in_0.6s_ease-out_0.1s_both]">
             Your Trusted{" "}
             <span className="text-[hsl(var(--accent-blue))] block sm:inline md:block lg:inline">Technology Partner</span>
           </h1>
@@ -280,43 +280,21 @@ export default function StrategicTechnologyPartnership() {
           </div>
 
           {/* Metrics */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 animate-[fade-in_0.9s_ease-out_0.4s_both]">
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 animate-[fade-in_0.9s_ease-out_0.4s_both]">
             {metrics.map((metric) => (
-              <div key={metric.label} className="text-center group hover:scale-105 transition-transform">
-                <div className="flex items-center justify-center mb-2">
-                  <metric.icon className="h-6 w-6 text-[hsl(var(--accent-blue))]" />
+              <div key={metric.label} className="rounded-2xl border border-white/15 bg-white/5 p-4 md:p-5 text-center shadow-lg shadow-black/10">
+                <div className="flex justify-center mb-2">
+                  <metric.icon className="h-5 w-5 md:h-6 md:w-6 text-[hsl(var(--accent-blue))]" />
                 </div>
-                <div className="text-3xl md:text-4xl font-bold text-[hsl(var(--accent-blue))]">{metric.value}</div>
-                <div className="mt-2 text-sm font-medium text-slate-300">{metric.label}</div>
+                <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">{metric.value}</div>
+                <div className="mt-1 text-xs md:text-sm font-medium text-white/70">{metric.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Trust Indicators */}
-      <section className="bg-gradient-to-r from-[hsl(var(--navy))] to-[hsl(var(--graphite))] py-8">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">92</div>
-              <div className="mt-1 text-sm text-slate-300">Net Promoter Score</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">100%</div>
-              <div className="mt-1 text-sm text-slate-300">C-Suite Satisfaction</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">3.5 yrs</div>
-              <div className="mt-1 text-sm text-slate-300">Average Engagement</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">85%</div>
-              <div className="mt-1 text-sm text-slate-300">Multi-Year Renewals</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Trust Indicators removed to keep a single hero metrics row */}
 
       {/* Problem/Solution Section */}
       <section className="section-space bg-white">
@@ -811,7 +789,7 @@ export default function StrategicTechnologyPartnership() {
 
       {/* Final CTA Section */}
       <section className="section-space bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))]">
-        <div className="mx-auto max-w-4xl px-6 text-center">
+        <div className="mx-auto max-w-4xl px-6 text-center text-white">
           <h2 className="text-4xl md:text-5xl font-bold text-white">Ready to build a strategic partnership?</h2>
           <p className="mt-6 text-xl text-slate-200">
             Let's discuss how our Strategic Technology Partnership can accelerate your engineering

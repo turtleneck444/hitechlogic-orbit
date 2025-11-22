@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import Platform from "./pages/Platform";
@@ -68,7 +68,8 @@ const App = () => (
           {/* Service Detail Pages */}
           <Route path="/services/infrastructure-cloud-operations" element={<InfrastructureCloudOperations />} />
           <Route path="/services/system-oversight-event-reduction" element={<SystemOversightEventReduction />} />
-          <Route path="/services/ai-business-automation" element={<AIBusinessAutomation />} />
+          <Route path="/services/automated-corrective-actions" element={<AIBusinessAutomation />} />
+          <Route path="/services/ai-business-automation" element={<Navigate to="/services/automated-corrective-actions" replace />} />
           <Route path="/services/reliability-performance-engineering" element={<ReliabilityPerformanceEngineering />} />
           <Route path="/services/security-identity-assurance" element={<SecurityIdentityAssurance />} />
           <Route path="/services/cost-efficiency-capacity-strategy" element={<CostEfficiencyCapacityStrategy />} />

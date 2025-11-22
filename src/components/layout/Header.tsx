@@ -9,19 +9,14 @@ import { industries } from "@/data/industries";
 // Hardcoded list of your 8 core services exactly as requested
 const coreServices = [
   {
-    id: 'infrastructure-cloud-operations',
-    name: 'Infrastructure & Cloud Operations',
-    href: '/services/infrastructure-cloud-operations',
-  },
-  {
     id: 'system-oversight-event-reduction',
     name: 'System Oversight & Event Reduction',
     href: '/services/system-oversight-event-reduction',
   },
   {
-    id: 'ai-business-automation',
-    name: 'AI Business Automation',
-    href: '/services/ai-business-automation',
+    id: 'infrastructure-cloud-operations',
+    name: 'Infrastructure & Cloud Operations',
+    href: '/services/infrastructure-cloud-operations',
   },
   {
     id: 'reliability-performance-engineering',
@@ -39,14 +34,19 @@ const coreServices = [
     href: '/services/cost-efficiency-capacity-strategy',
   },
   {
-    id: 'strategic-technology-partnership',
-    name: 'Strategic Technology Partnership',
-    href: '/services/strategic-technology-partnership',
+    id: 'automated-corrective-actions',
+    name: 'AI Business Automation & Agent Services',
+    href: '/services/automated-corrective-actions',
   },
   {
     id: 'rapid-prototyping',
-    name: 'Rapid Prototyping & App Development',
+    name: 'Rapid Prototyping & Development',
     href: '/services/rapid-prototyping',
+  },
+  {
+    id: 'strategic-technology-partnership',
+    name: 'Strategic Technology Partnership',
+    href: '/services/strategic-technology-partnership',
   },
 ];
 

@@ -57,252 +57,277 @@ export function AIAutomationFlow() {
   const [activeStep, setActiveStep] = useState<string | null>(null);
 
   return (
-    <section className="pt-12 lg:pt-16 pb-16 bg-gradient-to-br from-slate-50 to-blue-50/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Blue Accent Separator */}
-        <div className="w-full h-2 bg-gradient-to-r from-[hsl(var(--accent-blue))] via-[hsl(var(--signal-purple))] to-[hsl(var(--accent-blue))] rounded-full mb-16 shadow-lg"></div>
-
-        {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 border border-[hsl(var(--accent-blue))]/20 mb-6">
-            <Zap className="h-4 w-4 text-[hsl(var(--accent-blue))]" />
-            <span className="text-sm font-bold text-[hsl(var(--navy))]">Autonomous Agent Swarm</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[hsl(var(--navy))] mb-6">
-            How Our AI Agent Library Powers Rapid Prototyping & Development
-          </h2>
-          <p className="text-lg text-slate-600 mb-4">
-            The agent library that connects Rapid Design & Prototyping, Build & Launch, and 24/7 Operations into one seamless experience.
-          </p>
-          <p className="text-base text-slate-500">
-            Here is where we extend the third phase: our operate agents inherit validated concepts, hardened releases, and bring <span className="font-semibold text-[hsl(var(--accent-blue))]">24/7 reliability</span> with intelligent detection, triage, and remediation.
-          </p>
-        </div>
-
-        {/* Workflow Diagram */}
-        <div className="max-w-6xl mx-auto mb-16">
-          <div className="relative">
-            {/* Connecting Lines */}
-            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-slate-200 via-[hsl(var(--accent-blue))]/30 to-slate-200 -translate-y-1/2 z-0" />
-
-            {/* Steps */}
-            <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6 z-10">
-              {automationSteps.map((step, index) => {
-                const Icon = step.icon;
-                const isActive = activeStep === step.id;
-
-                return (
-                  <div key={step.id} className="relative">
-                    <Link to={step.link || "#"} className="block">
-                      <Card
-                        className={`group cursor-pointer transition-all duration-300 border-2 hover:border-[hsl(var(--accent-blue))]/50 hover:shadow-xl hover:scale-[1.02] bg-white ${
-                          isActive ? "border-[hsl(var(--accent-blue))] shadow-2xl scale-[1.02]" : "border-slate-200"
-                        }`}
-                        onMouseEnter={() => setActiveStep(step.id)}
-                        onMouseLeave={() => setActiveStep(null)}
-                      >
-                        <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 to-blue-50/30 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg" />
-
-                        <div className="relative p-6">
-                          {/* Step Number */}
-                          <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-[hsl(var(--accent-blue))] text-white font-bold text-sm flex items-center justify-center shadow-lg">
-                            {index + 1}
-                          </div>
-
-                          {/* Icon */}
-                          <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-slate-50 to-blue-50/50 border-2 border-slate-200 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform group-hover:border-[hsl(var(--accent-blue))]/30">
-                            <Icon className="h-8 w-8 text-[hsl(var(--navy))]" />
-                          </div>
-
-                          {/* Phase label */}
-                          <div className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-400 mb-1">
-                            Phase {step.phase}
-                          </div>
-
-                          {/* Title */}
-                          <h3 className="text-lg font-bold text-[hsl(var(--navy))] mb-2">
-                            {step.title}
-                          </h3>
-
-                          {/* Metrics Badge */}
-                          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-blue-50 to-slate-50 border border-[hsl(var(--accent-blue))]/20 mb-3">
-                            <TrendingDown className="h-3 w-3 text-[hsl(var(--accent-blue))]" />
-                            <span className="text-xs font-semibold text-[hsl(var(--navy))]">
-                              {step.metrics}
-                            </span>
-                          </div>
-
-                          {/* Description */}
-                          <p className={`text-sm text-slate-600 transition-all duration-300 ${
-                            isActive ? "line-clamp-none" : "line-clamp-3"
-                          }`}>
-                            {step.description}
-                          </p>
-
-                          {/* Specialty Label */}
-                          {step.metricsLabel && (
-                            <div className="mt-4 text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
-                              {step.metricsLabel}
-                            </div>
-                          )}
-
-                          <div className="mt-2 flex items-center gap-2 text-xs font-semibold text-[hsl(var(--accent-blue))] group-hover:translate-x-1 transition-transform">
-                            <span>Explore this phase</span>
-                            <ArrowRight className="h-3 w-3" />
-                          </div>
-                        </div>
-                      </Card>
-                    </Link>
-
-                    {/* Arrow */}
-                    {index < automationSteps.length - 1 && (
-                      <div className="hidden lg:flex absolute top-1/2 -right-3 z-20 -translate-y-1/2">
-                        <ArrowRight className="h-6 w-6 text-[hsl(var(--accent-blue))]" />
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+    <section className="relative isolate -mt-12 sm:-mt-12 md:-mt-14 pt-4 sm:pt-0">
+      <div className="relative overflow-hidden bg-gradient-to-r from-[hsl(var(--accent-blue))] via-[hsl(var(--accent-blue))]/85 to-[hsl(var(--accent-blue))]/70 py-3.5 sm:py-4 shadow-xl">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(255,255,255,0.18),transparent_32%),radial-gradient(circle_at_90%_50%,rgba(255,255,255,0.22),transparent_36%)]" />
+        <div className="absolute -left-8 top-2 h-20 w-20 bg-white/15 blur-3xl" />
+        <div className="absolute -right-10 bottom-0 h-24 w-24 bg-[hsl(var(--accent-blue))]/35 blur-3xl" />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-3">
+          <div className="flex flex-col sm:flex-row sm:items-center items-center gap-2 sm:gap-3 text-center sm:text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 text-white text-xs font-semibold uppercase tracking-[0.32em] ring-1 ring-white/25 shadow-sm shadow-black/10">
+              <Zap className="h-3.5 w-3.5" />
+              <span>AI Agent Layer</span>
             </div>
+            <p className="text-sm sm:text-base font-semibold text-white/90 leading-snug max-w-xl">
+              Autonomous library powering what comes next
+            </p>
+          </div>
+          <div className="flex items-center justify-center sm:justify-start self-center sm:self-auto gap-2 text-white/85 text-xs sm:text-sm font-semibold px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm">
+            <span className="hidden sm:inline">See the swarm and workflows below</span>
+            <span className="sm:hidden">Explore what follows</span>
+            <ArrowRight className="h-4 w-4 shrink-0" />
           </div>
         </div>
+      </div>
 
-        {/* AI Agent Library Showcase */}
-        <div className="max-w-6xl mx-auto mt-16">
-          <div className="text-center mb-12">
+      <div className="pt-8 lg:pt-10 pb-16 bg-gradient-to-br from-slate-50 to-blue-50/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="max-w-3xl mx-auto text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 border border-[hsl(var(--accent-blue))]/20 mb-6">
-              <Brain className="h-4 w-4 text-[hsl(var(--accent-blue))]" />
-              <span className="text-sm font-bold text-[hsl(var(--accent-blue))] tracking-wide uppercase">AI-Powered Innovation</span>
+              <Zap className="h-4 w-4 text-[hsl(var(--accent-blue))]" />
+              <span className="text-sm font-bold text-[hsl(var(--navy))]">Autonomous Agent Swarm</span>
             </div>
-
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[hsl(var(--navy))] mb-6 leading-tight">
-              Enterprise-Grade Prototyping Powered by AI
-            </h3>
-
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Our autonomous agent ecosystem transforms traditional development workflows into intelligent, accelerated prototyping experiences.
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[hsl(var(--navy))] mb-6">
+              How Our AI Agent Library Powers Rapid Prototyping & Development
+            </h2>
+            <p className="text-lg text-slate-600 mb-4">
+              The agent library that connects Rapid Design & Prototyping, Build & Launch, and 24/7 Operations into one seamless experience.
+            </p>
+            <p className="text-base text-slate-500">
+              Here is where we extend the third phase: our operate agents inherit validated concepts, hardened releases, and bring <span className="font-semibold text-[hsl(var(--accent-blue))]">24/7 reliability</span> with intelligent detection, triage, and remediation.
             </p>
           </div>
 
-          {/* Creative Flow Layout */}
-          <div className="relative mb-12">
-            {/* Gradient Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--accent-blue))]/5 via-transparent to-[hsl(var(--signal-purple))]/5 rounded-3xl" />
+          {/* Workflow Diagram */}
+          <div className="max-w-6xl mx-auto mb-16">
+            <div className="relative">
+              {/* Connecting Lines */}
+              <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-slate-200 via-[hsl(var(--accent-blue))]/30 to-slate-200 -translate-y-1/2 z-0" />
+
+              {/* Steps */}
+              <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6 z-10">
+                {automationSteps.map((step, index) => {
+                  const Icon = step.icon;
+                  const isActive = activeStep === step.id;
+
+                  return (
+                    <div key={step.id} className="relative">
+                      <Link to={step.link || "#"} className="block">
+                        <Card
+                          className={`group cursor-pointer transition-all duration-300 border-2 hover:border-[hsl(var(--accent-blue))]/50 hover:shadow-xl hover:scale-[1.02] bg-white ${
+                            isActive ? "border-[hsl(var(--accent-blue))] shadow-2xl scale-[1.02]" : "border-slate-200"
+                          }`}
+                          onMouseEnter={() => setActiveStep(step.id)}
+                          onMouseLeave={() => setActiveStep(null)}
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 to-blue-50/30 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg" />
+
+                          <div className="relative p-6">
+                            {/* Step Number */}
+                            <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-[hsl(var(--accent-blue))] text-white font-bold text-sm flex items-center justify-center shadow-lg">
+                              {index + 1}
+                            </div>
+
+                            {/* Icon */}
+                            <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-slate-50 to-blue-50/50 border-2 border-slate-200 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform group-hover:border-[hsl(var(--accent-blue))]/30">
+                              <Icon className="h-8 w-8 text-[hsl(var(--navy))]" />
+                            </div>
+
+                            {/* Phase label */}
+                            <div className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-400 mb-1">
+                              Phase {step.phase}
+                            </div>
+
+                            {/* Title */}
+                            <h3 className="text-lg font-bold text-[hsl(var(--navy))] mb-2">
+                              {step.title}
+                            </h3>
+
+                            {/* Metrics Badge */}
+                            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-blue-50 to-slate-50 border border-[hsl(var(--accent-blue))]/20 mb-3">
+                              <TrendingDown className="h-3 w-3 text-[hsl(var(--accent-blue))]" />
+                              <span className="text-xs font-semibold text-[hsl(var(--navy))]">
+                                {step.metrics}
+                              </span>
+                            </div>
+
+                            {/* Description */}
+                            <p className={`text-sm text-slate-600 transition-all duration-300 ${
+                              isActive ? "line-clamp-none" : "line-clamp-3"
+                            }`}>
+                              {step.description}
+                            </p>
+
+                            {/* Specialty Label */}
+                            {step.metricsLabel && (
+                              <div className="mt-4 text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
+                                {step.metricsLabel}
+                              </div>
+                            )}
+
+                            <div className="mt-2 flex items-center gap-2 text-xs font-semibold text-[hsl(var(--accent-blue))] group-hover:translate-x-1 transition-transform">
+                              <span>Explore this phase</span>
+                              <ArrowRight className="h-3 w-3" />
+                            </div>
+                          </div>
+                        </Card>
+                      </Link>
+
+                      {/* Arrow */}
+                      {index < automationSteps.length - 1 && (
+                        <div className="hidden lg:flex absolute top-1/2 -right-3 z-20 -translate-y-1/2">
+                          <ArrowRight className="h-6 w-6 text-[hsl(var(--accent-blue))]" />
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* AI Agent Library Showcase */}
+          <div className="max-w-6xl mx-auto mt-16">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-indigo-50 border border-[hsl(var(--accent-blue))]/20 mb-6">
+                <Brain className="h-4 w-4 text-[hsl(var(--accent-blue))]" />
+                <span className="text-sm font-bold text-[hsl(var(--accent-blue))] tracking-wide uppercase">AI-Powered Innovation</span>
+              </div>
+
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[hsl(var(--navy))] mb-6 leading-tight">
+                Enterprise-Grade Prototyping Powered by AI
+              </h3>
+
+              <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Our autonomous agent ecosystem transforms traditional development workflows into intelligent, accelerated prototyping experiences.
+              </p>
+            </div>
+
+            {/* Creative Flow Layout */}
+            <div className="relative mb-12">
+              {/* Gradient Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--accent-blue))]/5 via-transparent to-[hsl(var(--signal-purple))]/5 rounded-3xl" />
 
             {/* Main Content */}
             <div className="relative grid lg:grid-cols-3 gap-8 p-8 lg:p-12">
               {/* Left Column - Intelligent Code */}
               <div className="group">
                 <div className="relative">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))] rounded-2xl blur opacity-0 group-hover:opacity-25 transition duration-500" />
-                  <div className="relative bg-white rounded-2xl p-6 border-2 border-slate-200 group-hover:border-[hsl(var(--accent-blue))]/40 transition-all">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--signal-purple))]/5 mb-4 group-hover:scale-110 transition-transform">
-                      <Code2 className="h-7 w-7 text-[hsl(var(--accent-blue))]" />
-                    </div>
-                    <h4 className="text-xl font-bold text-[hsl(var(--navy))] mb-3">Intelligent Code Generation</h4>
-                    <p className="text-slate-600 leading-relaxed mb-4">
-                      AI agents automatically generate production-ready code patterns with enterprise architecture standards built-in.
-                    </p>
-                    <div className="flex items-center gap-2 text-sm font-semibold text-[hsl(var(--accent-blue))]">
-                      <span>3-5x faster development</span>
-                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Center Column - Testing */}
-              <div className="group lg:mt-8">
-                <div className="relative">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-[hsl(var(--signal-purple))] to-[hsl(var(--accent-blue))] rounded-2xl blur opacity-0 group-hover:opacity-25 transition duration-500" />
-                  <div className="relative bg-white rounded-2xl p-6 border-2 border-slate-200 group-hover:border-[hsl(var(--accent-blue))]/40 transition-all">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--signal-purple))]/10 to-[hsl(var(--accent-blue))]/5 mb-4 group-hover:scale-110 transition-transform">
-                      <Activity className="h-7 w-7 text-[hsl(var(--signal-purple))]" />
-                    </div>
-                    <h4 className="text-xl font-bold text-[hsl(var(--navy))] mb-3">Automated Testing Orchestration</h4>
-                    <p className="text-slate-600 leading-relaxed mb-4">
-                      Comprehensive test suites run continuously with intelligent failure analysis and automated remediation suggestions.
-                    </p>
-                    <div className="flex items-center gap-2 text-sm font-semibold text-[hsl(var(--signal-purple))]">
-                      <span>99.9% code coverage</span>
-                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <div className="absolute -inset-1 bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))] rounded-2xl blur opacity-0 group-hover:opacity-25 transition duration-500" />
+                    <div className="relative bg-white rounded-2xl p-6 border-2 border-slate-200 group-hover:border-[hsl(var(--accent-blue))]/40 transition-all">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--signal-purple))]/5 mb-4 group-hover:scale-110 transition-transform">
+                        <Code2 className="h-7 w-7 text-[hsl(var(--accent-blue))]" />
+                      </div>
+                      <h4 className="text-xl font-bold text-[hsl(var(--navy))] mb-3">Intelligent Code Generation</h4>
+                      <p className="text-slate-600 leading-relaxed mb-4">
+                        AI agents automatically generate production-ready code patterns with enterprise architecture standards built-in.
+                      </p>
+                      <div className="flex items-center gap-2 text-sm font-semibold text-[hsl(var(--accent-blue))]">
+                        <span>3-5x faster development</span>
+                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Right Column - Security */}
-              <div className="group">
-                <div className="relative">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-[hsl(var(--accent-blue))] rounded-2xl blur opacity-0 group-hover:opacity-25 transition duration-500" />
-                  <div className="relative bg-white rounded-2xl p-6 border-2 border-slate-200 group-hover:border-[hsl(var(--accent-blue))]/40 transition-all">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500/10 to-[hsl(var(--accent-blue))]/5 mb-4 group-hover:scale-110 transition-transform">
-                      <Shield className="h-7 w-7 text-emerald-600" />
+                {/* Center Column - Testing */}
+                <div className="group lg:mt-8">
+                  <div className="relative">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-[hsl(var(--signal-purple))] to-[hsl(var(--accent-blue))] rounded-2xl blur opacity-0 group-hover:opacity-25 transition duration-500" />
+                    <div className="relative bg-white rounded-2xl p-6 border-2 border-slate-200 group-hover:border-[hsl(var(--accent-blue))]/40 transition-all">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--signal-purple))]/10 to-[hsl(var(--accent-blue))]/5 mb-4 group-hover:scale-110 transition-transform">
+                        <Activity className="h-7 w-7 text-[hsl(var(--signal-purple))]" />
+                      </div>
+                      <h4 className="text-xl font-bold text-[hsl(var(--navy))] mb-3">Automated Testing Orchestration</h4>
+                      <p className="text-slate-600 leading-relaxed mb-4">
+                        Comprehensive test suites run continuously with intelligent failure analysis and automated remediation suggestions.
+                      </p>
+                      <div className="flex items-center gap-2 text-sm font-semibold text-[hsl(var(--signal-purple))]">
+                        <span>99.9% code coverage</span>
+                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
                     </div>
-                    <h4 className="text-xl font-bold text-[hsl(var(--navy))] mb-3">Security-First Architecture</h4>
-                    <p className="text-slate-600 leading-relaxed mb-4">
-                      Every prototype includes enterprise-grade security controls, compliance frameworks, and zero-trust patterns from day one.
-                    </p>
-                    <div className="flex items-center gap-2 text-sm font-semibold text-emerald-600">
-                      <span>Zero vulnerabilities</span>
-                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </div>
+                  </div>
+                </div>
+
+                {/* Right Column - Security */}
+                <div className="group">
+                  <div className="relative">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-[hsl(var(--accent-blue))] rounded-2xl blur opacity-0 group-hover:opacity-25 transition duration-500" />
+                    <div className="relative bg-white rounded-2xl p-6 border-2 border-slate-200 group-hover:border-[hsl(var(--accent-blue))]/40 transition-all">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500/10 to-[hsl(var(--accent-blue))]/5 mb-4 group-hover:scale-110 transition-transform">
+                        <Shield className="h-7 w-7 text-emerald-600" />
+                      </div>
+                      <h4 className="text-xl font-bold text-[hsl(var(--navy))] mb-3">Security-First Architecture</h4>
+                      <p className="text-slate-600 leading-relaxed mb-4">
+                        Every prototype includes enterprise-grade security controls, compliance frameworks, and zero-trust patterns from day one.
+                      </p>
+                      <div className="flex items-center gap-2 text-sm font-semibold text-emerald-600">
+                        <span>Zero vulnerabilities</span>
+                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Connecting Lines */}
-            <div className="hidden lg:block absolute top-1/2 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-transparent via-[hsl(var(--accent-blue))]/30 to-transparent -translate-y-1/2" />
+            {/* Animated Connecting Line (behind cards) */}
+            <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+              <div className="relative w-full max-w-[1100px] px-8 lg:px-12">
+                <div className="hidden md:block absolute left-[6%] right-[6%] top-1/2 -translate-y-1/2 h-1.5 rounded-full bg-[linear-gradient(90deg,rgba(255,255,255,0),rgba(46,107,255,0.2),rgba(46,107,255,0.5),rgba(46,107,255,0.2),rgba(255,255,255,0))] opacity-80 blur-[1px] [background-size:200%_100%] animate-[flowLine_6s_linear_infinite] -z-10" />
+              </div>
+            </div>
           </div>
 
           {/* Powerful CTA Section */}
           <div className="text-center bg-gradient-to-br from-[hsl(var(--accent-blue))]/5 to-[hsl(var(--signal-purple))]/5 rounded-2xl p-8 border border-[hsl(var(--accent-blue))]/20">
-            <h4 className="text-2xl font-bold text-[hsl(var(--navy))] mb-4">
-              Experience AI-Powered Prototyping
-            </h4>
-            <p className="text-slate-600 mb-8 max-w-xl mx-auto">
-              Transform your development process with our intelligent agent ecosystem. From concept validation to production deployment in record time.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button
-                variant="hero"
-                size="lg"
-                asChild
-                className="bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))] shadow-lg hover:shadow-xl hover:scale-105 transition-all"
-              >
-                <Link to="/services/rapid-prototyping" className="flex items-center gap-2 group">
-                  <Rocket className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  <span>Explore Rapid Prototyping</span>
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
+              <h4 className="text-2xl font-bold text-[hsl(var(--navy))] mb-4">
+                Experience AI-Powered Prototyping
+              </h4>
+              <p className="text-slate-600 mb-8 max-w-xl mx-auto">
+                Transform your development process with our intelligent agent ecosystem. From concept validation to production deployment in record time.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Button
+                  variant="hero"
+                  size="lg"
+                  asChild
+                  className="bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))] shadow-lg hover:shadow-xl hover:scale-105 transition-all"
+                >
+                  <Link to="/services/rapid-prototyping" className="flex items-center gap-2 group">
+                    <Rocket className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    <span>Explore Rapid Prototyping</span>
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Button>
 
-              <Button
-                variant="outline"
-                size="lg"
-                asChild
-                className="border-slate-200 text-slate-700 hover:bg-slate-50"
-              >
-                <Link to="/contact" className="flex items-center gap-2">
-                  <Lightbulb className="h-5 w-5" />
-                  <span>Discuss Your Project</span>
-                </Link>
-              </Button>
-            </div>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  asChild
+                  className="border-slate-200 text-slate-700 hover:bg-slate-50"
+                >
+                  <Link to="/contact" className="flex items-center gap-2">
+                    <Lightbulb className="h-5 w-5" />
+                    <span>Discuss Your Project</span>
+                  </Link>
+                </Button>
+              </div>
 
-            <div className="grid grid-cols-3 gap-8 mt-8 pt-8 border-t border-slate-200/50">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-[hsl(var(--accent-blue))] mb-1">3-5x</div>
-                <div className="text-xs text-slate-600">Faster Development</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-[hsl(var(--accent-blue))] mb-1">99.9%</div>
-                <div className="text-xs text-slate-600">Production Ready</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-[hsl(var(--accent-blue))] mb-1">24/7</div>
-                <div className="text-xs text-slate-600">AI Support</div>
+              <div className="grid grid-cols-3 gap-8 mt-8 pt-8 border-t border-slate-200/50">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-[hsl(var(--accent-blue))] mb-1">3-5x</div>
+                  <div className="text-xs text-slate-600">Faster Development</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-[hsl(var(--accent-blue))] mb-1">99.9%</div>
+                  <div className="text-xs text-slate-600">Production Ready</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-[hsl(var(--accent-blue))] mb-1">24/7</div>
+                  <div className="text-xs text-slate-600">AI Support</div>
+                </div>
               </div>
             </div>
           </div>

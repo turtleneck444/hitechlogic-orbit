@@ -8,7 +8,7 @@ export interface SEOProps {
   ogType?: string;
   ogImage?: string;
   twitterCard?: string;
-  schema?: object;
+  schema?: object | object[];
 }
 
 export function SEO({
@@ -59,9 +59,17 @@ export function SEO({
       
       {/* Schema.org JSON-LD */}
       {schema && (
-        <script type="application/ld+json">
-          {JSON.stringify(schema)}
-        </script>
+        Array.isArray(schema) ? (
+          schema.map((schemaItem, index) => (
+            <script key={index} type="application/ld+json">
+              {JSON.stringify(schemaItem)}
+            </script>
+          ))
+        ) : (
+          <script type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
+        )
       )}
     </Helmet>
   );

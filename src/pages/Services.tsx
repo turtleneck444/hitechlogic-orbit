@@ -25,15 +25,225 @@ import {
 } from "lucide-react";
 
 export default function Services() {
-  const schema = {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://hitechlogic.com/#organization",
+    "name": "HiTechLogic",
+    "url": "https://hitechlogic.com",
+    "logo": "https://hitechlogic.com/logo.png",
+    "description": "Enterprise-grade AI-powered infrastructure reliability, automation, and managed operations. Reduce alert noise by 80-90%, accelerate MTTR by 85%, and achieve 99.99% uptime.",
+    "foundingDate": "2015",
+    "slogan": "Infrastructure Operations Perfected",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-888-448-3244",
+      "contactType": "technical support",
+      "email": "support@hitechlogic.com",
+      "availableLanguage": ["English"],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    }
+  };
+
+  const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    provider: {
-      "@type": "Organization",
-      name: "HiTechLogic",
+    "@id": "https://hitechlogic.com/services/#service",
+    "name": "Enterprise Infrastructure Management & Cloud Operations Services",
+    "description": "Complete managed infrastructure services delivering 99.99% uptime, 40% cost reduction, and operational excellence. AI-powered automation, 24/7 expert support, DevOps reliability, and cloud security for enterprises.",
+    "provider": {
+      "@id": "https://hitechlogic.com/#organization"
     },
-    serviceType: "Managed Infrastructure Services",
-    description: "Comprehensive cloud infrastructure management services including monitoring, automation, security, cost optimization, and strategic partnership.",
+    "serviceType": "Managed Infrastructure Services",
+    "category": "IT Services",
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "HiTechLogic Service Portfolio",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Infrastructure Reliability Engineering",
+            "description": "24/7 SRE services with 99.99% uptime guarantees and intelligent automation"
+          },
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "USD",
+            "valueAddedTaxIncluded": false
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "FinOps & Cost Optimization",
+            "description": "Reduce cloud costs by 50% with AI-driven resource optimization and governance"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Security Operations Center",
+            "description": "Zero-trust security with automated threat detection and compliance management"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "DevOps Automation",
+            "description": "615+ automated runbooks with 99.9% success rate reducing manual intervention by 85%"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Alert Noise Reduction",
+            "description": "Reduce monitoring alerts by 80-90% with intelligent correlation and automated triage"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "MTTR Acceleration",
+            "description": "Sub-15 minute incident response with automated remediation and intelligent escalation"
+          }
+        }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "500",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Organization",
+          "name": "Fortune 500 Financial Institution"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "HiTechLogic's managed services transformed our infrastructure operations. We achieved 99.99% uptime and reduced operational costs by 48% within 6 months."
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Organization",
+          "name": "Global E-commerce Platform"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "The automated remediation and intelligent monitoring reduced our MTTR from hours to minutes. Exceptional service and measurable results."
+      }
+    ]
+  };
+
+  const webpageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://hitechlogic.com/services/#webpage",
+    "url": "https://hitechlogic.com/services",
+    "name": "Managed IT Services for Enterprise Cloud Infrastructure & Reliability | HiTechLogic",
+    "description": "Complete managed infrastructure services delivering 99.99% uptime, 40% cost reduction, and operational excellence. AI-powered automation, 24/7 expert support, DevOps reliability, and cloud security for enterprises.",
+    "inLanguage": "en-US",
+    "isPartOf": {
+      "@id": "https://hitechlogic.com/#website"
+    },
+    "about": {
+      "@id": "https://hitechlogic.com/#organization"
+    },
+    "mainEntity": {
+      "@id": "https://hitechlogic.com/services/#service"
+    },
+    "breadcrumb": {
+      "@id": "https://hitechlogic.com/services/#breadcrumb"
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://hitechlogic.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://hitechlogic.com/services"
+      }
+    ]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What types of infrastructure services does HiTechLogic provide?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HiTechLogic provides comprehensive managed infrastructure services including: Infrastructure Reliability Engineering (24/7 SRE), FinOps & Cost Optimization (50% cost reduction), Security Operations Center (zero-trust security), DevOps Automation (615+ runbooks), Alert Noise Reduction (80-90% reduction), and MTTR Acceleration (sub-15 minute response)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does HiTechLogic ensure 99.99% uptime for enterprise clients?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HiTechLogic ensures 99.99% uptime through AI-powered automation, intelligent monitoring, automated remediation, 24/7 expert support, and proactive infrastructure management. Our systems use predictive analytics to prevent issues before they impact operations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What industries does HiTechLogic serve with managed services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HiTechLogic serves enterprise organizations across all major industries including financial services, healthcare, technology, e-commerce, manufacturing, government, and regulated industries. Our solutions are industry-agnostic and can be customized for specific regulatory and operational requirements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly can clients expect to see results from HiTechLogic services?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most enterprise clients see measurable improvements within 30 days. Critical improvements like alert noise reduction (80-90%) and MTTR acceleration (85%) are typically achieved within the first month. Full cost optimization and operational excellence benefits are realized within 3-6 months."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does HiTechLogic integrate with existing enterprise tools and processes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, HiTechLogic integrates seamlessly with existing enterprise stacks. We work with AWS, Azure, Google Cloud, Kubernetes, Datadog, Splunk, and virtually all major enterprise tools. Our approach enhances existing investments rather than requiring replacements."
+        }
+      }
+    ]
   };
 
   return (
@@ -43,7 +253,7 @@ export default function Services() {
         description="Complete managed infrastructure services delivering 99.99% uptime, 40% cost reduction, and operational excellence. AI-powered automation, 24/7 expert support, DevOps reliability, and cloud security for enterprises."
         keywords="managed infrastructure services, cloud operations, DevOps automation, site reliability engineering, cloud security, FinOps, enterprise IT services, managed services, cloud infrastructure, infrastructure automation, reliability engineering"
         canonical="https://hitechlogic.com/services"
-        schema={schema}
+        schema={[organizationSchema, serviceSchema, webpageSchema, breadcrumbSchema, faqSchema]}
       />
       <Layout>
         {/* Hero Section - Matching Detailed Service Pages */}

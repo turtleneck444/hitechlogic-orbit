@@ -70,11 +70,186 @@ const faqs = [
   },
 ];
 
-const contactSchema = {
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://hitechlogic.com/#organization",
+  "name": "HiTechLogic",
+  "url": "https://hitechlogic.com",
+  "logo": "https://hitechlogic.com/logo.png",
+  "description": "Enterprise-grade AI-powered infrastructure reliability, automation, and managed operations. Reduce alert noise by 80-90%, accelerate MTTR by 85%, and achieve 99.99% uptime.",
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+1-888-448-3244",
+      "contactType": "sales",
+      "email": "contact@hitechlogic.com",
+      "availableLanguage": ["English"],
+      "contactOption": "TollFree"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+1-888-448-3244",
+      "contactType": "technical support",
+      "email": "support@hitechlogic.com",
+      "availableLanguage": ["English"],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    }
+  ]
+};
+
+const contactPageSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  name: "Contact HiTechLogic - Enterprise Infrastructure Support",
-  description: "Connect with our enterprise infrastructure experts. 24/7 support, technical consulting, and strategic partnerships for infrastructure reliability.",
+  "@id": "https://hitechlogic.com/contact/#contactpage",
+  "url": "https://hitechlogic.com/contact",
+  "name": "Contact HiTechLogic | 24/7 Enterprise Support & Technical Consulting",
+  "description": "Connect with our infrastructure reliability experts. 24/7 support, technical consulting, and strategic partnerships. Get enterprise-grade infrastructure operations.",
+  "inLanguage": "en-US",
+  "isPartOf": {
+    "@id": "https://hitechlogic.com/#website"
+  },
+  "about": {
+    "@id": "https://hitechlogic.com/#organization"
+  },
+  "mainEntity": {
+    "@id": "https://hitechlogic.com/#organization"
+  },
+  "breadcrumb": {
+    "@id": "https://hitechlogic.com/contact/#breadcrumb"
+  },
+  "potentialAction": {
+    "@type": "CommunicateAction",
+    "target": "https://hitechlogic.com/contact",
+    "description": "Contact HiTechLogic for enterprise infrastructure support and consulting"
+  }
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://hitechlogic.com/#localbusiness",
+  "name": "HiTechLogic",
+  "description": "Enterprise infrastructure management and cloud operations services",
+  "url": "https://hitechlogic.com",
+  "telephone": "+1-888-448-3244",
+  "email": "contact@hitechlogic.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Francisco",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 37.7749,
+    "longitude": -122.4194
+  },
+  "areaServed": "Worldwide",
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 37.7749,
+      "longitude": -122.4194
+    },
+    "geoRadius": 20000000
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "HiTechLogic Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "24/7 Infrastructure Support",
+          "description": "Round-the-clock enterprise infrastructure monitoring and support"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Technical Consulting",
+          "description": "Expert consulting for infrastructure reliability and operations"
+        }
+      }
+    ]
+  },
+  "openingHours": "Mo-Su 00:00-23:59",
+  "priceRange": "$$$"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://hitechlogic.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Contact",
+      "item": "https://hitechlogic.com/contact"
+    }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can HiTechLogic respond to a critical incident?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For our managed clients, we guarantee 5-minute response for critical incidents and 15 minutes for all other support tickets. Our 24/7 NOC (Network Operations Center) monitors your infrastructure continuously."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with existing enterprise tools and processes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We integrate with your current stack rather than forcing replacements. Whether you're using AWS, Azure, Kubernetes, Datadog, Splunk, or any other enterprise tools, we enhance what you have while maintaining your operational preferences."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the process for getting started with HiTechLogic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We begin with a comprehensive assessment (usually 1-2 weeks), followed by strategic planning, implementation, and ongoing optimization. Most clients see measurable improvements within 30 days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer proof-of-concept or trial periods?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we offer free 30-day proof-of-concept deployments for enterprise clients. This allows you to experience our operational excellence firsthand without any long-term commitment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes HiTechLogic different from traditional managed service providers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We go beyond monitoring and alerting to make infrastructure truly autonomous. Our AI-driven remediation, zero-compromise reliability approach, and partnership-first mentality set us apart from traditional MSPs."
+      }
+    }
+  ]
 };
 
 export default function Contact() {
@@ -107,7 +282,7 @@ export default function Contact() {
         description="Connect with our infrastructure reliability experts. 24/7 support, technical consulting, and strategic partnerships. Get enterprise-grade infrastructure operations."
         keywords="contact HiTechLogic, enterprise support, 24/7 NOC, technical consulting, infrastructure experts, managed services partnership, SRE support"
         canonical="https://hitechlogic.com/contact"
-        schema={contactSchema}
+        schema={[organizationSchema, contactPageSchema, localBusinessSchema, breadcrumbSchema, faqSchema]}
       />
       <Layout>
         <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--deep-navy))] via-[hsl(var(--graphite))] to-[hsl(var(--deep-navy))]">

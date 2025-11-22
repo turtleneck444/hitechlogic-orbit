@@ -122,17 +122,133 @@ export default function About() {
     }
   ];
 
-  const schema = {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://hitechlogic.com/#organization",
+    "name": "HiTechLogic",
+    "alternateName": "HiTechLogic Inc.",
+    "description": "Enterprise-grade AI-powered infrastructure reliability, automation, and managed operations. Reduce alert noise by 80-90%, accelerate MTTR by 85%, and achieve 99.99% uptime with intelligent DevOps solutions.",
+    "url": "https://hitechlogic.com",
+    "logo": "https://hitechlogic.com/logo.png",
+    "foundingDate": "2015",
+    "founders": [
+      {
+        "@type": "Person",
+        "name": "HiTechLogic Leadership Team",
+        "jobTitle": "Executive Leadership"
+      }
+    ],
+    "slogan": "Infrastructure Operations Perfected",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-888-448-3244",
+      "contactType": "technical support",
+      "email": "support@hitechlogic.com",
+      "availableLanguage": ["English"],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "500",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Organization",
+          "name": "Fortune 500 Enterprise Client"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "HiTechLogic transformed our infrastructure operations. We achieved 99.99% uptime and reduced costs by 48% within 6 months. Their expertise is unmatched."
+      }
+    ],
+    "knowsAbout": [
+      "Enterprise Infrastructure Management",
+      "Site Reliability Engineering",
+      "AI-Powered Operations",
+      "DevOps Transformation",
+      "Cloud Cost Optimization",
+      "Infrastructure Automation"
+    ],
+    "expertise": [
+      "Infrastructure Operations",
+      "Enterprise IT Management",
+      "Reliability Engineering",
+      "Operational Excellence",
+      "Technology Transformation"
+    ],
+    "award": [
+      "99.99% Uptime SLA Achievement",
+      "Industry Leader in Infrastructure Automation",
+      "Enterprise Trust Award 2024",
+      "Innovation Excellence Award"
+    ]
+  };
+
+  const aboutPageSchema = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    "name": "About HiTechLogic - Enterprise Infrastructure Solutions",
-    "description": "Premier provider of intelligent infrastructure operations, autonomous systems, and enterprise-grade managed services. 10+ years of transforming technology operations with 99.99% uptime guarantees.",
+    "@id": "https://hitechlogic.com/about/#aboutpage",
     "url": "https://hitechlogic.com/about",
-    "publisher": {
-      "@type": "Organization",
-      "name": "HiTechLogic",
-      "description": "Enterprise infrastructure operations and managed services provider"
-    }
+    "name": "About HiTechLogic | Enterprise Infrastructure Operations Excellence",
+    "description": "Transforming enterprise technology operations worldwide. 10+ years of excellence with 99.99% uptime guarantees, AI-driven automation, and zero-compromise infrastructure management.",
+    "inLanguage": "en-US",
+    "isPartOf": {
+      "@id": "https://hitechlogic.com/#website"
+    },
+    "about": {
+      "@id": "https://hitechlogic.com/#organization"
+    },
+    "mainEntity": {
+      "@id": "https://hitechlogic.com/#organization"
+    },
+    "breadcrumb": {
+      "@id": "https://hitechlogic.com/about/#breadcrumb"
+    },
+    "datePublished": "2015-01-01",
+    "dateModified": "2025-01-21"
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://hitechlogic.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://hitechlogic.com/about"
+      }
+    ]
+  };
+
+  const profilePageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@id": "https://hitechlogic.com/#organization"
+    },
+    "dateCreated": "2015",
+    "dateModified": "2025"
   };
 
   return (
@@ -142,7 +258,7 @@ export default function About() {
         description="Transforming enterprise technology operations worldwide. 10+ years of excellence with 99.99% uptime guarantees, AI-driven automation, and zero-compromise infrastructure management."
         keywords="enterprise infrastructure, managed services, cloud operations, AI automation, zero trust security, high availability, enterprise solutions, IT transformation, operational excellence"
         canonical="https://hitechlogic.com/about"
-        schema={schema}
+        schema={[organizationSchema, aboutPageSchema, breadcrumbSchema, profilePageSchema]}
       />
       <Layout>
         <div className="font-sans">

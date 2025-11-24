@@ -336,16 +336,19 @@ export default function Contact() {
           <div className="mx-auto w-full max-w-6xl px-6">
             <div className="grid gap-12 lg:grid-cols-[1.05fr,0.95fr] items-start">
               <div className="space-y-6 order-2 lg:order-1">
-                <div className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-2 text-[hsl(var(--navy))] font-semibold">
+                <div className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-2 text-[#0B1220] font-semibold">
                   <Calendar className="h-4 w-4" />
                   Consultation & Support
                 </div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[hsl(var(--navy))]">
-                  Let’s architect your next era.
-                  <span className="block bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--signal-purple))] bg-clip-text text-transparent">
+                <div className="max-w-3xl">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0B1220] tracking-tight leading-[1.15] break-words">
+                    Let's architect your{' '}
+                    <span className="inline-block">next era.</span>
+                  </h2>
+                  <p className="mt-3 text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.2] bg-gradient-to-r from-[#2E6BFF] to-blue-600 bg-clip-text text-transparent">
                     Reliable, autonomous, and executive-backed.
-                  </span>
-                </h2>
+                  </p>
+                </div>
                 <p className="text-base md:text-lg text-slate-600 leading-relaxed">
                   Share the outcomes you need and our enterprise specialists will design the automated programs, strategic guardrails,
                   and operations advisory that keeps your infrastructure ahead of disruption.

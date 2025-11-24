@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
-import { Gauge, TrendingUp, Target, Clock, AlertCircle, CheckCircle2, ArrowRight, BarChart3, Activity, LineChart, Shield, Zap, Users, Award, ChevronDown } from "lucide-react";
+import { Gauge, TrendingUp, Target, Clock, AlertCircle, CheckCircle2, ArrowRight, BarChart3, Activity, LineChart, Shield, Zap, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 const capabilities = [
@@ -73,13 +73,6 @@ const useCases = [
     industry: "Healthcare",
     icon: Shield,
   },
-];
-
-const metrics = [
-  { label: "Uptime Achievement", value: "99.99%", icon: TrendingUp },
-  { label: "MTTR Reduction", value: "90%", icon: Zap },
-  { label: "SLO Success Rate", value: "98%", icon: Target },
-  { label: "Performance Optimization", value: "85%", icon: BarChart3 },
 ];
 
 const engineeringProcess = [
@@ -251,69 +244,49 @@ export default function ReliabilityPerformanceEngineering() {
       <Layout>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(var(--deep-navy))] via-[hsl(var(--graphite))] to-[hsl(var(--deep-navy))]">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvZz48L3N2Zz4=')] opacity-20" />
         <div className="relative mx-auto w-full max-w-6xl px-6 pt-32 pb-20 sm:pt-40 sm:pb-28">
-          <div className="animate-[fade-in_0.5s_ease-out]">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[hsl(var(--accent-blue))] to-[hsl(var(--navy))] shadow-lg shadow-[hsl(var(--accent-blue))]/25">
-                <Gauge className="h-7 w-7 text-white" />
-              </div>
-              <span className="eyebrow text-[hsl(var(--accent-blue))]">Reliability & Performance Engineering</span>
+          <div className="flex items-center gap-3 mb-6">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg">
+              <Gauge className="h-7 w-7 text-[hsl(var(--accent-blue))]" />
             </div>
+            <span className="text-sm font-medium text-white/90 tracking-wide">Reliability & Performance Engineering</span>
           </div>
-          <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight text-white text-balance max-w-5xl animate-[fade-in_0.6s_ease-out_0.1s_both]">
-            Engineering Excellence{" "}
-            <span className="text-[hsl(var(--accent-blue))] block sm:inline md:block lg:inline">At Scale</span>
+          <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white text-balance max-w-5xl">
+            Engineering Excellence
+            <span className="text-[hsl(var(--accent-blue))] block sm:inline"> At Scale</span>
           </h1>
-          <p className="mt-6 text-xl text-slate-300 max-w-3xl leading-relaxed animate-[fade-in_0.7s_ease-out_0.2s_both]">
+          <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed">
             Systematic reliability engineering with SLO frameworks, performance optimization,
             chaos engineering, and continuous improvement practices that deliver 99.99%+ uptime.
           </p>
 
-          <div className="mt-10 animate-[fade-in_0.8s_ease-out_0.3s_both]">
-            <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(249,115,22,0.8)] hover:scale-105 transition-transform">
-              <Link to="/contact" className="flex items-center gap-2">
+          <div className="mt-10">
+            <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(139,92,246,0.8)] hover:shadow-[0_25px_45px_-12px_rgba(139,92,246,0.9)] hover:scale-105 transition-all duration-300">
+              <Link to="/contact" className="flex items-center gap-2 group">
+                <Target className="h-5 w-5" />
                 <span>Request Consultation</span>
-                <ArrowRight className="h-5 w-5" />
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
           </div>
 
-          {/* Metrics */}
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 animate-[fade-in_0.9s_ease-out_0.4s_both]">
-            {metrics.map((metric) => (
+          {/* Key Metrics */}
+          <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            {[
+              { label: "Uptime Achievement", value: "99.99%", icon: Shield },
+              { label: "MTTR Reduction", value: "90%", icon: Zap },
+              { label: "SLO Coverage", value: "100%", icon: Target },
+              { label: "Performance Gain", value: "85%", icon: TrendingUp },
+            ].map((metric) => (
               <div key={metric.label} className="rounded-2xl border border-white/15 bg-white/5 p-4 md:p-5 text-center shadow-lg shadow-black/10">
                 <div className="flex justify-center mb-2">
                   <metric.icon className="h-5 w-5 md:h-6 md:w-6 text-[hsl(var(--accent-blue))]" />
                 </div>
                 <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white">{metric.value}</div>
-                <div className="mt-1 text-xs md:text-sm font-medium text-white/70">{metric.label}</div>
+                <div className="mt-1 md:mt-2 text-xs md:text-sm font-medium text-white/70">{metric.label}</div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Indicators */}
-      <section className="bg-gradient-to-r from-[hsl(var(--navy))] to-slate-900 py-8">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">90%</div>
-              <div className="mt-1 text-sm text-slate-300">MTTR Reduction</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">10K+</div>
-              <div className="mt-1 text-sm text-slate-300">SLOs Defined</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">500+</div>
-              <div className="mt-1 text-sm text-slate-300">Chaos Tests Run</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-[hsl(var(--accent-blue))]">$50M+</div>
-              <div className="mt-1 text-sm text-slate-300">Downtime Prevented</div>
-            </div>
           </div>
         </div>
       </section>

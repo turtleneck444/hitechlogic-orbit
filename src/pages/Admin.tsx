@@ -12,6 +12,8 @@ import { ActivityFeed } from "@/components/admin/ActivityFeed";
 import { QuickActions } from "@/components/admin/QuickActions";
 import { RevenueChart } from "@/components/admin/RevenueChart";
 import { ProjectsOverview } from "@/components/admin/ProjectsOverview";
+import { LiveMetrics } from "@/components/admin/LiveMetrics";
+import { RealTimeActivityFeed } from "@/components/admin/RealTimeActivityFeed";
 import { EmptyState } from "@/components/admin/EmptyState";
 import { ProjectCard } from "@/components/admin/ProjectCard";
 import { ProjectDetailModal } from "@/components/admin/ProjectDetailModal";
@@ -210,6 +212,11 @@ export default function Admin() {
           </div>
         </section>
 
+        {/* Live Metrics - Real-time Animated Metrics */}
+        <section>
+          <LiveMetrics />
+        </section>
+
         {/* Enhanced Stats Cards - Now with Beautiful Animations */}
         <section className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {statsCardData.map((stat, index) => (
@@ -271,8 +278,8 @@ export default function Admin() {
 
           {/* Right Sidebar - Activity Feed and Quick Info */}
           <div className="space-y-6">
-            {/* Activity Feed - Real-time Updates */}
-            <ActivityFeed />
+            {/* Real-Time Activity Feed - Live Updates */}
+            <RealTimeActivityFeed />
 
             {/* Upcoming Meetings - Enhanced Premium View */}
             <article className="rounded-3xl border-2 border-slate-100 bg-gradient-to-br from-white to-blue-50/20 p-6 shadow-xl hover:shadow-2xl transition-all duration-500 space-y-4 relative overflow-hidden">

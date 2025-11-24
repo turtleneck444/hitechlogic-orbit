@@ -171,7 +171,7 @@ export default function Technology() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4 animate-[fade-in_0.8s_ease-out_0.3s_both]">
-            <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(139,92,246,0.8)] hover:scale-105 transition-transform">
+            <Button variant="hero" size="xl" asChild className="shadow-lg hover:shadow-xl hover:scale-105 transition-all">
               <Link to="/contact" className="flex items-center gap-2">
                 <span>Discuss Your Tech Stack</span>
                 <ArrowRight className="h-5 w-5" />

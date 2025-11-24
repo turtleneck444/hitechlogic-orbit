@@ -303,7 +303,7 @@ export default function Contact() {
               our enterprise team is ready to deliver calm, capable assistance with 5-minute response times.
             </p>
             <div className="mt-10">
-              <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(139,92,246,0.8)] hover:shadow-[0_25px_45px_-12px_rgba(139,92,246,0.9)] hover:scale-105 transition-all duration-300">
+              <Button variant="hero" size="xl" asChild className="shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
                 <Link to="#consultation" className="flex items-center gap-2 group">
                   <Calendar className="h-5 w-5" />
                   <span>Schedule Consultation</span>

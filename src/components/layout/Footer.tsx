@@ -41,9 +41,9 @@ const socialLinks = [
 ];
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "hello@hitechlogic.com", href: "mailto:hello@hitechlogic.com" },
+  { icon: Mail, label: "Email", value: "contact@hitechlogic.com", href: "mailto:contact@hitechlogic.com" },
   { icon: Phone, label: "Phone", value: "+1 (888) 448-3244", href: "tel:+18884483244" },
-  { icon: MapPin, label: "Location", value: "San Francisco, CA", href: "https://maps.google.com/?q=San+Francisco,+CA" },
+  { icon: MapPin, label: "Location", value: "Irvine, CA", href: "https://maps.google.com/?q=Irvine,+CA" },
 ];
 
 export function Footer() {

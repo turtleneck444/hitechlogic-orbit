@@ -97,31 +97,16 @@ export function QuickActionWidget() {
   if (!isOpen) {
     return (
       <div className="fixed bottom-8 right-8 z-[9999] group">
-        <button
+        <Button
           onClick={() => setIsOpen(true)}
-          className="relative h-16 w-16 rounded-full transition-all duration-200 hover:scale-105 active:scale-95"
+          className="relative h-12 w-12 rounded-full bg-[#0B1220] hover:bg-[#1a1f35] border border-gray-800/50 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95"
         >
-          {/* Helipad outer circle */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 shadow-lg" />
-          
-          {/* Helipad inner circle */}
-          <div className="absolute inset-[3px] rounded-full bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-yellow-400" />
-          
-          {/* Center H */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-yellow-400 font-bold text-2xl tracking-wider">H</span>
-          </div>
-          
-          {/* Corner markers */}
-          <div className="absolute top-1 left-1 w-1.5 h-1.5 bg-yellow-400 rounded-full" />
-          <div className="absolute top-1 right-1 w-1.5 h-1.5 bg-yellow-400 rounded-full" />
-          <div className="absolute bottom-1 left-1 w-1.5 h-1.5 bg-yellow-400 rounded-full" />
-          <div className="absolute bottom-1 right-1 w-1.5 h-1.5 bg-yellow-400 rounded-full" />
-        </button>
+          <span className="text-white font-semibold text-lg">H</span>
+        </Button>
 
         {/* Tooltip */}
         <div className="absolute bottom-full right-0 mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-[10000]">
-          <div className="px-3 py-1.5 bg-gray-900 text-white text-xs font-medium rounded-lg shadow-lg whitespace-nowrap border border-yellow-400/30">
+          <div className="px-3 py-1.5 bg-[#0B1220] text-white text-xs font-medium rounded-lg shadow-lg whitespace-nowrap">
             Quick Actions
           </div>
         </div>

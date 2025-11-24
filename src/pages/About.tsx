@@ -272,13 +272,11 @@ export default function About() {
               </div>
               <span className="text-sm font-medium text-white/90 tracking-wide">About HiTechLogic</span>
             </div>
-            <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-white">
-              Operational Excellence{" "}
-              <span className="text-blue-400 block sm:inline">Perfected</span>
+            <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-white max-w-5xl">
+              Operational Excellence <span className="text-blue-400">Perfected</span>
             </h1>
-            <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed">
-              Ten years of transforming enterprise technology operations into strategic advantages.
-              Where infrastructure becomes invisible, operations become autonomous, and business becomes unstoppable.
+            <p className="mt-6 text-lg md:text-xl text-white/90 max-w-3xl leading-relaxed">
+              A decade of transforming enterprise technology operations into strategic advantages. Where infrastructure becomes invisible, operations become autonomous, and business becomes unstoppable.
             </p>
 
             <div className="mt-10">
@@ -317,14 +315,11 @@ export default function About() {
                   <Target className="h-4 w-4" />
                   <span>Our Mission</span>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight">
-                  Making Infrastructure{" "}
-                  <span className="text-blue-600">Disappear</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-[1.2]">
+                  Making Infrastructure <span className="text-blue-600">Disappear</span>
                 </h2>
-                <p className="text-xl text-slate-600 leading-relaxed mb-8">
-                  We exist to eliminate infrastructure operations as a constraint to business growth.
-                  Through intelligent automation, zero-compromise engineering, and relentless optimization,
-                  we enable organizations to focus entirely on their mission while we handle the complexity.
+                <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
+                  We eliminate infrastructure operations as a constraint to business growth. Through intelligent automation, zero-compromise engineering, and relentless optimization, we enable organizations to focus entirely on their mission while we handle the complexity.
                 </p>
 
                 <div className="grid grid-cols-2 gap-4">
@@ -389,27 +384,26 @@ export default function About() {
                 <Shield className="h-4 w-4" />
                 <span>Foundation Principles</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-[1.2]">
                 Four Pillars of Excellence
               </h2>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                Every service, every solution, every decision at HiTechLogic is guided by these
-                foundational principles that have defined our success for a decade.
+              <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                Every service, solution, and decision at HiTechLogic is guided by these foundational principles that have defined our success for a decade.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
               {companyValues.map((value, index) => (
-                <Card key={value.title} className="p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-slate-200 hover:border-slate-300 group">
+                <Card key={value.title} className="p-8 hover:shadow-lg transition-all duration-300 border border-slate-200 hover:border-slate-300 bg-white group">
                   <div className="flex items-start gap-6">
-                    <div className={`flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br ${value.color} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      <value.icon className="h-8 w-8 text-white" />
+                    <div className={`flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${value.color} shadow-sm`}>
+                      <value.icon className="h-7 w-7 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-slate-900 mb-4">
+                      <h3 className="text-lg font-semibold text-slate-900 mb-3 leading-tight">
                         {value.title}
                       </h3>
-                      <p className="text-slate-600 text-lg leading-relaxed">
+                      <p className="text-slate-600 text-base leading-relaxed">
                         {value.description}
                       </p>
                     </div>
@@ -428,12 +422,11 @@ export default function About() {
                 <TrendingUp className="h-4 w-4" />
                 <span>Our Evolution</span>
               </div>
-              <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-[1.2]">
                 A Decade of Transformation
               </h2>
-              <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                From founding vision to global leadership, our journey of relentless innovation
-                and operational perfection has transformed how enterprises manage technology infrastructure.
+              <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                From founding vision to global leadership, our journey of relentless innovation and operational perfection has transformed how enterprises manage technology infrastructure.
               </p>
             </div>
 
@@ -452,7 +445,7 @@ export default function About() {
 
                     {/* Content Card */}
                     <div className="w-full max-w-2xl">
-                      <Card className="p-4 md:p-6 hover:shadow-xl transition-all hover:-translate-y-1 border-2 border-slate-200 group">
+                      <Card className="p-4 md:p-6 hover:shadow-lg transition-all border border-slate-200 bg-white group">
                         <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
                           <div className="text-xl md:text-2xl font-black text-slate-700">{item.year}</div>
                           <div className="px-2 py-1 md:px-3 md:py-1 rounded-full border border-slate-200 bg-white text-xs font-bold text-[hsl(var(--navy))] w-fit">
@@ -478,29 +471,24 @@ export default function About() {
         <section className="section-space bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
           <div className="container mx-auto px-6 max-w-7xl">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-6xl font-black text-white mb-8">
-                Operational Perfection
-                <span className="block text-blue-400">
-                  In Action
-                </span>
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.2]">
+                Operational Perfection <span className="text-blue-400">In Action</span>
               </h2>
-              <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-                Every enterprise we serve becomes part of our legacy of reliability.
-                From Fortune 500 banks to healthcare systems and eCommerce platforms,
-                our technology has delivered unprecedented operational excellence.
+              <p className="text-lg md:text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+                Every enterprise we serve becomes part of our legacy of reliability. From Fortune 500 banks to healthcare systems and eCommerce platforms, our technology has delivered unprecedented operational excellence.
               </p>
             </div>
 
             {/* Success Showcase Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {pillars.map((pillar, index) => (
-                <Card key={pillar.title} className="p-6 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all hover:scale-105 text-white text-center group">
+                <Card key={pillar.title} className="p-6 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all text-white text-center group">
                   <div className="flex justify-center mb-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/10 group-hover:bg-white/20 transition-colors">
-                      <pillar.icon className="h-7 w-7" />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 transition-colors">
+                      <pillar.icon className="h-6 w-6" />
                     </div>
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-3">{pillar.title}</h3>
+                  <h3 className="text-base font-semibold text-white mb-3 leading-tight">{pillar.title}</h3>
                   <p className="text-white/80 text-sm leading-relaxed">{pillar.description}</p>
                 </Card>
               ))}

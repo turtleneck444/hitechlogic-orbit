@@ -31,25 +31,25 @@ export default function About() {
       icon: Shield,
       title: "Enterprise Trust",
       description: "Commitment to 99.99% uptime guarantees and unbreakable reliability in mission-critical operations",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-slate-700 to-slate-800"
     },
     {
       icon: Target,
       title: "Precision Engineering",
       description: "Zero-compromise infrastructure design with automated remediation and intelligent scaling",
-      color: "from-purple-500 to-pink-500"
+      color: "from-slate-700 to-slate-800"
     },
     {
       icon: TrendingUp,
       title: "Innovation Without Risk",
       description: "Pushing technological boundaries while maintaining absolute operational stability",
-      color: "from-green-500 to-emerald-500"
+      color: "from-slate-700 to-slate-800"
     },
     {
       icon: Users,
       title: "Partnership First",
       description: "Strategic alliances with enterprise leaders to transform technology operations",
-      color: "from-orange-500 to-red-500"
+      color: "from-slate-700 to-slate-800"
     }
   ];
 
@@ -274,7 +274,7 @@ export default function About() {
             </div>
             <h1 className="mt-6 text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-white">
               Operational Excellence{" "}
-              <span className="text-[hsl(var(--accent-blue))] block sm:inline">Perfected</span>
+              <span className="text-blue-400 block sm:inline">Perfected</span>
             </h1>
             <p className="mt-6 text-xl text-white/80 max-w-3xl leading-relaxed">
               Ten years of transforming enterprise technology operations into strategic advantages.
@@ -282,7 +282,7 @@ export default function About() {
             </p>
 
             <div className="mt-10">
-              <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(139,92,246,0.8)] hover:shadow-[0_25px_45px_-12px_rgba(139,92,246,0.9)] hover:scale-105 transition-all duration-300">
+              <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(59,130,246,0.5)] hover:shadow-[0_25px_45px_-12px_rgba(59,130,246,0.6)] hover:scale-105 transition-all duration-300">
                 <Link to="/contact" className="flex items-center gap-2 group">
                   <Award className="h-5 w-5" />
                   <span>Our Impact</span>
@@ -296,8 +296,8 @@ export default function About() {
               {companyStats.map((metric, index) => (
                 <div key={metric.label} className="text-center group px-4 py-2">
                   <div className="flex justify-center mb-3">
-                    <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-white/5 group-hover:from-[hsl(var(--accent-blue))]/20 group-hover:to-white/10 transition-all duration-300">
-                      <metric.icon className="h-5 w-5 md:h-6 md:w-6 text-white" />
+                    <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-xl bg-white/10 group-hover:bg-white/15 transition-all duration-300">
+                      <metric.icon className="h-5 w-5 md:h-6 md:w-6 text-blue-400" />
                     </div>
                   </div>
                   <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-white group-hover:scale-110 transition-transform duration-300">{metric.metric}</div>
@@ -318,10 +318,8 @@ export default function About() {
                   <span>Our Mission</span>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight">
-                  Making Infrastructure
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    Disappear
-                  </span>
+                  Making Infrastructure{" "}
+                  <span className="text-blue-600">Disappear</span>
                 </h2>
                 <p className="text-xl text-slate-600 leading-relaxed mb-8">
                   We exist to eliminate infrastructure operations as a constraint to business growth.
@@ -344,9 +342,9 @@ export default function About() {
               </div>
 
               <div>
-                <Card className="p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-100">
+                <Card className="p-8 bg-slate-50 border-2 border-slate-200">
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-slate-700">
                       <Star className="h-7 w-7 text-white" />
                     </div>
                     <div>
@@ -356,26 +354,26 @@ export default function About() {
                   </div>
 
                   <div className="space-y-4">
-                    <div className="flex items-start gap-3 p-4 rounded-lg bg-white/60 border border-blue-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5" />
+                    <div className="flex items-start gap-3 p-4 rounded-lg bg-white border border-slate-200">
+                      <CheckCircle2 className="h-5 w-5 text-slate-600 mt-0.5" />
                       <span className="text-slate-700">Infrastructure operations becoming completely autonomous</span>
                     </div>
-                    <div className="flex items-start gap-3 p-4 rounded-lg bg-white/60 border border-blue-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5" />
+                    <div className="flex items-start gap-3 p-4 rounded-lg bg-white border border-slate-200">
+                      <CheckCircle2 className="h-5 w-5 text-slate-600 mt-0.5" />
                       <span className="text-slate-700">Zero-touch remediation and intelligent scaling</span>
                     </div>
-                    <div className="flex items-start gap-3 p-4 rounded-lg bg-white/60 border border-blue-200">
-                      <CheckCircle2 className="h-5 w-5 text-blue-600 mt-0.5" />
+                    <div className="flex items-start gap-3 p-4 rounded-lg bg-white border border-slate-200">
+                      <CheckCircle2 className="h-5 w-5 text-slate-600 mt-0.5" />
                       <span className="text-slate-700">Enterprise operations free from technical complexity</span>
                     </div>
                   </div>
 
-                  <div className="mt-6 pt-6 border-t border-blue-200">
+                  <div className="mt-6 pt-6 border-t border-slate-200">
                     <p className="text-sm italic text-slate-600">
                       "We will continue pushing the boundaries of what's possible in enterprise infrastructure
                       until infrastructure operations become as reliable as gravity itself."
                     </p>
-                    <div className="text-xs text-blue-600 font-semibold mt-2">- HiTechLogic Mission Statement</div>
+                    <div className="text-xs text-slate-600 font-semibold mt-2">- HiTechLogic Mission Statement</div>
                   </div>
                 </Card>
               </div>
@@ -408,18 +406,12 @@ export default function About() {
                       <value.icon className="h-8 w-8 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-xl font-bold text-slate-900 mb-4">
                         {value.title}
                       </h3>
-                      <p className="text-slate-600 text-lg leading-relaxed mb-6">
+                      <p className="text-slate-600 text-lg leading-relaxed">
                         {value.description}
                       </p>
-
-                      {/* Visual indicator */}
-                      <div className="w-full h-1 bg-gradient-to-r from-slate-200 to-slate-100 rounded-full overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"
-                             style={{ width: '100%', animationDelay: `${index * 0.2}s` }} />
-                      </div>
                     </div>
                   </div>
                 </Card>
@@ -447,27 +439,27 @@ export default function About() {
 
             <div className="relative">
               {/* Central timeline line - hidden on mobile */}
-              <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-200 via-blue-300 to-purple-200 transform -translate-x-px" />
+              <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-slate-300 transform -translate-x-px" />
 
               <div className="space-y-8 lg:space-y-12">
                 {timeline.map((item, index) => (
                   <div key={item.year} className="relative flex flex-col items-center">
                     {/* Timeline dot - positioned differently for mobile */}
-                    <div className="flex lg:hidden w-3 h-3 rounded-full bg-blue-600 border-2 border-white shadow-md mb-4"></div>
-                    <div className="hidden lg:flex absolute left-1/2 w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow-lg transform -translate-x-1/2 items-center justify-center -top-2">
+                    <div className="flex lg:hidden w-3 h-3 rounded-full bg-slate-700 border-2 border-white shadow-md mb-4"></div>
+                    <div className="hidden lg:flex absolute left-1/2 w-4 h-4 rounded-full bg-slate-700 border-4 border-white shadow-lg transform -translate-x-1/2 items-center justify-center -top-2">
                       <div className="w-2 h-2 bg-white rounded-full"></div>
                     </div>
 
                     {/* Content Card */}
                     <div className="w-full max-w-2xl">
-                      <Card className="p-4 md:p-6 hover:shadow-xl transition-all hover:-translate-y-1 border-2 border-slate-200 hover:border-blue-200 group">
+                      <Card className="p-4 md:p-6 hover:shadow-xl transition-all hover:-translate-y-1 border-2 border-slate-200 group">
                         <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
-                          <div className="text-xl md:text-2xl font-black text-blue-600">{item.year}</div>
+                          <div className="text-xl md:text-2xl font-black text-slate-700">{item.year}</div>
                           <div className="px-2 py-1 md:px-3 md:py-1 rounded-full border border-slate-200 bg-white text-xs font-bold text-[hsl(var(--navy))] w-fit">
                             {item.type.charAt(0).toUpperCase() + item.type.slice(1)}
                           </div>
                         </div>
-                        <h3 className="text-base md:text-lg font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
+                        <h3 className="text-base md:text-lg font-bold text-slate-900 mb-3">
                           {item.title}
                         </h3>
                         <p className="text-sm md:text-base text-slate-600 leading-relaxed">
@@ -488,7 +480,7 @@ export default function About() {
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-6xl font-black text-white mb-8">
                 Operational Perfection
-                <span className="block bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400 bg-clip-text text-transparent">
+                <span className="block text-blue-400">
                   In Action
                 </span>
               </h2>
@@ -541,7 +533,7 @@ export default function About() {
                     <impact.icon className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-2">{impact.title}</h3>
-                  <p className="text-blue-300 font-semibold text-sm mb-4">{impact.subtitle}</p>
+                  <p className="text-slate-300 font-semibold text-sm mb-4">{impact.subtitle}</p>
                   <p className="text-white/70 text-sm leading-relaxed max-w-xs mx-auto">{impact.description}</p>
                 </div>
               ))}
@@ -555,7 +547,7 @@ export default function About() {
             <div className="max-w-4xl mx-auto">
               <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-8">
                 Experience Operational
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent block">
+                <span className="text-blue-600 block">
                   Perfection
                 </span>
               </h2>

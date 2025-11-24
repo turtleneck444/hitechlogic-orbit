@@ -475,7 +475,7 @@ export default function CybersecurityIdentityAssurance() {
         <section className="section-space bg-gradient-to-br from-slate-50 to-white">
           <div className="mx-auto w-full max-w-6xl px-6">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="eyebrow text-[hsl(var(--accent-blue))]">4. Why customers replace legacy monitoring with HiTechLogic</span>
+              <span className="eyebrow text-[hsl(var(--accent-blue))]">Enterprise-grade infrastructure, simplified and intentional.</span>
               <h2 className="mt-4 text-4xl md:text-5xl font-bold text-[hsl(var(--navy))]">
                 Intelligent Automation vs. Basic Monitoring
               </h2>
@@ -485,68 +485,67 @@ export default function CybersecurityIdentityAssurance() {
               </p>
             </div>
 
-            <div className="overflow-x-auto">
-              <table className="w-full bg-white border border-slate-200 rounded-2xl shadow-lg">
-                <thead>
-                  <tr className="bg-gradient-to-r from-[hsl(var(--navy))] to-[hsl(var(--navy))]/90 text-white">
-                    <th className="px-6 py-4 text-left font-bold text-lg">Capability</th>
-                    <th className="px-6 py-4 text-center font-bold text-lg border-l border-slate-300">Legacy Monitoring</th>
-                    <th className="px-6 py-4 text-center font-bold text-lg border-l border-slate-300 bg-gradient-to-r from-[hsl(var(--accent-blue))] to-[hsl(var(--accent-blue))]/90">HiTechLogic</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    {
-                      capability: "Issue Detection",
-                      legacy: "Reactive alerts on symptoms only",
-                      hitechlogic: "Predictive anomaly detection with root cause correlation",
-                    },
-                    {
-                      capability: "Response Time",
-                      legacy: "15-30 minutes to detect and notify",
-                      hitechlogic: "<2 minutes automated remediation",
-                    },
-                    {
-                      capability: "Resolution Method",
-                      legacy: "Manual investigation and human intervention",
-                      hitechlogic: "Automated runbooks with intelligent decision trees",
-                    },
-                    {
-                      capability: "Learning & Adaptation",
-                      legacy: "Static thresholds and fixed alerts",
-                      hitechlogic: "AI learns from each incident, continuously improving",
-                    },
-                    {
-                      capability: "Operational Overhead",
-                      legacy: "70% of time spent on routine tasks",
-                      hitechlogic: "DevOps focus on innovation, not firefighting",
-                    },
-                    {
-                      capability: "Cost Efficiency",
-                      legacy: "$5,400 average cost per incident",
-                      hitechlogic: "$540 average with 90% cost reduction",
-                    },
-                    {
-                      capability: "Uptime SLA",
-                      legacy: "Industry standard 99.9%",
-                      hitechlogic: "Guaranteed 99.99% with automated fallbacks",
-                    },
-                  ].map((row, index) => (
-                    <tr key={index} className={`${index % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'} hover:bg-blue-50/30 transition-all duration-300`}>
-                      <td className="px-6 py-4 font-semibold text-[hsl(var(--navy))] text-left border-r border-slate-200">
-                        {row.capability}
-                      </td>
-                      <td className="px-6 py-4 text-slate-600 text-center text-sm">
-                        {row.legacy}
-                      </td>
-                      <td className="px-6 py-4 bg-gradient-to-r from-green-50 to-green-100/50 font-semibold text-green-800 text-center text-sm border-l-2 border-green-200">
-                        <CheckCircle2 className="h-5 w-5 text-green-600 inline-block mr-2" />
-                        {row.hitechlogic}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {[
+                {
+                  title: "Issue Detection",
+                  legacy: "Reactive alerts on symptoms only",
+                  hitechlogic: "Predictive anomaly detection with root cause correlation",
+                  icon: Eye,
+                },
+                {
+                  title: "Response Time",
+                  legacy: "15-30 minutes to detect and notify",
+                  hitechlogic: "<2 minutes automated remediation",
+                  icon: Clock,
+                },
+                {
+                  title: "Resolution Method",
+                  legacy: "Manual investigation and human intervention",
+                  hitechlogic: "Automated runbooks with intelligent decision trees",
+                  icon: Zap,
+                },
+                {
+                  title: "Learning & Adaptation",
+                  legacy: "Static thresholds and fixed alerts",
+                  hitechlogic: "AI learns from each incident, continuously improving",
+                  icon: TrendingUp,
+                },
+                {
+                  title: "Operational Overhead",
+                  legacy: "70% of time spent on routine tasks",
+                  hitechlogic: "DevOps focus on innovation, not firefighting",
+                  icon: Target,
+                },
+                {
+                  title: "Cost Efficiency",
+                  legacy: "$5,400 average cost per incident",
+                  hitechlogic: "$540 average with 90% cost reduction",
+                  icon: Award,
+                },
+              ].map((item, index) => (
+                <Card key={index} className="p-6 border-2 hover:border-[hsl(var(--accent-blue))]/30 hover:shadow-xl transition-all hover:-translate-y-1 duration-300 group">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[hsl(var(--accent-blue))]/10 to-[hsl(var(--navy))]/5 group-hover:scale-110 transition-transform">
+                      <item.icon className="h-5 w-5 text-[hsl(var(--accent-blue))]" />
+                    </div>
+                    <h3 className="text-lg font-bold text-[hsl(var(--navy))]">{item.title}</h3>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="p-3 rounded-lg bg-red-50 border border-red-100">
+                      <div className="text-xs font-semibold text-red-600 mb-1">Legacy Approach</div>
+                      <div className="text-sm text-slate-700">{item.legacy}</div>
+                    </div>
+                    <div className="p-3 rounded-lg bg-green-50 border border-green-200">
+                      <div className="text-xs font-semibold text-green-700 mb-1 flex items-center gap-1">
+                        <CheckCircle2 className="h-3 w-3" />
+                        HiTechLogic
+                      </div>
+                      <div className="text-sm font-medium text-slate-800">{item.hitechlogic}</div>
+                    </div>
+                  </div>
+                </Card>
+              ))}
             </div>
 
             <div className="mt-12 text-center">

@@ -270,7 +270,7 @@ export default function CostEfficiencyCapacityStrategy() {
           </p>
 
           <div className="mt-10 animate-[fade-in_0.8s_ease-out_0.3s_both]">
-            <Button size="lg" asChild className="bg-[hsl(var(--accent-blue))] hover:bg-[hsl(var(--accent-blue))]/90 text-white shadow-[0_20px_45px_-20px_rgba(46,107,255,0.8)] hover:shadow-[0_25px_50px_-12px_rgba(46,107,255,0.9)] hover:scale-105 transition-all duration-300">
+            <Button size="lg" asChild className="bg-[hsl(var(--accent-blue))] hover:bg-[hsl(var(--accent-blue))]/90 text-white shadow-lg hover:shadow-[0_25px_50px_-12px_rgba(46,107,255,0.9)] hover:scale-105 transition-all duration-300">
               <Link to="/contact" className="flex items-center gap-2 group">
                 <span>Request Assessment</span>
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />

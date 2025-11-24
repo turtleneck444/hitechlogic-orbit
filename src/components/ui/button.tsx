@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-electric-blue text-white shadow-[0_18px_40px_-24px_rgba(46,107,255,0.65)] hover:bg-electric-blue/90",
+          "bg-electric-blue text-white shadow-lg hover:shadow-xl hover:bg-electric-blue/90",
         secondary:
           "bg-white text-foreground border border-[hsl(var(--border))] hover:bg-[hsl(var(--muted))] hover:text-foreground rounded-full",
         outline:
@@ -18,7 +18,7 @@ const buttonVariants = cva(
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         ghost: "text-foreground hover:bg-[hsl(var(--muted))]",
         link: "text-electric-blue underline-offset-4 hover:underline",
-        hero: "bg-electric-blue text-white shadow-[0_20px_50px_-12px_rgba(46,107,255,0.7)] hover:bg-electric-blue/90 hover:shadow-[0_25px_60px_-15px_rgba(46,107,255,0.8)] hover:scale-105",
+        hero: "bg-electric-blue text-white shadow-lg hover:shadow-xl hover:bg-electric-blue/90 hover:scale-105",
         glass: "backdrop-blur-md bg-white/10 border border-white/20 text-white hover:bg-white/20",
       },
       size: {

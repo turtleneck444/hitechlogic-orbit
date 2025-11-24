@@ -33,7 +33,7 @@ export function ReliabilityBaselineCTA() {
             </div>
 
             <div className="mt-10">
-              <Button variant="hero" size="xl" asChild className="shadow-[0_20px_45px_-20px_rgba(46,107,255,0.8)]">
+              <Button variant="hero" size="xl" asChild className="shadow-lg">
                 <Link to="/contact" className="flex items-center gap-2">
                   <span>Request Your Assessment</span>
                   <ArrowRight className="h-5 w-5" />

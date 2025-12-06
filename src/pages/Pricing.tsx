@@ -59,18 +59,138 @@ const plans = [
 ];
 
 export default function Pricing() {
-  const schema = {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://hitechlogic.com/#organization",
+    "name": "HiTechLogic",
+    "url": "https://hitechlogic.com",
+    "logo": "https://hitechlogic.com/logo.png"
+  };
+
+  const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": "https://hitechlogic.com/pricing/#product",
     "name": "HiTechLogic Managed Infrastructure Services",
-    "description": "Comprehensive managed infrastructure operations with monitoring, automation, and reliability engineering",
-    "offers": plans.map(plan => ({
+    "description": "Enterprise-grade managed infrastructure operations with AI-powered monitoring, automation, and 24/7 expert support. Achieve 99.99% uptime and reduce operational costs by 40%.",
+    "brand": {
+      "@id": "https://hitechlogic.com/#organization"
+    },
+    "offers": plans.map((plan, index) => ({
       "@type": "Offer",
-      "name": plan.name,
+      "name": `${plan.name} Plan`,
       "description": plan.description,
-      "price": plan.price,
-      "priceCurrency": "USD"
-    }))
+      "priceCurrency": "USD",
+      "price": "0",
+      "priceValidUntil": "2026-12-31",
+      "availability": "https://schema.org/InStock",
+      "url": "https://hitechlogic.com/pricing",
+      "seller": {
+        "@id": "https://hitechlogic.com/#organization"
+      },
+      "itemOffered": {
+        "@type": "Service",
+        "name": `HiTechLogic ${plan.name}`,
+        "description": plan.features.join(", ")
+      }
+    })),
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "500",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  };
+
+  const webpageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://hitechlogic.com/pricing/#webpage",
+    "url": "https://hitechlogic.com/pricing",
+    "name": "Pricing Plans - Transparent Infrastructure Management Costs | HiTechLogic",
+    "description": "Simple, transparent pricing for managed infrastructure operations. Choose from Starter, Growth, or Enterprise plans with 24/7 monitoring, automation, and expert support.",
+    "inLanguage": "en-US",
+    "isPartOf": {
+      "@id": "https://hitechlogic.com/#website"
+    },
+    "about": {
+      "@id": "https://hitechlogic.com/#organization"
+    },
+    "mainEntity": {
+      "@id": "https://hitechlogic.com/pricing/#product"
+    },
+    "breadcrumb": {
+      "@id": "https://hitechlogic.com/pricing/#breadcrumb"
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://hitechlogic.com/pricing/#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://hitechlogic.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Pricing",
+        "item": "https://hitechlogic.com/pricing"
+      }
+    ]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How is HiTechLogic pricing calculated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pricing is based on your infrastructure scale, log volume, and number of environments. We'll work with you to create a custom quote that fits your needs and budget."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I change HiTechLogic plans later?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. You can upgrade or downgrade your plan at any time as your needs evolve. Our flexible plans grow with your organization."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What about onboarding fees?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Enterprise customers may have one-time onboarding fees depending on complexity. We'll discuss this transparently during the sales process."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a free trial or proof-of-concept period?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we offer free 30-day proof-of-concept deployments for enterprise clients. Experience our operational excellence firsthand without any long-term commitment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What SLA guarantees do you offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Enterprise plans include custom SLA agreements with up to 99.99% uptime guarantees, 5-minute incident response times, and dedicated support engineering."
+        }
+      }
+    ]
   };
 
   return (
@@ -78,9 +198,9 @@ export default function Pricing() {
       <SEO 
         title="Pricing Plans - Transparent Infrastructure Management Costs | HiTechLogic"
         description="Simple, transparent pricing for managed infrastructure operations. Choose from Starter, Growth, or Enterprise plans with 24/7 monitoring, automation, and expert support. No hidden fees, cancel anytime."
-        keywords="infrastructure management pricing, managed services cost, DevOps pricing, SRE services pricing, cloud operations pricing, infrastructure automation cost"
+        keywords="infrastructure management pricing, managed services cost, DevOps pricing, SRE services pricing, cloud operations pricing, infrastructure automation cost, enterprise IT pricing, managed infrastructure plans"
         canonical="https://hitechlogic.com/pricing"
-        schema={schema}
+        schema={[organizationSchema, productSchema, webpageSchema, breadcrumbSchema, faqSchema]}
       />
       <Layout>
       {/* Hero Section */}

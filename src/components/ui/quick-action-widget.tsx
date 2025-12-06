@@ -161,33 +161,25 @@ export function QuickActionWidget() {
               {quickActions.map((action, index) => {
                 const hasHref = !!action.href;
                 const isExternal = action.href?.startsWith('http');
-                const CardWrapper = !hasHref ? 'button' : (isExternal ? 'a' : Link);
 
-                const cardProps = !hasHref
-                  ? { type: 'button' as const }
-                  : (isExternal
-                    ? { href: action.href, target: '_blank', rel: 'noopener noreferrer' }
-                    : { to: action.href });
+                const commonProps = {
+                  key: action.id,
+                  onClick: () => handleActionClick(action),
+                  onMouseEnter: () => setHoveredAction(action.id),
+                  onMouseLeave: () => setHoveredAction(null),
+                  className: cn(
+                    "group relative p-4 rounded-xl border transition-all duration-200",
+                    "hover:shadow-md hover:-translate-y-0.5",
+                    "bg-white cursor-pointer text-left",
+                    hoveredAction === action.id
+                      ? "border-[#2E6BFF]/40 shadow-sm bg-gray-50/50"
+                      : "border-gray-200 hover:border-gray-300"
+                  ),
+                  style: { animationDelay: `${index * 40}ms` }
+                };
 
-                return (
-                  <CardWrapper
-                    key={action.id}
-                    {...cardProps}
-                    onClick={() => handleActionClick(action)}
-                    onMouseEnter={() => setHoveredAction(action.id)}
-                    onMouseLeave={() => setHoveredAction(null)}
-                    className={cn(
-                      "group relative p-4 rounded-xl border transition-all duration-200",
-                      "hover:shadow-md hover:-translate-y-0.5",
-                      "bg-white cursor-pointer text-left",
-                      hoveredAction === action.id
-                        ? "border-[#2E6BFF]/40 shadow-sm bg-gray-50/50"
-                        : "border-gray-200 hover:border-gray-300"
-                    )}
-                    style={{
-                      animationDelay: `${index * 40}ms`,
-                    }}
-                  >
+                const cardContent = (
+                  <>
                     {/* Content */}
                     <div className="flex flex-col items-center text-center gap-2.5">
                       {/* Icon */}
@@ -217,7 +209,29 @@ export function QuickActionWidget() {
                         </p>
                       </div>
                     </div>
-                  </CardWrapper>
+                  </>
+                );
+
+                if (!hasHref) {
+                  return (
+                    <button type="button" {...commonProps}>
+                      {cardContent}
+                    </button>
+                  );
+                }
+
+                if (isExternal) {
+                  return (
+                    <a href={action.href} target="_blank" rel="noopener noreferrer" {...commonProps}>
+                      {cardContent}
+                    </a>
+                  );
+                }
+
+                return (
+                  <Link to={action.href!} {...commonProps}>
+                    {cardContent}
+                  </Link>
                 );
               })}
             </div>

@@ -296,10 +296,10 @@ Remember: You represent HiTechLogic's enterprise excellence. Every response shou
             }
           }
         },
-        conversation_history: conversationContext.map(msg => ({
-          role: msg.sender === 'user' ? 'user' : 'assistant',
-          message: msg.content
-        }))
+      conversation_history: conversationContext.map(msg => ({
+        role: msg.role === 'user' ? 'user' : 'assistant',
+        message: msg.content
+      }))
       };
 
       console.log('Sending to Eleven Labs Conversational AI:', {

@@ -17,7 +17,7 @@ export function SEO({
   keywords,
   canonical,
   ogType = "website",
-  ogImage = "https://hitechlogic.com/og-image.jpg",
+  ogImage = "https://hitechlogic.com/og-image.png",
   twitterCard = "summary_large_image",
   schema
 }: SEOProps) {

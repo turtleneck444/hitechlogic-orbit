@@ -386,7 +386,20 @@ export default function Contact() {
                       Fill out your details, tell us your top priorities, and we’ll respond with a curated plan within one business day.
                     </p>
                   </div>
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form 
+                    name="strategy-session" 
+                    method="POST" 
+                    data-netlify="true" 
+                    netlify-honeypot="bot-field"
+                    onSubmit={handleSubmit} 
+                    className="space-y-4"
+                  >
+                    <input type="hidden" name="form-name" value="strategy-session" />
+                    <p hidden>
+                      <label>
+                        Don't fill this out: <input name="bot-field" />
+                      </label>
+                    </p>
                     <div className="space-y-2">
                       <Label htmlFor="fullName">Full Name *</Label>
                       <Input id="fullName" name="fullName" placeholder="Jordan Nelson" required />

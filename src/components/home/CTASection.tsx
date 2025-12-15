@@ -81,16 +81,30 @@ export function CTASection() {
               <p className="text-xs text-slate-500 mb-3">
                 Share your details for a tailored strategy session
               </p>
-              <form className="space-y-3">
+              <form 
+                name="quick-request" 
+                method="POST" 
+                data-netlify="true" 
+                netlify-honeypot="bot-field"
+                className="space-y-3"
+              >
+                <input type="hidden" name="form-name" value="quick-request" />
+                <p hidden>
+                  <label>
+                    Don't fill this out: <input name="bot-field" />
+                  </label>
+                </p>
                 <div className="grid grid-cols-2 gap-2">
                   <input
                     type="text"
+                    name="fullName"
                     placeholder="Full Name"
                     className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
                     required
                   />
                   <input
                     type="email"
+                    name="email"
                     placeholder="Work Email"
                     className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
                     required
@@ -99,59 +113,66 @@ export function CTASection() {
                 <div className="grid grid-cols-2 gap-2">
                   <input
                     type="text"
+                    name="role"
                     placeholder="Role / Title"
                     className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
                   />
                   <input
                     type="text"
+                    name="company"
                     placeholder="Company"
                     className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   <select
+                    name="cloud-stack"
                     className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs text-slate-600 focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
                     defaultValue=""
                     required
                   >
                     <option value="" disabled>Primary cloud / stack</option>
-                    <option>AWS</option>
-                    <option>GCP</option>
-                    <option>Azure</option>
-                    <option>Multi-cloud</option>
-                    <option>Hybrid / On-prem</option>
+                    <option value="AWS">AWS</option>
+                    <option value="GCP">GCP</option>
+                    <option value="Azure">Azure</option>
+                    <option value="Multi-cloud">Multi-cloud</option>
+                    <option value="Hybrid / On-prem">Hybrid / On-prem</option>
                   </select>
                   <select
+                    name="urgency"
                     className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs text-slate-600 focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
                     defaultValue=""
                   >
                     <option value="" disabled>Urgency / timeline</option>
-                    <option>Immediate (0-4 weeks)</option>
-                    <option>1-3 months</option>
-                    <option>Quarter (3-6 months)</option>
-                    <option>Exploring options</option>
+                    <option value="Immediate (0-4 weeks)">Immediate (0-4 weeks)</option>
+                    <option value="1-3 months">1-3 months</option>
+                    <option value="Quarter (3-6 months)">Quarter (3-6 months)</option>
+                    <option value="Exploring options">Exploring options</option>
                   </select>
                 </div>
                 <div className="grid grid-cols-2 gap-2">
                   <select
+                    name="focus"
                     className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs text-slate-600 focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
                     defaultValue=""
                   >
                     <option value="" disabled>Top focus</option>
-                    <option>Reduce alert noise</option>
-                    <option>Improve MTTR / SRE</option>
-                    <option>Cost optimization / FinOps</option>
-                    <option>Platform reliability / scaling</option>
-                    <option>Security & compliance</option>
-                    <option>AI automation use cases</option>
+                    <option value="Reduce alert noise">Reduce alert noise</option>
+                    <option value="Improve MTTR / SRE">Improve MTTR / SRE</option>
+                    <option value="Cost optimization / FinOps">Cost optimization / FinOps</option>
+                    <option value="Platform reliability / scaling">Platform reliability / scaling</option>
+                    <option value="Security & compliance">Security & compliance</option>
+                    <option value="AI automation use cases">AI automation use cases</option>
                   </select>
                   <input
                     type="text"
+                    name="tooling"
                     placeholder="Key tooling (Datadog, PagerDuty, Jira, etc.)"
                     className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition"
                   />
                 </div>
                 <textarea
+                  name="context"
                   placeholder="Context we should know (pain points, environments, success criteria)"
                   rows={3}
                   className="w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs focus:border-[hsl(var(--accent-blue))] focus:ring-1 focus:ring-[hsl(var(--accent-blue))]/20 outline-none transition resize-none"

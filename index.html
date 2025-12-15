@@ -27,6 +27,35 @@
   </head>
 
   <body>
+    <!-- Netlify Forms - Hidden form definitions for deploy-time detection -->
+    <form name="strategy-session" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="fullName" />
+      <input type="email" name="email" />
+      <input type="text" name="company" />
+      <input type="text" name="role" />
+      <input type="text" name="challenges[]" />
+      <input type="text" name="best-time" />
+      <input type="text" name="timeline" />
+      <textarea name="context"></textarea>
+      <input type="text" name="budget" />
+    </form>
+    
+    <form name="quick-request" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="fullName" />
+      <input type="email" name="email" />
+      <input type="text" name="role" />
+      <input type="text" name="company" />
+      <input type="text" name="cloud-stack" />
+      <input type="text" name="urgency" />
+      <input type="text" name="focus" />
+      <input type="text" name="tooling" />
+      <textarea name="context"></textarea>
+    </form>
+    
+    <form name="newsletter" netlify netlify-honeypot="bot-field" hidden>
+      <input type="email" name="email" />
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -309,16 +309,30 @@ export default function Resources() {
               <p className="text-xl text-blue-100 mb-8">
                 Get expert cloud operations, DevOps, and FinOps insights delivered to your inbox
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <form 
+                name="newsletter" 
+                method="POST" 
+                data-netlify="true" 
+                netlify-honeypot="bot-field"
+                className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+              >
+                <input type="hidden" name="form-name" value="newsletter" />
+                <p hidden>
+                  <label>
+                    Don't fill this out: <input name="bot-field" />
+                  </label>
+                </p>
                 <Input
                   type="email"
+                  name="email"
                   placeholder="Enter your email"
                   className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-blue-200"
+                  required
                 />
-                <Button variant="secondary" size="lg" className="bg-white text-[hsl(var(--navy))] hover:bg-blue-50">
+                <Button type="submit" variant="secondary" size="lg" className="bg-white text-[hsl(var(--navy))] hover:bg-blue-50">
                   Subscribe
                 </Button>
-              </div>
+              </form>
             </div>
           </div>
         </section>

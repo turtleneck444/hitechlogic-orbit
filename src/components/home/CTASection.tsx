@@ -84,6 +84,7 @@ export function CTASection() {
               <form 
                 name="quick-request" 
                 method="POST" 
+                action="/success"
                 data-netlify="true" 
                 netlify-honeypot="bot-field"
                 className="space-y-3"

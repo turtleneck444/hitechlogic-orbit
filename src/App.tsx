@@ -18,6 +18,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import Demo from "./pages/Demo";
+import FormSuccess from "./pages/FormSuccess";
 import Admin from "./pages/Admin";
 import { AdminProvider } from "./contexts/AdminContext";
 import InfrastructureCloudOperations from "./pages/services/InfrastructureCloudOperations";
@@ -62,6 +63,7 @@ const App = () => (
           <Route path="/legal/privacy" element={<Privacy />} />
           <Route path="/legal/terms" element={<Terms />} />
           <Route path="/demo" element={<Demo />} />
+          <Route path="/success" element={<FormSuccess />} />
           <Route path="/services/rapid-prototyping/rapid-design-prototyping" element={<RapidDesignPrototypingPage />} />
           <Route path="/services/rapid-prototyping/build-launch" element={<BuildLaunchPage />} />
           <Route path="/services/rapid-prototyping/operate" element={<OperatePage />} />

@@ -312,6 +312,7 @@ export default function Resources() {
               <form 
                 name="newsletter" 
                 method="POST" 
+                action="/success"
                 data-netlify="true" 
                 netlify-honeypot="bot-field"
                 className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"

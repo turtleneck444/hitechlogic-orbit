@@ -389,9 +389,9 @@ export default function Contact() {
                   <form 
                     name="strategy-session" 
                     method="POST" 
+                    action="/success"
                     data-netlify="true" 
                     netlify-honeypot="bot-field"
-                    onSubmit={handleSubmit} 
                     className="space-y-4"
                   >
                     <input type="hidden" name="form-name" value="strategy-session" />

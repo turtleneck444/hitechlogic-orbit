@@ -12,6 +12,15 @@ import {
   CheckCircle2,
   ArrowRight,
 } from "lucide-react";
+import {
+  organizationSchema,
+  createAboutPageSchema,
+  createBreadcrumbSchema,
+  createFAQSchema,
+  SCHEMA_CONSTANTS
+} from "@/lib/schema";
+
+const { SITE_URL } = SCHEMA_CONSTANTS;
 
 export default function About() {
   const companyValues = [
@@ -77,17 +86,48 @@ export default function About() {
     }
   ];
 
-  const organizationSchema = {
+  // About page specific schema
+  const aboutPageSchema = createAboutPageSchema(`${SITE_URL}/about`);
+
+  // Breadcrumb
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Home", url: SITE_URL },
+    { name: "About", url: `${SITE_URL}/about` }
+  ]);
+
+  // FAQ schema
+  const faqSchema = createFAQSchema([
+    {
+      question: "How long has HiTechLogic been in business?",
+      answer: "HiTechLogic was founded in 2015 and has been transforming enterprise infrastructure operations for over 10 years. We've grown from a small team to serving 500+ enterprise clients worldwide."
+    },
+    {
+      question: "What is HiTechLogic's mission?",
+      answer: "Our mission is to eliminate infrastructure operations as a constraint to business growth. Through intelligent automation, zero-compromise engineering, and relentless optimization, we enable organizations to focus entirely on their mission while we handle the complexity."
+    },
+    {
+      question: "What makes HiTechLogic's approach unique?",
+      answer: "We combine AI-driven automation with enterprise-grade reliability. Our four pillars—Enterprise Trust, Precision Engineering, Innovation Without Risk, and Partnership First—guide every decision and service we provide."
+    }
+  ], `${SITE_URL}/about/#faq`);
+
+  // Company timeline schema
+  const timelineSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://hitechlogic.com/#organization",
-    "name": "HiTechLogic",
-    "alternateName": "HiTechLogic Inc.",
-    "description": "Enterprise-grade AI-powered infrastructure reliability, automation, and managed operations. Reduce alert noise by 80-90%, accelerate MTTR by 85%, and achieve 99.99% uptime with intelligent DevOps solutions.",
-    "url": "https://hitechlogic.com",
-    "logo": "https://hitechlogic.com/logo.png",
-    "foundingDate": "2015",
-    "slogan": "Infrastructure Operations Perfected"
+    "@type": "ItemList",
+    "@id": `${SITE_URL}/about/#timeline`,
+    "name": "HiTechLogic Company Timeline",
+    "description": "A decade of transformation and innovation in enterprise infrastructure operations",
+    "itemListElement": timeline.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Event",
+        "name": `${item.year}: ${item.title}`,
+        "description": item.description,
+        "startDate": `${item.year}-01-01`
+      }
+    }))
   };
 
   return (
@@ -96,8 +136,8 @@ export default function About() {
         title="About HiTechLogic | Enterprise Infrastructure & Cloud Operations"
         description="Transforming enterprise technology operations worldwide. 10+ years of excellence with 99.99% uptime guarantees, AI-driven automation, and zero-compromise infrastructure management."
         keywords="enterprise infrastructure, managed services, cloud operations, AI automation, zero trust security, high availability, enterprise solutions, IT transformation, operational excellence"
-        canonical="https://hitechlogic.com/about"
-        schema={[organizationSchema]}
+        canonical={`${SITE_URL}/about`}
+        schema={[organizationSchema, aboutPageSchema, breadcrumbSchema, faqSchema, timelineSchema]}
       />
       <Layout>
         <div className="font-sans">

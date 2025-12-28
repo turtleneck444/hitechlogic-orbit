@@ -6,6 +6,17 @@ import { Calendar, User, ArrowRight, Clock, BookOpen, Filter, Tag } from "lucide
 import { blogPosts, getFeaturedPosts, getAllCategories } from "@/data/blogPosts";
 import { useState } from "react";
 import { SEO } from "@/components/SEO";
+import {
+  organizationSchema,
+  createWebPageSchema,
+  createBreadcrumbSchema,
+  createCollectionPageSchema,
+  createItemListSchema,
+  createBlogPostingSchema,
+  SCHEMA_CONSTANTS
+} from "@/lib/schema";
+
+const { SITE_URL } = SCHEMA_CONSTANTS;
 
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
@@ -16,26 +27,65 @@ export default function Blog() {
     ? blogPosts
     : blogPosts.filter(post => post.category === selectedCategory);
 
-  const schema = {
+  // Blog collection page schema
+  const blogSchema = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: "HiTechLogic Engineering Insights",
-    description: "Expert insights on cloud infrastructure, DevOps automation, FinOps, and AI-powered operations.",
-    url: "https://hitechlogic.com/blog",
-    publisher: {
-      "@type": "Organization",
-      name: "HiTechLogic"
-    }
+    "@id": `${SITE_URL}/blog/#blog`,
+    "name": "HiTechLogic Engineering Insights",
+    "description": "Expert insights on cloud infrastructure, DevOps automation, FinOps, and AI-powered operations from the HiTechLogic engineering team.",
+    "url": `${SITE_URL}/blog`,
+    "publisher": { "@id": `${SITE_URL}/#organization` },
+    "inLanguage": "en-US",
+    "blogPost": blogPosts.slice(0, 10).map(post => ({
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "url": `${SITE_URL}/blog/${post.slug}`,
+      "datePublished": post.date,
+      "author": {
+        "@type": "Person",
+        "name": post.author
+      },
+      "image": post.image,
+      "articleSection": post.category,
+      "publisher": { "@id": `${SITE_URL}/#organization` }
+    }))
   };
+
+  // WebPage schema
+  const webpageSchema = createWebPageSchema({
+    url: `${SITE_URL}/blog`,
+    name: "Engineering Insights & Best Practices | HiTechLogic Blog",
+    description: "Expert insights on cloud infrastructure, DevOps automation, FinOps, AI-powered operations, and reliability engineering from the HiTechLogic team.",
+    mainEntity: `${SITE_URL}/blog/#blog`
+  });
+
+  // Breadcrumb schema
+  const breadcrumbSchema = createBreadcrumbSchema([
+    { name: "Home", url: SITE_URL },
+    { name: "Blog", url: `${SITE_URL}/blog` }
+  ]);
+
+  // ItemList schema for blog posts
+  const blogPostsListSchema = createItemListSchema(
+    blogPosts.map(post => ({
+      name: post.title,
+      url: `${SITE_URL}/blog/${post.slug}`,
+      description: post.excerpt
+    })),
+    "HiTechLogic Blog Articles",
+    `${SITE_URL}/blog/#itemlist`
+  );
 
   return (
     <>
       <SEO
         title="Engineering Insights & Best Practices | HiTechLogic Blog"
         description="Expert insights on cloud infrastructure, DevOps automation, FinOps, AI-powered operations, and reliability engineering from the HiTechLogic team."
-        keywords="cloud infrastructure, devops, finops, ai automation, cloud optimization, infrastructure monitoring, rapid prototyping"
-        canonical="https://hitechlogic.com/blog"
-        schema={schema}
+        keywords="cloud infrastructure, devops, finops, ai automation, cloud optimization, infrastructure monitoring, rapid prototyping, SRE best practices, kubernetes tutorials, infrastructure as code"
+        canonical={`${SITE_URL}/blog`}
+        schema={[organizationSchema, blogSchema, webpageSchema, breadcrumbSchema, blogPostsListSchema]}
       />
       <Layout>
         {/* Hero Section */}

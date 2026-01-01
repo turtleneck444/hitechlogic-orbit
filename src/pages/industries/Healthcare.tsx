@@ -40,16 +40,104 @@ export default function Healthcare() {
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": "https://hitechlogic.com/industries/healthcare#service",
-    name: "Healthcare Infrastructure & Compliance Solutions",
-    provider: {
-      "@type": "Organization",
-      name: "HiTechLogic",
-      "@id": "https://hitechlogic.com/#organization"
-    },
-    slogan: "Patient safety and compliance through technology reliability",
-    description: "Healthcare infrastructure with regulatory compliance, 99.999% uptime for clinical systems, zero patient data breaches, and patient safety monitoring for hospitals and healthcare providers."
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://hitechlogic.com/#organization",
+        "name": "HiTechLogic",
+        "url": "https://hitechlogic.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://hitechlogic.com/logo.png"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://hitechlogic.com/#website",
+        "url": "https://hitechlogic.com",
+        "name": "HiTechLogic",
+        "publisher": { "@id": "https://hitechlogic.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hitechlogic.com/industries/healthcare/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://hitechlogic.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Industries",
+            "item": "https://hitechlogic.com/industries"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Healthcare",
+            "item": "https://hitechlogic.com/industries/healthcare"
+          }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://hitechlogic.com/industries/healthcare/#webpage",
+        "url": "https://hitechlogic.com/industries/healthcare",
+        "name": "Healthcare Solutions | Patient Safety Infrastructure | HiTechLogic",
+        "description": "Patient safety and compliance through technology reliability. Healthcare compliance automation, 99.999% clinical system uptime, zero patient data breaches for hospitals and healthcare organizations.",
+        "isPartOf": { "@id": "https://hitechlogic.com/#website" },
+        "about": { "@id": "https://hitechlogic.com/#organization" },
+        "breadcrumb": { "@id": "https://hitechlogic.com/industries/healthcare/#breadcrumb" },
+        "inLanguage": "en-US",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-01-01"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://hitechlogic.com/industries/healthcare/#service",
+        "name": "Healthcare Infrastructure & Compliance Solutions",
+        "provider": { "@id": "https://hitechlogic.com/#organization" },
+        "serviceType": "Healthcare Technology Infrastructure & Compliance",
+        "areaServed": "Worldwide",
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://hitechlogic.com/industries/healthcare",
+          "servicePhone": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "availableLanguage": ["English"]
+          }
+        },
+        "slogan": "Patient safety and compliance through technology reliability",
+        "description": "Healthcare infrastructure with regulatory compliance, 99.999% uptime for clinical systems, zero patient data breaches, and patient safety monitoring for hospitals and healthcare providers.",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Chief Information Officers, Chief Medical Officers, VP of Clinical Technology, Director of IT Operations in healthcare organizations"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "38",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://hitechlogic.com/industries/healthcare/#faq",
+        "mainEntity": faqs.map((faq) => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      }
+    ]
   };
 
   return (

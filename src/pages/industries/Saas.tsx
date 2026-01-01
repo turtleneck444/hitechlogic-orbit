@@ -22,17 +22,121 @@ export default function Saas() {
     Users,
   };
 
+  const faqs = [
+    {
+      question: "How do you ensure 99.999% uptime for enterprise SaaS platforms?",
+      answer: "We implement multi-region active-active architectures with automated failover, real-time monitoring, and predictive scaling. Our infrastructure uses redundant systems across multiple availability zones with automated recovery procedures that complete within seconds."
+    },
+    {
+      question: "What enterprise compliance certifications do you support?",
+      answer: "We support SOC 2 Type II, ISO 27001, GDPR, HIPAA, FedRAMP, and industry-specific compliance frameworks. Our automated compliance monitoring and reporting systems maintain continuous certification readiness."
+    },
+    {
+      question: "Can you scale to support millions of concurrent users?",
+      answer: "Yes. Our auto-scaling infrastructure has successfully supported SaaS platforms with 10M+ active users. We use predictive algorithms based on historical patterns and real-time metrics to anticipate demand rather than react to it."
+    }
+  ];
+
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    name: "SaaS Infrastructure & Enterprise Reliability Solutions",
-    provider: {
-      "@type": "Organization",
-      name: "HiTechLogic",
-      "@id": "https://hitechlogic.com/#organization"
-    },
-    slogan: "Enterprise-grade reliability for SaaS platforms",
-    description: "SaaS infrastructure with 99.999% uptime SLA, multi-tenant scaling to 10M+ users, enterprise compliance, and enterprise-grade security."
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://hitechlogic.com/#organization",
+        "name": "HiTechLogic",
+        "url": "https://hitechlogic.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://hitechlogic.com/logo.png"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://hitechlogic.com/#website",
+        "url": "https://hitechlogic.com",
+        "name": "HiTechLogic",
+        "publisher": { "@id": "https://hitechlogic.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hitechlogic.com/industries/saas/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://hitechlogic.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Industries",
+            "item": "https://hitechlogic.com/industries"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "SaaS",
+            "item": "https://hitechlogic.com/industries/saas"
+          }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://hitechlogic.com/industries/saas/#webpage",
+        "url": "https://hitechlogic.com/industries/saas",
+        "name": "SaaS Solutions | Enterprise-Grade Infrastructure & Reliability | HiTechLogic",
+        "description": "Enterprise-grade reliability for SaaS platforms. 99.999% uptime SLA, multi-tenant scaling, enterprise compliance for B2B and enterprise SaaS.",
+        "isPartOf": { "@id": "https://hitechlogic.com/#website" },
+        "about": { "@id": "https://hitechlogic.com/#organization" },
+        "breadcrumb": { "@id": "https://hitechlogic.com/industries/saas/#breadcrumb" },
+        "inLanguage": "en-US",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-01-01"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://hitechlogic.com/industries/saas/#service",
+        "name": "SaaS Infrastructure & Enterprise Reliability Solutions",
+        "provider": { "@id": "https://hitechlogic.com/#organization" },
+        "serviceType": "SaaS Platform Infrastructure & Reliability",
+        "areaServed": "Worldwide",
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://hitechlogic.com/industries/saas",
+          "servicePhone": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "availableLanguage": ["English"]
+          }
+        },
+        "slogan": "Enterprise-grade reliability for SaaS platforms",
+        "description": "SaaS infrastructure with 99.999% uptime SLA, multi-tenant scaling to 10M+ users, enterprise compliance, and enterprise-grade security.",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Chief Technology Officers, VP of Engineering, Director of Platform Operations, SRE Managers in SaaS companies"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "45",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://hitechlogic.com/industries/saas/#faq",
+        "mainEntity": faqs.map((faq) => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      }
+    ]
   };
 
   return (
@@ -181,6 +285,31 @@ export default function Saas() {
                   <Shield className="h-8 w-8 text-[hsl(var(--accent-blue))] mx-auto mb-3" />
                   <div className="text-sm font-semibold text-[hsl(var(--navy))]">{compliance}</div>
                   <div className="text-xs text-slate-500 mt-1">Certified</div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="section-space bg-gradient-to-br from-slate-50 to-[hsl(var(--accent-blue))]/15">
+          <div className="mx-auto w-full max-w-4xl px-6">
+            <div className="text-center mb-16">
+              <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">
+                SaaS infrastructure questions answered
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <Card key={index} className="border-2 border-[hsl(var(--accent-blue))]/20 overflow-hidden">
+                  <button className="w-full p-6 text-left flex items-center justify-between hover:bg-[hsl(var(--accent-blue))]/15 transition-colors">
+                    <span className="font-semibold text-[hsl(var(--navy))] pr-8">{faq.question}</span>
+                    <ArrowRight className="h-5 w-5 text-[hsl(var(--accent-blue))] shrink-0" />
+                  </button>
+                  <div className="px-6 pb-6 text-slate-600 leading-relaxed border-t border-[hsl(var(--accent-blue))]/20 pt-4">
+                    {faq.answer}
+                  </div>
                 </Card>
               ))}
             </div>

@@ -22,17 +22,121 @@ export default function Ecommerce() {
     Users,
   };
 
+  const faqs = [
+    {
+      question: "How do you handle traffic spikes during flash sales and Black Friday?",
+      answer: "Our auto-scaling infrastructure uses predictive algorithms based on historical patterns and real-time metrics. We've successfully handled 500%+ traffic increases during peak events while maintaining sub-second response times and zero downtime. Your customers never experience slowdowns when it matters most."
+    },
+    {
+      question: "What payment security compliance do you support?",
+      answer: "We support PCI-DSS Level 1 compliance, the highest level of payment security certification. Our infrastructure includes end-to-end encryption, tokenization, and continuous compliance monitoring for credit card processing, digital wallets, and alternative payment methods."
+    },
+    {
+      question: "Can you integrate with our existing e-commerce platform?",
+      answer: "Yes, we integrate seamlessly with major platforms including Shopify, Magento, WooCommerce, BigCommerce, and custom solutions. Our approach enhances your existing infrastructure without requiring platform migrations or major code changes."
+    }
+  ];
+
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    name: "E-commerce Infrastructure & Performance Solutions",
-    provider: {
-      "@type": "Organization",
-      name: "HiTechLogic",
-      "@id": "https://hitechlogic.com/#organization"
-    },
-    slogan: "High-velocity commerce with zero downtime",
-    description: "E-commerce infrastructure with peak traffic scaling, 99.999% uptime during sales events, payment security compliance, and real-time order processing."
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://hitechlogic.com/#organization",
+        "name": "HiTechLogic",
+        "url": "https://hitechlogic.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://hitechlogic.com/logo.png"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://hitechlogic.com/#website",
+        "url": "https://hitechlogic.com",
+        "name": "HiTechLogic",
+        "publisher": { "@id": "https://hitechlogic.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hitechlogic.com/industries/ecommerce/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://hitechlogic.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Industries",
+            "item": "https://hitechlogic.com/industries"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "E-commerce",
+            "item": "https://hitechlogic.com/industries/ecommerce"
+          }
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://hitechlogic.com/industries/ecommerce/#webpage",
+        "url": "https://hitechlogic.com/industries/ecommerce",
+        "name": "E-commerce Solutions | High-Velocity Commerce Infrastructure | HiTechLogic",
+        "description": "High-velocity commerce with zero downtime. Peak traffic scaling, 99.999% uptime during sales, payment security compliance for e-commerce platforms.",
+        "isPartOf": { "@id": "https://hitechlogic.com/#website" },
+        "about": { "@id": "https://hitechlogic.com/#organization" },
+        "breadcrumb": { "@id": "https://hitechlogic.com/industries/ecommerce/#breadcrumb" },
+        "inLanguage": "en-US",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-01-01"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://hitechlogic.com/industries/ecommerce/#service",
+        "name": "E-commerce Infrastructure & Performance Solutions",
+        "provider": { "@id": "https://hitechlogic.com/#organization" },
+        "serviceType": "E-commerce Technology Infrastructure & Performance",
+        "areaServed": "Worldwide",
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": "https://hitechlogic.com/industries/ecommerce",
+          "servicePhone": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "availableLanguage": ["English"]
+          }
+        },
+        "slogan": "High-velocity commerce with zero downtime",
+        "description": "E-commerce infrastructure with peak traffic scaling, 99.999% uptime during sales events, payment security compliance, and real-time order processing.",
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Chief Technology Officers, VP of Engineering, Director of E-commerce, Head of Platform Operations in retail and e-commerce companies"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "52",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://hitechlogic.com/industries/ecommerce/#faq",
+        "mainEntity": faqs.map((faq) => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      }
+    ]
   };
 
   return (
@@ -181,6 +285,31 @@ export default function Ecommerce() {
                   <Shield className="h-8 w-8 text-[hsl(var(--accent-blue))] mx-auto mb-3" />
                   <div className="text-sm font-semibold text-[hsl(var(--navy))]">{compliance}</div>
                   <div className="text-xs text-slate-500 mt-1">Certified</div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="section-space bg-gradient-to-br from-slate-50 to-[hsl(var(--accent-blue))]/15">
+          <div className="mx-auto w-full max-w-4xl px-6">
+            <div className="text-center mb-16">
+              <h2 className="mt-4 text-4xl font-bold text-[hsl(var(--navy))]">
+                E-commerce infrastructure questions answered
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <Card key={index} className="border-2 border-[hsl(var(--accent-blue))]/20 overflow-hidden">
+                  <button className="w-full p-6 text-left flex items-center justify-between hover:bg-[hsl(var(--accent-blue))]/15 transition-colors">
+                    <span className="font-semibold text-[hsl(var(--navy))] pr-8">{faq.question}</span>
+                    <ArrowRight className="h-5 w-5 text-[hsl(var(--accent-blue))] shrink-0" />
+                  </button>
+                  <div className="px-6 pb-6 text-slate-600 leading-relaxed border-t border-[hsl(var(--accent-blue))]/20 pt-4">
+                    {faq.answer}
+                  </div>
                 </Card>
               ))}
             </div>

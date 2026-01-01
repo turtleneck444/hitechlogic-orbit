@@ -45,18 +45,79 @@ export default function Resources() {
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": resources.map((resource, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "item": {
-        "@type": "Article",
-        "name": resource.title,
-        "description": resource.description,
-        "author": resource.author,
-        "datePublished": resource.date,
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://hitechlogic.com/#organization",
+        "name": "HiTechLogic",
+        "url": "https://hitechlogic.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://hitechlogic.com/logo.png"
+        }
       },
-    })),
+      {
+        "@type": "WebSite",
+        "@id": "https://hitechlogic.com/#website",
+        "url": "https://hitechlogic.com",
+        "name": "HiTechLogic",
+        "publisher": { "@id": "https://hitechlogic.com/#organization" }
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://hitechlogic.com/resources/#webpage",
+        "url": "https://hitechlogic.com/resources",
+        "name": "Resources: Cloud, DevOps, Security & FinOps Insights | HiTechLogic",
+        "description": "Expert insights on cloud operations, DevOps automation, security best practices, FinOps optimization, and SRE. Whitepapers, guides, and webinars from industry leaders.",
+        "isPartOf": { "@id": "https://hitechlogic.com/#website" },
+        "about": { "@id": "https://hitechlogic.com/#organization" },
+        "breadcrumb": { "@id": "https://hitechlogic.com/resources/#breadcrumb" },
+        "inLanguage": "en-US",
+        "datePublished": "2023-01-01",
+        "dateModified": "2025-01-01"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hitechlogic.com/resources/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://hitechlogic.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Resources",
+            "item": "https://hitechlogic.com/resources"
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://hitechlogic.com/resources/#resource-list",
+        "name": "HiTechLogic Resources",
+        "description": "Curated collection of whitepapers, guides, blogs, and webinars on cloud operations, DevOps, and infrastructure management",
+        "numberOfItems": resources.length,
+        "itemListElement": resources.map((resource, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "item": {
+            "@type": "Article",
+            "@id": `https://hitechlogic.com${resource.href}`,
+            "name": resource.title,
+            "description": resource.description,
+            "author": {
+              "@type": "Person",
+              "name": resource.author
+            },
+            "datePublished": resource.date,
+            "publisher": { "@id": "https://hitechlogic.com/#organization" }
+          }
+        }))
+      }
+    ]
   };
 
   return (

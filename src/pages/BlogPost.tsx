@@ -22,24 +22,102 @@ export default function BlogPost() {
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.title,
-    description: post.excerpt,
-    image: post.image,
-    datePublished: post.date,
-    author: {
-      "@type": "Organization",
-      name: post.author,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "HiTechLogic",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://hitechlogic.com/logo.png",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://hitechlogic.com/#organization",
+        "name": "HiTechLogic",
+        "url": "https://hitechlogic.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://hitechlogic.com/logo.png",
+          "width": 400,
+          "height": 400
+        }
       },
-    },
-    keywords: post.tags.join(", "),
+      {
+        "@type": "WebSite",
+        "@id": "https://hitechlogic.com/#website",
+        "url": "https://hitechlogic.com",
+        "name": "HiTechLogic",
+        "publisher": { "@id": "https://hitechlogic.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `https://hitechlogic.com/blog/${post.slug}/#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://hitechlogic.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://hitechlogic.com/blog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": post.title,
+            "item": `https://hitechlogic.com/blog/${post.slug}`
+          }
+        ]
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": `https://hitechlogic.com/blog/${post.slug}/#article`,
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": `https://hitechlogic.com/blog/${post.slug}/#webpage`
+        },
+        "headline": post.title,
+        "description": post.excerpt,
+        "image": {
+          "@type": "ImageObject",
+          "url": post.image || "https://hitechlogic.com/og-image.png",
+          "width": 1200,
+          "height": 630
+        },
+        "datePublished": post.date,
+        "dateModified": post.date,
+        "author": {
+          "@type": "Person",
+          "name": post.author,
+          "jobTitle": post.authorRole,
+          "worksFor": { "@id": "https://hitechlogic.com/#organization" }
+        },
+        "publisher": { "@id": "https://hitechlogic.com/#organization" },
+        "keywords": post.tags.join(", "),
+        "articleSection": post.category,
+        "inLanguage": "en-US",
+        "isPartOf": { "@id": "https://hitechlogic.com/#website" },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", ".article-excerpt"]
+        },
+        "wordCount": post.content.split(/\s+/).length
+      },
+      {
+        "@type": "WebPage",
+        "@id": `https://hitechlogic.com/blog/${post.slug}/#webpage`,
+        "url": `https://hitechlogic.com/blog/${post.slug}`,
+        "name": `${post.title} | HiTechLogic Blog`,
+        "description": post.excerpt,
+        "isPartOf": { "@id": "https://hitechlogic.com/#website" },
+        "about": { "@id": "https://hitechlogic.com/#organization" },
+        "breadcrumb": { "@id": `https://hitechlogic.com/blog/${post.slug}/#breadcrumb` },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": post.image || "https://hitechlogic.com/og-image.png"
+        },
+        "datePublished": post.date,
+        "dateModified": post.date,
+        "inLanguage": "en-US"
+      }
+    ]
   };
 
   return (
@@ -70,7 +148,7 @@ export default function BlogPost() {
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-white mb-6">
                 {post.title}
               </h1>
-              <p className="text-lg text-white/80 mb-8 leading-relaxed">{post.excerpt}</p>
+              <p className="article-excerpt text-lg text-white/80 mb-8 leading-relaxed">{post.excerpt}</p>
               <div className="flex flex-wrap gap-6 text-sm text-white/70">
                 <div className="flex items-center gap-2">
                   <User className="h-4 w-4" />

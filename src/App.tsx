@@ -38,6 +38,7 @@ import FinancialServices from "./pages/industries/FinancialServices";
 import Healthcare from "./pages/industries/Healthcare";
 import Ecommerce from "./pages/industries/Ecommerce";
 import Saas from "./pages/industries/Saas";
+import Presentation from "./pages/Presentation";
 
 const queryClient = new QueryClient();
 
@@ -84,6 +85,8 @@ const App = () => (
           <Route path="/industries/healthcare" element={<Healthcare />} />
           <Route path="/industries/ecommerce" element={<Ecommerce />} />
           <Route path="/industries/saas" element={<Saas />} />
+          {/* Private Presentation Page - Not linked in navigation */}
+          <Route path="/presentation" element={<Presentation />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

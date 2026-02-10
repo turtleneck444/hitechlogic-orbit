@@ -191,41 +191,48 @@ const trustIndicators = [
 export default function RapidPrototyping() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Rapid Prototyping & Development",
-    "description": "Turn ideas into working prototypes and production-ready applications in 4-8 weeks with AI-accelerated development, cloud-native architecture, and MSP-grade reliability.",
-    "provider": {
-      "@type": "Organization",
-      "name": "HiTechLogic"
-    },
-    "areaServed": "Worldwide",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Rapid Prototyping Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Mobile & Web App Development"
-          }
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://hitechlogic.com/services/rapid-prototyping#service",
+        name: "Rapid Prototyping & Development",
+        description: "Turn ideas into working prototypes and production-ready applications in 4-8 weeks with AI-accelerated development, cloud-native architecture, and MSP-grade reliability.",
+        provider: { "@type": "Organization", "@id": "https://hitechlogic.com/#organization", name: "HiTechLogic" },
+        serviceType: "Rapid Prototyping & MVP Development",
+        areaServed: "Worldwide",
+        audience: { "@type": "Audience", audienceType: "Startup Founders, Product Leaders, CTOs, Innovation Teams" },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Rapid Prototyping Services",
+          itemListElement: [
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mobile & Web App Development" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "MVP Development" } },
+            { "@type": "Offer", itemOffered: { "@type": "Service", name: "Workflow Automation Tools" } },
+          ],
         },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "MVP Development"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Workflow Automation Tools"
-          }
-        }
-      ]
-    }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://hitechlogic.com/services/rapid-prototyping#webpage",
+        url: "https://hitechlogic.com/services/rapid-prototyping",
+        name: "Rapid Prototyping & Development | HiTechLogic",
+        description: "Turn ideas into working MVPs in 4-8 weeks. AI-accelerated development with cloud-native architecture and MSP-grade reliability.",
+        inLanguage: "en-US",
+        isPartOf: { "@id": "https://hitechlogic.com/#website" },
+        about: { "@id": "https://hitechlogic.com/#organization" },
+        datePublished: "2024-01-01",
+        dateModified: "2025-02-10",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hitechlogic.com/services/rapid-prototyping#breadcrumb",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://hitechlogic.com/" },
+          { "@type": "ListItem", position: 2, name: "Services", item: "https://hitechlogic.com/services" },
+          { "@type": "ListItem", position: 3, name: "Rapid Prototyping & Development", item: "https://hitechlogic.com/services/rapid-prototyping" },
+        ],
+      },
+    ],
   };
 
   return (

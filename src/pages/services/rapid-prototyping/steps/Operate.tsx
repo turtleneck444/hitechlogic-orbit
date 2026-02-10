@@ -24,20 +24,39 @@ import {
 export default function Operate() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    provider: {
-      "@type": "Organization",
-      name: "HiTechLogic",
-    },
-    serviceType: "Production Operations Management",
-    name: "Operate & Elevate",
-    description: "Transition to 24/7 reliability with FinOps oversight, continuous improvements, and enterprise-grade operations management.",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-      description: "Production operations management with continuous optimization and scaling support",
-    },
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://hitechlogic.com/services/rapid-prototyping/operate#service",
+        name: "Operate & Elevate",
+        description: "Transition to 24/7 reliability with FinOps oversight, continuous improvements, and enterprise-grade operations management.",
+        provider: { "@type": "Organization", "@id": "https://hitechlogic.com/#organization", name: "HiTechLogic" },
+        serviceType: "Production Operations Management",
+        areaServed: "Worldwide",
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://hitechlogic.com/services/rapid-prototyping/operate#webpage",
+        url: "https://hitechlogic.com/services/rapid-prototyping/operate",
+        name: "Operate & Elevate | HiTechLogic",
+        description: "Production operations management with continuous optimization and scaling support.",
+        inLanguage: "en-US",
+        isPartOf: { "@id": "https://hitechlogic.com/#website" },
+        about: { "@id": "https://hitechlogic.com/#organization" },
+        datePublished: "2024-01-01",
+        dateModified: "2025-02-10",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hitechlogic.com/services/rapid-prototyping/operate#breadcrumb",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://hitechlogic.com/" },
+          { "@type": "ListItem", position: 2, name: "Services", item: "https://hitechlogic.com/services" },
+          { "@type": "ListItem", position: 3, name: "Rapid Prototyping", item: "https://hitechlogic.com/services/rapid-prototyping" },
+          { "@type": "ListItem", position: 4, name: "Operate & Elevate", item: "https://hitechlogic.com/services/rapid-prototyping/operate" },
+        ],
+      },
+    ],
   };
 
   const operationalCapabilities = [

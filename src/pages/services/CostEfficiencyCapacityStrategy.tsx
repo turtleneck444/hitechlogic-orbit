@@ -210,6 +210,18 @@ export default function CostEfficiencyCapacityStrategy() {
         }))
       },
       {
+        "@type": "WebPage",
+        "@id": "https://hitechlogic.com/services/cost-efficiency-capacity-strategy#webpage",
+        url: "https://hitechlogic.com/services/cost-efficiency-capacity-strategy",
+        name: "Cloud Cost Efficiency & Capacity Strategy | FinOps | HiTechLogic",
+        description: "Reduce cloud costs by 35% with expert FinOps services. $50M+ savings delivered, 95% forecast accuracy.",
+        inLanguage: "en-US",
+        isPartOf: { "@id": "https://hitechlogic.com/#website" },
+        about: { "@id": "https://hitechlogic.com/#organization" },
+        datePublished: "2024-01-01",
+        dateModified: "2025-02-10",
+      },
+      {
         "@type": "BreadcrumbList",
         "@id": "https://hitechlogic.com/services/cost-efficiency-capacity-strategy#breadcrumb",
         itemListElement: [

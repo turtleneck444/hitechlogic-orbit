@@ -25,20 +25,48 @@ import {
 export default function SystemOversightEventReduction() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    provider: {
-      "@type": "Organization",
-      name: "HiTechLogic",
-    },
-    serviceType: "Systems Monitoring & Alert Management",
-    name: "System Oversight & Event Reduction",
-    description: "Transform alert chaos into actionable intelligence with AI-powered telemetry, expert routing, and correlation that keeps executives aligned on true risk signals.",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-      description: "Intelligent monitoring and alert management service with 82% noise reduction",
-    },
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://hitechlogic.com/services/system-oversight-event-reduction#service",
+        name: "System Oversight & Event Reduction",
+        description: "Transform alert chaos into actionable intelligence with AI-powered telemetry, expert routing, and correlation that keeps executives aligned on true risk signals.",
+        provider: { "@type": "Organization", "@id": "https://hitechlogic.com/#organization", name: "HiTechLogic" },
+        serviceType: "Systems Monitoring & Alert Management",
+        areaServed: "Worldwide",
+        audience: { "@type": "Audience", audienceType: "IT Operations Leaders, SRE Teams, VP Engineering" },
+        availableChannel: {
+          "@type": "ServiceChannel",
+          serviceUrl: "https://hitechlogic.com/services/system-oversight-event-reduction",
+        },
+        offers: {
+          "@type": "Offer",
+          category: "Alert Management",
+          itemOffered: { "@type": "Service", name: "System Oversight & Event Reduction", description: "Intelligent monitoring and alert management service with 82% noise reduction" },
+        },
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://hitechlogic.com/services/system-oversight-event-reduction#webpage",
+        url: "https://hitechlogic.com/services/system-oversight-event-reduction",
+        name: "System Oversight & Event Reduction | HiTechLogic",
+        description: "Transform alert chaos into actionable intelligence with AI-powered telemetry, expert routing, and correlation. 82% alert noise reduction.",
+        inLanguage: "en-US",
+        isPartOf: { "@id": "https://hitechlogic.com/#website" },
+        about: { "@id": "https://hitechlogic.com/#organization" },
+        datePublished: "2024-01-01",
+        dateModified: "2025-02-10",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hitechlogic.com/services/system-oversight-event-reduction#breadcrumb",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://hitechlogic.com/" },
+          { "@type": "ListItem", position: 2, name: "Services", item: "https://hitechlogic.com/services" },
+          { "@type": "ListItem", position: 3, name: "System Oversight & Event Reduction", item: "https://hitechlogic.com/services/system-oversight-event-reduction" },
+        ],
+      },
+    ],
   };
 
   const monitoringCapabilities = [

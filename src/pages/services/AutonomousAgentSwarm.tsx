@@ -42,13 +42,39 @@ const benefits = [
 export default function AutonomousAgentSwarm() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Autonomous Agent Swarm",
-    description: "AI agent library powering rapid prototyping, development, and autonomous operations.",
-    provider: {
-      "@type": "Organization",
-      name: "HiTechLogic",
-    },
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://hitechlogic.com/services/autonomous-agent-swarm#service",
+        name: "Autonomous Agent Swarm",
+        description: "AI agent library powering rapid prototyping, development, and autonomous operations.",
+        provider: { "@type": "Organization", "@id": "https://hitechlogic.com/#organization", name: "HiTechLogic" },
+        serviceType: "AI Agent Automation",
+        areaServed: "Worldwide",
+        audience: { "@type": "Audience", audienceType: "CTOs, Product Leaders, Engineering Teams" },
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://hitechlogic.com/services/autonomous-agent-swarm#webpage",
+        url: "https://hitechlogic.com/services/autonomous-agent-swarm",
+        name: "Autonomous Agent Swarm | AI Agents for Rapid Prototyping & Operations",
+        description: "HiTechLogic's Autonomous Agent Swarm unifies AI-driven prototyping, MSP-grade development, and 24/7 autonomous operations.",
+        inLanguage: "en-US",
+        isPartOf: { "@id": "https://hitechlogic.com/#website" },
+        about: { "@id": "https://hitechlogic.com/#organization" },
+        datePublished: "2024-01-01",
+        dateModified: "2025-02-10",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hitechlogic.com/services/autonomous-agent-swarm#breadcrumb",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://hitechlogic.com/" },
+          { "@type": "ListItem", position: 2, name: "Services", item: "https://hitechlogic.com/services" },
+          { "@type": "ListItem", position: 3, name: "Autonomous Agent Swarm", item: "https://hitechlogic.com/services/autonomous-agent-swarm" },
+        ],
+      },
+    ],
   };
 
   return (

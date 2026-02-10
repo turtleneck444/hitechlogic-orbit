@@ -24,20 +24,39 @@ import {
 export default function BuildLaunch() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    provider: {
-      "@type": "Organization",
-      name: "HiTechLogic",
-    },
-    serviceType: "AI-Accelerated Development",
-    name: "Build & Launch Production MVPs",
-    description: "Sprint-based development that turns validated concepts into working MVPs using AI-assisted coding, reusable components, and enterprise scaffolding with production-ready infrastructure.",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-      description: "AI-accelerated MVP development from validated concept to production launch",
-    },
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://hitechlogic.com/services/rapid-prototyping/build-launch#service",
+        name: "Build & Launch Production MVPs",
+        description: "Sprint-based development that turns validated concepts into working MVPs using AI-assisted coding, reusable components, and enterprise scaffolding with production-ready infrastructure.",
+        provider: { "@type": "Organization", "@id": "https://hitechlogic.com/#organization", name: "HiTechLogic" },
+        serviceType: "AI-Accelerated Development",
+        areaServed: "Worldwide",
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://hitechlogic.com/services/rapid-prototyping/build-launch#webpage",
+        url: "https://hitechlogic.com/services/rapid-prototyping/build-launch",
+        name: "Build & Launch Production MVPs | HiTechLogic",
+        description: "AI-accelerated MVP development from validated concept to production launch.",
+        inLanguage: "en-US",
+        isPartOf: { "@id": "https://hitechlogic.com/#website" },
+        about: { "@id": "https://hitechlogic.com/#organization" },
+        datePublished: "2024-01-01",
+        dateModified: "2025-02-10",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hitechlogic.com/services/rapid-prototyping/build-launch#breadcrumb",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://hitechlogic.com/" },
+          { "@type": "ListItem", position: 2, name: "Services", item: "https://hitechlogic.com/services" },
+          { "@type": "ListItem", position: 3, name: "Rapid Prototyping", item: "https://hitechlogic.com/services/rapid-prototyping" },
+          { "@type": "ListItem", position: 4, name: "Build & Launch", item: "https://hitechlogic.com/services/rapid-prototyping/build-launch" },
+        ],
+      },
+    ],
   };
 
   const capabilities = [

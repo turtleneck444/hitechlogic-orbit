@@ -203,6 +203,18 @@ export default function ReliabilityPerformanceEngineering() {
         }))
       },
       {
+        "@type": "WebPage",
+        "@id": "https://hitechlogic.com/services/reliability-performance-engineering#webpage",
+        url: "https://hitechlogic.com/services/reliability-performance-engineering",
+        name: "Reliability & Performance Engineering | SRE Services & SLO Framework | HiTechLogic",
+        description: "Achieve 99.99%+ uptime with expert SRE services. SLO frameworks, chaos engineering, performance optimization, error budget management.",
+        inLanguage: "en-US",
+        isPartOf: { "@id": "https://hitechlogic.com/#website" },
+        about: { "@id": "https://hitechlogic.com/#organization" },
+        datePublished: "2024-01-01",
+        dateModified: "2025-02-10",
+      },
+      {
         "@type": "BreadcrumbList",
         "@id": "https://hitechlogic.com/services/reliability-performance-engineering#breadcrumb",
         itemListElement: [

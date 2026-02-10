@@ -25,20 +25,39 @@ import {
 export default function RapidDesignPrototyping() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    provider: {
-      "@type": "Organization",
-      name: "HiTechLogic",
-    },
-    serviceType: "Product Design & Prototyping",
-    name: "Rapid Design & Prototyping",
-    description: "Accelerate ideation with human-centered design, concept validation, and interactive prototypes that de-risk development by 80% before any code is written.",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-      description: "Concept validation and prototyping service to accelerate idea-to-MVP timeline",
-    },
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://hitechlogic.com/services/rapid-prototyping/rapid-design-prototyping#service",
+        name: "Rapid Design & Prototyping",
+        description: "Accelerate ideation with human-centered design, concept validation, and interactive prototypes that de-risk development by 80% before any code is written.",
+        provider: { "@type": "Organization", "@id": "https://hitechlogic.com/#organization", name: "HiTechLogic" },
+        serviceType: "Product Design & Prototyping",
+        areaServed: "Worldwide",
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://hitechlogic.com/services/rapid-prototyping/rapid-design-prototyping#webpage",
+        url: "https://hitechlogic.com/services/rapid-prototyping/rapid-design-prototyping",
+        name: "Rapid Design & Prototyping | HiTechLogic",
+        description: "Concept validation and prototyping service to accelerate idea-to-MVP timeline.",
+        inLanguage: "en-US",
+        isPartOf: { "@id": "https://hitechlogic.com/#website" },
+        about: { "@id": "https://hitechlogic.com/#organization" },
+        datePublished: "2024-01-01",
+        dateModified: "2025-02-10",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hitechlogic.com/services/rapid-prototyping/rapid-design-prototyping#breadcrumb",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://hitechlogic.com/" },
+          { "@type": "ListItem", position: 2, name: "Services", item: "https://hitechlogic.com/services" },
+          { "@type": "ListItem", position: 3, name: "Rapid Prototyping", item: "https://hitechlogic.com/services/rapid-prototyping" },
+          { "@type": "ListItem", position: 4, name: "Rapid Design & Prototyping", item: "https://hitechlogic.com/services/rapid-prototyping/rapid-design-prototyping" },
+        ],
+      },
+    ],
   };
 
   const benefits = [

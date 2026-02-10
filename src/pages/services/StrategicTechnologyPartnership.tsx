@@ -210,6 +210,18 @@ export default function StrategicTechnologyPartnership() {
         }))
       },
       {
+        "@type": "WebPage",
+        "@id": "https://hitechlogic.com/services/strategic-technology-partnership#webpage",
+        url: "https://hitechlogic.com/services/strategic-technology-partnership",
+        name: "Strategic Technology Partnership | Executive CTO Advisory | HiTechLogic",
+        description: "Transform engineering culture with executive-level technology partnership. 92 NPS, embedded coaching, roadmap planning.",
+        inLanguage: "en-US",
+        isPartOf: { "@id": "https://hitechlogic.com/#website" },
+        about: { "@id": "https://hitechlogic.com/#organization" },
+        datePublished: "2024-01-01",
+        dateModified: "2025-02-10",
+      },
+      {
         "@type": "BreadcrumbList",
         "@id": "https://hitechlogic.com/services/strategic-technology-partnership#breadcrumb",
         itemListElement: [

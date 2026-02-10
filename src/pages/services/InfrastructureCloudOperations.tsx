@@ -37,20 +37,48 @@ import {
 export default function InfrastructureCloudOperations() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    provider: {
-      "@type": "Organization",
-      name: "HiTechLogic",
-    },
-    serviceType: "Infrastructure Management",
-    name: "Infrastructure & Cloud Operations",
-    description: "24/7 cloud infrastructure management, monitoring, and optimization with guaranteed 99.99% uptime SLA across AWS, Azure, and GCP.",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-      description: "Complete infrastructure operations management with uptime guarantees",
-    },
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://hitechlogic.com/services/infrastructure-cloud-operations#service",
+        name: "Infrastructure & Cloud Operations",
+        description: "24/7 cloud infrastructure management, monitoring, and optimization with guaranteed 99.99% uptime SLA across AWS, Azure, and GCP.",
+        provider: { "@type": "Organization", "@id": "https://hitechlogic.com/#organization", name: "HiTechLogic" },
+        serviceType: "Infrastructure Management",
+        areaServed: "Worldwide",
+        audience: { "@type": "Audience", audienceType: "CTOs, VP Infrastructure, Cloud Architects, IT Directors" },
+        availableChannel: {
+          "@type": "ServiceChannel",
+          serviceUrl: "https://hitechlogic.com/services/infrastructure-cloud-operations",
+        },
+        offers: {
+          "@type": "Offer",
+          category: "Cloud Infrastructure",
+          itemOffered: { "@type": "Service", name: "Infrastructure & Cloud Operations", description: "Complete infrastructure operations management with 99.99% uptime guarantees" },
+        },
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://hitechlogic.com/services/infrastructure-cloud-operations#webpage",
+        url: "https://hitechlogic.com/services/infrastructure-cloud-operations",
+        name: "Infrastructure & Cloud Operations Management | HiTechLogic",
+        description: "24/7 cloud infrastructure management with 99.99% uptime SLA. AWS, Azure, GCP expertise. Reduce costs 40%, ensure reliability across hybrid environments.",
+        inLanguage: "en-US",
+        isPartOf: { "@id": "https://hitechlogic.com/#website" },
+        about: { "@id": "https://hitechlogic.com/#organization" },
+        datePublished: "2024-01-01",
+        dateModified: "2025-02-10",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hitechlogic.com/services/infrastructure-cloud-operations#breadcrumb",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://hitechlogic.com/" },
+          { "@type": "ListItem", position: 2, name: "Services", item: "https://hitechlogic.com/services" },
+          { "@type": "ListItem", position: 3, name: "Infrastructure & Cloud Operations", item: "https://hitechlogic.com/services/infrastructure-cloud-operations" },
+        ],
+      },
+    ],
   };
 
   return (
